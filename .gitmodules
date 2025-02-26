@@ -1,0 +1,3 @@
+[submodule "chassis-tokens"]
+	path = chassis-tokens
+	url = git@github.com:ozgurgunes/chassis-tokens.git

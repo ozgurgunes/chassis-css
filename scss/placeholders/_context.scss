@@ -1,0 +1,112 @@
+// scss-docs-start context-placeholder-selector
+%context {
+  @each $color in map-keys($context-colors) {
+    &.#{$color} {
+      @include context($color);
+    }
+  }
+}
+// scss-docs-end context-placeholder-selector
+
+// scss-docs-start style-placeholder-selectors
+// scss-docs-start basic-style-placeholder-selector
+%basic-context {
+  // Change body colors
+  @include body-colors();
+}
+// scss-docs-end basic-style-placeholder-selector
+// scss-docs-start solid-style-placeholder-selector
+%solid-context {
+  @extend %basic-context;
+  // Modify palaette colors
+  --#{$prefix}fg-main: var(--#{$prefix}fg-solid);
+  --#{$prefix}fg-subtle: rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-subtle));
+  --#{$prefix}fg-slight: rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-slight));
+  --#{$prefix}bg-main: var(--#{$prefix}bg-solid);
+  --#{$prefix}bg-even: var(--#{$prefix}bg-inverse);
+  --#{$prefix}bg-evident: var(--#{$prefix}bg-inverse);
+  --#{$prefix}border-main: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-border-main));
+  --#{$prefix}border-subtle: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-border-subtle));
+  --#{$prefix}icon-main: var(--#{$prefix}fg-solid);
+  --#{$prefix}icon-subtle: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-icon-subtle));
+  --#{$prefix}indicator-main: var(--#{$prefix}fg-solid);
+  --#{$prefix}link-main: var(--#{$prefix}fg-solid);
+  --#{$prefix}link-hover: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-fg-subtle));
+  --#{$prefix}fg-main-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}fg-subtle-rgb: var(--#{$prefix}fg-subtle-rgb);
+  --#{$prefix}fg-slight-rgb: var(--#{$prefix}fg-slight-rgb);
+  --#{$prefix}bg-main-rgb: var(--#{$prefix}bg-solid-rgb);
+  --#{$prefix}bg-even-rgb: var(--#{$prefix}bg-inverse-rgb);
+  --#{$prefix}bg-evident-rgb: var(--#{$prefix}bg-inverse-rgb);
+  --#{$prefix}border-main-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}border-subtle-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}icon-main-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}icon-subtle-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}indicator-main-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}link-main-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}link-hover-rgb: var(--#{$prefix}fg-solid-rgb);
+  // @include body-colors();
+  // Modify body colors
+  --#{$prefix}fg-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}bg-color: var(--#{$prefix}bg-solid);
+  --#{$prefix}border-color: transparent;
+  --#{$prefix}separator-color: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-border-subtle));
+  --#{$prefix}icon-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}bullet-color: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-icon-subtle));
+  --#{$prefix}indicator-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}link-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}link-hover-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}link-active-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}link-disabled-color: var(--#{$prefix}fg-solid);
+  --#{$prefix}fg-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}bg-color-rgb: var(--#{$prefix}bg-solid-rgb);
+  --#{$prefix}border-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}separator-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}icon-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}bullet-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}indicator-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}link-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}link-hover-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}link-active-color-rgb: var(--#{$prefix}fg-solid-rgb);
+  --#{$prefix}link-disabled-color-rgb: var(--#{$prefix}fg-solid-rgb);
+}
+// scss-docs-end solid-style-placeholder-selector
+// scss-docs-start smooth-style-placeholder-selector
+%smooth-context {
+  @extend %basic-context;
+  --#{$prefix}bg-color: var(--#{$prefix}smooth-bg-color, var(--#{$prefix}bg-even));
+  --#{$prefix}icon-color: var(--#{$prefix}smooth-icon-main, var(--#{$prefix}fg-main));
+  --#{$prefix}indicator-color: var(--#{$prefix}smooth-indicator-color, var(--#{$prefix}fg-main));
+  --#{$prefix}link-color: var(--#{$prefix}smooth-link-color, var(--#{$prefix}fg-main));
+  --#{$prefix}bg-color-rgb: var(--#{$prefix}smooth-bg-color-rgb, var(--#{$prefix}bg-even-rgb));
+  --#{$prefix}icon-color-rgb: var(--#{$prefix}smooth-icon-color-rgb, var(--#{$prefix}fg-main-rgb));
+  --#{$prefix}indicator-color-rgb: var(--#{$prefix}smooth-indicator-color-rgb, var(--#{$prefix}fg-main-rgb));
+  --#{$prefix}link-color-rgb: var(--#{$prefix}smooth-link-color-rgb, var(--#{$prefix}fg-main-rgb));
+  // @include body-colors();
+  border: 0;
+}
+// scss-docs-end smooth-style-placeholder-selector
+// scss-docs-start outline-style-placeholder-selector
+%outline-context {
+  @extend %basic-context;
+  --#{$prefix}fg-color: var(--#{$prefix}outline-fg-color, var(--#{$prefix}base-color));
+  --#{$prefix}bg-color: var(--#{$prefix}outline-bg-color, transparent);
+  --#{$prefix}border-color: var(--#{$prefix}outline-border-color, var(--#{$prefix}base-color));
+  --#{$prefix}separator-color: var(--#{$prefix}outline-separator-color, var(--#{$prefix}base-color));
+  --#{$prefix}icon-color: var(--#{$prefix}outline-icon-color, var(--#{$prefix}base-color));
+  --#{$prefix}bullet-color: var(--#{$prefix}outline-bullet-color, var(--#{$prefix}base-color));
+  --#{$prefix}indicator-color: var(--#{$prefix}outline-indicator-color, var(--#{$prefix}base-color));
+  --#{$prefix}fg-color-rgb: var(--#{$prefix}outline-fg-color-rgb, var(--#{$prefix}base-color-rgb));
+  --#{$prefix}bg-color-rgb: var(--#{$prefix}outline-bg-color-rgb, transparent);
+  --#{$prefix}border-color-rgb: var(--#{$prefix}outline-border-color-rgb, var(--#{$prefix}base-color-rgb));
+  --#{$prefix}separator-color-rgb: var(--#{$prefix}outline-separator-color-rgb, var(--#{$prefix}base-color-rgb));
+  --#{$prefix}icon-color-rgb: var(--#{$prefix}outline-icon-color-rgb, var(--#{$prefix}base-color-rgb));
+  --#{$prefix}bullet-color-rgb: var(--#{$prefix}outline-bullet-color-rgb, var(--#{$prefix}base-color-rgb));
+  --#{$prefix}indicator-color-rgb: var(--#{$prefix}outline-indicator-color-rgb, var(--#{$prefix}base-color-rgb));
+  // Need to borders for outline style
+  // --#{$prefix}outline-bg-color: var(--#{$prefix}outline-bg-main, transparent);
+  --#{$prefix}border-width: var(--#{$prefix}border-width-large);
+  @include border();
+}
+// scss-docs-end outline-style-placeholder-selector
+// scss-docs-end style-placeholder-selectors

@@ -1,0 +1,59 @@
+.alert-window {
+
+  @extend %component;
+
+  --#{$prefix}zindex: var(--#{$prefix}alert-zindex, #{$zindex-alert});
+  --#{$prefix}padding-y: var(--#{$prefix}alert-padding-y, #{$alert-padding-y});
+  --#{$prefix}padding-x: var(--#{$prefix}alert-padding-x, #{$alert-padding-x});
+  --#{$prefix}gap: var(--#{$prefix}alert-gap, #{$alert-gap});
+  --#{$prefix}fg-color: var(--#{$prefix}alert-fg-color, #{$alert-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}alert-bg-color, #{$alert-bg-color});
+  --#{$prefix}border-color: var(--#{$prefix}alert-border-color, #{$alert-border-color});
+  --#{$prefix}border-width: var(--#{$prefix}alert-border-width, #{$alert-border-width});
+  --#{$prefix}border-radius: var(--#{$prefix}alert-border-radius, #{$alert-border-radius});
+  --#{$prefix}box-radius: var(--#{$prefix}alert-box-radius, #{$alert-box-radius});
+  --#{$prefix}icon-size: var(--#{$prefix}alert-icon-size, #{$alert-icon-size});
+  @include map-font($alert-message-font, alert-message);
+  @include map-font($alert-title-font, alert-title, title);
+  --#{$prefix}title-margin: var(--#{$prefix}alert-title-margin, #{$alert-title-margin});
+  --#{$prefix}footer-gap: var(--#{$prefix}alert-footer-gap, #{$alert-footer-gap});
+  --#{$prefix}box-shadow: var(--#{$prefix}alert-box-shadow, #{$alert-shadow});
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  @include box-padding();
+  pointer-events: auto;
+  background-clip: padding-box;
+  outline: 0;
+  box-shadow: var(--#{$prefix}box-shadow);
+
+  .alert-title {
+    @include font(title);
+    margin-bottom: var(--#{$prefix}title-margin);
+  }
+
+  &:has(> .alert-icon) {
+    display: block;
+    padding-left: #{calc($alert-padding-x + $alert-icon-size + $alert-gap)};
+    .alert-icon {
+      float: left;
+      width: $alert-icon-size;
+      margin-left: #{calc(($alert-icon-size + $alert-gap) * -1)};
+    }
+  }
+
+}
+
+// Footer (for actions)
+.alert-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: var(--#{$prefix}footer-gap);
+  align-items: center; // vertically center
+  justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
+  @include border-bottom-radius(var(--#{$prefix}box-radius));
+}
+

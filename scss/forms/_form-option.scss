@@ -1,0 +1,225 @@
+//
+// Check/radio
+//
+
+.form-option {
+  // display: block;
+  --#{$prefix}padding-s: #{$form-option-medium-padding-start};
+  --#{$prefix}margin-s: #{$form-option-medium-padding-start * -1};
+  @include map-font-size($input-medium-font, form-option);
+  @include map-line-height($input-medium-font, form-option);
+  min-height: $form-option-min-height;
+  padding-left: var(--#{$prefix}padding-s);
+  margin-bottom: $form-option-margin-bottom;
+  @include font-size();
+  @include line-height();
+
+  &.small {
+    --#{$prefix}padding-s: #{$form-option-small-padding-start};
+    --#{$prefix}margin-s: #{$form-option-small-padding-start * -1};
+    @include map-font-size($input-small-font, form-option);
+    @include map-line-height($input-small-font, form-option);
+  }
+
+  &.large {
+    --#{$prefix}padding-s: #{$form-option-large-padding-start};
+    --#{$prefix}margin-s: #{$form-option-large-padding-start * -1};
+    @include map-font-size($input-large-font, form-option);
+    @include map-line-height($input-large-font, form-option);
+  }
+
+  .option-input {
+    float: left;
+    margin-top: var(--#{$prefix}margin-top);
+    margin-left: var(--#{$prefix}margin-s);
+  }
+
+  &.reverse {
+    padding-right: var(--#{$prefix}padding-s);
+    padding-left: 0;
+    text-align: right;
+
+    .option-input {
+      float: right;
+      margin-right: var(--#{$prefix}margin-s);
+      margin-left: 0;
+    }
+  }
+
+}
+
+.option-input {
+  --#{$prefix}bg-color: #{$option-input-bg-color};
+  --#{$prefix}size: #{$option-input-medium-size};
+  --#{$prefix}margin-top: #{subtract($line-height-text-medium, $option-input-medium-size) * .35}; // line-height minus check height
+
+  flex-shrink: 0;
+  width: var(--#{$prefix}size);
+  height: var(--#{$prefix}size);
+  //margin-top: var(--#{$prefix}margin-top);
+  vertical-align: top;
+  appearance: none;
+  background-color: var(--#{$prefix}bg-color);
+  background-image: var(--#{$prefix}bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: $option-input-border;
+  print-color-adjust: exact; // Keep themed appearance for print
+  @include transition($form-option-transition);
+
+  &[type="checkbox"] {
+    @include border-radius($option-input-medium-border-radius);
+  }
+
+  &[type="radio"] {
+    // stylelint-disable-next-line property-disallowed-list
+    border-radius: $form-option-radio-border-radius;
+  }
+
+  &:active {
+    filter: $option-input-active-filter;
+  }
+
+  &:focus {
+    border-color: $option-input-focus-border-color;
+    outline: 0;
+    box-shadow: $option-input-focus-box-shadow;
+  }
+
+  &:checked {
+    background-color: $option-input-checked-bg-color;
+    border-color: $option-input-checked-border-color;
+
+    &[type="checkbox"] {
+      @if $enable-component-gradients {
+        --#{$prefix}bg-image: #{escape-svg($option-input-checked-bg-image)}, var(--#{$prefix}bg-gradient);
+      } @else {
+        --#{$prefix}bg-image: #{escape-svg($option-input-checked-bg-image)};
+      }
+    }
+
+    &[type="radio"] {
+      @if $enable-component-gradients {
+        --#{$prefix}bg-image: #{escape-svg($form-option-radio-checked-bg-image)}, var(--#{$prefix}bg-gradient);
+      } @else {
+        --#{$prefix}bg-image: #{escape-svg($form-option-radio-checked-bg-image)};
+      }
+    }
+  }
+
+  &[type="checkbox"]:indeterminate {
+    background-color: $option-input-indeterminate-bg-color;
+    border-color: $option-input-indeterminate-border-color;
+
+    @if $enable-component-gradients {
+      --#{$prefix}bg-image: #{escape-svg($option-input-indeterminate-bg-image)}, var(--#{$prefix}bg-gradient);
+    } @else {
+      --#{$prefix}bg-image: #{escape-svg($option-input-indeterminate-bg-image)};
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    filter: none;
+    opacity: $option-input-disabled-opacity;
+  }
+
+  // Use disabled attribute in addition of :disabled pseudo-class
+  // See: https://github.com/twbs/bootstrap/issues/28247
+  &[disabled],
+  &:disabled {
+    ~ .option-label {
+      cursor: default;
+      opacity: $option-label-disabled-opacity;
+    }
+  }
+}
+
+.option-input.small,
+.form-option.small .option-input  {
+  --#{$prefix}size: #{$option-input-small-size};
+  --#{$prefix}margin-top: #{subtract($line-height-text-small, $option-input-small-size) * .06}; // line-height minus check height
+}
+
+.option-input.large,
+.form-option.large .option-input  {
+  --#{$prefix}size: #{$option-input-large-size};
+  --#{$prefix}margin-top: #{subtract($line-height-text-large, $option-input-large-size) * .65}; // line-height minus check height
+}
+
+.option-label {
+  color: $option-label-color;
+  cursor: $option-label-cursor;
+}
+
+//
+// Switch
+//
+
+.form-switch {
+  padding-left: $form-switch-padding-start;
+
+  .option-input {
+    --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image)};
+
+    width: $form-switch-width;
+    margin-left: $form-switch-padding-start * -1;
+    background-image: var(--#{$prefix}form-switch-bg);
+    background-position: left center;
+    @include border-radius($form-switch-border-radius, 0);
+    @include transition($form-switch-transition);
+
+    &:focus {
+      --#{$prefix}form-switch-bg: #{escape-svg($form-switch-focus-bg-image)};
+    }
+
+    &:checked {
+      background-position: $form-switch-checked-bg-position;
+
+      @if $enable-component-gradients {
+        --#{$prefix}form-switch-bg: #{escape-svg($form-switch-checked-bg-image)}, var(--#{$prefix}bg-gradient);
+      } @else {
+        --#{$prefix}form-switch-bg: #{escape-svg($form-switch-checked-bg-image)};
+      }
+    }
+  }
+
+  &.reverse {
+    padding-right: $form-switch-padding-start;
+    padding-left: 0;
+
+    .option-input {
+      margin-right: $form-switch-padding-start * -1;
+      margin-left: 0;
+    }
+  }
+}
+
+.form-option-inline {
+  display: inline-block;
+  margin-right: $form-option-inline-margin-end;
+}
+
+.button-check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+
+  &[disabled],
+  &:disabled {
+    + .button {
+      pointer-events: none;
+      filter: none;
+      opacity: $form-option-button-check-disabled-opacity;
+    }
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .form-switch .option-input:not(:checked):not(:focus) {
+      --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image-dark)};
+    }
+  }
+}

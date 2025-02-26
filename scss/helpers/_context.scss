@@ -1,0 +1,33 @@
+// scss-docs-start fg-color-helper
+@each $name, $value in map-merge($context-fg-colors, $body-fg-colors) {
+  .#{$name} {
+    --#{$prefix}fg-color: var(--#{$prefix}#{$name}, $value);
+    color: var(--#{$prefix}#{$name}, $value) if($enable-important-utilities, !important, null);
+  }
+}
+// scss-docs-end fg-color-helper
+// scss-docs-start bg-color-helper
+@each $name, $value in map-merge($context-bg-colors, $body-bg-colors) {
+  .#{$name} {
+    --#{$prefix}bg-color: var(--#{$prefix}#{$name}, $value);
+    background-color: var(--#{$prefix}#{$name}) if($enable-important-utilities, !important, null);
+  }
+}
+// scss-docs-end bg-color-helper
+// scss-docs-start border-color-helper
+@each $name, $value in map-merge($context-border-colors, $body-border-colors) {
+  .#{$name} {
+    --#{$prefix}border-color: var(--#{$prefix}#{$name});
+    border-color: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
+  }
+}
+// scss-docs-end border-color-helper
+// // scss-docs-start icon-color-helper
+// @each $name, $value in map-merge($context-icon-colors, $body-icon-colors) {
+//   .#{$name} {
+//     --#{$prefix}icon-color: var(--#{$prefix}#{$name});
+//     color: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
+//     fill: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
+//   }
+// }
+// // scss-docs-end icon-color-helper

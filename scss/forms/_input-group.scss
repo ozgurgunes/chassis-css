@@ -1,0 +1,222 @@
+//
+// Base styles
+//
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // For form validation feedback
+  align-items: stretch;
+  width: 100%;
+
+  > .form-control,
+  > .form-select,
+  > .form-floating {
+    position: relative; // For focus state's z-index
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0; // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
+  }
+
+  // Bring the "active" form control to the top of surrounding elements
+  > .form-control:focus,
+  > .form-select:focus,
+  > .form-floating:focus-within {
+    z-index: 5;
+  }
+
+  // Ensure buttons are always above inputs for more visually pleasing borders.
+  // This isn't needed for `.input-addon` since it shares the same border-color
+  // as our inputs.
+  .button {
+    position: relative;
+    z-index: 2;
+
+    &:focus {
+      z-index: 5;
+    }
+  }
+}
+
+
+// Textual addons
+//
+// Serves as a catch-all element for any text or radio/checkbox input you wish
+// to prepend or append to an input.
+
+.input-addon {
+  @include map-font($input-medium-font, input-group);
+  --#{$prefix}fg-color: #{$input-addon-fg-color};
+  --#{$prefix}bg-color: #{$input-addon-bg-color};
+  --#{$prefix}border-width: #{$input-border-width};
+  --#{$prefix}border-color: #{$input-addon-border-color};
+  --#{$prefix}border-radius: #{$input-medium-border-radius};
+  --#{$prefix}icon-color: #{$input-addon-fg-color};
+  --#{$prefix}icon-size: #{$input-medium-icon-size};
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+
+  @extend %component, %box-padding;
+
+  &:has(+ .form-floating),
+  .form-floating ~ & {
+    @include border-bottom-radius(0);
+    border-width: 0 0 $input-floating-border-width;
+  }
+
+}
+
+// Sizing
+//
+// Remix the default form control sizing classes into new ones for easier
+// manipulation.
+
+.input-group > .form-control,
+.input-group > .form-select,
+.input-group > .input-addon,
+.input-group > .button {
+  //padding: $input-large-padding-y $input-large-padding-x;
+  --#{$prefix}padding-y: #{$input-medium-padding-y};
+  --#{$prefix}padding-x: #{$input-medium-padding-x};
+  --#{$prefix}height: #{$input-medium-height};
+  @include map-font-size($input-medium-font, input-group);
+  @include map-line-height($input-medium-font, input-group);
+  --#{$prefix}border-radius: #{$input-medium-border-radius};
+  --#{$prefix}icon-size: #{$input-medium-icon-size};
+  //@include border-radius();
+}
+
+.input-group.large > .form-control,
+.input-group.large > .form-select,
+.input-group.large > .input-addon,
+.input-group.large > .button {
+  //padding: $input-large-padding-y $input-large-padding-x;
+  --#{$prefix}padding-y: #{$input-large-padding-y};
+  --#{$prefix}padding-x: #{$input-large-padding-x};
+  --#{$prefix}height: #{$input-large-height};
+  @include map-font-size($input-large-font, input-group);
+  @include map-line-height($input-large-font, input-group);
+  --#{$prefix}border-radius: #{$input-large-border-radius};
+  --#{$prefix}icon-size: #{$input-large-icon-size};
+  //@include border-radius();
+}
+
+.input-group.small > .form-control,
+.input-group.small > .form-select,
+.input-group.small > .input-addon,
+.input-group.small > .button {
+  --#{$prefix}padding-y: #{$input-small-padding-y};
+  --#{$prefix}padding-x: #{$input-small-padding-x};
+  --#{$prefix}height: #{$input-small-height};
+  @include map-font-size($input-small-font, input-group);
+  @include map-line-height($input-small-font, input-group);
+  --#{$prefix}border-radius: #{$input-small-border-radius};
+  --#{$prefix}icon-size: #{$input-small-icon-size};
+}
+
+.input-group.large > .form-select,
+.input-group.small > .form-select {
+  padding-right: $form-select-medium-padding-x + $form-select-indicator-padding;
+}
+
+
+// Rounded corners
+//
+// These rulesets must come after the sizing ones to properly override sm and lg
+// border-radius values when extending. They're more specific than we'd like
+// with the `.input-group >` part, but without it, we cannot override the sizing.
+
+// stylelint-disable-next-line no-duplicate-selectors
+.input-group {
+  &:not(.has-validation) {
+    > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating):not(:has(~ .icon)),
+    > .dropdown-toggle:nth-last-child(n + 3),
+    > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-control,
+    > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-select {
+      @include border-end-radius(0);
+    }
+
+  }
+
+  &.has-validation {
+    > :nth-last-child(n + 3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
+    > .dropdown-toggle:nth-last-child(n + 4),
+    > .form-floating:nth-last-child(n + 3) > .form-control,
+    > .form-floating:nth-last-child(n + 3) > .form-select {
+      @include border-end-radius(0);
+    }
+  }
+
+  $validation-messages: "";
+  @each $state in map-keys($form-validation-states) {
+    $validation-messages: $validation-messages + ":not(." + unquote($state) + "-tooltip)" + ":not(." + unquote($state) + "-feedback)";
+  }
+
+  > :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
+    margin-left: calc(#{$input-border-width} * -1); // stylelint-disable-line function-disallowed-list
+    &:not(.icon ~ .form-control) {
+      @include border-start-radius(0);
+    }
+  }
+
+  > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-control,
+  > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-select {
+    @include border-start-radius(0);
+  }
+}
+
+.input-addon.icon {
+  --#{$prefix}bg-color: null;
+  --#{$prefix}border-width: 0rem;
+  position: absolute;
+  z-index: 10;
+  height: var(--#{$prefix}height);
+  padding: 0 var(--#{$prefix}padding-x);
+
+  .form-control + & {
+    right: 0;
+  }
+
+  .form-floating ~ & {
+    right: 0;
+    height: $form-floating-height;
+    padding: 0 var(--#{$prefix}padding-x);
+    border: 0;
+  }
+
+  &:has(+ .form-control:disabled),
+  &:has(+ .form-floating > .form-control:disabled),
+  .form-control:disabled ~ &,
+  .form-floating:has(.form-control:disabled) ~ & {
+    --#{$prefix}icon-color: #{$input-disabled-fg-color};
+  }
+
+  &:has(+ .form-floating) {
+    height: $form-floating-height;
+    padding: 0 var(--#{$prefix}padding-x);
+    border: 0;
+  }
+
+  + .form-control,
+  + .form-floating > .form-control {
+    padding-left: #{calc(var(--#{$prefix}icon-size) + var(--#{$prefix}padding-x) * 2)};
+  }
+  + .form-floating > label {
+    padding-left: #{calc(var(--#{$prefix}icon-size) + $input-medium-padding-x * 2)};
+    transform-origin: 25% 0;
+  }
+
+  .form-control:has(+ &),
+  .form-floating:has(+ &) {
+    padding-right: #{calc(var(--#{$prefix}icon-size) + var(--#{$prefix}padding-x) * 2)};
+    @include border-radius($input-medium-border-radius);
+  }
+
+  .form-floating:has(~ &) > .form-control {
+    padding-right: #{calc(var(--#{$prefix}icon-size) + var(--#{$prefix}padding-x) * 2)};
+  }
+
+}

@@ -1,0 +1,116 @@
+@import "colors";
+@import "colors-dark";
+@import "fonts";
+@import "buttons";
+@import "forms";
+@import "shadows";
+
+// scss-docs-start base-opacity-tokens
+$opacity-zero:         $cx-opacity-base-zero !default;
+$opacity-95:           $cx-opacity-base-95 !default;
+$opacity-90:           $cx-opacity-base-90 !default;
+$opacity-80:           $cx-opacity-base-80 !default;
+$opacity-70:           $cx-opacity-base-70 !default;
+$opacity-60:           $cx-opacity-base-60 !default;
+$opacity-50:           $cx-opacity-base-50 !default;
+$opacity-40:           $cx-opacity-base-40 !default;
+$opacity-30:           $cx-opacity-base-30 !default;
+$opacity-20:           $cx-opacity-base-20 !default;
+$opacity-10:           $cx-opacity-base-10 !default;
+$opacity-05:           $cx-opacity-base-05 !default;
+$opacity-solid:        $cx-opacity-base-solid !default;
+// scss-docs-end base-opacity-tokens
+
+// scss-docs-start grid-tokens
+$breakpoint-2xlarge:     $cx-grid-common-breakpoint-2xlarge !default;
+$breakpoint-xlarge:      $cx-grid-common-breakpoint-xlarge !default;
+$breakpoint-large:       $cx-grid-common-breakpoint-large !default;
+$breakpoint-medium:      $cx-grid-common-breakpoint-medium !default;
+$breakpoint-small:       $cx-grid-common-breakpoint-small !default;
+$breakpoint-xsmall:      $cx-grid-common-breakpoint-xsmall !default;
+$gutter-2xlarge:         $cx-grid-common-gutter-2xlarge !default;
+$gutter-xlarge:          $cx-grid-common-gutter-xlarge !default;
+$gutter-large:           $cx-grid-common-gutter-large !default;
+$gutter-medium:          $cx-grid-common-gutter-medium !default;
+$gutter-small:           $cx-grid-common-gutter-small !default;
+$gutter-xsmall:          $cx-grid-common-gutter-xsmall !default;
+// scss-docs-end grid-tokens
+
+// scss-docs-start context-opacity-tokens
+// scss-docs-start fg-opacity-tokens
+$opacity-fg-slight:         $cx-opacity-context-fg-slight !default;
+$opacity-fg-subtle:         $cx-opacity-context-fg-subtle !default;
+// scss-docs-end fg-opacity-tokens
+// scss-docs-start border-opacity-tokens
+$opacity-border-main:       $cx-opacity-context-border-main !default;
+$opacity-border-subtle:     $cx-opacity-context-border-subtle !default;
+// scss-docs-end border-opacity-tokens
+// scss-docs-start icon-opacity-tokens
+$opacity-icon-subtle:       $cx-opacity-context-icon-subtle !default;
+$opacity-icon-slight:       $cx-opacity-context-icon-slight !default;
+// scss-docs-end icon-opacity-tokens
+// scss-docs-start indicator-opacity-tokens
+$opacity-indicator-slight:  $cx-opacity-context-icon-slight !default;
+// scss-docs-end icon-opacity-tokens
+// scss-docs-start bg-opacity-tokens
+$opacity-scene-dim:         $cx-opacity-context-scene-dim !default;
+$opacity-scene-blur:        $cx-opacity-context-scene-blur !default;
+$opacity-scene-shade:       $cx-opacity-context-scene-shade !default;
+$opacity-scene-clear:       $cx-opacity-context-scene-clear !default;
+// scss-docs-end bg-opacity-tokens
+// scss-docs-end context-opacity-tokens
+
+// scss-docs-start border-width-tokens
+$border-width-zero:         $cx-border-width-context-zero !default;
+$border-width-small:        $cx-border-width-context-small !default;
+$border-width-medium:       $cx-border-width-context-medium !default;
+$border-width-large:        $cx-border-width-context-large !default;
+$border-width-xlarge:       $cx-border-width-context-xlarge !default;
+$border-width-2xlarge:      $cx-border-width-context-2xlarge !default;
+// scss-docs-end border-width-tokens
+
+// scss-docs-start border-radius-tokens
+$border-radius-zero:        $cx-border-radius-context-zero !default;
+$border-radius-xsmall:      $cx-border-radius-context-xsmall !default;
+$border-radius-small:       $cx-border-radius-context-small !default;
+$border-radius-medium:      $cx-border-radius-context-medium !default;
+$border-radius-large:       $cx-border-radius-context-large !default;
+$border-radius-xlarge:      $cx-border-radius-context-xlarge !default;
+$border-radius-2xlarge:     $cx-border-radius-context-2xlarge !default;
+$border-radius-3xlarge:     $cx-border-radius-context-3xlarge !default;
+$border-radius-rare:        $cx-border-radius-context-rare !default;
+$border-radius-circle:      $cx-border-radius-context-circle !default;
+// scss-docs-end border-radius-tokens
+
+// scss-docs-start icon-size-tokens
+$icon-4xlarge:      $cx-size-icon-glyph-4xlarge !default;
+$icon-3xlarge:      $cx-size-icon-glyph-3xlarge !default;
+$icon-2xlarge:      $cx-size-icon-glyph-2xlarge !default;
+$icon-xlarge:       $cx-size-icon-glyph-xlarge !default;
+$icon-large:        $cx-size-icon-glyph-large !default;
+$icon-medium:       $cx-size-icon-glyph-medium !default;
+$icon-small:        $cx-size-icon-glyph-small !default;
+$icon-xsmall:       $cx-size-icon-glyph-xsmall !default;
+$icon-2xsmall:      $cx-size-icon-glyph-2xsmall !default;
+$icon-3xsmall:      $cx-size-icon-glyph-3xsmall !default;
+$icon-size:         $icon-medium !default;
+// scss-docs-end icon-size-tokens
+
+// scss-docs-start table-tokens
+$table-cell-padding-y:      $cx-space-common-table-cell-padding-y !default;
+$table-cell-padding-x:      $cx-space-common-table-cell-padding-x !default;
+$table-border-width:        $cx-border-width-common-table !default;
+$table-fg-color:            $cx-color-common-table-default-fg-data !default;
+$table-bg-color:            $cx-color-common-table-default-bg-data !default;
+$table-th-fg-color:         $cx-color-common-table-default-fg-head !default;
+$table-th-bg-color:         $cx-color-common-table-default-bg-head !default;
+$table-striped-bg-color:    $cx-color-common-table-default-bg-alt !default;
+$table-active-bg-color:     $cx-color-common-table-default-bg-highlight !default;
+// Not exist as CSS
+$table-cell-font:           $cx-font-common-table-data-text !default;
+$table-head-font:           $cx-font-common-table-head-text !default;
+$table-border-radius:       $cx-border-radius-common-table !default;
+$table-indicator-main:      $cx-color-common-table-default-indicator-main !default;
+$table-icon-sort:           $cx-color-common-table-default-obj-sort !default;
+$table-gap:                 $cx-space-common-table-cell-gap !default;
+// scss-docs-end table-tokens

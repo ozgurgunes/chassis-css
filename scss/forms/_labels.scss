@@ -1,0 +1,40 @@
+//
+// Labels
+//
+
+.form-label {
+  @include map-font($form-label-font);
+
+  margin-bottom: $form-label-margin-bottom;
+  @include font();
+  color: $form-label-color;
+}
+
+// For use with horizontal and inline forms, when you need the label (or legend)
+// text to align with the form controls.
+.col-form-label {
+  --#{$prefix}fg-color: $form-label-color;
+  @include map-font($form-label-font);
+
+  padding-top: add($input-medium-padding-y, $input-border-width);
+  padding-bottom: add($input-medium-padding-y, $input-border-width);
+  margin-bottom: 0; // Override the `<legend>` default
+  @include font(); // Override the `<legend>` default
+  @include font-size(inherit); // Override the `<legend>` default
+  @include line-height(inherit); // Override the `<legend>` default
+  color: var(--#{$prefix}fg-color);
+}
+
+.col-form-label-large {
+  padding-top: add($input-large-padding-y, $input-border-width);
+  padding-bottom: add($input-large-padding-y, $input-border-width);
+  @include font-size(map-get($input-large-font, "font-size"));
+  @include line-height(map-get($input-large-font, "line-height"));
+}
+
+.col-form-label-small {
+  padding-top: add($input-small-padding-y, $input-border-width);
+  padding-bottom: add($input-small-padding-y, $input-border-width);
+  @include font-size(map-get($input-small-font, "font-size"));
+  @include line-height(map-get($input-small-font, "line-height"));
+}

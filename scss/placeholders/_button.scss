@@ -1,0 +1,172 @@
+// scss-docs-start %button-states-class
+%button {
+
+  --#{$prefix}fg-color: var(--#{$prefix}button-idle-fg-color, var(--#{$prefix}fg-idle));
+  --#{$prefix}bg-color: var(--#{$prefix}button-idle-bg-color, var(--#{$prefix}bg-idle));
+  --#{$prefix}icon-color: var(--#{$prefix}button-idle-icon-color, var(--#{$prefix}fg-idle));
+  --#{$prefix}border-color: var(--#{$prefix}button-idle-border-color, var(--#{$prefix}border-idle));
+
+  &:hover {
+    --#{$prefix}fg-color: var(--#{$prefix}button-hover-fg-color, var(--#{$prefix}fg-hover));
+    --#{$prefix}bg-color: var(--#{$prefix}button-hover-bg-color, var(--#{$prefix}bg-hover));
+    --#{$prefix}icon-color: var(--#{$prefix}button-hover-icon-color, var(--#{$prefix}fg-hover));
+    --#{$prefix}border-color: var(--#{$prefix}button-hover-border-color, var(--#{$prefix}border-hover));
+
+    color: var(--#{$prefix}fg-color);
+    text-decoration: if($link-hover-decoration == underline, none, null);
+
+    .button-check + & {
+      // override for the checkbox/radio buttons
+      --#{$prefix}fg-color: var(--#{$prefix}fg-idle);
+      --#{$prefix}bg-color: var(--#{$prefix}bg-idle);
+      --#{$prefix}border-color: var(--#{$prefix}border-idle);
+    }
+  }
+
+  &:focus-visible {
+    --#{$prefix}fg-color: var(--#{$prefix}fg-hover);
+    --#{$prefix}border-color: var(--#{$prefix}border-hover);
+    @include gradient-bg(var(--#{$prefix}bg-hover));
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-component-shadows {
+      box-shadow: var(--#{$prefix}box-shadow), var(--#{$prefix}focus-box-shadow);
+    } @else {
+      box-shadow: var(--#{$prefix}focus-box-shadow);
+    }
+  }
+
+  .button-check:focus-visible + & {
+    --#{$prefix}border-color: var(--#{$prefix}hover-border-color);
+    outline: 0;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-component-shadows {
+      box-shadow: var(--#{$prefix}box-shadow), var(--#{$prefix}focus-box-shadow);
+    } @else {
+      box-shadow: var(--#{$prefix}focus-box-shadow);
+    }
+  }
+
+  &[data-cx-toggle="button"]:not(.active) {
+    &.default,
+    &.alternate {
+      border-color: transparent;
+    }
+  }
+
+  .button-check:checked + &,
+  :not(.button-check) + &:active,
+  &:first-child:active,
+  &.active,
+  &.show {
+    --#{$prefix}fg-color: var(--#{$prefix}button-press-fg-color, var(--#{$prefix}fg-press));
+    --#{$prefix}bg-color: var(--#{$prefix}button-press-bg-color, var(--#{$prefix}bg-press));
+    --#{$prefix}icon-color: var(--#{$prefix}button-press-icon-color, var(--#{$prefix}fg-press));
+    --#{$prefix}border-color: var(--#{$prefix}button-press-border-color, var(--#{$prefix}border-press));
+    // Remove CSS gradients if they're enabled
+    background-image: if($enable-component-gradients, none, null);
+    @include box-shadow(var(--#{$prefix}press-shadow));
+
+    &:focus-visible {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-component-shadows {
+        box-shadow: var(--#{$prefix}press-shadow), var(--#{$prefix}focus-box-shadow);
+      } @else {
+        box-shadow: var(--#{$prefix}focus-box-shadow);
+      }
+    }
+  }
+
+  .button-check:checked:focus-visible + & {
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-component-shadows {
+      box-shadow: var(--#{$prefix}press-shadow), var(--#{$prefix}focus-box-shadow);
+    } @else {
+      box-shadow: var(--#{$prefix}focus-box-shadow);
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    --#{$prefix}fg-color: var(--#{$prefix}button-disabled-fg-color, var(--#{$prefix}fg-disabled));
+    --#{$prefix}bg-color: var(--#{$prefix}button-disabled-bg-color, var(--#{$prefix}bg-disabled));
+    --#{$prefix}icon-color: var(--#{$prefix}button-disabled-icon-color, var(--#{$prefix}fg-disabled));
+    --#{$prefix}border-color: var(--#{$prefix}button-disabled-border-color, var(--#{$prefix}border-disabled));
+    pointer-events: none;
+    background-image: if($enable-component-gradients, none, null);
+    opacity: var(--#{$prefix}opacity-disabled);
+    @include box-shadow(none);
+  }
+
+  //
+  // Link buttons
+  //
+
+  // Make a button look and behave like a link
+  &.link {
+    --#{$prefix}font-weight: #{$font-weight-normal};
+    --#{$prefix}fg-color: #{$button-link-color};
+    --#{$prefix}bg-color: transparent;
+    --#{$prefix}border-color: transparent;
+    --#{$prefix}hover-fg-color: #{$button-hover-color};
+    --#{$prefix}hover-border-color: transparent;
+    --#{$prefix}press-fg-color: #{$button-hover-color};
+    --#{$prefix}press-border-color: transparent;
+    --#{$prefix}disabled-fg-color: #{$fg-subtle};
+    --#{$prefix}disabled-border-color: transparent;
+    --#{$prefix}box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
+
+    text-decoration: $link-decoration;
+    @if $enable-component-gradients {
+      background-image: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:focus-visible {
+      color: var(--#{$prefix}fg-color);
+    }
+
+  }
+
+  @if ($enable-visited-links) {
+    &:visited {
+      color: var(--#{$prefix}fg-color);
+    }
+  }
+
+}
+
+// scss-docs-start button-placeholder-selectors
+// scss-docs-start solid-button-placeholder-selector
+%solid-context-button {
+  @each $color in map-keys($context-colors) {
+    &.#{$color} {
+      @include solid-button($color);
+    }
+  }
+}
+// scss-docs-end solid-button-placeholder-selector
+// scss-docs-start outline-button-placeholder-selector
+%outline-context-button {
+  @each $color in map-keys($context-colors) {
+    &.#{$color} {
+      @include outline-button($color);
+    }
+  }
+}
+// scss-docs-end outline-button-placeholder-selector
+// scss-docs-start smooth-button-placeholder-selector
+%smooth-context-button {
+  @each $color in map-keys($context-colors) {
+    &.#{$color} {
+      @include smooth-button($color);
+    }
+  }
+}
+// scss-docs-end smooth-button-placeholder-selector
+// scss-docs-end button-placeholder-selectors

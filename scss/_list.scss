@@ -1,0 +1,182 @@
+// Individual list items
+//
+// Use on `li`s or `div`s within the `.list-group` parent.
+
+.list-item {
+
+  --#{$prefix}padding-y: var(--#{$prefix}list-padding-y, #{$list-padding-y});
+  --#{$prefix}padding-x: var(--#{$prefix}list-padding-x, #{$list-padding-x});
+  --#{$prefix}fg-color: var(--#{$prefix}list-fg-color, #{$list-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}list-bg-color, #{$list-bg-color});
+  --#{$prefix}fg-active: var(--#{$prefix}list-fg-active, #{$list-active-fg-color});
+  --#{$prefix}bg-active: var(--#{$prefix}list-bg-active, #{$list-active-bg-color});
+  --#{$prefix}border-active: var(--#{$prefix}list-border-active, #{$list-active-border-color});
+  --#{$prefix}border-color: var(--#{$prefix}list-border-color, #{$list-border-color});
+  --#{$prefix}item-border-color: var(--#{$prefix}list-item-border-color, #{$list-border-color});
+  --#{$prefix}border-width: var(--#{$prefix}list-border-width, #{$list-border-width});
+  --#{$prefix}border-radius: var(--#{$prefix}list-border-radius, #{$list-border-radius});
+
+  position: relative;
+  display: block;
+  padding: var(--#{$prefix}padding-y) var(--#{$prefix}padding-x);
+  color: var(--#{$prefix}fg-color);
+  text-decoration: if($link-decoration == none, null, none);
+  background-color: var(--#{$prefix}bg-color);
+  border: var(--#{$prefix}border-width) solid var(--#{$prefix}item-border-color);
+
+  &:first-child {
+    @include border-top-radius(inherit);
+  }
+
+  &:last-child {
+    @include border-bottom-radius(inherit);
+  }
+
+  &.disabled,
+  &:disabled {
+    --#{$prefix}fg-color: var(--#{$prefix}list-fg-disabled, #{$list-disabled-fg-color});
+    --#{$prefix}bg-color: var(--#{$prefix}list-bg-disabled, #{$list-disabled-bg-color});
+    pointer-events: none;
+  }
+
+  // &:visited:not(.disabled) {
+  //   color: var(--#{$prefix}fg-color);
+  // }
+
+  &.active,
+  &.active:hover {
+    // @extend %solid-context;
+    // --#{$prefix}fg-color: var(--#{$prefix}fg-active);
+    // --#{$prefix}bg-color: var(--#{$prefix}bg-active);
+    //--#{$prefix}fg-subtle: color-mix(in srgb, var(--#{$prefix}fg-active) #{calc(var(--#{$prefix}opacity-fg-subtle) * 100%)}, transparent);
+    z-index: 2; // Place active items above their siblings for proper border styling
+  }
+
+  // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
+  & + .list-item {
+    border-top-width: 0;
+
+    &.active {
+      margin-top: calc(-1 * var(--#{$prefix}border-width)); // stylelint-disable-line function-disallowed-list
+      border-top-width: var(--#{$prefix}border-width);
+    }
+  }
+}
+
+// Group class
+//
+// Easily usable on <ul>, <ol>, or <div>.
+
+.list-group {
+
+  display: flex;
+  flex-direction: column;
+
+  // No need to set list-style: none; since .list-group-item is block level
+  padding-left: 0; // reset padding because ul and ol
+  margin-bottom: 0;
+  @include border-radius(var(--#{$prefix}border-radius));
+}
+
+.list-numbered {
+  list-style-type: none;
+  counter-reset: section;
+
+  > .list-item::before {
+    // Increments only this instance of the section counter
+    content: counters(section, ".") ". ";
+    counter-increment: section;
+  }
+}
+
+// Interactive list items
+//
+// Use anchor or button elements instead of `li`s or `div`s to create interactive
+// list items. Includes an extra `.active` modifier class for selected items.
+
+.list-group.list-action > .list-item,
+.list-group > .list-item.list-action {
+  @extend %interactive;
+  &.active,
+  &.active:hover {
+    @extend %active-component;
+  }
+
+}
+
+// Horizontal
+//
+// Change the layout of list group items from vertical (default) to horizontal.
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .list-horizontal#{$infix} {
+      flex-direction: row;
+
+      > .list-item {
+        &:first-child:not(:last-child) {
+          @include border-bottom-start-radius(var(--#{$prefix}border-radius));
+          @include border-top-end-radius(0);
+        }
+
+        &:last-child:not(:first-child) {
+          @include border-top-end-radius(var(--#{$prefix}border-radius));
+          @include border-bottom-start-radius(0);
+        }
+
+        &.active {
+          margin-top: 0;
+        }
+
+        + .list-item {
+          border-top-width: var(--#{$prefix}border-width);
+          border-left-width: 0;
+
+          &.active {
+            margin-left: calc(-1 * var(--#{$prefix}border-width)); // stylelint-disable-line function-disallowed-list
+            border-left-width: var(--#{$prefix}border-width);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Flush list items
+//
+// Remove borders and border-radius to keep list group items edge-to-edge. Most
+// useful within other components (e.g., cards).
+
+.list-flush {
+  @include border-radius(0);
+
+  > .list-item {
+    border-width: 0 0 var(--#{$prefix}border-width);
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+}
+
+// Plain list items
+//
+// Similar to flush, also removes horizontal padding. Most
+// useful as main contents (e.g., search results).
+
+.list-plain {
+  @include border-radius(0);
+
+  > .list-item {
+    padding: var(--#{$prefix}padding-y) 0;
+    border-width: 0 0 var(--#{$prefix}border-width);
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+}
+

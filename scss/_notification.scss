@@ -1,0 +1,49 @@
+.notification {
+
+  @extend %context, %basic-context, %component;
+
+  --#{$prefix}padding-y: var(--#{$prefix}notification-padding-y, #{$notification-padding-y});
+  --#{$prefix}padding-x: var(--#{$prefix}notification-padding-x, #{$notification-padding-x});
+  --#{$prefix}gap: var(--#{$prefix}notification-gap, #{$notification-gap});
+  --#{$prefix}border-width: var(--#{$prefix}notification-border-width, #{$notification-border-width});
+  --#{$prefix}border-radius: var(--#{$prefix}notification-border-radius, #{$notification-border-radius});
+  @include map-font($notification-message-font, notification);
+  @include map-font($notification-title-font, notification-title, title);
+
+  position: relative;
+  box-sizing: content-box;
+  gap: var(--#{$prefix}gap);
+  margin-bottom: var(--#{$prefix}notification-margin-b, #{$notification-margin-b});
+  @include box-padding();
+
+  &.solid {
+    @extend %solid-context;
+  }
+
+  .close-button {
+    position: absolute;
+    top: $notification-padding-x * .5;
+    right: $notification-padding-x * .5;
+  }
+
+  @include last-child();
+
+  a {
+    font-weight: var(--#{$prefix}font-weight-strong);
+  }
+
+  &:has(.close-button) {
+    padding-right: add($notification-padding-x * 2, $close-button-medium-size);
+  }
+
+}
+
+.notification-title {
+  margin-bottom: var(--#{$prefix}notification-title-margin-b, #{$notification-title-margin-b});
+  @include font(title);
+}
+
+.notification-icon {
+  --#{$prefix}icon-color: var(--#{$prefix}notification-icon-color, #{$notification-icon-color});
+  --#{$prefix}icon-size: var(--#{$prefix}notification-icon-size, #{$notification-icon-size});
+}

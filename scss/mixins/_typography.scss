@@ -1,0 +1,93 @@
+// stylelint-disable property-disallowed-list
+// Get font-family from a font-map.
+// scss-docs-start map-font-family-mixin
+@mixin map-font-family($font-map, $comp: false, $child: false, $prop: false) {
+  $value: map-get($font-map, "font-family");
+  $css-var: if($prop, "", "--#{$prefix}");
+  $child-var: if($child, "#{$child}-", "");
+  $comp-var: if($comp, "#{$comp}-", "");
+  #{$css-var}#{$child-var}font-family: var(#{$css-var}#{$comp-var}font-family, $value);
+}
+// scss-docs-end map-font-family-mixin
+
+// Get font-size from a font-map.
+// scss-docs-start map-font-size-mixin
+@mixin map-font-size($font-map, $comp: false, $child: false, $prop: false) {
+  $value: map-get($font-map, "font-size");
+  $css-var: if($prop, "", "--#{$prefix}");
+  $child-var: if($child, "#{$child}-", "");
+  $comp-var: if($comp, "#{$comp}-", "");
+  #{$css-var}#{$child-var}font-size: var(#{$css-var}#{$comp-var}font-size, $value);
+}
+// scss-docs-end map-font-size-mixin
+
+// Get font-weight from a font-map.
+// scss-docs-start map-font-weight-mixin
+@mixin map-font-weight($font-map, $comp: false, $child: false, $prop: false) {
+  $value: map-get($font-map, "font-weight");
+  $css-var: if($prop, "", "--#{$prefix}");
+  $child-var: if($child, "#{$child}-", "");
+  $comp-var: if($comp, "#{$comp}-", "");
+  #{$css-var}#{$child-var}font-weight: var(#{$css-var}#{$comp-var}font-weight, $value);
+}
+// scss-docs-end map-font-size-mixin
+
+// Get font-weight from a font-map.
+// scss-docs-start map-font-weight-mixin
+@mixin map-line-height($font-map, $comp: false, $child: false, $prop: false) {
+  $value: map-get($font-map, "line-height");
+  $css-var: if($prop, "", "--#{$prefix}");
+  $child-var: if($child, "#{$child}-", "");
+  $comp-var: if($comp, "#{$comp}-", "");
+  #{$css-var}#{$child-var}line-height: var(#{$css-var}#{$comp-var}line-height, $value);
+}
+// scss-docs-end map-font-size-mixin
+
+// Get font-set from a font-map
+// scss-docs-start font-map-mixin
+@mixin map-font($font-map, $comp: false, $child: false, $prop: false) {
+  @include map-font-family($font-map, $comp, $child, $prop);
+  @include map-font-size($font-map, $comp, $child, $prop);
+  @include map-font-weight($font-map, $comp, $child, $prop);
+  @include map-line-height($font-map, $comp, $child, $prop);
+}
+// scss-docs-end font-map-mixin
+
+// Assign typography properties regarding to CSS variables
+// scss-docs-start typography-mixin
+@mixin font($comp: null, $short: true) {
+  $font-family: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}font-family);
+  $font-size: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}font-size);
+  $font-weight: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}font-weight);
+  $line-height: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}line-height);
+
+  @if $short {
+    font: $font-weight $font-size / $line-height $font-family;
+  } @else {
+    font-family: $font-family;
+    font-size: $font-size; // stylelint-disable-line
+    font-weight: $font-weight;
+    line-height: $line-height;
+  }
+}
+// scss-docs-end typography-mixin
+
+// Assigns font-size property by given $value or component variable.
+// scss-docs-start font-size-mixin
+@mixin font-size($value: null, $comp: null) {
+  @if not $value {
+    $value: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}font-size);
+  }
+  @include rfs($value, font-size);
+}
+// scss-docs-end font-size-mixin
+
+// Assigns line-height property by given $value or component variable.
+// scss-docs-start line-height-mixin
+@mixin line-height($value: null, $comp: null) {
+  @if not $value {
+    $value: 1.5;
+  }
+  @include rfs($value, line-height);
+}
+// scss-docs-end line-height-mixin

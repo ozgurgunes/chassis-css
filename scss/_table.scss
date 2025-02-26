@@ -1,0 +1,162 @@
+//
+// Basic table
+//
+
+.table {
+  // End of reset
+  --#{$prefix}padding-y: var(--#{$prefix}table-cell-padding-y, #{$table-cell-padding-y});
+  --#{$prefix}padding-x: var(--#{$prefix}table-cell-padding-x, #{$table-cell-padding-x});
+  --#{$prefix}fg-color: var(--#{$prefix}table-fg-color, #{$table-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}table-bg-color, #{$table-bg-color});
+  --#{$prefix}border-color: var(--#{$prefix}table-border-color, #{$table-border-color});
+
+  width: 100%;
+  margin-bottom: $spacer;
+  vertical-align: $table-cell-vertical-align;
+  border-color: var(--#{$prefix}border-color);
+
+  // Target th & td
+  // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `.table` class.
+  // We use the universal selectors here to simplify the selector (else we would need 6 different selectors).
+  // Another advantage is that this generates less code and makes the selector less specific making it easier to override.
+  // stylelint-disable-next-line selector-max-universal
+  > :not(caption) > * > * {
+    padding: var(--#{$prefix}padding-y) var(--#{$prefix}padding-x);
+    color: var(--#{$prefix}fg-color);
+    background-color: var(--#{$prefix}bg-color);
+    // border-color: var(--#{$prefix}border-color);
+    border-bottom-width: var(--#{$prefix}border-width);
+    box-shadow: inset 0 0 0 9999px var(--#{$prefix}bg-color);
+
+  }
+
+  .text-center > * {
+    justify-self: center;
+  }
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  > thead {
+    --#{$prefix}fg-color: var(--#{$prefix}table-th-fg-color, #{$table-th-fg-color});
+    --#{$prefix}bg-color: var(--#{$prefix}table-th-bg-color, #{$table-th-bg-color});
+    vertical-align: middle;
+  }
+
+  //
+  // Condensed table w/ reduces padding and font size.
+  //
+  &.small {
+    --#{$prefix}padding-y: var(--#{$prefix}table-cell-padding-y-small, #{$table-cell-padding-y-small});
+    --#{$prefix}padding-x: var(--#{$prefix}table-cell-padding-x-small, #{$table-cell-padding-x-small});
+    --#{$prefix}font-size: var(--#{$prefix}font-size-small);
+    --#{$prefix}line-height: var(--#{$prefix}line-height-small);
+    // stylelint-disable-next-line selector-max-universal
+    > :not(caption) > * > * {
+      // padding: $table-cell-padding-y-small $table-cell-padding-x-small;
+      font-size: var(--#{$prefix}font-size-small); // stylelint-disable-line
+      line-height: var(--#{$prefix}line-height-small);
+    }
+  }
+
+  // Border versions
+  //
+  // Add or remove borders all around the table and between all the columns.
+  //
+  // When borders are added on all sides of the cells, the corners can render odd when
+  // these borders do not have the same color or if they are semi-transparent.
+  // Therefore we add top and border bottoms to the `tr`s and left and right borders
+  // to the `td`s or `th`s
+
+  &.bordered {
+    > :not(caption) > * {
+      border-width: $table-border-width 0;
+
+      // stylelint-disable-next-line selector-max-universal
+      > * {
+        border-width: 0 $table-border-width;
+      }
+    }
+  }
+
+  &.borderless {
+    // stylelint-disable-next-line selector-max-universal
+    > :not(caption) > * > *:not(input) {
+      border-bottom-width: 0;
+    }
+
+    > :not(:first-child) {
+      border-top-width: 0;
+    }
+  }
+
+  // Zebra-striping
+  //
+  // Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+  // For rows
+  &.striped {
+    > tbody > tr:nth-of-type(#{$table-striped-order}) > * {
+      --#{$prefix}fg-color: var(--#{$prefix}table-striped-fg-color, #{$table-striped-fg-color});
+      --#{$prefix}bg-color: var(--#{$prefix}table-striped-bg-color, #{$table-striped-bg-color});
+    }
+  }
+
+  // For columns
+  &.striped-columns {
+    > :not(caption) > tr > :nth-child(#{$table-striped-columns-order}) {
+      --#{$prefix}fg-color: var(--#{$prefix}table-striped-fg-color, #{$table-striped-fg-color});
+      --#{$prefix}bg-color: var(--#{$prefix}table-striped-bg-color, #{$table-striped-bg-color});
+    }
+  }
+
+  // Hover effect
+  //
+  // Placed here since it has to come after the potential zebra striping
+
+  &.hoverable {
+    > tbody > tr:hover > * {
+      --#{$prefix}fg-color: var(--#{$prefix}table-hover-fg-color, #{$table-hover-fg-color});
+      --#{$prefix}bg-color: var(--#{$prefix}table-hover-bg-color, #{$table-hover-bg-color});
+    }
+  }
+
+  // Active table
+  //
+  // The `.table-active` class can be added to highlight rows or cells
+
+  .active {
+    --#{$prefix}fg-color: var(--#{$prefix}table-active-fg-color, #{$table-active-fg-color});
+    --#{$prefix}bg-color: var(--#{$prefix}table-active-bg-color, #{$table-active-bg-color});
+  }
+
+}
+
+.table-divider {
+  border-top: calc(#{$table-border-width} * 2) solid $table-group-separator-color; // stylelint-disable-line function-disallowed-list
+}
+
+//
+// Change placement of captions with a class
+//
+
+.caption-top {
+  caption-side: top;
+}
+
+// Table variants
+//
+// Table variants set the table cell backgrounds, border colors
+// and the colors of the striped, hovered & active tables
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @include media-breakpoint-down($breakpoint) {
+    .table-responsive#{$infix} {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

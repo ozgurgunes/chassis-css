@@ -1,0 +1,230 @@
+// Typography maps
+// scss-docs-start font-families-map
+$font-families: (
+  "text":           $font-family-text,
+  "display":        $font-family-display,
+  "code":           $font-family-code,
+  "html":           $font-family-html,
+) !default;
+// scss-docs-end font-families-map
+
+// scss-docs-start font-sizes-map
+$font-sizes: (
+  "5xlarge":        $font-size-5xlarge,
+  "4xlarge":        $font-size-4xlarge,
+  "3xlarge":        $font-size-3xlarge,
+  "2xlarge":        $font-size-2xlarge,
+  "xlarge":         $font-size-xlarge,
+  "large":          $font-size-large,
+  "medium":         $font-size-medium,
+  "small":          $font-size-small,
+  "xsmall":         $font-size-xsmall,
+  "2xsmall":        $font-size-2xsmall,
+  "h1":             $h1-font-size,
+  "h2":             $h2-font-size,
+  "h3":             $h3-font-size,
+  "h4":             $h4-font-size,
+  "h5":             $h5-font-size,
+  "h6":             $h6-font-size,
+) !default;
+// scss-docs-end font-sizes-map
+
+
+// scss-docs-start font-weights-map
+$font-weights: (
+  "normal":         $font-weight-normal,
+  "strong":         $font-weight-strong,
+  "mass":           $font-weight-mass,
+  "elegant":        $font-weight-elegant,
+) !default;
+// scss-docs-end font-weights-map
+
+// scss-docs-start line-heights-map
+$line-heights: (
+  "5xlarge":        $line-height-5xlarge,
+  "4xlarge":        $line-height-4xlarge,
+  "3xlarge":        $line-height-3xlarge,
+  "2xlarge":        $line-height-2xlarge,
+  "xlarge":         $line-height-xlarge,
+  "large":          $line-height-large,
+  "medium":         $line-height-medium,
+  "small":          $line-height-small,
+  "xsmall":         $line-height-xsmall,
+  "2xsmall":        $line-height-2xsmall,
+  "h1":             $h1-line-height,
+  "h2":             $h2-line-height,
+  "h3":             $h3-line-height,
+  "h4":             $h4-line-height,
+  "h5":             $h5-line-height,
+  "h6":             $h6-line-height,
+  "body":           $body-line-height,
+  "p":              $paragraph-line-height,
+  "code":           $code-line-height,
+  "blockquote":     $blockquote-line-height,
+  "cite":           $cite-line-height,
+  "list":           $list-line-height,
+) !default;
+// scss-docs-end line-heights-map
+
+// scss-docs-start text-font-sizes-map
+$text-font-sizes: (
+  "font-size-text-5xlarge":     $font-size-text-5xlarge,
+  "font-size-text-4xlarge":     $font-size-text-4xlarge,
+  "font-size-text-3xlarge":     $font-size-text-3xlarge,
+  "font-size-text-2xlarge":     $font-size-text-2xlarge,
+  "font-size-text-xlarge":      $font-size-text-xlarge,
+  "font-size-text-large":       $font-size-text-large,
+  "font-size-text-medium":      $font-size-text-medium,
+  "font-size-text-small":       $font-size-text-small,
+  "font-size-text-xsmall":      $font-size-text-xsmall,
+  "font-size-text-2xsmall":     $font-size-text-2xsmall,
+) !default;
+// scss-docs-end text-font-sizes-map
+
+// scss-docs-start text-font-weights-map
+$text-font-weights: (
+  "font-weight-text-normal":    $font-weight-text-normal,
+  "font-weight-text-strong":    $font-weight-text-strong,
+  "font-weight-text-mass":      $font-weight-text-mass,
+  "font-weight-text-elegant":   $font-weight-text-elegant,
+) !default;
+// scss-docs-end text-font-weights-map
+
+// scss-docs-start text-line-heights-map
+$text-line-heights: (
+  "line-height-text-5xlarge":   $line-height-text-5xlarge,
+  "line-height-text-4xlarge":   $line-height-text-4xlarge,
+  "line-height-text-3xlarge":   $line-height-text-3xlarge,
+  "line-height-text-2xlarge":   $line-height-text-2xlarge,
+  "line-height-text-xlarge":    $line-height-text-xlarge,
+  "line-height-text-large":     $line-height-text-large,
+  "line-height-text-medium":    $line-height-text-medium,
+  "line-height-text-small":     $line-height-text-small,
+  "line-height-text-xsmall":    $line-height-text-xsmall,
+  "line-height-text-2xsmall":   $line-height-text-2xsmall,
+) !default;
+// scss-docs-end text-line-heights-map
+
+// scss-docs-start display-font-sizes-map
+$display-font-sizes: (
+  "font-size-display-5xlarge":  $font-size-display-5xlarge,
+  "font-size-display-4xlarge":  $font-size-display-4xlarge,
+  "font-size-display-3xlarge":  $font-size-display-3xlarge,
+  "font-size-display-2xlarge":  $font-size-display-2xlarge,
+  "font-size-display-xlarge":   $font-size-display-xlarge,
+  "font-size-display-large":    $font-size-display-large,
+  "font-size-display-medium":   $font-size-display-medium,
+  "font-size-display-small":    $font-size-display-small,
+  "font-size-display-xsmall":   $font-size-display-xsmall,
+  "font-size-display-2xsmall":  $font-size-display-2xsmall,
+) !default;
+// scss-docs-end display-font-sizes-map
+
+// scss-docs-start display-font-weights-map
+$display-font-weights: (
+  "font-weight-display-normal":       $font-weight-display-normal,
+  "font-weight-display-strong":       $font-weight-display-strong,
+  "font-weight-display-mass":         $font-weight-display-mass,
+  "font-weight-display-elegant":      $font-weight-display-elegant,
+) !default;
+// scss-docs-end display-font-weights-map
+
+// scss-docs-start display-line-heights-map
+$display-line-heights: (
+  "line-height-display-5xlarge":  $line-height-display-5xlarge,
+  "line-height-display-4xlarge":  $line-height-display-4xlarge,
+  "line-height-display-3xlarge":  $line-height-display-3xlarge,
+  "line-height-display-2xlarge":  $line-height-display-2xlarge,
+  "line-height-display-xlarge":   $line-height-display-xlarge,
+  "line-height-display-large":    $line-height-display-large,
+  "line-height-display-medium":   $line-height-display-medium,
+  "line-height-display-small":    $line-height-display-small,
+  "line-height-display-xsmall":   $line-height-display-xsmall,
+  "line-height-display-2xsmall":  $line-height-display-2xsmall,
+) !default;
+// scss-docs-end display-line-heights-map
+
+// scss-docs-start html-font-sizes-map
+$html-font-sizes: (
+  "font-size-html-body":          $font-size-html-body,
+  "font-size-html-h1":            $font-size-html-h1,
+  "font-size-html-h2":            $font-size-html-h2,
+  "font-size-html-h3":            $font-size-html-h3,
+  "font-size-html-h4":            $font-size-html-h4,
+  "font-size-html-h5":            $font-size-html-h5,
+  "font-size-html-h6":            $font-size-html-h6,
+  "font-size-html-paragraph":     $font-size-html-paragraph,
+  "font-size-html-blockquote":    $font-size-html-blockquote,
+  "font-size-html-cite":          $font-size-html-cite,
+  "font-size-html-code":          $font-size-html-code,
+  "font-size-html-list":          $font-size-html-list,
+) !default;
+// scss-docs-end html-font-sizes-map
+
+// scss-docs-start html-font-weights-map
+$html-font-weights: (
+  "font-weight-html-body":            $font-weight-html-paragraph,
+  "font-weight-html-heading":         $font-weight-html-heading,
+  "font-weight-html-paragraph":       $font-weight-html-paragraph,
+  "font-weight-html-blockquote":      $font-weight-html-blockquote,
+  "font-weight-html-cite":            $font-weight-html-cite,
+  "font-weight-html-list":            $font-weight-html-list,
+  "font-weight-html-code":            $font-weight-html-code,
+) !default;
+// scss-docs-end html-font-weights-map
+
+// scss-docs-start html-line-heights-map
+$html-line-heights: (
+  "line-height-html-body":           $line-height-html-body,
+  "line-height-html-h1":             $line-height-html-h1,
+  "line-height-html-h2":             $line-height-html-h2,
+  "line-height-html-h3":             $line-height-html-h3,
+  "line-height-html-h4":             $line-height-html-h4,
+  "line-height-html-h5":             $line-height-html-h5,
+  "line-height-html-h6":             $line-height-html-h6,
+  "line-height-html-paragraph":      $line-height-html-paragraph,
+  "line-height-html-blockquote":     $line-height-html-blockquote,
+  "line-height-html-cite":           $line-height-html-cite,
+  "line-height-html-list":           $line-height-html-list,
+  "line-height-html-code":           $line-height-html-code,
+) !default;
+// scss-docs-end html-line-heights-map
+
+// scss-docs-start code-font-sizes-map
+$code-font-sizes: (
+  "font-size-code-large":             $font-size-code-large,
+  "font-size-code-medium":            $font-size-code-medium,
+  "font-size-code-small":             $font-size-code-small,
+) !default;
+// scss-docs-end code-font-sizes-map
+
+// scss-docs-start code-font-weights-map
+$code-font-weights: (
+  "font-weight-code-large":           $font-weight-code-normal,
+  "font-weight-code-medium":          $font-weight-code-strong,
+) !default;
+// scss-docs-end code-font-weights-map
+
+// scss-docs-start code-line-heights-map
+$code-line-heights: (
+  "line-heights-code-large":             $font-size-code-large,
+  "line-heights-code-medium":            $font-size-code-medium,
+  "line-heights-code-small":             $font-size-code-small,
+) !default;
+// scss-docs-end code-line-heights-map
+
+$typography: map-merge-multiple(
+  $text-font-sizes,
+  $text-font-weights,
+  $text-line-heights,
+  $display-font-sizes,
+  $display-font-weights,
+  $display-line-heights,
+  $html-font-sizes,
+  $html-font-weights,
+  $html-line-heights,
+  $code-font-sizes,
+  $code-font-weights,
+  $code-line-heights,
+) !default;
+

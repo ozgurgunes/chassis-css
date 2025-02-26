@@ -1,0 +1,8 @@
+//
+// Form text
+//
+
+.form-text {
+  margin-top: $form-text-margin-top;
+  @include font();
+}

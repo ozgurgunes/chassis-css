@@ -1,0 +1,140 @@
+//
+// Headings
+//
+.h1 {
+  @extend h1;
+}
+
+.h2 {
+  @extend h2;
+}
+
+.h3 {
+  @extend h3;
+}
+
+.h4 {
+  @extend h4;
+}
+
+.h5 {
+  @extend h5;
+}
+
+.h6 {
+  @extend h6;
+}
+
+
+.lead {
+  @include map-font($lead-font, lead);
+  @include font();
+}
+
+.title {
+  @include map-font($title-font, title);
+  @include font();
+}
+
+// Type display classes
+// TODO: Set proper line-height according to font-size.
+@each $display, $font-size in $display-font-sizes {
+  .display-#{$display} {
+    font-family: $display-font-family;
+    @include font-size($font-size);
+    font-style: $display-font-style;
+    font-weight: $display-font-weight;
+    @include line-height($display-line-height);
+  }
+}
+
+//
+// Emphasis
+//
+// .small {
+//   @extend small;
+// }
+
+// .mark {
+//   @extend mark;
+// }
+
+//
+// Lists
+//
+// stylelint-disable
+ul,
+ol {
+  &.bulletless {
+    @include bulletless();
+  }
+  &.inline {
+    @include bulletless();
+
+    li {
+      display: inline-block;
+    
+      &:not(:last-child) {
+        margin-right: $list-inline-padding;
+      }
+    }    
+  }    
+}
+// stylelint-enable
+
+// Inline turns list items into inline-block
+
+//
+// Misc
+//
+
+// Builds on `abbr`
+.initialism {
+  --#{$prefix}font-size: #{$initialism-font-size};
+  --#{$prefix}line-height: #{$initialism-line-height};
+  @include font-size();
+  @include line-height();
+  text-transform: uppercase;
+}
+
+// Blockquotes
+.blockquote {
+  @include map-font($blockquote-font);
+
+  margin-bottom: $blockquote-margin-y;
+  @include font();
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.blockquote-footer {
+  @include map-font($blockquote-footer-font);
+  margin-top: -$blockquote-margin-y;
+  margin-bottom: $blockquote-margin-y;
+  @include font();
+  color: $blockquote-footer-color;
+
+  &::before {
+    content: "\2014\00A0"; // em dash, nbsp
+  }
+}
+
+// Font sizes with line height
+//
+@each $name, $value in $font-sizes {
+  .font-#{$name} {
+    @include font-size(var(--#{$prefix}font-size-#{$name}));
+    @include line-height(var(--#{$prefix}line-height-#{$name}));
+  }
+}
+
+.font-smaller {
+  @include font-size($font-size-smaller);
+  @include line-height($line-height-smaller);
+}
+.font-larger {
+  @include font-size($font-size-larger);
+  @include line-height($line-height-larger);
+}

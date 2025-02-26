@@ -1,0 +1,61 @@
+// scss-docs-start component-placeholder-selector
+%component {
+
+  @include font();
+  @include colors();
+  @include border-radius();
+  @include border();
+
+}
+// scss-docs-end component-placeholder-selector
+
+// scss-docs-start typography-placeholder-selector
+%typography {
+
+  @include font();
+
+}
+// scss-docs-end component-placeholder-selectpr
+
+// scss-docs-start colors-placeholder-selector
+%colors {
+
+  @include colors();
+
+}
+// scss-docs-end component-placeholder-selectpr
+
+// scss-docs-start box-padding-placeholder-selector
+%box-padding {
+
+  box-sizing: var(--#{$prefix}box-sizing, content-box);
+  @include box-padding();
+
+}
+// scss-docs-end box-padding-placeholder-selector
+
+// scss-docs-start flex-gap-placeholder-selector
+%flex-gap {
+
+  display: flex;
+  gap: var(--#{$prefix}gap);
+
+}
+// scss-docs-end flex-gap-placeholder-selector
+
+// scss-docs-start border-placeholder-selector
+%border {
+
+  @include border();
+
+}
+// scss-docs-end border-placeholder-selector
+
+// scss-docs-start active-component-placeholder-selector
+%active-component {
+
+  @extend .primary, %context, %solid-context;
+  z-index: 2; // Place active items above their siblings for proper border styling
+
+}
+// scss-docs-end active-component-placeholder-selector
