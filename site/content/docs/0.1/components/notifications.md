@@ -169,7 +169,7 @@ You can see this in action with a live demo:
 {{< /example >}}
 
 {{< callout warning >}}
-When an notification is dismissed, the element is completely removed from the page structure. If a keyboard user dismisses the notification using the close button, their focus will suddenly be lost and, depending on the browser, reset to the start of the page/document. For this reason, we recommend including additional JavaScript that listens for the `closed.vl.notification` event and programmatically sets `focus()` to the most appropriate location in the page. If you're planning to move focus to a non-interactive element that normally does not receive focus, make sure to add `tabindex="-1"` to the element.
+When an notification is dismissed, the element is completely removed from the page structure. If a keyboard user dismisses the notification using the close button, their focus will suddenly be lost and, depending on the browser, reset to the start of the page/document. For this reason, we recommend including additional JavaScript that listens for the `closed.cx.notification` event and programmatically sets `focus()` to the most appropriate location in the page. If you're planning to move focus to a non-interactive element that normally does not receive focus, make sure to add `tabindex="-1"` to the element.
 {{< /callout >}}
 
 ## CSS
@@ -216,7 +216,7 @@ See the [triggers](#triggers) section for more details.
 You can create an notification instance with the notification constructor, for example:
 
 ```js
-const vlNotification = new chassis.Notification('#myNotification')
+const cxNotification = new chassis.Notification('#myNotification')
 ```
 
 This makes an notification listen for click events on descendant elements which have the `data-cx-dismiss="notification"` attribute. (Not necessary when using the data-api’s auto-initialization.)
@@ -244,13 +244,13 @@ Chassis - CSS's notification plugin exposes a few events for hooking into notifi
 {{< cx-table >}}
 | Event | Description |
 | --- | --- |
-| `close.vl.notification` | Fires immediately when the `close` instance method is called. |
-| `closed.vl.notification` | Fired when the notification has been closed and CSS transitions have completed. |
+| `close.cx.notification` | Fires immediately when the `close` instance method is called. |
+| `closed.cx.notification` | Fired when the notification has been closed and CSS transitions have completed. |
 {{< /cx-table >}}
 
 ```js
 const myNotification = document.getElementById('myNotification')
-myNotification.addEventListener('closed.vl.notification', event => {
+myNotification.addEventListener('closed.cx.notification', event => {
   // do something, for instance, explicitly move focus to the most appropriate element,
   // so it doesn't get lost/reset to the start of the page
   // document.getElementById('...').focus()

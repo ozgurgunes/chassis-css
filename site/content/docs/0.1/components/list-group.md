@@ -453,33 +453,33 @@ const bsTab = new chassis.Tab('#myTab')
 | `dispose` | Destroys an element's tab. |
 | `getInstance` | Static method which allows you to get the tab instance associated with a DOM element, you can use it like this: `chassis.Tab.getInstance(element)`. |
 | `getOrCreateInstance` | Static method which returns a tab instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `chassis.Tab.getOrCreateInstance(element)`. |
-| `show` | Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.vl.tab` event occurs). |
+| `show` | Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.cx.tab` event occurs). |
 {{< /cx-table >}}
 
 ### Events
 
 When showing a new tab, the events fire in the following order:
 
-1. `hide.vl.tab` (on the current active tab)
-2. `show.vl.tab` (on the to-be-shown tab)
-3. `hidden.vl.tab` (on the previous active tab, the same one as for the `hide.vl.tab` event)
-4. `shown.vl.tab` (on the newly-active just-shown tab, the same one as for the `show.vl.tab` event)
+1. `hide.cx.tab` (on the current active tab)
+2. `show.cx.tab` (on the to-be-shown tab)
+3. `hidden.cx.tab` (on the previous active tab, the same one as for the `hide.cx.tab` event)
+4. `shown.cx.tab` (on the newly-active just-shown tab, the same one as for the `show.cx.tab` event)
 
-If no tab was already active, then the `hide.vl.tab` and `hidden.vl.tab` events will not be fired.
+If no tab was already active, then the `hide.cx.tab` and `hidden.cx.tab` events will not be fired.
 
 {{< cx-table >}}
 | Event type | Description |
 | --- | --- |
-| `hide.vl.tab` | This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use `event.target` and `event.relatedTarget` to target the current active tab and the new soon-to-be-active tab, respectively. |
-| `hidden.vl.tab` | This event fires after a new tab is shown (and thus the previous active tab is hidden). Use `event.target` and `event.relatedTarget` to target the previous active tab and the new active tab, respectively. |
-| `show.vl.tab` | This event fires on tab show, but before the new tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
-| `shown.vl.tab` | This event fires on tab show after a tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
+| `hide.cx.tab` | This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use `event.target` and `event.relatedTarget` to target the current active tab and the new soon-to-be-active tab, respectively. |
+| `hidden.cx.tab` | This event fires after a new tab is shown (and thus the previous active tab is hidden). Use `event.target` and `event.relatedTarget` to target the previous active tab and the new active tab, respectively. |
+| `show.cx.tab` | This event fires on tab show, but before the new tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
+| `shown.cx.tab` | This event fires on tab show after a tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
 {{< /cx-table >}}
 
 ```js
 const tabElms = document.querySelectorAll('a[data-cx-toggle="list"]')
 tabElms.forEach(tabElm => {
-  tabElm.addEventListener('shown.vl.tab', event => {
+  tabElm.addEventListener('shown.cx.tab', event => {
     event.target // newly activated tab
     event.relatedTarget // previous active tab
   })

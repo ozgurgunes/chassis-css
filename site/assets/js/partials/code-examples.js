@@ -65,7 +65,7 @@ export default () => {
     const originalTitle = event.trigger.title
 
     tooltipbutton.setContent({ '.tooltip-inner': 'Copied!' })
-    event.trigger.addEventListener('hidden.vl.tooltip', () => {
+    event.trigger.addEventListener('hidden.cx.tooltip', () => {
       tooltipbutton.setContent({ '.tooltip-inner': buttonTitle })
     }, { once: true })
     event.clearSelection()
@@ -83,7 +83,7 @@ export default () => {
     const tooltipbutton = chassis.Tooltip.getInstance(event.trigger)
 
     tooltipbutton.setContent({ '.tooltip-inner': fallbackMsg })
-    event.trigger.addEventListener('hidden.vl.tooltip', () => {
+    event.trigger.addEventListener('hidden.cx.tooltip', () => {
       tooltipbutton.setContent({ '.tooltip-inner': buttonTitle })
     }, { once: true })
   })

@@ -13,7 +13,7 @@ describe('Manipulator', () => {
   })
 
   describe('setDataAttribute', () => {
-    it('should set data attribute prefixed with vl', () => {
+    it('should set data attribute prefixed with cx', () => {
       fixtureEl.innerHTML = '<div></div>'
 
       const div = fixtureEl.querySelector('div')
@@ -34,13 +34,13 @@ describe('Manipulator', () => {
 
   describe('removeDataAttribute', () => {
     it('should only remove cx-prefixed data attribute', () => {
-      fixtureEl.innerHTML = '<div data-cx-key="value" data-key-vl="postfixed" data-key="value"></div>'
+      fixtureEl.innerHTML = '<div data-cx-key="value" data-key-cx="postfixed" data-key="value"></div>'
 
       const div = fixtureEl.querySelector('div')
 
       Manipulator.removeDataAttribute(div, 'key')
       expect(div.getAttribute('data-cx-key')).toBeNull()
-      expect(div.getAttribute('data-key-vl')).toEqual('postfixed')
+      expect(div.getAttribute('data-key-cx')).toEqual('postfixed')
       expect(div.getAttribute('data-key')).toEqual('value')
     })
 
@@ -60,24 +60,24 @@ describe('Manipulator', () => {
       expect().nothing()
     })
 
-    it('should get only cx-prefixed data attributes without vl namespace', () => {
-      fixtureEl.innerHTML = '<div data-cx-toggle="tavl" data-cx-target="#element" data-another="value" data-target-vl="#element" data-in-cx-out="in-between"></div>'
+    it('should get only cx-prefixed data attributes without cx namespace', () => {
+      fixtureEl.innerHTML = '<div data-cx-toggle="tabs" data-cx-target="#element" data-another="value" data-target-cx="#element" data-in-cx-out="in-between"></div>'
 
       const div = fixtureEl.querySelector('div')
 
       expect(Manipulator.getDataAttributes(div)).toEqual({
-        toggle: 'tavl',
+        toggle: 'tabs',
         target: '#element'
       })
     })
 
     it('should omit `cx-config` data attribute', () => {
-      fixtureEl.innerHTML = '<div data-cx-toggle="tavl" data-cx-target="#element" data-cx-config=\'{"testBool":false}\'></div>'
+      fixtureEl.innerHTML = '<div data-cx-toggle="tabs" data-cx-target="#element" data-cx-config=\'{"testBool":false}\'></div>'
 
       const div = fixtureEl.querySelector('div')
 
       expect(Manipulator.getDataAttributes(div)).toEqual({
-        toggle: 'tavl',
+        toggle: 'tabs',
         target: '#element'
       })
     })
@@ -85,7 +85,7 @@ describe('Manipulator', () => {
 
   describe('getDataAttribute', () => {
     it('should only get cx-prefixed data attribute', () => {
-      fixtureEl.innerHTML = '<div data-cx-key="value" data-test-vl="postFixed" data-toggle="tab"></div>'
+      fixtureEl.innerHTML = '<div data-cx-key="value" data-test-cx="postFixed" data-toggle="tab"></div>'
 
       const div = fixtureEl.querySelector('div')
 

@@ -1,5 +1,5 @@
 /*!
-  * Chassis tooltip.js v0.1.0 (https://design.chassis.com/)
+  * Chassis tooltip.js v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -352,7 +352,7 @@
       return index_js.execute(arg, [this._element]);
     }
     _getPopperConfig(attachment) {
-      const defaultBsPopperConfig = {
+      const defaultCxPopperConfig = {
         placement: attachment,
         modifiers: [{
           name: 'flip',
@@ -386,8 +386,8 @@
         }]
       };
       return {
-        ...defaultBsPopperConfig,
-        ...index_js.execute(this._config.popperConfig, [defaultBsPopperConfig])
+        ...defaultCxPopperConfig,
+        ...index_js.execute(this._config.popperConfig, [defaultCxPopperConfig])
       };
     }
     _setListeners() {

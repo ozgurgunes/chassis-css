@@ -414,11 +414,11 @@ const carousel = new chassis.Carousel(myCarouselElement, {
 | `dispose` | Destroys an element's carousel. (Removes stored data on the DOM element) |
 | `getInstance` | Static method which allows you to get the carousel instance associated to a DOM element. You can use it like this: `chassis.Carousel.getInstance(element)`. |
 | `getOrCreateInstance` | Static method which returns a carousel instance associated to a DOM element, or creates a new one in case it wasn't initialized. You can use it like this: `chassis.Carousel.getOrCreateInstance(element)`. |
-| `next` | Cycles to the next item. **Returns to the caller before the next item has been shown** (e.g., before the `slid.vl.carousel` event occurs). |
+| `next` | Cycles to the next item. **Returns to the caller before the next item has been shown** (e.g., before the `slid.cx.carousel` event occurs). |
 | `nextWhenVisible` | Don't cycle carousel to next when the page, the carousel, or the carousel's parent aren't visible. **Returns to the caller before the target item has been shown**. |
 | `pause` | Stops the carousel from cycling through items. |
-| `prev` | Cycles to the previous item. **Returns to the caller before the previous item has been shown** (e.g., before the `slid.vl.carousel` event occurs). |
-| `to` | Cycles the carousel to a particular frame (0 based, similar to an array). **Returns to the caller before the target item has been shown** (e.g., before the `slid.vl.carousel` event occurs). |
+| `prev` | Cycles to the previous item. **Returns to the caller before the previous item has been shown** (e.g., before the `slid.cx.carousel` event occurs). |
+| `to` | Cycles the carousel to a particular frame (0 based, similar to an array). **Returns to the caller before the target item has been shown** (e.g., before the `slid.cx.carousel` event occurs). |
 {{< /cx-table >}}
 
 ### Events
@@ -435,14 +435,14 @@ All carousel events are fired at the carousel itself (i.e. at the `<div class="c
 {{< cx-table >}}
 | Event type | Description |
 | --- | --- |
-| `slid.vl.carousel` | Fired when the carousel has completed its slide transition. |
-| `slide.vl.carousel` | Fires immediately when the `slide` instance method is invoked. |
+| `slid.cx.carousel` | Fired when the carousel has completed its slide transition. |
+| `slide.cx.carousel` | Fires immediately when the `slide` instance method is invoked. |
 {{< /cx-table >}}
 
 ```js
 const myCarousel = document.getElementById('myCarousel')
 
-myCarousel.addEventListener('slide.vl.carousel', event => {
+myCarousel.addEventListener('slide.cx.carousel', event => {
   // do something...
 })
 ```

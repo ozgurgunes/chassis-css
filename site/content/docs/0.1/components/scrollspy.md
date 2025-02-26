@@ -334,7 +334,7 @@ Target elements that aren’t visible will be ignored and their corresponding na
 
 ```js
 document.querySelectorAll('#nav-tab>[data-cx-toggle="tab"]').forEach(el => {
-  el.addEventListener('shown.vl.tab', () => {
+  el.addEventListener('shown.cx.tab', () => {
     const target = el.getAttribute('data-cx-target')
     const scrollElem = document.querySelector(`${target} [data-cx-spy="scroll"]`)
     chassis.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
@@ -416,12 +416,12 @@ dataSpyList.forEach(dataSpyEl => {
 {{< cx-table "table" >}}
 | Event | Description |
 | --- | --- |
-| `activate.vl.scrollspy` | This event fires on the scroll element whenever an anchor is activated by the scrollspy. |
+| `activate.cx.scrollspy` | This event fires on the scroll element whenever an anchor is activated by the scrollspy. |
 {{< /cx-table >}}
 
 ```js
 const firstScrollSpyEl = document.querySelector('[data-cx-spy="scroll"]')
-firstScrollSpyEl.addEventListener('activate.vl.scrollspy', () => {
+firstScrollSpyEl.addEventListener('activate.cx.scrollspy', () => {
   // do something...
 })
 ```

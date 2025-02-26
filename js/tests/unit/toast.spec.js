@@ -22,7 +22,7 @@ describe('Toast', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Toast.DATA_KEY).toEqual('vl.toast')
+      expect(Toast.DATA_KEY).toEqual('cx.toast')
     })
   })
 
@@ -53,7 +53,7 @@ describe('Toast', () => {
           delay: 1
         })
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           expect(toastEl).toHaveClass('show')
           resolve()
         })
@@ -73,7 +73,7 @@ describe('Toast', () => {
         const toastEl = fixtureEl.querySelector('div')
         const toast = new Toast(toastEl)
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           expect(toastEl).toHaveClass('show')
 
           const button = toastEl.querySelector('.btn-close')
@@ -81,7 +81,7 @@ describe('Toast', () => {
           button.click()
         })
 
-        toastEl.addEventListener('hidden.vl.toast', () => {
+        toastEl.addEventListener('hidden.cx.toast', () => {
           expect(toastEl).not.toHaveClass('show')
           resolve()
         })
@@ -130,7 +130,7 @@ describe('Toast', () => {
         const toastEl = fixtureEl.querySelector('.toast')
         const toast = new Toast(toastEl)
 
-        toastEl.addEventListener('hidden.vl.toast', () => {
+        toastEl.addEventListener('hidden.cx.toast', () => {
           expect(toastEl).not.toHaveClass('show')
           resolve()
         })
@@ -152,7 +152,7 @@ describe('Toast', () => {
         const toastEl = fixtureEl.querySelector('.toast')
         const toast = new Toast(toastEl)
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           expect(toastEl).not.toHaveClass('fade')
           resolve()
         })
@@ -181,12 +181,12 @@ describe('Toast', () => {
           }, 20)
         }
 
-        toastEl.addEventListener('show.vl.toast', event => {
+        toastEl.addEventListener('show.cx.toast', event => {
           event.preventDefault()
           assertDone()
         })
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           reject(new Error('shown event should not be triggered if show is prevented'))
         })
 
@@ -209,7 +209,7 @@ describe('Toast', () => {
 
         setTimeout(() => {
           toast._config.autohide = false
-          toastEl.addEventListener('shown.vl.toast', () => {
+          toastEl.addEventListener('shown.cx.toast', () => {
             expect(spy).toHaveBeenCalled()
             expect(toast._timeout).toBeNull()
             resolve()
@@ -424,11 +424,11 @@ describe('Toast', () => {
         const toastEl = fixtureEl.querySelector('.toast')
         const toast = new Toast(toastEl)
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           toast.hide()
         })
 
-        toastEl.addEventListener('hidden.vl.toast', () => {
+        toastEl.addEventListener('hidden.cx.toast', () => {
           expect(toastEl).not.toHaveClass('show')
           resolve()
         })
@@ -470,16 +470,16 @@ describe('Toast', () => {
           }, 20)
         }
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           toast.hide()
         })
 
-        toastEl.addEventListener('hide.vl.toast', event => {
+        toastEl.addEventListener('hide.cx.toast', event => {
           event.preventDefault()
           assertDone()
         })
 
-        toastEl.addEventListener('hidden.vl.toast', () => {
+        toastEl.addEventListener('hidden.cx.toast', () => {
           reject(new Error('hidden event should not be triggered if hide is prevented'))
         })
 
@@ -527,7 +527,7 @@ describe('Toast', () => {
           resolve()
         }
 
-        toastEl.addEventListener('shown.vl.toast', () => {
+        toastEl.addEventListener('shown.cx.toast', () => {
           setTimeout(expected, 1)
         })
 

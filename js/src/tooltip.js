@@ -396,7 +396,7 @@ class Tooltip extends BaseComponent {
   }
 
   _getPopperConfig(attachment) {
-    const defaultBsPopperConfig = {
+    const defaultCxPopperConfig = {
       placement: attachment,
       modifiers: [
         {
@@ -437,8 +437,8 @@ class Tooltip extends BaseComponent {
     }
 
     return {
-      ...defaultBsPopperConfig,
-      ...execute(this._config.popperConfig, [defaultBsPopperConfig])
+      ...defaultCxPopperConfig,
+      ...execute(this._config.popperConfig, [defaultCxPopperConfig])
     }
   }
 

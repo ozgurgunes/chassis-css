@@ -1,5 +1,5 @@
 /*!
-  * Chassis selector-engine.js v0.1.0 (https://design.chassis.com/)
+  * Chassis selector-engine.js v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -24,7 +24,6 @@
       // The only valid content that could double as a selector are IDs or classes,
       // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
       // `document.querySelector` will rightfully complain it is invalid.
-      // See https://github.com/ozgurgunes/chassis-css/issues/32273
       if (!hrefAttribute || !hrefAttribute.includes('#') && !hrefAttribute.startsWith('.')) {
         return null;
       }

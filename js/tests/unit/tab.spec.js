@@ -68,7 +68,7 @@ describe('Tab', () => {
         const profileTriggerEl = fixtureEl.querySelector('#triggerProfile')
         const tab = new Tab(profileTriggerEl)
 
-        profileTriggerEl.addEventListener('shown.vl.tab', () => {
+        profileTriggerEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           expect(profileTriggerEl.getAttribute('aria-selected')).toEqual('true')
           resolve()
@@ -94,7 +94,7 @@ describe('Tab', () => {
         const profileTriggerEl = fixtureEl.querySelector('#triggerProfile')
         const tab = new Tab(profileTriggerEl)
 
-        profileTriggerEl.addEventListener('shown.vl.tab', () => {
+        profileTriggerEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           expect(profileTriggerEl.getAttribute('aria-selected')).toEqual('true')
           resolve()
@@ -120,7 +120,7 @@ describe('Tab', () => {
         const profileTriggerEl = fixtureEl.querySelector('#triggerProfile')
         const tab = new Tab(profileTriggerEl)
 
-        profileTriggerEl.addEventListener('shown.vl.tab', () => {
+        profileTriggerEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
@@ -145,7 +145,7 @@ describe('Tab', () => {
         const profileTriggerEl = fixtureEl.querySelector('#triggerProfile')
         const tab = new Tab(profileTriggerEl)
 
-        profileTriggerEl.addEventListener('shown.vl.tab', () => {
+        profileTriggerEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
@@ -170,7 +170,7 @@ describe('Tab', () => {
         const profileTriggerEl = fixtureEl.querySelector('#triggerProfile')
         const tab = new Tab(profileTriggerEl)
 
-        profileTriggerEl.addEventListener('shown.vl.tab', () => {
+        profileTriggerEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
@@ -208,7 +208,7 @@ describe('Tab', () => {
       const profileTriggerEl = fixtureEl.querySelector('#trigger2')
       const tab = new Tab(profileTriggerEl)
 
-      profileTriggerEl.addEventListener('shown.vl.tab', () => {
+      profileTriggerEl.addEventListener('shown.cx.tab', () => {
         expect(fixtureEl.querySelector(`#${CSS.escape('2')}`)).toHaveClass('active')
         done()
       })
@@ -229,12 +229,12 @@ describe('Tab', () => {
           }, 30)
         }
 
-        navEl.addEventListener('show.vl.tab', ev => {
+        navEl.addEventListener('show.cx.tab', ev => {
           ev.preventDefault()
           expectDone()
         })
 
-        navEl.addEventListener('shown.vl.tab', () => {
+        navEl.addEventListener('shown.cx.tab', () => {
           reject(new Error('should not trigger shown event'))
         })
 
@@ -258,7 +258,7 @@ describe('Tab', () => {
         const triggerActive = fixtureEl.querySelector('button.active')
         const tab = new Tab(triggerActive)
 
-        triggerActive.addEventListener('shown.vl.tab', () => {
+        triggerActive.addEventListener('shown.cx.tab', () => {
           reject(new Error('should not trigger shown event'))
         })
 
@@ -286,11 +286,11 @@ describe('Tab', () => {
         const secondTabTrigger = fixtureEl.querySelector('#triggerProfile')
         const secondTab = new Tab(secondTabTrigger)
 
-        secondTabTrigger.addEventListener('show.vl.tab', ev => {
+        secondTabTrigger.addEventListener('show.cx.tab', ev => {
           expect(ev.relatedTarget.getAttribute('data-cx-target')).toEqual('#home')
         })
 
-        secondTabTrigger.addEventListener('shown.vl.tab', ev => {
+        secondTabTrigger.addEventListener('shown.cx.tab', ev => {
           expect(ev.relatedTarget.getAttribute('data-cx-target')).toEqual('#home')
           expect(secondTabTrigger.getAttribute('aria-selected')).toEqual('true')
           expect(fixtureEl.querySelector('button:not(.active)').getAttribute('aria-selected')).toEqual('false')
@@ -315,16 +315,16 @@ describe('Tab', () => {
         const secondTab = new Tab(triggerList[1])
 
         let hideCalled = false
-        triggerList[0].addEventListener('shown.vl.tab', () => {
+        triggerList[0].addEventListener('shown.cx.tab', () => {
           secondTab.show()
         })
 
-        triggerList[0].addEventListener('hide.vl.tab', ev => {
+        triggerList[0].addEventListener('hide.cx.tab', ev => {
           hideCalled = true
           expect(ev.relatedTarget.getAttribute('data-cx-target')).toEqual('#profile')
         })
 
-        triggerList[0].addEventListener('hidden.vl.tab', ev => {
+        triggerList[0].addEventListener('hidden.cx.tab', ev => {
           expect(hideCalled).toBeTrue()
           expect(ev.relatedTarget.getAttribute('data-cx-target')).toEqual('#profile')
           resolve()
@@ -353,16 +353,16 @@ describe('Tab', () => {
           }, 30)
         }
 
-        triggerList[0].addEventListener('shown.vl.tab', () => {
+        triggerList[0].addEventListener('shown.cx.tab', () => {
           secondTab.show()
         })
 
-        triggerList[0].addEventListener('hide.vl.tab', ev => {
+        triggerList[0].addEventListener('hide.cx.tab', ev => {
           ev.preventDefault()
           expectDone()
         })
 
-        triggerList[0].addEventListener('hidden.vl.tab', () => {
+        triggerList[0].addEventListener('hidden.cx.tab', () => {
           reject(new Error('should not trigger hidden'))
         })
 
@@ -401,7 +401,7 @@ describe('Tab', () => {
         const btnCloseEl = fixtureEl.querySelector('#btnClose')
         const secondNavTab = new Tab(secondNavEl)
 
-        secondNavEl.addEventListener('shown.vl.tab', () => {
+        secondNavEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelectorAll('.nav-tab')).toHaveSize(2)
           resolve()
         })
@@ -440,7 +440,7 @@ describe('Tab', () => {
         const profileTriggerEl = fixtureEl.querySelector('#triggerProfile')
         const tab = new Tab(profileTriggerEl)
 
-        profileTriggerEl.addEventListener('shown.vl.tab', () => {
+        profileTriggerEl.addEventListener('shown.cx.tab', () => {
           expect(document.activeElement).toBe(firstTab)
           expect(document.activeElement).not.toBe(profileTriggerEl)
           resolve()
@@ -648,7 +648,7 @@ describe('Tab', () => {
       tab3.show()
 
       const spyShown = jasmine.createSpy()
-      tabEl1.addEventListener('shown.vl.tab', spyShown)
+      tabEl1.addEventListener('shown.cx.tab', spyShown)
 
       const keydown = createEvent('keydown')
       keydown.key = 'Home'
@@ -674,7 +674,7 @@ describe('Tab', () => {
       tab1.show()
 
       const spyShown = jasmine.createSpy()
-      tabEl3.addEventListener('shown.vl.tab', spyShown)
+      tabEl3.addEventListener('shown.cx.tab', spyShown)
 
       const keydown = createEvent('keydown')
       keydown.key = 'End'
@@ -784,8 +784,8 @@ describe('Tab', () => {
 
       const spyShown1 = jasmine.createSpy()
       const spyShown2 = jasmine.createSpy()
-      tabEl1.addEventListener('shown.vl.tab', spyShown1)
-      tabEl2.addEventListener('shown.vl.tab', spyShown2)
+      tabEl1.addEventListener('shown.cx.tab', spyShown1)
+      tabEl2.addEventListener('shown.cx.tab', spyShown2)
 
       const keydown = createEvent('keydown')
       keydown.key = 'Home'
@@ -814,8 +814,8 @@ describe('Tab', () => {
 
       const spyShown2 = jasmine.createSpy()
       const spyShown3 = jasmine.createSpy()
-      tabEl2.addEventListener('shown.vl.tab', spyShown2)
-      tabEl3.addEventListener('shown.vl.tab', spyShown3)
+      tabEl2.addEventListener('shown.cx.tab', spyShown2)
+      tabEl3.addEventListener('shown.cx.tab', spyShown3)
 
       const keydown = createEvent('keydown')
       keydown.key = 'End'
@@ -941,7 +941,7 @@ describe('Tab', () => {
 
         const secondTabTrigger = fixtureEl.querySelector('#triggerProfile')
 
-        secondTabTrigger.addEventListener('shown.vl.tab', () => {
+        secondTabTrigger.addEventListener('shown.cx.tab', () => {
           expect(secondTabTrigger).toHaveClass('active')
           expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
@@ -1060,12 +1060,12 @@ describe('Tab', () => {
         const tabNested2El = fixtureEl.querySelector('#tabNested2')
         const xTab1El = fixtureEl.querySelector('#x-tab1')
 
-        tabNested2El.addEventListener('shown.vl.tab', () => {
+        tabNested2El.addEventListener('shown.cx.tab', () => {
           expect(xTab1El).toHaveClass('active')
           resolve()
         })
 
-        tab1El.addEventListener('shown.vl.tab', () => {
+        tab1El.addEventListener('shown.cx.tab', () => {
           expect(xTab1El).toHaveClass('active')
           tabNested2El.click()
         })
@@ -1092,7 +1092,7 @@ describe('Tab', () => {
         const tabProfileEl = fixtureEl.querySelector('#profile')
         const tabHomeEl = fixtureEl.querySelector('#home')
 
-        triggerTabHomeEl.addEventListener('shown.vl.tab', () => {
+        triggerTabHomeEl.addEventListener('shown.cx.tab', () => {
           setTimeout(() => {
             expect(tabProfileEl).toHaveClass('fade')
             expect(tabProfileEl).not.toHaveClass('show')
@@ -1104,7 +1104,7 @@ describe('Tab', () => {
           }, 10)
         })
 
-        triggerTabProfileEl.addEventListener('shown.vl.tab', () => {
+        triggerTabProfileEl.addEventListener('shown.cx.tab', () => {
           setTimeout(() => {
             expect(tabProfileEl).toHaveClass('fade')
             expect(tabProfileEl).toHaveClass('show')
@@ -1135,7 +1135,7 @@ describe('Tab', () => {
 
         const secondNavEl = fixtureEl.querySelector('#secondNav')
 
-        secondNavEl.addEventListener('shown.vl.tab', () => {
+        secondNavEl.addEventListener('shown.cx.tab', () => {
           expect(fixtureEl.querySelectorAll('.tab-content .show')).toHaveSize(1)
           resolve()
         })
@@ -1163,7 +1163,7 @@ describe('Tab', () => {
 
         const secondNavEl = fixtureEl.querySelector('#secondNav')
 
-        secondNavEl.addEventListener('shown.vl.tab', () => {
+        secondNavEl.addEventListener('shown.cx.tab', () => {
           setTimeout(() => {
             expect(fixtureEl.querySelectorAll('.show')).toHaveSize(1)
             resolve()
@@ -1186,7 +1186,7 @@ describe('Tab', () => {
         const tabEl = fixtureEl.querySelector('[href="#test2"]')
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
-        tabEl.addEventListener('shown.vl.tab', () => {
+        tabEl.addEventListener('shown.cx.tab', () => {
           expect(tabEl).toHaveClass('active')
           expect(spy).toHaveBeenCalled()
           resolve()
@@ -1210,7 +1210,7 @@ describe('Tab', () => {
         ].join('')
 
         const triggerDisabled = fixtureEl.querySelector('button[disabled]')
-        triggerDisabled.addEventListener('shown.vl.tab', () => {
+        triggerDisabled.addEventListener('shown.cx.tab', () => {
           reject(new Error('should not trigger shown event'))
         })
 
@@ -1237,7 +1237,7 @@ describe('Tab', () => {
 
         const triggerDisabled = fixtureEl.querySelector('a.disabled')
 
-        triggerDisabled.addEventListener('shown.vl.tab', () => {
+        triggerDisabled.addEventListener('shown.cx.tab', () => {
           reject(new Error('should not trigger shown event'))
         })
 

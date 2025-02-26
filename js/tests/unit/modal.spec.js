@@ -40,7 +40,7 @@ describe('Modal', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Modal.DATA_KEY).toEqual('vl.modal')
+      expect(Modal.DATA_KEY).toEqual('cx.modal')
     })
   })
 
@@ -67,12 +67,12 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(spyHide).toHaveBeenCalled()
           modal.toggle()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spyReset).toHaveBeenCalled()
           resolve()
         })
@@ -90,11 +90,11 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('show.vl.modal', event => {
+        modalEl.addEventListener('show.cx.modal', event => {
           expect(event).toBeDefined()
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modalEl.getAttribute('aria-modal')).toEqual('true')
           expect(modalEl.getAttribute('role')).toEqual('dialog')
           expect(modalEl.getAttribute('aria-hidden')).toBeNull()
@@ -116,11 +116,11 @@ describe('Modal', () => {
           backdrop: false
         })
 
-        modalEl.addEventListener('show.vl.modal', event => {
+        modalEl.addEventListener('show.cx.modal', event => {
           expect(event).toBeDefined()
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modalEl.getAttribute('aria-modal')).toEqual('true')
           expect(modalEl.getAttribute('role')).toEqual('dialog')
           expect(modalEl.getAttribute('aria-hidden')).toBeNull()
@@ -144,7 +144,7 @@ describe('Modal', () => {
 
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const dynamicModal = document.getElementById(id)
           expect(dynamicModal).not.toBeNull()
           dynamicModal.remove()
@@ -190,7 +190,7 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('show.vl.modal', event => {
+        modalEl.addEventListener('show.cx.modal', event => {
           event.preventDefault()
 
           const expectedDone = () => {
@@ -201,7 +201,7 @@ describe('Modal', () => {
           setTimeout(expectedDone, 10)
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           reject(new Error('shown event triggered'))
         })
 
@@ -217,7 +217,7 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
 
         let prevented = false
-        modalEl.addEventListener('show.vl.modal', event => {
+        modalEl.addEventListener('show.cx.modal', event => {
           if (!prevented) {
             event.preventDefault()
             prevented = true
@@ -228,7 +228,7 @@ describe('Modal', () => {
           }
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(prevented).toBeTrue()
           expect(modal._isAnimated()).toBeTrue()
           resolve()
@@ -244,13 +244,13 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('show.vl.modal', () => {
+        modalEl.addEventListener('show.cx.modal', () => {
           setTimeout(() => {
             expect(modal._isTransitioning).toBeTrue()
           })
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modal._isTransitioning).toBeFalse()
           resolve()
         })
@@ -277,11 +277,11 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, 'hide').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           btnClose.click()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -305,11 +305,11 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, 'hide').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           btnClose.click()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -329,7 +329,7 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modalEl.scrollTop).toEqual(0)
           resolve()
         })
@@ -352,7 +352,7 @@ describe('Modal', () => {
         const modalBody = modalEl.querySelector('.modal-body')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modalBody.scrollTop).toEqual(0)
           resolve()
         })
@@ -372,7 +372,7 @@ describe('Modal', () => {
 
         const spy = spyOn(modal._focustrap, 'activate').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(spy).not.toHaveBeenCalled()
           resolve()
         })
@@ -390,14 +390,14 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, 'hide').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const keydownEscape = createEvent('keydown')
           keydownEscape.key = 'Escape'
 
           modalEl.dispatchEvent(keydownEscape)
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -421,7 +421,7 @@ describe('Modal', () => {
           resolve()
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const keydownTab = createEvent('keydown')
           keydownTab.key = 'Tab'
 
@@ -448,7 +448,7 @@ describe('Modal', () => {
           resolve()
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const resizeEvent = createEvent('resize')
 
           window.dispatchEvent(resizeEvent)
@@ -479,13 +479,13 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           fixtureEl.querySelector('.modal-dialog').click()
           fixtureEl.querySelector('.modal-content').click()
           shownCallback()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           reject(new Error('Should not hide a modal'))
         })
 
@@ -509,12 +509,12 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modalEl.click()
           shownCallback()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           reject(new Error('Should not hide a modal'))
         })
 
@@ -538,12 +538,12 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modalEl.click()
           shownCallback()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           reject(new Error('Should not hide a modal'))
         })
 
@@ -567,7 +567,7 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const keydownEscape = createEvent('keydown')
           keydownEscape.key = 'Escape'
 
@@ -595,7 +595,7 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const keydownEscape = createEvent('keydown')
           keydownEscape.key = 'Escape'
 
@@ -603,7 +603,7 @@ describe('Modal', () => {
           shownCallback()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           reject(new Error('Should not hide a modal'))
         })
 
@@ -620,7 +620,7 @@ describe('Modal', () => {
           backdrop: 'static'
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modalEl.click()
           setTimeout(() => {
             expect(modalEl.clientHeight).toEqual(modalEl.scrollHeight)
@@ -641,7 +641,7 @@ describe('Modal', () => {
           backdrop: 'static'
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const spy = spyOn(modal, '_queueCallback').and.callThrough()
           const mouseDown = createEvent('mousedown')
 
@@ -669,7 +669,7 @@ describe('Modal', () => {
 
         const spy = spyOn(modal._focustrap, 'activate').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -688,15 +688,15 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
         const backdropSpy = spyOn(modal._backdrop, 'hide').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modal.hide()
         })
 
-        modalEl.addEventListener('hide.vl.modal', event => {
+        modalEl.addEventListener('hide.cx.modal', event => {
           expect(event).toBeDefined()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(modalEl.getAttribute('aria-modal')).toBeNull()
           expect(modalEl.getAttribute('role')).toBeNull()
           expect(modalEl.getAttribute('aria-hidden')).toEqual('true')
@@ -719,7 +719,7 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, 'hide')
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const mouseDown = createEvent('mousedown')
 
           dialogEl.dispatchEvent(mouseDown)
@@ -755,7 +755,7 @@ describe('Modal', () => {
           buttonEl.remove()
         })
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modalEl.dispatchEvent(createEvent('mousedown'))
           buttonEl.click()
           expect(spy).not.toHaveBeenCalled()
@@ -796,7 +796,7 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const modal = new Modal(modalEl)
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modal.hide()
         })
 
@@ -807,12 +807,12 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('hide.vl.modal', event => {
+        modalEl.addEventListener('hide.cx.modal', event => {
           event.preventDefault()
           hideCallback()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           reject(new Error('should not trigger hidden'))
         })
 
@@ -828,11 +828,11 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
         const spy = spyOn(modal._focustrap, 'deactivate').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           modal.hide()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -889,7 +889,7 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const trigger = fixtureEl.querySelector('[data-cx-toggle="modal"]')
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modalEl.getAttribute('aria-modal')).toEqual('true')
           expect(modalEl.getAttribute('role')).toEqual('dialog')
           expect(modalEl.getAttribute('aria-hidden')).toBeNull()
@@ -898,7 +898,7 @@ describe('Modal', () => {
           setTimeout(() => trigger.click(), 10)
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(modalEl.getAttribute('aria-modal')).toBeNull()
           expect(modalEl.getAttribute('role')).toBeNull()
           expect(modalEl.getAttribute('aria-hidden')).toEqual('true')
@@ -924,7 +924,7 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, 'show').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -945,7 +945,7 @@ describe('Modal', () => {
 
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           expect(modalEl.getAttribute('aria-modal')).toEqual('true')
           expect(modalEl.getAttribute('role')).toEqual('dialog')
           expect(modalEl.getAttribute('aria-hidden')).toBeNull()
@@ -971,7 +971,7 @@ describe('Modal', () => {
 
         const spy = spyOn(trigger, 'focus')
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const modal = Modal.getInstance(modalEl)
 
           modal.hide()
@@ -984,7 +984,7 @@ describe('Modal', () => {
           }, 20)
         }
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           hideListener()
         })
 
@@ -1012,7 +1012,7 @@ describe('Modal', () => {
         const modalEl = fixtureEl.querySelector('.modal')
         const trigger = fixtureEl.querySelector('[data-cx-toggle="modal"]')
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           resolve()
         })
 
@@ -1036,11 +1036,11 @@ describe('Modal', () => {
 
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           btnClose.click()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spy).not.toHaveBeenCalled()
           resolve()
         })
@@ -1065,11 +1065,11 @@ describe('Modal', () => {
 
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           btnClose.click()
         })
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -1089,7 +1089,7 @@ describe('Modal', () => {
 
         const spy = spyOn(trigger, 'focus')
 
-        modalEl.addEventListener('shown.vl.modal', () => {
+        modalEl.addEventListener('shown.cx.modal', () => {
           const modal = Modal.getInstance(modalEl)
 
           modal.hide()
@@ -1102,7 +1102,7 @@ describe('Modal', () => {
           }, 20)
         }
 
-        modalEl.addEventListener('hidden.vl.modal', () => {
+        modalEl.addEventListener('hidden.cx.modal', () => {
           hideListener()
         })
 
@@ -1128,7 +1128,7 @@ describe('Modal', () => {
           }, 10)
         }
 
-        modalEl.addEventListener('show.vl.modal', event => {
+        modalEl.addEventListener('show.cx.modal', event => {
           event.preventDefault()
           showListener()
         })
@@ -1150,10 +1150,10 @@ describe('Modal', () => {
         const modalEl2 = document.querySelector('#modal2')
         const modal1 = new Modal(modalEl1)
 
-        modalEl1.addEventListener('shown.vl.modal', () => {
+        modalEl1.addEventListener('shown.cx.modal', () => {
           trigger2.click()
         })
-        modalEl1.addEventListener('hidden.vl.modal', () => {
+        modalEl1.addEventListener('hidden.cx.modal', () => {
           expect(Modal.getInstance(modalEl2)).not.toBeNull()
           expect(modalEl2).toHaveClass('show')
           resolve()

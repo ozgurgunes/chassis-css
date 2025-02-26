@@ -228,9 +228,9 @@ Options for individual tooltips can alternatively be specified through the use o
 
 ```js
 const tooltip = new chassis.Tooltip(element, {
-  popperConfig(defaultBsPopperConfig) {
+  popperConfig(defaultCxPopperConfig) {
     // const newPopperConfig = {...}
-    // use defaultBsPopperConfig if needed...
+    // use defaultCxPopperConfig if needed...
     // return newPopperConfig
   }
 })
@@ -250,10 +250,10 @@ const tooltip = new chassis.Tooltip(element, {
 | `enable` | Gives an element's tooltip the ability to be shown. **Tooltips are enabled by default.** |
 | `getInstance` | *Static* method which allows you to get the tooltip instance associated with a DOM element, or create a new one in case it wasn't initialized. |
 | `getOrCreateInstance` | *Static* method which allows you to get the tooltip instance associated with a DOM element, or create a new one in case it wasn't initialized. |
-| `hide` | Hides an element's tooltip. **Returns to the caller before the tooltip has actually been hidden** (i.e. before the `hidden.vl.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. |
+| `hide` | Hides an element's tooltip. **Returns to the caller before the tooltip has actually been hidden** (i.e. before the `hidden.cx.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. |
 | `setContent` | Gives a way to change the tooltip's content after its initialization. |
-| `show` | Reveals an element's tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.vl.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed. |
-| `toggle` | Toggles an element's tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.vl.tooltip` or `hidden.vl.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. |
+| `show` | Reveals an element's tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.cx.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed. |
+| `toggle` | Toggles an element's tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.cx.tooltip` or `hidden.cx.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. |
 | `toggleEnabled` | Toggles the ability for an element's tooltip to be shown or hidden. |
 | `update` | Updates the position of an element's tooltip. |
 {{< /cx-table >}}
@@ -275,18 +275,18 @@ The `setContent` method accepts an `object` argument, where each property-key is
 {{< cx-table >}}
 | Event | Description |
 | --- | --- |
-| `hide.vl.tooltip` | This event is fired immediately when the `hide` instance method has been called. |
-| `hidden.vl.tooltip` | This event is fired when the tooltip has finished being hidden from the user (will wait for CSS transitions to complete). |
-| `inserted.vl.tooltip` | This event is fired after the `show.vl.tooltip` event when the tooltip template has been added to the DOM. |
-| `show.vl.tooltip` | This event fires immediately when the `show` instance method is called. |
-| `shown.vl.tooltip` | This event is fired when the tooltip has been made visible to the user (will wait for CSS transitions to complete). |
+| `hide.cx.tooltip` | This event is fired immediately when the `hide` instance method has been called. |
+| `hidden.cx.tooltip` | This event is fired when the tooltip has finished being hidden from the user (will wait for CSS transitions to complete). |
+| `inserted.cx.tooltip` | This event is fired after the `show.cx.tooltip` event when the tooltip template has been added to the DOM. |
+| `show.cx.tooltip` | This event fires immediately when the `show` instance method is called. |
+| `shown.cx.tooltip` | This event is fired when the tooltip has been made visible to the user (will wait for CSS transitions to complete). |
 {{< /cx-table >}}
 
 ```js
 const myTooltipEl = document.getElementById('myTooltip')
 const tooltip = chassis.Tooltip.getOrCreateInstance(myTooltipEl)
 
-myTooltipEl.addEventListener('hidden.vl.tooltip', () => {
+myTooltipEl.addEventListener('hidden.cx.tooltip', () => {
   // do something...
 })
 

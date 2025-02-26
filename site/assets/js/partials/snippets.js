@@ -162,7 +162,7 @@ export default () => {
   // js-docs-start varying-modal-content
   const exampleModal = document.getElementById('exampleModal')
   if (exampleModal) {
-    exampleModal.addEventListener('show.vl.modal', event => {
+    exampleModal.addEventListener('show.cx.modal', event => {
       // Button that triggered the modal
       const button = event.relatedTarget
       // Extract info from data-cx-* attributes
@@ -187,7 +187,7 @@ export default () => {
   const myOffcanvas = document.querySelectorAll('.cxd-example-offcanvas .offcanvas')
   if (myOffcanvas) {
     myOffcanvas.forEach(offcanvas => {
-      offcanvas.addEventListener('show.vl.offcanvas', event => {
+      offcanvas.addEventListener('show.cx.offcanvas', event => {
         event.preventDefault()
       }, false)
     })
@@ -200,7 +200,7 @@ export default () => {
   // js-docs-start varying-modal-content
 
   // if (exampleOverModal) {
-  //   exampleOverModal.addEventListener('show.vl.modal', () => {
+  //   exampleOverModal.addEventListener('show.cx.modal', () => {
   //     exampleOverModal.show()
   //   })
   // }

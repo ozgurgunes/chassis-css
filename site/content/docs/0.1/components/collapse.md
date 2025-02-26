@@ -180,9 +180,9 @@ const bsCollapse = new chassis.Collapse('#myCollapse', {
 | `dispose` | Destroys an element's collapse. (Removes stored data on the DOM element) |
 | `getInstance` | Static method which allows you to get the collapse instance associated to a DOM element, you can use it like this: `chassis.Collapse.getInstance(element)`. |
 | `getOrCreateInstance` | Static method which returns a collapse instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `chassis.Collapse.getOrCreateInstance(element)`. |
-| `hide` | Hides a collapsible element. **Returns to the caller before the collapsible element has actually been hidden** (e.g., before the `hidden.vl.collapse` event occurs). |
-| `show` | Shows a collapsible element. **Returns to the caller before the collapsible element has actually been shown** (e.g., before the `shown.vl.collapse` event occurs). |
-| `toggle` | Toggles a collapsible element to shown or hidden. **Returns to the caller before the collapsible element has actually been shown or hidden** (i.e. before the `shown.vl.collapse` or `hidden.vl.collapse` event occurs). |
+| `hide` | Hides a collapsible element. **Returns to the caller before the collapsible element has actually been hidden** (e.g., before the `hidden.cx.collapse` event occurs). |
+| `show` | Shows a collapsible element. **Returns to the caller before the collapsible element has actually been shown** (e.g., before the `shown.cx.collapse` event occurs). |
+| `toggle` | Toggles a collapsible element to shown or hidden. **Returns to the caller before the collapsible element has actually been shown or hidden** (i.e. before the `shown.cx.collapse` or `hidden.cx.collapse` event occurs). |
 {{< /cx-table >}}
 
 ### Events
@@ -192,15 +192,15 @@ Chassis - CSS's collapse class exposes a few events for hooking into collapse fu
 {{< cx-table >}}
 | Event type | Description |
 | --- | --- |
-| `hide.vl.collapse` | This event is fired immediately when the `hide` method has been called. |
-| `hidden.vl.collapse` | This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete). |
-| `show.vl.collapse` | This event fires immediately when the `show` instance method is called. |
-| `shown.vl.collapse` | This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete). |
+| `hide.cx.collapse` | This event is fired immediately when the `hide` method has been called. |
+| `hidden.cx.collapse` | This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete). |
+| `show.cx.collapse` | This event fires immediately when the `show` instance method is called. |
+| `shown.cx.collapse` | This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete). |
 {{< /cx-table >}}
 
 ```js
 const myCollapsible = document.getElementById('myCollapsible')
-myCollapsible.addEventListener('hidden.vl.collapse', event => {
+myCollapsible.addEventListener('hidden.cx.collapse', event => {
   // do something...
 })
 ```

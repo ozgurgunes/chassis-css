@@ -30,7 +30,7 @@ describe('Button', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Button.DATA_KEY).toEqual('vl.button')
+      expect(Button.DATA_KEY).toEqual('cx.button')
     })
   })
 

@@ -52,7 +52,7 @@ describe('ScrollSpy', () => {
     const parentOffset = getComputedStyle(contentEl).getPropertyValue('position') === 'relative' ? 0 : contentEl.offsetTop
     const scrollHeight = (target.offsetTop - parentOffset) + paddingTop
 
-    contentEl.addEventListener('activate.vl.scrollspy', event => {
+    contentEl.addEventListener('activate.cx.scrollspy', event => {
       if (scrollSpy._activeTarget !== element) {
         return
       }
@@ -90,7 +90,7 @@ describe('ScrollSpy', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(ScrollSpy.DATA_KEY).toEqual('vl.scrollspy')
+      expect(ScrollSpy.DATA_KEY).toEqual('cx.scrollspy')
     })
   })
 
@@ -854,8 +854,8 @@ describe('ScrollSpy', () => {
         offset: 1
       })
 
-      expect(offSpy).not.toHaveBeenCalledWith(target, 'click.vl.scrollspy')
-      expect(onSpy).not.toHaveBeenCalledWith(target, 'click.vl.scrollspy')
+      expect(offSpy).not.toHaveBeenCalledWith(target, 'click.cx.scrollspy')
+      expect(onSpy).not.toHaveBeenCalledWith(target, 'click.cx.scrollspy')
     })
 
     it('should enable smoothScroll', () => {
@@ -871,8 +871,8 @@ describe('ScrollSpy', () => {
         smoothScroll: true
       })
 
-      expect(offSpy).toHaveBeenCalledWith(target, 'click.vl.scrollspy')
-      expect(onSpy).toHaveBeenCalledWith(target, 'click.vl.scrollspy', '[href]', jasmine.any(Function))
+      expect(offSpy).toHaveBeenCalledWith(target, 'click.cx.scrollspy')
+      expect(onSpy).toHaveBeenCalledWith(target, 'click.cx.scrollspy', '[href]', jasmine.any(Function))
     })
 
     it('should not smoothScroll to element if it not handles a scrollspy section', () => {

@@ -110,7 +110,7 @@ All infinitive events provide [`preventDefault()`](https://developer.mozilla.org
 ```js
 const myModal = document.querySelector('#myModal')
 
-myModal.addEventListener('show.vl.modal', event => {
+myModal.addEventListener('show.cx.modal', event => {
   return event.preventDefault() // stops modal from being shown
 })
 ```
@@ -161,7 +161,7 @@ All programmatic API methods are **asynchronous** and return to the caller once 
 ```js
 const myCollapseEl = document.querySelector('#myCollapse')
 
-myCollapseEl.addEventListener('shown.vl.collapse', event => {
+myCollapseEl.addEventListener('shown.cx.collapse', event => {
   // Action to execute once the collapsible area is expanded
 })
 ```
@@ -172,7 +172,7 @@ In addition, a method call on a **transitioning component will be ignored**.
 const myCarouselEl = document.querySelector('#myCarousel')
 const carousel = chassis.Carousel.getInstance(myCarouselEl) // Retrieve a Carousel instance
 
-myCarouselEl.addEventListener('slid.vl.carousel', event => {
+myCarouselEl.addEventListener('slid.cx.carousel', event => {
   carousel.to('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
 })
 
@@ -188,7 +188,7 @@ While it may seem correct to use the `dispose` method immediately after `hide()`
 const myModal = document.querySelector('#myModal')
 myModal.hide() // it is asynchronous
 
-myModal.addEventListener('shown.vl.hidden', event => {
+myModal.addEventListener('shown.cx.hidden', event => {
   myModal.dispose()
 })
 ```
@@ -293,7 +293,7 @@ Chassis - CSS does not officially support third-party JavaScript libraries like 
 Chassis - CSS will detect jQuery if `jQuery` is present in the `window` object and there is no `data-cx-no-jquery` attribute set on `<body>`. If jQuery is found, Chassis - CSS will emit events thanks to jQuery's event system. So if you want to listen to Chassis - CSS's events, you'll have to use the jQuery methods (`.on`, `.one`) instead of `addEventListener`.
 
 ```js
-$('#myTab a').on('shown.vl.tab', () => {
+$('#myTab a').on('shown.cx.tab', () => {
   // do something...
 })
 ```

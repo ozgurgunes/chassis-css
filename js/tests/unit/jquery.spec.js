@@ -49,7 +49,7 @@ describe('jQuery', () => {
       ].join('')
 
       $(fixtureEl).find('.notification')
-        .one('closed.vl.notification', () => {
+        .one('closed.cx.notification', () => {
           expect($(fixtureEl).find('.notification')).toHaveSize(0)
           resolve()
         })

@@ -1072,9 +1072,9 @@ const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new chassi
 
 ```js
 const dropdown = new chassis.Dropdown(element, {
-  popperConfig(defaultBsPopperConfig) {
+  popperConfig(defaultCxPopperConfig) {
     // const newPopperConfig = {...}
-    // use defaultBsPopperConfig if needed...
+    // use defaultCxPopperConfig if needed...
     // return newPopperConfig
   }
 })
@@ -1096,20 +1096,20 @@ const dropdown = new chassis.Dropdown(element, {
 
 ### Events
 
-All dropdown events are fired at the toggling element and then bubbled up. So you can also add event listeners on the `.dropdown-menu`'s parent element. `hide.vl.dropdown` and `hidden.vl.dropdown` events have a `clickEvent` property (only when the original Event type is `click`) that contains an Event Object for the click event.
+All dropdown events are fired at the toggling element and then bubbled up. So you can also add event listeners on the `.dropdown-menu`'s parent element. `hide.cx.dropdown` and `hidden.cx.dropdown` events have a `clickEvent` property (only when the original Event type is `click`) that contains an Event Object for the click event.
 
 {{< cx-table >}}
 | Event type | Description |
 | --- | --- |
-| `hide.vl.dropdown` | Fires immediately when the `hide` instance method has been called. |
-| `hidden.vl.dropdown` | Fired when the dropdown has finished being hidden from the user and CSS transitions have completed. |
-| `show.vl.dropdown` | Fires immediately when the `show` instance method is called. |
-| `shown.vl.dropdown` | Fired when the dropdown has been made visible to the user and CSS transitions have completed. |
+| `hide.cx.dropdown` | Fires immediately when the `hide` instance method has been called. |
+| `hidden.cx.dropdown` | Fired when the dropdown has finished being hidden from the user and CSS transitions have completed. |
+| `show.cx.dropdown` | Fires immediately when the `show` instance method is called. |
+| `shown.cx.dropdown` | Fired when the dropdown has been made visible to the user and CSS transitions have completed. |
 {{< /cx-table >}}
 
 ```js
 const myDropdown = document.getElementById('myDropdown')
-myDropdown.addEventListener('show.vl.dropdown', event => {
+myDropdown.addEventListener('show.cx.dropdown', event => {
   // do something...
 })
 ```

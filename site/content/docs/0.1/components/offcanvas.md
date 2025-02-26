@@ -333,9 +333,9 @@ const bsOffcanvas = new chassis.Offcanvas('#myOffcanvas')
 | `dispose` | Destroys an element's offcanvas. |
 | `getInstance` | *Static* method which allows you to get the offcanvas instance associated with a DOM element. |
 | `getOrCreateInstance` | *Static* method which allows you to get the offcanvas instance associated with a DOM element, or create a new one in case it wasn't initialized. |
-| `hide` | Hides an offcanvas element. **Returns to the caller before the offcanvas element has actually been hidden** (i.e. before the `hidden.vl.offcanvas` event occurs). |
-| `show` | Shows an offcanvas element. **Returns to the caller before the offcanvas element has actually been shown** (i.e. before the `shown.vl.offcanvas` event occurs). |
-| `toggle` | Toggles an offcanvas element to shown or hidden. **Returns to the caller before the offcanvas element has actually been shown or hidden** (i.e. before the `shown.vl.offcanvas` or `hidden.vl.offcanvas` event occurs). |
+| `hide` | Hides an offcanvas element. **Returns to the caller before the offcanvas element has actually been hidden** (i.e. before the `hidden.cx.offcanvas` event occurs). |
+| `show` | Shows an offcanvas element. **Returns to the caller before the offcanvas element has actually been shown** (i.e. before the `shown.cx.offcanvas` event occurs). |
+| `toggle` | Toggles an offcanvas element to shown or hidden. **Returns to the caller before the offcanvas element has actually been shown or hidden** (i.e. before the `shown.cx.offcanvas` or `hidden.cx.offcanvas` event occurs). |
 {{< /cx-table >}}
 
 ### Events
@@ -345,16 +345,16 @@ Chassis - CSS's offcanvas class exposes a few events for hooking into offcanvas 
 {{< cx-table "table" >}}
 | Event type | Description |
 | --- | --- |
-| `hide.vl.offcanvas` | This event is fired immediately when the `hide` method has been called. |
-| `hidden.vl.offcanvas` | This event is fired when an offcanvas element has been hidden from the user (will wait for CSS transitions to complete). |
-| `hidePrevented.vl.offcanvas` | This event is fired when the offcanvas is shown, its backdrop is `static` and a click outside of the offcanvas is performed. The event is also fired when the escape key is pressed and the `keyboard` option is set to `false`. |
-| `show.vl.offcanvas` | This event fires immediately when the `show` instance method is called. |
-| `shown.vl.offcanvas` | This event is fired when an offcanvas element has been made visible to the user (will wait for CSS transitions to complete). |
+| `hide.cx.offcanvas` | This event is fired immediately when the `hide` method has been called. |
+| `hidden.cx.offcanvas` | This event is fired when an offcanvas element has been hidden from the user (will wait for CSS transitions to complete). |
+| `hidePrevented.cx.offcanvas` | This event is fired when the offcanvas is shown, its backdrop is `static` and a click outside of the offcanvas is performed. The event is also fired when the escape key is pressed and the `keyboard` option is set to `false`. |
+| `show.cx.offcanvas` | This event fires immediately when the `show` instance method is called. |
+| `shown.cx.offcanvas` | This event is fired when an offcanvas element has been made visible to the user (will wait for CSS transitions to complete). |
 {{< /cx-table >}}
 
 ```js
 const myOffcanvas = document.getElementById('myOffcanvas')
-myOffcanvas.addEventListener('hidden.vl.offcanvas', event => {
+myOffcanvas.addEventListener('hidden.cx.offcanvas', event => {
   // do something...
 })
 ```

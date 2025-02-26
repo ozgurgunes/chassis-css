@@ -22,8 +22,8 @@
 
   .close-button {
     position: absolute;
-    top: $notification-padding-x * .5;
-    right: $notification-padding-x * .5;
+    top: #{calc($notification-padding-y * .5)};
+    right: #{calc($notification-padding-x * .5)};
   }
 
   @include last-child();
@@ -33,7 +33,7 @@
   }
 
   &:has(.close-button) {
-    padding-right: add($notification-padding-x * 2, $close-button-medium-size);
+    padding-right: #{calc($notification-padding-x * 2 + $close-button-medium-size)};
   }
 
 }

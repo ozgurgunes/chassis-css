@@ -369,9 +369,9 @@ const toastList = [...toastElList].map(toastEl => new chassis.Toast(toastEl, opt
 | `dispose` | Hides an element's toast. Your toast will remain on the DOM but won't show anymore. |
 | `getInstance` | *Static* method which allows you to get the toast instance associated with a DOM element. <br> For example: `const myToastEl = document.getElementById('myToastEl')` `const myToast = chassis.Toast.getInstance(myToastEl)` Returns a Chassis - CSS toast instance. |
 | `getOrCreateInstance` | *Static* method which allows you to get the toast instance associated with a DOM element, or create a new one, in case it wasn't initialized. <br>`const myToastEl = document.getElementById('myToastEl')` `const myToast = chassis.Toast.getOrCreateInstance(myToastEl)` Returns a Chassis - CSS toast instance. |
-| `hide` | Hides an element's toast. **Returns to the caller before the toast has actually been hidden** (i.e. before the `hidden.vl.toast` event occurs). You have to manually call this method if you made `autohide` to `false`. |
+| `hide` | Hides an element's toast. **Returns to the caller before the toast has actually been hidden** (i.e. before the `hidden.cx.toast` event occurs). You have to manually call this method if you made `autohide` to `false`. |
 | `isShown` | Returns a boolean according to toast's visibility state. |
-| `show` | Reveals an element's toast. **Returns to the caller before the toast has actually been shown** (i.e. before the `shown.vl.toast` event occurs). You have to manually call this method, instead your toast won't show. |
+| `show` | Reveals an element's toast. **Returns to the caller before the toast has actually been shown** (i.e. before the `shown.cx.toast` event occurs). You have to manually call this method, instead your toast won't show. |
 {{< /cx-table >}}
 
 ### Events
@@ -379,15 +379,15 @@ const toastList = [...toastElList].map(toastEl => new chassis.Toast(toastEl, opt
 {{< cx-table "table" >}}
 | Event | Description |
 | --- | --- |
-| `hide.vl.toast` | This event is fired immediately when the `hide` instance method has been called. |
-| `hidden.vl.toast` | This event is fired when the toast has finished being hidden from the user. |
-| `show.vl.toast` | This event fires immediately when the `show` instance method is called. |
-| `shown.vl.toast` | This event is fired when the toast has been made visible to the user. |
+| `hide.cx.toast` | This event is fired immediately when the `hide` instance method has been called. |
+| `hidden.cx.toast` | This event is fired when the toast has finished being hidden from the user. |
+| `show.cx.toast` | This event fires immediately when the `show` instance method is called. |
+| `shown.cx.toast` | This event is fired when the toast has been made visible to the user. |
 {{< /cx-table >}}
 
 ```js
 const myToastEl = document.getElementById('myToast')
-myToastEl.addEventListener('hidden.vl.toast', () => {
+myToastEl.addEventListener('hidden.cx.toast', () => {
   // do something...
 })
 ```

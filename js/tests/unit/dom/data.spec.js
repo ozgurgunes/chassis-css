@@ -2,10 +2,10 @@ import Data from '../../../src/dom/data.js'
 import { clearFixture, getFixture } from '../../helpers/fixture.js'
 
 describe('Data', () => {
-  const TEST_KEY = 'vl.test'
-  const UNKNOWN_KEY = 'vl.unknown'
+  const TEST_KEY = 'cx.test'
+  const UNKNOWN_KEY = 'cx.unknown'
   const TEST_DATA = {
-    test: 'vlData'
+    test: 'cxData'
   }
 
   let fixtureEl

@@ -30,7 +30,7 @@ describe('Notification', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Notification.DATA_KEY).toEqual('vl.notification')
+      expect(Notification.DATA_KEY).toEqual('cx.notification')
     })
   })
 
@@ -71,7 +71,7 @@ describe('Notification', () => {
         const notificationEl = document.querySelector('.notification')
         const notification = new Notification(notificationEl)
 
-        notificationEl.addEventListener('closed.vl.notification', () => {
+        notificationEl.addEventListener('closed.cx.notification', () => {
           expect(document.querySelectorAll('.notification')).toHaveSize(0)
           expect(spy).not.toHaveBeenCalled()
           resolve()
@@ -92,7 +92,7 @@ describe('Notification', () => {
           expect().nothing()
         })
 
-        notificationEl.addEventListener('closed.vl.notification', () => {
+        notificationEl.addEventListener('closed.cx.notification', () => {
           expect(document.querySelectorAll('.notification')).toHaveSize(0)
           resolve()
         })
@@ -109,7 +109,7 @@ describe('Notification', () => {
         const notificationEl = getNotification()
         const notification = new Notification(notificationEl)
 
-        notificationEl.addEventListener('close.vl.notification', event => {
+        notificationEl.addEventListener('close.cx.notification', event => {
           event.preventDefault()
           setTimeout(() => {
             expect(getNotification()).not.toBeNull()
@@ -117,7 +117,7 @@ describe('Notification', () => {
           }, 10)
         })
 
-        notificationEl.addEventListener('closed.vl.notification', () => {
+        notificationEl.addEventListener('closed.cx.notification', () => {
           reject(new Error('should not fire closed event'))
         })
 

@@ -49,7 +49,7 @@ describe('Carousel', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Carousel.DATA_KEY).toEqual('vl.carousel')
+      expect(Carousel.DATA_KEY).toEqual('cx.carousel')
     })
   })
 
@@ -98,7 +98,7 @@ describe('Carousel', () => {
 
         const spy = spyOn(carousel, '_keydown').and.callThrough()
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           expect(fixtureEl.querySelector('.active')).toEqual(fixtureEl.querySelector('#item2'))
           expect(spy).toHaveBeenCalled()
           resolve()
@@ -125,7 +125,7 @@ describe('Carousel', () => {
       const carouselEl = fixtureEl.querySelector('#myCarousel')
       // eslint-disable-next-line no-new
       new Carousel('#myCarousel')
-      expect(spy).not.toHaveBeenCalledWith(carouselEl, 'keydown.vl.carousel', jasmine.any(Function))
+      expect(spy).not.toHaveBeenCalledWith(carouselEl, 'keydown.cx.carousel', jasmine.any(Function))
     })
 
     it('should ignore mouse events if data-cx-pause=false', () => {
@@ -142,7 +142,7 @@ describe('Carousel', () => {
       const carouselEl = fixtureEl.querySelector('#myCarousel')
       // eslint-disable-next-line no-new
       new Carousel('#myCarousel')
-      expect(spy).not.toHaveBeenCalledWith(carouselEl, 'hover.vl.carousel', jasmine.any(Function))
+      expect(spy).not.toHaveBeenCalledWith(carouselEl, 'hover.cx.carousel', jasmine.any(Function))
     })
 
     it('should go to previous item if left arrow key is pressed', () => {
@@ -164,7 +164,7 @@ describe('Carousel', () => {
 
         const spy = spyOn(carousel, '_keydown').and.callThrough()
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           expect(fixtureEl.querySelector('.active')).toEqual(fixtureEl.querySelector('#item1'))
           expect(spy).toHaveBeenCalled()
           resolve()
@@ -294,7 +294,7 @@ describe('Carousel', () => {
         const carousel = new Carousel(carouselEl, { wrap: true })
         const getActiveId = () => carouselEl.querySelector('.carousel-item.active').getAttribute('id')
 
-        carouselEl.addEventListener('slid.vl.carousel', event => {
+        carouselEl.addEventListener('slid.cx.carousel', event => {
           const activeId = getActiveId()
 
           if (activeId === 'two') {
@@ -335,7 +335,7 @@ describe('Carousel', () => {
         const firstElement = fixtureEl.querySelector('#one')
         const carousel = new Carousel(carouselEl, { wrap: false })
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           reject(new Error('carousel slid when it should not have slid'))
         })
 
@@ -426,7 +426,7 @@ describe('Carousel', () => {
 
         const spy = spyOn(carousel, '_slide').and.callThrough()
 
-        carouselEl.addEventListener('slid.vl.carousel', event => {
+        carouselEl.addEventListener('slid.cx.carousel', event => {
           expect(item).toHaveClass('active')
           expect(spy).toHaveBeenCalledWith('prev')
           expect(event.direction).toEqual('right')
@@ -473,7 +473,7 @@ describe('Carousel', () => {
 
         const spy = spyOn(carousel, '_slide').and.callThrough()
 
-        carouselEl.addEventListener('slid.vl.carousel', event => {
+        carouselEl.addEventListener('slid.cx.carousel', event => {
           expect(item).not.toHaveClass('active')
           expect(spy).toHaveBeenCalledWith('next')
           expect(event.direction).toEqual('left')
@@ -515,7 +515,7 @@ describe('Carousel', () => {
 
         const spy = spyOn(carousel, '_slide').and.callThrough()
 
-        carouselEl.addEventListener('slid.vl.carousel', event => {
+        carouselEl.addEventListener('slid.cx.carousel', event => {
           expect(item).toHaveClass('active')
           expect(spy).toHaveBeenCalledWith('prev')
           expect(event.direction).toEqual('right')
@@ -556,7 +556,7 @@ describe('Carousel', () => {
 
         const spy = spyOn(carousel, '_slide').and.callThrough()
 
-        carouselEl.addEventListener('slid.vl.carousel', event => {
+        carouselEl.addEventListener('slid.cx.carousel', event => {
           expect(item).not.toHaveClass('active')
           expect(spy).toHaveBeenCalledWith('next')
           expect(event.direction).toEqual('left')
@@ -714,12 +714,12 @@ describe('Carousel', () => {
           }, 20)
         }
 
-        carouselEl.addEventListener('slide.vl.carousel', event => {
+        carouselEl.addEventListener('slide.cx.carousel', event => {
           event.preventDefault()
           doneTest()
         })
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           slidEvent = true
         })
 
@@ -748,8 +748,8 @@ describe('Carousel', () => {
           expect(event.from).toEqual(0)
           expect(event.to).toEqual(1)
 
-          carouselEl.removeEventListener('slide.vl.carousel', onSlide)
-          carouselEl.addEventListener('slide.vl.carousel', onSlide2)
+          carouselEl.removeEventListener('slide.cx.carousel', onSlide)
+          carouselEl.addEventListener('slide.cx.carousel', onSlide2)
 
           carousel.prev()
         }
@@ -759,7 +759,7 @@ describe('Carousel', () => {
           resolve()
         }
 
-        carouselEl.addEventListener('slide.vl.carousel', onSlide)
+        carouselEl.addEventListener('slide.cx.carousel', onSlide)
         carousel.next()
       })
     })
@@ -785,8 +785,8 @@ describe('Carousel', () => {
           expect(event.from).toEqual(0)
           expect(event.to).toEqual(1)
 
-          carouselEl.removeEventListener('slid.vl.carousel', onSlid)
-          carouselEl.addEventListener('slid.vl.carousel', onSlid2)
+          carouselEl.removeEventListener('slid.cx.carousel', onSlid)
+          carouselEl.addEventListener('slid.cx.carousel', onSlid2)
 
           carousel.prev()
         }
@@ -796,7 +796,7 @@ describe('Carousel', () => {
           resolve()
         }
 
-        carouselEl.addEventListener('slid.vl.carousel', onSlid)
+        carouselEl.addEventListener('slid.cx.carousel', onSlid)
         carousel.next()
       })
     })
@@ -865,7 +865,7 @@ describe('Carousel', () => {
         const secondIndicator = fixtureEl.querySelector('#secondIndicator')
         const carousel = new Carousel(carouselEl)
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           expect(firstIndicator).not.toHaveClass('active')
           expect(firstIndicator.hasAttribute('aria-current')).toBeFalse()
           expect(secondIndicator).toHaveClass('active')
@@ -1074,7 +1074,7 @@ describe('Carousel', () => {
 
         carousel.to(2)
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           expect(fixtureEl.querySelector('.active')).toEqual(fixtureEl.querySelector('#item3'))
           resolve()
         })
@@ -1100,7 +1100,7 @@ describe('Carousel', () => {
 
         carousel.to(1)
 
-        carouselEl.addEventListener('slid.vl.carousel', () => {
+        carouselEl.addEventListener('slid.cx.carousel', () => {
           expect(fixtureEl.querySelector('.active')).toEqual(fixtureEl.querySelector('#item2'))
           resolve()
         })
@@ -1181,7 +1181,7 @@ describe('Carousel', () => {
 
         const spyTo = spyOn(carousel, 'to')
 
-        EventHandler.trigger(carouselEl, 'slid.vl.carousel')
+        EventHandler.trigger(carouselEl, 'slid.cx.carousel')
 
         setTimeout(() => {
           expect(spyTo).toHaveBeenCalledWith(1)

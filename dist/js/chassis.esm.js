@@ -1,5 +1,5 @@
 /*!
-  * Chassis v0.1.0 (https://design.chassis.com/)
+  * Chassis v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -162,7 +162,7 @@ const Data = {
     // can be removed later when multiple key/instances are fine to be used
     if (!instanceMap.has(key) && instanceMap.size !== 0) {
       // eslint-disable-next-line no-console
-      console.error(`VLDS doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
+      console.error(`Chassis doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
       return;
     }
     instanceMap.set(key, instance);
@@ -380,7 +380,7 @@ const defineJQueryPlugin = plugin => {
   });
 };
 const execute = (possibleCallback, args = [], defaultValue = possibleCallback) => {
-  return typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
+  return typeof possibleCallback === 'function' ? possibleCallback.call(...args) : defaultValue;
 };
 const executeAfterTransition = (callback, transitionElement, waitForTransition = true) => {
   if (!waitForTransition) {
@@ -702,7 +702,7 @@ const Manipulator = {
     const cxKeys = Object.keys(element.dataset).filter(key => key.startsWith('cx') && !key.startsWith('cxConfig'));
     for (const key of cxKeys) {
       let pureKey = key.replace(/^cx/, '');
-      pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length);
+      pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1);
       attributes[pureKey] = normalizeData(element.dataset[key]);
     }
     return attributes;
@@ -777,7 +777,7 @@ class Config {
  * Constants
  */
 
-const VERSION = '5.3.3';
+const VERSION = '0.1.0';
 
 /**
  * Class definition
@@ -913,7 +913,6 @@ const getSelector = element => {
     // The only valid content that could double as a selector are IDs or classes,
     // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
     // `document.querySelector` will rightfully complain it is invalid.
-    // See https://github.com/ozgurgunes/chassis-css/issues/32273
     if (!hrefAttribute || !hrefAttribute.includes('#') && !hrefAttribute.startsWith('.')) {
       return null;
     }
@@ -1789,7 +1788,6 @@ class Dropdown extends BaseComponent {
     super(element, config);
     this._popper = null;
     this._parent = this._element.parentNode; // dropdown wrapper
-    // TODO: v6 revert #37011 & change markup https://design.chassis.com/docs/5.3/forms/input-group/
     this._menu = SelectorEngine.next(this._element, SELECTOR_MENU)[0] || SelectorEngine.prev(this._element, SELECTOR_MENU)[0] || SelectorEngine.findOne(SELECTOR_MENU, this._parent);
     this._inNavbar = this._detectNavbar();
   }
@@ -1946,7 +1944,7 @@ class Dropdown extends BaseComponent {
     return offset;
   }
   _getPopperConfig() {
-    const defaultBsPopperConfig = {
+    const defaultCxPopperConfig = {
       placement: this._getPlacement(),
       modifiers: [{
         name: 'preventOverflow',
@@ -1964,14 +1962,14 @@ class Dropdown extends BaseComponent {
     // Disable Popper if we have a static display or Dropdown is in Navbar
     if (this._inNavbar || this._config.display === 'static') {
       Manipulator.setDataAttribute(this._menu, 'popper', 'static'); // TODO: v6 remove
-      defaultBsPopperConfig.modifiers = [{
+      defaultCxPopperConfig.modifiers = [{
         name: 'applyStyles',
         enabled: false
       }];
     }
     return {
-      ...defaultBsPopperConfig,
-      ...execute(this._config.popperConfig, [defaultBsPopperConfig])
+      ...defaultCxPopperConfig,
+      ...execute(this._config.popperConfig, [undefined, defaultCxPopperConfig])
     };
   }
   _selectMenuItem({
@@ -2044,8 +2042,6 @@ class Dropdown extends BaseComponent {
       return;
     }
     event.preventDefault();
-
-    // TODO: v6 revert #37011 & change markup https://design.chassis.com/docs/5.3/forms/input-group/
     const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ? this : SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0] || SelectorEngine.next(this, SELECTOR_DATA_TOGGLE$3)[0] || SelectorEngine.findOne(SELECTOR_DATA_TOGGLE$3, event.delegateTarget.parentNode);
     const instance = Dropdown.getOrCreateInstance(getToggleButton);
     if (isUpOrDownEvent) {
@@ -3258,7 +3254,7 @@ class TemplateFactory extends Config {
     return this._config.sanitize ? sanitizeHtml(arg, this._config.allowList, this._config.sanitizeFn) : arg;
   }
   _resolvePossibleFunction(arg) {
-    return execute(arg, [this]);
+    return execute(arg, [undefined, this]);
   }
   _putElementInTemplate(element, templateElement) {
     if (this._config.html) {
@@ -3594,7 +3590,7 @@ class Tooltip extends BaseComponent {
     return execute(arg, [this._element]);
   }
   _getPopperConfig(attachment) {
-    const defaultBsPopperConfig = {
+    const defaultCxPopperConfig = {
       placement: attachment,
       modifiers: [{
         name: 'flip',
@@ -3628,8 +3624,8 @@ class Tooltip extends BaseComponent {
       }]
     };
     return {
-      ...defaultBsPopperConfig,
-      ...execute(this._config.popperConfig, [defaultBsPopperConfig])
+      ...defaultCxPopperConfig,
+      ...execute(this._config.popperConfig, [defaultCxPopperConfig])
     };
   }
   _setListeners() {

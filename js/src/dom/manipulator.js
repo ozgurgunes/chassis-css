@@ -56,7 +56,7 @@ const Manipulator = {
 
     for (const key of cxKeys) {
       let pureKey = key.replace(/^cx/, '')
-      pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1, pureKey.length)
+      pureKey = pureKey.charAt(0).toLowerCase() + pureKey.slice(1)
       attributes[pureKey] = normalizeData(element.dataset[key])
     }
 

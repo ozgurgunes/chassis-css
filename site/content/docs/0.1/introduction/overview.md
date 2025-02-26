@@ -107,7 +107,7 @@ Chassis - CSS Icons are available as SVG sprite and icon font. Easy to use for d
 <script>
 const imageModal = document.getElementById('imageModal')
 if (imageModal) {
-  imageModal.addEventListener('show.vl.modal', event => {
+  imageModal.addEventListener('show.cx.modal', event => {
     const imageButton = event.relatedTarget
     const modalImage = imageModal.querySelector('.modal-image')
     modalImage.src = imageButton.getAttribute('data-image-src')

@@ -1,5 +1,5 @@
 /*!
-  * Chassis data.js v0.1.0 (https://design.chassis.com/)
+  * Chassis data.js v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -32,7 +32,7 @@
       // can be removed later when multiple key/instances are fine to be used
       if (!instanceMap.has(key) && instanceMap.size !== 0) {
         // eslint-disable-next-line no-console
-        console.error(`VLDS doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
+        console.error(`Chassis doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
         return;
       }
       instanceMap.set(key, instance);

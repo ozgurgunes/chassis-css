@@ -46,12 +46,12 @@ describe('EventHandler', () => {
 
         const div = fixtureEl.querySelector('div')
 
-        EventHandler.on(div, 'vl.namespace', () => {
+        EventHandler.on(div, 'cx.namespace', () => {
           expect().nothing()
           resolve()
         })
 
-        EventHandler.trigger(div, 'vl.namespace')
+        EventHandler.trigger(div, 'cx.namespace')
       })
     })
 

@@ -1,5 +1,5 @@
 /*!
-  * Chassis template-factory.js v0.1.0 (https://design.chassis.com/)
+  * Chassis template-factory.js v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -133,7 +133,7 @@
       return this._config.sanitize ? sanitizer_js.sanitizeHtml(arg, this._config.allowList, this._config.sanitizeFn) : arg;
     }
     _resolvePossibleFunction(arg) {
-      return index_js.execute(arg, [this]);
+      return index_js.execute(arg, [undefined, this]);
     }
     _putElementInTemplate(element, templateElement) {
       if (this._config.html) {

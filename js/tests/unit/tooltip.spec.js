@@ -40,13 +40,13 @@ describe('Tooltip', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Tooltip.DATA_KEY).toEqual('vl.tooltip')
+      expect(Tooltip.DATA_KEY).toEqual('cx.tooltip')
     })
   })
 
   describe('EVENT_KEY', () => {
     it('should return plugin event key', () => {
-      expect(Tooltip.EVENT_KEY).toEqual('.vl.tooltip')
+      expect(Tooltip.EVENT_KEY).toEqual('.cx.tooltip')
     })
   })
 
@@ -104,7 +104,7 @@ describe('Tooltip', () => {
 
         const tooltipInContainerEl = containerEl.querySelector('a')
 
-        tooltipInContainerEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipInContainerEl.addEventListener('shown.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).not.toBeNull()
           tooltipContainer.dispose()
           resolve()
@@ -201,7 +201,7 @@ describe('Tooltip', () => {
 
         tooltip.enable()
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).not.toBeNull()
           resolve()
         })
@@ -221,7 +221,7 @@ describe('Tooltip', () => {
 
         tooltip.disable()
 
-        tooltipEl.addEventListener('show.vl.tooltip', () => {
+        tooltipEl.addEventListener('show.cx.tooltip', () => {
           reject(new Error('should not show a disabled tooltip'))
         })
 
@@ -260,7 +260,7 @@ describe('Tooltip', () => {
 
         tooltip.disable()
 
-        tooltipEl.addEventListener('show.vl.tooltip', () => {
+        tooltipEl.addEventListener('show.cx.tooltip', () => {
           reject(new Error('should not show a disabled tooltip'))
         })
 
@@ -280,7 +280,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).not.toBeNull()
           resolve()
         })
@@ -300,7 +300,7 @@ describe('Tooltip', () => {
 
         const spy = spyOn(tooltip, 'toggle').and.callThrough()
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -316,11 +316,11 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           tooltip.toggle()
         })
 
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).toBeNull()
           resolve()
         })
@@ -340,11 +340,11 @@ describe('Tooltip', () => {
 
         const spy = spyOn(tooltip, 'toggle').and.callThrough()
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           tooltipEl.click()
         })
 
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           expect(spy).toHaveBeenCalled()
           resolve()
         })
@@ -388,10 +388,10 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           tooltip.hide()
         })
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           tooltip.dispose()
           expect(tooltip.tip).toBeNull()
           expect(Tooltip.getInstance(tooltipEl)).toBeNull()
@@ -409,7 +409,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).not.toBeNull()
 
           tooltip.dispose()
@@ -450,7 +450,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tooltipShown = document.querySelector('.tooltip')
 
           expect(tooltipShown).not.toBeNull()
@@ -498,7 +498,7 @@ describe('Tooltip', () => {
 
         const spy = spyOn(EventHandler, 'on').and.callThrough()
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).not.toBeNull()
           expect(spy).toHaveBeenCalledWith(jasmine.any(Object), 'mouseover', noop)
           document.documentElement.ontouchstart = undefined
@@ -518,11 +518,11 @@ describe('Tooltip', () => {
           placement: 'bottom'
         })
 
-        tooltipEl.addEventListener('inserted.vl.tooltip', () => {
+        tooltipEl.addEventListener('inserted.cx.tooltip', () => {
           expect(tooltip._getTipElement()).toHaveClass('cx-tooltip-auto')
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(tooltip._getTipElement()).toHaveClass('cx-tooltip-auto')
           expect(tooltip._getTipElement().getAttribute('data-popper-placement')).toEqual('bottom')
           resolve()
@@ -540,12 +540,12 @@ describe('Tooltip', () => {
         const tooltip = new Tooltip(tooltipEl)
 
         const firstCallback = () => {
-          tooltipEl.removeEventListener('shown.vl.tooltip', firstCallback)
+          tooltipEl.removeEventListener('shown.cx.tooltip', firstCallback)
           let tooltipShown = document.querySelector('.tooltip')
 
           tooltipShown.remove()
 
-          tooltipEl.addEventListener('shown.vl.tooltip', () => {
+          tooltipEl.addEventListener('shown.cx.tooltip', () => {
             tooltipShown = document.querySelector('.tooltip')
 
             expect(tooltipShown).not.toBeNull()
@@ -555,7 +555,7 @@ describe('Tooltip', () => {
           tooltip.show()
         }
 
-        tooltipEl.addEventListener('shown.vl.tooltip', firstCallback)
+        tooltipEl.addEventListener('shown.cx.tooltip', firstCallback)
 
         tooltip.show()
       })
@@ -570,7 +570,7 @@ describe('Tooltip', () => {
           container: fixtureEl
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(fixtureEl.querySelector('.tooltip')).not.toBeNull()
           resolve()
         })
@@ -591,7 +591,7 @@ describe('Tooltip', () => {
           }
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(fixtureEl.querySelector('.tooltip')).not.toBeNull()
           resolve()
         })
@@ -609,7 +609,7 @@ describe('Tooltip', () => {
           container: '#fixture'
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(fixtureEl.querySelector('.tooltip')).not.toBeNull()
           resolve()
         })
@@ -628,7 +628,7 @@ describe('Tooltip', () => {
           placement: spy
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).not.toBeNull()
           expect(spy).toHaveBeenCalled()
           resolve()
@@ -647,7 +647,7 @@ describe('Tooltip', () => {
           animation: false
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tip = document.querySelector('.tooltip')
 
           expect(tip).not.toBeNull()
@@ -672,7 +672,7 @@ describe('Tooltip', () => {
       }
     })
 
-    it('should not show a tooltip if show.vl.tooltip is prevented', () => {
+    it('should not show a tooltip if show.cx.tooltip is prevented', () => {
       return new Promise((resolve, reject) => {
         fixtureEl.innerHTML = '<a href="#" rel="tooltip" title="Another tooltip"></a>'
 
@@ -686,12 +686,12 @@ describe('Tooltip', () => {
           }, 10)
         }
 
-        tooltipEl.addEventListener('show.vl.tooltip', ev => {
+        tooltipEl.addEventListener('show.cx.tooltip', ev => {
           ev.preventDefault()
           expectedDone()
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           reject(new Error('Tooltip should not be shown'))
         })
 
@@ -858,7 +858,7 @@ describe('Tooltip', () => {
         })
 
         const insertedFunc = jasmine.createSpy()
-        tooltipEl.addEventListener('inserted.vl.tooltip', insertedFunc)
+        tooltipEl.addEventListener('inserted.cx.tooltip', insertedFunc)
 
         setTimeout(() => {
           expect(insertedFunc).toHaveBeenCalledTimes(1)
@@ -885,7 +885,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tip = document.querySelector('.tooltip')
           expect(tip).not.toBeNull()
           expect(tip).toHaveClass('custom-class')
@@ -905,7 +905,7 @@ describe('Tooltip', () => {
           customClass: 'custom-class custom-class-2'
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tip = document.querySelector('.tooltip')
           expect(tip).not.toBeNull()
           expect(tip).toHaveClass('custom-class')
@@ -927,7 +927,7 @@ describe('Tooltip', () => {
           customClass: spy
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tip = document.querySelector('.tooltip')
           expect(tip).not.toBeNull()
           expect(spy).toHaveBeenCalled()
@@ -946,7 +946,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           expect(tooltipEl.getAttribute('title')).toBeNull()
           resolve()
         })
@@ -963,8 +963,8 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => tooltip.hide())
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => tooltip.hide())
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).toBeNull()
           expect(tooltipEl.getAttribute('aria-describedby')).toBeNull()
           resolve()
@@ -982,12 +982,12 @@ describe('Tooltip', () => {
         const tooltip = new Tooltip(tooltipEl)
         const spy = spyOn(EventHandler, 'off')
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           document.documentElement.ontouchstart = noop
           tooltip.hide()
         })
 
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).toBeNull()
           expect(spy).toHaveBeenCalledWith(jasmine.any(Object), 'mouseover', noop)
           document.documentElement.ontouchstart = undefined
@@ -1007,8 +1007,8 @@ describe('Tooltip', () => {
           animation: false
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => tooltip.hide())
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => tooltip.hide())
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           expect(document.querySelector('.tooltip')).toBeNull()
           expect(tooltipEl.getAttribute('aria-describedby')).toBeNull()
           resolve()
@@ -1034,12 +1034,12 @@ describe('Tooltip', () => {
           animation: false
         })
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => tooltip.hide())
-        tooltipEl.addEventListener('hide.vl.tooltip', event => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => tooltip.hide())
+        tooltipEl.addEventListener('hide.cx.tooltip', event => {
           event.preventDefault()
           assertDone()
         })
-        tooltipEl.addEventListener('hidden.vl.tooltip', () => {
+        tooltipEl.addEventListener('hidden.cx.tooltip', () => {
           reject(new Error('should not trigger hidden event'))
         })
 
@@ -1070,7 +1070,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const spy = spyOn(tooltip._popper, 'update')
 
           tooltip.update()
@@ -1367,7 +1367,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tooltipShown = document.querySelector('.tooltip')
 
           expect(tooltipShown).not.toBeNull()
@@ -1386,7 +1386,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tooltipShown = document.querySelector('.tooltip')
 
           expect(tooltipShown).not.toBeNull()
@@ -1405,7 +1405,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tooltipShown = document.querySelector('.tooltip')
 
           expect(tooltipShown).not.toBeNull()
@@ -1424,7 +1424,7 @@ describe('Tooltip', () => {
         const tooltipEl = fixtureEl.querySelector('a')
         const tooltip = new Tooltip(tooltipEl)
 
-        tooltipEl.addEventListener('shown.vl.tooltip', () => {
+        tooltipEl.addEventListener('shown.cx.tooltip', () => {
           const tooltipShown = document.querySelector('.tooltip')
 
           expect(tooltipShown).not.toBeNull()

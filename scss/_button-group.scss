@@ -84,8 +84,8 @@
 //
 
 .dropdown-toggle-split {
-  padding-right: $button-medium-padding-x * .75;
-  padding-left: $button-medium-padding-x * .75;
+  padding-right: #{calc($button-medium-padding-x * .75)};
+  padding-left: #{calc($button-medium-padding-x * .75)};
 
   &::after,
   .dropup &::after,
@@ -99,13 +99,13 @@
 }
 
 .button-small + .dropdown-toggle-split {
-  padding-right: $button-small-padding-x * .75;
-  padding-left: $button-small-padding-x * .75;
+  padding-right: #{calc($button-small-padding-x * .75)};
+  padding-left: #{calc($button-small-padding-x * .75)};
 }
 
 .button-large + .dropdown-toggle-split {
-  padding-right: $button-large-padding-x * .75;
-  padding-left: $button-large-padding-x * .75;
+  padding-right: #{calc($button-large-padding-x * .75)};
+  padding-left: #{calc($button-large-padding-x * .75)};
 }
 
 

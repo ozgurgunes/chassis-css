@@ -2,7 +2,7 @@ $prefix: cx- !default;
 
 
 @import "mixins/banner";
-@include vlBanner("");
+@include cxBanner("");
 
 // fusv-disable
 @import "vendor";

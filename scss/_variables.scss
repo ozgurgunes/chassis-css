@@ -694,7 +694,7 @@ $input-addon-border-color:              $input-border-color !default;
 $form-select-medium-padding-y:          $input-medium-padding-y !default;
 $form-select-medium-padding-x:          $input-medium-padding-x !default;
 $form-select-medium-font:               $input-medium-font !default;
-$form-select-indicator-padding:         $form-select-medium-padding-x * 3 !default; // Extra padding for background-image
+$form-select-indicator-padding:         #{calc($form-select-medium-padding-x * 3)} !default; // Extra padding for background-image
 $form-select-fg-color:                  $input-fg-color !default;
 $form-select-bg-color:                  $input-bg-color !default;
 $form-select-disabled-fg-color:         $input-disabled-fg-color !default;
@@ -706,7 +706,7 @@ $form-select-bg-size:                   1.25em 1em !default; // In pixels becaus
 $form-select-indicator-color:           $neutral-base-color !default; // Since they're css variables, we can't pass a context color here.
 $form-select-indicator:                 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
 
-$form-select-feedback-icon-padding-end: $form-select-medium-padding-x * 2.5 + $form-select-indicator-padding !default;
+$form-select-feedback-icon-padding-end: #{calc($form-select-medium-padding-x * 2.5 + $form-select-indicator-padding)} !default;
 $form-select-feedback-icon-position:    center right $form-select-indicator-padding !default;
 $form-select-feedback-icon-size:        $input-height-inner-half $input-height-inner-half !default;
 
@@ -754,23 +754,23 @@ $form-range-thumb-transition:               background-color .15s ease-in-out, b
 // scss-docs-end form-range-variables
 
 // scss-docs-start form-file-variables
-$form-file-button-fg-color:             $input-fg-color !default;
-$form-file-button-bg-color:             var(--#{$prefix}bg-evident) !default;
-$form-file-button-hover-bg-color:       var(--#{$prefix}bg-subtle) !default;
+$form-file-button-fg-color:                 $input-fg-color !default;
+$form-file-button-bg-color:                 var(--#{$prefix}bg-evident) !default;
+$form-file-button-hover-bg-color:           var(--#{$prefix}bg-subtle) !default;
 // scss-docs-end form-file-variables
 
 // scss-docs-start form-floating-variables
-$form-floating-height:                  add(3.5rem, $input-height-border) !default;
-$form-floating-line-height:             1.25 !default;
-$form-floating-padding-x:               $input-medium-padding-x !default;
-$form-floating-padding-y:               1rem !default;
-$form-floating-input-padding-t:         1.625rem !default;
-$form-floating-input-padding-b:         .625rem !default;
-$form-floating-label-height:            1.5em !default;
-$form-floating-label-opacity:           .65 !default;
-$form-floating-label-transform:         scale(.85) translateY(-.5rem) translateX(.15rem) !default;
-$form-floating-label-disabled-fg-color:    $cx-color-context-default-fg-disabled !default;
-$form-floating-transition:              opacity .1s ease-in-out, transform .1s ease-in-out !default;
+$form-floating-height:                      add(3.5rem, $input-height-border) !default;
+$form-floating-line-height:                 1.25 !default;
+$form-floating-padding-x:                   $input-medium-padding-x !default;
+$form-floating-padding-y:                   1rem !default;
+$form-floating-input-padding-t:             1.625rem !default;
+$form-floating-input-padding-b:             .625rem !default;
+$form-floating-label-height:                1.5em !default;
+$form-floating-label-opacity:               .65 !default;
+$form-floating-label-transform:             scale(.85) translateY(-.5rem) translateX(.15rem) !default;
+$form-floating-label-disabled-fg-color:     var(--#{$prefix}default-fg-disabled) !default;
+$form-floating-transition:                  opacity .1s ease-in-out, transform .1s ease-in-out !default;
 // scss-docs-end form-floating-variables
 
 // Form validation
@@ -958,7 +958,7 @@ $dropdown-item-padding-y:               var(--#{$prefix}space-xsmall) !default;
 $dropdown-item-padding-x:               var(--#{$prefix}space-small) !default;
 $dropdown-item-border-radius:           var(--#{$prefix}border-radius-small) !default;
 
-$dropdown-header-fg-color:              $cx-color-context-default-fg-subtle !default;
+$dropdown-header-fg-color:              var(--#{$prefix}default-fg-subtle) !default;
 $dropdown-header-padding-x:             $dropdown-item-padding-x !default;
 $dropdown-header-padding-y:             $dropdown-padding-y !default;
 // scss-docs-end dropdown-variables

@@ -237,7 +237,7 @@ describe('Swipe', () => {
       const swipe = new Swipe(swipeEl)
 
       swipe.dispose()
-      expect(EventHandler.off).toHaveBeenCalledWith(swipeEl, '.vl.swipe')
+      expect(EventHandler.off).toHaveBeenCalledWith(swipeEl, '.cx.swipe')
     })
 
     it('should destroy', () => {
@@ -263,7 +263,7 @@ describe('Swipe', () => {
 
       swipe.dispose()
 
-      expect(removeEventSpy).toHaveBeenCalledWith(fixtureEl, '.vl.swipe')
+      expect(removeEventSpy).toHaveBeenCalledWith(fixtureEl, '.cx.swipe')
       deleteDocumentElementOntouchstart()
     })
   })

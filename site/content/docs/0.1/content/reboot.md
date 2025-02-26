@@ -20,7 +20,7 @@ Here are our guidelines and reasons for choosing what to override in Reboot:
 
 ## CSS variables
 
-VLDS standardized our required `@import`s across all our CSS bundles (including `chassis.css`, `chassis-reboot.css`, and `chassis-grid.css`) to include `_root.scss`. This adds `:root` level CSS variables to all bundles, regardless of how many of them are used in that bundle.
+Chassis standardized our required `@import`s across all our CSS bundles (including `chassis.css`, `chassis-reboot.css`, and `chassis-grid.css`) to include `_root.scss`. This adds `:root` level CSS variables to all bundles, regardless of how many of them are used in that bundle.
 
 For example, consider these `:root` CSS variables for common `<body>` styles:
 

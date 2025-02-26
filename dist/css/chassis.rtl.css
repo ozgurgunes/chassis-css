@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Chassis  v0.1.0 (https://design.chassis.com/)
+ * Chassis  v0.1.0 (https://ozgurgunes.github.io/chassis-css//)
  * Copyright 2025 Chassis
  * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
  */
@@ -10,19 +10,19 @@
   --cx-default-rgb: 0, 0, 0;
   --cx-alternate: #ffffff;
   --cx-alternate-rgb: 255, 255, 255;
-  --cx-primary: #00a4cc;
+  --cx-primary: #00A4CC;
   --cx-primary-rgb: 0, 164, 204;
-  --cx-secondary: #f55200;
+  --cx-secondary: #F55200;
   --cx-secondary-rgb: 245, 82, 0;
-  --cx-neutral: #6f8085;
+  --cx-neutral: #6F8085;
   --cx-neutral-rgb: 111, 128, 133;
-  --cx-warning: #f5a300;
+  --cx-warning: #F5A300;
   --cx-warning-rgb: 245, 163, 0;
-  --cx-success: #10c263;
+  --cx-success: #10C263;
   --cx-success-rgb: 16, 194, 99;
-  --cx-danger: #f52314;
+  --cx-danger: #F52314;
   --cx-danger-rgb: 245, 35, 20;
-  --cx-info: #1414f5;
+  --cx-info: #1414F5;
   --cx-info-rgb: 20, 20, 245;
   --cx-black: #000;
   --cx-black-rgb: 0, 0, 0;
@@ -60,7 +60,7 @@
   --cx-primary-30-rgb: 128, 210, 230;
   --cx-primary-40: #40bbd9;
   --cx-primary-40-rgb: 64, 187, 217;
-  --cx-primary-50: #00a4cc;
+  --cx-primary-50: #00A4CC;
   --cx-primary-50-rgb: 0, 164, 204;
   --cx-primary-60: #00738f;
   --cx-primary-60-rgb: 0, 115, 143;
@@ -82,7 +82,7 @@
   --cx-secondary-30-rgb: 250, 169, 128;
   --cx-secondary-40: #f87d40;
   --cx-secondary-40-rgb: 248, 125, 64;
-  --cx-secondary-50: #f55200;
+  --cx-secondary-50: #F55200;
   --cx-secondary-50-rgb: 245, 82, 0;
   --cx-secondary-60: #ac3900;
   --cx-secondary-60-rgb: 172, 57, 0;
@@ -104,7 +104,7 @@
   --cx-neutral-30-rgb: 183, 192, 194;
   --cx-neutral-40: #93a0a4;
   --cx-neutral-40-rgb: 147, 160, 164;
-  --cx-neutral-50: #6f8085;
+  --cx-neutral-50: #6F8085;
   --cx-neutral-50-rgb: 111, 128, 133;
   --cx-neutral-60: #4e5a5d;
   --cx-neutral-60-rgb: 78, 90, 93;
@@ -126,7 +126,7 @@
   --cx-danger-30-rgb: 250, 145, 138;
   --cx-danger-40: #f85a4f;
   --cx-danger-40-rgb: 248, 90, 79;
-  --cx-danger-50: #f52314;
+  --cx-danger-50: #F52314;
   --cx-danger-50-rgb: 245, 35, 20;
   --cx-danger-60: #ac190e;
   --cx-danger-60-rgb: 172, 25, 14;
@@ -148,7 +148,7 @@
   --cx-success-30-rgb: 136, 225, 177;
   --cx-success-40: #4cd18a;
   --cx-success-40-rgb: 76, 209, 138;
-  --cx-success-50: #10c263;
+  --cx-success-50: #10C263;
   --cx-success-50-rgb: 16, 194, 99;
   --cx-success-60: #0b8845;
   --cx-success-60-rgb: 11, 136, 69;
@@ -170,7 +170,7 @@
   --cx-warning-30-rgb: 250, 209, 128;
   --cx-warning-40: #f8ba40;
   --cx-warning-40-rgb: 248, 186, 64;
-  --cx-warning-50: #f5a300;
+  --cx-warning-50: #F5A300;
   --cx-warning-50-rgb: 245, 163, 0;
   --cx-warning-60: #ac7200;
   --cx-warning-60-rgb: 172, 114, 0;
@@ -192,7 +192,7 @@
   --cx-info-30-rgb: 138, 138, 250;
   --cx-info-40: #4f4ff8;
   --cx-info-40-rgb: 79, 79, 248;
-  --cx-info-50: #1414f5;
+  --cx-info-50: #1414F5;
   --cx-info-50-rgb: 20, 20, 245;
   --cx-info-60: #0e0eac;
   --cx-info-60-rgb: 14, 14, 172;
@@ -208,19 +208,19 @@
   --cx-default-base-color-rgb: 0, 0, 0;
   --cx-alternate-base-color: #ffffff;
   --cx-alternate-base-color-rgb: 255, 255, 255;
-  --cx-primary-base-color: #00a4cc;
+  --cx-primary-base-color: #00A4CC;
   --cx-primary-base-color-rgb: 0, 164, 204;
-  --cx-secondary-base-color: #f55200;
+  --cx-secondary-base-color: #F55200;
   --cx-secondary-base-color-rgb: 245, 82, 0;
-  --cx-neutral-base-color: #6f8085;
+  --cx-neutral-base-color: #6F8085;
   --cx-neutral-base-color-rgb: 111, 128, 133;
-  --cx-danger-base-color: #f52314;
+  --cx-danger-base-color: #F52314;
   --cx-danger-base-color-rgb: 245, 35, 20;
-  --cx-success-base-color: #10c263;
+  --cx-success-base-color: #10C263;
   --cx-success-base-color-rgb: 16, 194, 99;
-  --cx-warning-base-color: #f5a300;
+  --cx-warning-base-color: #F5A300;
   --cx-warning-base-color-rgb: 245, 163, 0;
-  --cx-info-base-color: #1414f5;
+  --cx-info-base-color: #1414F5;
   --cx-info-base-color-rgb: 20, 20, 245;
   --cx-black-base-color: #000000;
   --cx-black-base-color-rgb: 0, 0, 0;
@@ -362,19 +362,19 @@
   --cx-default-fg-highlight-rgb: 0, 115, 143;
   --cx-alternate-fg-highlight: #b3e4f0;
   --cx-alternate-fg-highlight-rgb: 179, 228, 240;
-  --cx-primary-fg-highlight: #00a4cc;
+  --cx-primary-fg-highlight: #00A4CC;
   --cx-primary-fg-highlight-rgb: 0, 164, 204;
-  --cx-secondary-fg-highlight: #f55200;
+  --cx-secondary-fg-highlight: #F55200;
   --cx-secondary-fg-highlight-rgb: 245, 82, 0;
-  --cx-neutral-fg-highlight: #6f8085;
+  --cx-neutral-fg-highlight: #6F8085;
   --cx-neutral-fg-highlight-rgb: 111, 128, 133;
-  --cx-danger-fg-highlight: #f52314;
+  --cx-danger-fg-highlight: #F52314;
   --cx-danger-fg-highlight-rgb: 245, 35, 20;
-  --cx-success-fg-highlight: #10c263;
+  --cx-success-fg-highlight: #10C263;
   --cx-success-fg-highlight-rgb: 16, 194, 99;
-  --cx-warning-fg-highlight: #f5a300;
+  --cx-warning-fg-highlight: #F5A300;
   --cx-warning-fg-highlight-rgb: 245, 163, 0;
-  --cx-info-fg-highlight: #1414f5;
+  --cx-info-fg-highlight: #1414F5;
   --cx-info-fg-highlight-rgb: 20, 20, 245;
   --cx-black-fg-highlight: #000000;
   --cx-black-fg-highlight-rgb: 0, 0, 0;
@@ -560,19 +560,19 @@
   --cx-default-bg-solid-rgb: 233, 236, 237;
   --cx-alternate-bg-solid: #111314;
   --cx-alternate-bg-solid-rgb: 17, 19, 20;
-  --cx-primary-bg-solid: #00a4cc;
+  --cx-primary-bg-solid: #00A4CC;
   --cx-primary-bg-solid-rgb: 0, 164, 204;
-  --cx-secondary-bg-solid: #f55200;
+  --cx-secondary-bg-solid: #F55200;
   --cx-secondary-bg-solid-rgb: 245, 82, 0;
-  --cx-neutral-bg-solid: #6f8085;
+  --cx-neutral-bg-solid: #6F8085;
   --cx-neutral-bg-solid-rgb: 111, 128, 133;
-  --cx-danger-bg-solid: #f52314;
+  --cx-danger-bg-solid: #F52314;
   --cx-danger-bg-solid-rgb: 245, 35, 20;
-  --cx-success-bg-solid: #10c263;
+  --cx-success-bg-solid: #10C263;
   --cx-success-bg-solid-rgb: 16, 194, 99;
-  --cx-warning-bg-solid: #f5a300;
+  --cx-warning-bg-solid: #F5A300;
   --cx-warning-bg-solid-rgb: 245, 163, 0;
-  --cx-info-bg-solid: #1414f5;
+  --cx-info-bg-solid: #1414F5;
   --cx-info-bg-solid-rgb: 20, 20, 245;
   --cx-black-bg-solid: #000000;
   --cx-black-bg-solid-rgb: 0, 0, 0;
@@ -604,19 +604,19 @@
   --cx-default-bg-button-rgb: 255, 255, 255;
   --cx-alternate-bg-button: #272d2f;
   --cx-alternate-bg-button-rgb: 39, 45, 47;
-  --cx-primary-bg-button: #00a4cc;
+  --cx-primary-bg-button: #00A4CC;
   --cx-primary-bg-button-rgb: 0, 164, 204;
-  --cx-secondary-bg-button: #f55200;
+  --cx-secondary-bg-button: #F55200;
   --cx-secondary-bg-button-rgb: 245, 82, 0;
-  --cx-neutral-bg-button: #6f8085;
+  --cx-neutral-bg-button: #6F8085;
   --cx-neutral-bg-button-rgb: 111, 128, 133;
-  --cx-danger-bg-button: #f52314;
+  --cx-danger-bg-button: #F52314;
   --cx-danger-bg-button-rgb: 245, 35, 20;
-  --cx-success-bg-button: #10c263;
+  --cx-success-bg-button: #10C263;
   --cx-success-bg-button-rgb: 16, 194, 99;
-  --cx-warning-bg-button: #f5a300;
+  --cx-warning-bg-button: #F5A300;
   --cx-warning-bg-button-rgb: 245, 163, 0;
-  --cx-info-bg-button: #1414f5;
+  --cx-info-bg-button: #1414F5;
   --cx-info-bg-button-rgb: 20, 20, 245;
   --cx-black-bg-button: #000000;
   --cx-black-bg-button-rgb: 0, 0, 0;
@@ -732,23 +732,23 @@
   --cx-black-border-subtle-rgb: 0, 0, 0;
   --cx-white-border-subtle: rgba(255, 255, 255, 0.15);
   --cx-white-border-subtle-rgb: 255, 255, 255;
-  --cx-default-icon-main: #00a4cc;
+  --cx-default-icon-main: #00A4CC;
   --cx-default-icon-main-rgb: 0, 164, 204;
-  --cx-alternate-icon-main: #00a4cc;
+  --cx-alternate-icon-main: #00A4CC;
   --cx-alternate-icon-main-rgb: 0, 164, 204;
-  --cx-primary-icon-main: #00a4cc;
+  --cx-primary-icon-main: #00A4CC;
   --cx-primary-icon-main-rgb: 0, 164, 204;
-  --cx-secondary-icon-main: #f55200;
+  --cx-secondary-icon-main: #F55200;
   --cx-secondary-icon-main-rgb: 245, 82, 0;
-  --cx-neutral-icon-main: #6f8085;
+  --cx-neutral-icon-main: #6F8085;
   --cx-neutral-icon-main-rgb: 111, 128, 133;
-  --cx-danger-icon-main: #f52314;
+  --cx-danger-icon-main: #F52314;
   --cx-danger-icon-main-rgb: 245, 35, 20;
-  --cx-success-icon-main: #10c263;
+  --cx-success-icon-main: #10C263;
   --cx-success-icon-main-rgb: 16, 194, 99;
-  --cx-warning-icon-main: #f5a300;
+  --cx-warning-icon-main: #F5A300;
   --cx-warning-icon-main-rgb: 245, 163, 0;
-  --cx-info-icon-main: #1414f5;
+  --cx-info-icon-main: #1414F5;
   --cx-info-icon-main-rgb: 20, 20, 245;
   --cx-black-icon-main: #000000;
   --cx-black-icon-main-rgb: 0, 0, 0;
@@ -798,23 +798,23 @@
   --cx-black-icon-slight-rgb: 0, 0, 0;
   --cx-white-icon-slight: rgba(255, 255, 255, 0.2);
   --cx-white-icon-slight-rgb: 255, 255, 255;
-  --cx-default-indicator-main: #00a4cc;
+  --cx-default-indicator-main: #00A4CC;
   --cx-default-indicator-main-rgb: 0, 164, 204;
-  --cx-alternate-indicator-main: #00a4cc;
+  --cx-alternate-indicator-main: #00A4CC;
   --cx-alternate-indicator-main-rgb: 0, 164, 204;
-  --cx-primary-indicator-main: #00a4cc;
+  --cx-primary-indicator-main: #00A4CC;
   --cx-primary-indicator-main-rgb: 0, 164, 204;
-  --cx-secondary-indicator-main: #f55200;
+  --cx-secondary-indicator-main: #F55200;
   --cx-secondary-indicator-main-rgb: 245, 82, 0;
-  --cx-neutral-indicator-main: #6f8085;
+  --cx-neutral-indicator-main: #6F8085;
   --cx-neutral-indicator-main-rgb: 111, 128, 133;
-  --cx-danger-indicator-main: #f52314;
+  --cx-danger-indicator-main: #F52314;
   --cx-danger-indicator-main-rgb: 245, 35, 20;
-  --cx-success-indicator-main: #10c263;
+  --cx-success-indicator-main: #10C263;
   --cx-success-indicator-main-rgb: 16, 194, 99;
-  --cx-warning-indicator-main: #f5a300;
+  --cx-warning-indicator-main: #F5A300;
   --cx-warning-indicator-main-rgb: 245, 163, 0;
-  --cx-info-indicator-main: #1414f5;
+  --cx-info-indicator-main: #1414F5;
   --cx-info-indicator-main-rgb: 20, 20, 245;
   --cx-black-indicator-main: #000000;
   --cx-black-indicator-main-rgb: 0, 0, 0;
@@ -930,23 +930,23 @@
   --cx-black-scene-clear-rgb: 0, 0, 0;
   --cx-white-scene-clear: rgba(255, 255, 255, 0);
   --cx-white-scene-clear-rgb: 255, 255, 255;
-  --cx-default-link-main: #00a4cc;
+  --cx-default-link-main: #00A4CC;
   --cx-default-link-main-rgb: 0, 164, 204;
-  --cx-alternate-link-main: #00a4cc;
+  --cx-alternate-link-main: #00A4CC;
   --cx-alternate-link-main-rgb: 0, 164, 204;
-  --cx-primary-link-main: #00a4cc;
+  --cx-primary-link-main: #00A4CC;
   --cx-primary-link-main-rgb: 0, 164, 204;
-  --cx-secondary-link-main: #f55200;
+  --cx-secondary-link-main: #F55200;
   --cx-secondary-link-main-rgb: 245, 82, 0;
-  --cx-neutral-link-main: #6f8085;
+  --cx-neutral-link-main: #6F8085;
   --cx-neutral-link-main-rgb: 111, 128, 133;
-  --cx-danger-link-main: #f52314;
+  --cx-danger-link-main: #F52314;
   --cx-danger-link-main-rgb: 245, 35, 20;
-  --cx-success-link-main: #10c263;
+  --cx-success-link-main: #10C263;
   --cx-success-link-main-rgb: 16, 194, 99;
-  --cx-warning-link-main: #f5a300;
+  --cx-warning-link-main: #F5A300;
   --cx-warning-link-main-rgb: 245, 163, 0;
-  --cx-info-link-main: #1414f5;
+  --cx-info-link-main: #1414F5;
   --cx-info-link-main-rgb: 20, 20, 245;
   --cx-black-link-main: #000000;
   --cx-black-link-main-rgb: 0, 0, 0;
@@ -974,27 +974,27 @@
   --cx-black-link-hover-rgb: 0, 0, 0;
   --cx-white-link-hover: rgba(255, 255, 255, 0.9);
   --cx-white-link-hover-rgb: 255, 255, 255;
-  --cx-default-link-active: #f52314;
+  --cx-default-link-active: #F52314;
   --cx-default-link-active-rgb: 245, 35, 20;
-  --cx-alternate-link-active: #f52314;
+  --cx-alternate-link-active: #F52314;
   --cx-alternate-link-active-rgb: 245, 35, 20;
-  --cx-primary-link-active: #00a4cc;
+  --cx-primary-link-active: #00A4CC;
   --cx-primary-link-active-rgb: 0, 164, 204;
-  --cx-secondary-link-active: #f55200;
+  --cx-secondary-link-active: #F55200;
   --cx-secondary-link-active-rgb: 245, 82, 0;
-  --cx-neutral-link-active: #6f8085;
+  --cx-neutral-link-active: #6F8085;
   --cx-neutral-link-active-rgb: 111, 128, 133;
-  --cx-danger-link-active: #f52314;
+  --cx-danger-link-active: #F52314;
   --cx-danger-link-active-rgb: 245, 35, 20;
-  --cx-success-link-active: #10c263;
+  --cx-success-link-active: #10C263;
   --cx-success-link-active-rgb: 16, 194, 99;
-  --cx-warning-link-active: #f5a300;
+  --cx-warning-link-active: #F5A300;
   --cx-warning-link-active-rgb: 245, 163, 0;
-  --cx-info-link-active: #1414f5;
+  --cx-info-link-active: #1414F5;
   --cx-info-link-active-rgb: 20, 20, 245;
-  --cx-black-link-active: #f52314;
+  --cx-black-link-active: #F52314;
   --cx-black-link-active-rgb: 245, 35, 20;
-  --cx-white-link-active: #f52314;
+  --cx-white-link-active: #F52314;
   --cx-white-link-active-rgb: 245, 35, 20;
   --cx-default-link-visited: #00738f;
   --cx-default-link-visited-rgb: 0, 115, 143;
@@ -1125,7 +1125,7 @@
   --cx-font-size-html-code: 1rem;
   --cx-font-size-html-list: 1rem;
   --cx-font-weight-html-body: 400;
-  --cx-font-weight-html-heading: 700;
+  --cx-font-weight-html-heading: 600;
   --cx-font-weight-html-paragraph: 400;
   --cx-font-weight-html-blockquote: 300;
   --cx-font-weight-html-cite: 500;
@@ -1183,9 +1183,9 @@
   --cx-icon-2xsmall: 0.75rem;
   --cx-icon-3xsmall: 0.5rem;
   --cx-border-width-zero: 0rem;
-  --cx-border-width-small: 0.03125rem;
+  --cx-border-width-small: 0.0313rem;
   --cx-border-width-medium: 0.0625rem;
-  --cx-border-width-large: 0.09375rem;
+  --cx-border-width-large: 0.0938rem;
   --cx-border-width-xlarge: 0.125rem;
   --cx-border-width-2xlarge: 0.25rem;
   --cx-border-radius-zero: 0rem;
@@ -1327,7 +1327,7 @@
   --cx-border-width: var(--cx-body-border-width, 0.0625rem);
   --cx-border-style: var(--cx-body-border-style, solid);
   --cx-border-radius: var(--cx-body-border-radius, 0.375rem);
-  --cx-box-shadow-small: var(--cx-body-box-shadow-small, 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.03125rem 0.125rem -0.03125rem rgba(0, 0, 0, 0.1));
+  --cx-box-shadow-small: var(--cx-body-box-shadow-small, 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.0313rem 0.125rem -0.0313rem rgba(0, 0, 0, 0.1));
   --cx-box-shadow-medium: var(--cx-body-box-shadow-medium, 0rem 0.25rem 1rem -0.25rem rgba(0, 0, 0, 0.2), 0rem 0.125rem 0.5rem -0.125rem rgba(0, 0, 0, 0.1));
   --cx-box-shadow-large: var(--cx-body-box-shadow-large, 0rem 0.5rem 2rem -0.5rem rgba(0, 0, 0, 0.2), 0rem 0.25rem 1rem -0.25rem rgba(0, 0, 0, 0.1));
   --cx-box-shadow-inset: var(--cx-body-box-shadow-inset, inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
@@ -1368,19 +1368,19 @@
   --cx-default-rgb: 255, 255, 255;
   --cx-alternate: #ffffff;
   --cx-alternate-rgb: 255, 255, 255;
-  --cx-primary: #00a4cc;
+  --cx-primary: #00A4CC;
   --cx-primary-rgb: 0, 164, 204;
-  --cx-secondary: #f55200;
+  --cx-secondary: #F55200;
   --cx-secondary-rgb: 245, 82, 0;
-  --cx-neutral: #6f8085;
+  --cx-neutral: #6F8085;
   --cx-neutral-rgb: 111, 128, 133;
-  --cx-warning: #f5a300;
+  --cx-warning: #F5A300;
   --cx-warning-rgb: 245, 163, 0;
-  --cx-success: #10c263;
+  --cx-success: #10C263;
   --cx-success-rgb: 16, 194, 99;
-  --cx-danger: #f52314;
+  --cx-danger: #F52314;
   --cx-danger-rgb: 245, 35, 20;
-  --cx-info: #1414f5;
+  --cx-info: #1414F5;
   --cx-info-rgb: 20, 20, 245;
   --cx-black: #000000;
   --cx-black-rgb: 0, 0, 0;
@@ -1412,19 +1412,19 @@
   --cx-default-base-color-rgb: 255, 255, 255;
   --cx-alternate-base-color: #ffffff;
   --cx-alternate-base-color-rgb: 255, 255, 255;
-  --cx-primary-base-color: #00a4cc;
+  --cx-primary-base-color: #00A4CC;
   --cx-primary-base-color-rgb: 0, 164, 204;
-  --cx-secondary-base-color: #f55200;
+  --cx-secondary-base-color: #F55200;
   --cx-secondary-base-color-rgb: 245, 82, 0;
-  --cx-neutral-base-color: #6f8085;
+  --cx-neutral-base-color: #6F8085;
   --cx-neutral-base-color-rgb: 111, 128, 133;
-  --cx-danger-base-color: #f52314;
+  --cx-danger-base-color: #F52314;
   --cx-danger-base-color-rgb: 245, 35, 20;
-  --cx-success-base-color: #10c263;
+  --cx-success-base-color: #10C263;
   --cx-success-base-color-rgb: 16, 194, 99;
-  --cx-warning-base-color: #f5a300;
+  --cx-warning-base-color: #F5A300;
   --cx-warning-base-color-rgb: 245, 163, 0;
-  --cx-info-base-color: #1414f5;
+  --cx-info-base-color: #1414F5;
   --cx-info-base-color-rgb: 20, 20, 245;
   --cx-black-base-color: #000000;
   --cx-black-base-color-rgb: 0, 0, 0;
@@ -1676,19 +1676,19 @@
   --cx-default-bg-solid-rgb: 39, 45, 47;
   --cx-alternate-bg-solid: #000000;
   --cx-alternate-bg-solid-rgb: 0, 0, 0;
-  --cx-primary-bg-solid: #00a4cc;
+  --cx-primary-bg-solid: #00A4CC;
   --cx-primary-bg-solid-rgb: 0, 164, 204;
-  --cx-secondary-bg-solid: #f55200;
+  --cx-secondary-bg-solid: #F55200;
   --cx-secondary-bg-solid-rgb: 245, 82, 0;
-  --cx-neutral-bg-solid: #6f8085;
+  --cx-neutral-bg-solid: #6F8085;
   --cx-neutral-bg-solid-rgb: 111, 128, 133;
-  --cx-danger-bg-solid: #f52314;
+  --cx-danger-bg-solid: #F52314;
   --cx-danger-bg-solid-rgb: 245, 35, 20;
-  --cx-success-bg-solid: #10c263;
+  --cx-success-bg-solid: #10C263;
   --cx-success-bg-solid-rgb: 16, 194, 99;
-  --cx-warning-bg-solid: #f5a300;
+  --cx-warning-bg-solid: #F5A300;
   --cx-warning-bg-solid-rgb: 245, 163, 0;
-  --cx-info-bg-solid: #1414f5;
+  --cx-info-bg-solid: #1414F5;
   --cx-info-bg-solid-rgb: 20, 20, 245;
   --cx-black-bg-solid: #000000;
   --cx-black-bg-solid-rgb: 0, 0, 0;
@@ -1760,23 +1760,23 @@
   --cx-black-border-subtle-rgb: 0, 0, 0;
   --cx-white-border-subtle: rgba(255, 255, 255, 0.15);
   --cx-white-border-subtle-rgb: 255, 255, 255;
-  --cx-default-icon-main: #00a4cc;
+  --cx-default-icon-main: #00A4CC;
   --cx-default-icon-main-rgb: 0, 164, 204;
-  --cx-alternate-icon-main: #00a4cc;
+  --cx-alternate-icon-main: #00A4CC;
   --cx-alternate-icon-main-rgb: 0, 164, 204;
-  --cx-primary-icon-main: #00a4cc;
+  --cx-primary-icon-main: #00A4CC;
   --cx-primary-icon-main-rgb: 0, 164, 204;
-  --cx-secondary-icon-main: #f55200;
+  --cx-secondary-icon-main: #F55200;
   --cx-secondary-icon-main-rgb: 245, 82, 0;
-  --cx-neutral-icon-main: #6f8085;
+  --cx-neutral-icon-main: #6F8085;
   --cx-neutral-icon-main-rgb: 111, 128, 133;
-  --cx-danger-icon-main: #f52314;
+  --cx-danger-icon-main: #F52314;
   --cx-danger-icon-main-rgb: 245, 35, 20;
-  --cx-success-icon-main: #10c263;
+  --cx-success-icon-main: #10C263;
   --cx-success-icon-main-rgb: 16, 194, 99;
-  --cx-warning-icon-main: #f5a300;
+  --cx-warning-icon-main: #F5A300;
   --cx-warning-icon-main-rgb: 245, 163, 0;
-  --cx-info-icon-main: #1414f5;
+  --cx-info-icon-main: #1414F5;
   --cx-info-icon-main-rgb: 20, 20, 245;
   --cx-black-icon-main: #000000;
   --cx-black-icon-main-rgb: 0, 0, 0;
@@ -1826,23 +1826,23 @@
   --cx-black-icon-slight-rgb: 0, 0, 0;
   --cx-white-icon-slight: rgba(255, 255, 255, 0.2);
   --cx-white-icon-slight-rgb: 255, 255, 255;
-  --cx-default-indicator-main: #00a4cc;
+  --cx-default-indicator-main: #00A4CC;
   --cx-default-indicator-main-rgb: 0, 164, 204;
-  --cx-alternate-indicator-main: #00a4cc;
+  --cx-alternate-indicator-main: #00A4CC;
   --cx-alternate-indicator-main-rgb: 0, 164, 204;
-  --cx-primary-indicator-main: #00a4cc;
+  --cx-primary-indicator-main: #00A4CC;
   --cx-primary-indicator-main-rgb: 0, 164, 204;
-  --cx-secondary-indicator-main: #f55200;
+  --cx-secondary-indicator-main: #F55200;
   --cx-secondary-indicator-main-rgb: 245, 82, 0;
-  --cx-neutral-indicator-main: #6f8085;
+  --cx-neutral-indicator-main: #6F8085;
   --cx-neutral-indicator-main-rgb: 111, 128, 133;
-  --cx-danger-indicator-main: #f52314;
+  --cx-danger-indicator-main: #F52314;
   --cx-danger-indicator-main-rgb: 245, 35, 20;
-  --cx-success-indicator-main: #10c263;
+  --cx-success-indicator-main: #10C263;
   --cx-success-indicator-main-rgb: 16, 194, 99;
-  --cx-warning-indicator-main: #f5a300;
+  --cx-warning-indicator-main: #F5A300;
   --cx-warning-indicator-main-rgb: 245, 163, 0;
-  --cx-info-indicator-main: #1414f5;
+  --cx-info-indicator-main: #1414F5;
   --cx-info-indicator-main-rgb: 20, 20, 245;
   --cx-black-indicator-main: #000000;
   --cx-black-indicator-main-rgb: 0, 0, 0;
@@ -1870,23 +1870,23 @@
   --cx-black-indicator-slight-rgb: 0, 0, 0;
   --cx-white-indicator-slight: rgba(255, 255, 255, 0.2);
   --cx-white-indicator-slight-rgb: 255, 255, 255;
-  --cx-default-link-main: #00a4cc;
+  --cx-default-link-main: #00A4CC;
   --cx-default-link-main-rgb: 0, 164, 204;
-  --cx-alternate-link-main: #00a4cc;
+  --cx-alternate-link-main: #00A4CC;
   --cx-alternate-link-main-rgb: 0, 164, 204;
-  --cx-primary-link-main: #00a4cc;
+  --cx-primary-link-main: #00A4CC;
   --cx-primary-link-main-rgb: 0, 164, 204;
-  --cx-secondary-link-main: #f55200;
+  --cx-secondary-link-main: #F55200;
   --cx-secondary-link-main-rgb: 245, 82, 0;
-  --cx-neutral-link-main: #6f8085;
+  --cx-neutral-link-main: #6F8085;
   --cx-neutral-link-main-rgb: 111, 128, 133;
-  --cx-danger-link-main: #f52314;
+  --cx-danger-link-main: #F52314;
   --cx-danger-link-main-rgb: 245, 35, 20;
-  --cx-success-link-main: #10c263;
+  --cx-success-link-main: #10C263;
   --cx-success-link-main-rgb: 16, 194, 99;
-  --cx-warning-link-main: #f5a300;
+  --cx-warning-link-main: #F5A300;
   --cx-warning-link-main-rgb: 245, 163, 0;
-  --cx-info-link-main: #1414f5;
+  --cx-info-link-main: #1414F5;
   --cx-info-link-main-rgb: 20, 20, 245;
   --cx-black-link-main: #000000;
   --cx-black-link-main-rgb: 0, 0, 0;
@@ -1936,27 +1936,27 @@
   --cx-black-link-hover-rgb: 0, 0, 0;
   --cx-white-link-hover: rgba(255, 255, 255, 0.9);
   --cx-white-link-hover-rgb: 255, 255, 255;
-  --cx-default-link-active: #f52314;
+  --cx-default-link-active: #F52314;
   --cx-default-link-active-rgb: 245, 35, 20;
-  --cx-alternate-link-active: #f52314;
+  --cx-alternate-link-active: #F52314;
   --cx-alternate-link-active-rgb: 245, 35, 20;
-  --cx-primary-link-active: #00a4cc;
+  --cx-primary-link-active: #00A4CC;
   --cx-primary-link-active-rgb: 0, 164, 204;
-  --cx-secondary-link-active: #f55200;
+  --cx-secondary-link-active: #F55200;
   --cx-secondary-link-active-rgb: 245, 82, 0;
-  --cx-neutral-link-active: #6f8085;
+  --cx-neutral-link-active: #6F8085;
   --cx-neutral-link-active-rgb: 111, 128, 133;
-  --cx-danger-link-active: #f52314;
+  --cx-danger-link-active: #F52314;
   --cx-danger-link-active-rgb: 245, 35, 20;
-  --cx-success-link-active: #10c263;
+  --cx-success-link-active: #10C263;
   --cx-success-link-active-rgb: 16, 194, 99;
-  --cx-warning-link-active: #f5a300;
+  --cx-warning-link-active: #F5A300;
   --cx-warning-link-active-rgb: 245, 163, 0;
-  --cx-info-link-active: #1414f5;
+  --cx-info-link-active: #1414F5;
   --cx-info-link-active-rgb: 20, 20, 245;
-  --cx-black-link-active: #f52314;
+  --cx-black-link-active: #F52314;
   --cx-black-link-active-rgb: 245, 35, 20;
-  --cx-white-link-active: #f52314;
+  --cx-white-link-active: #F52314;
   --cx-white-link-active-rgb: 245, 35, 20;
   --cx-default-scene-shade: rgba(255, 255, 255, 0.05);
   --cx-default-scene-shade-rgb: 255, 255, 255;
@@ -2138,19 +2138,19 @@
   --cx-default-bg-button-rgb: 28, 32, 33;
   --cx-alternate-bg-button: #000000;
   --cx-alternate-bg-button-rgb: 0, 0, 0;
-  --cx-primary-bg-button: #00a4cc;
+  --cx-primary-bg-button: #00A4CC;
   --cx-primary-bg-button-rgb: 0, 164, 204;
-  --cx-secondary-bg-button: #f55200;
+  --cx-secondary-bg-button: #F55200;
   --cx-secondary-bg-button-rgb: 245, 82, 0;
-  --cx-neutral-bg-button: #6f8085;
+  --cx-neutral-bg-button: #6F8085;
   --cx-neutral-bg-button-rgb: 111, 128, 133;
-  --cx-danger-bg-button: #f52314;
+  --cx-danger-bg-button: #F52314;
   --cx-danger-bg-button-rgb: 245, 35, 20;
-  --cx-success-bg-button: #10c263;
+  --cx-success-bg-button: #10C263;
   --cx-success-bg-button-rgb: 16, 194, 99;
-  --cx-warning-bg-button: #f5a300;
+  --cx-warning-bg-button: #F5A300;
   --cx-warning-bg-button-rgb: 245, 163, 0;
-  --cx-info-bg-button: #1414f5;
+  --cx-info-bg-button: #1414F5;
   --cx-info-bg-button-rgb: 20, 20, 245;
   --cx-black-bg-button: #000000;
   --cx-black-bg-button-rgb: 0, 0, 0;
@@ -2254,21 +2254,21 @@
   --cx-border-main-rgb: 78, 90, 93;
   --cx-border-subtle: rgba(233, 236, 237, 0.15);
   --cx-border-subtle-rgb: 233, 236, 237;
-  --cx-icon-main: #00a4cc;
+  --cx-icon-main: #00A4CC;
   --cx-icon-main-rgb: 0, 164, 204;
   --cx-icon-subtle: rgba(233, 236, 237, 0.4);
   --cx-icon-subtle-rgb: 233, 236, 237;
   --cx-icon-slight: rgba(0, 164, 204, 0.2);
   --cx-icon-slight-rgb: 0, 164, 204;
-  --cx-indicator-main: #00a4cc;
+  --cx-indicator-main: #00A4CC;
   --cx-indicator-main-rgb: 0, 164, 204;
   --cx-indicator-slight: rgba(0, 164, 204, 0.2);
   --cx-indicator-slight-rgb: 0, 164, 204;
-  --cx-link-main: #00a4cc;
+  --cx-link-main: #00A4CC;
   --cx-link-main-rgb: 0, 164, 204;
   --cx-link-hover: #00738f;
   --cx-link-hover-rgb: 0, 115, 143;
-  --cx-link-active: #f52314;
+  --cx-link-active: #F52314;
   --cx-link-active-rgb: 245, 35, 20;
   --cx-link-visited: #40bbd9;
   --cx-link-visited-rgb: 64, 187, 217;
@@ -4266,17 +4266,17 @@ progress {
 
 .lead {
   --cx-font-family: var(--cx-lead-font-family, var(--cx-font-family-lead));
-  --cx-font-size: var(--cx-lead-font-size, var(--cx-font-size-lead-xlarge));
-  --cx-font-weight: var(--cx-lead-font-weight, var(--cx-font-weight-lead-lead));
-  --cx-line-height: var(--cx-lead-line-height, var(--cx-line-height-lead-xlarge));
+  --cx-font-size: var(--cx-lead-font-size, var(--cx-font-size-text-xlarge));
+  --cx-font-weight: var(--cx-lead-font-weight, var(--cx-font-weight-text-normal));
+  --cx-line-height: var(--cx-lead-line-height, var(--cx-font-size-text-xlarge));
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
 }
 
 .title {
   --cx-font-family: var(--cx-title-font-family, var(--cx-font-family-title));
-  --cx-font-size: var(--cx-title-font-size, var(--cx-font-size-title-medium));
-  --cx-font-weight: var(--cx-title-font-weight, var(--cx-font-weight-title-title));
-  --cx-line-height: var(--cx-title-line-height, var(--cx-line-height-title-medium));
+  --cx-font-size: var(--cx-title-font-size, var(--cx-font-size-display-medium));
+  --cx-font-weight: var(--cx-title-font-weight, var(--cx-font-weight-display-strong));
+  --cx-line-height: var(--cx-title-line-height, var(--cx-font-size-display-medium));
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
 }
 
@@ -6579,8 +6579,8 @@ ol.inline li:not(:last-child) {
   --cx-font-size: var(--cx-font-size, var(--cx-font-size-medium));
   --cx-font-weight: var(--cx-font-weight, var(--cx-font-weight-strong));
   --cx-line-height: var(--cx-line-height, var(--cx-line-height-medium));
-  padding-top: calc(0.5rem + var(--cx-border-width-medium));
-  padding-bottom: calc(0.5rem + var(--cx-border-width-medium));
+  padding-top: calc(var(--cx-space-xsmall) + var(--cx-border-width-medium));
+  padding-bottom: calc(var(--cx-space-xsmall) + var(--cx-border-width-medium));
   margin-bottom: 0;
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
   font-size: inherit;
@@ -6589,15 +6589,15 @@ ol.inline li:not(:last-child) {
 }
 
 .col-form-label-large {
-  padding-top: calc(0.625rem + var(--cx-border-width-medium));
-  padding-bottom: calc(0.625rem + var(--cx-border-width-medium));
+  padding-top: calc(var(--cx-space-rare) + var(--cx-border-width-medium));
+  padding-bottom: calc(var(--cx-space-rare) + var(--cx-border-width-medium));
   font-size: var(--cx-font-size-large);
   line-height: var(--cx-line-height-large);
 }
 
 .col-form-label-small {
-  padding-top: calc(0.375rem + var(--cx-border-width-medium));
-  padding-bottom: calc(0.375rem + var(--cx-border-width-medium));
+  padding-top: calc(var(--cx-space-xrare) + var(--cx-border-width-medium));
+  padding-bottom: calc(var(--cx-space-xrare) + var(--cx-border-width-medium));
   font-size: var(--cx-font-size-small);
   line-height: var(--cx-line-height-small);
 }
@@ -6608,9 +6608,9 @@ ol.inline li:not(:last-child) {
 }
 
 .form-control {
-  --cx-padding-x: 0.75rem;
-  --cx-padding-y: 0.5rem;
-  --cx-min-height: calc(var(--cx-line-height-medium) + 0.5rem + 0.5rem);
+  --cx-padding-x: var(--cx-space-small);
+  --cx-padding-y: var(--cx-space-xsmall);
+  --cx-min-height: calc(var(--cx-line-height-medium) + var(--cx-space-xsmall) + var(--cx-space-xsmall));
   --cx-gap: var(--cx-space-2xsmall);
   --cx-fg-color: var(--cx-default-fg-main);
   --cx-bg-color: var(--cx-default-bg-main);
@@ -6642,44 +6642,44 @@ ol.inline li:not(:last-child) {
   cursor: pointer;
 }
 .form-control.small, .button-group-small > .form-control.button {
-  --cx-padding-x: 0.5rem;
-  --cx-padding-y: 0.375rem;
-  --cx-min-height: calc(var(--cx-line-height-small) + 0.375rem + 0.375rem);
+  --cx-padding-x: var(--cx-space-xsmall);
+  --cx-padding-y: var(--cx-space-xrare);
+  --cx-min-height: calc(var(--cx-line-height-small) + var(--cx-space-xrare) + var(--cx-space-xrare));
   --cx-font-size: var(--cx-input-font-size, var(--cx-font-size-small));
   --cx-line-height: var(--cx-input-line-height, var(--cx-line-height-small));
   --cx-border-radius: var(--cx-border-radius-medium);
-  min-height: calc(var(--cx-line-height-small) + 0.375rem + 0.375rem);
+  min-height: calc(var(--cx-line-height-small) + var(--cx-space-xrare) + var(--cx-space-xrare));
 }
 .form-control.small::-webkit-file-upload-button, .button-group-small > .form-control.button::-webkit-file-upload-button {
-  margin: -0.375rem -0.5rem;
-  -webkit-margin-end: 0.5rem;
-  margin-inline-end: 0.5rem;
+  margin: -var(--cx-space-xrare) -var(--cx-space-xsmall);
+  -webkit-margin-end: var(--cx-space-xsmall);
+  margin-inline-end: var(--cx-space-xsmall);
 }
 .form-control.small::file-selector-button, .button-group-small > .form-control.button::file-selector-button {
-  margin: -0.375rem -0.5rem;
-  -webkit-margin-end: 0.5rem;
-  margin-inline-end: 0.5rem;
+  margin: -var(--cx-space-xrare) -var(--cx-space-xsmall);
+  -webkit-margin-end: var(--cx-space-xsmall);
+  margin-inline-end: var(--cx-space-xsmall);
 }
 .form-control.large, .button-group-large > .form-control.button {
-  --cx-padding-x: 1rem;
-  --cx-padding-y: 0.625rem;
-  --cx-min-height: calc(var(--cx-line-height-large) + 0.625rem + 0.625rem);
+  --cx-padding-x: var(--cx-space-medium);
+  --cx-padding-y: var(--cx-space-rare);
+  --cx-min-height: calc(var(--cx-line-height-large) + var(--cx-space-rare) + var(--cx-space-rare));
   --cx-font-size: var(--cx-input-font-size, var(--cx-font-size-large));
   --cx-line-height: var(--cx-input-line-height, var(--cx-line-height-large));
   --cx-border-radius: var(--cx-border-radius-medium);
-  min-height: calc(var(--cx-line-height-large) + 0.625rem + 0.625rem);
+  min-height: calc(var(--cx-line-height-large) + var(--cx-space-rare) + var(--cx-space-rare));
 }
 .form-control.large::-webkit-file-upload-button, .button-group-large > .form-control.button::-webkit-file-upload-button {
-  padding: 0.625rem 1rem;
-  margin: -0.625rem -1rem;
-  -webkit-margin-end: 1rem;
-  margin-inline-end: 1rem;
+  padding: var(--cx-space-rare) var(--cx-space-medium);
+  margin: -var(--cx-space-rare) -var(--cx-space-medium);
+  -webkit-margin-end: var(--cx-space-medium);
+  margin-inline-end: var(--cx-space-medium);
 }
 .form-control.large::file-selector-button, .button-group-large > .form-control.button::file-selector-button {
-  padding: 0.625rem 1rem;
-  margin: -0.625rem -1rem;
-  -webkit-margin-end: 1rem;
-  margin-inline-end: 1rem;
+  padding: var(--cx-space-rare) var(--cx-space-medium);
+  margin: -var(--cx-space-rare) -var(--cx-space-medium);
+  -webkit-margin-end: var(--cx-space-medium);
+  margin-inline-end: var(--cx-space-medium);
 }
 .form-control:focus {
   --cx-fg-color: var(--cx-default-fg-main);
@@ -6721,9 +6721,9 @@ ol.inline li:not(:last-child) {
   --cx-bg-color: var(--cx-default-bg-main);
   --cx-border-color: inherit;
   --cx-border-width: 0;
-  margin: -0.5rem -0.75rem;
-  -webkit-margin-end: 0.75rem;
-  margin-inline-end: 0.75rem;
+  margin: -var(--cx-space-xsmall) -var(--cx-space-small);
+  -webkit-margin-end: var(--cx-space-small);
+  margin-inline-end: var(--cx-space-small);
   padding: var(--cx-padding-y) var(--cx-padding-x);
   background-color: var(--cx-bg-evident);
   pointer-events: none;
@@ -6737,9 +6737,9 @@ ol.inline li:not(:last-child) {
   --cx-bg-color: var(--cx-default-bg-main);
   --cx-border-color: inherit;
   --cx-border-width: 0;
-  margin: -0.5rem -0.75rem;
-  -webkit-margin-end: 0.75rem;
-  margin-inline-end: 0.75rem;
+  margin: -var(--cx-space-xsmall) -var(--cx-space-small);
+  -webkit-margin-end: var(--cx-space-small);
+  margin-inline-end: var(--cx-space-small);
   padding: var(--cx-padding-y) var(--cx-padding-x);
   background-color: var(--cx-bg-evident);
   pointer-events: none;
@@ -6784,8 +6784,8 @@ ol.inline li:not(:last-child) {
 }
 .form-control.color-control {
   width: 2.5rem;
-  height: calc(var(--cx-line-height-medium) + 0.5rem + 0.5rem);
-  padding: 0.5rem;
+  height: calc(var(--cx-line-height-medium) + var(--cx-space-xsmall) + var(--cx-space-xsmall));
+  padding: var(--cx-space-xsmall);
 }
 .form-control.color-control:not(:disabled):not([readonly]) {
   cursor: pointer;
@@ -6799,10 +6799,10 @@ ol.inline li:not(:last-child) {
   border-radius: var(--cx-border-radius-medium);
 }
 .form-control.color-control.small, .button-group-small > .form-control.color-control.button {
-  height: calc(var(--cx-line-height-medium) + 0.5rem + 0.5rem);
+  height: calc(var(--cx-line-height-medium) + var(--cx-space-xsmall) + var(--cx-space-xsmall));
 }
 .form-control.color-control.large, .button-group-large > .form-control.color-control.button {
-  height: calc(var(--cx-line-height-medium) + 0.5rem + 0.5rem);
+  height: calc(var(--cx-line-height-medium) + var(--cx-space-xsmall) + var(--cx-space-xsmall));
 }
 
 textarea.form-control {
@@ -6810,10 +6810,10 @@ textarea.form-control {
 }
 
 .form-select {
-  --cx-padding-x: 0.75rem;
-  --cx-padding-y: 0.5rem;
+  --cx-padding-x: var(--cx-space-small);
+  --cx-padding-y: var(--cx-space-xsmall);
   --cx-padding-end: 3em;
-  --cx-min-height: calc(var(--cx-line-height-medium) + 0.5rem + 0.5rem);
+  --cx-min-height: calc(var(--cx-line-height-medium) + var(--cx-space-xsmall) + var(--cx-space-xsmall));
   --cx-gap: var(--cx-space-2xsmall);
   --cx-fg-color: var(--cx-default-fg-main);
   --cx-bg-color: var(--cx-default-bg-main);
@@ -6824,7 +6824,7 @@ textarea.form-control {
   --cx-border-color: var(--cx-default-border-main);
   --cx-border-width: var(--cx-border-width-medium);
   --cx-border-radius: var(--cx-border-radius-medium);
-  --cx-form-select-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236f8085' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --cx-form-select-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236F8085' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   display: block;
   width: 100%;
   padding: calc(var(--cx-padding-y) - var(--cx-border-width)) calc(var(--cx-padding-x) - var(--cx-border-width));
@@ -6834,7 +6834,7 @@ textarea.form-control {
   appearance: none;
   background-image: var(--cx-form-select-bg-image), var(--cx-form-select-bg-icon, none);
   background-repeat: no-repeat;
-  background-position: left 0.75rem center;
+  background-position: left var(--cx-space-small) center;
   background-clip: padding-box;
   background-size: 1.25em 1em;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -6845,15 +6845,15 @@ textarea.form-control {
   }
 }
 .form-select.small, .button-group-small > .form-select.button {
-  --cx-padding-y: 0.375rem;
-  --cx-padding-x: 0.5rem;
+  --cx-padding-y: var(--cx-space-xrare);
+  --cx-padding-x: var(--cx-space-xsmall);
   --cx-font-size: var(--cx-input-font-size, var(--cx-font-size-small));
   --cx-line-height: var(--cx-input-line-height, var(--cx-line-height-small));
   --cx-border-radius: var(--cx-border-radius-medium);
 }
 .form-select.large, .button-group-large > .form-select.button {
-  --cx-padding-y: 0.625rem;
-  --cx-padding-x: 1rem;
+  --cx-padding-y: var(--cx-space-rare);
+  --cx-padding-x: var(--cx-space-medium);
   --cx-font-size: var(--cx-input-font-size, var(--cx-font-size-large));
   --cx-line-height: var(--cx-input-line-height, var(--cx-line-height-large));
   --cx-border-radius: var(--cx-border-radius-medium);
@@ -6864,7 +6864,7 @@ textarea.form-control {
   box-shadow: 0 0 0 0.25rem rgba(0, 164, 204, 0.25);
 }
 .form-select[multiple], .form-select[size]:not([size="1"]) {
-  padding-left: 0.75rem;
+  padding-left: var(--cx-space-small);
   background-image: none;
 }
 .form-select:disabled {
@@ -6951,8 +6951,8 @@ textarea.form-control {
   box-shadow: 0 0 0 0.25rem rgba(0, 164, 204, 0.25);
 }
 .option-input:checked {
-  background-color: #00a4cc;
-  border-color: #00a4cc;
+  background-color: #00A4CC;
+  border-color: #00A4CC;
 }
 .option-input:checked[type=checkbox] {
   --cx-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
@@ -6961,8 +6961,8 @@ textarea.form-control {
   --cx-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23ffffff'/%3e%3c/svg%3e");
 }
 .option-input[type=checkbox]:indeterminate {
-  background-color: #00a4cc;
-  border-color: #00a4cc;
+  background-color: #00A4CC;
+  border-color: #00A4CC;
   --cx-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 .option-input:disabled {
@@ -7069,7 +7069,7 @@ textarea.form-control {
   margin-top: -0.25rem;
   -webkit-appearance: none;
   appearance: none;
-  background-color: #00a4cc;
+  background-color: #00A4CC;
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -7098,7 +7098,7 @@ textarea.form-control {
   height: 1rem;
   -moz-appearance: none;
   appearance: none;
-  background-color: #00a4cc;
+  background-color: #00A4CC;
   border: 0;
   border-radius: 1rem;
   -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -7156,7 +7156,7 @@ textarea.form-control {
   right: 0;
   z-index: 2;
   height: 100%;
-  padding: 1rem 0.75rem;
+  padding: 1rem var(--cx-space-small);
   overflow: hidden;
   text-align: start;
   text-overflow: ellipsis;
@@ -7173,7 +7173,7 @@ textarea.form-control {
 }
 .form-floating > .form-control,
 .form-floating > .form-control.plaintext {
-  padding: 1rem 0.75rem;
+  padding: 1rem var(--cx-space-small);
 }
 .form-floating > .form-control::-moz-placeholder, .form-floating > .form-control.plaintext::-moz-placeholder {
   color: transparent;
@@ -7202,7 +7202,7 @@ textarea.form-control {
   padding-bottom: 0.625rem;
 }
 .form-floating > .form-select {
-  padding: 1rem 0.75rem;
+  padding: 1rem var(--cx-space-small);
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -7219,7 +7219,7 @@ textarea.form-control {
 }
 .form-floating > .form-control:not(:-moz-placeholder-shown) ~ label::after {
   position: absolute;
-  inset: 1rem 0.375rem;
+  inset: 1rem calc(var(--cx-space-small) * 0.5);
   z-index: -1;
   height: 1.5em;
   content: "";
@@ -7230,7 +7230,7 @@ textarea.form-control {
 .form-floating > .form-control.plaintext ~ label::after,
 .form-floating > .form-select ~ label::after {
   position: absolute;
-  inset: 1rem 0.375rem;
+  inset: 1rem calc(var(--cx-space-small) * 0.5);
   z-index: -1;
   height: 1.5em;
   content: "";
@@ -7248,7 +7248,7 @@ textarea.form-control {
 }
 .form-floating > :disabled ~ label,
 .form-floating > .form-control:disabled ~ label {
-  color: rgba(0, 0, 0, 0.25);
+  color: var(--cx-default-fg-disabled);
 }
 
 .input-group {
@@ -7306,9 +7306,9 @@ textarea.form-control {
 .input-group > .form-select,
 .input-group > .input-addon,
 .input-group > .button {
-  --cx-padding-y: 0.5rem;
-  --cx-padding-x: 0.75rem;
-  --cx-height: calc(var(--cx-line-height-medium) + 0.5rem + 0.5rem);
+  --cx-padding-y: var(--cx-space-xsmall);
+  --cx-padding-x: var(--cx-space-small);
+  --cx-height: calc(var(--cx-line-height-medium) + var(--cx-space-xsmall) + var(--cx-space-xsmall));
   --cx-font-size: var(--cx-input-group-font-size, var(--cx-font-size-medium));
   --cx-line-height: var(--cx-input-group-line-height, var(--cx-line-height-medium));
   --cx-border-radius: var(--cx-border-radius-medium);
@@ -7322,9 +7322,9 @@ textarea.form-control {
 .button-group-large > .input-group.button > .input-addon,
 .input-group.large > .button,
 .button-group-large > .input-group.button > .button {
-  --cx-padding-y: 0.625rem;
-  --cx-padding-x: 1rem;
-  --cx-height: calc(var(--cx-line-height-large) + 0.625rem + 0.625rem);
+  --cx-padding-y: var(--cx-space-rare);
+  --cx-padding-x: var(--cx-space-medium);
+  --cx-height: calc(var(--cx-line-height-large) + var(--cx-space-rare) + var(--cx-space-rare));
   --cx-font-size: var(--cx-input-group-font-size, var(--cx-font-size-large));
   --cx-line-height: var(--cx-input-group-line-height, var(--cx-line-height-large));
   --cx-border-radius: var(--cx-border-radius-medium);
@@ -7338,9 +7338,9 @@ textarea.form-control {
 .button-group-small > .input-group.button > .input-addon,
 .input-group.small > .button,
 .button-group-small > .input-group.button > .button {
-  --cx-padding-y: 0.375rem;
-  --cx-padding-x: 0.5rem;
-  --cx-height: calc(var(--cx-line-height-small) + 0.375rem + 0.375rem);
+  --cx-padding-y: var(--cx-space-xrare);
+  --cx-padding-x: var(--cx-space-xsmall);
+  --cx-height: calc(var(--cx-line-height-small) + var(--cx-space-xrare) + var(--cx-space-xrare));
   --cx-font-size: var(--cx-input-group-font-size, var(--cx-font-size-small));
   --cx-line-height: var(--cx-input-group-line-height, var(--cx-line-height-small));
   --cx-border-radius: var(--cx-border-radius-medium);
@@ -7350,7 +7350,7 @@ textarea.form-control {
 .input-group.large > .form-select, .button-group-large > .input-group.button > .form-select,
 .input-group.small > .form-select,
 .button-group-small > .input-group.button > .form-select {
-  padding-left: 3rem;
+  padding-left: var(--cx-space-small)calc(var(--cx-space-small) * 3);
 }
 
 .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating):not(:has(~ .icon)),
@@ -7410,7 +7410,7 @@ textarea.form-control {
   padding-right: calc(var(--cx-icon-size) + var(--cx-padding-x) * 2);
 }
 .input-addon.icon + .form-floating > label {
-  padding-right: calc(var(--cx-icon-size) + 1.5rem);
+  padding-right: calc(var(--cx-icon-size) + var(--cx-space-small) * 2);
   transform-origin: 75% 0;
 }
 .form-control:has(+ .input-addon.icon), .form-floating:has(+ .input-addon.icon) {
@@ -7455,7 +7455,7 @@ textarea.form-control {
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: var(--cx-form-valid-border-color);
   padding-left: 0.75rem;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2310c263' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2310C263' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: left 0.75rem center;
   background-size: 1.25rem 1.25rem;
@@ -7474,9 +7474,9 @@ textarea.form-control {
   border-color: var(--cx-form-valid-border-color);
 }
 .was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"] {
-  --cx-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2310c263' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
-  padding-left: 4.125rem;
-  background-position: left 0.75rem center, center left 2.25rem;
+  --cx-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2310C263' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
+  padding-left: calc(var(--cx-space-small) * 2.5 + calc(var(--cx-space-small) * 3));
+  background-position: left var(--cx-space-small) center, center left calc(var(--cx-space-small) * 3);
   background-size: 1.25em 1em, 1.25rem 1.25rem;
 }
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
@@ -7547,7 +7547,7 @@ textarea.form-control {
 .was-validated .form-control:invalid, .form-control.is-invalid {
   border-color: var(--cx-form-invalid-border-color);
   padding-left: 0.75rem;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23f52314'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23f52314' stroke='none'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23F52314'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23F52314' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: left 0.75rem center;
   background-size: 1.25rem 1.25rem;
@@ -7566,9 +7566,9 @@ textarea.form-control {
   border-color: var(--cx-form-invalid-border-color);
 }
 .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {
-  --cx-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23f52314'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23f52314' stroke='none'/%3e%3c/svg%3e");
-  padding-left: 4.125rem;
-  background-position: left 0.75rem center, center left 2.25rem;
+  --cx-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23F52314'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23F52314' stroke='none'/%3e%3c/svg%3e");
+  padding-left: calc(var(--cx-space-small) * 2.5 + calc(var(--cx-space-small) * 3));
+  background-position: left var(--cx-space-small) center, center left calc(var(--cx-space-small) * 3);
   background-size: 1.25em 1em, 1.25rem 1.25rem;
 }
 .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
@@ -7611,9 +7611,9 @@ textarea.form-control {
   --cx-box-shadow: var(--cx-button-box-shadow, inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075));
   --cx-focus-box-shadow: var(--cx-button-focus-box-shadow, 0 0 0 0.25rem rgba(0, 164, 204, 0.25));
   --cx-hover-border-color: var(--cx-button-border-color, transparent);
-  --cx-padding-y: var(--cx-button-padding-y, 0.5rem);
-  --cx-padding-x: var(--cx-button-padding-x, 0.75rem);
-  --cx-gap: var(--cx-button-gap, 0.5rem);
+  --cx-padding-y: var(--cx-button-padding-y, var(--cx-space-xsmall));
+  --cx-padding-x: var(--cx-button-padding-x, var(--cx-space-small));
+  --cx-gap: var(--cx-button-gap, var(--cx-space-xsmall));
   --cx-border-radius: var(--cx-button-border-radius, var(--cx-border-radius-medium));
   --cx-icon-size: var(--cx-button-icons-size, 1.5rem);
   --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
@@ -7642,9 +7642,9 @@ textarea.form-control {
   }
 }
 .button.large, .button-group-large > .button {
-  --cx-padding-x: calc(1rem - var(--cx-border-width-medium));
-  --cx-padding-y: calc(0.625rem - var(--cx-border-width-medium));
-  --cx-gap: 0.75rem;
+  --cx-padding-x: calc(var(--cx-space-medium) - var(--cx-border-width-medium));
+  --cx-padding-y: calc(var(--cx-space-rare) - var(--cx-border-width-medium));
+  --cx-gap: var(--cx-space-small);
   --cx-border-radius: var(--cx-border-radius-medium);
   --cx-icon-size: 1.75rem;
   --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
@@ -7653,9 +7653,9 @@ textarea.form-control {
   --cx-line-height: var(--cx-button-line-height, var(--cx-line-height-large));
 }
 .button.small, .button-group-small > .button {
-  --cx-padding-x: calc(0.5rem - var(--cx-border-width-medium));
-  --cx-padding-y: calc(0.375rem - var(--cx-border-width-medium));
-  --cx-gap: 0.25rem;
+  --cx-padding-x: calc(var(--cx-space-xsmall) - var(--cx-border-width-medium));
+  --cx-padding-y: calc(var(--cx-space-xrare) - var(--cx-border-width-medium));
+  --cx-gap: var(--cx-space-2xsmall);
   --cx-border-radius: var(--cx-border-radius-medium);
   --cx-icon-size: 1.25rem;
   --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
@@ -7725,8 +7725,8 @@ textarea.form-control {
 }
 
 .dropdown-toggle-split {
-  padding-left: 0.5625rem;
-  padding-right: 0.5625rem;
+  padding-left: calc(var(--cx-space-small) * 0.75);
+  padding-right: calc(var(--cx-space-small) * 0.75);
 }
 .dropdown-toggle-split::after, .dropup .dropdown-toggle-split::after, .dropend .dropdown-toggle-split::after {
   margin-right: 0;
@@ -7736,13 +7736,13 @@ textarea.form-control {
 }
 
 .button-small + .dropdown-toggle-split {
-  padding-left: 0.375rem;
-  padding-right: 0.375rem;
+  padding-left: calc(var(--cx-space-xsmall) * 0.75);
+  padding-right: calc(var(--cx-space-xsmall) * 0.75);
 }
 
 .button-large + .dropdown-toggle-split {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: calc(var(--cx-space-medium) * 0.75);
+  padding-right: calc(var(--cx-space-medium) * 0.75);
 }
 
 .button-group-vertical {
@@ -7858,12 +7858,12 @@ textarea.form-control {
   --cx-link-hover-fg-color: var(--cx-dropdown-link-hover-fg-color, var(--cx-fg-highlight));
   --cx-link-hover-bg-color: var(--cx-dropdown-link-hover-bg-color, var(--cx-bg-highlight));
   --cx-link-active-fg-color: var(--cx-dropdown-link-active-fg-color, #ffffff);
-  --cx-link-active-bg-color: var(--cx-dropdown-link-active-bg-color, #00a4cc);
+  --cx-link-active-bg-color: var(--cx-dropdown-link-active-bg-color, #00A4CC);
   --cx-link-disabled-fg-color: var(--cx-dropdown-link-disabked-fg-color, var(--cx-fg-slight));
   --cx-item-padding-y: var(--cx-dropdown-item-padding-y, var(--cx-space-xsmall));
   --cx-item-padding-x: var(--cx-dropdown-item-padding-x, var(--cx-space-small));
   --cx-item-border-radius: var(--cx-dropdown-item-border-radius, var(--cx-border-radius-small));
-  --cx-header-fg-color: var(--cx-dropdown-header-fg-color, rgba(28, 32, 33, 0.5));
+  --cx-header-fg-color: var(--cx-dropdown-header-fg-color, var(--cx-default-fg-subtle));
   --cx-header-padding-y: var(--cx-dropdown-header-padding-y, 0.25rem);
   --cx-header-padding-x: var(--cx-dropdown-header-padding-x, var(--cx-space-small));
   position: absolute;
@@ -8192,7 +8192,7 @@ textarea.form-control {
 .nav-pills {
   --cx-border-radius: var(--cx-border-radius-medium);
   --cx-link-active-fg-color: #ffffff;
-  --cx-link-active-bg-color: #00a4cc;
+  --cx-link-active-bg-color: #00A4CC;
 }
 .nav-pills .nav-link {
   border-radius: var(--cx-border-radius);
@@ -8880,13 +8880,13 @@ textarea.form-control {
   --cx-idle-indicator-color: var(--cx-accordion-idle-indicator-color, var(--cx-fg-subtle));
   --cx-active-indicator-color: var(--cx-accordion-active-indicator-color, var(--cx-icon-color));
   --cx-title-font-family: var(--cx-accordion-title-font-family, var(--cx-font-family-title));
-  --cx-title-font-size: var(--cx-accordion-title-font-size, var(--cx-font-size-title-medium));
-  --cx-title-font-weight: var(--cx-accordion-title-font-weight, var(--cx-font-weight-title-title));
-  --cx-title-line-height: var(--cx-accordion-title-line-height, var(--cx-line-height-title-medium));
+  --cx-title-font-size: var(--cx-accordion-title-font-size, var(--cx-font-size-display-medium));
+  --cx-title-font-weight: var(--cx-accordion-title-font-weight, var(--cx-font-weight-display-strong));
+  --cx-title-line-height: var(--cx-accordion-title-line-height, var(--cx-font-size-display-medium));
   --cx-body-font-family: var(--cx-accordion-body-font-family, var(--cx-font-family-body));
-  --cx-body-font-size: var(--cx-accordion-body-font-size, var(--cx-font-size-body-medium));
-  --cx-body-font-weight: var(--cx-accordion-body-font-weight, var(--cx-font-weight-body-body));
-  --cx-body-line-height: var(--cx-accordion-body-line-height, var(--cx-line-height-body-medium));
+  --cx-body-font-size: var(--cx-accordion-body-font-size, var(--cx-font-size-text-medium));
+  --cx-body-font-weight: var(--cx-accordion-body-font-weight, var(--cx-font-weight-text-normal));
+  --cx-body-line-height: var(--cx-accordion-body-line-height, var(--cx-font-size-text-medium));
   --cx-title-padding-y: var(--cx-accordion-title-padding-y, 0.75rem);
   --cx-title-padding-x: var(--cx-accordion-title-padding-x, 1rem);
   --cx-body-padding-y: var(--cx-accordion-body-padding-y, 0.75rem);
@@ -8900,13 +8900,13 @@ textarea.form-control {
 }
 .accordion.large, .button-group-large > .accordion.button {
   --cx-title-font-family: var(--cx-accordion-large-title-font-family, var(--cx-font-family-title));
-  --cx-title-font-size: var(--cx-accordion-large-title-font-size, var(--cx-font-size-title-large));
-  --cx-title-font-weight: var(--cx-accordion-large-title-font-weight, var(--cx-font-weight-title-title));
-  --cx-title-line-height: var(--cx-accordion-large-title-line-height, var(--cx-line-height-title-large));
+  --cx-title-font-size: var(--cx-accordion-large-title-font-size, var(--cx-font-size-display-large));
+  --cx-title-font-weight: var(--cx-accordion-large-title-font-weight, var(--cx-font-weight-display-strong));
+  --cx-title-line-height: var(--cx-accordion-large-title-line-height, var(--cx-font-size-display-large));
   --cx-body-font-family: var(--cx-accordion-large-body-font-family, var(--cx-font-family-body));
-  --cx-body-font-size: var(--cx-accordion-large-body-font-size, var(--cx-font-size-body-large));
-  --cx-body-font-weight: var(--cx-accordion-large-body-font-weight, var(--cx-font-weight-body-body));
-  --cx-body-line-height: var(--cx-accordion-large-body-line-height, var(--cx-line-height-body-large));
+  --cx-body-font-size: var(--cx-accordion-large-body-font-size, var(--cx-font-size-text-large));
+  --cx-body-font-weight: var(--cx-accordion-large-body-font-weight, var(--cx-font-weight-text-normal));
+  --cx-body-line-height: var(--cx-accordion-large-body-line-height, var(--cx-font-size-text-large));
   --cx-title-padding-y: var(--cx-accordion-large-title-padding-y, 1rem);
   --cx-title-padding-x: var(--cx-accordion-large-title-padding-x, 1.25rem);
   --cx-body-padding-y: var(--cx-accordion-large-body-padding-y, 1rem);
@@ -8915,13 +8915,13 @@ textarea.form-control {
 }
 .accordion.small, .button-group-small > .accordion.button {
   --cx-title-font-family: var(--cx-accordion-small-title-font-family, var(--cx-font-family-title));
-  --cx-title-font-size: var(--cx-accordion-small-title-font-size, var(--cx-font-size-title-small));
-  --cx-title-font-weight: var(--cx-accordion-small-title-font-weight, var(--cx-font-weight-title-title));
-  --cx-title-line-height: var(--cx-accordion-small-title-line-height, var(--cx-line-height-title-small));
+  --cx-title-font-size: var(--cx-accordion-small-title-font-size, var(--cx-font-size-display-small));
+  --cx-title-font-weight: var(--cx-accordion-small-title-font-weight, var(--cx-font-weight-display-strong));
+  --cx-title-line-height: var(--cx-accordion-small-title-line-height, var(--cx-font-size-display-small));
   --cx-body-font-family: var(--cx-accordion-small-body-font-family, var(--cx-font-family-body));
-  --cx-body-font-size: var(--cx-accordion-small-body-font-size, var(--cx-font-size-body-small));
-  --cx-body-font-weight: var(--cx-accordion-small-body-font-weight, var(--cx-font-weight-body-body));
-  --cx-body-line-height: var(--cx-accordion-small-body-line-height, var(--cx-line-height-body-small));
+  --cx-body-font-size: var(--cx-accordion-small-body-font-size, var(--cx-font-size-text-small));
+  --cx-body-font-weight: var(--cx-accordion-small-body-font-weight, var(--cx-font-weight-text-normal));
+  --cx-body-line-height: var(--cx-accordion-small-body-line-height, var(--cx-font-size-text-small));
   --cx-title-padding-y: var(--cx-accordion-small-title-padding-y, 0.5rem);
   --cx-title-padding-x: var(--cx-accordion-small-title-padding-x, 0.75rem);
   --cx-body-padding-y: var(--cx-accordion-small-body-padding-y, 0.5rem);
@@ -9136,8 +9136,8 @@ textarea.form-control {
   --cx-icon-color: var(--cx-pagination-active-fg-color, #ffffff);
   z-index: 3;
   color: var(--cx-pagination-active-fg-color, #ffffff);
-  background-color: var(--cx-pagination-active-bg-color, #00a4cc);
-  border-color: var(--cx-pagination-active-border-color, #00a4cc);
+  background-color: var(--cx-pagination-active-bg-color, #00A4CC);
+  border-color: var(--cx-pagination-active-border-color, #00A4CC);
 }
 .page-link.disabled, .disabled > .page-link {
   --cx-icon-color: var(--cx-pagination-disabled-fg-color, var(--cx-fg-slight));
@@ -9229,9 +9229,9 @@ textarea.form-control {
 }
 
 .notification {
-  --cx-padding-y: var(--cx-notification-padding-y, 0.75rem);
-  --cx-padding-x: var(--cx-notification-padding-x, 1rem);
-  --cx-gap: var(--cx-notification-gap, 1rem);
+  --cx-padding-y: var(--cx-notification-padding-y, var(--cx-space-small));
+  --cx-padding-x: var(--cx-notification-padding-x, var(--cx-space-medium));
+  --cx-gap: var(--cx-notification-gap, var(--cx-space-medium));
   --cx-border-width: var(--cx-notification-border-width, var(--cx-border-width-medium));
   --cx-border-radius: var(--cx-notification-border-radius, var(--cx-border-radius-medium));
   --cx-font-family: var(--cx-notification-font-family, var(--cx-font-family-text));
@@ -9250,14 +9250,14 @@ textarea.form-control {
 }
 .notification .close-button {
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
+  top: calc(var(--cx-space-small) * 0.5);
+  left: calc(var(--cx-space-medium) * 0.5);
 }
 .notification a {
   font-weight: var(--cx-font-weight-strong);
 }
 .notification:has(.close-button) {
-  padding-left: 3.5rem;
+  padding-left: calc(var(--cx-space-medium) * 2 + 1.5rem);
 }
 
 .notification-title {
@@ -9296,7 +9296,7 @@ textarea.form-control {
   color: var(--cx-progress-bar-fg-color, #fff);
   text-align: center;
   white-space: nowrap;
-  background-color: var(--cx-progress-bar-bg-color, #00a4cc);
+  background-color: var(--cx-progress-bar-bg-color, #00A4CC);
   transition: var(--cx-progress-bar-transition, width 0.6s ease);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -9333,7 +9333,7 @@ textarea.form-control {
   --cx-fg-color: var(--cx-list-fg-color, var(--cx-fg-main));
   --cx-bg-color: var(--cx-list-bg-color, var(--cx-bg-main));
   --cx-fg-active: var(--cx-list-fg-active, #ffffff);
-  --cx-bg-active: var(--cx-list-bg-active, #00a4cc);
+  --cx-bg-active: var(--cx-list-bg-active, #00A4CC);
   --cx-border-active: var(--cx-list-border-active, transparent);
   --cx-border-color: var(--cx-list-border-color, var(--cx-default-border-subtle));
   --cx-item-border-color: var(--cx-list-item-border-color, var(--cx-default-border-subtle));
@@ -9704,7 +9704,7 @@ textarea.form-control {
   --cx-title-line-height: var(--cx-alert-title-line-height, var(--cx-line-height-text-large));
   --cx-title-margin: var(--cx-alert-title-margin, 0.5rem);
   --cx-footer-gap: var(--cx-alert-footer-gap, 1rem);
-  --cx-box-shadow: var(--cx-alert-box-shadow, 0px 6px 24px -6px rgba(0, 0, 0, 0.2), 0px 3px 12px -3px rgba(0, 0, 0, 0.1019607843));
+  --cx-box-shadow: var(--cx-alert-box-shadow, 0rem 0.375rem 1.5rem -0.375rem rgba(0, 0, 0, 0.2), 0rem 0.1875rem 0.75rem -0.1875rem rgba(0, 0, 0, 0.1));
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9764,7 +9764,7 @@ textarea.form-control {
   --cx-footer-bg-color: var(--cx-modal-footer-bg-color, );
   --cx-footer-border-color: var(--cx-modal-footer-border-color, rgba(28, 32, 33, 0.15));
   --cx-footer-border-width: var(--cx-modal-footer-border-width, var(--cx-border-width-medium));
-  --cx-box-shadow: var(--cx-modal-box-shadow, 0px 6px 24px -6px rgba(0, 0, 0, 0.2), 0px 3px 12px -3px rgba(0, 0, 0, 0.1019607843));
+  --cx-box-shadow: var(--cx-modal-box-shadow, 0rem 0.375rem 1.5rem -0.375rem rgba(0, 0, 0, 0.2), 0rem 0.1875rem 0.75rem -0.1875rem rgba(0, 0, 0, 0.1));
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10040,7 +10040,7 @@ textarea.form-control {
 @media (min-width: 36rem) {
   .modal {
     --cx-margin: 2rem;
-    --cx-box-shadow: 0px 6px 24px -6px rgba(0, 0, 0, 0.2), 0px 3px 12px -3px rgba(0, 0, 0, 0.1019607843);
+    --cx-box-shadow: 0rem 0.375rem 1.5rem -0.375rem rgba(0, 0, 0, 0.2), 0rem 0.1875rem 0.75rem -0.1875rem rgba(0, 0, 0, 0.1);
   }
   .modal-container {
     max-width: var(--cx-width);
@@ -10603,7 +10603,7 @@ textarea.form-control {
   --cx-offcanvas-bg: var(--cx-bg-color);
   --cx-offcanvas-border-width: var(--cx-border-width-medium);
   --cx-offcanvas-border-color: var(--cx-border-subtle);
-  --cx-offcanvas-box-shadow: 0px 6px 24px -6px rgba(0, 0, 0, 0.2), 0px 3px 12px -3px rgba(0, 0, 0, 0.1019607843);
+  --cx-offcanvas-box-shadow: 0rem 0.375rem 1.5rem -0.375rem rgba(0, 0, 0, 0.2), 0rem 0.1875rem 0.75rem -0.1875rem rgba(0, 0, 0, 0.1);
   --cx-offcanvas-transition: transform 0.3s ease-in-out;
   --cx-offcanvas-title-line-height: var(--cx-line-height-text-xlarge);
 }
@@ -12016,37 +12016,37 @@ textarea.form-control {
 
 .primary-fg-highlight {
   --cx-fg-color: var(--cx-primary-fg-highlight, $value);
-  color: var(--cx-primary-fg-highlight, #00a4cc) !important;
+  color: var(--cx-primary-fg-highlight, #00A4CC) !important;
 }
 
 .secondary-fg-highlight {
   --cx-fg-color: var(--cx-secondary-fg-highlight, $value);
-  color: var(--cx-secondary-fg-highlight, #f55200) !important;
+  color: var(--cx-secondary-fg-highlight, #F55200) !important;
 }
 
 .neutral-fg-highlight {
   --cx-fg-color: var(--cx-neutral-fg-highlight, $value);
-  color: var(--cx-neutral-fg-highlight, #6f8085) !important;
+  color: var(--cx-neutral-fg-highlight, #6F8085) !important;
 }
 
 .danger-fg-highlight {
   --cx-fg-color: var(--cx-danger-fg-highlight, $value);
-  color: var(--cx-danger-fg-highlight, #f52314) !important;
+  color: var(--cx-danger-fg-highlight, #F52314) !important;
 }
 
 .success-fg-highlight {
   --cx-fg-color: var(--cx-success-fg-highlight, $value);
-  color: var(--cx-success-fg-highlight, #10c263) !important;
+  color: var(--cx-success-fg-highlight, #10C263) !important;
 }
 
 .warning-fg-highlight {
   --cx-fg-color: var(--cx-warning-fg-highlight, $value);
-  color: var(--cx-warning-fg-highlight, #f5a300) !important;
+  color: var(--cx-warning-fg-highlight, #F5A300) !important;
 }
 
 .info-fg-highlight {
   --cx-fg-color: var(--cx-info-fg-highlight, $value);
-  color: var(--cx-info-fg-highlight, #1414f5) !important;
+  color: var(--cx-info-fg-highlight, #1414F5) !important;
 }
 
 .black-fg-highlight {
@@ -13458,39 +13458,39 @@ textarea.form-control {
 }
 
 .default-link-main {
-  color: var(--cx-default-link-main, #00a4cc);
+  color: var(--cx-default-link-main, #00A4CC);
 }
 
 .alternate-link-main {
-  color: var(--cx-alternate-link-main, #00a4cc);
+  color: var(--cx-alternate-link-main, #00A4CC);
 }
 
 .primary-link-main {
-  color: var(--cx-primary-link-main, #00a4cc);
+  color: var(--cx-primary-link-main, #00A4CC);
 }
 
 .secondary-link-main {
-  color: var(--cx-secondary-link-main, #f55200);
+  color: var(--cx-secondary-link-main, #F55200);
 }
 
 .neutral-link-main {
-  color: var(--cx-neutral-link-main, #6f8085);
+  color: var(--cx-neutral-link-main, #6F8085);
 }
 
 .danger-link-main {
-  color: var(--cx-danger-link-main, #f52314);
+  color: var(--cx-danger-link-main, #F52314);
 }
 
 .success-link-main {
-  color: var(--cx-success-link-main, #10c263);
+  color: var(--cx-success-link-main, #10C263);
 }
 
 .warning-link-main {
-  color: var(--cx-warning-link-main, #f5a300);
+  color: var(--cx-warning-link-main, #F5A300);
 }
 
 .info-link-main {
-  color: var(--cx-info-link-main, #1414f5);
+  color: var(--cx-info-link-main, #1414F5);
 }
 
 .black-link-main {
@@ -13546,47 +13546,47 @@ textarea.form-control {
 }
 
 .default-link-active {
-  color: var(--cx-default-link-active, #f52314);
+  color: var(--cx-default-link-active, #F52314);
 }
 
 .alternate-link-active {
-  color: var(--cx-alternate-link-active, #f52314);
+  color: var(--cx-alternate-link-active, #F52314);
 }
 
 .primary-link-active {
-  color: var(--cx-primary-link-active, #00a4cc);
+  color: var(--cx-primary-link-active, #00A4CC);
 }
 
 .secondary-link-active {
-  color: var(--cx-secondary-link-active, #f55200);
+  color: var(--cx-secondary-link-active, #F55200);
 }
 
 .neutral-link-active {
-  color: var(--cx-neutral-link-active, #6f8085);
+  color: var(--cx-neutral-link-active, #6F8085);
 }
 
 .danger-link-active {
-  color: var(--cx-danger-link-active, #f52314);
+  color: var(--cx-danger-link-active, #F52314);
 }
 
 .success-link-active {
-  color: var(--cx-success-link-active, #10c263);
+  color: var(--cx-success-link-active, #10C263);
 }
 
 .warning-link-active {
-  color: var(--cx-warning-link-active, #f5a300);
+  color: var(--cx-warning-link-active, #F5A300);
 }
 
 .info-link-active {
-  color: var(--cx-info-link-active, #1414f5);
+  color: var(--cx-info-link-active, #1414F5);
 }
 
 .black-link-active {
-  color: var(--cx-black-link-active, #f52314);
+  color: var(--cx-black-link-active, #F52314);
 }
 
 .white-link-active {
-  color: var(--cx-white-link-active, #f52314);
+  color: var(--cx-white-link-active, #F52314);
 }
 
 .default-link-visited {
@@ -17378,7 +17378,7 @@ textarea.form-control {
 }
 
 .shadow-small {
-  box-shadow: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.03125rem 0.125rem -0.03125rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.0313rem 0.125rem -0.0313rem rgba(0, 0, 0, 0.1) !important;
 }
 
 .shadow-large {
@@ -17556,11 +17556,11 @@ textarea.form-control {
 }
 
 .shadow-30 {
-  box-shadow: 0rem 0.3125rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.2), 0rem 0.15625rem 0.625rem -0.15625rem var(--cx-shadow-color, transparent), 0rem 0.15625rem 0.625rem -0.15625rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0rem 0.3125rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.2), 0rem 0.1563rem 0.625rem -0.1563rem var(--cx-shadow-color, transparent), 0rem 0.1563rem 0.625rem -0.1563rem rgba(0, 0, 0, 0.1) !important;
 }
 
 .shadow-30-hover:hover {
-  box-shadow: 0rem 0.3125rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.2), 0rem 0.15625rem 0.625rem -0.15625rem var(--cx-shadow-color, transparent), 0rem 0.15625rem 0.625rem -0.15625rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0rem 0.3125rem 1.25rem -0.3125rem rgba(0, 0, 0, 0.2), 0rem 0.1563rem 0.625rem -0.1563rem var(--cx-shadow-color, transparent), 0rem 0.1563rem 0.625rem -0.1563rem rgba(0, 0, 0, 0.1) !important;
 }
 
 .shadow-20 {
@@ -17580,11 +17580,11 @@ textarea.form-control {
 }
 
 .shadow-05 {
-  box-shadow: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.03125rem 0.125rem -0.03125rem var(--cx-shadow-color, transparent), 0rem 0.03125rem 0.125rem -0.03125rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.0313rem 0.125rem -0.0313rem var(--cx-shadow-color, transparent), 0rem 0.0313rem 0.125rem -0.0313rem rgba(0, 0, 0, 0.1) !important;
 }
 
 .shadow-05-hover:hover {
-  box-shadow: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.03125rem 0.125rem -0.03125rem var(--cx-shadow-color, transparent), 0rem 0.03125rem 0.125rem -0.03125rem rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0rem 0.0625rem 0.25rem -0.0625rem rgba(0, 0, 0, 0.2), 0rem 0.0313rem 0.125rem -0.0313rem var(--cx-shadow-color, transparent), 0rem 0.0313rem 0.125rem -0.0313rem rgba(0, 0, 0, 0.1) !important;
 }
 
 .shadow-default {
@@ -27455,5 +27455,4 @@ textarea.form-control {
     display: none !important;
   }
 }
-
 /*# sourceMappingURL=chassis.rtl.css.map */

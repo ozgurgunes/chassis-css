@@ -215,9 +215,9 @@ Options for individual popovers can alternatively be specified through the use o
 
 ```js
 const popover = new chassis.Popover(element, {
-  popperConfig(defaultBsPopperConfig) {
+  popperConfig(defaultCxPopperConfig) {
     // const newPopperConfig = {...}
-    // use defaultBsPopperConfig if needed...
+    // use defaultCxPopperConfig if needed...
     // return newPopperConfig
   }
 })
@@ -237,10 +237,10 @@ const popover = new chassis.Popover(element, {
 | `enable` | Gives an element's popover the ability to be shown. **Popovers are enabled by default.** |
 | `getInstance` | _Static_ method which allows you to get the popover instance associated with a DOM element. |
 | `getOrCreateInstance` | _Static_ method which allows you to get the popover instance associated with a DOM element, or create a new one in case it wasn't initialized. |
-| `hide` | Hides an element's popover. **Returns to the caller before the popover has actually been hidden** (i.e. before the `hidden.vl.popover` event occurs). This is considered a "manual" triggering of the popover. |
+| `hide` | Hides an element's popover. **Returns to the caller before the popover has actually been hidden** (i.e. before the `hidden.cx.popover` event occurs). This is considered a "manual" triggering of the popover. |
 | `setContent` | Gives a way to change the popover's content after its initialization. |
-| `show` | Reveals an element's popover. **Returns to the caller before the popover has actually been shown** (i.e. before the `shown.vl.popover` event occurs). This is considered a "manual" triggering of the popover. Popovers whose title and content are both zero-length are never displayed. |
-| `toggle` | Toggles an element's popover. **Returns to the caller before the popover has actually been shown or hidden** (i.e. before the `shown.vl.popover` or `hidden.vl.popover` event occurs). This is considered a "manual" triggering of the popover. |
+| `show` | Reveals an element's popover. **Returns to the caller before the popover has actually been shown** (i.e. before the `shown.cx.popover` event occurs). This is considered a "manual" triggering of the popover. Popovers whose title and content are both zero-length are never displayed. |
+| `toggle` | Toggles an element's popover. **Returns to the caller before the popover has actually been shown or hidden** (i.e. before the `shown.cx.popover` or `hidden.cx.popover` event occurs). This is considered a "manual" triggering of the popover. |
 | `toggleEnabled` | Toggles the ability for an element's popover to be shown or hidden. |
 | `update` | Updates the position of an element's popover. |
 {{< /cx-table >}}
@@ -267,16 +267,16 @@ The `setContent` method accepts an `object` argument, where each property-key is
 {{< cx-table >}}
 | Event | Description |
 | --- | --- |
-| `hide.vl.popover` | This event is fired immediately when the `hide` instance method has been called. |
-| `hidden.vl.popover` | This event is fired when the popover has finished being hidden from the user (will wait for CSS transitions to complete). |
-| `inserted.vl.popover` | This event is fired after the `show.vl.popover` event when the popover template has been added to the DOM. |
-| `show.vl.popover` | This event fires immediately when the `show` instance method is called. |
-| `shown.vl.popover` | This event is fired when the popover has been made visible to the user (will wait for CSS transitions to complete). |
+| `hide.cx.popover` | This event is fired immediately when the `hide` instance method has been called. |
+| `hidden.cx.popover` | This event is fired when the popover has finished being hidden from the user (will wait for CSS transitions to complete). |
+| `inserted.cx.popover` | This event is fired after the `show.cx.popover` event when the popover template has been added to the DOM. |
+| `show.cx.popover` | This event fires immediately when the `show` instance method is called. |
+| `shown.cx.popover` | This event is fired when the popover has been made visible to the user (will wait for CSS transitions to complete). |
 {{< /cx-table >}}
 
 ```js
 const myPopoverTrigger = document.getElementById('myPopover')
-myPopoverTrigger.addEventListener('hidden.vl.popover', () => {
+myPopoverTrigger.addEventListener('hidden.cx.popover', () => {
   // do something...
 })
 ```

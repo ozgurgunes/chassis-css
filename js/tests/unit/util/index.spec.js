@@ -15,8 +15,8 @@ describe('Util', () => {
 
   describe('getUID', () => {
     it('should generate uid', () => {
-      const uid = Util.getUID('vl')
-      const uid2 = Util.getUID('vl')
+      const uid = Util.getUID('cx')
+      const uid2 = Util.getUID('cx')
 
       expect(uid).not.toEqual(uid2)
     })
@@ -521,10 +521,10 @@ describe('Util', () => {
 
     it('should execute if arg is function & return the result', () => {
       const functionFoo = (num1, num2 = 10) => num1 + num2
-      const resultFoo = Util.execute(functionFoo, [4, 5])
+      const resultFoo = Util.execute(functionFoo, [undefined, 4, 5])
       expect(resultFoo).toBe(9)
 
-      const resultFoo1 = Util.execute(functionFoo, [4])
+      const resultFoo1 = Util.execute(functionFoo, [undefined, 4])
       expect(resultFoo1).toBe(14)
 
       const functionBar = () => 'foo'

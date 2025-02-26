@@ -27,7 +27,7 @@ describe('Collapse', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Collapse.DATA_KEY).toEqual('vl.collapse')
+      expect(Collapse.DATA_KEY).toEqual('cx.collapse')
     })
   })
 
@@ -159,7 +159,7 @@ describe('Collapse', () => {
             toggle: false
           }))
 
-        collapseEl2.addEventListener('shown.vl.collapse', () => {
+        collapseEl2.addEventListener('shown.cx.collapse', () => {
           expect(collapseEl2).toHaveClass('show')
           expect(collapseEl1).not.toHaveClass('show')
           resolve()
@@ -211,10 +211,10 @@ describe('Collapse', () => {
           toggle: false
         })
 
-        collapseEl.addEventListener('show.vl.collapse', () => {
+        collapseEl.addEventListener('show.cx.collapse', () => {
           expect(collapseEl.style.height).toEqual('0px')
         })
-        collapseEl.addEventListener('shown.vl.collapse', () => {
+        collapseEl.addEventListener('shown.cx.collapse', () => {
           expect(collapseEl).toHaveClass('show')
           expect(collapseEl.style.height).toEqual('')
           resolve()
@@ -233,10 +233,10 @@ describe('Collapse', () => {
           toggle: false
         })
 
-        collapseEl.addEventListener('show.vl.collapse', () => {
+        collapseEl.addEventListener('show.cx.collapse', () => {
           expect(collapseEl.style.width).toEqual('0px')
         })
-        collapseEl.addEventListener('shown.vl.collapse', () => {
+        collapseEl.addEventListener('shown.cx.collapse', () => {
           expect(collapseEl).toHaveClass('show')
           expect(collapseEl.style.width).toEqual('')
           resolve()
@@ -263,7 +263,7 @@ describe('Collapse', () => {
           toggle: false
         })
 
-        el1.addEventListener('shown.vl.collapse', () => {
+        el1.addEventListener('shown.cx.collapse', () => {
           expect(el1).toHaveClass('show')
           expect(el2).toHaveClass('show')
           resolve()
@@ -315,15 +315,15 @@ describe('Collapse', () => {
         const childCollapseEl1 = el('#childContent1')
         const childCollapseEl2 = el('#childContent2')
 
-        parentCollapseEl.addEventListener('shown.vl.collapse', () => {
+        parentCollapseEl.addEventListener('shown.cx.collapse', () => {
           expect(parentCollapseEl).toHaveClass('show')
           childBtn1.click()
         })
-        childCollapseEl1.addEventListener('shown.vl.collapse', () => {
+        childCollapseEl1.addEventListener('shown.cx.collapse', () => {
           expect(childCollapseEl1).toHaveClass('show')
           childBtn2.click()
         })
-        childCollapseEl2.addEventListener('shown.vl.collapse', () => {
+        childCollapseEl2.addEventListener('shown.cx.collapse', () => {
           expect(childCollapseEl2).toHaveClass('show')
           expect(childCollapseEl1).not.toHaveClass('show')
           resolve()
@@ -366,11 +366,11 @@ describe('Collapse', () => {
         const collapse = new Collapse(el)
         let times = 1
 
-        el.addEventListener('hidden.vl.collapse', () => {
+        el.addEventListener('hidden.cx.collapse', () => {
           collapse.show()
         })
 
-        el.addEventListener('shown.vl.collapse', () => {
+        el.addEventListener('shown.cx.collapse', () => {
           expect(activeTabPane).toHaveClass('show')
           times++
           if (times === 2) {
@@ -400,12 +400,12 @@ describe('Collapse', () => {
           }, 10)
         }
 
-        collapseEl.addEventListener('show.vl.collapse', event => {
+        collapseEl.addEventListener('show.cx.collapse', event => {
           event.preventDefault()
           expectEnd()
         })
 
-        collapseEl.addEventListener('shown.vl.collapse', () => {
+        collapseEl.addEventListener('shown.cx.collapse', () => {
           reject(new Error('should not fire shown event'))
         })
 
@@ -455,7 +455,7 @@ describe('Collapse', () => {
           toggle: false
         })
 
-        collapseEl.addEventListener('hidden.vl.collapse', () => {
+        collapseEl.addEventListener('hidden.cx.collapse', () => {
           expect(collapseEl).not.toHaveClass('show')
           expect(collapseEl.style.height).toEqual('')
           resolve()
@@ -481,12 +481,12 @@ describe('Collapse', () => {
           }, 10)
         }
 
-        collapseEl.addEventListener('hide.vl.collapse', event => {
+        collapseEl.addEventListener('hide.cx.collapse', event => {
           event.preventDefault()
           expectEnd()
         })
 
-        collapseEl.addEventListener('hidden.vl.collapse', () => {
+        collapseEl.addEventListener('hidden.cx.collapse', () => {
           reject(new Error('should not fire hidden event'))
         })
 
@@ -550,7 +550,7 @@ describe('Collapse', () => {
         const collapse1 = fixtureEl.querySelector('#collapse1')
         const collapse2 = fixtureEl.querySelector('#collapse2')
 
-        collapse2.addEventListener('shown.vl.collapse', () => {
+        collapse2.addEventListener('shown.cx.collapse', () => {
           expect(trigger.getAttribute('aria-expanded')).toEqual('true')
           expect(trigger).not.toHaveClass('collapsed')
           expect(collapse1).toHaveClass('show')
@@ -574,7 +574,7 @@ describe('Collapse', () => {
         const collapse1 = fixtureEl.querySelector('#collapse1')
         const collapse2 = fixtureEl.querySelector('#collapse2')
 
-        collapse2.addEventListener('hidden.vl.collapse', () => {
+        collapse2.addEventListener('hidden.cx.collapse', () => {
           expect(trigger.getAttribute('aria-expanded')).toEqual('false')
           expect(trigger).toHaveClass('collapsed')
           expect(collapse1).not.toHaveClass('show')
@@ -598,7 +598,7 @@ describe('Collapse', () => {
         const link2 = fixtureEl.querySelector('#link2')
         const collapseTest1 = fixtureEl.querySelector('#test1')
 
-        collapseTest1.addEventListener('shown.vl.collapse', () => {
+        collapseTest1.addEventListener('shown.cx.collapse', () => {
           expect(link1.getAttribute('aria-expanded')).toEqual('true')
           expect(link2.getAttribute('aria-expanded')).toEqual('true')
           expect(link1).not.toHaveClass('collapsed')
@@ -622,7 +622,7 @@ describe('Collapse', () => {
         const link2 = fixtureEl.querySelector('#link2')
         const collapseTest1 = fixtureEl.querySelector('#test1')
 
-        collapseTest1.addEventListener('hidden.vl.collapse', () => {
+        collapseTest1.addEventListener('hidden.cx.collapse', () => {
           expect(link1.getAttribute('aria-expanded')).toEqual('false')
           expect(link2.getAttribute('aria-expanded')).toEqual('false')
           expect(link1).toHaveClass('collapsed')
@@ -654,11 +654,11 @@ describe('Collapse', () => {
         const collapseOne = fixtureEl.querySelector('#collapseOne')
         const collapseTwo = fixtureEl.querySelector('#collapseTwo')
 
-        collapseOne.addEventListener('shown.vl.collapse', () => {
+        collapseOne.addEventListener('shown.cx.collapse', () => {
           expect(collapseOne).toHaveClass('show')
           expect(collapseTwo).not.toHaveClass('show')
 
-          collapseTwo.addEventListener('shown.vl.collapse', () => {
+          collapseTwo.addEventListener('shown.cx.collapse', () => {
             expect(collapseOne).not.toHaveClass('show')
             expect(collapseTwo).toHaveClass('show')
             resolve()
@@ -681,7 +681,7 @@ describe('Collapse', () => {
         const target = fixtureEl.querySelector('input')
         const collapseEl = fixtureEl.querySelector('#collapsediv1')
 
-        collapseEl.addEventListener('shown.vl.collapse', () => {
+        collapseEl.addEventListener('shown.cx.collapse', () => {
           expect(collapseEl).toHaveClass('show')
           expect(target.checked).toBeTrue()
           resolve()
@@ -717,7 +717,7 @@ describe('Collapse', () => {
         const collapseOneEl = fixtureEl.querySelector('#collapseOne')
         const collapseTwoEl = fixtureEl.querySelector('#collapseTwo')
 
-        collapseOneEl.addEventListener('shown.vl.collapse', () => {
+        collapseOneEl.addEventListener('shown.cx.collapse', () => {
           expect(collapseOneEl).toHaveClass('show')
           expect(triggerEl).not.toHaveClass('collapsed')
           expect(triggerEl.getAttribute('aria-expanded')).toEqual('true')
@@ -726,7 +726,7 @@ describe('Collapse', () => {
           expect(triggerTwoEl).toHaveClass('collapsed')
           expect(triggerTwoEl.getAttribute('aria-expanded')).toEqual('false')
 
-          collapseTwoEl.addEventListener('shown.vl.collapse', () => {
+          collapseTwoEl.addEventListener('shown.cx.collapse', () => {
             expect(collapseOneEl).not.toHaveClass('show')
             expect(triggerEl).toHaveClass('collapsed')
             expect(triggerEl.getAttribute('aria-expanded')).toEqual('false')
@@ -787,7 +787,7 @@ describe('Collapse', () => {
           resolve()
         }
 
-        collapseOneOne.addEventListener('shown.vl.collapse', () => {
+        collapseOneOne.addEventListener('shown.cx.collapse', () => {
           if (collapsedElements.one) {
             firstTest()
           } else {
@@ -795,7 +795,7 @@ describe('Collapse', () => {
           }
         })
 
-        collapseOneTwo.addEventListener('shown.vl.collapse', () => {
+        collapseOneTwo.addEventListener('shown.cx.collapse', () => {
           if (collapsedElements.one) {
             firstTest()
           } else {
@@ -803,7 +803,7 @@ describe('Collapse', () => {
           }
         })
 
-        collapseTwoOne.addEventListener('shown.vl.collapse', () => {
+        collapseTwoOne.addEventListener('shown.cx.collapse', () => {
           if (collapsedElements.two) {
             secondTest()
           } else {
@@ -811,7 +811,7 @@ describe('Collapse', () => {
           }
         })
 
-        collapseTwoTwo.addEventListener('shown.vl.collapse', () => {
+        collapseTwoTwo.addEventListener('shown.cx.collapse', () => {
           if (collapsedElements.two) {
             secondTest()
           } else {
@@ -857,9 +857,9 @@ describe('Collapse', () => {
           expect(collapseTwo).not.toHaveClass('show')
           expect(nestedCollapseOne).not.toHaveClass('show')
 
-          nestedCollapseOne.addEventListener('shown.vl.collapse', handlerNestedCollapseOne)
+          nestedCollapseOne.addEventListener('shown.cx.collapse', handlerNestedCollapseOne)
           nestedTrigger.click()
-          collapseOne.removeEventListener('shown.vl.collapse', handlerCollapseOne)
+          collapseOne.removeEventListener('shown.cx.collapse', handlerCollapseOne)
         }
 
         function handlerNestedCollapseOne() {
@@ -867,7 +867,7 @@ describe('Collapse', () => {
           expect(collapseTwo).not.toHaveClass('show')
           expect(nestedCollapseOne).toHaveClass('show')
 
-          collapseTwo.addEventListener('shown.vl.collapse', () => {
+          collapseTwo.addEventListener('shown.cx.collapse', () => {
             expect(collapseOne).not.toHaveClass('show')
             expect(collapseTwo).toHaveClass('show')
             expect(nestedCollapseOne).toHaveClass('show')
@@ -875,10 +875,10 @@ describe('Collapse', () => {
           })
 
           triggerTwo.click()
-          nestedCollapseOne.removeEventListener('shown.vl.collapse', handlerNestedCollapseOne)
+          nestedCollapseOne.removeEventListener('shown.cx.collapse', handlerNestedCollapseOne)
         }
 
-        collapseOne.addEventListener('shown.vl.collapse', handlerCollapseOne)
+        collapseOne.addEventListener('shown.cx.collapse', handlerCollapseOne)
         trigger.click()
       })
     })
@@ -909,7 +909,7 @@ describe('Collapse', () => {
           expect(trigger3).not.toHaveClass('collapsed')
           expect(trigger3.getAttribute('aria-expanded')).toEqual('true')
 
-          target2.addEventListener('hidden.vl.collapse', () => {
+          target2.addEventListener('hidden.cx.collapse', () => {
             expect(trigger1).not.toHaveClass('collapsed')
             expect(trigger1.getAttribute('aria-expanded')).toEqual('true')
 
@@ -919,7 +919,7 @@ describe('Collapse', () => {
             expect(trigger3).not.toHaveClass('collapsed')
             expect(trigger3.getAttribute('aria-expanded')).toEqual('true')
 
-            target1.addEventListener('hidden.vl.collapse', () => {
+            target1.addEventListener('hidden.cx.collapse', () => {
               expect(trigger1).toHaveClass('collapsed')
               expect(trigger1.getAttribute('aria-expanded')).toEqual('false')
 
@@ -937,7 +937,7 @@ describe('Collapse', () => {
           trigger2.click()
         }
 
-        target2.addEventListener('shown.vl.collapse', target2Shown)
+        target2.addEventListener('shown.cx.collapse', target2Shown)
         trigger3.click()
       })
     })

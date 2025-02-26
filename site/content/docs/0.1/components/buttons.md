@@ -274,7 +274,7 @@ It is also suggested to use  `aria-pressed="false"` for non active buttons to ma
 You can create a button instance with the button constructor, for example:
 
 ```js
-const vlButton = new chassis.Button('#myButton')
+const cxButton = new chassis.Button('#myButton')
 ```
 
 {{< cx-table "table" >}}

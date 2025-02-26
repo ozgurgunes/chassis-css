@@ -43,7 +43,7 @@ describe('Base Component', () => {
 
     describe('DATA_KEY', () => {
       it('should return plugin data key', () => {
-        expect(DummyClass.DATA_KEY).toEqual(`vl.${name}`)
+        expect(DummyClass.DATA_KEY).toEqual(`cx.${name}`)
       })
     })
 
@@ -62,7 +62,7 @@ describe('Base Component', () => {
 
     describe('EVENT_KEY', () => {
       it('should return plugin event key', () => {
-        expect(DummyClass.EVENT_KEY).toEqual(`.vl.${name}`)
+        expect(DummyClass.EVENT_KEY).toEqual(`.cx.${name}`)
       })
     })
   })

@@ -1,5 +1,5 @@
 /*!
-  * Chassis index.js v0.1.0 (https://design.chassis.com/)
+  * Chassis index.js v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -202,7 +202,7 @@
     });
   };
   const execute = (possibleCallback, args = [], defaultValue = possibleCallback) => {
-    return typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
+    return typeof possibleCallback === 'function' ? possibleCallback.call(...args) : defaultValue;
   };
   const executeAfterTransition = (callback, transitionElement, waitForTransition = true) => {
     if (!waitForTransition) {

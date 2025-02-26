@@ -1,5 +1,5 @@
 /*!
-  * Chassis dropdown.js v0.1.0 (https://design.chassis.com/)
+  * Chassis dropdown.js v0.1.0 (https://github.com/ozgurgunes/chassis-css/)
   * Copyright 2025 Ozgur Gunes, Chassis and Bootstrap contributors
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
@@ -103,7 +103,6 @@
       super(element, config);
       this._popper = null;
       this._parent = this._element.parentNode; // dropdown wrapper
-      // TODO: v6 revert #37011 & change markup https://design.chassis.com/docs/5.3/forms/input-group/
       this._menu = SelectorEngine.next(this._element, SELECTOR_MENU)[0] || SelectorEngine.prev(this._element, SELECTOR_MENU)[0] || SelectorEngine.findOne(SELECTOR_MENU, this._parent);
       this._inNavbar = this._detectNavbar();
     }
@@ -260,7 +259,7 @@
       return offset;
     }
     _getPopperConfig() {
-      const defaultBsPopperConfig = {
+      const defaultCxPopperConfig = {
         placement: this._getPlacement(),
         modifiers: [{
           name: 'preventOverflow',
@@ -278,14 +277,14 @@
       // Disable Popper if we have a static display or Dropdown is in Navbar
       if (this._inNavbar || this._config.display === 'static') {
         Manipulator.setDataAttribute(this._menu, 'popper', 'static'); // TODO: v6 remove
-        defaultBsPopperConfig.modifiers = [{
+        defaultCxPopperConfig.modifiers = [{
           name: 'applyStyles',
           enabled: false
         }];
       }
       return {
-        ...defaultBsPopperConfig,
-        ...index_js.execute(this._config.popperConfig, [defaultBsPopperConfig])
+        ...defaultCxPopperConfig,
+        ...index_js.execute(this._config.popperConfig, [undefined, defaultCxPopperConfig])
       };
     }
     _selectMenuItem({
@@ -358,8 +357,6 @@
         return;
       }
       event.preventDefault();
-
-      // TODO: v6 revert #37011 & change markup https://design.chassis.com/docs/5.3/forms/input-group/
       const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE) ? this : SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE)[0] || SelectorEngine.next(this, SELECTOR_DATA_TOGGLE)[0] || SelectorEngine.findOne(SELECTOR_DATA_TOGGLE, event.delegateTarget.parentNode);
       const instance = Dropdown.getOrCreateInstance(getToggleButton);
       if (isUpOrDownEvent) {

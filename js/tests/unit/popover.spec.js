@@ -39,13 +39,13 @@ describe('Popover', () => {
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Popover.DATA_KEY).toEqual('vl.popover')
+      expect(Popover.DATA_KEY).toEqual('cx.popover')
     })
   })
 
   describe('EVENT_KEY', () => {
     it('should return plugin event key', () => {
-      expect(Popover.EVENT_KEY).toEqual('.vl.popover')
+      expect(Popover.EVENT_KEY).toEqual('.cx.popover')
     })
   })
 
@@ -63,7 +63,7 @@ describe('Popover', () => {
         const popoverEl = fixtureEl.querySelector('a')
         const popover = new Popover(popoverEl)
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           expect(document.querySelector('.popover')).not.toBeNull()
           resolve()
         })
@@ -82,7 +82,7 @@ describe('Popover', () => {
           content: () => 'loves writing tests （╯°□°）╯︵ ┻━┻'
         })
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
           expect(popoverDisplayed).not.toBeNull()
@@ -104,7 +104,7 @@ describe('Popover', () => {
           content: 'Some beautiful content :)'
         })
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
           expect(popoverDisplayed).not.toBeNull()
@@ -126,7 +126,7 @@ describe('Popover', () => {
           title: 'Title which does not require content'
         })
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
           expect(popoverDisplayed).not.toBeNull()
@@ -146,7 +146,7 @@ describe('Popover', () => {
         const popoverEl = fixtureEl.querySelector('a')
         const popover = new Popover(popoverEl)
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
           expect(popoverDisplayed).not.toBeNull()
@@ -200,11 +200,11 @@ describe('Popover', () => {
         let spy = null
         let times = 1
 
-        popoverEl.addEventListener('hidden.vl.popover', () => {
+        popoverEl.addEventListener('hidden.cx.popover', () => {
           popover.show()
         })
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           spy = spy || spyOn(popover._templateFactory, 'constructor').and.callThrough()
           const popoverDisplayed = document.querySelector('.popover')
 
@@ -229,7 +229,7 @@ describe('Popover', () => {
         const popoverEl = fixtureEl.querySelector('a')
         const popover = new Popover(popoverEl)
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           const tip = document.querySelector('.popover')
           expect(tip).not.toBeNull()
           expect(tip).toHaveClass('custom-class')
@@ -249,11 +249,11 @@ describe('Popover', () => {
         const popoverEl = fixtureEl.querySelector('a')
         const popover = new Popover(popoverEl)
 
-        popoverEl.addEventListener('shown.vl.popover', () => {
+        popoverEl.addEventListener('shown.cx.popover', () => {
           popover.hide()
         })
 
-        popoverEl.addEventListener('hidden.vl.popover', () => {
+        popoverEl.addEventListener('hidden.cx.popover', () => {
           expect(document.querySelector('.popover')).toBeNull()
           resolve()
         })
