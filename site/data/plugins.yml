@@ -35,7 +35,7 @@
   link: components/scrollspy/
 
 - name: Tab
-  description: Allow Chassis - CSS nav components to toggle contents.
+  description: Allow Bootstrap nav components to toggle contents.
   link: components/navs-tabs/
 
 - name: Toast

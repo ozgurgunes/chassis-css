@@ -1,35 +1,35 @@
-- breakpoint: xsmall
-  abbr: ""
+- breakpoint: xs
+  abbr: ''
   name: X-Small
   min-width: 0px
-  container: ""
+  container: ''
 
 - breakpoint: sm
-  abbr: -small
+  abbr: -sm
   name: Small
   min-width: 576px
   container: 540px
 
 - breakpoint: md
-  abbr: -medium
+  abbr: -md
   name: Medium
   min-width: 768px
   container: 720px
 
 - breakpoint: lg
-  abbr: -large
+  abbr: -lg
   name: Large
   min-width: 992px
   container: 960px
 
 - breakpoint: xl
-  abbr: -xlarge
+  abbr: -xl
   name: X-Large
   min-width: 1200px
   container: 1140px
 
 - breakpoint: xxl
-  abbr: -2xlarge
+  abbr: -xxl
   name: XX-Large
   min-width: 1400px
   container: 1320px

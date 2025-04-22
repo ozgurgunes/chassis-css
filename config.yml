@@ -1,0 +1,56 @@
+title:                  "Chassis - CSS"
+baseURL:                "https://ozgurgunes.github.io/chassis-css/"
+
+docsDir:                "site"
+
+subtitle:               "A CSS framework which synchronizes with Figma components by using design tokens."
+description:            "Chassis - CSS consists of a complete set including Figma components, design tokens and their transformers for multiple products on multiple platforms under the name of multiple brands."
+authors:                "Ozgur Gunes and Bootstrap contributers"
+
+current_version:        "0.1.0"
+current_ruby_version:   "0.1.0"
+docs_version:           "0.1"
+rfs_version:            "v10.0.0"
+github_org:             "https://github.com/ozgurgunes"
+repo:                   "https://github.com/ozgurgunes/chassis-css"
+x:                      "ds_chassis"
+opencollective:         "https://opencollective.com/chassis"
+blog:                   "https://blog.ds-chassis.com/"
+themes:                 "https://themes.ds-chassis.com/"
+icons:                  "https://icons.ds-chassis.com/"
+swag:                   "https://cottonbureau.com/people/chassis"
+
+analytics:
+  fathom_site:          "ITUSEYJG"
+
+algolia:
+  app_id:                "AK7KMZKZHQ"
+  api_key:               "3151f502c7b9e9dafd5e6372b691a24e"
+  index_name:            "bootstrap"
+
+download:
+  source:               "https://github.com/ozgurgunes/chassis-css/archive/v0.1.0.zip"
+  dist:                 "https://github.com/ozgurgunes/chassis-css/releases/download/v0.1.0/chassis-css-0.1.0-dist.zip"
+  dist_examples:        "https://github.com/ozgurgunes/chassis-css/releases/download/v0.1.0/chassis-css-0.1.0-examples.zip"
+
+cdn:
+  # See https://www.srihash.org for info on how to generate the hashes
+  css:                  "https://cdn.jsdelivr.net/npm/chassis-css@0.1.0/dist/css/chassis-css.min.css"
+  css_hash:             "sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+  css_rtl:              "https://cdn.jsdelivr.net/npm/chassis-css@0.1.0/dist/css/chassis-css.rtl.min.css"
+  css_rtl_hash:         "sha384-q8+l9TmX3RaSz3HKGBmqP2u5MkgeN7HrfOJBLcTgZsQsbrx8WqqxdA5PuwUV9WIx"
+  js:                   "https://cdn.jsdelivr.net/npm/chassis-css@0.1.0/dist/js/chassis-css.min.js"
+  js_hash:              "sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
+  js_bundle:            "https://cdn.jsdelivr.net/npm/chassis-css@0.1.0/dist/js/chassis-css.bundle.min.js"
+  js_bundle_hash:       "sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+  popper:               "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  popper_hash:          "sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+  popper_esm:           "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js"
+
+anchors:
+  min:                  2
+  max:                  5
+
+toc:
+  min:                  2
+  max:                  6

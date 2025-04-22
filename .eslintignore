@@ -1,8 +1,10 @@
 **/*.min.js
 **/dist/
+**/vendor/
 /_site/
+/site/public/
 /js/coverage/
 /site/static/sw.js
+/site/static/docs/**/assets/sw.js
 /site/layouts/partials/
-site/static/docs/0.2/assets/js/icon-search.js
 /chassis-tokens/
