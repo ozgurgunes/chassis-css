@@ -4,7 +4,6 @@
 @import "fonts";
 @import "shadows";
 @import "buttons";
-// @import "maps/bs";
 
 // scss-docs-start spacing-map
 $spacers: (
@@ -21,6 +20,7 @@ $spacers: (
   3xlarge:        $space-3xlarge,
   4xlarge:        $space-4xlarge,
   5xlarge:        $space-5xlarge,
+  6xlarge:        $space-6xlarge,
   rare:           $space-rare,
   xrare:          $space-xrare,
   // Chassis Spacers

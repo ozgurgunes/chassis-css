@@ -8,8 +8,8 @@ import autoImport from 'astro-auto-import'
 import type { Element } from 'hast'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { getConfig } from './config'
-import { rehypeBsTable } from './rehype'
-import { remarkBsConfig, remarkBsDocsref } from './remark'
+import { rehypeCxTable } from './rehype'
+import { remarkCxConfig, remarkCxDocsref } from './remark'
 import { configurePrism } from './prism'
 import {
   docsDirectory,
@@ -27,7 +27,11 @@ const autoImportedComponentDirectories = ['shortcodes']
 // A list of static file paths that will be aliased to a different path.
 const staticFileAliases = {
   '/docs/[version]/assets/img/favicons/apple-touch-icon.png': '/apple-touch-icon.png',
-  '/docs/[version]/assets/img/favicons/favicon.ico': '/favicon.ico'
+  '/docs/[version]/assets/img/favicons/favicon.ico': '/favicon.ico',
+  '../../chassis-tokens/dist/icons/chassis-icons.min.css': '/icons/chassis-icons.min.css',
+  '../../chassis-tokens/dist/icons/chassis-icons.svg': '/icons/chassis-icons.svg',
+  '../../chassis-tokens/dist/icons/chassis-icons.woff': '/icons/chassis-icons.woff',
+  '../../chassis-tokens/dist/icons/chassis-icons.woff2': '/icons/chassis-icons.woff2',
 }
 
 // A list of pages that will be excluded from the sitemap.
@@ -35,19 +39,28 @@ const sitemapExcludes = ['/404', '/docs', `/docs/${getConfig().docs_version}`]
 
 const headingsRangeRegex = new RegExp(`^h[${getConfig().anchors.min}-${getConfig().anchors.max}]$`)
 
-export function bootstrap(): AstroIntegration[] {
+export function chassis(): AstroIntegration[] {
   const sitemapExcludedUrls = sitemapExcludes.map((url) => `${getConfig().baseURL}${url}/`)
 
   configurePrism()
 
   return [
-    bootstrap_auto_import(),
+    chassis_auto_import(),
     {
-      name: 'bootstrap-integration',
+      name: 'chassis-integration',
       hooks: {
+        "astro:server:setup": ({ server }) => {
+          if (server.config.mode !== "development") {
+              return;
+          }
+          server.watcher.add(path.join(getDocsFsPath(), '../dist/css/chassis.css'));
+          server.watcher.add(path.join(getDocsFsPath(), '../dist/js/chassis.js'));
+        },
         'astro:config:setup': ({ addWatchFile, updateConfig }) => {
           // Reload the config when the integration is modified.
           addWatchFile(path.join(getDocsFsPath(), 'src/libs/astro.ts'))
+          addWatchFile(path.join(getDocsFsPath(), '../dist/css/chassis.css'))
+          addWatchFile(path.join(getDocsFsPath(), '../dist/css/chassis.js'))
 
           // Add the remark and rehype plugins.
           updateConfig({
@@ -63,15 +76,15 @@ export function bootstrap(): AstroIntegration[] {
                     test: (element: Element) => element.tagName.match(headingsRangeRegex)
                   }
                 ],
-                rehypeBsTable
+                rehypeCxTable
               ],
-              remarkPlugins: [remarkBsConfig, remarkBsDocsref]
+              remarkPlugins: [remarkCxConfig, remarkCxDocsref]
             }
           })
         },
         'astro:config:done': () => {
           cleanPublicDirectory()
-          copyBootstrap()
+          copyChassis()
           copyStatic()
           aliasStatic()
         },
@@ -88,7 +101,7 @@ export function bootstrap(): AstroIntegration[] {
   ]
 }
 
-function bootstrap_auto_import() {
+function chassis_auto_import() {
   const autoImportedComponents: string[] = []
   const autoImportedComponentDefinitions: string[] = []
 
@@ -137,9 +150,9 @@ function cleanPublicDirectory() {
   fs.rmSync(getDocsPublicFsPath(), { force: true, recursive: true })
 }
 
-// Copy the `dist` folder from the root of the repo containing the latest version of Bootstrap to make it available from
+// Copy the `dist` folder from the root of the repo containing the latest version of Chassis to make it available from
 // the `/docs/${docs_version}/dist` URL.
-function copyBootstrap() {
+function copyChassis() {
   const source = path.join(process.cwd(), 'dist')
   const destination = path.join(getDocsPublicFsPath(), 'docs', getConfig().docs_version, 'dist')
 

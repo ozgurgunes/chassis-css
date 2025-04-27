@@ -2,12 +2,12 @@ import type { Root } from 'hast'
 import type { Plugin } from 'unified'
 import { SKIP, visit } from 'unist-util-visit'
 
-// A rehype plugin to apply CSS classes to tables rendered in markdown (or MDX) files when wrapped in a `<BsTable />`
+// A rehype plugin to apply CSS classes to tables rendered in markdown (or MDX) files when wrapped in a `<CxTable />`
 // component.
-export const rehypeBsTable: Plugin<[], Root> = function () {
-  return function rehypeBsTablePlugin(ast) {
+export const rehypeCxTable: Plugin<[], Root> = function () {
+  return function rehypeCxTablePlugin(ast) {
     visit(ast, 'element', (node, _index, parent) => {
-      if (node.tagName !== 'table' || parent?.type !== 'mdxJsxFlowElement' || parent.name !== 'BsTable') {
+      if (node.tagName !== 'table' || parent?.type !== 'mdxJsxFlowElement' || parent.name !== 'CxTable') {
         return SKIP
       }
 

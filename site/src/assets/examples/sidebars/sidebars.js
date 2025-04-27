@@ -1,8 +1,8 @@
-/* global bootstrap: false */
+/* global chassis: false */
 (() => {
   'use strict'
-  const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  const tooltipTriggerList = Array.from(document.querySelectorAll('[data-cx-toggle="tooltip"]'))
   tooltipTriggerList.forEach(tooltipTriggerEl => {
-    new bootstrap.Tooltip(tooltipTriggerEl)
+    new chassis.Tooltip(tooltipTriggerEl)
   })
 })()

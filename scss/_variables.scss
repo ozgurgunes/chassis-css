@@ -5,29 +5,6 @@
 // Prefix for :root CSS variables
 $prefix:                        cx- !default;
 
-$enable-dark-mode:              true !default;
-$color-mode-type:               data !default; // `data` or `media-query`
-
-$enable-elevation-shadows:      true !default;
-$enable-visited-links:          false !default;
-
-$enable-caret:                  true !default;
-$enable-rounded:                true !default;
-$enable-component-shadows:      false !default;
-$enable-component-gradients:    false !default;
-$enable-transitions:            true !default;
-$enable-reduced-motion:         true !default;
-$enable-smooth-scroll:          true !default;
-$enable-grid-classes:           true !default;
-$enable-container-classes:      true !default;
-$enable-cssgrid:                false !default;
-$enable-button-pointers:        true !default;
-$enable-rfs:                    true !default;
-$enable-validation-icons:       true !default;
-$enable-negative-margins:       true !default;
-$enable-deprecation-messages:   true !default;
-$enable-important-utilities:    true !default;
-
 // The contrast ratio to reach against white, to determine if color changes from "default" to "alternate". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 $min-contrast-ratio:            4.5 !default;
@@ -162,6 +139,7 @@ $space-2xlarge:       $cx-space-context-2xlarge !default;
 $space-3xlarge:       $cx-space-context-3xlarge !default;
 $space-4xlarge:       $cx-space-context-4xlarge !default;
 $space-5xlarge:       $cx-space-context-5xlarge !default;
+$space-6xlarge:       $cx-space-context-6xlarge !default;
 $space-rare:          $cx-space-context-rare !default;
 $space-xrare:         $cx-space-context-xrare !default;
 
@@ -635,7 +613,7 @@ $option-input-medium-border-radius:     $border-radius-medium !default;
 $form-option-radio-border-radius:       50% !default;
 
 $form-option-min-height:                    null !default;
-$form-option-margin-bottom:                 .5em !default;
+$form-option-margin-y:                      .5em !default;
 $option-label-color:                        null !default;
 $option-label-cursor:                       null !default;
 $form-option-transition:                         null !default;
@@ -651,7 +629,7 @@ $option-input-checked-fg-color:             $component-active-fg-color !default;
 $option-input-checked-bg-color:             $component-active-bg-color !default;
 $option-input-checked-border-color:         $option-input-checked-bg-color !default;
 $option-input-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$option-input-checked-fg-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>") !default;
-$form-option-radio-checked-bg-image:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$option-input-checked-fg-color}'/></svg>") !default;
+$form-option-radio-checked-bg-image:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$option-input-checked-fg-color}'/></svg>") !default;
 
 $option-input-indeterminate-fg-color:       $component-active-fg-color !default;
 $option-input-indeterminate-bg-color:       $component-active-bg-color !default;
@@ -897,12 +875,12 @@ $navbar-toggler-border-radius:      $button-medium-border-radius !default;
 $navbar-toggler-focus-width:        $button-focus-width !default;
 $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
 
-$navbar-light-color:                rgba(var(--#{$prefix}emphasis-color-rgb), .65) !default;
-$navbar-light-hover-color:          rgba(var(--#{$prefix}emphasis-color-rgb), .8) !default;
-$navbar-light-active-color:         rgba(var(--#{$prefix}emphasis-color-rgb), 1) !default;
-$navbar-light-disabled-color:       rgba(var(--#{$prefix}emphasis-color-rgb), .3) !default;
-$navbar-light-icon-color:           $icon-main !default;
-$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-light-color:                rgba(var(--#{$prefix}fg-main-rgb), .65) !default;
+$navbar-light-hover-color:          rgba(var(--#{$prefix}fg-main-rgb), .8) !default;
+$navbar-light-active-color:         rgba(var(--#{$prefix}fg-main-rgb), 1) !default;
+$navbar-light-disabled-color:       rgba(var(--#{$prefix}fg-main-rgb), .3) !default;
+// $navbar-light-icon-color:           $navbar-light-color !default;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-light-toggler-border-color: rgba(var(--#{$prefix}emphasis-color-rgb), .15) !default;
 $navbar-light-brand-color:          $navbar-light-active-color !default;
 $navbar-light-brand-hover-color:    $navbar-light-active-color !default;
@@ -927,8 +905,8 @@ $navbar-dark-brand-hover-color:     $navbar-dark-active-color !default;
 // scss-docs-start dropdown-variables
 $dropdown-min-width:                    10rem !default;
 
-$dropdown-padding-x:                    $cx-space-base-4 !default;
-$dropdown-padding-y:                    $cx-space-base-4 !default;
+$dropdown-padding-x:                    $space-2xsmall !default;
+$dropdown-padding-y:                    $space-2xsmall !default;
 $dropdown-spacer:                       .125rem !default;
 
 $dropdown-font-size:                    map-get($cx-font-common-dropdown-menu-item, "font-size") !default;
@@ -1052,8 +1030,8 @@ $accordion-box-radius:                #{calc($accordion-border-radius - $accordi
 
 $accordion-transition:                $button-transition, border-radius .15s ease !default;
 
-$accordion-padding-y:                 $cx-space-context-small !default;
-$accordion-padding-x:                 $cx-space-context-medium !default;
+$accordion-padding-y:                 $space-small !default;
+$accordion-padding-x:                 $space-medium !default;
 $accordion-title-font:                $cx-font-context-title-medium !default;
 $accordion-body-font:                 $cx-font-context-body-medium !default;
 $accordion-title-padding-y:           $accordion-padding-y !default;
@@ -1062,8 +1040,8 @@ $accordion-body-padding-y:            $accordion-padding-y !default;
 $accordion-body-padding-x:            $accordion-padding-x !default;
 $accordion-indicator-size:            1.25rem !default;
 
-$accordion-large-padding-y:           $cx-space-context-medium !default;
-$accordion-large-padding-x:           $cx-space-context-large !default;
+$accordion-large-padding-y:           $space-medium !default;
+$accordion-large-padding-x:           $space-large !default;
 $accordion-large-title-font:          $cx-font-context-title-large !default;
 $accordion-large-body-font:           $cx-font-context-body-large !default;
 $accordion-large-title-padding-y:     $accordion-large-padding-y !default;
@@ -1072,8 +1050,8 @@ $accordion-large-body-padding-y:      $accordion-large-padding-y !default;
 $accordion-large-body-padding-x:      $accordion-large-padding-x !default;
 $accordion-large-indicator-size:      1.5rem !default;
 
-$accordion-small-padding-y:           $cx-space-context-xsmall !default;
-$accordion-small-padding-x:           $cx-space-context-small !default;
+$accordion-small-padding-y:           $space-xsmall !default;
+$accordion-small-padding-x:           $space-small !default;
 $accordion-small-title-font:          $cx-font-context-title-small !default;
 $accordion-small-body-font:           $cx-font-context-body-small !default;
 $accordion-small-title-padding-y:     $accordion-small-padding-y !default;

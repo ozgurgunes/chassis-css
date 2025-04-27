@@ -1,6 +1,16 @@
 # This file holds all sidebar menu's entries.
 # The logic for the sidebar generation is in "site/layouts/partials/docs-sidebar.html".
 
+- title: Core Concepts
+  icon: book-half
+  icon_color: cyan
+  pages:
+    - title: Overview
+    - title: Color System
+    - title: Line Heights
+    - title: Context Class
+    - title: Design Tokens
+
 - title: Getting started
   icon: book-half
   icon_color: indigo
@@ -50,6 +60,7 @@
   pages:
     - title: Reboot
     - title: Typography
+    - title: Icons
     - title: Images
     - title: Tables
     - title: Figures
@@ -83,68 +94,54 @@
     - title: Close button
     - title: Collapse
     - title: Dropdowns
+    - title: Icons
     - title: List group
     - title: Modal
     - title: Navbar
     - title: Navs & tabs
+    - title: Notifications
     - title: Offcanvas
     - title: Pagination
-    - title: Placeholders
     - title: Popovers
     - title: Progress
     - title: Scrollspy
+    - title: Skeletons
     - title: Spinners
     - title: Toasts
     - title: Tooltips
 
-- title: Helpers
-  icon: magic
-  icon_color: orange
-  pages:
-    - title: Clearfix
-    - title: Color & background
-    - title: Colored links
-    - title: Focus ring
-    - title: Icon link
-    - title: Position
-    - title: Ratio
-    - title: Stacks
-    - title: Stretched link
-    - title: Text truncation
-    - title: Vertical rule
-    - title: Visually hidden
-
 - title: Utilities
-  icon: braces-asterisk
+  icon: magic
   icon_color: red
   pages:
     - title: API
     - title: Background
     - title: Borders
+    - title: Clearfix
     - title: Colors
+    - title: Contrast
     - title: Display
     - title: Flex
     - title: Float
+    - title: Focus ring
+    - title: Icon link
     - title: Interactions
     - title: Link
     - title: Object fit
     - title: Opacity
     - title: Overflow
     - title: Position
+    - title: Ratio
     - title: Shadows
     - title: Sizing
     - title: Spacing
+    - title: Stacks
+    - title: Stretched link
     - title: Text
     - title: Vertical align
+    - title: Vertical rule
     - title: Visibility
     - title: Z-index
-
-- title: Extend
-  icon: tools
-  icon_color: blue
-  pages:
-    - title: Approach
-    - title: Icons
 
 - title: About
   icon: globe2
@@ -153,6 +150,7 @@
     - title: Overview
     - title: Team
     - title: Brand
+    - title: Extend
     - title: License
     - title: Translations
 

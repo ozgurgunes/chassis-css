@@ -84,10 +84,10 @@ You can optionally swap out active or disabled anchors for `<span>`, or omit the
 
 ## Sizing
 
-Fancy larger or smaller pagination? Add `.pagination-lg` or `.pagination-sm` for additional sizes.
+Fancy larger or smaller pagination? Add `.pagination-large` or `.pagination-small` for additional sizes.
 
 <Example code={`<nav aria-label="...">
-    <ul class="pagination pagination-lg">
+    <ul class="pagination pagination-large">
       <li class="page-item active" aria-current="page">
         <span class="page-link">1</span>
       </li>
@@ -97,7 +97,7 @@ Fancy larger or smaller pagination? Add `.pagination-lg` or `.pagination-sm` for
   </nav>`} />
 
 <Example code={`<nav aria-label="...">
-    <ul class="pagination pagination-sm">
+    <ul class="pagination pagination-small">
       <li class="page-item active" aria-current="page">
         <span class="page-link">1</span>
       </li>
@@ -142,18 +142,14 @@ Or with `.justify-content-end`:
 
 ## CSS
 
+<DocsCSS />
+
 ### Variables
 
-<AddedIn version="5.2.0" />
-
-As part of Bootstrap’s evolving CSS variables approach, pagination now uses local CSS variables on `.pagination` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
-
-<ScssDocs name="pagination-css-vars" file="scss/_pagination.scss" />
+<DocsCSSVars />
 
 ### Sass variables
 
+<DocsSASSVars />
+
 <ScssDocs name="pagination-variables" file="scss/_variables.scss" />
-
-### Sass mixins
-
-<ScssDocs name="pagination-mixin" file="scss/mixins/_pagination.scss" />

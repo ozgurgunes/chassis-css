@@ -14,7 +14,7 @@ interface Props {
     | 'info-prefersreducedmotion'
     | 'info-sanitizer'
     | 'warning-color-assistive-technologies'
-    | 'warning-data-bs-title-vs-title'
+    | 'warning-data-cx-title-vs-title'
     | 'warning-input-support'
   /**
    * The type of callout to display. One of `info`, `danger`, or `warning`.
@@ -39,6 +39,6 @@ if (name) {
 }
 ---
 
-<div class={`bd-callout bd-callout-${type}`}>
+<div class={`cxd-callout cxd-callout-${type}`}>
   {Content ? <Content /> : <slot />}
 </div>

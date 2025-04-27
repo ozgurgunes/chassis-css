@@ -207,9 +207,9 @@ $code-font-weights: (
 
 // scss-docs-start code-line-heights-map
 $code-line-heights: (
-  "line-heights-code-large":             $font-size-code-large,
-  "line-heights-code-medium":            $font-size-code-medium,
-  "line-heights-code-small":             $font-size-code-small,
+  "line-heights-code-large":             $line-height-code-small,
+  "line-heights-code-medium":            $line-height-code-small,
+  "line-heights-code-small":             $line-height-code-small,
 ) !default;
 // scss-docs-end code-line-heights-map
 

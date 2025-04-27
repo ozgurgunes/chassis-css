@@ -15,7 +15,7 @@ export function getPlaceholder(userOptions: Partial<PlaceholderOptions>): Placeh
   const showText = text !== false
   const showTitle = title !== false
 
-  const placeholderClassList = ['bd-placeholder-img', className].join(' ')
+  const placeholderClassList = ['cxd-placeholder-image', className].join(' ')
   const placeholderRole = showTitle || showText ? 'img' : undefined
   const placeholderAriaHidden = !showText && !showTitle ? 'true' : undefined
 
@@ -196,7 +196,7 @@ export interface PlaceholderOptions {
    */
   background: string
   /**
-   * CSS classes to append to `bd-placeholder-img` for the `svg` or `img` elements.
+   * CSS classes to append to `cxd-placeholder-img` for the `svg` or `img` elements.
    */
   class?: string
   /**

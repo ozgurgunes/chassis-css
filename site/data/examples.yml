@@ -1,38 +1,38 @@
 - category: Starters
   external: true
-  description: 'Functional examples of using Bootstrap in common JS frameworks like Webpack, Parcel, Vite, and more you can edit in StackBlitz.'
+  description: 'Functional examples of using Chassis in common JS frameworks like Webpack, Parcel, Vite, and more you can edit in StackBlitz.'
   examples:
     - name: CDN starter
-      description: "Instantly include Bootstrap's compiled CSS and JavaScript via the jsDelivr CDN."
+      description: "Instantly include Chassis's compiled CSS and JavaScript via the jsDelivr CDN."
       url: /examples/tree/main/starter
     - name: Sass & JS
-      description: "Use npm to import and compile Bootstrap's Sass with Autoprefixer and Stylelint, plus our bundled JavaScript."
+      description: "Use npm to import and compile Chassis's Sass with Autoprefixer and Stylelint, plus our bundled JavaScript."
       url: /examples/tree/main/sass-js
     - name: Sass & ESM JS
-      description: "Import and compile Bootstrap's Sass with Autoprefixer and Stylelint, and compile our source JavaScript with an ESM shim."
+      description: "Import and compile Chassis's Sass with Autoprefixer and Stylelint, and compile our source JavaScript with an ESM shim."
       url: /examples/tree/main/sass-js-esm
-    - name: Bootstrap color modes
-      description: "Import and compile Bootstrap's Sass with Stylelint, and the Bootstrap color modes."
+    - name: Chassis color modes
+      description: "Import and compile Chassis's Sass with Stylelint, and the Chassis color modes."
       url: /examples/tree/main/color-modes
-    - name: Bootstrap Icons
-      description: "Import and compile Bootstrap's Sass with Stylelint, PurgeCSS, and the Bootstrap Icons web font."
+    - name: Chassis Icons
+      description: "Import and compile Chassis's Sass with Stylelint, PurgeCSS, and the Chassis Icons web font."
       url: /examples/tree/main/icons-font
     - name: Parcel
-      description: "Import and bundle Bootstrap's source Sass and JavaScript via Parcel."
+      description: "Import and bundle Chassis's source Sass and JavaScript via Parcel."
       url: /examples/tree/main/parcel
       indexPath: src/index.html
     - name: React
-      description: "Import and bundle Bootstrap's source Sass and JavaScript with React, Next.js, and React Bootstrap."
+      description: "Import and bundle Chassis's source Sass and JavaScript with React, Next.js, and React Chassis."
       url: /examples/tree/main/react-nextjs
       indexPath: src/pages/index.tsx
     - name: Vite
-      description: "Import and bundle Bootstrap's source Sass and JavaScript with Vite."
+      description: "Import and bundle Chassis's source Sass and JavaScript with Vite."
       url: /examples/tree/main/vite
     - name: Vue
-      description: "Import and bundle Bootstrap's source Sass and JavaScript with Vue and Vite."
+      description: "Import and bundle Chassis's source Sass and JavaScript with Vue and Vite."
       url: /examples/tree/main/vue
     - name: Webpack
-      description: "Import and bundle Bootstrap's source Sass and JavaScript with Webpack."
+      description: "Import and bundle Chassis's source Sass and JavaScript with Webpack."
       url: /examples/tree/main/webpack
       indexPath: src/index.html
 
@@ -62,10 +62,10 @@
     - name: Buttons
       description: 'Create custom buttons for just about any use case with utilities.'
     - name: Jumbotrons
-      description: 'Create modernized versions of the classic Bootstrap component.'
+      description: 'Create modernized versions of the classic Chassis component.'
 
 - category: Custom Components
-  description: 'Brand-new components and templates to help folks quickly get started with Bootstrap and demonstrate best practices for adding onto the framework.'
+  description: 'Brand-new components and templates to help folks quickly get started with Chassis and demonstrate best practices for adding onto the framework.'
   examples:
     - name: Album
       description: 'Simple one-page template for photo galleries, portfolios, and more.'
@@ -90,17 +90,17 @@
     - name: Sticky footer navbar
       description: 'Attach a footer to the bottom of the viewport with a fixed top navbar.'
     - name: Jumbotron
-      description: "Use utilities to recreate and enhance Bootstrap 4's jumbotron."
+      description: "Use utilities to recreate and enhance Chassis 4's jumbotron."
 
 - category: Framework
-  description: 'Examples that focus on implementing uses of built-in components provided by Bootstrap.'
+  description: 'Examples that focus on implementing uses of built-in components provided by Chassis.'
   examples:
     - name: 'Starter template'
       description: 'Nothing but the basics: compiled CSS and JavaScript.'
     - name: Grid
       description: 'Multiple examples of grid layouts with all four tiers, nesting, and more.'
     - name: Cheatsheet
-      description: 'Kitchen sink of Bootstrap components.'
+      description: 'Kitchen sink of Chassis components.'
 
 - category: Navbars
   description: 'Taking the default navbar component and showing how it can be moved, placed, and extended.'
@@ -119,7 +119,7 @@
       description: "Turn your expandable navbar into a sliding offcanvas menu (doesn't use our offcanvas component)."
 
 - category: RTL
-  description: "See Bootstrap's RTL version in action with these modified examples from various categories."
+  description: "See Chassis's RTL version in action with these modified examples from various categories."
   examples:
     - name: Album RTL
       description: 'Simple one-page template for photo galleries, portfolios, and more.'
@@ -132,10 +132,10 @@
     - name: Dashboard RTL
       description: 'Basic admin dashboard shell with fixed sidebar and navbar.'
     - name: Cheatsheet RTL
-      description: 'Kitchen sink of Bootstrap components, RTL.'
+      description: 'Kitchen sink of Chassis components, RTL.'
 
 - category: Integrations
   description: 'Integrations with external libraries.'
   examples:
     - name: 'Masonry'
-      description: 'Combine the powers of the Bootstrap grid and the Masonry layout.'
+      description: 'Combine the powers of the Chassis grid and the Masonry layout.'

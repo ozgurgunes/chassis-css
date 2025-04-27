@@ -1,5 +1,5 @@
 ---
-import { getVersionedBsJsProps } from '@libs/bootstrap'
+import { getVersionedCxJsProps } from '@libs/chassis'
 import type { Layout } from '@libs/layout'
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 const { layout } = Astro.props
 ---
 
-<script is:inline {...getVersionedBsJsProps()}></script>
+<script is:inline {...getVersionedCxJsProps()}></script>
 
 <script src="../assets/application.js"></script>
 <script src="../assets/search.js"></script>

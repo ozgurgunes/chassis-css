@@ -1,1 +1,26 @@
-@import "../chassis-tokens/dist/tokens/web/chassis-docs/allTokens.scss";
+$prefix: cx- !default;
+
+$enable-dark-mode:              true !default;
+$color-mode-type:               data !default; // `data` or `media-query`
+
+$enable-elevation-shadows:      true !default;
+$enable-visited-links:          true !default;
+
+$enable-caret:                  true !default;
+$enable-rounded:                true !default;
+$enable-component-shadows:      false !default;
+$enable-component-gradients:    false !default;
+$enable-transitions:            true !default;
+$enable-reduced-motion:         true !default;
+$enable-smooth-scroll:          true !default;
+$enable-grid-classes:           true !default;
+$enable-container-classes:      true !default;
+$enable-cssgrid:                false !default;
+$enable-button-pointers:        true !default;
+$enable-rfs:                    true !default;
+$enable-validation-icons:       true !default;
+$enable-negative-margins:       true !default;
+$enable-deprecation-messages:   true !default;
+$enable-important-utilities:    true !default;
+
+@import "../chassis-tokens/dist/tokens/web/chassis-docs/allTokens";

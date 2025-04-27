@@ -3,8 +3,8 @@
 // ++++++++++++++++++++++++++++++++++++++++++
 
 /*!
- * JavaScript for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2024-2025 The Bootstrap Authors
+ * JavaScript for Chassis's docs (https://getchassis.com/)
+ * Copyright 2024-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
@@ -25,7 +25,7 @@ import docsearch from '@docsearch/js'
     return
   }
 
-  const siteDocsVersion = searchElement.getAttribute('data-bd-docs-version')
+  const siteDocsVersion = searchElement.getAttribute('data-cxd-docs-version')
 
   docsearch({
     apiKey: CONFIG.apiKey,

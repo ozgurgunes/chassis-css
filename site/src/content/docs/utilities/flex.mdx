@@ -11,9 +11,9 @@ import { getSequence } from '@libs/utils'
 
 Apply `display` utilities to create a flexbox container and transform **direct children elements** into flex items. Flex containers and items are able to be modified further with additional flex properties.
 
-<Example class="bd-example-flex" code={`<div class="d-flex p-2">I'm a flexbox container!</div>`} />
+<Example class="cxd-example-flex" code={`<div class="d-flex p-xsmall">I'm a flexbox container!</div>`} />
 
-<Example class="bd-example-flex" code={`<div class="d-inline-flex p-2">I'm an inline flexbox container!</div>`} />
+<Example class="cxd-example-flex" code={`<div class="d-inline-flex p-xsmall">I'm an inline flexbox container!</div>`} />
 
 Responsive variations also exist for `.d-flex` and `.d-inline-flex`.
 
@@ -34,28 +34,28 @@ Set the direction of flex items in a flex container with direction utilities. In
 
 Use `.flex-row` to set a horizontal direction (the browser default), or `.flex-row-reverse` to start the horizontal direction from the opposite side.
 
-<Example class="bd-example-flex" code={`<div class="d-flex flex-row mb-3">
-    <div class="p-2">Flex item 1</div>
-    <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex flex-row mb-medium">
+    <div class="p-xsmall">Flex item 1</div>
+    <div class="p-xsmall">Flex item 2</div>
+    <div class="p-xsmall">Flex item 3</div>
   </div>
   <div class="d-flex flex-row-reverse">
-    <div class="p-2">Flex item 1</div>
-    <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div>
+    <div class="p-xsmall">Flex item 1</div>
+    <div class="p-xsmall">Flex item 2</div>
+    <div class="p-xsmall">Flex item 3</div>
   </div>`} />
 
 Use `.flex-column` to set a vertical direction, or `.flex-column-reverse`  to start the vertical direction from the opposite side.
 
-<Example class="bd-example-flex" code={`<div class="d-flex flex-column mb-3">
-    <div class="p-2">Flex item 1</div>
-    <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex flex-column mb-medium">
+    <div class="p-xsmall">Flex item 1</div>
+    <div class="p-xsmall">Flex item 2</div>
+    <div class="p-xsmall">Flex item 3</div>
   </div>
   <div class="d-flex flex-column-reverse">
-    <div class="p-2">Flex item 1</div>
-    <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div>
+    <div class="p-xsmall">Flex item 1</div>
+    <div class="p-xsmall">Flex item 2</div>
+    <div class="p-xsmall">Flex item 3</div>
   </div>`} />
 
 Responsive variations also exist for `flex-direction`.
@@ -77,36 +77,36 @@ Responsive variations also exist for `flex-direction`.
 
 Use `justify-content` utilities on flexbox containers to change the alignment of flex items on the main axis (the x-axis to start, y-axis if `flex-direction: column`). Choose from `start` (browser default), `end`, `center`, `between`, `around`, or `evenly`.
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex justify-content-start mb-3">
-    <div class="p-2 bd-highlight">Justify</div>
-    <div class="p-2 bd-highlight">Content</div>
-    <div class="p-2 bd-highlight">Start</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex justify-content-start mb-medium">
+    <div class="p-xsmall cxd-highlight">Justify</div>
+    <div class="p-xsmall cxd-highlight">Content</div>
+    <div class="p-xsmall cxd-highlight">Start</div>
   </div>
-  <div class="d-flex justify-content-end mb-3">
-    <div class="p-2 bd-highlight">Justify</div>
-    <div class="p-2 bd-highlight">Content</div>
-    <div class="p-2 bd-highlight">End</div>
+  <div class="d-flex justify-content-end mb-medium">
+    <div class="p-xsmall cxd-highlight">Justify</div>
+    <div class="p-xsmall cxd-highlight">Content</div>
+    <div class="p-xsmall cxd-highlight">End</div>
   </div>
-  <div class="d-flex justify-content-center mb-3">
-    <div class="p-2 bd-highlight">Justify</div>
-    <div class="p-2 bd-highlight">Content</div>
-    <div class="p-2 bd-highlight">Center</div>
+  <div class="d-flex justify-content-center mb-medium">
+    <div class="p-xsmall cxd-highlight">Justify</div>
+    <div class="p-xsmall cxd-highlight">Content</div>
+    <div class="p-xsmall cxd-highlight">Center</div>
   </div>
-  <div class="d-flex justify-content-between mb-3">
-    <div class="p-2 bd-highlight">Justify</div>
-    <div class="p-2 bd-highlight">Content</div>
-    <div class="p-2 bd-highlight">Between</div>
+  <div class="d-flex justify-content-between mb-medium">
+    <div class="p-xsmall cxd-highlight">Justify</div>
+    <div class="p-xsmall cxd-highlight">Content</div>
+    <div class="p-xsmall cxd-highlight">Between</div>
   </div>
-  <div class="d-flex justify-content-around mb-3">
-    <div class="p-2 bd-highlight">Justify</div>
-    <div class="p-2 bd-highlight">Content</div>
-    <div class="p-2 bd-highlight">Around</div>
+  <div class="d-flex justify-content-around mb-medium">
+    <div class="p-xsmall cxd-highlight">Justify</div>
+    <div class="p-xsmall cxd-highlight">Content</div>
+    <div class="p-xsmall cxd-highlight">Around</div>
   </div>
   <div class="d-flex justify-content-evenly">
-    <div class="p-2 bd-highlight">Justify</div>
-    <div class="p-2 bd-highlight">Content</div>
-    <div class="p-2 bd-highlight">Evenly</div>
+    <div class="p-xsmall cxd-highlight">Justify</div>
+    <div class="p-xsmall cxd-highlight">Content</div>
+    <div class="p-xsmall cxd-highlight">Evenly</div>
   </div>
 </div>
 
@@ -140,31 +140,31 @@ Responsive variations also exist for `justify-content`.
 
 Use `align-items` utilities on flexbox containers to change the alignment of flex items on the cross axis (the y-axis to start, x-axis if `flex-direction: column`). Choose from `start`, `end`, `center`, `baseline`, or `stretch` (browser default).
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-items-start mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-items-start mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
-  <div class="d-flex align-items-end mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex align-items-end mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
-  <div class="d-flex align-items-center mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex align-items-center mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
-  <div class="d-flex align-items-baseline mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex align-items-baseline mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
   <div class="d-flex align-items-stretch" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -196,31 +196,31 @@ Responsive variations also exist for `align-items`.
 
 Use `align-self` utilities on flexbox items to individually change their alignment on the cross axis (the y-axis to start, x-axis if `flex-direction: column`). Choose from the same options as `align-items`: `start`, `end`, `center`, `baseline`, or `stretch` (browser default).
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="align-self-start p-2">Aligned flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="align-self-start p-xsmall">Aligned flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
-  <div class="d-flex mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="align-self-end p-2">Aligned flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="align-self-end p-xsmall">Aligned flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
-  <div class="d-flex mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="align-self-center p-2">Aligned flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="align-self-center p-xsmall">Aligned flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
-  <div class="d-flex mb-3" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="align-self-baseline p-2">Aligned flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex mb-medium" style="height: 100px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="align-self-baseline p-xsmall">Aligned flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
   <div class="d-flex" style="height: 100px">
-    <div class="p-2">Flex item</div>
-    <div class="align-self-stretch p-2">Aligned flex item</div>
-    <div class="p-2">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="align-self-stretch p-xsmall">Aligned flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -252,10 +252,10 @@ Responsive variations also exist for `align-self`.
 
 Use the `.flex-fill` class on a series of sibling elements to force them into widths equal to their content (or equal widths if their content does not surpass their border-boxes) while taking up all available horizontal space.
 
-<Example class="bd-example-flex" code={`<div class="d-flex">
-    <div class="p-2 flex-fill">Flex item with a lot of content</div>
-    <div class="p-2 flex-fill">Flex item</div>
-    <div class="p-2 flex-fill">Flex item</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex">
+    <div class="p-xsmall flex-fill">Flex item with a lot of content</div>
+    <div class="p-xsmall flex-fill">Flex item</div>
+    <div class="p-xsmall flex-fill">Flex item</div>
   </div>`} />
 
 Responsive variations also exist for `flex-fill`.
@@ -272,17 +272,17 @@ Responsive variations also exist for `flex-fill`.
 
 Use `.flex-grow-*` utilities to toggle a flex item’s ability to grow to fill available space. In the example below, the `.flex-grow-1` elements uses all available space it can, while allowing the remaining two flex items their necessary space.
 
-<Example class="bd-example-flex" code={`<div class="d-flex">
-    <div class="p-2 flex-grow-1">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Third flex item</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex">
+    <div class="p-xsmall flex-grow-1">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Third flex item</div>
   </div>`} />
 
 Use `.flex-shrink-*` utilities to toggle a flex item’s ability to shrink if necessary. In the example below, the second flex item with `.flex-shrink-1` is forced to wrap its contents to a new line, “shrinking” to allow more space for the previous flex item with `.w-100`.
 
-<Example class="bd-example-flex" code={`<div class="d-flex">
-    <div class="p-2 w-100">Flex item</div>
-    <div class="p-2 flex-shrink-1">Flex item</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex">
+    <div class="p-xsmall w-100">Flex item</div>
+    <div class="p-xsmall flex-shrink-1">Flex item</div>
   </div>`} />
 
 Responsive variations also exist for `flex-grow` and `flex-shrink`.
@@ -302,51 +302,51 @@ Responsive variations also exist for `flex-grow` and `flex-shrink`.
 
 Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (`.me-auto`), and pushing two items to the left (`.ms-auto`).
 
-<Example class="bd-example-flex" code={`<div class="d-flex mb-3">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex mb-medium">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 
-  <div class="d-flex mb-3">
-    <div class="me-auto p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex mb-medium">
+    <div class="me-auto p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 
-  <div class="d-flex mb-3">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="ms-auto p-2">Flex item</div>
+  <div class="d-flex mb-medium">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="ms-auto p-xsmall">Flex item</div>
   </div>`} />
 
 ### With align-items
 
 Vertically move one flex item to the top or bottom of a container by mixing `align-items`, `flex-direction: column`, and `margin-top: auto` or `margin-bottom: auto`.
 
-<Example class="bd-example-flex" code={`<div class="d-flex align-items-start flex-column mb-3" style="height: 200px;">
-    <div class="mb-auto p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex align-items-start flex-column mb-medium" style="height: 200px;">
+    <div class="mb-auto p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 
-  <div class="d-flex align-items-end flex-column mb-3" style="height: 200px;">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="mt-auto p-2">Flex item</div>
+  <div class="d-flex align-items-end flex-column mb-medium" style="height: 200px;">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="mt-auto p-xsmall">Flex item</div>
   </div>`} />
 
 ## Wrap
 
 Change how flex items wrap in a flex container. Choose from no wrapping at all (the browser default) with `.flex-nowrap`, wrapping with `.flex-wrap`, or reverse wrapping with `.flex-wrap-reverse`.
 
-<div class="bd-example bd-example-flex">
+<div class="cxd-example cxd-example-flex">
   <div class="d-flex flex-nowrap" style="width: 8rem;">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -356,22 +356,22 @@ Change how flex items wrap in a flex container. Choose from no wrapping at all (
 </div>
 ```
 
-<div class="bd-example bd-example-flex">
+<div class="cxd-example cxd-example-flex">
   <div class="d-flex flex-wrap">
-    <div class="p-2">Flex item 1</div>
-    <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div>
-    <div class="p-2">Flex item 4</div>
-    <div class="p-2">Flex item 5</div>
-    <div class="p-2">Flex item 6</div>
-    <div class="p-2">Flex item 7</div>
-    <div class="p-2">Flex item 8</div>
-    <div class="p-2">Flex item 9</div>
-    <div class="p-2">Flex item 10</div>
-    <div class="p-2">Flex item 11</div>
-    <div class="p-2">Flex item 12</div>
-    <div class="p-2">Flex item 13</div>
-    <div class="p-2">Flex item 14</div>
+    <div class="p-xsmall">Flex item 1</div>
+    <div class="p-xsmall">Flex item 2</div>
+    <div class="p-xsmall">Flex item 3</div>
+    <div class="p-xsmall">Flex item 4</div>
+    <div class="p-xsmall">Flex item 5</div>
+    <div class="p-xsmall">Flex item 6</div>
+    <div class="p-xsmall">Flex item 7</div>
+    <div class="p-xsmall">Flex item 8</div>
+    <div class="p-xsmall">Flex item 9</div>
+    <div class="p-xsmall">Flex item 10</div>
+    <div class="p-xsmall">Flex item 11</div>
+    <div class="p-xsmall">Flex item 12</div>
+    <div class="p-xsmall">Flex item 13</div>
+    <div class="p-xsmall">Flex item 14</div>
   </div>
 </div>
 
@@ -381,22 +381,22 @@ Change how flex items wrap in a flex container. Choose from no wrapping at all (
 </div>
 ```
 
-<div class="bd-example bd-example-flex">
+<div class="cxd-example cxd-example-flex">
   <div class="d-flex flex-wrap-reverse">
-    <div class="p-2">Flex item 1</div>
-    <div class="p-2">Flex item 2</div>
-    <div class="p-2">Flex item 3</div>
-    <div class="p-2">Flex item 4</div>
-    <div class="p-2">Flex item 5</div>
-    <div class="p-2">Flex item 6</div>
-    <div class="p-2">Flex item 7</div>
-    <div class="p-2">Flex item 8</div>
-    <div class="p-2">Flex item 9</div>
-    <div class="p-2">Flex item 10</div>
-    <div class="p-2">Flex item 11</div>
-    <div class="p-2">Flex item 12</div>
-    <div class="p-2">Flex item 13</div>
-    <div class="p-2">Flex item 14</div>
+    <div class="p-xsmall">Flex item 1</div>
+    <div class="p-xsmall">Flex item 2</div>
+    <div class="p-xsmall">Flex item 3</div>
+    <div class="p-xsmall">Flex item 4</div>
+    <div class="p-xsmall">Flex item 5</div>
+    <div class="p-xsmall">Flex item 6</div>
+    <div class="p-xsmall">Flex item 7</div>
+    <div class="p-xsmall">Flex item 8</div>
+    <div class="p-xsmall">Flex item 9</div>
+    <div class="p-xsmall">Flex item 10</div>
+    <div class="p-xsmall">Flex item 11</div>
+    <div class="p-xsmall">Flex item 12</div>
+    <div class="p-xsmall">Flex item 13</div>
+    <div class="p-xsmall">Flex item 14</div>
   </div>
 </div>
 
@@ -425,10 +425,10 @@ Responsive variations also exist for `flex-wrap`.
 
 Change the _visual_ order of specific flex items with a handful of `order` utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As `order` takes any integer value from 0 to 5, add custom CSS for any additional values needed.
 
-<Example class="bd-example-flex" code={`<div class="d-flex flex-nowrap">
-    <div class="order-3 p-2">First flex item</div>
-    <div class="order-2 p-2">Second flex item</div>
-    <div class="order-1 p-2">Third flex item</div>
+<Example class="cxd-example-flex" code={`<div class="d-flex flex-nowrap">
+    <div class="order-3 p-xsmall">First flex item</div>
+    <div class="order-2 p-xsmall">Second flex item</div>
+    <div class="order-1 p-xsmall">Third flex item</div>
   </div>`} />
 
 Responsive variations also exist for `order`.
@@ -457,23 +457,23 @@ Use `align-content` utilities on flexbox containers to align flex items _togethe
 
 **Heads up!** This property has no effect on single rows of flex items.
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-content-start flex-wrap mb-3" style="height: 200px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-content-start flex-wrap mb-medium" style="height: 200px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -483,23 +483,23 @@ Use `align-content` utilities on flexbox containers to align flex items _togethe
 </div>
 ```
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-content-end flex-wrap mb-3" style="height: 200px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-content-end flex-wrap mb-medium" style="height: 200px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -507,23 +507,23 @@ Use `align-content` utilities on flexbox containers to align flex items _togethe
 <div class="d-flex align-content-end flex-wrap">...</div>
 ```
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-content-center flex-wrap mb-3" style="height: 200px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-content-center flex-wrap mb-medium" style="height: 200px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -531,23 +531,23 @@ Use `align-content` utilities on flexbox containers to align flex items _togethe
 <div class="d-flex align-content-center flex-wrap">...</div>
 ```
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-content-between flex-wrap mb-3" style="height: 200px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-content-between flex-wrap mb-medium" style="height: 200px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -555,23 +555,23 @@ Use `align-content` utilities on flexbox containers to align flex items _togethe
 <div class="d-flex align-content-between flex-wrap">...</div>
 ```
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-content-around flex-wrap mb-3" style="height: 200px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-content-around flex-wrap mb-medium" style="height: 200px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -579,23 +579,23 @@ Use `align-content` utilities on flexbox containers to align flex items _togethe
 <div class="d-flex align-content-around flex-wrap">...</div>
 ```
 
-<div class="bd-example bd-example-flex">
-  <div class="d-flex align-content-stretch flex-wrap mb-3" style="height: 200px">
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+<div class="cxd-example cxd-example-flex">
+  <div class="d-flex align-content-stretch flex-wrap mb-medium" style="height: 200px">
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>
 </div>
 
@@ -622,13 +622,13 @@ Responsive variations also exist for `align-content`.
 
 ## Media object
 
-Looking to replicate the [media object component](https://getbootstrap.com/docs/4.6/components/media-object/) from Bootstrap 4? Recreate it in no time with a few flex utilities that allow even more flexibility and customization than before.
+Looking to replicate the [media object component](https://getchassis.com/docs/4.6/components/media-object/) from Chassis - CSS 4? Recreate it in no time with a few flex utilities that allow even more flexibility and customization than before.
 
 <Example code={`<div class="d-flex">
     <div class="flex-shrink-0">
       <Placeholder width="100" height="100" color="#999" background="#e5e5e5" text="Image" />
     </div>
-    <div class="flex-grow-1 ms-3">
+    <div class="flex-grow-1 ms-medium">
       This is some content from a media component. You can replace this with any content and adjust it as needed.
     </div>
   </div>`} />
@@ -639,7 +639,7 @@ And say you want to vertically center the content next to the image:
     <div class="flex-shrink-0">
       <Placeholder width="100" height="100" color="#999" background="#e5e5e5" text="Image" />
     </div>
-    <div class="flex-grow-1 ms-3">
+    <div class="flex-grow-1 ms-medium">
       This is some content from a media component. You can replace this with any content and adjust it as needed.
     </div>
   </div>`} />
@@ -648,6 +648,6 @@ And say you want to vertically center the content next to the image:
 
 ### Sass utilities API
 
-Flexbox utilities are declared in our utilities API in `scss/_utilities.scss`. [Learn how to use the utilities API.]([[docsref:/utilities/api#using-the-api]])
+Flexbox utilities are declared in our utilities API in `scss/utilities/_flex.scss`. [Learn how to use the utilities API.]([[docsref:/utilities/api#using-the-api]])
 
-<ScssDocs name="utils-flex" file="scss/_utilities.scss" />
+<ScssDocs name="utils-flex" file="scss/utilities/_flex.scss" />

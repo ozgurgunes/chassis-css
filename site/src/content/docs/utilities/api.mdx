@@ -5,11 +5,11 @@ aliases: "/docs/[[config:docs_version]]/utilities/"
 toc: true
 ---
 
-Bootstrap utilities are generated with our utility API and can be used to modify or extend our default set of utility classes via Sass. Our utility API is based on a series of Sass maps and functions for generating families of classes with various options. If you’re unfamiliar with Sass maps, read up on the [official Sass docs](https://sass-lang.com/documentation/values/maps/) to get started.
+Chassis - CSS utilities are generated with our utility API and can be used to modify or extend our default set of utility classes via Sass. Our utility API is based on a series of Sass maps and functions for generating families of classes with various options. If you’re unfamiliar with Sass maps, read up on the [official Sass docs](https://sass-lang.com/documentation/values/maps/) to get started.
 
 The `$utilities` map contains all our utilities and is later merged with your custom `$utilities` map, if present. The utility map contains a keyed list of utility groups which accept the following options:
 
-<BsTable class="table table-utilities">
+<CxTable class="table table-utilities">
 | Option | Type | Default&nbsp;value | Description |
 | --- | --- | --- | --- |
 | [`property`](#property) | **Required** | – | Name of the property, this can be a string or an array of strings (e.g., horizontal paddings or margins). |
@@ -23,7 +23,7 @@ The `$utilities` map contains all our utilities and is later merged with your cu
 | `rfs` | Optional | `false` | Boolean to enable [fluid rescaling with RFS]([[docsref:/getting-started/rfs]]). |
 | [`print`](#print) | Optional | `false` | Boolean indicating if print classes need to be generated. |
 | `rtl` | Optional | `true` | Boolean indicating if utility should be kept in RTL. |
-</BsTable>
+</CxTable>
 
 ## API explained
 
@@ -180,10 +180,10 @@ $utilities: (
 Output:
 
 ```css
-.text-opacity-25 { --bs-text-alpha: .25; }
-.text-opacity-50 { --bs-text-alpha: .5; }
-.text-opacity-75 { --bs-text-alpha: .75; }
-.text-opacity-100 { --bs-text-alpha: 1; }
+.text-opacity-25 { --cx-text-alpha: .25; }
+.text-opacity-50 { --cx-text-alpha: .5; }
+.text-opacity-75 { --cx-text-alpha: .75; }
+.text-opacity-100 { --cx-text-alpha: 1; }
 ```
 
 ### Local CSS variables
@@ -212,8 +212,8 @@ Output:
 
 ```css
 .bg-primary {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  --cx-bg-opacity: 1;
+  background-color: rgba(var(--cx-primary-rgb), var(--cx-bg-opacity)) !important;
 }
 ```
 
@@ -252,7 +252,7 @@ Output:
 
 ### Responsive
 
-Add the `responsive` boolean to generate responsive utilities (e.g., `.opacity-md-25`) across [all breakpoints]([[docsref:/layout/breakpoints]]).
+Add the `responsive` boolean to generate responsive utilities (e.g., `.opacity-medium-25`) across [all breakpoints]([[docsref:/layout/breakpoints]]).
 
 ```scss
 $utilities: (
@@ -280,43 +280,43 @@ Output:
 .opacity-100 { opacity: 1 !important; }
 
 @media (min-width: 576px) {
-  .opacity-sm-0 { opacity: 0 !important; }
-  .opacity-sm-25 { opacity: .25 !important; }
-  .opacity-sm-50 { opacity: .5 !important; }
-  .opacity-sm-75 { opacity: .75 !important; }
-  .opacity-sm-100 { opacity: 1 !important; }
+  .opacity-small-0 { opacity: 0 !important; }
+  .opacity-small-25 { opacity: .25 !important; }
+  .opacity-small-50 { opacity: .5 !important; }
+  .opacity-small-75 { opacity: .75 !important; }
+  .opacity-small-100 { opacity: 1 !important; }
 }
 
 @media (min-width: 768px) {
-  .opacity-md-0 { opacity: 0 !important; }
-  .opacity-md-25 { opacity: .25 !important; }
-  .opacity-md-50 { opacity: .5 !important; }
-  .opacity-md-75 { opacity: .75 !important; }
-  .opacity-md-100 { opacity: 1 !important; }
+  .opacity-medium-0 { opacity: 0 !important; }
+  .opacity-medium-25 { opacity: .25 !important; }
+  .opacity-medium-50 { opacity: .5 !important; }
+  .opacity-medium-75 { opacity: .75 !important; }
+  .opacity-medium-100 { opacity: 1 !important; }
 }
 
 @media (min-width: 992px) {
-  .opacity-lg-0 { opacity: 0 !important; }
-  .opacity-lg-25 { opacity: .25 !important; }
-  .opacity-lg-50 { opacity: .5 !important; }
-  .opacity-lg-75 { opacity: .75 !important; }
-  .opacity-lg-100 { opacity: 1 !important; }
+  .opacity-large-0 { opacity: 0 !important; }
+  .opacity-large-25 { opacity: .25 !important; }
+  .opacity-large-50 { opacity: .5 !important; }
+  .opacity-large-75 { opacity: .75 !important; }
+  .opacity-large-100 { opacity: 1 !important; }
 }
 
 @media (min-width: 1200px) {
-  .opacity-xl-0 { opacity: 0 !important; }
-  .opacity-xl-25 { opacity: .25 !important; }
-  .opacity-xl-50 { opacity: .5 !important; }
-  .opacity-xl-75 { opacity: .75 !important; }
-  .opacity-xl-100 { opacity: 1 !important; }
+  .opacity-xlarge-0 { opacity: 0 !important; }
+  .opacity-xlarge-25 { opacity: .25 !important; }
+  .opacity-xlarge-50 { opacity: .5 !important; }
+  .opacity-xlarge-75 { opacity: .75 !important; }
+  .opacity-xlarge-100 { opacity: 1 !important; }
 }
 
 @media (min-width: 1400px) {
-  .opacity-xxl-0 { opacity: 0 !important; }
-  .opacity-xxl-25 { opacity: .25 !important; }
-  .opacity-xxl-50 { opacity: .5 !important; }
-  .opacity-xxl-75 { opacity: .75 !important; }
-  .opacity-xxl-100 { opacity: 1 !important; }
+  .opacity-2xlarge-0 { opacity: 0 !important; }
+  .opacity-2xlarge-25 { opacity: .25 !important; }
+  .opacity-2xlarge-50 { opacity: .5 !important; }
+  .opacity-2xlarge-75 { opacity: .75 !important; }
+  .opacity-2xlarge-100 { opacity: 1 !important; }
 }
 ```
 
@@ -385,12 +385,12 @@ $utilities: (
 New utilities can be added to the default `$utilities` map with a `map-merge`. Make sure our required Sass files and `_utilities.scss` are imported first, then use the `map-merge` to add your additional utilities. For example, here’s how to add a responsive `cursor` utility with three values.
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 $utilities: map-merge(
   $utilities,
@@ -404,7 +404,7 @@ $utilities: map-merge(
   )
 );
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 ### Modify utilities
@@ -412,12 +412,12 @@ $utilities: map-merge(
 Modify existing utilities in the default `$utilities` map with `map-get` and `map-merge` functions. In the example below, we’re adding an additional value to the `width` utilities. Start with an initial `map-merge` and then specify which utility you want to modify. From there, fetch the nested `"width"` map with `map-get` to access and modify the utility’s options and values.
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 $utilities: map-merge(
   $utilities,
@@ -434,7 +434,7 @@ $utilities: map-merge(
   )
 );
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 #### Enable responsive
@@ -442,12 +442,12 @@ $utilities: map-merge(
 You can enable responsive classes for an existing set of utilities that are not currently responsive by default. For example, to make the `border` classes responsive:
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 $utilities: map-merge(
   $utilities,
@@ -459,7 +459,7 @@ $utilities: map-merge(
   )
 );
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 This will now generate responsive variations of `.border` and `.border-0` for each breakpoint. Your generated CSS will look like this:
@@ -469,28 +469,28 @@ This will now generate responsive variations of `.border` and `.border-0` for ea
 .border-0 { ... }
 
 @media (min-width: 576px) {
-  .border-sm { ... }
-  .border-sm-0 { ... }
+  .border-small { ... }
+  .border-small-0 { ... }
 }
 
 @media (min-width: 768px) {
-  .border-md { ... }
-  .border-md-0 { ... }
+  .border-medium { ... }
+  .border-medium-0 { ... }
 }
 
 @media (min-width: 992px) {
-  .border-lg { ... }
-  .border-lg-0 { ... }
+  .border-large { ... }
+  .border-large-0 { ... }
 }
 
 @media (min-width: 1200px) {
-  .border-xl { ... }
-  .border-xl-0 { ... }
+  .border-xlarge { ... }
+  .border-xlarge-0 { ... }
 }
 
 @media (min-width: 1400px) {
-  .border-xxl { ... }
-  .border-xxl-0 { ... }
+  .border-2xlarge { ... }
+  .border-2xlarge-0 { ... }
 }
 ```
 
@@ -499,12 +499,12 @@ This will now generate responsive variations of `.border` and `.border-0` for ea
 Missing v4 utilities, or used to another naming convention? The utilities API can be used to override the resulting `class` of a given utility—for example, to rename `.ms-*` utilities to oldish `.ml-*`:
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 $utilities: map-merge(
   $utilities,
@@ -516,7 +516,7 @@ $utilities: map-merge(
   )
 );
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 ### Remove utilities
@@ -524,28 +524,28 @@ $utilities: map-merge(
 Remove any of the default utilities with the [`map-remove()` Sass function](https://sass-lang.com/documentation/modules/map/#remove).
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 // Remove multiple utilities with a comma-separated list
 $utilities: map-remove($utilities, "width", "float");
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 You can also use the [`map-merge()` Sass function](https://sass-lang.com/documentation/modules/map/#merge) and set the group key to `null` to remove the utility.
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 $utilities: map-merge(
   $utilities,
@@ -554,7 +554,7 @@ $utilities: map-merge(
   )
 );
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 ### Add, remove, modify
@@ -562,12 +562,12 @@ $utilities: map-merge(
 You can add, remove, and modify many utilities all at once with the [`map-merge()` Sass function](https://sass-lang.com/documentation/modules/map/#merge). Here’s how you can combine the previous examples into one larger map.
 
 ```scss
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/variables-dark";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
+@import "chassis-css/scss/functions";
+@import "chassis-css/scss/variables";
+@import "chassis-css/scss/variables-dark";
+@import "chassis-css/scss/maps";
+@import "chassis-css/scss/mixins";
+@import "chassis-css/scss/utilities";
 
 $utilities: map-merge(
   $utilities,
@@ -589,7 +589,7 @@ $utilities: map-merge(
   )
 );
 
-@import "bootstrap/scss/utilities/api";
+@import "chassis-css/scss/utilities/api";
 ```
 
 #### Remove utility in RTL

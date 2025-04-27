@@ -1,13 +1,13 @@
 ---
 title: Navs and tabs
-description: Documentation and examples for how to use Bootstrap’s included navigation components.
+description: Documentation and examples for how to use Chassis - CSS’s included navigation components.
 aliases: "/docs/[[config:docs_version]]/components/navs/"
 toc: true
 ---
 
 ## Base nav
 
-Navigation available in Bootstrap share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.
+Navigation available in Chassis - CSS share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.
 
 The base `.nav` component is built with flexbox and provide a strong foundation for building all types of navigation components. It includes some style overrides (for working with lists), some link padding for larger hit areas, and basic disabled styling.
 
@@ -85,7 +85,7 @@ Right-aligned with `.justify-content-end`:
 
 ### Vertical
 
-Stack your navigation by changing the flex item direction with the `.flex-column` utility. Need to stack them on some viewports but not others? Use the responsive versions (e.g., `.flex-sm-column`).
+Stack your navigation by changing the flex item direction with the `.flex-column` utility. Need to stack them on some viewports but not others? Use the responsive versions (e.g., `.flex-small-column`).
 
 <Example code={`<ul class="nav flex-column">
     <li class="nav-item">
@@ -226,11 +226,11 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation.
 
 If you need responsive nav variations, consider using a series of [flexbox utilities]([[docsref:/utilities/flex]]). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.
 
-<Example code={`<nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Longer nav link</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-    <a class="flex-sm-fill text-sm-center nav-link disabled" aria-disabled="true">Disabled</a>
+<Example code={`<nav class="nav nav-pills flex-column flex-small-row">
+    <a class="flex-small-fill text-small-center nav-link active" aria-current="page" href="#">Active</a>
+    <a class="flex-small-fill text-small-center nav-link" href="#">Longer nav link</a>
+    <a class="flex-small-fill text-small-center nav-link" href="#">Link</a>
+    <a class="flex-small-fill text-small-center nav-link disabled" aria-disabled="true">Disabled</a>
   </nav>`} />
 
 ## Regarding accessibility
@@ -250,12 +250,12 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
       <a class="nav-link active" aria-current="page" href="#">Active</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+      <a class="nav-link dropdown-toggle" data-cx-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Action</a></li>
         <li><a class="dropdown-item" href="#">Another action</a></li>
         <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider"></li>
+        <li><hr class="dropdown-separator"></li>
         <li><a class="dropdown-item" href="#">Separated link</a></li>
       </ul>
     </li>
@@ -274,12 +274,12 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
       <a class="nav-link active" aria-current="page" href="#">Active</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+      <a class="nav-link dropdown-toggle" data-cx-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Action</a></li>
         <li><a class="dropdown-item" href="#">Another action</a></li>
         <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider"></li>
+        <li><hr class="dropdown-separator"></li>
         <li><a class="dropdown-item" href="#">Separated link</a></li>
       </ul>
     </li>
@@ -297,7 +297,7 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
 
 <AddedIn version="5.2.0" />
 
-As part of Bootstrap’s evolving CSS variables approach, navs now use local CSS variables on `.nav`, `.nav-tabs`, and `.nav-pills` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+As part of Chassis - CSS’s evolving CSS variables approach, navs now use local CSS variables on `.nav`, `.nav-tabs`, and `.nav-pills` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
 
 On the `.nav` base class:
 
@@ -323,21 +323,21 @@ On the `.nav-underline` modifier class:
 
 ## JavaScript behavior
 
-Use the tab JavaScript plugin—include it individually or through the compiled `bootstrap.js` file—to extend our navigational tabs and pills to create tabbable panes of local content.
+Use the tab JavaScript plugin—include it individually or through the compiled `chassis.js` file—to extend our navigational tabs and pills to create tabbable panes of local content.
 
-<div class="bd-example">
-  <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+<div class="cxd-example">
+  <ul class="nav nav-tabs mb-medium" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+      <button class="nav-link active" id="home-tab" data-cx-toggle="tab" data-cx-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+      <button class="nav-link" id="profile-tab" data-cx-toggle="tab" data-cx-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+      <button class="nav-link" id="contact-tab" data-cx-toggle="tab" data-cx-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+      <button class="nav-link" id="disabled-tab" data-cx-toggle="tab" data-cx-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -359,16 +359,16 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
 ```html
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+    <button class="nav-link active" id="home-tab" data-cx-toggle="tab" data-cx-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+    <button class="nav-link" id="profile-tab" data-cx-toggle="tab" data-cx-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+    <button class="nav-link" id="contact-tab" data-cx-toggle="tab" data-cx-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+    <button class="nav-link" id="disabled-tab" data-cx-toggle="tab" data-cx-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -381,13 +381,13 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
 
 To help fit your needs, this works with `<ul>`-based markup, as shown above, or with any arbitrary “roll your own” markup. Note that if you’re using `<nav>`, you shouldn’t add `role="tablist"` directly to it, as this would override the element’s native role as a navigation landmark. Instead, switch to an alternative element (in the example below, a simple `<div>`) and wrap the `<nav>` around it.
 
-<div class="bd-example">
+<div class="cxd-example">
   <nav>
-    <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-      <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
+    <div class="nav nav-tabs mb-medium" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-cx-toggle="tab" data-cx-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+      <button class="nav-link" id="nav-profile-tab" data-cx-toggle="tab" data-cx-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+      <button class="nav-link" id="nav-contact-tab" data-cx-toggle="tab" data-cx-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+      <button class="nav-link" id="nav-disabled-tab" data-cx-toggle="tab" data-cx-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
@@ -409,10 +409,10 @@ To help fit your needs, this works with `<ul>`-based markup, as shown above, or 
 ```html
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
+    <button class="nav-link active" id="nav-home-tab" data-cx-toggle="tab" data-cx-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+    <button class="nav-link" id="nav-profile-tab" data-cx-toggle="tab" data-cx-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="nav-contact-tab" data-cx-toggle="tab" data-cx-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+    <button class="nav-link" id="nav-disabled-tab" data-cx-toggle="tab" data-cx-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
   </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
@@ -425,19 +425,19 @@ To help fit your needs, this works with `<ul>`-based markup, as shown above, or 
 
 The tabs plugin also works with pills.
 
-<div class="bd-example">
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<div class="cxd-example">
+  <ul class="nav nav-pills mb-medium" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+      <button class="nav-link active" id="pills-home-tab" data-cx-toggle="pill" data-cx-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+      <button class="nav-link" id="pills-profile-tab" data-cx-toggle="pill" data-cx-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+      <button class="nav-link" id="pills-contact-tab" data-cx-toggle="pill" data-cx-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
+      <button class="nav-link" id="pills-disabled-tab" data-cx-toggle="pill" data-cx-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
@@ -457,18 +457,18 @@ The tabs plugin also works with pills.
 </div>
 
 ```html
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills mb-medium" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+    <button class="nav-link active" id="pills-home-tab" data-cx-toggle="pill" data-cx-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="pills-profile-tab" data-cx-toggle="pill" data-cx-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+    <button class="nav-link" id="pills-contact-tab" data-cx-toggle="pill" data-cx-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
+    <button class="nav-link" id="pills-disabled-tab" data-cx-toggle="pill" data-cx-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
@@ -481,14 +481,14 @@ The tabs plugin also works with pills.
 
 And with vertical pills. Ideally, for vertical tabs, you should also add `aria-orientation="vertical"` to the tab list container.
 
-<div class="bd-example">
+<div class="cxd-example">
   <div class="d-flex align-items-start">
-    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-      <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-      <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button>
-      <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-      <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+    <div class="nav flex-column nav-pills me-medium" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link active" id="v-pills-home-tab" data-cx-toggle="pill" data-cx-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+      <button class="nav-link" id="v-pills-profile-tab" data-cx-toggle="pill" data-cx-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+      <button class="nav-link" id="v-pills-disabled-tab" data-cx-toggle="pill" data-cx-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button>
+      <button class="nav-link" id="v-pills-messages-tab" data-cx-toggle="pill" data-cx-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+      <button class="nav-link" id="v-pills-settings-tab" data-cx-toggle="pill" data-cx-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
     </div>
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
@@ -512,12 +512,12 @@ And with vertical pills. Ideally, for vertical tabs, you should also add `aria-o
 
 ```html
 <div class="d-flex align-items-start">
-  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-    <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button>
-    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+  <div class="nav flex-column nav-pills me-medium" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-cx-toggle="pill" data-cx-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-cx-toggle="pill" data-cx-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="v-pills-disabled-tab" data-cx-toggle="pill" data-cx-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-cx-toggle="pill" data-cx-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+    <button class="nav-link" id="v-pills-settings-tab" data-cx-toggle="pill" data-cx-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
   </div>
   <div class="tab-content" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">...</div>
@@ -545,22 +545,22 @@ The tab JavaScript plugin **does not** support tabbed interfaces that contain dr
 
 ### Using data attributes
 
-You can activate a tab or pill navigation without writing any JavaScript by simply specifying `data-bs-toggle="tab"` or `data-bs-toggle="pill"` on an element. Use these data attributes on `.nav-tabs` or `.nav-pills`.
+You can activate a tab or pill navigation without writing any JavaScript by simply specifying `data-cx-toggle="tab"` or `data-cx-toggle="pill"` on an element. Use these data attributes on `.nav-tabs` or `.nav-pills`.
 
 ```html
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+    <button class="nav-link active" id="home-tab" data-cx-toggle="tab" data-cx-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+    <button class="nav-link" id="profile-tab" data-cx-toggle="tab" data-cx-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
+    <button class="nav-link" id="messages-tab" data-cx-toggle="tab" data-cx-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+    <button class="nav-link" id="settings-tab" data-cx-toggle="tab" data-cx-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
   </li>
 </ul>
 
@@ -580,7 +580,7 @@ Enable tabbable tabs via JavaScript (each tab needs to be activated individually
 ```js
 const triggerTabList = document.querySelectorAll('#myTab button')
 triggerTabList.forEach(triggerEl => {
-  const tabTrigger = new bootstrap.Tab(triggerEl)
+  const tabTrigger = new chassis.Tab(triggerEl)
 
   triggerEl.addEventListener('click', event => {
     event.preventDefault()
@@ -592,11 +592,11 @@ triggerTabList.forEach(triggerEl => {
 You can activate individual tabs in several ways:
 
 ```js
-const triggerEl = document.querySelector('#myTab button[data-bs-target="#profile"]')
-bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+const triggerEl = document.querySelector('#myTab button[data-cx-target="#profile"]')
+chassis.Tab.getInstance(triggerEl).show() // Select tab by name
 
 const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
-bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
+chassis.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
 ```
 
 ### Fade effect
@@ -621,41 +621,41 @@ Activates your content as a tab element.
 You can create a tab instance with the constructor, for example:
 
 ```js
-const bsTab = new bootstrap.Tab('#myTab')
+const cxTab = new chassis.Tab('#myTab')
 ```
 
-<BsTable>
+<CxTable>
 | Method | Description |
 | --- | --- |
 | `dispose` | Destroys an element’s tab. |
-| `getInstance` | Static method which allows you to get the tab instance associated with a DOM element, you can use it like this: `bootstrap.Tab.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a tab instance associated to a DOM element or create a new one in case it wasn’t initialized. You can use it like this: `bootstrap.Tab.getOrCreateInstance(element)`. |
-| `show` | Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.bs.tab` event occurs). |
-</BsTable>
+| `getInstance` | Static method which allows you to get the tab instance associated with a DOM element, you can use it like this: `chassis.Tab.getInstance(element)`. |
+| `getOrCreateInstance` | Static method which returns a tab instance associated to a DOM element or create a new one in case it wasn’t initialized. You can use it like this: `chassis.Tab.getOrCreateInstance(element)`. |
+| `show` | Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.cx.tab` event occurs). |
+</CxTable>
 
 ### Events
 
 When showing a new tab, the events fire in the following order:
 
-1. `hide.bs.tab` (on the current active tab)
-2. `show.bs.tab` (on the to-be-shown tab)
-3. `hidden.bs.tab` (on the previous active tab, the same one as for the `hide.bs.tab` event)
-4. `shown.bs.tab` (on the newly-active just-shown tab, the same one as for the `show.bs.tab` event)
+1. `hide.cx.tab` (on the current active tab)
+2. `show.cx.tab` (on the to-be-shown tab)
+3. `hidden.cx.tab` (on the previous active tab, the same one as for the `hide.cx.tab` event)
+4. `shown.cx.tab` (on the newly-active just-shown tab, the same one as for the `show.cx.tab` event)
 
-If no tab was already active, then the `hide.bs.tab` and `hidden.bs.tab` events will not be fired.
+If no tab was already active, then the `hide.cx.tab` and `hidden.cx.tab` events will not be fired.
 
-<BsTable>
+<CxTable>
 | Event type | Description |
 | --- | --- |
-| `hide.bs.tab` | This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use `event.target` and `event.relatedTarget` to target the current active tab and the new soon-to-be-active tab, respectively. |
-| `hidden.bs.tab` | This event fires after a new tab is shown (and thus the previous active tab is hidden). Use `event.target` and `event.relatedTarget` to target the previous active tab and the new active tab, respectively. |
-| `show.bs.tab` | This event fires on tab show, but before the new tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
-| `shown.bs.tab` | This event fires on tab show after a tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
-</BsTable>
+| `hide.cx.tab` | This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use `event.target` and `event.relatedTarget` to target the current active tab and the new soon-to-be-active tab, respectively. |
+| `hidden.cx.tab` | This event fires after a new tab is shown (and thus the previous active tab is hidden). Use `event.target` and `event.relatedTarget` to target the previous active tab and the new active tab, respectively. |
+| `show.cx.tab` | This event fires on tab show, but before the new tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
+| `shown.cx.tab` | This event fires on tab show after a tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
+</CxTable>
 
 ```js
-const tabEl = document.querySelector('button[data-bs-toggle="tab"]')
-tabEl.addEventListener('shown.bs.tab', event => {
+const tabEl = document.querySelector('button[data-cx-toggle="tab"]')
+tabEl.addEventListener('shown.cx.tab', event => {
   event.target // newly activated tab
   event.relatedTarget // previous active tab
 })

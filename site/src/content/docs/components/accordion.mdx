@@ -1,6 +1,6 @@
 ---
 title: Accordion
-description: Build vertically collapsing accordions in combination with our Collapse JavaScript plugin.
+description: Build accessible accordions using `details` element and add transitions with our JavaScript plugin.
 aliases:
  - "/components/"
  - "/docs/[[config:docs_version]]/components/"
@@ -9,7 +9,7 @@ toc: true
 
 ## How it works
 
-The accordion uses [collapse]([[docsref:/components/collapse]]) internally to make it collapsible.
+The Chassis - CSS accordion uses `details` element and let browser do the expanding and collapsing of content. It uses javascript to add a smooth transion. Because of `details` elements native purpose, accordion doesn't require any aria or accessibility definitions.
 
 <Callout name="info-prefersreducedmotion" />
 
@@ -17,143 +17,424 @@ The accordion uses [collapse]([[docsref:/components/collapse]]) internally to ma
 
 Click the accordions below to expand/collapse the accordion content.
 
-To render an accordion that’s expanded by default:
-- add the `.show` class on the `.accordion-collapse` element.
-- drop the `.collapsed` class from the `.accordion-button` element and set its `aria-expanded` attribute to `true`.
+Just add the `open` attribute on the `details` element to render it is expanded by default.
 
-<Example code={`<div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
+<Example code={`<div class="accordion">
+  <details open>
+    <summary>
+      <h4 class="accordion-title">Accordion Item #1</h4>
+    </summary>
+    <div class="accordion-content">
+      <p>
+        This is the <strong>first item's content</strong>. It is shown by default, until another detail element gets '[open]' by clicked on its summary.
+      </p>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
+  </details>
+  <details>
+    <summary>
+      <h4 class="accordion-title">Accordion Item #2</h4>
+    </summary>
+    <div class="accordion-content">
+      <p>
+        This is the <strong>second item's content</strong>. It is hidden by default, until clicked on its summary element.
+      </p>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
+  </details>
+  <details>
+    <summary>
+      <h4 class="accordion-title">Accordion Item #3</h4>
+    </summary>
+    <div class="accordion-content">
+      <p>
+        This is the <strong>third item's content</strong>. It is hidden by default, until clicked on its summary element.
+      </p>
     </div>
-  </div>`} />
+  </details>
+</div>`} />
+
+### Static
+
+Add `.static` to accordion container to make prevent other items collapse automatically.
+
+<div class="cxd-example">
+
+  <div class="accordion static">
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+
+</div>
+
+```html
+  <div class="accordion static">
+    <details>
+      ...
+    </details>
+  </div>
+```
 
 ### Flush
 
-Add `.accordion-flush` to remove some borders and rounded corners to render accordions edge-to-edge with their parent container.
+Add `.flush` to remove some borders and rounded corners to render accordions edge-to-edge with their parent container.
 
-<Example class="bg-body-secondary" code={`<div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item’s accordion body.</div>
+<div class="cxd-example">
+  <div class="accordion flush static">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
       </div>
-    </div>
-  </div>`} />
+    </details>
+  </div>
+</div>
 
-### Always open
+```html
+  <div class="accordion flush static">
+    <details open>
+      ...
+    </details>
+  </div>
+```
 
-Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accordion items stay open when another item is opened.
+## Sizes
 
-<Example code={`<div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-        <div class="accordion-body">
-          <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-  </div>`} />
+Add `.large` or `.small` to make accordion fit your functional needs.
 
+### Large
+
+Larger font size and spacing, suitable for FAQ pages or use in heroes.
+
+<div class="cxd-example">
+  <div class="accordion large">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+```html
+  <div class="accordion large">
+    <details open>
+      ...
+    </details>
+  </div>
+```
+
+### Small
+
+Smaller font size and spacings, suitable for use in cards, sidebars etc.
+
+<div class="cxd-example">
+  <div class="accordion small">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+```html
+<div class="accordion small">
+  <details open>
+    ...
+  </details>
+</div>
+```
+
+## Accordion Styles
+
+Use `.context` class on accordions with a color or style, like `.primary` and `.solid`. See [context class]([[docsref:core-concepts/context-class]]) for more information.
+
+<div class="cxd-example">
+  <div class="row row-cols-1 row-cols-medium-2 g-large">
+
+<div class="col">
+  <div class="col accordion context primary small">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="col">
+  <div class="accordion context primary solid small col">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="col">
+  <div class="accordion context primary smooth small">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="col">
+  <div class="accordion context primary outline small">
+    <details open>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #1</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>first item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #2</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>second item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>
+        <h4 class="accordion-title">Accordion Item #3</h4>
+      </summary>
+      <div class="accordion-content">
+        <p>
+          This is the <strong>third item's content</strong>. This will stay shown until it get clicked on its summary.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+  </div>
+</div>
+
+```html
+<div class="accordion context primary small">
+  <details open>
+    ...
+  </details>
+</div>
+
+<div class="accordion context primary solid small">
+  <details open>
+    ...
+  </details>
+</div>
+
+<div class="accordion context primary smooth small">
+  <details open>
+    ...
+  </details>
+</div>
+
+<div class="accordion context primary outline small">
+  <details open>
+    ...
+  </details>
+</div>
+```
 ## Accessibility
 
-Please read the [collapse accessibility section]([[docsref:/components/collapse#accessibility]]) for more information.
+No need to aria and role definitions. Sincse accordion component use HTML 5 details element, accessibility features would be set by browser automatically.
 
 ## CSS
 
+<DocsCSS />
+
 ### Variables
 
-<AddedIn version="5.2.0" />
-
-As part of Bootstrap’s evolving CSS variables approach, accordions now use local CSS variables on `.accordion` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
-
-<ScssDocs name="accordion-css-vars" file="scss/_accordion.scss" />
+<DocsCSSVars />
 
 ### Sass variables
+
+<DocsSASSVars />
 
 <ScssDocs name="accordion-variables" file="scss/_variables.scss" />

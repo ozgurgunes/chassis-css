@@ -8,22 +8,22 @@ toc: true
 
 Form controls are styled with a mix of Sass and CSS variables, allowing them to adapt to color modes and support any customization method.
 
-<Example code={`<div class="mb-3">
+<Example code={`<div class="mb-medium">
     <label for="exampleFormControlInput1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
-  <div class="mb-3">
+  <div class="mb-medium">
     <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>`} />
 
 ## Sizing
 
-Set heights using classes like `.form-control-lg` and `.form-control-sm`.
+Set heights using classes like `.large` and `.small`.
 
-<Example code={`<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
+<Example code={`<input class="form-control large" type="text" placeholder=".large" aria-label=".form-control-large example">
 <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
-<input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">`} />
+<input class="form-control small" type="text" placeholder=".small" aria-label=".form-control-small example">`} />
 
 ## Form text
 
@@ -43,7 +43,7 @@ Form text below inputs can be styled with `.form-text`. If a block-level element
 
 Inline text can use any typical inline HTML element (be it a `<span>`, `<small>`, or something else) with nothing more than the `.form-text` class.
 
-<Example code={`<div class="row g-3 align-items-center">
+<Example code={`<div class="row g-medium align-items-center">
     <div class="col-auto">
       <label for="inputPassword6" class="col-form-label">Password</label>
     </div>
@@ -72,17 +72,17 @@ Add the `readonly` boolean attribute on an input to prevent modification of the 
 
 ## Readonly plain text
 
-If you want to have `<input readonly>` elements in your form styled as plain text, replace `.form-control` with `.form-control-plaintext` to remove the default form field styling and preserve the correct `margin` and `padding`.
+If you want to have `<input readonly>` elements in your form styled as plain text, replace `.form-control` with `.plaintext` to remove the default form field styling and preserve the correct `margin` and `padding`.
 
-<Example code={`<div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+<Example code={`<div class="mb-medium row">
+    <label for="staticEmail" class="col-small-2 col-form-label">Email</label>
+    <div class="col-small-10">
+      <input type="text" readonly class="form-control plaintext" id="staticEmail" value="email@example.com">
     </div>
   </div>
-  <div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
+  <div class="mb-medium row">
+    <label for="inputPassword" class="col-small-2 col-form-label">Password</label>
+    <div class="col-small-10">
       <input type="password" class="form-control" id="inputPassword">
     </div>
   </div>`} />
@@ -90,38 +90,38 @@ If you want to have `<input readonly>` elements in your form styled as plain tex
 <Example code={`<form class="row g-3">
     <div class="col-auto">
       <label for="staticEmail2" class="visually-hidden">Email</label>
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+      <input type="text" readonly class="form-control plaintext" id="staticEmail2" value="email@example.com">
     </div>
     <div class="col-auto">
       <label for="inputPassword2" class="visually-hidden">Password</label>
       <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
     </div>
     <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+      <button type="submit" class="button primary mb-medium">Confirm identity</button>
     </div>
   </form>`} />
 
 ## File input
 
-<Example code={`<div class="mb-3">
+<Example code={`<div class="mb-medium">
     <label for="formFile" class="form-label">Default file input example</label>
     <input class="form-control" type="file" id="formFile">
   </div>
-  <div class="mb-3">
+  <div class="mb-medium">
     <label for="formFileMultiple" class="form-label">Multiple files input example</label>
     <input class="form-control" type="file" id="formFileMultiple" multiple>
   </div>
-  <div class="mb-3">
+  <div class="mb-medium">
     <label for="formFileDisabled" class="form-label">Disabled file input example</label>
     <input class="form-control" type="file" id="formFileDisabled" disabled>
   </div>
-  <div class="mb-3">
+  <div class="mb-medium">
     <label for="formFileSm" class="form-label">Small file input example</label>
-    <input class="form-control form-control-sm" id="formFileSm" type="file">
+    <input class="form-control small" id="formFileSm" type="file">
   </div>
   <div>
     <label for="formFileLg" class="form-label">Large file input example</label>
-    <input class="form-control form-control-lg" id="formFileLg" type="file">
+    <input class="form-control large" id="formFileLg" type="file">
   </div>`} />
 
 ## Color
@@ -129,7 +129,7 @@ If you want to have `<input readonly>` elements in your form styled as plain tex
 Set the `type="color"` and add `.form-control-color` to the `<input>`. We use the modifier class to set fixed `height`s and override some inconsistencies between browsers.
 
 <Example code={`<label for="exampleColorInput" class="form-label">Color picker</label>
-<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">`} />
+<input type="color" class="form-control color-control" id="exampleColorInput" value="#563d7c" title="Choose your color">`} />
 
 ## Datalists
 

@@ -1,46 +1,59 @@
 ---
 title: Close button
-description: A generic close button for dismissing content like modals and alerts.
+description: A generic close button for dismissing content like modals and notifications.
 toc: true
 ---
 
 ## Example
 
-Provide an option to dismiss or close a component with `.btn-close`. Default styling is limited, but highly customizable. Modify the Sass variables to replace the default `background-image`. **Be sure to include text for screen readers**, as we’ve done with `aria-label`.
+Provide an option to dismiss or close a component with `.close-button`. **Be sure to include text for screen readers**, as done here with `aria-label`.
 
-<Example code={`<button type="button" class="btn-close" aria-label="Close"></button>`} />
+<Example code={`<button type="button" class="close-button" aria-label="Close">
+  <svg><use xlink:href="#xmark-large-solid"/></svg>
+</button>`} />
+
+If there is not any svg in close button, system displays `content: $close-button-svg;` automatically.
+
+<Example code={`<button type="button" class="close-button" aria-label="Close"></button>`} />
+
+Modify the Sass variables to replace the default `background-image`.
 
 ## Disabled state
 
 Disabled close buttons change their `opacity`. We’ve also applied `pointer-events: none` and `user-select: none` to preventing hover and active states from triggering.
 
-<Example code={`<button type="button" class="btn-close" disabled aria-label="Close"></button>`} />
+<Example code={`<button type="button" class="close-button" disabled aria-label="Close"></button>`} />
 
-## Dark variant
+## Sizes
 
-<DeprecatedIn version="5.3.0" />
+<Example code={`<button type="button" class="close-button small" aria-label="Close"></button>
+<button type="button" class="close-button" aria-label="Close"></button>
+<button type="button" class="close-button large" aria-label="Close"></button>
+<button type="button" class="close-button xlarge" aria-label="Close"></button>`} />
 
-<Callout type="warning">
-**Heads up!** As of v5.3.0, the `.btn-close-white` class is deprecated. Instead, use `data-bs-theme="dark"` to change the color mode of the close button.
-</Callout>
+## Positioning
 
-Add `data-bs-theme="dark"` to the `.btn-close`, or to its parent element, to invert the close button. This uses the `filter` property to invert the `background-image` without overriding its value.
+Most components will automatically position close-button themselves. Use position utilities for exceptions.
 
-<Example class="bg-dark" code={`<div data-bs-theme="dark">
-    <button type="button" class="btn-close" aria-label="Close"></button>
-    <button type="button" class="btn-close" disabled aria-label="Close"></button>
+<Example code={`<div class="notification primary">
+    <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
+    <p class="message">This is a notification!</p>
+  </div>
+  <div class="context primary border rounded px-medium py-xsmall position-relative">
+    <button type="button" class="close-button position-absolute end-0 top-xlarge0 translate-middle-y" data-cx-dismiss="context" aria-label="Close"></button>
+    This is a contextual div.
   </div>`} />
 
 ## CSS
 
+<DocsCSS />
+
 ### Variables
 
-<AddedIn version="5.3.0" />
-
-As part of Bootstrap’s evolving CSS variables approach, close button now uses local CSS variables on `.btn-close` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
-
-<ScssDocs name="close-css-vars" file="scss/_close.scss" />
+<DocsCSSVars />
 
 ### Sass variables
 
-<ScssDocs name="close-variables" file="scss/_variables.scss" />
+<DocsSASSVars />
+
+<ScssDocs name="close-button-variables" file="scss/_variables.scss" />

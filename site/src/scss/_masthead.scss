@@ -1,65 +1,70 @@
-.bd-masthead {
-  --bd-pink-rgb: #{to-rgb($pink)};
+.cxd-masthead {
+  --cxd-pink-rgb: #{to-rgb($pink)};
   padding: 3rem 0;
   // stylelint-disable
-  background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), .01), rgba(var(--bs-body-bg-rgb), 1) 85%),
-                    radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), .5), transparent 50%),
-                    radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), .5), transparent 50%),
-                    radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), .5), transparent 50%),
-                    radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), .5), transparent 50%);
+  background-image: linear-gradient(180deg, rgba(var(--cx-bg-main-rgb), .01), rgba(var(--cx-bg-main-rgb), 1) 85%),
+                    radial-gradient(ellipse at top left, rgba(var(--cx-primary-rgb), .25), transparent 50%),
+                    radial-gradient(ellipse at top right, rgba(var(--cx-secondary-rgb), .25), transparent 50%),
+                    radial-gradient(ellipse at center right, rgba(var(--cx-secondary-rgb), .25), transparent 50%),
+                    radial-gradient(ellipse at center left, rgba(var(--cx-secondary-rgb), .25), transparent 50%);
   // stylelint-enable
 
   h1 {
-    --bs-heading-color: var(--bs-emphasis-color);
-    @include font-size(4rem);
+    --cx-heading-color: var(--cx-emphasis-color);
+    font-size: 4rem;
+    line-height: 1.25em;
   }
 
   .lead {
-    @include font-size(1rem);
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-family: var(--cx-font-family-display);
     font-weight: 400;
-    color: var(--bs-secondary-color);
+    color: var(--cx-secondary-color);
   }
 
-  .bd-code-snippet {
+  .cxd-code-snippet {
+    width: 24rem;
     margin: 0;
-    border-color: var(--bs-border-color-translucent);
+    border-color: var(--cx-border-subtle);
+    text-align: left;
     border-width: 1px;
     @include border-radius(.5rem);
   }
 
-  .highlight {
-    width: 100%;
-    padding: .5rem 1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    background-color: rgba(var(--bs-body-color-rgb), .075);
-    @include border-radius(calc(.5rem - 1px));
+  // .highlight {
+  //   width: 100%;
+  //   padding: .5rem 1rem;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  //   white-space: nowrap;
+  //   background-color: rgba(var(--cx-fg-color-rgb), .075);
+  //   @include border-radius(calc(.5rem - 1px));
 
-    @include media-breakpoint-up(lg) {
-      padding-right: 4rem;
-    }
+  //   @include media-breakpoint-up(large) {
+  //     padding-right: 4rem;
+  //   }
 
-    pre {
-      padding: 0;
-      margin: .625rem 0;
-      overflow: hidden;
-    }
-  }
-  .btn-clipboard {
-    position: absolute;
-    top: -.625rem;
-    right: 0;
-    background-color: transparent;
-  }
+  //   pre {
+  //     padding: 0;
+  //     margin: .625rem 0;
+  //     overflow: hidden;
+  //   }
+  // }
+  // .button-clipboard {
+  //   position: absolute;
+  //   top: -.625rem;
+  //   right: 0;
+  //   background-color: transparent;
+  // }
 
   #carbonads { // stylelint-disable-line selector-max-id
     margin-inline: auto;
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(medium) {
     .lead {
-      @include font-size(1.5rem);
+      font-size: 1.5rem;
     }
   }
 }
@@ -68,16 +73,16 @@
   h2,
   h3,
   h4 {
-    --bs-heading-color: var(--bs-emphasis-color);
+    --cx-heading-color: var(--cx-emphasis-color);
   }
 
   .lead {
-    @include font-size(1rem);
+    font-size: 1rem;
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(medium) {
     .lead {
-      @include font-size(1.25rem);
+      font-size: 1.25rem;
     }
   }
 }
@@ -86,21 +91,21 @@
   padding: 1rem;
   color: rgba(var(--bg-rgb), 1);
   background-color: rgba(var(--bg-rgb), .1);
-  background-blend-mode: multiply;
+  background-blend-mode: multiple;
   @include border-radius(1rem);
   mix-blend-mode: darken;
 
   svg {
-    filter: drop-shadow(0 1px 1px var(--bs-body-bg));
+    filter: drop-shadow(0 1px 1px var(--cx-bg-color));
   }
 }
 
 .masthead-notice {
-  background-color: var(--bd-accent);
-  box-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), .15), 0 .25rem 1.5rem rgba(var(--bs-body-bg-rgb), .75);
+  background-color: var(--cxd-accent);
+  box-shadow: inset 0 -1px 1px rgba(var(--cx-fg-color-rgb), .15), 0 .25rem 1.5rem rgba(var(--cx-bg-color-rgb), .75);
 }
 
-.animate-img {
+.animate-image {
   > img {
     @include transition(transform .2s ease-in-out);
   }
@@ -108,14 +113,10 @@
   &:hover > img {
     transform: scale(1.1);
   }
-
-  &:active > img {
-    transform: scale(1);
-  }
 }
 
 @if $enable-dark-mode {
-  [data-bs-theme="dark"] {
+  [data-cx-theme="dark"] {
     .masthead-followup-icon {
       mix-blend-mode: lighten;
     }

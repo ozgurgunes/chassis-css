@@ -12,11 +12,11 @@ Easily realign text to components with text alignment classes. For start, end, a
 <p class="text-center">Center aligned text on all viewport sizes.</p>
 <p class="text-end">End aligned text on all viewport sizes.</p>
 
-<p class="text-sm-end">End aligned text on viewports sized SM (small) or wider.</p>
-<p class="text-md-end">End aligned text on viewports sized MD (medium) or wider.</p>
-<p class="text-lg-end">End aligned text on viewports sized LG (large) or wider.</p>
-<p class="text-xl-end">End aligned text on viewports sized XL (extra large) or wider.</p>
-<p class="text-xxl-end">End aligned text on viewports sized XXL (extra extra large) or wider.</p>`} />
+<p class="text-small-end">End aligned text on viewports sized "<b>small</b>" or wider.</p>
+<p class="text-medium-end">End aligned text on viewports sized "<b>medium</b>" or wider.</p>
+<p class="text-large-end">End aligned text on viewports sized "<b>large</b>" or wider.</p>
+<p class="text-xlarge-end">End aligned text on viewports sized "<b>xlarge</b>" or wider.</p>
+<p class="text-2xlarge-end">End aligned text on viewports sized "<b>2xlarge</b>" or wider.</p>`} />
 
 <Callout>
 Note that we don’t provide utility classes for justified text. While, aesthetically, justified text might look more appealing, it does make word-spacing more random and therefore harder to read.
@@ -26,13 +26,13 @@ Note that we don’t provide utility classes for justified text. While, aestheti
 
 Wrap text with a `.text-wrap` class.
 
-<Example code={`<div class="badge text-bg-primary text-wrap" style="width: 6rem;">
+<Example code={`<div class="badge primary text-wrap" style="width: 6rem;">
     This text should wrap.
   </div>`} />
 
 Prevent text from wrapping with a `.text-nowrap` class.
 
-<Example code={`<div class="text-nowrap bg-body-secondary border" style="width: 8rem;">
+<Example code={`<div class="text-nowrap bg-evident border" style="width: 8rem;">
     This text should overflow the parent.
   </div>`} />
 
@@ -50,28 +50,52 @@ Note that [breaking words isn’t possible in Arabic](https://rtlstyling.com/pos
 
 Transform text in components with our text capitalization classes: `text-lowercase`, `text-uppercase` or `text-capitalize`.
 
-<Example code={`<p class="text-lowercase">Lowercased text.</p>
-<p class="text-uppercase">Uppercased text.</p>
-<p class="text-capitalize">CapiTaliZed text.</p>`} />
+<Example code={`<p class="text-lowercase">Lowercased Text</p>
+<p class="text-uppercase">uppercased text</p>
+<p class="text-capitalize">capitalized text</p>
+<p class="text-uppercase" lang="tr">istanbul</p>
+<p class="text-lowercase" lang="tr">İSTANBUL</p>
+<p class="text-capitalize" lang="tr">istanbul</p>`} />
 
-Note how `.text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected.
+Note how `.text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected. Unfortunately `.text-capitalize` not works for locales even with HTML lang attribute.
 
 ## Font size
 
-Quickly change the `font-size` of text. While our heading classes (e.g., `.h1`–`.h6`) apply `font-size`, `font-weight`, and `line-height`, these utilities _only_ apply `font-size`. Sizing for these utilities matches HTML’s heading elements, so as the number increases, their size decreases.
+Quickly change the `font-size` of text. These utilities apply both `font-size` and according `line-height` by token.
 
-<Example code={`<p class="fs-1">.fs-1 text</p>
-<p class="fs-2">.fs-2 text</p>
-<p class="fs-3">.fs-3 text</p>
-<p class="fs-4">.fs-4 text</p>
-<p class="fs-5">.fs-5 text</p>
-<p class="fs-6">.fs-6 text</p>`} />
+<Example code={`<p class="font-5xlarge">.font-5xlarge</p>
+<p class="font-4xlarge">.font-4xlarge</p>
+<p class="font-3xlarge">.font-3xlarge</p>
+<p class="font-2xlarge">.font-2xlarge</p>
+<p class="font-xlarge">.font-xlarge</p>
+<p class="font-large">.font-large</p>
+<p class="font-medium">.font-medium</p>
+<p class="font-small">.font-small</p>
+<p class="font-xsmall">.font-xsmall</p>
+<p class="font-2xsmall">.font-2xsmall</p>`} />
+
+The heading classes (e.g., `.h1`–`.h6`) match text to according also apply `font-weight` and matches HTML element.
+
+<Example code={`<p class="h1">.h1</p>
+<p class="h2">.h2</p>
+<p class="h3">.h3</p>
+<p class="h4">.h4</p>
+<p class="h5">.h5</p>
+<p class="h6">.h6</p>`} />
 
 Customize your available `font-size`s by modifying the `$font-sizes` Sass map.
 
 ## Font weight and italics
 
-Quickly change the `font-weight` or `font-style` of text with these utilities. `font-style` utilities are abbreviated as `.fst-*` and `font-weight` utilities are abbreviated as `.fw-*`.
+Quickly change the `font-weight` between 4 values defined by tokens and use `<i>` or `<em>` for italics.
+
+<Example code={`<p class="font-mass">Mass text.</p>
+<p class="font-strong">Strong text.</p>
+<p class="font-normal">Normal text.</p>
+<p class="font-elegant">Elegant text.</p>
+<p><i>Italic text</i> & <em>Emphasized text.</em></p>`} />
+
+Beside token definitions, you can use standard font weights and styles by `.fs-*` and `.fw-*` utilities.
 
 <Example code={`<p class="fw-bold">Bold text.</p>
 <p class="fw-bolder">Bolder weight text (relative to the parent element).</p>
@@ -80,17 +104,17 @@ Quickly change the `font-weight` or `font-style` of text with these utilities. `
 <p class="fw-normal">Normal weight text.</p>
 <p class="fw-light">Light weight text.</p>
 <p class="fw-lighter">Lighter weight text (relative to the parent element).</p>
-<p class="fst-italic">Italic text.</p>
-<p class="fst-normal">Text with normal font style</p>`} />
+<p class="fs-italic">Italic text.</p>
+<p class="fs-normal">Text with normal font style</p>`} />
 
 ## Line height
 
 Change the line height with `.lh-*` utilities.
 
 <Example code={`<p class="lh-1">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
-<p class="lh-sm">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
+<p class="lh-small">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
 <p class="lh-base">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>
-<p class="lh-lg">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>`} />
+<p class="lh-large">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.</p>`} />
 
 ## Monospace
 
@@ -100,10 +124,13 @@ Change a selection to our monospace font stack with `.font-monospace`.
 
 ## Reset color
 
-Reset a text or link’s color with `.text-reset`, so that it inherits the color from its parent.
+Reset a text or link’s color with `.fg-reset`, so that it inherits the color from its parent.
 
-<Example code={`<p class="text-body-secondary">
-    Secondary body text with a <a href="#" class="text-reset">reset link</a>.
+<Example code={`<p class="fg-subtle">
+    Secondary body text with a <a href="#" class="fg-reset">reset link</a>.
+  </p>
+  <p class="fg-subtle">
+    Secondary body text with a <a href="#">normal link</a>.
   </p>`} />
 
 ## Text decoration
@@ -114,24 +141,46 @@ Decorate text in components with text decoration classes.
 <p class="text-decoration-line-through">This text has a line going through it.</p>
 <a href="#" class="text-decoration-none">This link has its text decoration removed</a>`} />
 
+## Text Truncation
+
+<p class='lead border-start border-xlarge cx-border-subtle ps-medium'>Truncate long strings of text with an ellipsis.</p>
+
+For longer content, you can add a `.text-truncate` class to truncate the text with an ellipsis. **Requires `display: inline-block` or `display: block`.**
+
+<Example code={`<!-- Block level -->
+  <div class="row">
+    <div class="col-2 text-truncate">
+      This text is quite long, and will be truncated once displayed.
+    </div>
+  </div>
+
+  <!-- Inline level -->
+  <span class="d-inline-block text-truncate" style="max-width: 150px;">
+    This text is quite long, and will be truncated once displayed.
+  </span>`} />
+
 ## CSS
+
+<DocsCSS />
 
 ### Sass variables
 
-Default type and font related Sass variables:
+Base font related Sass variables, keeping token references as CSS variables.
 
 <ScssDocs name="font-variables" file="scss/_variables.scss" />
 
 ### Sass maps
 
-Font-size utilities are generated from this map, in combination with our utilities API.
+Most `font` utilities are generated from this maps, in combination utilities API.
 
-<ScssDocs name="font-sizes" file="scss/_variables.scss" />
+<ScssDocs name="font-families-map" file="scss/maps/_fonts.scss" />
+<ScssDocs name="font-sizes-map" file="scss/maps/_fonts.scss" />
+<ScssDocs name="font-weights-map" file="scss/maps/_fonts.scss" />
+<ScssDocs name="line-heights-map" file="scss/maps/_fonts.scss" />
 
-<ScssDocs name="theme-text-map" file="scss/_maps.scss" />
 
 ### Sass utilities API
 
-Font and text utilities are declared in our utilities API in `scss/_utilities.scss`. [Learn how to use the utilities API.]([[docsref:/utilities/api#using-the-api]])
+Font and text utilities are declared in our utilities API in `scss/utilities/_text.scss`. [Learn how to use the utilities API.]([[docsref:/utilities/api#using-the-api]])
 
-<ScssDocs name="utils-text" file="scss/_utilities.scss" />
+<ScssDocs name="utils-text" file="scss/utilities/_text.scss" />

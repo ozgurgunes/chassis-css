@@ -1,0 +1,52 @@
+// Buttons
+//
+// Custom buttons for the docs.
+
+// scss-docs-start button-css-vars-example
+.button-cxd-primary {
+  --cx-button-font-weight: 600;
+  --cx-button-color: var(--cx-white);
+  --cx-button-bg: var(--cxd-violet-bg);
+  --cx-button-border-color: var(--cxd-violet-bg);
+  --cx-button-hover-color: var(--cx-white);
+  --cx-button-hover-bg: #{shade-color($cxd-violet, 10%)};
+  --cx-button-hover-border-color: #{shade-color($cxd-violet, 10%)};
+  --cx-button-focus-shadow-rgb: var(--cxd-violet-rgb);
+  --cx-button-active-color: var(--cx-button-hover-color);
+  --cx-button-active-bg: #{shade-color($cxd-violet, 20%)};
+  --cx-button-active-border-color: #{shade-color($cxd-violet, 20%)};
+}
+// scss-docs-end button-css-vars-example
+
+.button-cxd-accent {
+  --cx-button-font-weight: 600;
+  --cx-button-color: var(--cxd-accent);
+  --cx-button-border-color: var(--cxd-accent);
+  --cx-button-hover-color: var(--cxd-dark);
+  --cx-button-hover-bg: var(--cxd-accent);
+  --cx-button-hover-border-color: var(--cxd-accent);
+  --cx-button-focus-shadow-rgb: var(--cxd-accent-rgb);
+  --cx-button-active-color: var(--cx-button-hover-color);
+  --cx-button-active-bg: var(--cx-button-hover-bg);
+  --cx-button-active-border-color: var(--cx-button-hover-border-color);
+}
+
+.button-cxd-light {
+  --button-custom-color: #{mix($cxd-violet, $white, 75%)};
+
+  --cx-button-color: var(--cx-gray-600);
+  --cx-button-border-color: var(--cx-border-color);
+  --cx-button-hover-color: var(--button-custom-color);
+  --cx-button-hover-border-color: var(--button-custom-color);
+  --cx-button-active-color: var(--button-custom-color);
+  --cx-button-active-bg: var(--cx-white);
+  --cx-button-active-border-color: var(--button-custom-color);
+  --cx-button-focus-border-color: var(--button-custom-color);
+  --cx-button-focus-shadow-rgb: var(--cxd-violet-rgb);
+}
+
+.cxd-button-large {
+  --cx-button-border-radius: .5rem;
+
+  padding: .8125rem 2rem;
+}

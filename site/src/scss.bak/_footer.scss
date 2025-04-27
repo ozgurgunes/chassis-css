@@ -1,0 +1,16 @@
+//
+// Footer
+//
+
+.cxd-footer {
+  a {
+    color: var(--cx-body-color);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--cx-link-hover-color);
+      text-decoration: underline;
+    }
+  }
+}

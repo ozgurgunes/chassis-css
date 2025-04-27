@@ -1,6 +1,6 @@
 ---
 title: Breakpoints
-description: Breakpoints are customizable widths that determine how your responsive layout behaves across device or viewport sizes in Bootstrap.
+description: Breakpoints are customizable widths that determine how your responsive layout behaves across device or viewport sizes in Chassis.
 aliases: "/docs/[[config:docs_version]]/layout/"
 toc: true
 ---
@@ -11,22 +11,22 @@ toc: true
 
 - **Use media queries to architect your CSS by breakpoint.** Media queries are a feature of CSS that allow you to conditionally apply styles based on a set of browser and operating system parameters. We most commonly use `min-width` in our media queries.
 
-- **Mobile first, responsive design is the goal.** Bootstrap’s CSS aims to apply the bare minimum of styles to make a layout work at the smallest breakpoint, and then layers on styles to adjust that design for larger devices. This optimizes your CSS, improves rendering time, and provides a great experience for your visitors.
+- **Mobile first, responsive design is the goal.** Chassis - CSS’s CSS aims to apply the bare minimum of styles to make a layout work at the smallest breakpoint, and then layers on styles to adjust that design for larger devices. This optimizes your CSS, improves rendering time, and provides a great experience for your visitors.
 
 ## Available breakpoints
 
-Bootstrap includes six default breakpoints, sometimes referred to as _grid tiers_, for building responsively. These breakpoints can be customized if you’re using our source Sass files.
+Chassis - CSS includes six default breakpoints, sometimes referred to as _grid tiers_, for building responsively. These breakpoints can be customized if you’re using our source Sass files.
 
-<BsTable>
+<CxTable>
 | Breakpoint | Class infix | Dimensions |
 | --- | --- | --- |
 | Extra small | <em>None</em> |&lt;576px |
-| Small | `sm` | &ge;576px |
-| Medium | `md` | &ge;768px |
-| Large | `lg` | &ge;992px |
-| Extra large | `xl` | &ge;1200px |
-| Extra extra large | `xxl` | &ge;1400px |
-</BsTable>
+| Small | `small` | &ge;576px |
+| Medium | `medium` | &ge;768px |
+| Large | `large` | &ge;992px |
+| Extra large | `xlarge` | &ge;1200px |
+| Extra extra large | `2xlarge` | &ge;1400px |
+</CxTable>
 
 
 Each breakpoint was chosen to comfortably hold containers whose widths are multiples of 12. Breakpoints are also representative of a subset of common device sizes and viewport dimensions—they don’t specifically target every use case or device. Instead, the ranges provide a strong and consistent foundation to build on for nearly any device.
@@ -37,23 +37,28 @@ These breakpoints are customizable via Sass—you’ll find them in a Sass map i
 
 For more information and examples on how to modify our Sass maps and variables, please refer to [the CSS section of the Grid documentation]([[docsref:/layout/grid#css]]).
 
+<Callout type="warning">
+**Note:** While it is generally recommended to avoid using arguments that start with digits (e.g., `2xlarge`), Sass supports them because they are treated as strings. The `2xlarge` naming convention is intentionally chosen to maintain consistency with other sizing definitions and potential usage in HTML and CSS classes, such as `class="container-2xlarge"` or `class="col-2xlarge-4"`. This ensures alignment across the codebase and does not cause any issues in Sass and CSS.
+</Callout>
+
 ## Media queries
 
-Since Bootstrap is developed to be mobile first, we use a handful of [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
+Since Chassis - CSS is developed to be mobile first, we use a handful of [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
 
 ### Min-width
 
-Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
+Chassis - CSS primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
 
 ```scss
 // Source mixins
 
 // No media query necessary for xs breakpoint as it’s effectively `@media (min-width: 0) { ... }`
-@include media-breakpoint-up(sm) { ... }
-@include media-breakpoint-up(md) { ... }
-@include media-breakpoint-up(lg) { ... }
-@include media-breakpoint-up(xl) { ... }
-@include media-breakpoint-up(xxl) { ... }
+@include media-breakpoint-up(small) { ... }
+@include media-breakpoint-up(medium) { ... }
+@include media-breakpoint-up(large) { ... }
+@include media-breakpoint-up(xlarge) { ... }
+@include media-breakpoint-up(2xlarge) { ... }
+// Note that the `2xlarge` argument is treated as a string in Sass, which ensures it does not cause any issues.
 
 // Usage
 
@@ -61,7 +66,7 @@ Bootstrap primarily uses the following media query ranges—or breakpoints—in 
 .custom-class {
   display: none;
 }
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(small) {
   .custom-class {
     display: block;
   }
@@ -72,7 +77,7 @@ These Sass mixins translate in our compiled CSS using the values declared in our
 
 ```scss
 // X-Small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
+// No media query for `xs` since this is the default in Chassis
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
@@ -95,15 +100,16 @@ These Sass mixins translate in our compiled CSS using the values declared in our
 We occasionally use media queries that go in the other direction (the given screen size _or smaller_):
 
 ```scss
-// No media query necessary for xs breakpoint as it’s effectively `@media (max-width: 0) { ... }`
-@include media-breakpoint-down(sm) { ... }
-@include media-breakpoint-down(md) { ... }
-@include media-breakpoint-down(lg) { ... }
-@include media-breakpoint-down(xl) { ... }
-@include media-breakpoint-down(xxl) { ... }
+// No media query necessary for xsmall breakpoint as it’s effectively `@media (max-width: 0) { ... }`
+@include media-breakpoint-down(small) { ... }
+@include media-breakpoint-down(medium) { ... }
+@include media-breakpoint-down(large) { ... }
+@include media-breakpoint-down(xlarge) { ... }
+@include media-breakpoint-down(2xlarge) { ... }
+// Note that the `2xlarge` argument is treated as a string in Sass, which ensures it does not cause any issues.
 
 // Example: Style from medium breakpoint and down
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(medium) {
   .custom-class {
     display: block;
   }
@@ -139,15 +145,16 @@ These mixins take those declared breakpoints, subtract `.02px` from them, and us
 There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
 
 ```scss
-@include media-breakpoint-only(xs) { ... }
-@include media-breakpoint-only(sm) { ... }
-@include media-breakpoint-only(md) { ... }
-@include media-breakpoint-only(lg) { ... }
-@include media-breakpoint-only(xl) { ... }
-@include media-breakpoint-only(xxl) { ... }
+@include media-breakpoint-only(xsmall) { ... }
+@include media-breakpoint-only(small) { ... }
+@include media-breakpoint-only(medium) { ... }
+@include media-breakpoint-only(large) { ... }
+@include media-breakpoint-only(xlarge) { ... }
+@include media-breakpoint-only(2xlarge) { ... }
+// Note that the `2xlarge` argument is treated as a string in Sass, which ensures it does not cause any issues.
 ```
 
-For example the `@include media-breakpoint-only(md) { ... }` will result in :
+For example the `@include media-breakpoint-only(medium) { ... }` will result in :
 
 ```scss
 @media (min-width: 768px) and (max-width: 991.98px) { ... }
@@ -158,7 +165,7 @@ For example the `@include media-breakpoint-only(md) { ... }` will result in :
 Similarly, media queries may span multiple breakpoint widths:
 
 ```scss
-@include media-breakpoint-between(md, xl) { ... }
+@include media-breakpoint-between(medium, xlarge) { ... }
 ```
 
 Which results in:

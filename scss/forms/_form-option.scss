@@ -10,7 +10,7 @@
   @include map-line-height($input-medium-font, form-option);
   min-height: $form-option-min-height;
   padding-left: var(--#{$prefix}padding-s);
-  margin-bottom: $form-option-margin-bottom;
+  margin: $form-option-margin-y 0;
   @include font-size();
   @include line-height();
 

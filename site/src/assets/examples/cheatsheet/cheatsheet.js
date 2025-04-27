@@ -1,4 +1,4 @@
-/* global bootstrap: false */
+/* global chassis: false */
 
 (() => {
   'use strict'
@@ -6,19 +6,19 @@
   // Tooltip and popover demos
   document.querySelectorAll('.tooltip-demo')
     .forEach(tooltip => {
-      new bootstrap.Tooltip(tooltip, {
-        selector: '[data-bs-toggle="tooltip"]'
+      new chassis.Tooltip(tooltip, {
+        selector: '[data-cx-toggle="tooltip"]'
       })
     })
 
-  document.querySelectorAll('[data-bs-toggle="popover"]')
+  document.querySelectorAll('[data-cx-toggle="popover"]')
     .forEach(popover => {
-      new bootstrap.Popover(popover)
+      new chassis.Popover(popover)
     })
 
   document.querySelectorAll('.toast')
     .forEach(toastNode => {
-      const toast = new bootstrap.Toast(toastNode, {
+      const toast = new chassis.Toast(toastNode, {
         autohide: false
       })
 
@@ -40,13 +40,13 @@
       return
     }
 
-    const link = document.querySelector(`.bd-aside a[href="${hash}"]`)
+    const link = document.querySelector(`.cxd-aside a[href="${hash}"]`)
 
     if (!link) {
       return
     }
 
-    const active = document.querySelector('.bd-aside .active')
+    const active = document.querySelector('.cxd-aside .active')
     const parent = link.parentNode.parentNode.previousElementSibling
 
     link.classList.add('active')

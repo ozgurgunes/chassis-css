@@ -42,3 +42,7 @@ export function processMarkdownToHtml(markdown: string): string {
   const result = remark().use(remarkHtml).processSync(markdown)
   return result.toString()
 }
+
+export function titleCase(str: string) {
+  return str.replace(/\w\S*/g, (text) => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase())
+}

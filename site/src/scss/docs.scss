@@ -1,6 +1,7 @@
+// $prefix: cx- !default;
 /*!
- * Bootstrap Docs (https://getbootstrap.com/)
- * Copyright 2011-2025 The Bootstrap Authors
+ * Chassis - CSS Docs (https://ozgurgunes.github.io/chassis-css//)
+ * Copyright 2025 Chassis
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
@@ -9,35 +10,46 @@
 //
 // Background information on nomenclature and architecture decisions here.
 //
-// - Bootstrap functions, variables, and mixins are included for easy reuse.
-//   Doing so gives us access to the same core utilities provided by Bootstrap.
+// - Chassis - CSS functions, variables, and mixins are included for easy reuse.
+//   Doing so gives us access to the same core utilities provided by Chassis - CSS.
 //   For example, consistent media queries through those mixins.
 //
-// - Bootstrap's **docs variables** are prefixed with `$bd-`.
-//   These custom colors avoid collision with the components Bootstrap provides.
+// - Chassis - CSS's **docs variables** are prefixed with `$cxd-`.
+//   These custom colors avoid collision with the components Chassis - CSS provides.
 //
-// - Classes are prefixed with `.bd-`.
+// - Classes are prefixed with `.cxd-`.
 //   These classes indicate custom-built or modified components for the design
-//   and layout of the Bootstrap docs. They are not included in our builds.
+//   and layout of the Chassis - CSS docs. They are not included in our builds.
 //
-// Happy Bootstrapping!
+// Happy Chassis - CSSing!
 
-// Load Bootstrap variables and mixins
-@import "../../../scss/functions";
-@import "../../../scss/variables";
-@import "../../../scss/mixins";
-
+// Load Chassis - CSS variables and mixins
+//@import "../../../node_modules/chassis-css/scss/functions";
 // fusv-disable
 $enable-grid-classes: false;
 $enable-cssgrid: true;
+//@import "colors";
+// @import "../../../chassis-tokens/dist/tokens/web/chassis_docs_light";
+
+@import "../../../scss/vendor";
+@import "../../../scss/functions";
+@import "../../../scss/tokens";
+@import "../../../scss/variables";
+@import "../../../scss/maps";
+@import "../../../scss/mixins";
 // fusv-enable
+
+
+//@import "imports";
+@import "variables";
+@import "fonts";
+
 @import "../../../scss/grid";
 
 // Load docs components
-@import "variables";
+//@import "colors";
 @import "navbar";
 @import "masthead";
-@import "ads";
 @import "content";
 @import "skippy";
 @import "sidebar";
@@ -45,10 +57,13 @@ $enable-cssgrid: true;
 @import "toc";
 @import "footer";
 @import "component-examples";
+@import "context";
+@import "color-palette";
 @import "buttons";
 @import "callouts";
 @import "brand";
 @import "colors";
+@import "icons";
 @import "clipboard-js";
 @import "placeholder-img";
 @import "scrolling";
@@ -56,3 +71,11 @@ $enable-cssgrid: true;
 // Load docs dependencies
 @import "syntax";
 @import "anchor";
+
+// stylelint-disable
+// $prefix: cx;
+:export {
+  colorDefaul: $cx-color-base-light-default-base-color;
+  colorPrimary: $cx-color-base-light-primary-base-color;
+}
+// stylelint-enable

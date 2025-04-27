@@ -23,7 +23,28 @@ const dataDefinitions = {
       container: zPxSizeOrEmpty
     })
     .array(),
-  colors: zNamedHexColors(13),
+  'basic-opacities': z
+    .object({
+      name: z.string()
+    })
+    .array(),
+  colors: zNamedHexColors(7),
+  'color-values': z
+    .object({
+      name: z.string()
+    })
+    .array(),
+  'context-colors': z
+    .object({
+      name: z.string(),
+      hex: zHexColor,
+      contrast_color: z.union([z.literal('black'), z.literal('white')]).optional()
+    })
+    .array()
+    .transform((val) => {
+      // Add a `title` property to each theme color object being the capitalized version of the `name` property.
+      return val.map((contextColor) => ({ ...contextColor, title: capitalizeFirstLetter(contextColor.name) }))
+    }),
   'core-team': z
     .object({
       name: z.string(),
@@ -53,7 +74,7 @@ const dataDefinitions = {
         .array()
     })
     .array(),
-  grays: zNamedHexColors(9),
+  grays: zNamedHexColors(11),
   icons: z.object({
     preferred: z
       .object({
@@ -88,17 +109,11 @@ const dataDefinitions = {
         .optional()
     })
     .array(),
-  'theme-colors': z
+  'token-opacities': z
     .object({
-      name: z.string(),
-      hex: zHexColor,
-      contrast_color: z.union([z.literal('dark'), z.literal('white')]).optional()
+      name: z.string()
     })
-    .array()
-    .transform((val) => {
-      // Add a `title` property to each theme color object being the capitalized version of the `name` property.
-      return val.map((themeColor) => ({ ...themeColor, title: capitalizeFirstLetter(themeColor.name) }))
-    }),
+    .array(),
   translations: z
     .object({
       name: z.string(),

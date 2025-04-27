@@ -1,30 +1,37 @@
-.bd-gutter {
-  --bs-gutter-x: #{$bd-gutter-x};
+.cxd-gutter {
+  --cx-gutter-x: #{$cxd-gutter-x};
 }
 
-.bd-layout {
+.cxd-layout {
+  padding: 1rem !important;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(large) {
     display: grid;
     grid-template-areas: "sidebar main";
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1.5fr 6.5fr;
     gap: $grid-gutter-width;
+    padding: 0 1rem !important;
+    margin: 0 auto;
   }
 }
 
-.bd-sidebar {
+.cxd-sidebar {
   grid-area: sidebar;
 }
 
-.bd-main {
+.cxd-intro {
+  margin-top: 1rem;
+}
+
+.cxd-main {
   grid-area: main;
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(large) {
     max-width: 760px;
     margin-inline: auto;
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(medium) {
     display: grid;
     grid-template-areas:
       "intro"
@@ -34,7 +41,7 @@
     gap: inherit;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(large) {
     grid-template-areas:
       "intro   toc"
       "content toc";
@@ -43,15 +50,15 @@
   }
 }
 
-.bd-intro {
+.cxd-intro {
   grid-area: intro;
 }
 
-.bd-toc {
+.cxd-toc {
   grid-area: toc;
 }
 
-.bd-content {
+.cxd-content {
   grid-area: content;
-  min-width: 1px; // Fix width when bd-content contains a `<pre>` https://github.com/twbs/bootstrap/issues/25410
+  min-width: 1px; // Fix width when cxd-content contains a `<pre>` https://github.com/ozgurgunes/chassis-css/issues/25410
 }

@@ -20,7 +20,7 @@ These styles can be found within `_reboot.scss`, and the global variables are de
 
 ### Design tokens
 
-Most of above settings are under direct control of designer by using design tokens. Check [Design Tokens]({{< docsref "/introduction/design-tokens" >}}) page for more information.
+Most of above settings are under direct control of designer by using design tokens. Check [Design Tokens]({{< docsref "/core-concepts/design-tokens" >}}) page for more information.
 
 ## Headings
 
@@ -277,7 +277,7 @@ In Chassis - CSS, responsive font sizes enabled by default, allowing text to sca
 
 ## CSS
 
-Chassis - CSS is based on design tokens, means most of css variables and properties are under direct control of design team. Check [design tokens documentation]({{< docsref "/introduction/design-tokens" >}}) for more information.
+Chassis - CSS is based on design tokens, means most of css variables and properties are under direct control of design team. Check [design tokens documentation]({{< docsref "/core-concepts/design-tokens" >}}) for more information.
 
 
 ### Sass Variables

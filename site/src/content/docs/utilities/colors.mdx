@@ -10,67 +10,81 @@ import { getData } from '@libs/data'
 
 ## Colors
 
-Colorize text with color utilities. If you want to colorize links, you can use the [`.link-*` helper classes]([[docsref:/helpers/colored-links]]) which have `:hover` and `:focus` states.
+Colorize text with color utilities. If you want to colorize links, you can use the [`.link-*` utility classes]([[docsref:/utilities/link]]) which have `:hover`, `:focus` `:active` and  `:visited` states.
 
-<Callout>
-Color utilities like `.text-*` that generated from our original `$theme-colors` Sass map don’t yet respond to color modes, however, any `.text-*-emphasis` utility will. This will be resolved in v6.
-</Callout>
+### Body Colors
 
-<Example code={[
-  ...getData('theme-colors').map((themeColor) => `<p class="text-${themeColor.name}${themeColor.contrast_color ? ` bg-${themeColor.contrast_color}` : ``}">.text-${themeColor.name}</p>
-<p class="text-${themeColor.name}-emphasis">.text-${themeColor.name}-emphasis</p>`),
-  `
-<p class="text-body">.text-body</p>
-<p class="text-body-emphasis">.text-body-emphasis</p>
-<p class="text-body-secondary">.text-body-secondary</p>
-<p class="text-body-tertiary">.text-body-tertiary</p>
+Body colors use `default` context palette.
 
-<p class="text-black bg-white">.text-black</p>
-<p class="text-white bg-dark">.text-white</p>
-<p class="text-black-50 bg-white">.text-black-50</p>
-<p class="text-white-50 bg-dark">.text-white-50</p>`
-]} />
 
-<Callout type="warning">
-**Deprecation:** With the addition of `.text-opacity-*` utilities and CSS variables for text utilities, `.text-black-50` and `.text-white-50` are deprecated as of v5.1.0. They’ll be removed in v6.0.0.
-</Callout>
+<Example code={`<p class="fg-main">.fg-main</p>
+<p class="fg-subtle">.fg.subtle</p>
+<p class="fg-slight">.fg-slight</p>
+<p class="fg-inverse bg-inverse">.fg-inverse</p>
+<p class="fg-highlight">.fg-highlight</p>`} />
 
-<Callout type="warning">
-**Deprecation:** With the addition of the expanded theme colors and variables, the `.text-muted` utility has been deprecated as of v5.3.0. Its default value has also been reassigned to the new `--bs-secondary-color` CSS variable to better support color modes. It will be removed in v6.0.0.
-</Callout>
+### Colored Texts
+
+Base **context colors** can be used as foreground color with `.fg-*` classes.
+
+<Example code={[...getData('context-colors').map((color) => `<p class="fg-${color.name} bg-contrast">.fg-${color.name}</p>`)]} />
+
+### Context Colors
+
+Body colors are available for every **context color**.
+
+<Example code={`<p class="primary-fg-main">.primary-fg-main</p>
+<p class="primary-fg-subtle">.primary-fg.subtle</p>
+<p class="primary-fg-slight">.primary-fg-slight</p>
+<p class="primary-fg-inverse primary-bg-inverse">.primary-fg-inverse</p>
+<p class="primary-fg-highlight">.primary-fg-highlight</p>`} />
 
 ## Opacity
-
-<AddedIn version="5.1.0" />
-
-As of v5.1.0, text color utilities are generated with Sass using CSS variables. This allows for real-time color changes without compilation and dynamic alpha transparency changes.
+Using CSS variables for `color` utilities allows for real-time color changes without compilation and dynamic alpha transparency changes.
 
 ### How it works
 
-Consider our default `.text-primary` utility.
+Consider our default `.fg-primary` utility.
 
 ```css
-.text-primary {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+.fg-primary {
+  color: rgba(var(--cx-primary-rgb), var(--cx-fg-opacity, 1)) !important;
+}
+.fg-opacity-50 {
+  --cx-fg-opacity: var(--cx-opacity-50);
 }
 ```
 
-We use an RGB version of our `--bs-primary` (with the value of `13, 110, 253`) CSS variable and attached a second CSS variable, `--bs-text-opacity`, for the alpha transparency (with a default value `1` thanks to a local CSS variable). That means anytime you use `.text-primary` now, your computed `color` value is `rgba(13, 110, 253, 1)`. The local CSS variable inside each `.text-*` class avoids inheritance issues so nested instances of the utilities don’t automatically have a modified alpha transparency.
+We use an RGB version of our `--cx-primary` (with the value of `255, 91, 20`) CSS variable and attached a second CSS variable, `--cx-fg-opacity`, for the alpha transparency (with a default value `1`). That means anytime you use `.fg-primary` now, your computed `color` value is `rgba(255, 91, 20, 1)`. Then, the opacity class overrides default opacity value of color by adding `--cx-fg-opacity` variable to the element.
 
 ### Example
 
-To change that opacity, override `--bs-text-opacity` via custom styles or inline styles.
+To change that opacity, override `--cx-fg-opacity` via custom styles or inline styles.
 
-<Example code={`<div class="text-primary">This is default primary text</div>
-<div class="text-primary" style="--bs-text-opacity: .5;">This is 50% opacity primary text</div>`} />
+<Example code={`<div class="fg-primary">This is default primary text</div>
+<div style="--cx-fg-opacity: .6;" class="fg-primary">This is 60% opacity primary text</div>`} />
 
-Or, choose from any of the `.text-opacity` utilities:
+Or, choose from any of the `.fg-opacity-*` utilities:
 
-<Example code={`<div class="text-primary">This is default primary text</div>
-<div class="text-primary text-opacity-75">This is 75% opacity primary text</div>
-<div class="text-primary text-opacity-50">This is 50% opacity primary text</div>
-<div class="text-primary text-opacity-25">This is 25% opacity primary text</div>`} />
+<Example code={[...getData('basic-opacities').map((opacity) => `<p class="fg-primary fg-opacity-${opacity.name}">This is -opacity-${opacity.name} primary text</p>`)]} />
+
+### Context Opacity
+
+You can directly apply a **context opacity** utility to match `fg-*` colors:
+
+<Example code={`<div class="fg-primary fg-opacity-subtle p-2xsmall">This is <code>fg-subtle</code> primary success text</div>
+<div class="fg-primary fg-opacity-slight p-2xsmall">This is <code>fg-slight</code> primary success text</div>`} />
+
+## Reset color
+
+Reset a text or link's color with `.fg-reset`, so that it inherits the color from its parent.
+
+<Example code={`<p class="fg-subtle">
+    Secondary body text with a <a href="#" class="fg-reset">reset link</a>.
+  </p>
+  <p class="fg-subtle">
+    Secondary body text with a <a href="#">normal link</a>.
+  </p>`} />
 
 ## Specificity
 
@@ -78,54 +92,36 @@ Sometimes contextual classes cannot be applied due to the specificity of another
 
 ## CSS
 
-In addition to the following Sass functionality, consider reading about our included [CSS custom properties]([[docsref:/customize/css-variables]]) (aka CSS variables) for colors and more.
+<DocsCSS />
+
+### Variables
+
+<DocsCSSVars />
 
 ### Sass variables
 
-Most `color` utilities are generated by our theme colors, reassigned from our generic color palette variables.
+<DocsSASSVars />
 
-<ScssDocs name="color-variables" file="scss/_variables.scss" />
+Most `color` utilities are generated by [context colors]([[docsref:/customize/color]]), reassigned from our generic color palette variables.
 
-<ScssDocs name="theme-color-variables" file="scss/_variables.scss" />
+<ScssDocs name="context-color-variables" file="scss/tokens/_colors.scss" />
 
-Grayscale colors are also available, but only a subset are used to generate any utilities.
+### Sass Maps
 
-<ScssDocs name="gray-color-variables" file="scss/_variables.scss" />
+Color utilities are generated from Sass maps using [utilities API]([[docsref:/utilities/api]]).
 
-<ScssDocs name="theme-text-map" file="scss/_maps.scss" />
+<ScssDocs name="context-colors-map" file="scss/maps/_colors.scss" />
 
-Variables for setting colors in `.text-*-emphasis` utilities in light and dark mode:
+<ScssDocs name="fg-opacities-map" file="scss/maps/_opacities.scss" />
 
-<ScssDocs name="theme-text-variables" file="scss/_variables.scss" />
+### Utilities API
 
-<ScssDocs name="theme-text-dark-variables" file="scss/_variables-dark.scss" />
+Icon utilities are generated using [utilities API]([[docsref:/utilities/api]]).
 
-### Sass maps
+<ScssDocs name="utils-fg-color" file="scss/utilities/_index.scss" />
 
-Theme colors are then put into a Sass map so we can loop over them to generate our utilities, component modifiers, and more.
+### Helpers
 
-<ScssDocs name="theme-colors-map" file="scss/_variables.scss" />
+Context palette `.*-fg-color` classes created in helpers.
 
-Grayscale colors are also available as a Sass map. **This map is not used to generate any utilities.**
-
-<ScssDocs name="gray-colors-map" file="scss/_variables.scss" />
-
-RGB colors are generated from a separate Sass map:
-
-<ScssDocs name="theme-colors-rgb" file="scss/_maps.scss" />
-
-Color opacities build on that with their own map that’s consumed by the utilities API:
-
-<ScssDocs name="utilities-text-colors" file="scss/_maps.scss" />
-
-Color mode adaptive text colors are also available as a Sass map:
-
-<ScssDocs name="theme-text-map" file="scss/_maps.scss" />
-
-<ScssDocs name="theme-text-dark-map" file="scss/_maps.scss" />
-
-### Sass utilities API
-
-Color utilities are declared in our utilities API in `scss/_utilities.scss`. [Learn how to use the utilities API.]([[docsref:/utilities/api#using-the-api]])
-
-<ScssDocs name="utils-color" file="scss/_utilities.scss" />
+<ScssDocs name="fg-color-helper" file="scss/helpers/_context.scss" />

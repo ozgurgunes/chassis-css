@@ -2,16 +2,16 @@
 // Callouts
 //
 
-.bd-callout {
-  --#{$prefix}link-color-rgb: var(--bd-callout-link);
-  --#{$prefix}code-color: var(--bd-callout-code-color);
+.cxd-callout {
+  --#{$prefix}link-color-rgb: var(--cxd-callout-link);
+  --#{$prefix}code-color: var(--cxd-callout-code-color);
 
   padding: 1.25rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  color: var(--bd-callout-color, inherit);
-  background-color: var(--bd-callout-bg, var(--bs-gray-100));
-  border-left: .25rem solid var(--bd-callout-border, var(--bs-gray-300));
+  color: var(--cxd-callout-color, inherit);
+  background-color: var(--cxd-callout-bg, var(--cx-gray-100));
+  border-left: .25rem solid var(--cxd-callout-border, var(--cx-gray-300));
 
   h4 {
     margin-bottom: .25rem;
@@ -21,7 +21,7 @@
     margin-bottom: 0;
   }
 
-  + .bd-callout {
+  + .cxd-callout {
     margin-top: -.25rem;
   }
 
@@ -31,10 +31,10 @@
 }
 
 // Variations
-@each $variant in $bd-callout-variants {
-  .bd-callout-#{$variant} {
-    --bd-callout-color: var(--bs-#{$variant}-text-emphasis);
-    --bd-callout-bg: var(--bs-#{$variant}-bg-subtle);
-    --bd-callout-border: var(--bs-#{$variant}-border-subtle);
+@each $variant in $cxd-callout-variants {
+  .cxd-callout-#{$variant} {
+    --cxd-callout-color: var(--cx-#{$variant}-fg-main);
+    --cxd-callout-bg: var(--cx-#{$variant}-bg-even);
+    --cxd-callout-border: var(--cx-#{$variant}-border-subtle);
   }
 }

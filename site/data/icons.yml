@@ -1,4 +1,6 @@
 preferred:
+  - name: Bootstrap
+    website: https://icons.getbootstrap.com/
   - name: Font Awesome
     website: https://fontawesome.com/
   - name: Feather

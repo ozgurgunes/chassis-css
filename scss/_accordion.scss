@@ -3,7 +3,7 @@
 //
 
 .accordion {
-
+  // scss-docs-start accordion-css-vars
   --#{$prefix}border-width: var(--#{$prefix}accordion-border-width, #{$accordion-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}accordion-border-radius, #{$accordion-border-radius});
   --#{$prefix}box-radius: var(--#{$prefix}accordion-box-radius, #{$accordion-box-radius});
@@ -54,7 +54,7 @@
     --#{$prefix}body-padding-x: var(--#{$prefix}accordion-small-body-padding-x, #{$accordion-small-body-padding-x});
     --#{$prefix}indicator-size: var(--#{$prefix}accordion-small-indicator-size, #{$accordion-small-indicator-size});
   }
-
+  // scss-docs-end accordion-css-vars
   > details {
 
     color: var(--#{$prefix}fg-color);

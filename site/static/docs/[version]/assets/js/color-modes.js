@@ -1,6 +1,6 @@
 /*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2025 The Bootstrap Authors
+ * Color mode toggler for Chassis's docs (https://getchassis.com/)
+ * Copyright 2011-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  */
 
@@ -21,35 +21,35 @@
 
   const setTheme = theme => {
     if (theme === 'auto') {
-      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+      document.documentElement.setAttribute('data-cx-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
     } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
+      document.documentElement.setAttribute('data-cx-theme', theme)
     }
   }
 
   setTheme(getPreferredTheme())
 
   const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#bd-theme')
+    const themeSwitcher = document.querySelector('#cxd-theme')
 
     if (!themeSwitcher) {
       return
     }
 
-    const themeSwitcherText = document.querySelector('#bd-theme-text')
+    const themeSwitcherText = document.querySelector('#cxd-theme-text')
     const activeThemeIcon = document.querySelector('.theme-icon-active use')
-    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-    const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+    const buttonToActive = document.querySelector(`[data-cx-theme-value="${theme}"]`)
+    const svgOfActiveButton = buttonToActive.querySelector('svg use').getAttribute('href')
 
-    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+    document.querySelectorAll('[data-cx-theme-value]').forEach(element => {
       element.classList.remove('active')
       element.setAttribute('aria-pressed', 'false')
     })
 
-    btnToActive.classList.add('active')
-    btnToActive.setAttribute('aria-pressed', 'true')
-    activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
+    buttonToActive.classList.add('active')
+    buttonToActive.setAttribute('aria-pressed', 'true')
+    activeThemeIcon.setAttribute('href', svgOfActiveButton)
+    const themeSwitcherLabel = `${themeSwitcherText.textContent} (${buttonToActive.dataset.cxThemeValue})`
     themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
 
     if (focus) {
@@ -67,10 +67,10 @@
   window.addEventListener('DOMContentLoaded', () => {
     showActiveTheme(getPreferredTheme())
 
-    document.querySelectorAll('[data-bs-theme-value]')
+    document.querySelectorAll('[data-cx-theme-value]')
       .forEach(toggle => {
         toggle.addEventListener('click', () => {
-          const theme = toggle.getAttribute('data-bs-theme-value')
+          const theme = toggle.getAttribute('data-cx-theme-value')
           setStoredTheme(theme)
           setTheme(theme)
           showActiveTheme(theme, true)

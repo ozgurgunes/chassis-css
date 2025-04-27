@@ -191,7 +191,7 @@ For longer content, you can add a `.text-truncate` class to truncate the text wi
 
 ## CSS
 
-Chassis - CSS is based on design tokens, means most of css variables and properties are under direct control of design team. Check [design tokens documentation]({{< docsref "/introduction/design-tokens" >}}) for more information.
+Chassis - CSS is based on design tokens, means most of css variables and properties are under direct control of design team. Check [design tokens documentation]({{< docsref "/core-concepts/design-tokens" >}}) for more information.
 
 ### Sass variables
 

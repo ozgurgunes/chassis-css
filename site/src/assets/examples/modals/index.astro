@@ -30,19 +30,19 @@ export const extra_css = ['modals.css']
   </symbol>
 </svg>
 
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+<div class="modal modal-sheet position-static d-block bg-even p-large py-medium-5" tabindex="-1" role="dialog" id="modalSheet">
   <div class="modal-dialog">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header border-bottom-0">
         <h1 class="modal-title fs-5">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close-button" data-cx-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
         <p>This is a modal sheet, a variation of the modal that docs itself to the bottom of the viewport like the newer share sheets in iOS.</p>
       </div>
-      <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
-        <button type="button" class="btn btn-lg btn-primary">Save changes</button>
-        <button type="button" class="btn btn-lg btn-secondary" data-bs-dismiss="modal">Close</button>
+      <div class="modal-footer flex-column align-items-stretch w-100 gap-xsmall pb-medium border-top-0">
+        <button type="button" class="button large primary">Save changes</button>
+        <button type="button" class="button large secondary" data-cx-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -50,16 +50,16 @@ export const extra_css = ['modals.css']
 
 <div class="b-example-divider"></div>
 
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalChoice">
+<div class="modal modal-sheet position-static d-block bg-even p-large py-medium-5" tabindex="-1" role="dialog" id="modalChoice">
   <div class="modal-dialog">
     <div class="modal-content rounded-3 shadow">
-      <div class="modal-body p-4 text-center">
+      <div class="modal-body p-large text-center">
         <h5 class="mb-0">Enable this setting?</h5>
         <p class="mb-0">You can always change your mind in your account settings.</p>
       </div>
       <div class="modal-footer flex-nowrap p-0">
-        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end"><strong>Yes, enable</strong></button>
-        <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0" data-bs-dismiss="modal">No thanks</button>
+        <button type="button" class="button large link fs-6 text-decoration-none col-6 py-medium m-0 rounded-0 border-end"><strong>Yes, enable</strong></button>
+        <button type="button" class="button large link fs-6 text-decoration-none col-6 py-medium m-0 rounded-0" data-cx-dismiss="modal">No thanks</button>
       </div>
     </div>
   </div>
@@ -67,28 +67,28 @@ export const extra_css = ['modals.css']
 
 <div class="b-example-divider"></div>
 
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+<div class="modal modal-sheet position-static d-block bg-even p-large py-medium-5" tabindex="-1" role="dialog" id="modalTour">
   <div class="modal-dialog">
     <div class="modal-content rounded-4 shadow">
-      <div class="modal-body p-5">
+      <div class="modal-body p-xlarge">
         <h2 class="fw-bold mb-0">What's new</h2>
 
-        <ul class="d-grid gap-4 my-5 list-unstyled small">
-          <li class="d-flex gap-4">
-            <svg class="bi text-body-secondary flex-shrink-0" width="48" height="48" aria-hidden="true"><use xlink:href="#grid-fill"/></svg>
+        <ul class="d-grid gap-large my-xlarge list-unstyled small">
+          <li class="d-flex gap-large">
+            <svg class="bi fg-subtle flex-shrink-0" width="48" height="48" aria-hidden="true"><use xlink:href="#grid-fill"/></svg>
             <div>
               <h5 class="mb-0">Grid view</h5>
               Not into lists? Try the new grid view.
             </div>
           </li>
-          <li class="d-flex gap-4">
+          <li class="d-flex gap-large">
             <svg class="bi text-warning flex-shrink-0" width="48" height="48" aria-hidden="true"><use xlink:href="#bookmark-star"/></svg>
             <div>
               <h5 class="mb-0">Bookmarks</h5>
               Save items you love for easy access later.
             </div>
           </li>
-          <li class="d-flex gap-4">
+          <li class="d-flex gap-large">
             <svg class="bi text-primary flex-shrink-0" width="48" height="48" aria-hidden="true"><use xlink:href="#film"/></svg>
             <div>
               <h5 class="mb-0">Video embeds</h5>
@@ -96,7 +96,7 @@ export const extra_css = ['modals.css']
             </div>
           </li>
         </ul>
-        <button type="button" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Great, thanks!</button>
+        <button type="button" class="button large primary mt-xlarge w-100" data-cx-dismiss="modal">Great, thanks!</button>
       </div>
     </div>
   </div>
@@ -104,38 +104,38 @@ export const extra_css = ['modals.css']
 
 <div class="b-example-divider"></div>
 
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+<div class="modal modal-sheet position-static d-block bg-even p-large py-medium-5" tabindex="-1" role="dialog" id="modalSignin">
   <div class="modal-dialog">
     <div class="modal-content rounded-4 shadow">
-      <div class="modal-header p-5 pb-4 border-bottom-0">
+      <div class="modal-header p-xlarge pb-large border-bottom-0">
         <h1 class="fw-bold mb-0 fs-2">Sign up for free</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close-button" data-cx-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <div class="modal-body p-5 pt-0">
+      <div class="modal-body p-xlarge pt-0">
         <form class="">
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-medium">
             <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
           </div>
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-medium">
             <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
           </div>
-          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
-          <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-          <hr class="my-4">
-          <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
-          <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-            <svg class="bi me-1" width="16" height="16" aria-hidden="true"><use xlink:href="#google"/></svg>
+          <button class="w-100 mb-xsmall button large rounded-3 primary" type="submit">Sign up</button>
+          <small class="fg-subtle">By clicking Sign up, you agree to the terms of use.</small>
+          <hr class="my-large">
+          <h2 class="fs-5 fw-bold mb-medium">Or use a third-party</h2>
+          <button class="w-100 py-xsmall mb-xsmall button outline secondary rounded-3" type="submit">
+            <svg class="bi me-2xsmall" width="16" height="16" aria-hidden="true"><use xlink:href="#google"/></svg>
             Sign up with Google
           </button>
-          <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
-            <svg class="bi me-1" width="16" height="16" aria-hidden="true"><use xlink:href="#facebook"/></svg>
+          <button class="w-100 py-xsmall mb-xsmall button outline-primary rounded-3" type="submit">
+            <svg class="bi me-2xsmall" width="16" height="16" aria-hidden="true"><use xlink:href="#facebook"/></svg>
             Sign up with Facebook
           </button>
-          <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
-            <svg class="bi me-1" width="16" height="16" aria-hidden="true"><use xlink:href="#github"/></svg>
+          <button class="w-100 py-xsmall mb-xsmall button outline secondary rounded-3" type="submit">
+            <svg class="bi me-2xsmall" width="16" height="16" aria-hidden="true"><use xlink:href="#github"/></svg>
             Sign up with GitHub
           </button>
         </form>

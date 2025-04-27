@@ -1,6 +1,6 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
-import { getVersionedBsJsProps } from '@libs/bootstrap'
+import { getVersionedCxJsProps } from '@libs/chassis'
 import { getConfig } from '@libs/config'
 import type { ExampleFrontmatter } from '@libs/examples'
 import { getVersionedDocsPath } from '@libs/path'
@@ -20,7 +20,7 @@ const htmlProps: HTMLAttributes<'html'> = direction === 'rtl' ? { lang: 'ar', di
 ---
 
 <!DOCTYPE html>
-<html {...htmlProps} class:list={html_class} data-bs-theme="auto">
+<html {...htmlProps} class:list={html_class} data-cx-theme="auto">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,7 +37,7 @@ const htmlProps: HTMLAttributes<'html'> = direction === 'rtl' ? { lang: 'ar', di
     <Favicons />
 
     <style is:global>
-      .bd-placeholder-img {
+      .cxd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
@@ -46,7 +46,7 @@ const htmlProps: HTMLAttributes<'html'> = direction === 'rtl' ? { lang: 'ar', di
       }
 
       @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
+        .cxd-placeholder-img-large {
           font-size: 3.5rem;
         }
       }
@@ -89,33 +89,33 @@ const htmlProps: HTMLAttributes<'html'> = direction === 'rtl' ? { lang: 'ar', di
         -webkit-overflow-scrolling: touch;
       }
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      .button-cxd-primary {
+        --cxd-violet-bg: #712cf9;
+        --cxd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
+        --cx-button-font-weight: 600;
+        --cx-button-color: var(--cx-white);
+        --cx-button-bg: var(--cxd-violet-bg);
+        --cx-button-border-color: var(--cxd-violet-bg);
+        --cx-button-hover-color: var(--cx-white);
+        --cx-button-hover-bg: #6528e0;
+        --cx-button-hover-border-color: #6528e0;
+        --cx-button-focus-shadow-rgb: var(--cxd-violet-rgb);
+        --cx-button-active-color: var(--cx-button-hover-color);
+        --cx-button-active-bg: #5a23c8;
+        --cx-button-active-border-color: #5a23c8;
       }
 
-      .bd-mode-toggle {
+      .cxd-mode-toggle {
         z-index: 1500;
       }
 
-      .bd-mode-toggle .bi {
+      .cxd-mode-toggle .bi {
         width: 1em;
         height: 1em;
       }
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
+      .cxd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
     </style>
@@ -125,7 +125,7 @@ const htmlProps: HTMLAttributes<'html'> = direction === 'rtl' ? { lang: 'ar', di
   <body class:list={body_class}>
     <Icons />
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <div class="dropdown position-fixed bottom-0 end-0 mb-medium me-medium cxd-mode-toggle">
       <ThemeToggler layout="examples" />
     </div>
 
@@ -134,7 +134,7 @@ const htmlProps: HTMLAttributes<'html'> = direction === 'rtl' ? { lang: 'ar', di
     {
       include_js !== false && (
         <Fragment>
-          <script is:inline {...getVersionedBsJsProps()} />
+          <script is:inline {...getVersionedCxJsProps()} />
           {extra_js?.map((js) => (
             <script
               is:inline

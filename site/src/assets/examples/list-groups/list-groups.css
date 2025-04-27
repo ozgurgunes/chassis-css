@@ -4,59 +4,59 @@
   margin-inline: 1.5rem;
 }
 
-.form-check-input:checked + .form-checked-content {
+.option-input:checked + .form-optioned-content {
   opacity: .5;
 }
 
-.form-check-input-placeholder {
+.option-input-placeholder {
   border-style: dashed;
 }
 [contenteditable]:focus {
   outline: 0;
 }
 
-.list-group-checkable .list-group-item {
+.list-group-checkable .list-item {
   cursor: pointer;
 }
-.list-group-item-check {
+.list-item-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
-.list-group-item-check:hover + .list-group-item {
-  background-color: var(--bs-secondary-bg);
+.list-item-check:hover + .list-item {
+  background-color: var(--cx-secondary-bg);
 }
-.list-group-item-check:checked + .list-group-item {
+.list-item-check:checked + .list-item {
   color: #fff;
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
+  background-color: var(--cx-primary);
+  border-color: var(--cx-primary);
 }
-.list-group-item-check[disabled] + .list-group-item,
-.list-group-item-check:disabled + .list-group-item {
+.list-item-check[disabled] + .list-item,
+.list-item-check:disabled + .list-item {
   pointer-events: none;
   filter: none;
   opacity: .5;
 }
 
-.list-group-radio .list-group-item {
+.list-group-radio .list-item {
   cursor: pointer;
   border-radius: .5rem;
 }
-.list-group-radio .form-check-input {
+.list-group-radio .option-input {
   z-index: 2;
   margin-top: -.5em;
 }
-.list-group-radio .list-group-item:hover,
-.list-group-radio .list-group-item:focus {
-  background-color: var(--bs-secondary-bg);
+.list-group-radio .list-item:hover,
+.list-group-radio .list-item:focus {
+  background-color: var(--cx-secondary-bg);
 }
 
-.list-group-radio .form-check-input:checked + .list-group-item {
-  background-color: var(--bs-body);
-  border-color: var(--bs-primary);
-  box-shadow: 0 0 0 2px var(--bs-primary);
+.list-group-radio .option-input:checked + .list-item {
+  background-color: var(--cx-body);
+  border-color: var(--cx-primary);
+  box-shadow: 0 0 0 2px var(--cx-primary);
 }
-.list-group-radio .form-check-input[disabled] + .list-group-item,
-.list-group-radio .form-check-input:disabled + .list-group-item {
+.list-group-radio .option-input[disabled] + .list-item,
+.list-group-radio .option-input:disabled + .list-item {
   pointer-events: none;
   filter: none;
   opacity: .5;

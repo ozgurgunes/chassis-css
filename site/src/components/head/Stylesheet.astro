@@ -1,5 +1,5 @@
 ---
-import { getVersionedBsCssProps } from '@libs/bootstrap'
+import { getVersionedCxCssProps } from '@libs/chassis'
 import type { Layout } from '@libs/layout'
 
 interface Props {
@@ -10,4 +10,5 @@ interface Props {
 const { direction } = Astro.props
 ---
 
-<link {...getVersionedBsCssProps(direction)} />
+<link {...getVersionedCxCssProps(direction)} />
+<link rel="stylesheet" href="/icons/chassis-icons.min.css"} />

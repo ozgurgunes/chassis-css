@@ -2,14 +2,16 @@
 // Footer
 //
 
-.bd-footer {
+.cxd-footer {
+  // margin-top: 0 !important;
+  margin-top: 4rem;
   a {
-    color: var(--bs-body-color);
+    color: var(--cx-fg-color);
     text-decoration: none;
 
     &:hover,
     &:focus {
-      color: var(--bs-link-hover-color);
+      color: var(--cx-hover-color);
       text-decoration: underline;
     }
   }

@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config'
-
-import { bootstrap } from './src/libs/astro'
+import { chassis } from './src/libs/astro'
 import { getConfig } from './src/libs/config'
 import { algoliaPlugin } from './src/plugins/algolia-plugin'
 import { stackblitzPlugin } from './src/plugins/stackblitz-plugin'
@@ -21,7 +20,7 @@ export default defineConfig({
   build: {
     assets: `docs/${getConfig().docs_version}/assets`
   },
-  integrations: [bootstrap()],
+  integrations: [chassis()],
   markdown: {
     smartypants: false,
     syntaxHighlight: 'prism'

@@ -1,6 +1,6 @@
 /*
- * JavaScript for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2025 The Bootstrap Authors
+ * JavaScript for Chassis's docs (https://getchassis.com/)
+ * Copyright 2011-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */

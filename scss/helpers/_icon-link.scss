@@ -7,10 +7,10 @@
   backface-visibility: hidden;
 
   > .icon {
+    --#{$prefix}icon-color: currentcolor;
     flex-shrink: 0;
     width: $icon-link-icon-size;
     height: $icon-link-icon-size;
-    fill: currentcolor;
     @include transition($icon-link-icon-transition);
   }
 }

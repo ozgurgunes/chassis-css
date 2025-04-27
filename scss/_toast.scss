@@ -32,6 +32,12 @@
   &:not(.show) {
     display: none;
   }
+
+  .close-button {
+    --#{$prefix}fg-color: var(--#{$prefix}header-fg-color);
+    margin-right: #{calc(-.5 * var(--#{$prefix}padding-x))};
+    margin-left: var(--#{$prefix}space-xsmall);
+  }
 }
 
 .toast-container {
@@ -57,12 +63,6 @@
   background-clip: padding-box;
   border-bottom: var(--#{$prefix}border-width) solid var(--#{$prefix}header-border-color);
   @include border-top-radius(calc(var(--#{$prefix}border-radius) - var(--#{$prefix}border-width)));
-
-  .close-button {
-    --#{$prefix}fg-color: var(--#{$prefix}header-fg-color);
-    margin-right: #{calc(-.5 * var(--#{$prefix}padding-x))};
-    margin-left: var(--#{$prefix}space-xsmall);
-  }
 }
 
 .toast-body {

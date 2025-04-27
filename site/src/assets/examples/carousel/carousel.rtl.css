@@ -5,7 +5,7 @@
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: rgb(var(--bs-tertiary-color-rgb));
+  color: rgb(var(--cx-tertiary-color-rgb));
 }
 
 
@@ -32,11 +32,11 @@ body {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
+.marketing .col-large-4 {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-.marketing .col-lg-4 p {
+.marketing .col-large-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
@@ -46,7 +46,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 5rem 0; /* Space out the Chassis <hr> more */
 }
 
 /* Thin out the marketing headings */

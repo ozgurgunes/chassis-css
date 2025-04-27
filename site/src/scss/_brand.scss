@@ -3,25 +3,25 @@
 //
 
 // Logo series wrapper
-.bd-brand-logos {
-  color: $bd-violet;
+.cxd-brand-logos {
+  color: $cxd-subtle;
 
   .inverse {
     color: $white;
-    background-color: $bd-violet;
+    background-color: $cxd-subtle;
   }
 }
 
 // Individual items
-.bd-brand-item {
-  + .bd-brand-item {
-    border-top: 1px solid var(--bs-border-color);
+.cxd-brand-item {
+  + .cxd-brand-item {
+    border-top: 1px solid var(--cx-border-color);
   }
 
-  @include media-breakpoint-up(md) {
-    + .bd-brand-item {
+  @include media-breakpoint-up(medium) {
+    + .cxd-brand-item {
       border-top: 0;
-      border-left: 1px solid var(--bs-border-color);
+      border-left: 1px solid var(--cx-border-color);
     }
   }
 }
@@ -35,16 +35,16 @@
   margin: 0 -5px;
 
   // Docs colors
-  .bd-purple {
-    background-color: $bd-purple;
+  .cxd-main {
+    background-color: $cxd-main;
   }
-  .bd-purple-light {
-    background-color: $bd-purple-light;
+  .cxd-main-light {
+    background-color: $cxd-main-light;
   }
-  .bd-purple-lighter {
+  .cxd-main-lighter {
     background-color: #e5e1ea;
   }
-  .bd-gray {
+  .cxd-gray {
     background-color: #f9f9f9;
   }
 }
@@ -53,7 +53,7 @@
   width: 4rem;
   height: 4rem;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(medium) {
     width: 6rem;
     height: 6rem;
   }

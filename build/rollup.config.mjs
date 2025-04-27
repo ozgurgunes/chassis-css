@@ -53,7 +53,7 @@ const rollupConfig = {
 }
 
 if (!ESM) {
-  rollupConfig.output.name = 'chassis'
+  rollupConfig.output.name = 'chassis-css'
 }
 
 export default rollupConfig

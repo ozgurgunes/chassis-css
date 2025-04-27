@@ -1,0 +1,18 @@
+---
+import Code from '@shortcodes/Code.astro'
+---
+
+<p>
+  Chassis - CSS components <a href="https://www.w3.org/TR/css-variables-1/#example-c3e4e8d9">dynamically redefine</a> body-level CSS variables within their own scope. This approach allows for effortless adjustments across size and color variants, providing greater design flexibility while minimizing file size by avoiding redundant declarations.
+</p>
+<p>Example:</p>
+<Code lang="css" code={`:root {
+--cx-fg-color: var(--cx-fg-main);
+}
+body {
+  color: var(--cx-body-fg-color, var(--cx-fg-color));
+}
+.component {
+--cx-fg-color: var(--cx-component-fg-color, var(--cx-fg-main));
+color: var(--cx-fg-color);
+}`}/>

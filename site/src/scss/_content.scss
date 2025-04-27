@@ -1,12 +1,13 @@
 //
-// Bootstrap docs content theming
+// Chassis - CSS docs content theming
 //
 
-.bd-content {
+.cxd-content {
+  padding-bottom: 2rem;
   > h2,
   > h3,
   > h4 {
-    --bs-heading-color: var(--bs-emphasis-color);
+    --cx-heading-color: var(--cx-fg-main);
   }
 
   // Offset content from fixed navbar when jumping to headings
@@ -30,16 +31,16 @@
     // stylelint-enable selector-max-type, selector-max-compound-selectors
   }
 
-  // Override Bootstrap defaults
+  // Override Chassis - CSS defaults
   > .table,
   > .table-responsive .table {
-    --bs-table-border-color: var(--bs-border-color);
+    // --cx-table-border-color: var(--cx-border-color);
 
     max-width: 100%;
     margin-bottom: 1.5rem;
-    @include font-size(.875rem);
+    font-size: .875rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(large) {
       &.table-bordered {
         border: 0;
       }
@@ -65,11 +66,11 @@
     }
 
     th {
-      color: var(--bs-emphasis-color);
+      color: var(--cx-fg-main);
     }
 
     strong {
-      color: var(--bs-emphasis-color);
+      color: var(--cx-fg-main);
     }
 
     // Prevent breaking of code
@@ -93,27 +94,25 @@
 
 .table-swatches {
   th {
-    color: var(--bs-emphasis-color);
+    color: var(--cx-fg-main);
   }
 
   td code {
     white-space: nowrap;
   }
-
-  // Astro HTML parser adds extra <p> tags to the content
-  td p {
-    margin: 0;
-  }
 }
 
-.bd-title {
-  --bs-heading-color: var(--bs-emphasis-color);
-  @include font-size(3rem);
+.cxd-title {
+  --cx-heading-color: var(--cx-fg-main);
+  --cx-fony-size: 3rem;
 }
 
-.bd-subtitle {
-  @include font-size(1.5rem);
-  font-weight: 300;
+.cxd-lead {
+  // @include map-font($lead-font);
+  // @include font();
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  font-family: var(--cx-font-family-display) !important;
 }
 
 .bi {
@@ -123,45 +122,45 @@
   fill: currentcolor;
 }
 
-.border-lg-start {
-  @include media-breakpoint-up(lg) {
-    border-left: var(--bs-border-width) solid var(--bs-border-color);
+.border-large-start {
+  @include media-breakpoint-up(large) {
+    border-left: var(--cx-border-width) solid var(--cx-border-color);
   }
 }
 
 // stylelint-disable selector-no-qualifying-type
-.bd-summary-link {
-  color: var(--bs-link-color);
+.cxd-summary-link {
+  color: var(--cx-link-color);
 
   &:hover,
   details[open] > & {
-    color: var(--bs-link-hover-color);
+    color: var(--cx-hover-color);
   }
 }
 // stylelint-enable selector-no-qualifying-type
 
 // scss-docs-start custom-color-mode
-[data-bs-theme="blue"] {
-  --bs-body-color: var(--bs-white);
-  --bs-body-color-rgb: #{to-rgb($white)};
-  --bs-body-bg: var(--bs-blue);
-  --bs-body-bg-rgb: #{to-rgb($blue)};
-  --bs-tertiary-bg: #{$blue-600};
+[data-cx-theme="blue"] {
+  --cx-fg-color: var(--cx-white);
+  --cx-fg-color-rgb: #{to-rgb($white)};
+  --cx-bg-color: var(--cx-blue);
+  --cx-bg-color-rgb: #{to-rgb($blue)};
+  --cx-tertiary-bg: #{$blue-600};
 
   .dropdown-menu {
-    --bs-dropdown-bg: #{mix($blue-500, $blue-600)};
-    --bs-dropdown-link-active-bg: #{$blue-700};
+    --cx-dropdown-bg: #{mix($blue-500, $blue-600)};
+    --cx-dropdown-link-active-bg: #{$blue-700};
   }
 
-  .btn-secondary {
-    --bs-btn-bg: #{mix($gray-600, $blue-400, .5)};
-    --bs-btn-border-color: #{rgba($white, .25)};
-    --bs-btn-hover-bg: #{darken(mix($gray-600, $blue-400, .5), 5%)};
-    --bs-btn-hover-border-color: #{rgba($white, .25)};
-    --bs-btn-active-bg: #{darken(mix($gray-600, $blue-400, .5), 10%)};
-    --bs-btn-active-border-color: #{rgba($white, .5)};
-    --bs-btn-focus-border-color: #{rgba($white, .5)};
-    --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+  .button-secondary {
+    --cx-button-bg: #{mix($gray-600, $blue-400, .5%)};
+    --cx-button-border-color: #{rgba($white, .25)};
+    --cx-button-hover-bg: #{darken(mix($gray-600, $blue-400, .5%), 5%)};
+    --cx-button-hover-border-color: #{rgba($white, .25)};
+    --cx-button-active-bg: #{darken(mix($gray-600, $blue-400, .5%), 10%)};
+    --cx-button-active-border-color: #{rgba($white, .5)};
+    --cx-button-focus-border-color: #{rgba($white, .5)};
+    --cx-button-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
   }
 }
 // scss-docs-end custom-color-mode

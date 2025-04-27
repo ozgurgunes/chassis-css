@@ -18,8 +18,8 @@ const docsrefRegExp = /\[\[docsref:(?<path>[\w\.\/#-]+)]]/g
 // Note: this also works in frontmatter.
 // Note: this plugin is meant to facilitate the migration from Hugo to Astro while keeping the differences to a minimum.
 // At some point, this plugin should maybe be removed and embrace a more MDX-friendly syntax.
-export const remarkBsConfig: Plugin<[], Root> = function () {
-  return function remarkBsConfigPlugin(ast, file) {
+export const remarkCxConfig: Plugin<[], Root> = function () {
+  return function remarkCxConfigPlugin(ast, file) {
     if (containsFrontmatter(file.data.astro)) {
       replaceInFrontmatter(file.data.astro.frontmatter, replaceConfigInText)
     }
@@ -62,8 +62,8 @@ export const remarkBsConfig: Plugin<[], Root> = function () {
 // Note: this also works in frontmatter.
 // Note: this plugin is meant to facilitate the migration from Hugo to Astro while keeping the differences to a minimum.
 // At some point, this plugin should maybe be removed and embrace a more MDX-friendly syntax.
-export const remarkBsDocsref: Plugin<[], Root> = function () {
-  return function remarkBsDocsrefPlugin(ast, file) {
+export const remarkCxDocsref: Plugin<[], Root> = function () {
+  return function remarkCxDocsrefPlugin(ast, file) {
     if (containsFrontmatter(file.data.astro)) {
       replaceInFrontmatter(file.data.astro.frontmatter, replaceDocsrefInText)
     }

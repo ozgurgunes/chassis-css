@@ -5,31 +5,31 @@
 // ++++++++++++++++++++++++++++++++++++++++++
 
 /*
- * JavaScript for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2025 The Bootstrap Authors
+ * JavaScript for Chassis's docs (https://getchassis.com/)
+ * Copyright 2011-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global bootstrap: false */
+/* global chassis: false */
 
 export default () => {
   // --------
   // Tooltips
   // --------
   // Instantiate all tooltips in a docs or StackBlitz
-  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  document.querySelectorAll('[data-cx-toggle="tooltip"]')
     .forEach(tooltip => {
-      new bootstrap.Tooltip(tooltip)
+      new chassis.Tooltip(tooltip)
     })
 
   // --------
   // Popovers
   // --------
   // Instantiate all popovers in docs or StackBlitz
-  document.querySelectorAll('[data-bs-toggle="popover"]')
+  document.querySelectorAll('[data-cx-toggle="popover"]')
     .forEach(popover => {
-      new bootstrap.Popover(popover)
+      new chassis.Popover(popover)
     })
 
   // -------------------------------
@@ -48,9 +48,9 @@ export default () => {
   }
 
   // Instantiate all toasts in docs pages only
-  document.querySelectorAll('.bd-example .toast')
+  document.querySelectorAll('.cxd-example .toast')
     .forEach(toastNode => {
-      const toast = new bootstrap.Toast(toastNode, {
+      const toast = new chassis.Toast(toastNode, {
         autohide: false
       })
 
@@ -59,58 +59,58 @@ export default () => {
 
   // Instantiate all toasts in docs pages only
   // js-docs-start live-toast
-  const toastTrigger = document.getElementById('liveToastBtn')
+  const toastTrigger = document.getElementById('liveToastButton')
   const toastLiveExample = document.getElementById('liveToast')
 
   if (toastTrigger) {
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    const toastChassis = chassis.Toast.getOrCreateInstance(toastLiveExample)
     toastTrigger.addEventListener('click', () => {
-      toastBootstrap.show()
+      toastChassis.show()
     })
   }
   // js-docs-end live-toast
 
   // -------------------------------
-  // Alerts
+  // Notifications
   // -------------------------------
-  // Used in 'Show live alert' example in docs or StackBlitz
+  // Used in 'Show live notification' example in docs or StackBlitz
 
-  // js-docs-start live-alert
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-  const appendAlert = (message, type) => {
+  // js-docs-start live-notification
+  const notificationPlaceholder = document.getElementById('liveNotificationPlaceholder')
+  const appendNotification = (message, type) => {
     const wrapper = document.createElement('div')
     wrapper.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `<div class="notification ${type} dismissible" role="alert">`,
       `   <div>${message}</div>`,
-      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '   <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>',
       '</div>'
     ].join('')
 
-    alertPlaceholder.append(wrapper)
+    notificationPlaceholder.append(wrapper)
   }
 
-  const alertTrigger = document.getElementById('liveAlertBtn')
-  if (alertTrigger) {
-    alertTrigger.addEventListener('click', () => {
-      appendAlert('Nice, you triggered this alert message!', 'success')
+  const notificationTrigger = document.getElementById('liveNotificationButton')
+  if (notificationTrigger) {
+    notificationTrigger.addEventListener('click', () => {
+      appendNotification('Nice, you triggered this notification message!', 'success')
     })
   }
-  // js-docs-end live-alert
+  // js-docs-end live-notification
 
   // --------
   // Carousels
   // --------
   // Instantiate all non-autoplaying carousels in docs or StackBlitz
-  document.querySelectorAll('.carousel:not([data-bs-ride="carousel"])')
+  document.querySelectorAll('.carousel:not([data-cx-ride="carousel"])')
     .forEach(carousel => {
-      bootstrap.Carousel.getOrCreateInstance(carousel)
+      chassis.Carousel.getOrCreateInstance(carousel)
     })
 
   // -------------------------------
   // Checks & Radios
   // -------------------------------
   // Indeterminate checkbox example in docs and StackBlitz
-  document.querySelectorAll('.bd-example-indeterminate [type="checkbox"]')
+  document.querySelectorAll('.cxd-example-indeterminate [type="checkbox"]')
     .forEach(checkbox => {
       if (checkbox.id.includes('Indeterminate')) {
         checkbox.indeterminate = true
@@ -121,7 +121,7 @@ export default () => {
   // Links
   // -------------------------------
   // Disable empty links in docs examples only
-  document.querySelectorAll('.bd-content [href="#"]')
+  document.querySelectorAll('.cxd-content [href="#"]')
     .forEach(link => {
       link.addEventListener('click', event => {
         event.preventDefault()
@@ -132,35 +132,35 @@ export default () => {
   // Modal
   // -------------------------------
   // Modal 'Varying modal content' example in docs and StackBlitz
-  // js-docs-start varying-modal-content
+  // js-docs-start varying-modal-window
   const exampleModal = document.getElementById('exampleModal')
   if (exampleModal) {
-    exampleModal.addEventListener('show.bs.modal', event => {
+    exampleModal.addEventListener('show.cx.modal', event => {
       // Button that triggered the modal
       const button = event.relatedTarget
-      // Extract info from data-bs-* attributes
-      const recipient = button.getAttribute('data-bs-whatever')
+      // Extract info from data-cx-* attributes
+      const recipient = button.getAttribute('data-cx-whatever')
       // If necessary, you could initiate an Ajax request here
       // and then do the updating in a callback.
 
       // Update the modal's content.
       const modalTitle = exampleModal.querySelector('.modal-title')
-      const modalBodyInput = exampleModal.querySelector('.modal-body input')
+      const modalBodyInput = exampleModal.querySelector('.modal-content input')
 
       modalTitle.textContent = `New message to ${recipient}`
       modalBodyInput.value = recipient
     })
   }
-  // js-docs-end varying-modal-content
+  // js-docs-end varying-modal-window
 
   // -------------------------------
   // Offcanvas
   // -------------------------------
   // 'Offcanvas components' example in docs only
-  const myOffcanvas = document.querySelectorAll('.bd-example-offcanvas .offcanvas')
+  const myOffcanvas = document.querySelectorAll('.cxd-example-offcanvas .offcanvas')
   if (myOffcanvas) {
     myOffcanvas.forEach(offcanvas => {
-      offcanvas.addEventListener('show.bs.offcanvas', event => {
+      offcanvas.addEventListener('show.cx.offcanvas', event => {
         event.preventDefault()
       }, false)
     })

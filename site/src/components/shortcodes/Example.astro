@@ -53,19 +53,19 @@ markup = replacePlaceholdersInHtml(markup)
 
 const simplifiedMarkup = markup
   .replace(
-    /<svg.*class="bd-placeholder-img(?:-lg)?(?: *?bd-placeholder-img-lg)? ?(.*?)".*?<\/svg>/g,
+    /<svg.*class="cxd-placeholder-image(?:-large)?(?: *?cxd-placeholder-image-large)? ?(.*?)".*?<\/svg>/g,
     (match, classes) => `<img src="..."${classes ? ` class="${classes}"` : ''} alt="...">`
   )
   .replace(
-    /<img.*class="bd-placeholder-img(?:-lg)?(?: *?bd-placeholder-img-lg)? ?(.*?)".*?>/g,
+    /<img.*class="cxd-placeholder-image(?:-large)?(?: *?cxd-placeholder-image-large)? ?(.*?)".*?>/g,
     (match, classes) => `<img src="..."${classes ? ` class="${classes}"` : ''} alt="...">`
   )
 ---
 
-<div class="bd-example-snippet bd-code-snippet">
+<div class="cxd-example-snippet cxd-code-snippet">
   {
     showPreview && (
-      <div id={id} class:list={['bd-example m-0 border-0', className]}>
+      <div id={id} class:list={['cxd-example m-0 border-0', className]}>
         <Fragment set:html={markup} />
       </div>
     )
@@ -75,12 +75,12 @@ const simplifiedMarkup = markup
     showMarkup && (
       <>
         {showPreview && (
-          <div class="d-flex align-items-center highlight-toolbar ps-3 pe-2 py-1 border-0 border-top border-bottom">
-            <small class="font-monospace text-body-secondary text-uppercase">{lang}</small>
+          <div class="d-flex align-items-center highlight-toolbar ps-medium pe-xsmall py-2xsmall border-0 border-top border-bottom">
+            <small class="font-monospace fg-subtle text-uppercase">{lang}</small>
             <div class="d-flex ms-auto">
               <button
                 type="button"
-                class="btn-edit text-nowrap"
+                class="button-edit text-nowrap"
                 title="Try it on StackBlitz"
                 data-sb-js-snippet={addStackblitzJs ? true : undefined}
               >
@@ -88,7 +88,7 @@ const simplifiedMarkup = markup
                   <use xlink:href="#lightning-charge-fill" />
                 </svg>
               </button>
-              <button type="button" class="btn-clipboard mt-0 me-0" title="Copy to clipboard">
+              <button type="button" class="button-clipboard mt-0 me-0" title="Copy to clipboard">
                 <svg class="bi" aria-hidden="true">
                   <use xlink:href="#clipboard" />
                 </svg>

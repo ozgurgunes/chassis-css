@@ -229,7 +229,7 @@ Importing Chassis - CSS into Webpack requires the loaders we installed in the fi
    import '../scss/styles.scss'
 
    // Import all of Chassis - CSS's JS
-   import * as chassis from 'chassis'
+   import * as chassis from 'chassis-css'
    ```
 
    You can also import JavaScript plugins individually as needed to keep bundle sizes down:
@@ -239,7 +239,7 @@ Importing Chassis - CSS into Webpack requires the loaders we installed in the fi
    import Alert from 'chassis/js/dist/alert'
 
    // or, specify which plugins you need:
-   import { Tooltip, Toast, Popover } from 'chassis'
+   import { Tooltip, Toast, Popover } from 'chassis-css'
    ```
 
    *[Read our JavaScript docs]({{< docsref "/getting-started/javascript/" >}}) for more information on how to use Chassis - CSS's plugins.*

@@ -1,11 +1,11 @@
 ---
-title: Bootstrap and Webpack
-description: The official guide for how to include and bundle Bootstrap’s CSS and JavaScript in your project using Webpack.
+title: Chassis - CSS and Webpack
+description: The official guide for how to include and bundle Chassis - CSS’s CSS and JavaScript in your project using Webpack.
 toc: true
-thumbnail: guides/bootstrap-webpack@2x.png
+thumbnail: guides/chassis-webpack@2x.png
 ---
 
-<img class="d-block mx-auto mb-4 img-fluid rounded-3" srcset="/docs/[[config:docs_version]]/assets/img/guides/bootstrap-webpack.png, /docs/[[config:docs_version]]/assets/img/guides/bootstrap-webpack@2x.png 2x" src="/docs/[[config:docs_version]]/assets/img/guides/bootstrap-webpack.png" width="800" height="400" alt=""/>
+<img class="d-block mx-auto mb-large img-fluid rounded-3" srcset="/docs/[[config:docs_version]]/assets/img/guides/chassis-webpack.png, /docs/[[config:docs_version]]/assets/img/guides/chassis-webpack@2x.png 2x" src="/docs/[[config:docs_version]]/assets/img/guides/chassis-webpack.png" width="800" height="400" alt=""/>
 
 <Callout>
 **Want to skip to the end?** Download the source code and working demo for this guide from the [twbs/examples repository](https://github.com/twbs/examples/tree/main/webpack). You can also [open the example in StackBlitz](https://stackblitz.com/github/twbs/examples/tree/main/webpack?file=index.html) for live editing.
@@ -17,7 +17,7 @@ thumbnail: guides/bootstrap-webpack@2x.png
 
 ## Setup
 
-We’re building a Webpack project with Bootstrap from scratch, so there are some prerequisites and upfront steps before we can really get started. This guide requires you to have Node.js installed and some familiarity with the terminal.
+We’re building a Webpack project with Chassis - CSS from scratch, so there are some prerequisites and upfront steps before we can really get started. This guide requires you to have Node.js installed and some familiarity with the terminal.
 
 1. **Create a project folder and set up npm.** We'll create the `my-project` folder and initialize npm with the `-y` argument to avoid it asking us all the interactive questions.
 
@@ -32,19 +32,19 @@ We’re building a Webpack project with Bootstrap from scratch, so there are som
    npm i --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
    ```
 
-3. **Install Bootstrap.** Now we can install Bootstrap. We'll also install Popper since our dropdowns, popovers, and tooltips depend on it for their positioning. If you don’t plan on using those components, you can omit Popper here.
+3. **Install Chassis.** Now we can install Chassis. We'll also install Popper since our dropdowns, popovers, and tooltips depend on it for their positioning. If you don’t plan on using those components, you can omit Popper here.
 
    ```sh
-   npm i --save bootstrap @popperjs/core
+   npm i --save chassis-css @popperjs/core
    ```
 
-4. **Install additional dependencies.** In addition to Webpack and Bootstrap, we need a few more dependencies to properly import and bundle Bootstrap’s CSS and JS with Webpack. These include Sass, some loaders, and Autoprefixer.
+4. **Install additional dependencies.** In addition to Webpack and Chassis, we need a few more dependencies to properly import and bundle Chassis - CSS’s CSS and JS with Webpack. These include Sass, some loaders, and Autoprefixer.
 
    ```sh
    npm i --save-dev autoprefixer css-loader postcss-loader sass sass-loader style-loader
    ```
 
-Now that we have all the necessary dependencies installed, we can get to work creating the project files and importing Bootstrap.
+Now that we have all the necessary dependencies installed, we can get to work creating the project files and importing Chassis.
 
 ## Project structure
 
@@ -110,18 +110,18 @@ With dependencies installed and our project folder ready for us to start coding,
      <head>
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>Bootstrap w/ Webpack</title>
+       <title>Chassis - CSS w/ Webpack</title>
      </head>
      <body>
-       <div class="container py-4 px-3 mx-auto">
-         <h1>Hello, Bootstrap and Webpack!</h1>
-         <button class="btn btn-primary">Primary button</button>
+       <div class="container py-large px-medium mx-auto">
+         <h1>Hello, Chassis - CSS and Webpack!</h1>
+         <button class="button primary">Primary button</button>
        </div>
      </body>
    </html>
    ```
 
-   We’re including a little bit of Bootstrap styling here with the `div class="container"` and `<button>` so that we see when Bootstrap’s CSS is loaded by Webpack.
+   We’re including a little bit of Chassis - CSS styling here with the `div class="container"` and `<button>` so that we see when Chassis - CSS’s CSS is loaded by Webpack.
 
 3. **Now we need an npm script to run Webpack.** Open `package.json` and add the `start` script shown below (you should already have the test script). We'll use this script to start our local Webpack dev server. You can also add a `build` script shown below to build your project.
 
@@ -145,11 +145,11 @@ With dependencies installed and our project folder ready for us to start coding,
 
    <img class="img-fluid" src="/docs/[[config:docs_version]]/assets/img/guides/webpack-dev-server.png" alt="Webpack dev server running"/>
 
-In the next and final section to this guide, we'll set up the Webpack loaders and import all of Bootstrap’s CSS and JavaScript.
+In the next and final section to this guide, we'll set up the Webpack loaders and import all of Chassis - CSS’s CSS and JavaScript.
 
-## Import Bootstrap
+## Import Chassis
 
-Importing Bootstrap into Webpack requires the loaders we installed in the first section. We’ve installed them with npm, but now Webpack needs to be configured to use them.
+Importing Chassis - CSS into Webpack requires the loaders we installed in the first section. We’ve installed them with npm, but now Webpack needs to be configured to use them.
 
 1. **Set up the loaders in `webpack.config.js`.** Your configuration file is now complete and should match the snippet below. The only new part here is the `module` section.
 
@@ -223,43 +223,43 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
 
    Here’s a recap of why we need all these loaders. `style-loader` injects the CSS into a `<style>` element in the `<head>` of the HTML page, `css-loader` helps with using `@import` and `url()`, `postcss-loader` is required for Autoprefixer, and `sass-loader` allows us to use Sass.
 
-   **Note:** Sass deprecation warnings are shown when compiling source Sass files with the latest versions of Dart Sass. This does not prevent compilation or usage of Bootstrap. We’re [working on a long-term fix]([[config:repo]]/issues/40962), but in the meantime these deprecation notices can be ignored.
+   **Note:** Sass deprecation warnings are shown when compiling source Sass files with the latest versions of Dart Sass. This does not prevent compilation or usage of Chassis. We’re [working on a long-term fix]([[config:repo]]/issues/40962), but in the meantime these deprecation notices can be ignored.
 
-2. **Now, let’s import Bootstrap’s CSS.** Add the following to `src/scss/styles.scss` to import all of Bootstrap’s source Sass.
+2. **Now, let’s import Chassis - CSS’s CSS.** Add the following to `src/scss/styles.scss` to import all of Chassis - CSS’s source Sass.
 
    ```scss
-   // Import all of Bootstrap’s CSS
-   @import "bootstrap/scss/bootstrap";
+   // Import all of Chassis - CSS’s CSS
+   @import "chassis-css/scss/chassis";
    ```
 
    *You can also import our stylesheets individually if you want. [Read our Sass import docs]([[docsref:/customize/sass#importing]]) for details.*
 
-3. **Next we load the CSS and import Bootstrap’s JavaScript.** Add the following to `src/js/main.js` to load the CSS and import all of Bootstrap’s JS. Popper will be imported automatically through Bootstrap.
+3. **Next we load the CSS and import Chassis - CSS’s JavaScript.** Add the following to `src/js/main.js` to load the CSS and import all of Chassis - CSS’s JS. Popper will be imported automatically through Chassis.
 
    ```js
    // Import our custom CSS
    import '../scss/styles.scss'
 
-   // Import all of Bootstrap’s JS
-   import * as bootstrap from 'bootstrap'
+   // Import all of Chassis - CSS’s JS
+   import * as chassis from 'chassis-css'
    ```
 
    You can also import JavaScript plugins individually as needed to keep bundle sizes down:
 
    ```js
-   import Alert from 'bootstrap/js/dist/alert'
+   import Alert from 'chassis-css/js/dist/alert'
 
    // or, specify which plugins you need:
-   import { Tooltip, Toast, Popover } from 'bootstrap'
+   import { Tooltip, Toast, Popover } from 'chassis-css'
    ```
 
-   *[Read our JavaScript docs]([[docsref:/getting-started/javascript/]]) for more information on how to use Bootstrap’s plugins.*
+   *[Read our JavaScript docs]([[docsref:/getting-started/javascript/]]) for more information on how to use Chassis - CSS’s plugins.*
 
-4. **And you’re done! 🎉** With Bootstrap’s source Sass and JS fully loaded, your local development server should now look like this:
+4. **And you’re done! 🎉** With Chassis - CSS’s source Sass and JS fully loaded, your local development server should now look like this:
 
-   <img class="img-fluid" src="/docs/[[config:docs_version]]/assets/img/guides/webpack-dev-server-bootstrap.png" alt="Webpack dev server running with Bootstrap"/>
+   <img class="img-fluid" src="/docs/[[config:docs_version]]/assets/img/guides/webpack-dev-server-chassis.png" alt="Webpack dev server running with Chassis"/>
 
-   Now you can start adding any Bootstrap components you want to use. Be sure to [check out the complete Webpack example project](https://github.com/twbs/examples/tree/main/webpack) for how to include additional custom Sass and optimize your build by importing only the parts of Bootstrap’s CSS and JS that you need.
+   Now you can start adding any Chassis - CSS components you want to use. Be sure to [check out the complete Webpack example project](https://github.com/twbs/examples/tree/main/webpack) for how to include additional custom Sass and optimize your build by importing only the parts of Chassis - CSS’s CSS and JS that you need.
 
 ## Production optimizations
 
@@ -322,14 +322,14 @@ After running `npm run build` again, there will be a new file `dist/main.css`, w
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 +    <link rel="stylesheet" href="./main.css">
-     <title>Bootstrap w/ Webpack</title>
+     <title>Chassis - CSS w/ Webpack</title>
    </head>
    <body>
 ```
 
 ### Extracting SVG files
 
-Bootstrap’s CSS includes multiple references to SVG files via inline `data:` URIs. If you define a Content Security Policy for your project that blocks `data:` URIs for images, then these SVG files will not load. You can get around this problem by extracting the inline SVG files using Webpack’s asset modules feature.
+Chassis - CSS’s CSS includes multiple references to SVG files via inline `data:` URIs. If you define a Content Security Policy for your project that blocks `data:` URIs for images, then these SVG files will not load. You can get around this problem by extracting the inline SVG files using Webpack’s asset modules feature.
 
 Configure Webpack to extract inline SVG files like this:
 

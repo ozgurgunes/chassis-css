@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Color
-description: Chassis - CSS uses design tokens for its color definitions. Check out the [design tokens]({{< docsref "introduction/design-tokens" >}}) page to see how to edit design tokens.
+description: Chassis - CSS uses design tokens for its color definitions. Check out the [design tokens]({{< docsref "core-concepts/design-tokens" >}}) page to see how to edit design tokens.
 group: customize
 toc: true
 ---

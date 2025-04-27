@@ -24,23 +24,23 @@ const parentDirectory = id.includes('/') ? id.split('/')[0] : ''
 const bodyProps: LayoutOverridesHTMLAttributes<'body'> = {}
 
 if (frontmatter.toc) {
-  bodyProps['data-bs-spy'] = 'scroll'
-  bodyProps['data-bs-target'] = '#TableOfContents'
+  bodyProps['data-cx-spy'] = 'scroll'
+  bodyProps['data-cx-target'] = '#TableOfContents'
 }
 ---
 
 <BaseLayout {...Astro.props} layout="docs" overrides={{ body: bodyProps }}>
-  <div slot="main" class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
-    <aside class="bd-sidebar">
-      <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+  <div slot="main" class="container-2xlarge cxd-gutter mt-medium my-medium-4 cxd-layout">
+    <aside class="cxd-sidebar">
+      <div class="offcanvas-large offcanvas-start" tabindex="-1" id="cxdSidebar" aria-labelledby="cxdSidebarOffcanvasLabel">
         <div class="offcanvas-header border-bottom">
-          <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">Browse docs</h5>
+          <h5 class="offcanvas-title" id="cxdSidebarOffcanvasLabel">Browse docs</h5>
           <button
             type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
+            class="close-button"
+            data-cx-dismiss="offcanvas"
             aria-label="Close"
-            data-bs-target="#bdSidebar"></button>
+            data-cx-target="#cxdSidebar"></button>
         </div>
 
         <div class="offcanvas-body">
@@ -49,22 +49,22 @@ if (frontmatter.toc) {
       </div>
     </aside>
 
-    <main class="bd-main order-1">
-      <div class="bd-intro pt-2 ps-lg-2">
-        <div class="d-md-flex flex-md-row-reverse align-items-center justify-content-between">
-          <div class="mb-3 mb-md-0 d-flex text-nowrap">
+    <main class="cxd-main order-1">
+      <div class="cxd-intro pt-xsmall ps-large-2">
+        <div class="d-medium-flex flex-medium-row-reverse align-items-center justify-content-between">
+          <div class="mb-medium mb-medium-0 d-flex text-nowrap">
             {
               // This is needed because we want to show the badge if show_badge isn't present or is set to false
               frontmatter.added &&
                 ((frontmatter.added.show_badge !== undefined && frontmatter.added.show_badge === true) ||
                   frontmatter.added.show_badge === undefined) && (
-                  <small class="d-inline-flex px-2 py-1 fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-2">
+                  <small class="d-inline-flex px-xsmall py-2xsmall fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2 me-xsmall">
                     Added in v{frontmatter.added.version}
                   </small>
                 )
             }
             <a
-              class="btn btn-sm btn-bd-light rounded-2"
+              class="button small button-cxd-light rounded-2"
               href={`${getConfig().repo}/blob/v${getConfig().current_version}/site/src/content/${id}`}
               title="View and edit this file on GitHub"
               target="_blank"
@@ -73,9 +73,9 @@ if (frontmatter.toc) {
               View on GitHub
             </a>
           </div>
-          <h1 class="bd-title mb-0" id="content">{frontmatter.title}</h1>
+          <h1 class="cxd-title mb-0" id="content">{frontmatter.title}</h1>
         </div>
-        <div class="bd-subtitle">
+        <div class="cxd-subtitle">
           {frontmatter.description && <Fragment set:html={processMarkdownToHtml(frontmatter.description)} />}
         </div>
         <Ads />
@@ -83,23 +83,23 @@ if (frontmatter.toc) {
 
       {
         frontmatter.toc && headings && (
-          <div class="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+          <div class="cxd-toc mt-medium mb-xlarge my-large-0 mb-large-5 px-xsmall-1 fg-subtle">
             <button
-              class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none"
+              class="button link p-medium-0 mb-xsmall mb-medium-0 text-decoration-none cxd-toc-toggle d-medium-none"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#tocContents"
+              data-cx-toggle="collapse"
+              data-cx-target="#tocContents"
               aria-expanded="false"
               aria-controls="tocContents"
             >
               On this page
-              <svg class="bi d-md-none ms-2" aria-hidden="true">
+              <svg class="bi d-medium-none ms-xsmall" aria-hidden="true">
                 <use xlink:href="#chevron-expand" />
               </svg>
             </button>
-            <strong class="d-none d-md-block h6 my-2 ms-3">On this page</strong>
-            <hr class="d-none d-md-block my-2 ms-3" />
-            <div class="collapse bd-toc-collapse" id="tocContents">
+            <strong class="d-none d-medium-block h6 my-xsmall ms-medium">On this page</strong>
+            <hr class="d-none d-medium-block my-xsmall ms-medium" />
+            <div class="collapse cxd-toc-collapse" id="tocContents">
               <nav id="TableOfContents">
                 <TableOfContents headings={headings} />
               </nav>
@@ -108,12 +108,12 @@ if (frontmatter.toc) {
         )
       }
 
-      <div class="bd-content ps-lg-2">
+      <div class="cxd-content ps-large-2">
         {
           frontmatter.sections && (
             <div class="row g-3">
               {frontmatter.sections.map((section) => (
-                <div class="col-md-6">
+                <div class="col-medium-6">
                   <a
                     class="d-block text-decoration-none"
                     href={getVersionedDocsPath(
@@ -121,7 +121,7 @@ if (frontmatter.toc) {
                     )}
                   >
                     <strong class="d-block h5 mb-0">{section.title}</strong>
-                    <span class="text-secondary">{section.description}</span>
+                    <span class="fg-subtle">{section.description}</span>
                   </a>
                 </div>
               ))}

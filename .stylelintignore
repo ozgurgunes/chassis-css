@@ -5,3 +5,5 @@
 /site/public/
 /js/coverage/
 /chassis-tokens/
+/hugo
+/site

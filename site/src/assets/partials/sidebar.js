@@ -3,16 +3,16 @@
 // ++++++++++++++++++++++++++++++++++++++++++
 
 /*
- * JavaScript for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2025 The Bootstrap Authors
+ * JavaScript for Chassis's docs (https://getchassis.com/)
+ * Copyright 2011-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
 export default () => {
   // Scroll the active sidebar link into view
-  const sidenav = document.querySelector('.bd-sidebar')
-  const sidenavActiveLink = document.querySelector('.bd-links-nav .active')
+  const sidenav = document.querySelector('.cxd-sidebar')
+  const sidenavActiveLink = document.querySelector('.cxd-links-nav .active')
 
   if (!sidenav || !sidenavActiveLink) {
     return
