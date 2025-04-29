@@ -1,12 +1,14 @@
 ---
 import Code from '@shortcodes/Code.astro'
-import * as tableContent from '@shortcodes/TableContent.md'
 
 interface Props {
   /**
    * Any class(es) to be added to the `<table>` element (both in the example and code snippet).
    */
   class?: string
+  theme?: string
+  caption?: string
+  foot?: string
   /**
    * Show a simplified version in the example code snippet by replacing the table content inside `<table>` & `</table>`
    * with `...`.
@@ -15,17 +17,60 @@ interface Props {
   simplified?: boolean
 }
 
-const { class: className, simplified = true } = Astro.props
+const { class: className, theme, caption, foot, simplified = true } = Astro.props
+const tableCaption = caption
+  ? `  <caption>${caption}</caption>
+`
+  : ''
+const tableFoot = foot
+  ? `
+  <tfoot>
+    <tr>
+      <td>Footer 1</td>
+      <td>Footer 2</td>
+      <td>Footer 3</td>
+      <td>Footer 4</td>
+    </tr>
+  </tfoot>`
+  : ''
+const tableContent = `  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>@social</td>
+    </tr>
+  </tbody>`
 
-const tableCode = `<table${className ? ` class="${className}"` : ''}>
-${simplified ? '  ...' : await tableContent.compiledContent()}
+const tableCode = `<table${className ? ` class="${className}"` : ''}${theme ? ` data-cx-theme="${theme}"` : ''}>
+${tableCaption}${simplified ? '  ...' : tableContent}${tableFoot}
 </table>`
 ---
 
 <div class="cxd-example">
-  <table class={className}>
-    <tableContent.Content />
-  </table>
+    <Fragment set:html={`<table class="${className}"${theme ? ` data-cx-theme="${theme}"` : ''}>
+    ${tableCaption + tableContent + tableFoot}
+    </table>`} />
 </div>
 
 <Code code={tableCode} lang="html" />

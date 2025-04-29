@@ -201,7 +201,7 @@
   margin-right: $form-option-inline-margin-end;
 }
 
-.button-check {
+.button-option {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -211,7 +211,7 @@
     + .button {
       pointer-events: none;
       filter: none;
-      opacity: $form-option-button-check-disabled-opacity;
+      opacity: $form-option-button-option-disabled-opacity;
     }
   }
 }

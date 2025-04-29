@@ -1,33 +1,52 @@
 // scss-docs-start fg-color-helper
-@each $name, $value in map-merge($context-fg-colors, $body-fg-colors) {
+@each $name, $value in $context-colors {
+  .fg-#{$name} {
+    @extend %fg-color;
+  }
+}
+@each $name, $value in map-merge-multiple($context-fg-colors, $body-fg-colors, ( "fg-reset": inherit )) {
   .#{$name} {
-    --#{$prefix}fg-color: var(--#{$prefix}#{$name}, $value);
-    color: var(--#{$prefix}#{$name}, $value) if($enable-important-utilities, !important, null);
+    @extend %fg-color;
+    --#{$prefix}fg-color: var(--#{$prefix}#{$name});
   }
 }
 // scss-docs-end fg-color-helper
 // scss-docs-start bg-color-helper
-@each $name, $value in map-merge($context-bg-colors, $body-bg-colors) {
+@each $name, $value in $context-colors {
+  .bg-#{$name} {
+    @extend %bg-color;
+  }
+}
+@each $name, $value in map-merge-multiple($context-bg-colors, $body-bg-colors, ( "bg-transparent": transparent )) {
   .#{$name} {
-    --#{$prefix}bg-color: var(--#{$prefix}#{$name}, $value);
-    background-color: var(--#{$prefix}#{$name}) if($enable-important-utilities, !important, null);
+    @extend %bg-color;
+    --#{$prefix}bg-color: var(--#{$prefix}#{$name});
   }
 }
 // scss-docs-end bg-color-helper
 // scss-docs-start border-color-helper
+// @each $name, $value in $context-colors {
+//   .border-#{$name} {
+//     @extend %border-color;
+//   }
+// }
 @each $name, $value in map-merge($context-border-colors, $body-border-colors) {
   .#{$name} {
+    @extend %border-color;
     --#{$prefix}border-color: var(--#{$prefix}#{$name});
-    border-color: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
   }
 }
 // scss-docs-end border-color-helper
 // // scss-docs-start icon-color-helper
-// @each $name, $value in map-merge($context-icon-colors, $body-icon-colors) {
-//   .#{$name} {
-//     --#{$prefix}icon-color: var(--#{$prefix}#{$name});
-//     color: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
-//     fill: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
-//   }
-// }
+@each $name, $value in $context-colors {
+  .icon-#{$name} {
+    @extend %icon-color;
+  }
+}
+@each $name, $value in map-merge-multiple($context-icon-colors, $body-icon-colors, ( "icon-reset": currentcolor, "icon-transparent": transparent )) {
+  .#{$name} {
+    @extend %icon-color;
+    --#{$prefix}icon-color: var(--#{$prefix}#{$name});
+  }
+}
 // // scss-docs-end icon-color-helper

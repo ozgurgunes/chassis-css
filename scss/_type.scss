@@ -39,7 +39,7 @@
 // Type display classes
 // TODO: Set proper line-height according to font-size.
 @each $display, $font-size in $display-font-sizes {
-  .display-#{$display} {
+  .#{$display} {
     font-family: $display-font-family;
     @include font-size($font-size);
     font-style: $display-font-style;
@@ -73,12 +73,12 @@ ol {
 
     li {
       display: inline-block;
-    
+
       &:not(:last-child) {
         margin-right: $list-inline-padding;
       }
-    }    
-  }    
+    }
+  }
 }
 // stylelint-enable
 
@@ -125,16 +125,19 @@ ol {
 //
 @each $name, $value in $font-sizes {
   .font-#{$name} {
-    @include font-size(var(--#{$prefix}font-size-#{$name}));
-    @include line-height(var(--#{$prefix}line-height-#{$name}));
+    //stylelint-disable-next-line property-disallowed-list
+    font-size: var(--#{$prefix}font-size-#{$name}) if($enable-important-utilities, !important, null);
+    line-height: var(--#{$prefix}line-height-#{$name}) if($enable-important-utilities, !important, null);
   }
 }
 
 .font-smaller {
-  @include font-size($font-size-smaller);
-  @include line-height($line-height-smaller);
+  //stylelint-disable-next-line property-disallowed-list
+  font-size: $font-size-smaller if($enable-important-utilities, !important, null);
+  line-height: $line-height-smaller if($enable-important-utilities, !important, null);
 }
 .font-larger {
-  @include font-size($font-size-larger);
-  @include line-height($line-height-larger);
+  //stylelint-disable-next-line property-disallowed-list
+  font-size: $font-size-larger if($enable-important-utilities, !important, null);
+  line-height: $line-height-larger if($enable-important-utilities, !important, null);
 }

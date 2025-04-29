@@ -100,6 +100,7 @@ $icon-size:         $icon-medium !default;
 $table-cell-padding-y:      $cx-space-common-table-cell-padding-y !default;
 $table-cell-padding-x:      $cx-space-common-table-cell-padding-x !default;
 $table-border-width:        $cx-border-width-common-table !default;
+$table-border-radius:       $cx-border-radius-common-table !default;
 $table-fg-color:            $cx-color-common-table-default-fg-data !default;
 $table-bg-color:            $cx-color-common-table-default-bg-data !default;
 $table-th-fg-color:         $cx-color-common-table-default-fg-head !default;
@@ -109,7 +110,6 @@ $table-active-bg-color:     $cx-color-common-table-default-bg-highlight !default
 // Not exist as CSS
 $table-cell-font:           $cx-font-common-table-data-text !default;
 $table-head-font:           $cx-font-common-table-head-text !default;
-$table-border-radius:       $cx-border-radius-common-table !default;
 $table-indicator-main:      $cx-color-common-table-default-indicator-main !default;
 $table-icon-sort:           $cx-color-common-table-default-obj-sort !default;
 $table-gap:                 $cx-space-common-table-cell-gap !default;

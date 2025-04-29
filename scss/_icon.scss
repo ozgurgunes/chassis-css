@@ -51,7 +51,8 @@ $utilities: () !default;
     (
       // scss-docs-start utils-icons
       "icon-color": (
-        property: (color, fill),
+        css-var: true,
+        css-variable-name: icon-color,
         class: icon,
         values: map-merge(
           map-loop(map-loop($context-colors, to-rgb, "$value"), rgba-css-var, #{"$key"}, #{"icon"}),

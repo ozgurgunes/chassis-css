@@ -23,8 +23,8 @@
   --#{$prefix}fg-subtle: rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-subtle));
   --#{$prefix}fg-slight: rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-slight));
   --#{$prefix}bg-main: var(--#{$prefix}bg-solid);
-  --#{$prefix}bg-even: var(--#{$prefix}bg-inverse);
-  --#{$prefix}bg-evident: var(--#{$prefix}bg-inverse);
+  --#{$prefix}bg-even: var(--#{$prefix}bg-press);
+  --#{$prefix}bg-evident: var(--#{$prefix}bg-hover);
   --#{$prefix}border-main: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-border-main));
   --#{$prefix}border-subtle: rgba(var(--#{$prefix}fg-solid-rgb), var(--#{$prefix}opacity-border-subtle));
   --#{$prefix}icon-main: var(--#{$prefix}fg-solid);
@@ -74,16 +74,18 @@
 // scss-docs-start smooth-style-placeholder-selector
 %smooth-context {
   @extend %basic-context;
-  --#{$prefix}bg-color: var(--#{$prefix}smooth-bg-color, var(--#{$prefix}bg-even));
+  --#{$prefix}bg-main: var(--#{$prefix}bg-even);
+  //--#{$prefix}bg-even: var(--#{$prefix}bg-evident);
+  //--#{$prefix}bg-evident: var(--#{$prefix}bg-disabled);
+  //--#{$prefix}bg-color: var(--#{$prefix}smooth-bg-color, var(--#{$prefix}bg-main));
+  --#{$prefix}border-color: transparent;
   --#{$prefix}icon-color: var(--#{$prefix}smooth-icon-main, var(--#{$prefix}fg-main));
-  --#{$prefix}indicator-color: var(--#{$prefix}smooth-indicator-color, var(--#{$prefix}fg-main));
+  --#{$prefix}indicator-color: var(--#{$prefix}smooth-border-color, var(--#{$prefix}fg-main));
   --#{$prefix}link-color: var(--#{$prefix}smooth-link-color, var(--#{$prefix}fg-main));
   --#{$prefix}bg-color-rgb: var(--#{$prefix}smooth-bg-color-rgb, var(--#{$prefix}bg-even-rgb));
   --#{$prefix}icon-color-rgb: var(--#{$prefix}smooth-icon-color-rgb, var(--#{$prefix}fg-main-rgb));
   --#{$prefix}indicator-color-rgb: var(--#{$prefix}smooth-indicator-color-rgb, var(--#{$prefix}fg-main-rgb));
   --#{$prefix}link-color-rgb: var(--#{$prefix}smooth-link-color-rgb, var(--#{$prefix}fg-main-rgb));
-  // @include body-colors();
-  border: 0;
 }
 // scss-docs-end smooth-style-placeholder-selector
 // scss-docs-start outline-style-placeholder-selector

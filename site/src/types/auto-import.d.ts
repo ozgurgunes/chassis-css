@@ -21,4 +21,5 @@ export declare global {
   export const Placeholder: typeof import('@shortcodes/Placeholder.astro').default
   export const ScssDocs: typeof import('@shortcodes/ScssDocs.astro').default
   export const Table: typeof import('@shortcodes/Table.astro').default
+  export const TableDeep: typeof import('@shortcodes/TableDeep.astro').default
 }

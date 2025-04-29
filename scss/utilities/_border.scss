@@ -41,7 +41,8 @@ $utilities: map-merge(
       )
     ),
     "border-color": (
-      property: border-color,
+      css-var: true,
+      css-variable-name: border-color,
       class: border,
       values: map-loop(map-loop($context-colors, to-rgb, "$value"), rgba-css-var, #{"$key"}, #{"border"})
     ),

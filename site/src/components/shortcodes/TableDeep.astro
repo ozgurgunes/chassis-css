@@ -1,0 +1,88 @@
+---
+import Code from '@shortcodes/Code.astro'
+
+interface Props {
+  /**
+   * Any class(es) to be added to the `<table>` element (both in the example and code snippet).
+   */
+  class?: string
+  head?: string
+  body?: string
+  headRow?: string
+  active?: string
+  code?: boolean
+}
+
+const { class: className, head, body, headRow, active, code = true } = Astro.props
+
+const headCode = headRow
+  ? `<tr class="${headRow}">
+      ...
+    </tr>`
+  : '...'
+const bodyCode = active
+  ? `<tr class="active">
+      ...
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td class="active">Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      ...
+    </tr>`
+  : '...'
+const tableCode = `<table${className ? ` class="${className}"` : ''}>
+  <thead${head ? ` class="${head}"` : ''}>
+    ${headCode}
+  </thead>
+  <tbody${body ? ` class="${body}"` : ''}>
+    ${bodyCode}
+  </tbody>
+</table>`
+---
+
+<Fragment set:html={code == true ? '<div class="cxd-example">' : ''} />
+<Fragment
+  set:html={`<table class="${className}">
+  <thead${head ? ` class="${head}"` : ''}>
+    <tr${headRow ? ` class="${headRow}"` : ''}>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody${body ? ` class="${body}"` : ''}>
+    <tr${active ? ` class="active"` : ''}>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td${active ? ` class="active"` : ''}>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>@social</td>
+    </tr>
+  </tbody>
+</table>`}
+/>
+<Fragment set:html={code == true ? '</div>' : ''} />
+
+{
+  () => {
+    if (code == true) {
+      return <Code code={tableCode} lang="html" />
+    }
+  }
+}

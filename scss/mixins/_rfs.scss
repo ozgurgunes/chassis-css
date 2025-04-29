@@ -277,23 +277,6 @@ $rfs-mq-property-height: if($rfs-mode == max-media-query, max-height, min-height
   @return unquote(str-slice($val, 2));
 }
 
-// RFS funtion
-@function rfs($values) {
-  @if not $enable-rfs {
-    @return $values;
-  }
-  @else if $values != null {
-    $val: rfs-value($values);
-    $fluid-val: rfs-fluid-value($values);
-    @if $val == $fluid-val {
-      @return $val;
-    }
-    @else {
-      @return $fluid-val;
-    }
-  }
-}
-
 // RFS mixin
 @mixin rfs($values, $property: font-size) {
   @if not $enable-rfs {

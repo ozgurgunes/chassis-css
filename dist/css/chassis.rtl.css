@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * Chassis  v0.1.0 (https://ozgurgunes.github.io/chassis-css//)
- * Copyright 2025 Chassis
+ * Chassis - CSS v0.1.0 (https://ozgurgunes.github.io/chassis-css/)
+ * Copyright 2025 Ozgur Gunes
  * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
  */
 :root,
@@ -362,20 +362,20 @@
   --cx-default-fg-highlight-rgb: 0, 115, 143;
   --cx-alternate-fg-highlight: #b3e4f0;
   --cx-alternate-fg-highlight-rgb: 179, 228, 240;
-  --cx-primary-fg-highlight: #00A4CC;
-  --cx-primary-fg-highlight-rgb: 0, 164, 204;
-  --cx-secondary-fg-highlight: #F55200;
-  --cx-secondary-fg-highlight-rgb: 245, 82, 0;
-  --cx-neutral-fg-highlight: #6F8085;
-  --cx-neutral-fg-highlight-rgb: 111, 128, 133;
-  --cx-danger-fg-highlight: #F52314;
-  --cx-danger-fg-highlight-rgb: 245, 35, 20;
-  --cx-success-fg-highlight: #10C263;
-  --cx-success-fg-highlight-rgb: 16, 194, 99;
-  --cx-warning-fg-highlight: #F5A300;
-  --cx-warning-fg-highlight-rgb: 245, 163, 0;
-  --cx-info-fg-highlight: #1414F5;
-  --cx-info-fg-highlight-rgb: 20, 20, 245;
+  --cx-primary-fg-highlight: #00738f;
+  --cx-primary-fg-highlight-rgb: 0, 115, 143;
+  --cx-secondary-fg-highlight: #ac3900;
+  --cx-secondary-fg-highlight-rgb: 172, 57, 0;
+  --cx-neutral-fg-highlight: #4e5a5d;
+  --cx-neutral-fg-highlight-rgb: 78, 90, 93;
+  --cx-danger-fg-highlight: #ac190e;
+  --cx-danger-fg-highlight-rgb: 172, 25, 14;
+  --cx-success-fg-highlight: #0b8845;
+  --cx-success-fg-highlight-rgb: 11, 136, 69;
+  --cx-warning-fg-highlight: #ac7200;
+  --cx-warning-fg-highlight-rgb: 172, 114, 0;
+  --cx-info-fg-highlight: #0e0eac;
+  --cx-info-fg-highlight-rgb: 14, 14, 172;
   --cx-black-fg-highlight: #000000;
   --cx-black-fg-highlight-rgb: 0, 0, 0;
   --cx-white-fg-highlight: #ffffff;
@@ -578,27 +578,27 @@
   --cx-black-bg-solid-rgb: 0, 0, 0;
   --cx-white-bg-solid: #ffffff;
   --cx-white-bg-solid-rgb: 255, 255, 255;
-  --cx-default-bg-highlight: #edf9fb;
-  --cx-default-bg-highlight-rgb: 237, 249, 251;
+  --cx-default-bg-highlight: #d9f1f7;
+  --cx-default-bg-highlight-rgb: 217, 241, 247;
   --cx-alternate-bg-highlight: #003947;
   --cx-alternate-bg-highlight-rgb: 0, 57, 71;
-  --cx-primary-bg-highlight: #edf9fb;
-  --cx-primary-bg-highlight-rgb: 237, 249, 251;
-  --cx-secondary-bg-highlight: #fef3ed;
-  --cx-secondary-bg-highlight-rgb: 254, 243, 237;
-  --cx-neutral-bg-highlight: #f5f6f6;
-  --cx-neutral-bg-highlight-rgb: 245, 246, 246;
-  --cx-danger-bg-highlight: #fef0ef;
-  --cx-danger-bg-highlight-rgb: 254, 240, 239;
-  --cx-success-bg-highlight: #eefbf4;
-  --cx-success-bg-highlight-rgb: 238, 251, 244;
-  --cx-warning-bg-highlight: #fef9ed;
-  --cx-warning-bg-highlight-rgb: 254, 249, 237;
-  --cx-info-bg-highlight: #efeffe;
-  --cx-info-bg-highlight-rgb: 239, 239, 254;
-  --cx-black-bg-highlight: rgba(0, 0, 0, 0.1);
+  --cx-primary-bg-highlight: #80d2e6;
+  --cx-primary-bg-highlight-rgb: 128, 210, 230;
+  --cx-secondary-bg-highlight: #faa980;
+  --cx-secondary-bg-highlight-rgb: 250, 169, 128;
+  --cx-neutral-bg-highlight: #b7c0c2;
+  --cx-neutral-bg-highlight-rgb: 183, 192, 194;
+  --cx-danger-bg-highlight: #fa918a;
+  --cx-danger-bg-highlight-rgb: 250, 145, 138;
+  --cx-success-bg-highlight: #88e1b1;
+  --cx-success-bg-highlight-rgb: 136, 225, 177;
+  --cx-warning-bg-highlight: #fad180;
+  --cx-warning-bg-highlight-rgb: 250, 209, 128;
+  --cx-info-bg-highlight: #8a8afa;
+  --cx-info-bg-highlight-rgb: 138, 138, 250;
+  --cx-black-bg-highlight: rgba(0, 0, 0, 0.2);
   --cx-black-bg-highlight-rgb: 0, 0, 0;
-  --cx-white-bg-highlight: rgba(255, 255, 255, 0.1);
+  --cx-white-bg-highlight: rgba(255, 255, 255, 0.2);
   --cx-white-bg-highlight-rgb: 255, 255, 255;
   --cx-default-bg-button: #ffffff;
   --cx-default-bg-button-rgb: 255, 255, 255;
@@ -1019,7 +1019,7 @@
   --cx-white-link-visited: rgba(255, 255, 255, 0.6);
   --cx-white-link-visited-rgb: 255, 255, 255;
   --cx-font-family-text: Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  --cx-font-family-display: Outfit, Georgia, Times New Roman, Times, serif;
+  --cx-font-family-display: Archivo Narrow, Georgia, Times New Roman, Times, serif;
   --cx-font-family-code: Fira Code, Menlo, Monaco, Consolas, Courier New, monospace;
   --cx-font-family-html: Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif;
   --cx-font-size-5xlarge: var(--cx-font-size-text-5xlarge);
@@ -1098,10 +1098,10 @@
   --cx-font-size-display-small: 0.875rem;
   --cx-font-size-display-xsmall: 0.75rem;
   --cx-font-size-display-2xsmall: 0.625rem;
-  --cx-font-weight-display-normal: 400;
+  --cx-font-weight-display-normal: 500;
   --cx-font-weight-display-strong: 600;
   --cx-font-weight-display-mass: 700;
-  --cx-font-weight-display-elegant: 300;
+  --cx-font-weight-display-elegant: 400;
   --cx-line-height-display-5xlarge: 4rem;
   --cx-line-height-display-4xlarge: 3.75rem;
   --cx-line-height-display-3xlarge: 3rem;
@@ -1127,7 +1127,7 @@
   --cx-font-weight-html-body: 400;
   --cx-font-weight-html-heading: 600;
   --cx-font-weight-html-paragraph: 400;
-  --cx-font-weight-html-blockquote: 300;
+  --cx-font-weight-html-blockquote: 400;
   --cx-font-weight-html-cite: 500;
   --cx-font-weight-html-list: 400;
   --cx-font-weight-html-code: 400;
@@ -1699,23 +1699,23 @@
   --cx-default-bg-highlight-rgb: 0, 57, 71;
   --cx-alternate-bg-highlight: #005266;
   --cx-alternate-bg-highlight-rgb: 0, 82, 102;
-  --cx-primary-bg-highlight: #003947;
-  --cx-primary-bg-highlight-rgb: 0, 57, 71;
-  --cx-secondary-bg-highlight: #561d00;
-  --cx-secondary-bg-highlight-rgb: 86, 29, 0;
-  --cx-neutral-bg-highlight: #272d2f;
-  --cx-neutral-bg-highlight-rgb: 39, 45, 47;
-  --cx-danger-bg-highlight: #560c07;
-  --cx-danger-bg-highlight-rgb: 86, 12, 7;
-  --cx-success-bg-highlight: #064423;
-  --cx-success-bg-highlight-rgb: 6, 68, 35;
-  --cx-warning-bg-highlight: #563900;
-  --cx-warning-bg-highlight-rgb: 86, 57, 0;
-  --cx-info-bg-highlight: #070756;
-  --cx-info-bg-highlight-rgb: 7, 7, 86;
-  --cx-black-bg-highlight: rgba(0, 0, 0, 0.1);
+  --cx-primary-bg-highlight: #005266;
+  --cx-primary-bg-highlight-rgb: 0, 82, 102;
+  --cx-secondary-bg-highlight: #7b2900;
+  --cx-secondary-bg-highlight-rgb: 123, 41, 0;
+  --cx-neutral-bg-highlight: #384043;
+  --cx-neutral-bg-highlight-rgb: 56, 64, 67;
+  --cx-danger-bg-highlight: #7b120a;
+  --cx-danger-bg-highlight-rgb: 123, 18, 10;
+  --cx-success-bg-highlight: #086132;
+  --cx-success-bg-highlight-rgb: 8, 97, 50;
+  --cx-warning-bg-highlight: #7b5200;
+  --cx-warning-bg-highlight-rgb: 123, 82, 0;
+  --cx-info-bg-highlight: #0a0a7b;
+  --cx-info-bg-highlight-rgb: 10, 10, 123;
+  --cx-black-bg-highlight: rgba(0, 0, 0, 0.2);
   --cx-black-bg-highlight-rgb: 0, 0, 0;
-  --cx-white-bg-highlight: rgba(255, 255, 255, 0.1);
+  --cx-white-bg-highlight: rgba(255, 255, 255, 0.2);
   --cx-white-bg-highlight-rgb: 255, 255, 255;
   --cx-default-border-main: #4e5a5d;
   --cx-default-border-main-rgb: 78, 90, 93;
@@ -2541,7 +2541,7 @@ svg {
 
 table {
   caption-side: bottom;
-  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 caption {
@@ -3584,8 +3584,8 @@ progress {
   --cx-fg-subtle: rgba(var(--cx-fg-main-rgb), var(--cx-opacity-fg-subtle));
   --cx-fg-slight: rgba(var(--cx-fg-main-rgb), var(--cx-opacity-fg-slight));
   --cx-bg-main: var(--cx-bg-solid);
-  --cx-bg-even: var(--cx-bg-inverse);
-  --cx-bg-evident: var(--cx-bg-inverse);
+  --cx-bg-even: var(--cx-bg-press);
+  --cx-bg-evident: var(--cx-bg-hover);
   --cx-border-main: rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-border-main));
   --cx-border-subtle: rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-border-subtle));
   --cx-icon-main: var(--cx-fg-solid);
@@ -3631,15 +3631,15 @@ progress {
 }
 
 .badge.smooth, .context.smooth {
-  --cx-bg-color: var(--cx-smooth-bg-color, var(--cx-bg-even));
+  --cx-bg-main: var(--cx-bg-even);
+  --cx-border-color: transparent;
   --cx-icon-color: var(--cx-smooth-icon-main, var(--cx-fg-main));
-  --cx-indicator-color: var(--cx-smooth-indicator-color, var(--cx-fg-main));
+  --cx-indicator-color: var(--cx-smooth-border-color, var(--cx-fg-main));
   --cx-link-color: var(--cx-smooth-link-color, var(--cx-fg-main));
   --cx-bg-color-rgb: var(--cx-smooth-bg-color-rgb, var(--cx-bg-even-rgb));
   --cx-icon-color-rgb: var(--cx-smooth-icon-color-rgb, var(--cx-fg-main-rgb));
   --cx-indicator-color-rgb: var(--cx-smooth-indicator-color-rgb, var(--cx-fg-main-rgb));
   --cx-link-color-rgb: var(--cx-smooth-link-color-rgb, var(--cx-fg-main-rgb));
-  border: 0;
 }
 
 .badge.outline, .context.outline {
@@ -3703,7 +3703,7 @@ progress {
   --cx-border-color: var(--cx-button-hover-border-color, var(--cx-border-hover));
   color: var(--cx-fg-color);
 }
-.button-check + .button:hover {
+.button-option + .button:hover {
   --cx-fg-color: var(--cx-fg-idle);
   --cx-bg-color: var(--cx-bg-idle);
   --cx-border-color: var(--cx-border-idle);
@@ -3715,7 +3715,7 @@ progress {
   outline: 0;
   box-shadow: var(--cx-focus-box-shadow);
 }
-.button-check:focus-visible + .button {
+.button-option:focus-visible + .button {
   --cx-border-color: var(--cx-hover-border-color);
   outline: 0;
   box-shadow: var(--cx-focus-box-shadow);
@@ -3723,19 +3723,19 @@ progress {
 [data-cx-toggle=button].button:not(.active).default, [data-cx-toggle=button].button:not(.active).alternate {
   border-color: transparent;
 }
-.button-check:checked + .button, :not(.button-check) + .button:active, .button:first-child:active, .active.button, .show.button {
+.button-option:checked + .button, :not(.button-option) + .button:active, .button:first-child:active, .active.button, .show.button {
   --cx-fg-color: var(--cx-button-press-fg-color, var(--cx-fg-press));
   --cx-bg-color: var(--cx-button-press-bg-color, var(--cx-bg-press));
   --cx-icon-color: var(--cx-button-press-icon-color, var(--cx-fg-press));
   --cx-border-color: var(--cx-button-press-border-color, var(--cx-border-press));
 }
-.button-check:checked + .button:focus-visible, :not(.button-check) + .button:active:focus-visible, .button:first-child:active:focus-visible, .active.button:focus-visible, .show.button:focus-visible {
+.button-option:checked + .button:focus-visible, :not(.button-option) + .button:active:focus-visible, .button:first-child:active:focus-visible, .active.button:focus-visible, .show.button:focus-visible {
   box-shadow: var(--cx-focus-box-shadow);
 }
-.button-check:checked:focus-visible + .button {
+.button-option:checked:focus-visible + .button {
   box-shadow: var(--cx-focus-box-shadow);
 }
-.button:disabled, .disabled.button, fieldset:disabled .button {
+.button:disabled, .disabled.button, .button-option:disabled + .button, fieldset:disabled .button {
   --cx-fg-color: var(--cx-button-disabled-fg-color, var(--cx-fg-disabled));
   --cx-bg-color: var(--cx-button-disabled-bg-color, var(--cx-bg-disabled));
   --cx-icon-color: var(--cx-button-disabled-icon-color, var(--cx-fg-disabled));
@@ -4271,6 +4271,29 @@ progress {
   color: var(--cx-fg-color);
 }
 
+.fg-reset, .fg-press, .fg-hover, .fg-disabled, .fg-button, .fg-highlight, .fg-solid, .fg-inverse, .fg-slight, .fg-subtle, .fg-main, .white-fg-press, .black-fg-press, .info-fg-press, .warning-fg-press, .success-fg-press, .danger-fg-press, .neutral-fg-press, .secondary-fg-press, .primary-fg-press, .alternate-fg-press, .default-fg-press, .white-fg-hover, .black-fg-hover, .info-fg-hover, .warning-fg-hover, .success-fg-hover, .danger-fg-hover, .neutral-fg-hover, .secondary-fg-hover, .primary-fg-hover, .alternate-fg-hover, .default-fg-hover, .white-fg-disabled, .black-fg-disabled, .info-fg-disabled, .warning-fg-disabled, .success-fg-disabled, .danger-fg-disabled, .neutral-fg-disabled, .secondary-fg-disabled, .primary-fg-disabled, .alternate-fg-disabled, .default-fg-disabled, .white-fg-button, .black-fg-button, .info-fg-button, .warning-fg-button, .success-fg-button, .danger-fg-button, .neutral-fg-button, .secondary-fg-button, .primary-fg-button, .alternate-fg-button, .default-fg-button, .white-fg-highlight, .black-fg-highlight, .info-fg-highlight, .warning-fg-highlight, .success-fg-highlight, .danger-fg-highlight, .neutral-fg-highlight, .secondary-fg-highlight, .primary-fg-highlight, .alternate-fg-highlight, .default-fg-highlight, .white-fg-solid, .black-fg-solid, .info-fg-solid, .warning-fg-solid, .success-fg-solid, .danger-fg-solid, .neutral-fg-solid, .secondary-fg-solid, .primary-fg-solid, .alternate-fg-solid, .default-fg-solid, .white-fg-inverse, .black-fg-inverse, .info-fg-inverse, .warning-fg-inverse, .success-fg-inverse, .danger-fg-inverse, .neutral-fg-inverse, .secondary-fg-inverse, .primary-fg-inverse, .alternate-fg-inverse, .default-fg-inverse, .white-fg-slight, .black-fg-slight, .info-fg-slight, .warning-fg-slight, .success-fg-slight, .danger-fg-slight, .neutral-fg-slight, .secondary-fg-slight, .primary-fg-slight, .alternate-fg-slight, .default-fg-slight, .white-fg-subtle, .black-fg-subtle, .info-fg-subtle, .warning-fg-subtle, .success-fg-subtle, .danger-fg-subtle, .neutral-fg-subtle, .secondary-fg-subtle, .primary-fg-subtle, .alternate-fg-subtle, .default-fg-subtle, .white-fg-main, .black-fg-main, .info-fg-main, .warning-fg-main, .success-fg-main, .danger-fg-main, .neutral-fg-main, .secondary-fg-main, .primary-fg-main, .alternate-fg-main, .default-fg-main, .fg-white, .fg-black, .fg-info, .fg-danger, .fg-success, .fg-warning, .fg-neutral, .fg-secondary, .fg-primary, .fg-alternate, .fg-default {
+  color: var(--cx-fg-color) !important;
+}
+
+.bg-transparent, .bg-press, .bg-hover, .bg-disabled, .bg-button, .bg-highlight, .bg-solid, .bg-inverse, .bg-evident, .bg-even, .bg-main, .white-bg-press, .black-bg-press, .info-bg-press, .warning-bg-press, .success-bg-press, .danger-bg-press, .neutral-bg-press, .secondary-bg-press, .primary-bg-press, .alternate-bg-press, .default-bg-press, .white-bg-hover, .black-bg-hover, .info-bg-hover, .warning-bg-hover, .success-bg-hover, .danger-bg-hover, .neutral-bg-hover, .secondary-bg-hover, .primary-bg-hover, .alternate-bg-hover, .default-bg-hover, .white-bg-disabled, .black-bg-disabled, .info-bg-disabled, .warning-bg-disabled, .success-bg-disabled, .danger-bg-disabled, .neutral-bg-disabled, .secondary-bg-disabled, .primary-bg-disabled, .alternate-bg-disabled, .default-bg-disabled, .white-bg-button, .black-bg-button, .info-bg-button, .warning-bg-button, .success-bg-button, .danger-bg-button, .neutral-bg-button, .secondary-bg-button, .primary-bg-button, .alternate-bg-button, .default-bg-button, .white-bg-highlight, .black-bg-highlight, .info-bg-highlight, .warning-bg-highlight, .success-bg-highlight, .danger-bg-highlight, .neutral-bg-highlight, .secondary-bg-highlight, .primary-bg-highlight, .alternate-bg-highlight, .default-bg-highlight, .white-bg-solid, .black-bg-solid, .info-bg-solid, .warning-bg-solid, .success-bg-solid, .danger-bg-solid, .neutral-bg-solid, .secondary-bg-solid, .primary-bg-solid, .alternate-bg-solid, .default-bg-solid, .white-bg-inverse, .black-bg-inverse, .info-bg-inverse, .warning-bg-inverse, .success-bg-inverse, .danger-bg-inverse, .neutral-bg-inverse, .secondary-bg-inverse, .primary-bg-inverse, .alternate-bg-inverse, .default-bg-inverse, .white-bg-evident, .black-bg-evident, .info-bg-evident, .warning-bg-evident, .success-bg-evident, .danger-bg-evident, .neutral-bg-evident, .secondary-bg-evident, .primary-bg-evident, .alternate-bg-evident, .default-bg-evident, .white-bg-even, .black-bg-even, .info-bg-even, .warning-bg-even, .success-bg-even, .danger-bg-even, .neutral-bg-even, .secondary-bg-even, .primary-bg-even, .alternate-bg-even, .default-bg-even, .white-bg-main, .black-bg-main, .info-bg-main, .warning-bg-main, .success-bg-main, .danger-bg-main, .neutral-bg-main, .secondary-bg-main, .primary-bg-main, .alternate-bg-main, .default-bg-main, .bg-white, .bg-black, .bg-info, .bg-danger, .bg-success, .bg-warning, .bg-neutral, .bg-secondary, .bg-primary, .bg-alternate, .bg-default {
+  background-color: var(--cx-bg-color) !important;
+}
+
+.border-subtle, .border-main, .white-border-subtle, .black-border-subtle, .info-border-subtle, .warning-border-subtle, .success-border-subtle, .danger-border-subtle, .neutral-border-subtle, .secondary-border-subtle, .primary-border-subtle, .alternate-border-subtle, .default-border-subtle, .white-border-main, .black-border-main, .info-border-main, .warning-border-main, .success-border-main, .danger-border-main, .neutral-border-main, .secondary-border-main, .primary-border-main, .alternate-border-main, .default-border-main {
+  border-color: var(--cx-border-color) !important;
+}
+
+.icon-transparent, .icon-reset, .icon-slight, .icon-subtle, .icon-main, .white-icon-slight, .black-icon-slight, .info-icon-slight, .warning-icon-slight, .success-icon-slight, .danger-icon-slight, .neutral-icon-slight, .secondary-icon-slight, .primary-icon-slight, .alternate-icon-slight, .default-icon-slight, .white-icon-subtle, .black-icon-subtle, .info-icon-subtle, .warning-icon-subtle, .success-icon-subtle, .danger-icon-subtle, .neutral-icon-subtle, .secondary-icon-subtle, .primary-icon-subtle, .alternate-icon-subtle, .default-icon-subtle, .white-icon-main, .black-icon-main, .info-icon-main, .warning-icon-main, .success-icon-main, .danger-icon-main, .neutral-icon-main, .secondary-icon-main, .primary-icon-main, .alternate-icon-main, .default-icon-main, .icon-white, .icon-black, .icon-info, .icon-danger, .icon-success, .icon-warning, .icon-neutral, .icon-secondary, .icon-primary, .icon-alternate, .icon-default {
+  color: var(--cx-icon-color) !important;
+  fill: var(--cx-icon-color) !important;
+}
+
+.link-body, .link-white, .link-black, .link-info, .link-danger, .link-success, .link-warning, .link-neutral, .link-secondary, .link-primary, .link-alternate, .link-default {
+  color: RGBA(var(--cx-link-color-rgb), var(--cx-link-opacity, 1)) !important;
+  -webkit-text-decoration-color: RGBA(var(--cx-link-color-rgb), var(--cx-underline-opacity, 1)) !important;
+  text-decoration-color: RGBA(var(--cx-link-color-rgb), var(--cx-underline-opacity, 1)) !important;
+}
+
 .lead {
   --cx-font-family: var(--cx-lead-font-family, var(--cx-font-family-lead));
   --cx-font-size: var(--cx-lead-font-size, var(--cx-font-size-text-xlarge));
@@ -4287,93 +4310,93 @@ progress {
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
 }
 
-.display-font-size-display-5xlarge {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-5xlarge {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: calc(1.4rem + 1.8vw);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 @media (min-width: 1200px) {
-  .display-font-size-display-5xlarge {
+  .font-size-display-5xlarge {
     font-size: 2.75rem;
   }
 }
 
-.display-font-size-display-4xlarge {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-4xlarge {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: calc(1.375rem + 1.5vw);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 @media (min-width: 1200px) {
-  .display-font-size-display-4xlarge {
+  .font-size-display-4xlarge {
     font-size: 2.5rem;
   }
 }
 
-.display-font-size-display-3xlarge {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-3xlarge {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: calc(1.325rem + 0.9vw);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 @media (min-width: 1200px) {
-  .display-font-size-display-3xlarge {
+  .font-size-display-3xlarge {
     font-size: 2rem;
   }
 }
 
-.display-font-size-display-2xlarge {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-2xlarge {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: calc(1.2875rem + 0.45vw);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 @media (min-width: 1200px) {
-  .display-font-size-display-2xlarge {
+  .font-size-display-2xlarge {
     font-size: 1.625rem;
   }
 }
 
-.display-font-size-display-xlarge {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-xlarge {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 
-.display-font-size-display-large {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-large {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 
-.display-font-size-display-medium {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-medium {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 
-.display-font-size-display-small {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-small {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 
-.display-font-size-display-xsmall {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-xsmall {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 
-.display-font-size-display-2xsmall {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif;
+.font-size-display-2xsmall {
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif;
   font-size: 0.625rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--cx-line-height-medium);
 }
 
@@ -4431,93 +4454,93 @@ ol.inline li:not(:last-child) {
 }
 
 .font-5xlarge {
-  font-size: var(--cx-font-size-5xlarge);
-  line-height: var(--cx-line-height-5xlarge);
+  font-size: var(--cx-font-size-5xlarge) !important;
+  line-height: var(--cx-line-height-5xlarge) !important;
 }
 
 .font-4xlarge {
-  font-size: var(--cx-font-size-4xlarge);
-  line-height: var(--cx-line-height-4xlarge);
+  font-size: var(--cx-font-size-4xlarge) !important;
+  line-height: var(--cx-line-height-4xlarge) !important;
 }
 
 .font-3xlarge {
-  font-size: var(--cx-font-size-3xlarge);
-  line-height: var(--cx-line-height-3xlarge);
+  font-size: var(--cx-font-size-3xlarge) !important;
+  line-height: var(--cx-line-height-3xlarge) !important;
 }
 
 .font-2xlarge {
-  font-size: var(--cx-font-size-2xlarge);
-  line-height: var(--cx-line-height-2xlarge);
+  font-size: var(--cx-font-size-2xlarge) !important;
+  line-height: var(--cx-line-height-2xlarge) !important;
 }
 
 .font-xlarge {
-  font-size: var(--cx-font-size-xlarge);
-  line-height: var(--cx-line-height-xlarge);
+  font-size: var(--cx-font-size-xlarge) !important;
+  line-height: var(--cx-line-height-xlarge) !important;
 }
 
 .font-large {
-  font-size: var(--cx-font-size-large);
-  line-height: var(--cx-line-height-large);
+  font-size: var(--cx-font-size-large) !important;
+  line-height: var(--cx-line-height-large) !important;
 }
 
 .font-medium {
-  font-size: var(--cx-font-size-medium);
-  line-height: var(--cx-line-height-medium);
+  font-size: var(--cx-font-size-medium) !important;
+  line-height: var(--cx-line-height-medium) !important;
 }
 
 .font-small {
-  font-size: var(--cx-font-size-small);
-  line-height: var(--cx-line-height-small);
+  font-size: var(--cx-font-size-small) !important;
+  line-height: var(--cx-line-height-small) !important;
 }
 
 .font-xsmall {
-  font-size: var(--cx-font-size-xsmall);
-  line-height: var(--cx-line-height-xsmall);
+  font-size: var(--cx-font-size-xsmall) !important;
+  line-height: var(--cx-line-height-xsmall) !important;
 }
 
 .font-2xsmall {
-  font-size: var(--cx-font-size-2xsmall);
-  line-height: var(--cx-line-height-2xsmall);
+  font-size: var(--cx-font-size-2xsmall) !important;
+  line-height: var(--cx-line-height-2xsmall) !important;
 }
 
 .font-h1 {
-  font-size: var(--cx-font-size-h1);
-  line-height: var(--cx-line-height-h1);
+  font-size: var(--cx-font-size-h1) !important;
+  line-height: var(--cx-line-height-h1) !important;
 }
 
 .font-h2 {
-  font-size: var(--cx-font-size-h2);
-  line-height: var(--cx-line-height-h2);
+  font-size: var(--cx-font-size-h2) !important;
+  line-height: var(--cx-line-height-h2) !important;
 }
 
 .font-h3 {
-  font-size: var(--cx-font-size-h3);
-  line-height: var(--cx-line-height-h3);
+  font-size: var(--cx-font-size-h3) !important;
+  line-height: var(--cx-line-height-h3) !important;
 }
 
 .font-h4 {
-  font-size: var(--cx-font-size-h4);
-  line-height: var(--cx-line-height-h4);
+  font-size: var(--cx-font-size-h4) !important;
+  line-height: var(--cx-line-height-h4) !important;
 }
 
 .font-h5 {
-  font-size: var(--cx-font-size-h5);
-  line-height: var(--cx-line-height-h5);
+  font-size: var(--cx-font-size-h5) !important;
+  line-height: var(--cx-line-height-h5) !important;
 }
 
 .font-h6 {
-  font-size: var(--cx-font-size-h6);
-  line-height: var(--cx-line-height-h6);
+  font-size: var(--cx-font-size-h6) !important;
+  line-height: var(--cx-line-height-h6) !important;
 }
 
 .font-smaller {
-  font-size: calc(var(--cx-font-size) * 0.875);
-  line-height: calc(var(--cx-line-height) * 0.875);
+  font-size: calc(var(--cx-font-size) * 0.875) !important;
+  line-height: calc(var(--cx-line-height) * 0.875) !important;
 }
 
 .font-larger {
-  font-size: calc(var(--cx-font-size) * 1.25);
-  line-height: calc(var(--cx-line-height) * 1.25);
+  font-size: calc(var(--cx-font-size) * 1.25) !important;
+  line-height: calc(var(--cx-line-height) * 1.25) !important;
 }
 
 .icon {
@@ -6515,6 +6538,15 @@ ol.inline li:not(:last-child) {
   --cx-fg-color: var(--cx-table-fg-color, var(--cx-default-fg-main));
   --cx-bg-color: var(--cx-table-bg-color, var(--cx-default-bg-main));
   --cx-border-color: var(--cx-table-border-color, var(--cx-border-subtle));
+  --cx-border-radius: var(--cx-table-border-radius, var(--cx-border-radius-medium));
+  --cx-th-fg-color: var(--cx-table-th-fg-color, var(--cx-default-fg-main));
+  --cx-th-bg-color: var(--cx-table-th-bg-color, var(--cx-default-bg-evident));
+  --cx-striped-fg-color: var(--cx-table-striped-fg-color, var(--cx-fg-main));
+  --cx-striped-bg-color: var(--cx-table-striped-bg-color, var(--cx-default-bg-even));
+  --cx-hover-fg-color: var(--cx-table-hover-fg-color, var(--cx-fg-main));
+  --cx-hover-bg-color: var(--cx-table-hover-bg-color, var(--cx-bg-evident));
+  --cx-active-fg-color: var(--cx-table-active-fg-color, var(--cx-fg-main));
+  --cx-active-bg-color: var(--cx-table-active-bg-color, var(--cx-default-bg-highlight));
   width: 100%;
   margin-bottom: 1rem;
   vertical-align: top;
@@ -6527,6 +6559,34 @@ ol.inline li:not(:last-child) {
   border-bottom-width: var(--cx-border-width);
   box-shadow: inset 0 0 0 9999px var(--cx-bg-color);
 }
+.table.rounded {
+  border-radius: var(--cx-border-radius);
+}
+.table.rounded > :not(caption):first-child > * > *:first-child {
+  border-top-right-radius: var(--cx-border-radius);
+}
+.table.rounded > :not(caption):first-child > * > *:last-child {
+  border-top-left-radius: var(--cx-border-radius);
+}
+.table.rounded > :not(caption):last-child > *:last-child > *:first-child {
+  border-bottom-right-radius: var(--cx-border-radius);
+}
+.table.rounded > :not(caption):last-child > *:last-child > *:last-child {
+  border-bottom-left-radius: var(--cx-border-radius);
+}
+.table.context {
+  --cx-fg-color: var(--cx-fg-main);
+  --cx-bg-color: var(--cx-bg-main);
+  --cx-border-color: var(--cx-border-subtle);
+  --cx-th-fg-color: var(--cx-fg-main);
+  --cx-th-bg-color: var(--cx-bg-evident);
+  --cx-striped-fg-color: var(--cx-fg-main);
+  --cx-striped-bg-color: var(--cx-bg-even);
+  --cx-hover-fg-color: var(--cx-fg-main);
+  --cx-hover-bg-color: var(--cx-scene-shade);
+  --cx-active-fg-color: var(--cx-fg-highlight);
+  --cx-active-bg-color: var(--cx-bg-highlight);
+}
 .table .text-center > * {
   justify-self: center;
 }
@@ -6534,9 +6594,13 @@ ol.inline li:not(:last-child) {
   vertical-align: inherit;
 }
 .table > thead {
-  --cx-fg-color: var(--cx-table-th-fg-color, var(--cx-default-fg-main));
-  --cx-bg-color: var(--cx-table-th-bg-color, var(--cx-default-bg-evident));
+  --cx-fg-color: var(--cx-th-fg-color);
+  --cx-bg-color: var(--cx-th-bg-color);
   vertical-align: middle;
+}
+.table > thead.context {
+  --cx-fg-color: var(--cx-fg-main);
+  --cx-bg-color: var(--cx-bg-main);
 }
 .table.small, .button-group-small > .table.button {
   --cx-padding-y: var(--cx-table-cell-padding-y-small, calc(var(--cx-space-xsmall) / 1.5));
@@ -6548,11 +6612,15 @@ ol.inline li:not(:last-child) {
   font-size: var(--cx-font-size-small);
   line-height: var(--cx-line-height-small);
 }
+.table.bordered {
+  border-style: solid;
+  border-width: var(--cx-border-width-medium) var(--cx-border-width-medium) 0 0;
+}
 .table.bordered > :not(caption) > * {
-  border-width: var(--cx-border-width-medium) 0;
+  border-width: 0 0 var(--cx-border-width-medium) var(--cx-border-width-medium);
 }
 .table.bordered > :not(caption) > * > * {
-  border-width: 0 var(--cx-border-width-medium);
+  border-width: 0 0 var(--cx-border-width-medium) var(--cx-border-width-medium);
 }
 .table.borderless > :not(caption) > * > *:not(input) {
   border-bottom-width: 0;
@@ -6560,24 +6628,26 @@ ol.inline li:not(:last-child) {
 .table.borderless > :not(:first-child) {
   border-top-width: 0;
 }
-.table.striped > tbody > tr:nth-of-type(odd) > * {
-  --cx-fg-color: var(--cx-table-striped-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-table-striped-bg-color, var(--cx-default-bg-even));
+.table.striped > tbody > tr:nth-of-type(even) > * {
+  --cx-fg-color: var(--cx-striped-fg-color);
+  --cx-bg-color: var(--cx-striped-bg-color);
 }
-.table.striped-columns > :not(caption) > tr > :nth-child(even) {
-  --cx-fg-color: var(--cx-table-striped-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-table-striped-bg-color, var(--cx-default-bg-even));
+.table.striped-columns > tbody > tr > :nth-child(even) {
+  --cx-fg-color: var(--cx-striped-fg-color);
+  --cx-bg-color: var(--cx-striped-bg-color);
 }
 .table.hoverable > tbody > tr:hover > * {
-  --cx-fg-color: var(--cx-table-hover-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-table-hover-bg-color, var(--cx-bg-evident));
+  --cx-fg-color: var(--cx-hover-fg-color);
+  --cx-bg-color: var(--cx-hover-bg-color);
 }
-.table .active {
-  --cx-fg-color: var(--cx-table-active-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-table-active-bg-color, var(--cx-default-bg-highlight));
+.table .active,
+.table > tbody > tr:nth-of-type(even).active > *,
+.table > tbody > tr:nth-of-type(even) > *.active {
+  --cx-fg-color: var(--cx-active-fg-color);
+  --cx-bg-color: var(--cx-active-bg-color);
 }
 
-.table-divider {
+.table-divider > tr:first-child > * {
   border-top: calc(var(--cx-border-width-medium) * 2) solid currentcolor;
 }
 
@@ -7075,12 +7145,12 @@ textarea.form-control {
   margin-left: 1rem;
 }
 
-.button-check {
+.button-option {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.button-check[disabled] + .button, .button-check:disabled + .button {
+.button-option[disabled] + .button, .button-option:disabled + .button {
   pointer-events: none;
   filter: none;
   opacity: 1;
@@ -7705,14 +7775,14 @@ textarea.form-control {
   box-sizing: border-box;
   flex: 1 1 auto;
 }
-.button-group > .button-check:checked + .button,
-.button-group > .button-check:focus + .button,
+.button-group > .button-option:checked + .button,
+.button-group > .button-option:focus + .button,
 .button-group > .button:hover,
 .button-group > .button:focus,
 .button-group > .button:active,
 .button-group > .button.active,
-.button-group-vertical > .button-check:checked + .button,
-.button-group-vertical > .button-check:focus + .button,
+.button-group-vertical > .button-option:checked + .button,
+.button-group-vertical > .button-option:focus + .button,
 .button-group-vertical > .button:hover,
 .button-group-vertical > .button:focus,
 .button-group-vertical > .button:active,
@@ -7732,7 +7802,7 @@ textarea.form-control {
 .button-group {
   border-radius: var(--cx-border-radius-medium);
 }
-.button-group > :not(.button-check:first-child) + .button,
+.button-group > :not(.button-option:first-child) + .button,
 .button-group > .button-group:not(:first-child) {
   margin-right: calc(var(--cx-border-width) * -1);
 }
@@ -7743,7 +7813,7 @@ textarea.form-control {
   border-bottom-left-radius: 0;
 }
 .button-group > .button:nth-child(n+3),
-.button-group > :not(.button-check) + .button,
+.button-group > :not(.button-option) + .button,
 .button-group > .button-group:not(:first-child) > .button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -7793,7 +7863,7 @@ textarea.form-control {
   border-bottom-right-radius: 0;
 }
 .button-group-vertical > .button:nth-child(n+3),
-.button-group-vertical > :not(.button-check) + .button,
+.button-group-vertical > :not(.button-option) + .button,
 .button-group-vertical > .button-group:not(:first-child) > .button {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
@@ -11525,250 +11595,156 @@ textarea.form-control {
 }
 
 .link-default {
-  color: var(--cx-default-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-default-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-default-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-default-link-main-rgb);
 }
 .link-default:hover, .link-default:focus {
-  color: var(--cx-default-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-default-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-default-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-default-link-hover-rgb);
 }
 .link-default:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-default-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-default-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-default-link-active-rgb);
 }
 .link-default:visited {
-  color: var(--cx-default-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-default-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-default-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-default-link-visited-rgb);
 }
 
 .link-alternate {
-  color: var(--cx-alternate-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-alternate-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-alternate-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-alternate-link-main-rgb);
 }
 .link-alternate:hover, .link-alternate:focus {
-  color: var(--cx-alternate-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-alternate-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-alternate-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-alternate-link-hover-rgb);
 }
 .link-alternate:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-alternate-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-alternate-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-alternate-link-active-rgb);
 }
 .link-alternate:visited {
-  color: var(--cx-alternate-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-alternate-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-alternate-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-alternate-link-visited-rgb);
 }
 
 .link-primary {
-  color: var(--cx-primary-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-primary-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-primary-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-primary-link-main-rgb);
 }
 .link-primary:hover, .link-primary:focus {
-  color: var(--cx-primary-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-primary-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-primary-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-primary-link-hover-rgb);
 }
 .link-primary:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-primary-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-primary-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-primary-link-active-rgb);
 }
 .link-primary:visited {
-  color: var(--cx-primary-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-primary-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-primary-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-primary-link-visited-rgb);
 }
 
 .link-secondary {
-  color: var(--cx-secondary-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-secondary-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-secondary-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-secondary-link-main-rgb);
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: var(--cx-secondary-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-secondary-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-secondary-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-secondary-link-hover-rgb);
 }
 .link-secondary:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-secondary-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-secondary-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-secondary-link-active-rgb);
 }
 .link-secondary:visited {
-  color: var(--cx-secondary-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-secondary-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-secondary-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-secondary-link-visited-rgb);
 }
 
 .link-neutral {
-  color: var(--cx-neutral-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-neutral-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-neutral-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-neutral-link-main-rgb);
 }
 .link-neutral:hover, .link-neutral:focus {
-  color: var(--cx-neutral-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-neutral-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-neutral-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-neutral-link-hover-rgb);
 }
 .link-neutral:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-neutral-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-neutral-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-neutral-link-active-rgb);
 }
 .link-neutral:visited {
-  color: var(--cx-neutral-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-neutral-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-neutral-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-neutral-link-visited-rgb);
 }
 
 .link-warning {
-  color: var(--cx-warning-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-warning-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-warning-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-warning-link-main-rgb);
 }
 .link-warning:hover, .link-warning:focus {
-  color: var(--cx-warning-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-warning-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-warning-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-warning-link-hover-rgb);
 }
 .link-warning:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-warning-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-warning-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-warning-link-active-rgb);
 }
 .link-warning:visited {
-  color: var(--cx-warning-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-warning-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-warning-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-warning-link-visited-rgb);
 }
 
 .link-success {
-  color: var(--cx-success-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-success-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-success-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-success-link-main-rgb);
 }
 .link-success:hover, .link-success:focus {
-  color: var(--cx-success-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-success-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-success-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-success-link-hover-rgb);
 }
 .link-success:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-success-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-success-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-success-link-active-rgb);
 }
 .link-success:visited {
-  color: var(--cx-success-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-success-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-success-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-success-link-visited-rgb);
 }
 
 .link-danger {
-  color: var(--cx-danger-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-danger-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-danger-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-danger-link-main-rgb);
 }
 .link-danger:hover, .link-danger:focus {
-  color: var(--cx-danger-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-danger-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-danger-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-danger-link-hover-rgb);
 }
 .link-danger:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-danger-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-danger-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-danger-link-active-rgb);
 }
 .link-danger:visited {
-  color: var(--cx-danger-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-danger-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-danger-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-danger-link-visited-rgb);
 }
 
 .link-info {
-  color: var(--cx-info-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-info-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-info-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-info-link-main-rgb);
 }
 .link-info:hover, .link-info:focus {
-  color: var(--cx-info-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-info-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-info-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-info-link-hover-rgb);
 }
 .link-info:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-info-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-info-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-info-link-active-rgb);
 }
 .link-info:visited {
-  color: var(--cx-info-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-info-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-info-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-info-link-visited-rgb);
 }
 
 .link-black {
-  color: var(--cx-black-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-black-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-black-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-black-link-main-rgb);
 }
 .link-black:hover, .link-black:focus {
-  color: var(--cx-black-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-black-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-black-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-black-link-hover-rgb);
 }
 .link-black:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-black-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-black-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-black-link-active-rgb);
 }
 .link-black:visited {
-  color: var(--cx-black-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-black-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-black-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-black-link-visited-rgb);
 }
 
 .link-white {
-  color: var(--cx-white-link-main) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-white-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-white-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-white-link-main-rgb);
 }
 .link-white:hover, .link-white:focus {
-  color: var(--cx-white-link-hover) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-white-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-white-link-hover-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-white-link-hover-rgb);
 }
 .link-white:active {
-  color: var(--cx-danger-link-active) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-white-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-white-link-active-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-white-link-active-rgb);
 }
 .link-white:visited {
-  color: var(--cx-white-link-visited) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-white-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-white-link-visited-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-white-link-visited-rgb);
 }
 
 .link-body {
-  color: RGBA(var(--cx-fg-main-rgb), var(--cx-link-opacity, 1)) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-fg-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-fg-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-fg-main-rgb);
 }
 .link-body:hover, .link-body:focus {
-  color: RGBA(var(--cx-fg-main-rgb), var(--cx-link-opacity, 0.75)) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-fg-main-rgb), var(--cx-underline-opacity, 0.75)) !important;
-  text-decoration-color: RGBA(var(--cx-fg-main-rgb), var(--cx-underline-opacity, 0.75)) !important;
+  --cx-link-color-rgb: var(--cx-fg-main-rgb);
 }
 .link-body:active {
-  color: RGBA(var(--cx-link-main-rgb), var(--cx-link-opacity, 0.75)) !important;
-  -webkit-text-decoration-color: RGBA(var(--cx-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
-  text-decoration-color: RGBA(var(--cx-link-main-rgb), var(--cx-underline-opacity, 1)) !important;
+  --cx-link-color-rgb: var(--cx-link-main-rgb);
 }
 
 .link-stretch::after {
@@ -11814,1323 +11790,1219 @@ textarea.form-control {
 }
 
 .default-fg-main {
-  --cx-fg-color: var(--cx-default-fg-main, $value);
-  color: var(--cx-default-fg-main, #1c2021) !important;
+  --cx-fg-color: var(--cx-default-fg-main);
 }
 
 .alternate-fg-main {
-  --cx-fg-color: var(--cx-alternate-fg-main, $value);
-  color: var(--cx-alternate-fg-main, #e9eced) !important;
+  --cx-fg-color: var(--cx-alternate-fg-main);
 }
 
 .primary-fg-main {
-  --cx-fg-color: var(--cx-primary-fg-main, $value);
-  color: var(--cx-primary-fg-main, #00738f) !important;
+  --cx-fg-color: var(--cx-primary-fg-main);
 }
 
 .secondary-fg-main {
-  --cx-fg-color: var(--cx-secondary-fg-main, $value);
-  color: var(--cx-secondary-fg-main, #ac3900) !important;
+  --cx-fg-color: var(--cx-secondary-fg-main);
 }
 
 .neutral-fg-main {
-  --cx-fg-color: var(--cx-neutral-fg-main, $value);
-  color: var(--cx-neutral-fg-main, #4e5a5d) !important;
+  --cx-fg-color: var(--cx-neutral-fg-main);
 }
 
 .danger-fg-main {
-  --cx-fg-color: var(--cx-danger-fg-main, $value);
-  color: var(--cx-danger-fg-main, #ac190e) !important;
+  --cx-fg-color: var(--cx-danger-fg-main);
 }
 
 .success-fg-main {
-  --cx-fg-color: var(--cx-success-fg-main, $value);
-  color: var(--cx-success-fg-main, #0b8845) !important;
+  --cx-fg-color: var(--cx-success-fg-main);
 }
 
 .warning-fg-main {
-  --cx-fg-color: var(--cx-warning-fg-main, $value);
-  color: var(--cx-warning-fg-main, #ac7200) !important;
+  --cx-fg-color: var(--cx-warning-fg-main);
 }
 
 .info-fg-main {
-  --cx-fg-color: var(--cx-info-fg-main, $value);
-  color: var(--cx-info-fg-main, #0e0eac) !important;
+  --cx-fg-color: var(--cx-info-fg-main);
 }
 
 .black-fg-main {
-  --cx-fg-color: var(--cx-black-fg-main, $value);
-  color: var(--cx-black-fg-main, #000000) !important;
+  --cx-fg-color: var(--cx-black-fg-main);
 }
 
 .white-fg-main {
-  --cx-fg-color: var(--cx-white-fg-main, $value);
-  color: var(--cx-white-fg-main, #ffffff) !important;
+  --cx-fg-color: var(--cx-white-fg-main);
 }
 
 .default-fg-subtle {
-  --cx-fg-color: var(--cx-default-fg-subtle, $value);
-  color: var(--cx-default-fg-subtle, rgba(28, 32, 33, 0.5)) !important;
+  --cx-fg-color: var(--cx-default-fg-subtle);
 }
 
 .alternate-fg-subtle {
-  --cx-fg-color: var(--cx-alternate-fg-subtle, $value);
-  color: var(--cx-alternate-fg-subtle, rgba(233, 236, 237, 0.5)) !important;
+  --cx-fg-color: var(--cx-alternate-fg-subtle);
 }
 
 .primary-fg-subtle {
-  --cx-fg-color: var(--cx-primary-fg-subtle, $value);
-  color: var(--cx-primary-fg-subtle, rgba(0, 115, 143, 0.5)) !important;
+  --cx-fg-color: var(--cx-primary-fg-subtle);
 }
 
 .secondary-fg-subtle {
-  --cx-fg-color: var(--cx-secondary-fg-subtle, $value);
-  color: var(--cx-secondary-fg-subtle, rgba(172, 57, 0, 0.5)) !important;
+  --cx-fg-color: var(--cx-secondary-fg-subtle);
 }
 
 .neutral-fg-subtle {
-  --cx-fg-color: var(--cx-neutral-fg-subtle, $value);
-  color: var(--cx-neutral-fg-subtle, rgba(78, 90, 93, 0.5)) !important;
+  --cx-fg-color: var(--cx-neutral-fg-subtle);
 }
 
 .danger-fg-subtle {
-  --cx-fg-color: var(--cx-danger-fg-subtle, $value);
-  color: var(--cx-danger-fg-subtle, rgba(172, 25, 14, 0.5)) !important;
+  --cx-fg-color: var(--cx-danger-fg-subtle);
 }
 
 .success-fg-subtle {
-  --cx-fg-color: var(--cx-success-fg-subtle, $value);
-  color: var(--cx-success-fg-subtle, rgba(11, 136, 69, 0.5)) !important;
+  --cx-fg-color: var(--cx-success-fg-subtle);
 }
 
 .warning-fg-subtle {
-  --cx-fg-color: var(--cx-warning-fg-subtle, $value);
-  color: var(--cx-warning-fg-subtle, rgba(172, 114, 0, 0.5)) !important;
+  --cx-fg-color: var(--cx-warning-fg-subtle);
 }
 
 .info-fg-subtle {
-  --cx-fg-color: var(--cx-info-fg-subtle, $value);
-  color: var(--cx-info-fg-subtle, rgba(14, 14, 172, 0.5)) !important;
+  --cx-fg-color: var(--cx-info-fg-subtle);
 }
 
 .black-fg-subtle {
-  --cx-fg-color: var(--cx-black-fg-subtle, $value);
-  color: var(--cx-black-fg-subtle, rgba(0, 0, 0, 0.5)) !important;
+  --cx-fg-color: var(--cx-black-fg-subtle);
 }
 
 .white-fg-subtle {
-  --cx-fg-color: var(--cx-white-fg-subtle, $value);
-  color: var(--cx-white-fg-subtle, rgba(255, 255, 255, 0.5)) !important;
+  --cx-fg-color: var(--cx-white-fg-subtle);
 }
 
 .default-fg-slight {
-  --cx-fg-color: var(--cx-default-fg-slight, $value);
-  color: var(--cx-default-fg-slight, rgba(28, 32, 33, 0.25)) !important;
+  --cx-fg-color: var(--cx-default-fg-slight);
 }
 
 .alternate-fg-slight {
-  --cx-fg-color: var(--cx-alternate-fg-slight, $value);
-  color: var(--cx-alternate-fg-slight, rgba(233, 236, 237, 0.25)) !important;
+  --cx-fg-color: var(--cx-alternate-fg-slight);
 }
 
 .primary-fg-slight {
-  --cx-fg-color: var(--cx-primary-fg-slight, $value);
-  color: var(--cx-primary-fg-slight, rgba(0, 115, 143, 0.25)) !important;
+  --cx-fg-color: var(--cx-primary-fg-slight);
 }
 
 .secondary-fg-slight {
-  --cx-fg-color: var(--cx-secondary-fg-slight, $value);
-  color: var(--cx-secondary-fg-slight, rgba(172, 57, 0, 0.25)) !important;
+  --cx-fg-color: var(--cx-secondary-fg-slight);
 }
 
 .neutral-fg-slight {
-  --cx-fg-color: var(--cx-neutral-fg-slight, $value);
-  color: var(--cx-neutral-fg-slight, rgba(78, 90, 93, 0.25)) !important;
+  --cx-fg-color: var(--cx-neutral-fg-slight);
 }
 
 .danger-fg-slight {
-  --cx-fg-color: var(--cx-danger-fg-slight, $value);
-  color: var(--cx-danger-fg-slight, rgba(172, 25, 14, 0.25)) !important;
+  --cx-fg-color: var(--cx-danger-fg-slight);
 }
 
 .success-fg-slight {
-  --cx-fg-color: var(--cx-success-fg-slight, $value);
-  color: var(--cx-success-fg-slight, rgba(11, 136, 69, 0.25)) !important;
+  --cx-fg-color: var(--cx-success-fg-slight);
 }
 
 .warning-fg-slight {
-  --cx-fg-color: var(--cx-warning-fg-slight, $value);
-  color: var(--cx-warning-fg-slight, rgba(172, 114, 0, 0.25)) !important;
+  --cx-fg-color: var(--cx-warning-fg-slight);
 }
 
 .info-fg-slight {
-  --cx-fg-color: var(--cx-info-fg-slight, $value);
-  color: var(--cx-info-fg-slight, rgba(14, 14, 172, 0.25)) !important;
+  --cx-fg-color: var(--cx-info-fg-slight);
 }
 
 .black-fg-slight {
-  --cx-fg-color: var(--cx-black-fg-slight, $value);
-  color: var(--cx-black-fg-slight, rgba(0, 0, 0, 0.3)) !important;
+  --cx-fg-color: var(--cx-black-fg-slight);
 }
 
 .white-fg-slight {
-  --cx-fg-color: var(--cx-white-fg-slight, $value);
-  color: var(--cx-white-fg-slight, rgba(255, 255, 255, 0.3)) !important;
+  --cx-fg-color: var(--cx-white-fg-slight);
 }
 
 .default-fg-inverse {
-  --cx-fg-color: var(--cx-default-fg-inverse, $value);
-  color: var(--cx-default-fg-inverse, #e9eced) !important;
+  --cx-fg-color: var(--cx-default-fg-inverse);
 }
 
 .alternate-fg-inverse {
-  --cx-fg-color: var(--cx-alternate-fg-inverse, $value);
-  color: var(--cx-alternate-fg-inverse, #1c2021) !important;
+  --cx-fg-color: var(--cx-alternate-fg-inverse);
 }
 
 .primary-fg-inverse {
-  --cx-fg-color: var(--cx-primary-fg-inverse, $value);
-  color: var(--cx-primary-fg-inverse, #d9f1f7) !important;
+  --cx-fg-color: var(--cx-primary-fg-inverse);
 }
 
 .secondary-fg-inverse {
-  --cx-fg-color: var(--cx-secondary-fg-inverse, $value);
-  color: var(--cx-secondary-fg-inverse, #fee5d9) !important;
+  --cx-fg-color: var(--cx-secondary-fg-inverse);
 }
 
 .neutral-fg-inverse {
-  --cx-fg-color: var(--cx-neutral-fg-inverse, $value);
-  color: var(--cx-neutral-fg-inverse, #e9eced) !important;
+  --cx-fg-color: var(--cx-neutral-fg-inverse);
 }
 
 .danger-fg-inverse {
-  --cx-fg-color: var(--cx-danger-fg-inverse, $value);
-  color: var(--cx-danger-fg-inverse, #fededc) !important;
+  --cx-fg-color: var(--cx-danger-fg-inverse);
 }
 
 .success-fg-inverse {
-  --cx-fg-color: var(--cx-success-fg-inverse, $value);
-  color: var(--cx-success-fg-inverse, #dbf6e8) !important;
+  --cx-fg-color: var(--cx-success-fg-inverse);
 }
 
 .warning-fg-inverse {
-  --cx-fg-color: var(--cx-warning-fg-inverse, $value);
-  color: var(--cx-warning-fg-inverse, #fef1d9) !important;
+  --cx-fg-color: var(--cx-warning-fg-inverse);
 }
 
 .info-fg-inverse {
-  --cx-fg-color: var(--cx-info-fg-inverse, $value);
-  color: var(--cx-info-fg-inverse, #dcdcfe) !important;
+  --cx-fg-color: var(--cx-info-fg-inverse);
 }
 
 .black-fg-inverse {
-  --cx-fg-color: var(--cx-black-fg-inverse, $value);
-  color: var(--cx-black-fg-inverse, #ffffff) !important;
+  --cx-fg-color: var(--cx-black-fg-inverse);
 }
 
 .white-fg-inverse {
-  --cx-fg-color: var(--cx-white-fg-inverse, $value);
-  color: var(--cx-white-fg-inverse, #000000) !important;
+  --cx-fg-color: var(--cx-white-fg-inverse);
 }
 
 .default-fg-solid {
-  --cx-fg-color: var(--cx-default-fg-solid, $value);
-  color: var(--cx-default-fg-solid, #000000) !important;
+  --cx-fg-color: var(--cx-default-fg-solid);
 }
 
 .alternate-fg-solid {
-  --cx-fg-color: var(--cx-alternate-fg-solid, $value);
-  color: var(--cx-alternate-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-alternate-fg-solid);
 }
 
 .primary-fg-solid {
-  --cx-fg-color: var(--cx-primary-fg-solid, $value);
-  color: var(--cx-primary-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-primary-fg-solid);
 }
 
 .secondary-fg-solid {
-  --cx-fg-color: var(--cx-secondary-fg-solid, $value);
-  color: var(--cx-secondary-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-secondary-fg-solid);
 }
 
 .neutral-fg-solid {
-  --cx-fg-color: var(--cx-neutral-fg-solid, $value);
-  color: var(--cx-neutral-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-neutral-fg-solid);
 }
 
 .danger-fg-solid {
-  --cx-fg-color: var(--cx-danger-fg-solid, $value);
-  color: var(--cx-danger-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-danger-fg-solid);
 }
 
 .success-fg-solid {
-  --cx-fg-color: var(--cx-success-fg-solid, $value);
-  color: var(--cx-success-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-success-fg-solid);
 }
 
 .warning-fg-solid {
-  --cx-fg-color: var(--cx-warning-fg-solid, $value);
-  color: var(--cx-warning-fg-solid, #000000) !important;
+  --cx-fg-color: var(--cx-warning-fg-solid);
 }
 
 .info-fg-solid {
-  --cx-fg-color: var(--cx-info-fg-solid, $value);
-  color: var(--cx-info-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-info-fg-solid);
 }
 
 .black-fg-solid {
-  --cx-fg-color: var(--cx-black-fg-solid, $value);
-  color: var(--cx-black-fg-solid, #ffffff) !important;
+  --cx-fg-color: var(--cx-black-fg-solid);
 }
 
 .white-fg-solid {
-  --cx-fg-color: var(--cx-white-fg-solid, $value);
-  color: var(--cx-white-fg-solid, #000000) !important;
+  --cx-fg-color: var(--cx-white-fg-solid);
 }
 
 .default-fg-highlight {
-  --cx-fg-color: var(--cx-default-fg-highlight, $value);
-  color: var(--cx-default-fg-highlight, #00738f) !important;
+  --cx-fg-color: var(--cx-default-fg-highlight);
 }
 
 .alternate-fg-highlight {
-  --cx-fg-color: var(--cx-alternate-fg-highlight, $value);
-  color: var(--cx-alternate-fg-highlight, #b3e4f0) !important;
+  --cx-fg-color: var(--cx-alternate-fg-highlight);
 }
 
 .primary-fg-highlight {
-  --cx-fg-color: var(--cx-primary-fg-highlight, $value);
-  color: var(--cx-primary-fg-highlight, #00A4CC) !important;
+  --cx-fg-color: var(--cx-primary-fg-highlight);
 }
 
 .secondary-fg-highlight {
-  --cx-fg-color: var(--cx-secondary-fg-highlight, $value);
-  color: var(--cx-secondary-fg-highlight, #F55200) !important;
+  --cx-fg-color: var(--cx-secondary-fg-highlight);
 }
 
 .neutral-fg-highlight {
-  --cx-fg-color: var(--cx-neutral-fg-highlight, $value);
-  color: var(--cx-neutral-fg-highlight, #6F8085) !important;
+  --cx-fg-color: var(--cx-neutral-fg-highlight);
 }
 
 .danger-fg-highlight {
-  --cx-fg-color: var(--cx-danger-fg-highlight, $value);
-  color: var(--cx-danger-fg-highlight, #F52314) !important;
+  --cx-fg-color: var(--cx-danger-fg-highlight);
 }
 
 .success-fg-highlight {
-  --cx-fg-color: var(--cx-success-fg-highlight, $value);
-  color: var(--cx-success-fg-highlight, #10C263) !important;
+  --cx-fg-color: var(--cx-success-fg-highlight);
 }
 
 .warning-fg-highlight {
-  --cx-fg-color: var(--cx-warning-fg-highlight, $value);
-  color: var(--cx-warning-fg-highlight, #F5A300) !important;
+  --cx-fg-color: var(--cx-warning-fg-highlight);
 }
 
 .info-fg-highlight {
-  --cx-fg-color: var(--cx-info-fg-highlight, $value);
-  color: var(--cx-info-fg-highlight, #1414F5) !important;
+  --cx-fg-color: var(--cx-info-fg-highlight);
 }
 
 .black-fg-highlight {
-  --cx-fg-color: var(--cx-black-fg-highlight, $value);
-  color: var(--cx-black-fg-highlight, #000000) !important;
+  --cx-fg-color: var(--cx-black-fg-highlight);
 }
 
 .white-fg-highlight {
-  --cx-fg-color: var(--cx-white-fg-highlight, $value);
-  color: var(--cx-white-fg-highlight, #ffffff) !important;
+  --cx-fg-color: var(--cx-white-fg-highlight);
 }
 
 .default-fg-button {
-  --cx-fg-color: var(--cx-default-fg-button, $value);
-  color: var(--cx-default-fg-button, #000000) !important;
+  --cx-fg-color: var(--cx-default-fg-button);
 }
 
 .alternate-fg-button {
-  --cx-fg-color: var(--cx-alternate-fg-button, $value);
-  color: var(--cx-alternate-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-alternate-fg-button);
 }
 
 .primary-fg-button {
-  --cx-fg-color: var(--cx-primary-fg-button, $value);
-  color: var(--cx-primary-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-primary-fg-button);
 }
 
 .secondary-fg-button {
-  --cx-fg-color: var(--cx-secondary-fg-button, $value);
-  color: var(--cx-secondary-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-secondary-fg-button);
 }
 
 .neutral-fg-button {
-  --cx-fg-color: var(--cx-neutral-fg-button, $value);
-  color: var(--cx-neutral-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-neutral-fg-button);
 }
 
 .danger-fg-button {
-  --cx-fg-color: var(--cx-danger-fg-button, $value);
-  color: var(--cx-danger-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-danger-fg-button);
 }
 
 .success-fg-button {
-  --cx-fg-color: var(--cx-success-fg-button, $value);
-  color: var(--cx-success-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-success-fg-button);
 }
 
 .warning-fg-button {
-  --cx-fg-color: var(--cx-warning-fg-button, $value);
-  color: var(--cx-warning-fg-button, #000000) !important;
+  --cx-fg-color: var(--cx-warning-fg-button);
 }
 
 .info-fg-button {
-  --cx-fg-color: var(--cx-info-fg-button, $value);
-  color: var(--cx-info-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-info-fg-button);
 }
 
 .black-fg-button {
-  --cx-fg-color: var(--cx-black-fg-button, $value);
-  color: var(--cx-black-fg-button, #ffffff) !important;
+  --cx-fg-color: var(--cx-black-fg-button);
 }
 
 .white-fg-button {
-  --cx-fg-color: var(--cx-white-fg-button, $value);
-  color: var(--cx-white-fg-button, #000000) !important;
+  --cx-fg-color: var(--cx-white-fg-button);
 }
 
 .default-fg-disabled {
-  --cx-fg-color: var(--cx-default-fg-disabled, $value);
-  color: var(--cx-default-fg-disabled, rgba(0, 0, 0, 0.25)) !important;
+  --cx-fg-color: var(--cx-default-fg-disabled);
 }
 
 .alternate-fg-disabled {
-  --cx-fg-color: var(--cx-alternate-fg-disabled, $value);
-  color: var(--cx-alternate-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-alternate-fg-disabled);
 }
 
 .primary-fg-disabled {
-  --cx-fg-color: var(--cx-primary-fg-disabled, $value);
-  color: var(--cx-primary-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-primary-fg-disabled);
 }
 
 .secondary-fg-disabled {
-  --cx-fg-color: var(--cx-secondary-fg-disabled, $value);
-  color: var(--cx-secondary-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-secondary-fg-disabled);
 }
 
 .neutral-fg-disabled {
-  --cx-fg-color: var(--cx-neutral-fg-disabled, $value);
-  color: var(--cx-neutral-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-neutral-fg-disabled);
 }
 
 .danger-fg-disabled {
-  --cx-fg-color: var(--cx-danger-fg-disabled, $value);
-  color: var(--cx-danger-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-danger-fg-disabled);
 }
 
 .success-fg-disabled {
-  --cx-fg-color: var(--cx-success-fg-disabled, $value);
-  color: var(--cx-success-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-success-fg-disabled);
 }
 
 .warning-fg-disabled {
-  --cx-fg-color: var(--cx-warning-fg-disabled, $value);
-  color: var(--cx-warning-fg-disabled, rgba(0, 0, 0, 0.25)) !important;
+  --cx-fg-color: var(--cx-warning-fg-disabled);
 }
 
 .info-fg-disabled {
-  --cx-fg-color: var(--cx-info-fg-disabled, $value);
-  color: var(--cx-info-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-info-fg-disabled);
 }
 
 .black-fg-disabled {
-  --cx-fg-color: var(--cx-black-fg-disabled, $value);
-  color: var(--cx-black-fg-disabled, rgba(255, 255, 255, 0.25)) !important;
+  --cx-fg-color: var(--cx-black-fg-disabled);
 }
 
 .white-fg-disabled {
-  --cx-fg-color: var(--cx-white-fg-disabled, $value);
-  color: var(--cx-white-fg-disabled, rgba(0, 0, 0, 0.25)) !important;
+  --cx-fg-color: var(--cx-white-fg-disabled);
 }
 
 .default-fg-hover {
-  --cx-fg-color: var(--cx-default-fg-hover, $value);
-  color: var(--cx-default-fg-hover, rgba(0, 0, 0, 0.9)) !important;
+  --cx-fg-color: var(--cx-default-fg-hover);
 }
 
 .alternate-fg-hover {
-  --cx-fg-color: var(--cx-alternate-fg-hover, $value);
-  color: var(--cx-alternate-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-alternate-fg-hover);
 }
 
 .primary-fg-hover {
-  --cx-fg-color: var(--cx-primary-fg-hover, $value);
-  color: var(--cx-primary-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-primary-fg-hover);
 }
 
 .secondary-fg-hover {
-  --cx-fg-color: var(--cx-secondary-fg-hover, $value);
-  color: var(--cx-secondary-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-secondary-fg-hover);
 }
 
 .neutral-fg-hover {
-  --cx-fg-color: var(--cx-neutral-fg-hover, $value);
-  color: var(--cx-neutral-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-neutral-fg-hover);
 }
 
 .danger-fg-hover {
-  --cx-fg-color: var(--cx-danger-fg-hover, $value);
-  color: var(--cx-danger-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-danger-fg-hover);
 }
 
 .success-fg-hover {
-  --cx-fg-color: var(--cx-success-fg-hover, $value);
-  color: var(--cx-success-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-success-fg-hover);
 }
 
 .warning-fg-hover {
-  --cx-fg-color: var(--cx-warning-fg-hover, $value);
-  color: var(--cx-warning-fg-hover, rgba(0, 0, 0, 0.9)) !important;
+  --cx-fg-color: var(--cx-warning-fg-hover);
 }
 
 .info-fg-hover {
-  --cx-fg-color: var(--cx-info-fg-hover, $value);
-  color: var(--cx-info-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-info-fg-hover);
 }
 
 .black-fg-hover {
-  --cx-fg-color: var(--cx-black-fg-hover, $value);
-  color: var(--cx-black-fg-hover, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-black-fg-hover);
 }
 
 .white-fg-hover {
-  --cx-fg-color: var(--cx-white-fg-hover, $value);
-  color: var(--cx-white-fg-hover, rgba(0, 0, 0, 0.9)) !important;
+  --cx-fg-color: var(--cx-white-fg-hover);
 }
 
 .default-fg-press {
-  --cx-fg-color: var(--cx-default-fg-press, $value);
-  color: var(--cx-default-fg-press, rgba(0, 0, 0, 0.9)) !important;
+  --cx-fg-color: var(--cx-default-fg-press);
 }
 
 .alternate-fg-press {
-  --cx-fg-color: var(--cx-alternate-fg-press, $value);
-  color: var(--cx-alternate-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-alternate-fg-press);
 }
 
 .primary-fg-press {
-  --cx-fg-color: var(--cx-primary-fg-press, $value);
-  color: var(--cx-primary-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-primary-fg-press);
 }
 
 .secondary-fg-press {
-  --cx-fg-color: var(--cx-secondary-fg-press, $value);
-  color: var(--cx-secondary-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-secondary-fg-press);
 }
 
 .neutral-fg-press {
-  --cx-fg-color: var(--cx-neutral-fg-press, $value);
-  color: var(--cx-neutral-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-neutral-fg-press);
 }
 
 .danger-fg-press {
-  --cx-fg-color: var(--cx-danger-fg-press, $value);
-  color: var(--cx-danger-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-danger-fg-press);
 }
 
 .success-fg-press {
-  --cx-fg-color: var(--cx-success-fg-press, $value);
-  color: var(--cx-success-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-success-fg-press);
 }
 
 .warning-fg-press {
-  --cx-fg-color: var(--cx-warning-fg-press, $value);
-  color: var(--cx-warning-fg-press, rgba(0, 0, 0, 0.9)) !important;
+  --cx-fg-color: var(--cx-warning-fg-press);
 }
 
 .info-fg-press {
-  --cx-fg-color: var(--cx-info-fg-press, $value);
-  color: var(--cx-info-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-info-fg-press);
 }
 
 .black-fg-press {
-  --cx-fg-color: var(--cx-black-fg-press, $value);
-  color: var(--cx-black-fg-press, rgba(255, 255, 255, 0.9)) !important;
+  --cx-fg-color: var(--cx-black-fg-press);
 }
 
 .white-fg-press {
-  --cx-fg-color: var(--cx-white-fg-press, $value);
-  color: var(--cx-white-fg-press, rgba(0, 0, 0, 0.9)) !important;
+  --cx-fg-color: var(--cx-white-fg-press);
 }
 
 .fg-main {
-  --cx-fg-color: var(--cx-fg-main, $value);
-  color: var(--cx-fg-main, var(--cx-default-fg-main)) !important;
+  --cx-fg-color: var(--cx-fg-main);
 }
 
 .fg-subtle {
-  --cx-fg-color: var(--cx-fg-subtle, $value);
-  color: var(--cx-fg-subtle, var(--cx-default-fg-subtle)) !important;
+  --cx-fg-color: var(--cx-fg-subtle);
 }
 
 .fg-slight {
-  --cx-fg-color: var(--cx-fg-slight, $value);
-  color: var(--cx-fg-slight, var(--cx-default-fg-slight)) !important;
+  --cx-fg-color: var(--cx-fg-slight);
 }
 
 .fg-inverse {
-  --cx-fg-color: var(--cx-fg-inverse, $value);
-  color: var(--cx-fg-inverse, var(--cx-default-fg-inverse)) !important;
+  --cx-fg-color: var(--cx-fg-inverse);
 }
 
 .fg-solid {
-  --cx-fg-color: var(--cx-fg-solid, $value);
-  color: var(--cx-fg-solid, var(--cx-default-fg-solid)) !important;
+  --cx-fg-color: var(--cx-fg-solid);
 }
 
 .fg-highlight {
-  --cx-fg-color: var(--cx-fg-highlight, $value);
-  color: var(--cx-fg-highlight, var(--cx-default-fg-highlight)) !important;
+  --cx-fg-color: var(--cx-fg-highlight);
 }
 
 .fg-button {
-  --cx-fg-color: var(--cx-fg-button, $value);
-  color: var(--cx-fg-button, var(--cx-default-fg-button)) !important;
+  --cx-fg-color: var(--cx-fg-button);
 }
 
 .fg-disabled {
-  --cx-fg-color: var(--cx-fg-disabled, $value);
-  color: var(--cx-fg-disabled, var(--cx-default-fg-disabled)) !important;
+  --cx-fg-color: var(--cx-fg-disabled);
 }
 
 .fg-hover {
-  --cx-fg-color: var(--cx-fg-hover, $value);
-  color: var(--cx-fg-hover, var(--cx-default-fg-hover)) !important;
+  --cx-fg-color: var(--cx-fg-hover);
 }
 
 .fg-press {
-  --cx-fg-color: var(--cx-fg-press, $value);
-  color: var(--cx-fg-press, var(--cx-default-fg-press)) !important;
+  --cx-fg-color: var(--cx-fg-press);
+}
+
+.fg-reset {
+  --cx-fg-color: var(--cx-fg-reset);
 }
 
 .default-bg-main {
-  --cx-bg-color: var(--cx-default-bg-main, $value);
-  background-color: var(--cx-default-bg-main) !important;
+  --cx-bg-color: var(--cx-default-bg-main);
 }
 
 .alternate-bg-main {
-  --cx-bg-color: var(--cx-alternate-bg-main, $value);
-  background-color: var(--cx-alternate-bg-main) !important;
+  --cx-bg-color: var(--cx-alternate-bg-main);
 }
 
 .primary-bg-main {
-  --cx-bg-color: var(--cx-primary-bg-main, $value);
-  background-color: var(--cx-primary-bg-main) !important;
+  --cx-bg-color: var(--cx-primary-bg-main);
 }
 
 .secondary-bg-main {
-  --cx-bg-color: var(--cx-secondary-bg-main, $value);
-  background-color: var(--cx-secondary-bg-main) !important;
+  --cx-bg-color: var(--cx-secondary-bg-main);
 }
 
 .neutral-bg-main {
-  --cx-bg-color: var(--cx-neutral-bg-main, $value);
-  background-color: var(--cx-neutral-bg-main) !important;
+  --cx-bg-color: var(--cx-neutral-bg-main);
 }
 
 .danger-bg-main {
-  --cx-bg-color: var(--cx-danger-bg-main, $value);
-  background-color: var(--cx-danger-bg-main) !important;
+  --cx-bg-color: var(--cx-danger-bg-main);
 }
 
 .success-bg-main {
-  --cx-bg-color: var(--cx-success-bg-main, $value);
-  background-color: var(--cx-success-bg-main) !important;
+  --cx-bg-color: var(--cx-success-bg-main);
 }
 
 .warning-bg-main {
-  --cx-bg-color: var(--cx-warning-bg-main, $value);
-  background-color: var(--cx-warning-bg-main) !important;
+  --cx-bg-color: var(--cx-warning-bg-main);
 }
 
 .info-bg-main {
-  --cx-bg-color: var(--cx-info-bg-main, $value);
-  background-color: var(--cx-info-bg-main) !important;
+  --cx-bg-color: var(--cx-info-bg-main);
 }
 
 .black-bg-main {
-  --cx-bg-color: var(--cx-black-bg-main, $value);
-  background-color: var(--cx-black-bg-main) !important;
+  --cx-bg-color: var(--cx-black-bg-main);
 }
 
 .white-bg-main {
-  --cx-bg-color: var(--cx-white-bg-main, $value);
-  background-color: var(--cx-white-bg-main) !important;
+  --cx-bg-color: var(--cx-white-bg-main);
 }
 
 .default-bg-even {
-  --cx-bg-color: var(--cx-default-bg-even, $value);
-  background-color: var(--cx-default-bg-even) !important;
+  --cx-bg-color: var(--cx-default-bg-even);
 }
 
 .alternate-bg-even {
-  --cx-bg-color: var(--cx-alternate-bg-even, $value);
-  background-color: var(--cx-alternate-bg-even) !important;
+  --cx-bg-color: var(--cx-alternate-bg-even);
 }
 
 .primary-bg-even {
-  --cx-bg-color: var(--cx-primary-bg-even, $value);
-  background-color: var(--cx-primary-bg-even) !important;
+  --cx-bg-color: var(--cx-primary-bg-even);
 }
 
 .secondary-bg-even {
-  --cx-bg-color: var(--cx-secondary-bg-even, $value);
-  background-color: var(--cx-secondary-bg-even) !important;
+  --cx-bg-color: var(--cx-secondary-bg-even);
 }
 
 .neutral-bg-even {
-  --cx-bg-color: var(--cx-neutral-bg-even, $value);
-  background-color: var(--cx-neutral-bg-even) !important;
+  --cx-bg-color: var(--cx-neutral-bg-even);
 }
 
 .danger-bg-even {
-  --cx-bg-color: var(--cx-danger-bg-even, $value);
-  background-color: var(--cx-danger-bg-even) !important;
+  --cx-bg-color: var(--cx-danger-bg-even);
 }
 
 .success-bg-even {
-  --cx-bg-color: var(--cx-success-bg-even, $value);
-  background-color: var(--cx-success-bg-even) !important;
+  --cx-bg-color: var(--cx-success-bg-even);
 }
 
 .warning-bg-even {
-  --cx-bg-color: var(--cx-warning-bg-even, $value);
-  background-color: var(--cx-warning-bg-even) !important;
+  --cx-bg-color: var(--cx-warning-bg-even);
 }
 
 .info-bg-even {
-  --cx-bg-color: var(--cx-info-bg-even, $value);
-  background-color: var(--cx-info-bg-even) !important;
+  --cx-bg-color: var(--cx-info-bg-even);
 }
 
 .black-bg-even {
-  --cx-bg-color: var(--cx-black-bg-even, $value);
-  background-color: var(--cx-black-bg-even) !important;
+  --cx-bg-color: var(--cx-black-bg-even);
 }
 
 .white-bg-even {
-  --cx-bg-color: var(--cx-white-bg-even, $value);
-  background-color: var(--cx-white-bg-even) !important;
+  --cx-bg-color: var(--cx-white-bg-even);
 }
 
 .default-bg-evident {
-  --cx-bg-color: var(--cx-default-bg-evident, $value);
-  background-color: var(--cx-default-bg-evident) !important;
+  --cx-bg-color: var(--cx-default-bg-evident);
 }
 
 .alternate-bg-evident {
-  --cx-bg-color: var(--cx-alternate-bg-evident, $value);
-  background-color: var(--cx-alternate-bg-evident) !important;
+  --cx-bg-color: var(--cx-alternate-bg-evident);
 }
 
 .primary-bg-evident {
-  --cx-bg-color: var(--cx-primary-bg-evident, $value);
-  background-color: var(--cx-primary-bg-evident) !important;
+  --cx-bg-color: var(--cx-primary-bg-evident);
 }
 
 .secondary-bg-evident {
-  --cx-bg-color: var(--cx-secondary-bg-evident, $value);
-  background-color: var(--cx-secondary-bg-evident) !important;
+  --cx-bg-color: var(--cx-secondary-bg-evident);
 }
 
 .neutral-bg-evident {
-  --cx-bg-color: var(--cx-neutral-bg-evident, $value);
-  background-color: var(--cx-neutral-bg-evident) !important;
+  --cx-bg-color: var(--cx-neutral-bg-evident);
 }
 
 .danger-bg-evident {
-  --cx-bg-color: var(--cx-danger-bg-evident, $value);
-  background-color: var(--cx-danger-bg-evident) !important;
+  --cx-bg-color: var(--cx-danger-bg-evident);
 }
 
 .success-bg-evident {
-  --cx-bg-color: var(--cx-success-bg-evident, $value);
-  background-color: var(--cx-success-bg-evident) !important;
+  --cx-bg-color: var(--cx-success-bg-evident);
 }
 
 .warning-bg-evident {
-  --cx-bg-color: var(--cx-warning-bg-evident, $value);
-  background-color: var(--cx-warning-bg-evident) !important;
+  --cx-bg-color: var(--cx-warning-bg-evident);
 }
 
 .info-bg-evident {
-  --cx-bg-color: var(--cx-info-bg-evident, $value);
-  background-color: var(--cx-info-bg-evident) !important;
+  --cx-bg-color: var(--cx-info-bg-evident);
 }
 
 .black-bg-evident {
-  --cx-bg-color: var(--cx-black-bg-evident, $value);
-  background-color: var(--cx-black-bg-evident) !important;
+  --cx-bg-color: var(--cx-black-bg-evident);
 }
 
 .white-bg-evident {
-  --cx-bg-color: var(--cx-white-bg-evident, $value);
-  background-color: var(--cx-white-bg-evident) !important;
+  --cx-bg-color: var(--cx-white-bg-evident);
 }
 
 .default-bg-inverse {
-  --cx-bg-color: var(--cx-default-bg-inverse, $value);
-  background-color: var(--cx-default-bg-inverse) !important;
+  --cx-bg-color: var(--cx-default-bg-inverse);
 }
 
 .alternate-bg-inverse {
-  --cx-bg-color: var(--cx-alternate-bg-inverse, $value);
-  background-color: var(--cx-alternate-bg-inverse) !important;
+  --cx-bg-color: var(--cx-alternate-bg-inverse);
 }
 
 .primary-bg-inverse {
-  --cx-bg-color: var(--cx-primary-bg-inverse, $value);
-  background-color: var(--cx-primary-bg-inverse) !important;
+  --cx-bg-color: var(--cx-primary-bg-inverse);
 }
 
 .secondary-bg-inverse {
-  --cx-bg-color: var(--cx-secondary-bg-inverse, $value);
-  background-color: var(--cx-secondary-bg-inverse) !important;
+  --cx-bg-color: var(--cx-secondary-bg-inverse);
 }
 
 .neutral-bg-inverse {
-  --cx-bg-color: var(--cx-neutral-bg-inverse, $value);
-  background-color: var(--cx-neutral-bg-inverse) !important;
+  --cx-bg-color: var(--cx-neutral-bg-inverse);
 }
 
 .danger-bg-inverse {
-  --cx-bg-color: var(--cx-danger-bg-inverse, $value);
-  background-color: var(--cx-danger-bg-inverse) !important;
+  --cx-bg-color: var(--cx-danger-bg-inverse);
 }
 
 .success-bg-inverse {
-  --cx-bg-color: var(--cx-success-bg-inverse, $value);
-  background-color: var(--cx-success-bg-inverse) !important;
+  --cx-bg-color: var(--cx-success-bg-inverse);
 }
 
 .warning-bg-inverse {
-  --cx-bg-color: var(--cx-warning-bg-inverse, $value);
-  background-color: var(--cx-warning-bg-inverse) !important;
+  --cx-bg-color: var(--cx-warning-bg-inverse);
 }
 
 .info-bg-inverse {
-  --cx-bg-color: var(--cx-info-bg-inverse, $value);
-  background-color: var(--cx-info-bg-inverse) !important;
+  --cx-bg-color: var(--cx-info-bg-inverse);
 }
 
 .black-bg-inverse {
-  --cx-bg-color: var(--cx-black-bg-inverse, $value);
-  background-color: var(--cx-black-bg-inverse) !important;
+  --cx-bg-color: var(--cx-black-bg-inverse);
 }
 
 .white-bg-inverse {
-  --cx-bg-color: var(--cx-white-bg-inverse, $value);
-  background-color: var(--cx-white-bg-inverse) !important;
+  --cx-bg-color: var(--cx-white-bg-inverse);
 }
 
 .default-bg-solid {
-  --cx-bg-color: var(--cx-default-bg-solid, $value);
-  background-color: var(--cx-default-bg-solid) !important;
+  --cx-bg-color: var(--cx-default-bg-solid);
 }
 
 .alternate-bg-solid {
-  --cx-bg-color: var(--cx-alternate-bg-solid, $value);
-  background-color: var(--cx-alternate-bg-solid) !important;
+  --cx-bg-color: var(--cx-alternate-bg-solid);
 }
 
 .primary-bg-solid {
-  --cx-bg-color: var(--cx-primary-bg-solid, $value);
-  background-color: var(--cx-primary-bg-solid) !important;
+  --cx-bg-color: var(--cx-primary-bg-solid);
 }
 
 .secondary-bg-solid {
-  --cx-bg-color: var(--cx-secondary-bg-solid, $value);
-  background-color: var(--cx-secondary-bg-solid) !important;
+  --cx-bg-color: var(--cx-secondary-bg-solid);
 }
 
 .neutral-bg-solid {
-  --cx-bg-color: var(--cx-neutral-bg-solid, $value);
-  background-color: var(--cx-neutral-bg-solid) !important;
+  --cx-bg-color: var(--cx-neutral-bg-solid);
 }
 
 .danger-bg-solid {
-  --cx-bg-color: var(--cx-danger-bg-solid, $value);
-  background-color: var(--cx-danger-bg-solid) !important;
+  --cx-bg-color: var(--cx-danger-bg-solid);
 }
 
 .success-bg-solid {
-  --cx-bg-color: var(--cx-success-bg-solid, $value);
-  background-color: var(--cx-success-bg-solid) !important;
+  --cx-bg-color: var(--cx-success-bg-solid);
 }
 
 .warning-bg-solid {
-  --cx-bg-color: var(--cx-warning-bg-solid, $value);
-  background-color: var(--cx-warning-bg-solid) !important;
+  --cx-bg-color: var(--cx-warning-bg-solid);
 }
 
 .info-bg-solid {
-  --cx-bg-color: var(--cx-info-bg-solid, $value);
-  background-color: var(--cx-info-bg-solid) !important;
+  --cx-bg-color: var(--cx-info-bg-solid);
 }
 
 .black-bg-solid {
-  --cx-bg-color: var(--cx-black-bg-solid, $value);
-  background-color: var(--cx-black-bg-solid) !important;
+  --cx-bg-color: var(--cx-black-bg-solid);
 }
 
 .white-bg-solid {
-  --cx-bg-color: var(--cx-white-bg-solid, $value);
-  background-color: var(--cx-white-bg-solid) !important;
+  --cx-bg-color: var(--cx-white-bg-solid);
 }
 
 .default-bg-highlight {
-  --cx-bg-color: var(--cx-default-bg-highlight, $value);
-  background-color: var(--cx-default-bg-highlight) !important;
+  --cx-bg-color: var(--cx-default-bg-highlight);
 }
 
 .alternate-bg-highlight {
-  --cx-bg-color: var(--cx-alternate-bg-highlight, $value);
-  background-color: var(--cx-alternate-bg-highlight) !important;
+  --cx-bg-color: var(--cx-alternate-bg-highlight);
 }
 
 .primary-bg-highlight {
-  --cx-bg-color: var(--cx-primary-bg-highlight, $value);
-  background-color: var(--cx-primary-bg-highlight) !important;
+  --cx-bg-color: var(--cx-primary-bg-highlight);
 }
 
 .secondary-bg-highlight {
-  --cx-bg-color: var(--cx-secondary-bg-highlight, $value);
-  background-color: var(--cx-secondary-bg-highlight) !important;
+  --cx-bg-color: var(--cx-secondary-bg-highlight);
 }
 
 .neutral-bg-highlight {
-  --cx-bg-color: var(--cx-neutral-bg-highlight, $value);
-  background-color: var(--cx-neutral-bg-highlight) !important;
+  --cx-bg-color: var(--cx-neutral-bg-highlight);
 }
 
 .danger-bg-highlight {
-  --cx-bg-color: var(--cx-danger-bg-highlight, $value);
-  background-color: var(--cx-danger-bg-highlight) !important;
+  --cx-bg-color: var(--cx-danger-bg-highlight);
 }
 
 .success-bg-highlight {
-  --cx-bg-color: var(--cx-success-bg-highlight, $value);
-  background-color: var(--cx-success-bg-highlight) !important;
+  --cx-bg-color: var(--cx-success-bg-highlight);
 }
 
 .warning-bg-highlight {
-  --cx-bg-color: var(--cx-warning-bg-highlight, $value);
-  background-color: var(--cx-warning-bg-highlight) !important;
+  --cx-bg-color: var(--cx-warning-bg-highlight);
 }
 
 .info-bg-highlight {
-  --cx-bg-color: var(--cx-info-bg-highlight, $value);
-  background-color: var(--cx-info-bg-highlight) !important;
+  --cx-bg-color: var(--cx-info-bg-highlight);
 }
 
 .black-bg-highlight {
-  --cx-bg-color: var(--cx-black-bg-highlight, $value);
-  background-color: var(--cx-black-bg-highlight) !important;
+  --cx-bg-color: var(--cx-black-bg-highlight);
 }
 
 .white-bg-highlight {
-  --cx-bg-color: var(--cx-white-bg-highlight, $value);
-  background-color: var(--cx-white-bg-highlight) !important;
+  --cx-bg-color: var(--cx-white-bg-highlight);
 }
 
 .default-bg-button {
-  --cx-bg-color: var(--cx-default-bg-button, $value);
-  background-color: var(--cx-default-bg-button) !important;
+  --cx-bg-color: var(--cx-default-bg-button);
 }
 
 .alternate-bg-button {
-  --cx-bg-color: var(--cx-alternate-bg-button, $value);
-  background-color: var(--cx-alternate-bg-button) !important;
+  --cx-bg-color: var(--cx-alternate-bg-button);
 }
 
 .primary-bg-button {
-  --cx-bg-color: var(--cx-primary-bg-button, $value);
-  background-color: var(--cx-primary-bg-button) !important;
+  --cx-bg-color: var(--cx-primary-bg-button);
 }
 
 .secondary-bg-button {
-  --cx-bg-color: var(--cx-secondary-bg-button, $value);
-  background-color: var(--cx-secondary-bg-button) !important;
+  --cx-bg-color: var(--cx-secondary-bg-button);
 }
 
 .neutral-bg-button {
-  --cx-bg-color: var(--cx-neutral-bg-button, $value);
-  background-color: var(--cx-neutral-bg-button) !important;
+  --cx-bg-color: var(--cx-neutral-bg-button);
 }
 
 .danger-bg-button {
-  --cx-bg-color: var(--cx-danger-bg-button, $value);
-  background-color: var(--cx-danger-bg-button) !important;
+  --cx-bg-color: var(--cx-danger-bg-button);
 }
 
 .success-bg-button {
-  --cx-bg-color: var(--cx-success-bg-button, $value);
-  background-color: var(--cx-success-bg-button) !important;
+  --cx-bg-color: var(--cx-success-bg-button);
 }
 
 .warning-bg-button {
-  --cx-bg-color: var(--cx-warning-bg-button, $value);
-  background-color: var(--cx-warning-bg-button) !important;
+  --cx-bg-color: var(--cx-warning-bg-button);
 }
 
 .info-bg-button {
-  --cx-bg-color: var(--cx-info-bg-button, $value);
-  background-color: var(--cx-info-bg-button) !important;
+  --cx-bg-color: var(--cx-info-bg-button);
 }
 
 .black-bg-button {
-  --cx-bg-color: var(--cx-black-bg-button, $value);
-  background-color: var(--cx-black-bg-button) !important;
+  --cx-bg-color: var(--cx-black-bg-button);
 }
 
 .white-bg-button {
-  --cx-bg-color: var(--cx-white-bg-button, $value);
-  background-color: var(--cx-white-bg-button) !important;
+  --cx-bg-color: var(--cx-white-bg-button);
 }
 
 .default-bg-disabled {
-  --cx-bg-color: var(--cx-default-bg-disabled, $value);
-  background-color: var(--cx-default-bg-disabled) !important;
+  --cx-bg-color: var(--cx-default-bg-disabled);
 }
 
 .alternate-bg-disabled {
-  --cx-bg-color: var(--cx-alternate-bg-disabled, $value);
-  background-color: var(--cx-alternate-bg-disabled) !important;
+  --cx-bg-color: var(--cx-alternate-bg-disabled);
 }
 
 .primary-bg-disabled {
-  --cx-bg-color: var(--cx-primary-bg-disabled, $value);
-  background-color: var(--cx-primary-bg-disabled) !important;
+  --cx-bg-color: var(--cx-primary-bg-disabled);
 }
 
 .secondary-bg-disabled {
-  --cx-bg-color: var(--cx-secondary-bg-disabled, $value);
-  background-color: var(--cx-secondary-bg-disabled) !important;
+  --cx-bg-color: var(--cx-secondary-bg-disabled);
 }
 
 .neutral-bg-disabled {
-  --cx-bg-color: var(--cx-neutral-bg-disabled, $value);
-  background-color: var(--cx-neutral-bg-disabled) !important;
+  --cx-bg-color: var(--cx-neutral-bg-disabled);
 }
 
 .danger-bg-disabled {
-  --cx-bg-color: var(--cx-danger-bg-disabled, $value);
-  background-color: var(--cx-danger-bg-disabled) !important;
+  --cx-bg-color: var(--cx-danger-bg-disabled);
 }
 
 .success-bg-disabled {
-  --cx-bg-color: var(--cx-success-bg-disabled, $value);
-  background-color: var(--cx-success-bg-disabled) !important;
+  --cx-bg-color: var(--cx-success-bg-disabled);
 }
 
 .warning-bg-disabled {
-  --cx-bg-color: var(--cx-warning-bg-disabled, $value);
-  background-color: var(--cx-warning-bg-disabled) !important;
+  --cx-bg-color: var(--cx-warning-bg-disabled);
 }
 
 .info-bg-disabled {
-  --cx-bg-color: var(--cx-info-bg-disabled, $value);
-  background-color: var(--cx-info-bg-disabled) !important;
+  --cx-bg-color: var(--cx-info-bg-disabled);
 }
 
 .black-bg-disabled {
-  --cx-bg-color: var(--cx-black-bg-disabled, $value);
-  background-color: var(--cx-black-bg-disabled) !important;
+  --cx-bg-color: var(--cx-black-bg-disabled);
 }
 
 .white-bg-disabled {
-  --cx-bg-color: var(--cx-white-bg-disabled, $value);
-  background-color: var(--cx-white-bg-disabled) !important;
+  --cx-bg-color: var(--cx-white-bg-disabled);
 }
 
 .default-bg-hover {
-  --cx-bg-color: var(--cx-default-bg-hover, $value);
-  background-color: var(--cx-default-bg-hover) !important;
+  --cx-bg-color: var(--cx-default-bg-hover);
 }
 
 .alternate-bg-hover {
-  --cx-bg-color: var(--cx-alternate-bg-hover, $value);
-  background-color: var(--cx-alternate-bg-hover) !important;
+  --cx-bg-color: var(--cx-alternate-bg-hover);
 }
 
 .primary-bg-hover {
-  --cx-bg-color: var(--cx-primary-bg-hover, $value);
-  background-color: var(--cx-primary-bg-hover) !important;
+  --cx-bg-color: var(--cx-primary-bg-hover);
 }
 
 .secondary-bg-hover {
-  --cx-bg-color: var(--cx-secondary-bg-hover, $value);
-  background-color: var(--cx-secondary-bg-hover) !important;
+  --cx-bg-color: var(--cx-secondary-bg-hover);
 }
 
 .neutral-bg-hover {
-  --cx-bg-color: var(--cx-neutral-bg-hover, $value);
-  background-color: var(--cx-neutral-bg-hover) !important;
+  --cx-bg-color: var(--cx-neutral-bg-hover);
 }
 
 .danger-bg-hover {
-  --cx-bg-color: var(--cx-danger-bg-hover, $value);
-  background-color: var(--cx-danger-bg-hover) !important;
+  --cx-bg-color: var(--cx-danger-bg-hover);
 }
 
 .success-bg-hover {
-  --cx-bg-color: var(--cx-success-bg-hover, $value);
-  background-color: var(--cx-success-bg-hover) !important;
+  --cx-bg-color: var(--cx-success-bg-hover);
 }
 
 .warning-bg-hover {
-  --cx-bg-color: var(--cx-warning-bg-hover, $value);
-  background-color: var(--cx-warning-bg-hover) !important;
+  --cx-bg-color: var(--cx-warning-bg-hover);
 }
 
 .info-bg-hover {
-  --cx-bg-color: var(--cx-info-bg-hover, $value);
-  background-color: var(--cx-info-bg-hover) !important;
+  --cx-bg-color: var(--cx-info-bg-hover);
 }
 
 .black-bg-hover {
-  --cx-bg-color: var(--cx-black-bg-hover, $value);
-  background-color: var(--cx-black-bg-hover) !important;
+  --cx-bg-color: var(--cx-black-bg-hover);
 }
 
 .white-bg-hover {
-  --cx-bg-color: var(--cx-white-bg-hover, $value);
-  background-color: var(--cx-white-bg-hover) !important;
+  --cx-bg-color: var(--cx-white-bg-hover);
 }
 
 .default-bg-press {
-  --cx-bg-color: var(--cx-default-bg-press, $value);
-  background-color: var(--cx-default-bg-press) !important;
+  --cx-bg-color: var(--cx-default-bg-press);
 }
 
 .alternate-bg-press {
-  --cx-bg-color: var(--cx-alternate-bg-press, $value);
-  background-color: var(--cx-alternate-bg-press) !important;
+  --cx-bg-color: var(--cx-alternate-bg-press);
 }
 
 .primary-bg-press {
-  --cx-bg-color: var(--cx-primary-bg-press, $value);
-  background-color: var(--cx-primary-bg-press) !important;
+  --cx-bg-color: var(--cx-primary-bg-press);
 }
 
 .secondary-bg-press {
-  --cx-bg-color: var(--cx-secondary-bg-press, $value);
-  background-color: var(--cx-secondary-bg-press) !important;
+  --cx-bg-color: var(--cx-secondary-bg-press);
 }
 
 .neutral-bg-press {
-  --cx-bg-color: var(--cx-neutral-bg-press, $value);
-  background-color: var(--cx-neutral-bg-press) !important;
+  --cx-bg-color: var(--cx-neutral-bg-press);
 }
 
 .danger-bg-press {
-  --cx-bg-color: var(--cx-danger-bg-press, $value);
-  background-color: var(--cx-danger-bg-press) !important;
+  --cx-bg-color: var(--cx-danger-bg-press);
 }
 
 .success-bg-press {
-  --cx-bg-color: var(--cx-success-bg-press, $value);
-  background-color: var(--cx-success-bg-press) !important;
+  --cx-bg-color: var(--cx-success-bg-press);
 }
 
 .warning-bg-press {
-  --cx-bg-color: var(--cx-warning-bg-press, $value);
-  background-color: var(--cx-warning-bg-press) !important;
+  --cx-bg-color: var(--cx-warning-bg-press);
 }
 
 .info-bg-press {
-  --cx-bg-color: var(--cx-info-bg-press, $value);
-  background-color: var(--cx-info-bg-press) !important;
+  --cx-bg-color: var(--cx-info-bg-press);
 }
 
 .black-bg-press {
-  --cx-bg-color: var(--cx-black-bg-press, $value);
-  background-color: var(--cx-black-bg-press) !important;
+  --cx-bg-color: var(--cx-black-bg-press);
 }
 
 .white-bg-press {
-  --cx-bg-color: var(--cx-white-bg-press, $value);
-  background-color: var(--cx-white-bg-press) !important;
+  --cx-bg-color: var(--cx-white-bg-press);
 }
 
 .bg-main {
-  --cx-bg-color: var(--cx-bg-main, $value);
-  background-color: var(--cx-bg-main) !important;
+  --cx-bg-color: var(--cx-bg-main);
 }
 
 .bg-even {
-  --cx-bg-color: var(--cx-bg-even, $value);
-  background-color: var(--cx-bg-even) !important;
+  --cx-bg-color: var(--cx-bg-even);
 }
 
 .bg-evident {
-  --cx-bg-color: var(--cx-bg-evident, $value);
-  background-color: var(--cx-bg-evident) !important;
+  --cx-bg-color: var(--cx-bg-evident);
 }
 
 .bg-inverse {
-  --cx-bg-color: var(--cx-bg-inverse, $value);
-  background-color: var(--cx-bg-inverse) !important;
+  --cx-bg-color: var(--cx-bg-inverse);
 }
 
 .bg-solid {
-  --cx-bg-color: var(--cx-bg-solid, $value);
-  background-color: var(--cx-bg-solid) !important;
+  --cx-bg-color: var(--cx-bg-solid);
 }
 
 .bg-highlight {
-  --cx-bg-color: var(--cx-bg-highlight, $value);
-  background-color: var(--cx-bg-highlight) !important;
+  --cx-bg-color: var(--cx-bg-highlight);
 }
 
 .bg-button {
-  --cx-bg-color: var(--cx-bg-button, $value);
-  background-color: var(--cx-bg-button) !important;
+  --cx-bg-color: var(--cx-bg-button);
 }
 
 .bg-disabled {
-  --cx-bg-color: var(--cx-bg-disabled, $value);
-  background-color: var(--cx-bg-disabled) !important;
+  --cx-bg-color: var(--cx-bg-disabled);
 }
 
 .bg-hover {
-  --cx-bg-color: var(--cx-bg-hover, $value);
-  background-color: var(--cx-bg-hover) !important;
+  --cx-bg-color: var(--cx-bg-hover);
 }
 
 .bg-press {
-  --cx-bg-color: var(--cx-bg-press, $value);
-  background-color: var(--cx-bg-press) !important;
+  --cx-bg-color: var(--cx-bg-press);
+}
+
+.bg-transparent {
+  --cx-bg-color: var(--cx-bg-transparent);
 }
 
 .default-border-main {
   --cx-border-color: var(--cx-default-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .alternate-border-main {
   --cx-border-color: var(--cx-alternate-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .primary-border-main {
   --cx-border-color: var(--cx-primary-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .secondary-border-main {
   --cx-border-color: var(--cx-secondary-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .neutral-border-main {
   --cx-border-color: var(--cx-neutral-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .danger-border-main {
   --cx-border-color: var(--cx-danger-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .success-border-main {
   --cx-border-color: var(--cx-success-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .warning-border-main {
   --cx-border-color: var(--cx-warning-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .info-border-main {
   --cx-border-color: var(--cx-info-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .black-border-main {
   --cx-border-color: var(--cx-black-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .white-border-main {
   --cx-border-color: var(--cx-white-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .default-border-subtle {
   --cx-border-color: var(--cx-default-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .alternate-border-subtle {
   --cx-border-color: var(--cx-alternate-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .primary-border-subtle {
   --cx-border-color: var(--cx-primary-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .secondary-border-subtle {
   --cx-border-color: var(--cx-secondary-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .neutral-border-subtle {
   --cx-border-color: var(--cx-neutral-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .danger-border-subtle {
   --cx-border-color: var(--cx-danger-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .success-border-subtle {
   --cx-border-color: var(--cx-success-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .warning-border-subtle {
   --cx-border-color: var(--cx-warning-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .info-border-subtle {
   --cx-border-color: var(--cx-info-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .black-border-subtle {
   --cx-border-color: var(--cx-black-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .white-border-subtle {
   --cx-border-color: var(--cx-white-border-subtle);
-  border-color: var(--cx-border-color) !important;
 }
 
 .border-main {
   --cx-border-color: var(--cx-border-main);
-  border-color: var(--cx-border-color) !important;
 }
 
 .border-subtle {
   --cx-border-color: var(--cx-border-subtle);
-  border-color: var(--cx-border-color) !important;
+}
+
+.default-icon-main {
+  --cx-icon-color: var(--cx-default-icon-main);
+}
+
+.alternate-icon-main {
+  --cx-icon-color: var(--cx-alternate-icon-main);
+}
+
+.primary-icon-main {
+  --cx-icon-color: var(--cx-primary-icon-main);
+}
+
+.secondary-icon-main {
+  --cx-icon-color: var(--cx-secondary-icon-main);
+}
+
+.neutral-icon-main {
+  --cx-icon-color: var(--cx-neutral-icon-main);
+}
+
+.danger-icon-main {
+  --cx-icon-color: var(--cx-danger-icon-main);
+}
+
+.success-icon-main {
+  --cx-icon-color: var(--cx-success-icon-main);
+}
+
+.warning-icon-main {
+  --cx-icon-color: var(--cx-warning-icon-main);
+}
+
+.info-icon-main {
+  --cx-icon-color: var(--cx-info-icon-main);
+}
+
+.black-icon-main {
+  --cx-icon-color: var(--cx-black-icon-main);
+}
+
+.white-icon-main {
+  --cx-icon-color: var(--cx-white-icon-main);
+}
+
+.default-icon-subtle {
+  --cx-icon-color: var(--cx-default-icon-subtle);
+}
+
+.alternate-icon-subtle {
+  --cx-icon-color: var(--cx-alternate-icon-subtle);
+}
+
+.primary-icon-subtle {
+  --cx-icon-color: var(--cx-primary-icon-subtle);
+}
+
+.secondary-icon-subtle {
+  --cx-icon-color: var(--cx-secondary-icon-subtle);
+}
+
+.neutral-icon-subtle {
+  --cx-icon-color: var(--cx-neutral-icon-subtle);
+}
+
+.danger-icon-subtle {
+  --cx-icon-color: var(--cx-danger-icon-subtle);
+}
+
+.success-icon-subtle {
+  --cx-icon-color: var(--cx-success-icon-subtle);
+}
+
+.warning-icon-subtle {
+  --cx-icon-color: var(--cx-warning-icon-subtle);
+}
+
+.info-icon-subtle {
+  --cx-icon-color: var(--cx-info-icon-subtle);
+}
+
+.black-icon-subtle {
+  --cx-icon-color: var(--cx-black-icon-subtle);
+}
+
+.white-icon-subtle {
+  --cx-icon-color: var(--cx-white-icon-subtle);
+}
+
+.default-icon-slight {
+  --cx-icon-color: var(--cx-default-icon-slight);
+}
+
+.alternate-icon-slight {
+  --cx-icon-color: var(--cx-alternate-icon-slight);
+}
+
+.primary-icon-slight {
+  --cx-icon-color: var(--cx-primary-icon-slight);
+}
+
+.secondary-icon-slight {
+  --cx-icon-color: var(--cx-secondary-icon-slight);
+}
+
+.neutral-icon-slight {
+  --cx-icon-color: var(--cx-neutral-icon-slight);
+}
+
+.danger-icon-slight {
+  --cx-icon-color: var(--cx-danger-icon-slight);
+}
+
+.success-icon-slight {
+  --cx-icon-color: var(--cx-success-icon-slight);
+}
+
+.warning-icon-slight {
+  --cx-icon-color: var(--cx-warning-icon-slight);
+}
+
+.info-icon-slight {
+  --cx-icon-color: var(--cx-info-icon-slight);
+}
+
+.black-icon-slight {
+  --cx-icon-color: var(--cx-black-icon-slight);
+}
+
+.white-icon-slight {
+  --cx-icon-color: var(--cx-white-icon-slight);
+}
+
+.icon-main {
+  --cx-icon-color: var(--cx-icon-main);
+}
+
+.icon-subtle {
+  --cx-icon-color: var(--cx-icon-subtle);
+}
+
+.icon-slight {
+  --cx-icon-color: var(--cx-icon-slight);
+}
+
+.icon-reset {
+  --cx-icon-color: var(--cx-icon-reset);
+}
+
+.icon-transparent {
+  --cx-icon-color: var(--cx-icon-transparent);
 }
 
 .icon-link {
@@ -14076,47 +13948,47 @@ textarea.form-control {
 }
 
 .border-default {
-  border-color: rgba(var(--cx-default-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-default-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-alternate {
-  border-color: rgba(var(--cx-alternate-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-alternate-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-primary {
-  border-color: rgba(var(--cx-primary-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-primary-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-secondary {
-  border-color: rgba(var(--cx-secondary-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-secondary-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-neutral {
-  border-color: rgba(var(--cx-neutral-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-neutral-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-warning {
-  border-color: rgba(var(--cx-warning-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-warning-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-success {
-  border-color: rgba(var(--cx-success-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-success-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-danger {
-  border-color: rgba(var(--cx-danger-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-danger-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-info {
-  border-color: rgba(var(--cx-info-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-info-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-black {
-  border-color: rgba(var(--cx-black-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-black-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-white {
-  border-color: rgba(var(--cx-white-rgb), var(--cx-border-opacity, 1)) !important;
+  --cx-border-color: rgba(var(--cx-white-rgb), var(--cx-border-opacity, 1));
 }
 
 .border-zero {
@@ -16962,7 +16834,7 @@ textarea.form-control {
 }
 
 .font-display {
-  font-family: Outfit, Georgia, "Times New Roman", Times, serif !important;
+  font-family: "Archivo Narrow", Georgia, "Times New Roman", Times, serif !important;
 }
 
 .font-code {
@@ -17085,95 +16957,95 @@ textarea.form-control {
   white-space: nowrap !important;
 }
 .fg-default {
-  color: rgba(var(--cx-default-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-default-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-alternate {
-  color: rgba(var(--cx-alternate-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-alternate-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-primary {
-  color: rgba(var(--cx-primary-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-primary-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-secondary {
-  color: rgba(var(--cx-secondary-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-secondary-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-neutral {
-  color: rgba(var(--cx-neutral-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-neutral-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-warning {
-  color: rgba(var(--cx-warning-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-warning-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-success {
-  color: rgba(var(--cx-success-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-success-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-danger {
-  color: rgba(var(--cx-danger-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-danger-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-info {
-  color: rgba(var(--cx-info-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-info-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-black {
-  color: rgba(var(--cx-black-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-black-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-white {
-  color: rgba(var(--cx-white-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-white-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-default-contrast {
-  color: rgba(var(--cx-default-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-default-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-alternate-contrast {
-  color: rgba(var(--cx-alternate-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-alternate-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-primary-contrast {
-  color: rgba(var(--cx-primary-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-primary-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-secondary-contrast {
-  color: rgba(var(--cx-secondary-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-secondary-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-neutral-contrast {
-  color: rgba(var(--cx-neutral-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-neutral-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-warning-contrast {
-  color: rgba(var(--cx-warning-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-warning-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-success-contrast {
-  color: rgba(var(--cx-success-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-success-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-danger-contrast {
-  color: rgba(var(--cx-danger-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-danger-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-info-contrast {
-  color: rgba(var(--cx-info-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-info-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-black-contrast {
-  color: rgba(var(--cx-black-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-black-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-white-contrast {
-  color: rgba(var(--cx-white-contrast-rgb), var(--cx-fg-opacity, 1)) !important;
+  --cx-fg-color: rgba(var(--cx-white-contrast-rgb), var(--cx-fg-opacity, 1));
 }
 
 .fg-reset {
-  color: inherit !important;
+  --cx-fg-color: inherit;
 }
 
 .fg-opacity-100 {
@@ -17209,51 +17081,51 @@ textarea.form-control {
 }
 
 .bg-default {
-  background-color: rgba(var(--cx-default-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-default-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-alternate {
-  background-color: rgba(var(--cx-alternate-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-alternate-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-primary {
-  background-color: rgba(var(--cx-primary-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-primary-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-secondary {
-  background-color: rgba(var(--cx-secondary-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-secondary-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-neutral {
-  background-color: rgba(var(--cx-neutral-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-neutral-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-warning {
-  background-color: rgba(var(--cx-warning-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-warning-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-success {
-  background-color: rgba(var(--cx-success-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-success-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-danger {
-  background-color: rgba(var(--cx-danger-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-danger-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-info {
-  background-color: rgba(var(--cx-info-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-info-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-black {
-  background-color: rgba(var(--cx-black-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-black-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-white {
-  background-color: rgba(var(--cx-white-rgb), var(--cx-bg-opacity, 1)) !important;
+  --cx-bg-color: rgba(var(--cx-white-rgb), var(--cx-bg-opacity, 1));
 }
 
 .bg-transparent {
-  background-color: transparent !important;
+  --cx-bg-color: transparent;
 }
 
 .bg-opacity-solid {
@@ -17863,63 +17735,51 @@ textarea.form-control {
 }
 
 .icon-default {
-  color: rgba(var(--cx-default-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-default-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-default-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-alternate {
-  color: rgba(var(--cx-alternate-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-alternate-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-alternate-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-primary {
-  color: rgba(var(--cx-primary-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-primary-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-primary-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-secondary {
-  color: rgba(var(--cx-secondary-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-secondary-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-secondary-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-neutral {
-  color: rgba(var(--cx-neutral-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-neutral-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-neutral-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-warning {
-  color: rgba(var(--cx-warning-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-warning-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-warning-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-success {
-  color: rgba(var(--cx-success-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-success-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-success-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-danger {
-  color: rgba(var(--cx-danger-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-danger-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-danger-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-info {
-  color: rgba(var(--cx-info-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-info-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-info-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-black {
-  color: rgba(var(--cx-black-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-black-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-black-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-white {
-  color: rgba(var(--cx-white-rgb), var(--cx-icon-opacity, 1)) !important;
-  fill: rgba(var(--cx-white-rgb), var(--cx-icon-opacity, 1)) !important;
+  --cx-icon-color: rgba(var(--cx-white-rgb), var(--cx-icon-opacity, 1));
 }
 
 .icon-transparent {
-  color: transparent !important;
-  fill: transparent !important;
+  --cx-icon-color: transparent;
 }
 
 .default-icon-main {

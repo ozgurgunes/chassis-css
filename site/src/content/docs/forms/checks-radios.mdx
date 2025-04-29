@@ -291,23 +291,23 @@ Create button-like checkboxes and radio buttons by using `.button` styles rather
 
 ### Checkbox toggle buttons
 
-<Example code={`<input type="checkbox" class="button-check" id="button-check" autocomplete="off">
-<label class="button primary" for="button-check">Single toggle</label>
+<Example code={`<input type="checkbox" class="button-option" id="button-option" autocomplete="off">
+<label class="button primary" for="button-option">Single toggle</label>
 
-<input type="checkbox" class="button-check" id="button-check-2" checked autocomplete="off">
-<label class="button primary" for="button-check-2">Checked</label>
+<input type="checkbox" class="button-option" id="button-option-2" checked autocomplete="off">
+<label class="button primary" for="button-option-2">Checked</label>
 
-<input type="checkbox" class="button-check" id="button-check-3" autocomplete="off" disabled>
-<label class="button primary" for="button-check-3">Disabled</label>`} />
+<input type="checkbox" class="button-option" id="button-option-3" autocomplete="off" disabled>
+<label class="button primary" for="button-option-3">Disabled</label>`} />
 
-<Example code={`<input type="checkbox" class="button-check" id="button-check-4" autocomplete="off">
-<label class="button" for="button-check-4">Single toggle</label>
+<Example code={`<input type="checkbox" class="button-option" id="button-option-4" autocomplete="off">
+<label class="button" for="button-option-4">Single toggle</label>
 
-<input type="checkbox" class="button-check" id="button-check-5" checked autocomplete="off">
-<label class="button" for="button-check-5">Checked</label>
+<input type="checkbox" class="button-option" id="button-option-5" checked autocomplete="off">
+<label class="button" for="button-option-5">Checked</label>
 
-<input type="checkbox" class="button-check" id="button-check-6" autocomplete="off" disabled>
-<label class="button" for="button-check-6">Disabled</label>`} />
+<input type="checkbox" class="button-option" id="button-option-6" autocomplete="off" disabled>
+<label class="button" for="button-option-6">Disabled</label>`} />
 
 <Callout>
 Visually, these checkbox toggle buttons are identical to the [button plugin toggle buttons]([[docsref:/components/buttons#button-plugin]]). However, they are conveyed differently by assistive technologies: the checkbox toggles will be announced by screen readers as “checked”/“not checked” (since, despite their appearance, they are fundamentally still checkboxes), whereas the button plugin toggle buttons will be announced as “button”/“button pressed”. The choice between these two approaches will depend on the type of toggle you are creating, and whether or not the toggle will make sense to users when announced as a checkbox or as an actual button.
@@ -315,44 +315,44 @@ Visually, these checkbox toggle buttons are identical to the [button plugin togg
 
 ### Radio toggle buttons
 
-<Example code={`<input type="radio" class="button-check" name="options" id="option1" autocomplete="off" checked>
+<Example code={`<input type="radio" class="button-option" name="options" id="option1" autocomplete="off" checked>
 <label class="button secondary" for="option1">Checked</label>
 
-<input type="radio" class="button-check" name="options" id="option2" autocomplete="off">
+<input type="radio" class="button-option" name="options" id="option2" autocomplete="off">
 <label class="button secondary" for="option2">Radio</label>
 
-<input type="radio" class="button-check" name="options" id="option3" autocomplete="off" disabled>
+<input type="radio" class="button-option" name="options" id="option3" autocomplete="off" disabled>
 <label class="button secondary" for="option3">Disabled</label>
 
-<input type="radio" class="button-check" name="options" id="option4" autocomplete="off">
+<input type="radio" class="button-option" name="options" id="option4" autocomplete="off">
 <label class="button secondary" for="option4">Radio</label>`} />
 
-<Example code={`<input type="radio" class="button-check" name="options-base" id="option5" autocomplete="off" checked>
+<Example code={`<input type="radio" class="button-option" name="options-base" id="option5" autocomplete="off" checked>
 <label class="button" for="option5">Checked</label>
 
-<input type="radio" class="button-check" name="options-base" id="option6" autocomplete="off">
+<input type="radio" class="button-option" name="options-base" id="option6" autocomplete="off">
 <label class="button" for="option6">Radio</label>
 
-<input type="radio" class="button-check" name="options-base" id="option7" autocomplete="off" disabled>
+<input type="radio" class="button-option" name="options-base" id="option7" autocomplete="off" disabled>
 <label class="button" for="option7">Disabled</label>
 
-<input type="radio" class="button-check" name="options-base" id="option8" autocomplete="off">
+<input type="radio" class="button-option" name="options-base" id="option8" autocomplete="off">
 <label class="button" for="option8">Radio</label>`} />
 
 ### Outlined styles
 
 Different variants of `.button`, such as the various outlined styles, are supported.
 
-<Example code={`<input type="checkbox" class="button-check" id="button-check-outlined" autocomplete="off">
-<label class="button primary" for="button-check-outlined">Single toggle</label><br>
+<Example code={`<input type="checkbox" class="button-option" id="button-option-outlined" autocomplete="off">
+<label class="button primary" for="button-option-outlined">Single toggle</label><br>
 
-<input type="checkbox" class="button-check" id="button-check-2-outlined" checked autocomplete="off">
-<label class="button outline secondary" for="button-check-2-outlined">Checked</label><br>
+<input type="checkbox" class="button-option" id="button-option-2-outlined" checked autocomplete="off">
+<label class="button outline secondary" for="button-option-2-outlined">Checked</label><br>
 
-<input type="radio" class="button-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+<input type="radio" class="button-option" name="options-outlined" id="success-outlined" autocomplete="off" checked>
 <label class="button outline success" for="success-outlined">Checked success radio</label>
 
-<input type="radio" class="button-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+<input type="radio" class="button-option" name="options-outlined" id="danger-outlined" autocomplete="off">
 <label class="button outline danger" for="danger-outlined">Danger radio</label>`} />
 
 ## CSS

@@ -30,16 +30,18 @@
 
   @include media-breakpoint-up(large) {
     position: absolute;
-    top: .875rem;
-    right: 6em;
+    //left: 50%;
+    top: 20%;
+    // margin-top: 25%;
     width: 200px;
-    margin-left: -100px;
+    right: 20rem;
+    //margin-left: -100px;
   }
 
   @include media-breakpoint-up(2xlarge) {
-    width: 280px;
     left: 50%;
-    margin-left: 256px;
+    width: 280px;
+    margin-left: 64px;
   }
 
 }

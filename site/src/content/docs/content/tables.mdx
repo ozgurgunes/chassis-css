@@ -50,13 +50,28 @@ Use contextual classes to color tables, table rows or individual cells.
   `<!-- On tables -->`,
   ...getData('context-colors').map((contextColor) => `<table class="table context ${contextColor.name}">...</table>`),
   `
-<!-- On rows -->`,
-  ...getData('context-colors').map((contextColor) => `<tr class="context ${contextColor.name}">...</tr>`),
+  <!-- On heads -->
+  <thead class="context primary">
+    <tr>...</tr>
+  </thead>`,
   `
-<!-- On cells (\`td\` or \`th\`) -->
-<tr>`,
-  ...getData('context-colors').map((contextColor) => `  <td class="context ${contextColor.name}">...</td>`),
-  `</tr>`
+  <!-- On bodies -->
+  <tbody class="context primary">
+    <tr>...</tr>
+  </tbody>
+  <tbody class="context secondary">
+    <tr>...</tr>
+  </tbody>`,
+  `
+  <!-- On rows -->
+  <tr class="context primary">...</tr>
+  <tr class="context secondary">...</tr>`,
+  `
+  <!-- On cells (\`td\` or \`th\`) -->
+  <tr>
+    <td class="context primary">...</td>
+    <td class="context secondary">...</td>
+  </tr>`
 ]} lang="html" />
 
 <Callout name="warning-color-assistive-technologies" />
@@ -69,21 +84,15 @@ Use `.striped` to add zebra-striping to any table row within the `<tbody>`.
 
 <Table class="table striped" />
 
+<Table class="table striped context primary" />
+
 ### Striped columns
 
 Use `.striped-columns` to add zebra-striping to any table column.
 
 <Table class="table striped-columns" />
 
-These classes can also be added to table variants:
-
-<Table class="table context alternate striped" />
-
-<Table class="table context alternate striped-columns" />
-
-<Table class="table context success striped" />
-
-<Table class="table context success striped-columns" />
+<Table class="table striped-columns context primary" />
 
 ### Hoverable rows
 
@@ -91,139 +100,19 @@ Add `.hoverable` to enable a hover state on table rows within a `<tbody>`.
 
 <Table class="table hoverable" />
 
-<Table class="table alternate hoverable" />
-
-These hoverable rows can also be combined with the striped rows variant:
+These hoverable rows can also be combined with the striped tables and context variants:
 
 <Table class="table striped hoverable" />
 
-### Active tables
+<Table class="table striped hoverable context primary" />
+
+## Active tables
 
 Highlight a table row or cell by adding a `.active` class.
 
-<div class="cxd-example">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="active">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>John</td>
-        <td>Doe</td>
-        <td class="active">@social</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<TableDeep class="table striped" active />
 
-```html
-<table class="table">
-  <thead>
-    ...
-  </thead>
-  <tbody>
-    <tr class="active">
-      ...
-    </tr>
-    <tr>
-      ...
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td class="active">@social</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-<div class="cxd-example">
-  <table class="table context alternate">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="active">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>John</td>
-        <td>Doe</td>
-        <td class="active">@social</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-```html
-<table class="table context alternate">
-  <thead>
-    ...
-  </thead>
-  <tbody>
-    <tr class="active">
-      ...
-    </tr>
-    <tr>
-      ...
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td class="active">@social</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-## How do the variants and accented tables work?
-
-For the accented tables ([striped rows](#striped-rows), [striped columns](#striped-columns), [hoverable rows](#hoverable-rows), and [active tables](#active-tables)), we used some techniques to make these effects work for all our [table variants](#variants):
-
-- We start by setting the background of a table cell with the `--cx-table-bg` custom property. All table variants then set that custom property to colorize the table cells. This way, we don’t get into trouble if semi-transparent colors are used as table backgrounds.
-- Then we add an inset box shadow on the table cells with `box-shadow: inset 0 0 0 9999px var(--cx-table-bg-state, var(--cx-table-bg-type, var(--cx-table-accent-bg)));` to layer on top of any specified `background-color`. It uses custom cascade to override the `box-shadow`, regardless the CSS specificity. Because we use a huge spread and no blur, the color will be monotone. Since `--cx-table-accent-bg` is set to `transparent` by default, we don’t have a default box shadow.
-- When either `.table-striped`, `.table-striped-columns`, `.table-hover` or `.table-active` classes are added, either `--cx-table-bg-type` or `--cx-table-bg-state` (by default set to `initial`) are set to a semitransparent color (`--cx-table-striped-bg`, `--cx-table-active-bg` or `--cx-table-hover-bg`) to colorize the background and override default `--cx-table-accent-bg`.
-- For each table variant, we generate a `--cx-table-accent-bg` color with the highest contrast depending on that color. For example, the accent color for `.table-primary` is darker while `.table-dark` has a lighter accent color.
-- Text and border colors are generated the same way, and their colors are inherited by default.
-
-Behind the scenes it looks like this:
-
-<ScssDocs name="table-variant" file="scss/mixins/_table-variants.scss" />
+<TableDeep class="table striped context primary" active />
 
 ## Table borders
 
@@ -237,7 +126,11 @@ Add `.bordered` for borders on all sides of the table and cells.
 
 <Table class="table bordered border-primary" />
 
-### Tables without borders
+Rounded tables also available with `.rounded` for a more modern look.
+
+<Table class="table context neutral bordered rounded" />
+
+### Borderless tables
 
 Add `.borderless` for a table without borders.
 
@@ -245,48 +138,36 @@ Add `.borderless` for a table without borders.
 
 <Table class="table context alternate borderless" />
 
+## Color Modes
+
+Add `data-cx-theme="light"` or `data-cx-theme="dark"` to any table elements.
+
+<Table class="table" theme="dark" />
+
+<Table class="table context primary" theme="dark" />
+
+
+## Context styles
+
+<Table class="table context primary solid" />
+
+<Table class="table context primary smooth" />
+
 ## Small tables
 
 Add `.table-small` to make any `.table` more compact by cutting all cell `padding` in half.
 
 <Table class="table small" />
 
-<Table class="table context alternate small" />
+<Table class="table small" theme="dark" />
 
 ## Table group dividers
 
 Add a thicker border, darker between table groups—`<thead>`, `<tbody>`, and `<tfoot>`—with `.table-divider`. Customize the color by changing the `border-top-color` (which we don’t currently provide a utility class for at this time).
 
-<Example code={`<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody class="table-divider">
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>John</td>
-        <td>Doe</td>
-        <td>@social</td>
-      </tr>
-    </tbody>
-  </table>`} />
+<TableDeep class="table" body="table-divider" />
+
+<TableDeep class="table context primary" body="table-divider" />
 
 ## Vertical alignment
 
@@ -297,10 +178,10 @@ Table cells of `<thead>` are always vertical aligned to the bottom. Table cells 
     <table class="table align-middle">
       <thead>
         <tr>
-          <th scope="col" class="w-25">Heading 1</th>
-          <th scope="col" class="w-25">Heading 2</th>
-          <th scope="col" class="w-25">Heading 3</th>
-          <th scope="col" class="w-25">Heading 4</th>
+          <th scope="col" class="w-25">Column 1</th>
+          <th scope="col" class="w-25">Column 2</th>
+          <th scope="col" class="w-25">Column 3</th>
+          <th scope="col" class="w-25">Column 4</th>
         </tr>
       </thead>
       <tbody>
@@ -308,19 +189,19 @@ Table cells of `<thead>` are always vertical aligned to the bottom. Table cells 
           <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
           <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
           <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
-          <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+          <td>This here is some long text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
         </tr>
         <tr class="align-bottom">
           <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
           <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
           <td>This cell inherits <code>vertical-align: bottom;</code> from the table row</td>
-          <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+          <td>This here is some long text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
         </tr>
         <tr>
           <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
-          <td>This cell inherits <code>vertical-align: middle;</code> from the table</td>
-          <td class="align-top">This cell is aligned to the top.</td>
-          <td>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
+          <td class="align-top">This cell aligned to the top.</td>
+          <td class="align-bottom">This cell is aligned to the bottom.</td>
+          <td>This here is some long text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</td>
         </tr>
       </tbody>
     </table>
@@ -344,8 +225,8 @@ Table cells of `<thead>` are always vertical aligned to the bottom. Table cells 
       </tr>
       <tr>
         <td>...</td>
-        <td>...</td>
         <td class="align-top">This cell is aligned to the top.</td>
+        <td class="align-bottom">This cell is aligned to the bottom.</td>
         <td>...</td>
       </tr>
     </tbody>
@@ -355,60 +236,32 @@ Table cells of `<thead>` are always vertical aligned to the bottom. Table cells 
 
 ## Nesting
 
-Border styles, active styles, and table variants are not inherited by nested tables.
+Border styles and context variants are not inherited by nested tables.
 
 <div class="cxd-example">
 <table class="table striped bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th class="w-25" scope="col">Column 1</th>
+      <th scope="col">Column 2</th>
+      <th scope="col">Column 3</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
     </tr>
     <tr>
-      <td colspan="4">
-        <table class="table mb-0">
-          <thead>
-            <tr>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">A</th>
-              <td>First</td>
-              <td>Last</td>
-            </tr>
-            <tr>
-              <th scope="row">B</th>
-              <td>First</td>
-              <td>Last</td>
-            </tr>
-            <tr>
-              <th scope="row">C</th>
-              <td>First</td>
-              <td>Last</td>
-            </tr>
-          </tbody>
-        </table>
+      <td colspan="3" class="p-medium">
+      <TableDeep class="table mb-0" code="false" />
       </td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
     </tr>
   </tbody>
 </table>
@@ -422,7 +275,7 @@ Border styles, active styles, and table variants are not inherited by nested tab
   <tbody>
     ...
     <tr>
-      <td colspan="4">
+      <td colspan="3" class="p-medium">
         <table class="table mb-0">
           ...
         </table>
@@ -433,219 +286,84 @@ Border styles, active styles, and table variants are not inherited by nested tab
 </table>
 ```
 
-## How nesting works
+### Inherit context
 
-To prevent _any_ styles from leaking to nested tables, we use the child combinator (`>`) selector in our CSS. Since we need to target all the `td`s and `th`s in the `thead`, `tbody`, and `tfoot`, our selector would look pretty long without it. As such, we use the rather odd looking `.table > :not(caption) > * > *` selector to target all `td`s and `th`s of the `.table`, but none of any potential nested tables.
+Apply the `context` class without a variant to enable the nested table to inherit the parent table's context.
 
-Note that if you add `<tr>`s as direct children of a table, those `<tr>` will be wrapped in a `<tbody>` by default, thus making our selectors work as intended.
+<div class="cxd-example">
+<table class="table striped bordered context primary">
+  <thead>
+    <tr>
+      <th class="w-25" scope="col">Column 1</th>
+      <th scope="col">Column 2</th>
+      <th scope="col">Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="p-medium">
+      <TableDeep class="table mb-0 context" code="false" />
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+```html
+<table class="table striped bordered context primary">
+  <thead>
+    ...
+  </thead>
+  <tbody>
+    ...
+    <tr>
+      <td colspan="3" class="p-medium">
+        <table class="table mb-0 context">
+          ...
+        </table>
+      </td>
+    </tr>
+    ...
+  </tbody>
+</table>
+```
 
 ## Anatomy
 
 ### Table head
 
-Similar to tables and dark tables, use the modifier classes `.table-light` or `.table-dark` to make `<thead>`s appear light or dark gray.
+Use context classes on head or color utilities on row to customize table heads.
 
-<div class="cxd-example">
-<table class="table">
-  <thead>
-    <tr class="context alternate">
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<TableDeep class="table" head="context default" />
 
-```html
-<table class="table">
-  <thead class="table-light">
-    ...
-  </thead>
-  <tbody>
-    ...
-  </tbody>
-</table>
-```
+<TableDeep class="table" head="context alternate" />
 
-<div class="cxd-example">
-<table class="table">
-  <thead class="context primary">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<TableDeep class="table" headRow="bg-main fg-primary" />
 
-```html
-<table class="table">
-  <thead class="table-dark">
-    ...
-  </thead>
-  <tbody>
-    ...
-  </tbody>
-</table>
-```
 
 ### Table foot
 
-<div class="cxd-example">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>Footer</td>
-      <td>Footer</td>
-      <td>Footer</td>
-      <td>Footer</td>
-    </tr>
-  </tfoot>
-</table>
-</div>
-
-```html
-<table class="table">
-  <thead>
-    ...
-  </thead>
-  <tbody>
-    ...
-  </tbody>
-  <tfoot>
-    ...
-  </tfoot>
-</table>
-```
+<Table class="table" foot />
 
 ### Captions
 
 A `<caption>` functions like a heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide if they want to read it.
 
-<div class="cxd-example">
-  <table class="table">
-    <caption>List of users</caption>
-    <TableContent />
-  </table>
-</div>
-
-```html
-<table class="table table-small">
-  <caption>List of users</caption>
-  <thead>
-    ...
-  </thead>
-  <tbody>
-    ...
-  </tbody>
-</table>
-```
+<Table class="table" caption="List of users" />
 
 You can also put the `<caption>` on the top of the table with `.caption-top`.
 
-<Example code={`<table class="table caption-top">
-    <caption>List of users</caption>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>John</td>
-        <td>Doe</td>
-        <td>@social</td>
-      </tr>
-    </tbody>
-  </table>`} />
+<Table class="table caption-top" caption="List of users" />
 
 ## Responsive tables
 
@@ -675,13 +393,11 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
           <th scope="col">Heading</th>
           <th scope="col">Heading</th>
           <th scope="col">Heading</th>
-          <th scope="col">Heading</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>Cell</td>
           <td>Cell</td>
           <td>Cell</td>
           <td>Cell</td>
@@ -701,7 +417,6 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
           <td>Cell</td>
           <td>Cell</td>
           <td>Cell</td>
-          <td>Cell</td>
         </tr>
         <tr>
           <th scope="row">3</th>
@@ -713,11 +428,10 @@ Across every breakpoint, use `.table-responsive` for horizontally scrolling tabl
           <td>Cell</td>
           <td>Cell</td>
           <td>Cell</td>
-          <td>Cell</td>
         </tr>
       </tbody>
     </table>
-  </div>
+</div>
 </div>
 
 ```html
@@ -813,6 +527,7 @@ Use `.table-responsive{-small|-medium|-large|-xlarge|-2xlarge}` as needed to cre
 <DocsSASSVars />
 
 <ScssDocs name="table-variables" file="scss/_variables.scss" />
+<ScssDocs name="table-tokens" file="scss/tokens/_index.scss" />
 
 ### Customizing
 

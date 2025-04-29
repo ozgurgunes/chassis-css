@@ -13,7 +13,8 @@ $utilities: map-merge(
   (
     // scss-docs-start utils-fg-color
     "fg-color": (
-      property: color,
+      css-var: true,
+      css-variable-name: fg-color,
       class: fg,
       values: map-merge-multiple(
         map-loop(map-loop($context-colors, to-rgb, "$value"), rgba-css-var, #{"$key"}, #{"fg"}),
@@ -30,7 +31,8 @@ $utilities: map-merge(
     // scss-docs-end utils-fg-color
     // scss-docs-start utils-bg-color
     "bg-color": (
-      property: background-color,
+      css-var: true,
+      css-variable-name: bg-color,
       class: bg,
       values: map-merge(
         map-loop(map-loop($context-colors, to-rgb, "$value"), rgba-css-var, #{"$key"}, #{"bg"}),

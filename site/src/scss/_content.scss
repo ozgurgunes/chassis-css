@@ -140,27 +140,33 @@
 // stylelint-enable selector-no-qualifying-type
 
 // scss-docs-start custom-color-mode
-[data-cx-theme="blue"] {
+[data-cx-theme="primary"] {
   --cx-fg-color: var(--cx-white);
   --cx-fg-color-rgb: #{to-rgb($white)};
-  --cx-bg-color: var(--cx-blue);
-  --cx-bg-color-rgb: #{to-rgb($blue)};
-  --cx-tertiary-bg: #{$blue-600};
+  --cx-bg-color: var(--cx-primary);
+  --cx-bg-color-rgb: #{to-rgb($primary)};
+  --cx-border-subtle: var(--cx-primary-30);
 
   .dropdown-menu {
-    --cx-dropdown-bg: #{mix($blue-500, $blue-600)};
-    --cx-dropdown-link-active-bg: #{$blue-700};
+    --cx-dropdown-bg-color: var(--cx-primary);
+    --cx-dropdown-fg-color: var(--cx-primary-contrast);
+    --cx-dropdown-link-fg-color: var(--cx-primary-contrast);
+    --cx-dropdown-link-hover-fg-color: var(--cx-primary-contrast);
+    --cx-dropdown-link-hover-bg-color: var(--cx-primary-40);
+    --cx-dropdown-link-active-bg-color: var(--cx-primary-60);
+    --cx-dropdown-separator-color: var(--cx-primary-40);
   }
 
-  .button-secondary {
-    --cx-button-bg: #{mix($gray-600, $blue-400, .5%)};
-    --cx-button-border-color: #{rgba($white, .25)};
-    --cx-button-hover-bg: #{darken(mix($gray-600, $blue-400, .5%), 5%)};
-    --cx-button-hover-border-color: #{rgba($white, .25)};
-    --cx-button-active-bg: #{darken(mix($gray-600, $blue-400, .5%), 10%)};
-    --cx-button-active-border-color: #{rgba($white, .5)};
-    --cx-button-focus-border-color: #{rgba($white, .5)};
-    --cx-button-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
+  .button.secondary {
+    --cx-button-idle-bg-color: transparent;
+    --cx-button-idle-fg-color: var(--cx-primary-contrast);
+    --cx-button-idle-border-color: var(--cx-primary-contrast);
+    --cx-button-hover-bg-color: var(--cx-primary-bg-hover);
+    --cx-button-hover-fg-color: var(--cx-primary-fg-hover);
+    --cx-button-hover-border-color: var(--cx-primary-contrast);
+    --cx-button-press-bg-color: var(--cx-primary-bg-press);
+    --cx-button-press-fg-color: var(--cx-primary-fg-press);
+    --cx-button-press-border-color: var(--cx-primary-contrast);
   }
 }
 // scss-docs-end custom-color-mode

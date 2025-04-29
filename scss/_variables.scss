@@ -638,7 +638,7 @@ $option-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='
 
 $option-input-disabled-opacity:             .5 !default;
 $option-label-disabled-opacity:             $option-input-disabled-opacity !default;
-$form-option-button-check-disabled-opacity:      $button-disabled-opacity !default;
+$form-option-button-option-disabled-opacity:      $button-disabled-opacity !default;
 
 $form-option-inline-margin-end:                  1rem !default;
 // scss-docs-end form-option-variables
@@ -809,12 +809,10 @@ $table-striped-fg-color:            var(--#{$prefix}fg-main) !default;
 $table-active-fg-color:             var(--#{$prefix}fg-main) !default;
 $table-hover-fg-color:              var(--#{$prefix}fg-main) !default;
 $table-hover-bg-color:              var(--#{$prefix}bg-evident) !default;
-$table-hover-bg-factor:             .075 !default;
-$table-border-factor:               .2 !default;
 $table-border-color:                var(--#{$prefix}border-subtle) !default;
-$table-striped-order:               odd !default;
+$table-striped-order:               even !default;
 $table-striped-columns-order:       even !default;
-$table-group-separator-color:       currentcolor !default;
+$table-divider-color:       currentcolor !default;
 $table-caption-color:               var(--#{$prefix}secondary-color) !default;
 
 // $table-bg-scale:                    -80% !default;
