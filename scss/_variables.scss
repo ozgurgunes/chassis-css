@@ -22,6 +22,10 @@ $escaped-characters: (
   (")", "%29"),
 ) !default;
 
+// Used for some special afjustments like vissualy hiding etc.
+$utility-pixel-1:               .0625rem !default; // 1px !default;
+$utility-pixel-999:             64rem !default; // 999px !default;
+
 // Root & body colors
 //
 // Base (body) palette is mapped to default context palette
@@ -149,21 +153,19 @@ $spacer:              $space-medium !default;
 
 // Base fonts
 //
-// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
-// $font-size-base affects the font size of the body text
 // scss-docs-start font-variables
-$font-size-root:            null !default;
-$font-size-base:            1rem !default; // Assumes the browser default, typically `16px`
-$font-family-base:          var(--#{$prefix}font-family-text) !default;
-$font-weight-base:          var(--#{$prefix}font-weight-normal) !default;
-$line-height-base:          var(--#{$prefix}line-height-medium) !default;
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+$font-size-root:            null !default; // 2vw !default;
+$font-size-root-large:      $font-size-root !default; // 1vw !default; // for media-breakpoint-up(large)
+$font-size-root-small:      $font-size-root !default; // 4vw !default; // for media-breakpoint-down(small)
 
 $text-align:                null !default;
 
-$font-size:                 $font-size-base !default;
-$font-family:               $font-family-base !default;
-$font-weight:               $font-weight-base !default;
-$line-height:               $line-height-base !default;
+// $font-size-base affects the font size of the body text
+$font-size-base:            var(--#{$prefix}font-size-medium) !default; // Assumes the browser default, typically `16px`
+$font-family-base:          var(--#{$prefix}font-family-text) !default;
+$font-weight-base:          var(--#{$prefix}font-weight-normal) !default;
+$line-height-base:          var(--#{$prefix}line-height-medium) !default;
 
 $font-size-5xlarge:         var(--#{$prefix}font-size-text-5xlarge) !default;
 $font-size-4xlarge:         var(--#{$prefix}font-size-text-4xlarge) !default;
@@ -192,12 +194,13 @@ $line-height-small:         var(--#{$prefix}line-height-text-small) !default;
 $line-height-xsmall:        var(--#{$prefix}line-height-text-xsmall) !default;
 $line-height-2xsmall:       var(--#{$prefix}line-height-text-2xsmall) !default;
 
-$font-size-smaller:         #{calc(var(--#{$prefix}font-size) * .875)} !default;
-$font-size-larger:          #{calc(var(--#{$prefix}font-size) * 1.25)} !default;
-$line-height-smaller:       #{calc(var(--#{$prefix}line-height) * .875)} !default;
-$line-height-larger:        #{calc(var(--#{$prefix}line-height) * 1.25)} !default;
+$small-font-size:           .875em !default;
+$small-line-height:         $small-font-size !default;
+$large-font-size:           1.25em !default;
+$large-line-height:         $large-font-size !default;
+$initials-font-size:        $small-font-size !default;
+$initials-line-height:      $small-line-height !default;
 
-$small-font-size:           $font-size-smaller !default;
 $sub-sup-font-size:         .75em !default;
 
 $font-weight-lighter:       lighter !default;
@@ -231,12 +234,6 @@ $h3-font-size:              var(--#{$prefix}font-size-html-h3) !default;
 $h4-font-size:              var(--#{$prefix}font-size-html-h4) !default;
 $h5-font-size:              var(--#{$prefix}font-size-html-h5) !default;
 $h6-font-size:              var(--#{$prefix}font-size-html-h6) !default;
-// $body-font-size:            var(--#{$prefix}font-size-html-body) !default;
-// $paragraph-font-size:       var(--#{$prefix}font-size-html-paragraph) !default;
-// $blockquote-font-size:      var(--#{$prefix}font-size-html-blockquote) !default;
-// $cite-font-size:            var(--#{$prefix}font-size-html-cite) !default;
-// $list-font-size:            var(--#{$prefix}font-size-html-list) !default;
-// $code-font-size:            var(--#{$prefix}font-size-html-code) !default;
 
 $h1-line-height:            var(--#{$prefix}line-height-html-h1) !default;
 $h2-line-height:            var(--#{$prefix}line-height-html-h2) !default;
@@ -244,15 +241,6 @@ $h3-line-height:            var(--#{$prefix}line-height-html-h3) !default;
 $h4-line-height:            var(--#{$prefix}line-height-html-h4) !default;
 $h5-line-height:            var(--#{$prefix}line-height-html-h5) !default;
 $h6-line-height:            var(--#{$prefix}line-height-html-h6) !default;
-$body-line-height:          var(--#{$prefix}line-height-html-body) !default;
-$paragraph-line-height:     var(--#{$prefix}line-height-html-paragraph) !default;
-$blockquote-line-height:    var(--#{$prefix}line-height-html-blockquote) !default;
-$cite-line-height:          var(--#{$prefix}line-height-html-cite) !default;
-$list-line-height:          var(--#{$prefix}line-height-html-list) !default;
-$code-line-height:          var(--#{$prefix}line-height-html-code) !default;
-
-$lead-font:                 $cx-font-context-lead !default;
-$title-font:                $cx-font-context-title-medium !default;
 
 $legend-font-size:          1.5rem !default;
 $legend-font-weight:        null !default;
@@ -262,23 +250,13 @@ $list-inline-padding:       .5rem !default;
 $dt-font-weight:            $bold-font-weight !default;
 
 $blockquote-font:           $cx-font-html-blockquote !default;
-$blockquote-footer-font:    $cx-font-html-cite !default;
-$blockquote-footer-color:   $fg-subtle !default;
+$attribution-font:          $cx-font-html-cite !default;
+$attribution-color:         $fg-subtle !default;
 $blockquote-margin-y:       $spacer !default;
 
-$initialism-font-size:      $font-size-smaller !default;
-$initialism-line-height:    $line-height-smaller !default;
-
-$display-font-family:       $font-family-display !default;
-$display-font-style:        null !default;
-$display-font-weight:       $font-weight-display-normal !default;
-$display-line-height:       $line-height-base !default;
-// scss-docs-end display-headings
-// scss-docs-end type-variables
-
 // scss-docs-start mark-variables
-$mark-padding:              .1875em !default;
-$mark-fg-color:             $fg-main !default;
+$mark-padding:              .125em !default;
+$mark-fg-color:             $fg-highlight !default;
 $mark-bg-color:             $bg-highlight !default;
 // scss-docs-end mark-variables
 
@@ -357,11 +335,11 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  small: 540px,
-  medium: 720px,
-  large: 960px,
-  xlarge: 1140px,
-  2xlarge: 1320px
+  small: 33.75rem, //540px,
+  medium: 45.5rem, //720px,
+  large: 60rem, //960px,
+  xlarge: 71.25rem, //1140px,
+  2xlarge: 82.5rem //1320px
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -520,11 +498,11 @@ $badge-border-width:                $cx-border-width-common-badge !default;
 // scss-docs-start button-variables
 $button-white-space:                  null !default; // Set to `nowrap` to prevent text wrapping
 
-$button-box-shadow:                   inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$button-box-shadow:                   inset 0 $utility-pixel-1 0 rgba($white, .15), 0 $utility-pixel-1 $utility-pixel-1 rgba($black, .075) !default;
 $button-focus-width:                  $focus-ring-width !default;
 $button-focus-box-shadow:             $focus-ring-box-shadow !default;
 $button-disabled-opacity:             1 !default;
-$button-press-box-shadow:             inset 0 2px 4px rgba($black, .125) !default;
+$button-press-box-shadow:             inset 0 (2 * $utility-pixel-1) (4 * $utility-pixel-1) rgba($black, .125) !default;
 
 $button-link-color:                   var(--#{$prefix}link-main) !default;
 $button-hover-color:                  var(--#{$prefix}link-hover) !default;
@@ -599,15 +577,15 @@ $form-color-width:                    2.5rem !default;
 
 // scss-docs-start form-option-variables
 $option-input-medium-size:              1.25rem !default;
-$form-option-medium-padding-start:      $option-input-medium-size + .5rem !default;
+$form-option-medium-padding-start:      $option-input-medium-size + .5 !default;
 $option-input-medium-border-radius:     $border-radius-small !default;
 
 $option-input-small-size:               1rem !default;
-$form-option-small-padding-start:       $option-input-small-size + .5rem !default;
+$form-option-small-padding-start:       $option-input-small-size + .5 !default;
 $option-input-medium-border-radius:     $border-radius-xsmall !default;
 
 $option-input-large-size:               1.5rem !default;
-$form-option-large-padding-start:       $option-input-large-size + .5rem !default;
+$form-option-large-padding-start:       $option-input-large-size + .5 !default;
 $option-input-medium-border-radius:     $border-radius-medium !default;
 
 $form-option-radio-border-radius:       50% !default;
@@ -724,7 +702,7 @@ $form-range-thumb-bg:                       $component-active-bg-color !default;
 $form-range-thumb-border:                   0 !default;
 $form-range-thumb-border-radius:            1rem !default;
 $form-range-thumb-box-shadow:               0 .1rem .25rem rgba($black, .1) !default;
-$form-range-thumb-focus-box-shadow:         0 0 0 1px $bg-main, $input-focus-box-shadow !default;
+$form-range-thumb-focus-box-shadow:         0 0 0 $utility-pixel-1 $bg-main, $input-focus-box-shadow !default;
 $form-range-thumb-focus-box-shadow-width:   $input-focus-width !default; // For focus box shadow issue in Edge
 $form-range-thumb-active-bg:                tint-color($component-active-bg-color, 70%) !default;
 $form-range-thumb-disabled-bg:              var(--#{$prefix}bg-evident) !default;
@@ -1028,35 +1006,35 @@ $accordion-box-radius:                #{calc($accordion-border-radius - $accordi
 
 $accordion-transition:                $button-transition, border-radius .15s ease !default;
 
-$accordion-padding-y:                 $space-small !default;
-$accordion-padding-x:                 $space-medium !default;
-$accordion-title-font:                $cx-font-context-title-medium !default;
-$accordion-body-font:                 $cx-font-context-body-medium !default;
-$accordion-title-padding-y:           $accordion-padding-y !default;
-$accordion-title-padding-x:           $accordion-padding-x !default;
-$accordion-body-padding-y:            $accordion-padding-y !default;
-$accordion-body-padding-x:            $accordion-padding-x !default;
+$accordion-title-font:                $cx-font-text-medium-strong !default;
+$accordion-body-font:                 $cx-font-text-medium-normal !default;
 $accordion-indicator-size:            1.25rem !default;
+$accordion-title-padding-y:           $space-small !default;
+$accordion-title-padding-x:           $space-medium !default;
+$accordion-body-padding-t:            $space-2xsmall !default;
+$accordion-body-padding-b:            $space-xlarge !default;
+$accordion-body-padding-s:            $accordion-title-padding-x * 2 + $accordion-indicator-size !default;
+$accordion-body-padding-e:            $accordion-title-padding-x !default;
 
-$accordion-large-padding-y:           $space-medium !default;
-$accordion-large-padding-x:           $space-large !default;
-$accordion-large-title-font:          $cx-font-context-title-large !default;
-$accordion-large-body-font:           $cx-font-context-body-large !default;
-$accordion-large-title-padding-y:     $accordion-large-padding-y !default;
-$accordion-large-title-padding-x:     $accordion-large-padding-x !default;
-$accordion-large-body-padding-y:      $accordion-large-padding-y !default;
-$accordion-large-body-padding-x:      $accordion-large-padding-x !default;
+$accordion-large-title-font:          $cx-font-text-large-strong !default;
+$accordion-large-body-font:           $cx-font-text-large-normal !default;
 $accordion-large-indicator-size:      1.5rem !default;
+$accordion-large-title-padding-y:     $space-medium !default;
+$accordion-large-title-padding-x:     $space-large !default;
+$accordion-large-body-padding-t:      $space-xsmall !default;
+$accordion-large-body-padding-b:      $space-3xlarge !default;
+$accordion-large-body-padding-s:      $accordion-large-title-padding-x * 2 + $accordion-large-indicator-size !default;
+$accordion-large-body-padding-e:      $accordion-large-title-padding-x !default;
 
-$accordion-small-padding-y:           $space-xsmall !default;
-$accordion-small-padding-x:           $space-small !default;
-$accordion-small-title-font:          $cx-font-context-title-small !default;
-$accordion-small-body-font:           $cx-font-context-body-small !default;
-$accordion-small-title-padding-y:     $accordion-small-padding-y !default;
-$accordion-small-title-padding-x:     $accordion-small-padding-x !default;
-$accordion-small-body-padding-y:      $accordion-small-padding-y !default;
-$accordion-small-body-padding-x:      $accordion-small-padding-x !default;
+$accordion-small-title-font:          $cx-font-text-small-strong !default;
+$accordion-small-body-font:           $cx-font-text-small-normal !default;
 $accordion-small-indicator-size:      1rem !default;
+$accordion-small-title-padding-y:     $space-xsmall !default;
+$accordion-small-title-padding-x:     $space-small !default;
+$accordion-small-body-padding-t:      $space-3xsmall !default;
+$accordion-small-body-padding-b:      $space-large !default;
+$accordion-small-body-padding-s:      $accordion-small-title-padding-x * 2 + $accordion-small-indicator-size !default;
+$accordion-small-body-padding-e:      $accordion-small-title-padding-x !default;
 
 $accordion-title-fg-color:            inherit !default;
 $accordion-title-bg-color:            inherit !default;
@@ -1076,7 +1054,7 @@ $accordion-active-indicator:          url("data:image/svg+xml,<svg xmlns='http:/
 
 // scss-docs-start tooltip-variables
 $tooltip-font:                      $cx-font-text-small-normal !default;
-$tooltip-max-width:                 200px !default;
+$tooltip-max-width:                 12.5rem !default; //200px !default;
 $tooltip-fg-color:                  var(--#{$prefix}fg-inverse) !default;
 $tooltip-bg-color:                  var(--#{$prefix}bg-inverse) !default;
 $tooltip-border-radius:             var(--#{$prefix}border-radius-medium) !default;
@@ -1106,7 +1084,7 @@ $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
 $popover-font:                      $cx-font-text-medium-normal !default;
 $popover-fg-color:                  var(--#{$prefix}fg-main) !default;
 $popover-bg-color:                  var(--#{$prefix}bg-main) !default;
-$popover-max-width:                 276px !default;
+$popover-max-width:                 17.25rem !default; //276px !default;
 $popover-border-width:              var(--#{$prefix}border-width-medium) !default;
 $popover-border-color:              var(--#{$prefix}border-subtle) !default;
 $popover-border-radius:             var(--#{$prefix}border-radius-medium) !default;
@@ -1131,7 +1109,7 @@ $popover-arrow-height:              .5rem !default;
 // Toasts
 
 // scss-docs-start toast-variables
-$toast-max-width:                   360px !default;
+$toast-max-width:                   22.5rem !default; //360px !default;
 $toast-padding-x:                   .75rem !default;
 $toast-padding-y:                   .5rem !default;
 $toast-font-size:                   .875rem !default;
@@ -1152,10 +1130,10 @@ $toast-header-border-color:         $toast-border-color !default;
 // Modals
 
 // scss-docs-start modal-variables
-$modal-small:                         300px !default;
-$modal-medium:                        500px !default;
-$modal-large:                         800px !default;
-$modal-xlarge:                        1140px !default;
+$modal-small:                         18.75rem !default; //300px !default;
+$modal-medium:                        31.25rem !default; //500px !default;
+$modal-large:                         50rem !default; //800px !default;
+$modal-xlarge:                        71.25rem !default; //1140px !default;
 
 $modal-fade-transform:                scale(1.05) !default;
 $modal-show-transform:                none !default;
@@ -1252,7 +1230,7 @@ $notification-title-margin-b:           $space-xsmall !default;
 
 // scss-docs-start progress-variables
 $progress-height:                   1rem !default;
-$progress-font-size:                $font-size-base * .75 !default;
+$progress-font-size:                #{calc(#{$font-size-base} * .75)} !default;
 $progress-bg-color:                 var(--#{$prefix}secondary-bg) !default;
 $progress-border-radius:            var(--#{$prefix}border-radius) !default;
 $progress-box-shadow:               var(--#{$prefix}box-shadow-inset) !default;
@@ -1411,7 +1389,7 @@ $close-button-disabled-opacity:   .25 !default;
 // scss-docs-start offcanvas-variables
 $offcanvas-padding-y:               $modal-window-padding-y !default;
 $offcanvas-padding-x:               $modal-window-padding-x !default;
-$offcanvas-horizontal-width:        400px !default;
+$offcanvas-horizontal-width:        25rem !default; //400px !default;
 $offcanvas-vertical-height:         30vh !default;
 $offcanvas-transition-duration:     .3s !default;
 $offcanvas-border-color:            $modal-window-border-color !default;

@@ -20,7 +20,7 @@
   }
 
   // Generate font variables
-  @each $name, $value in $font-families {
+  @each $name, $value in map-merge($font-families, $context-font-families ) {
     --#{$prefix}font-family-#{$name}: #{$value};
   }
   @each $name, $value in $font-sizes {
@@ -60,6 +60,18 @@
   // scss-docs-start root-body-variables
   @if $font-size-root != null {
     --#{$prefix}root-font-size: #{$font-size-root};
+
+    @if $font-size-root-large != $font-size-root {
+      @include media-breakpoint-up(large) {
+        --#{$prefix}root-font-size-large: #{$font-size-root-large};
+      }
+    }
+
+    @if $font-size-root-small != $font-size-root {
+      @include media-breakpoint-down(small) {
+        --#{$prefix}root-font-size-small: #{$font-size-root-small};
+      }
+    }
   }
 
   --#{$prefix}font-family: #{inspect($font-family-base)};

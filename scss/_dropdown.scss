@@ -163,7 +163,7 @@
   height: 0;
   margin: var(--#{$prefix}separator-margin) 0;
   overflow: hidden;
-  border-top: 1px solid var(--#{$prefix}separator-color);
+  border-top: $utility-pixel-1 solid var(--#{$prefix}separator-color);
   opacity: 1; // Revisit in v6 to de-dupe styles that conflict with <hr> element
 }
 
@@ -217,7 +217,7 @@
   display: block;
   padding: var(--#{$prefix}header-padding-y) var(--#{$prefix}header-padding-x);
   margin-bottom: 0; // for use with heading elements
-  @include font-size($font-size-smaller);
+  @include font-size($small-font-size);
   @include line-height();
   color: var(--#{$prefix}header-fg-color);
   white-space: nowrap; // as with > li > a

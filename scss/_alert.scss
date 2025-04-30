@@ -14,7 +14,7 @@
   --#{$prefix}box-radius: var(--#{$prefix}alert-box-radius, #{$alert-box-radius});
   --#{$prefix}icon-size: var(--#{$prefix}alert-icon-size, #{$alert-icon-size});
   @include map-font($alert-message-font, alert-message);
-  @include map-font($alert-title-font, alert-title, title);
+  @include map-font($alert-title-font, alert, title);
   --#{$prefix}title-margin: var(--#{$prefix}alert-title-margin, #{$alert-title-margin});
   --#{$prefix}footer-gap: var(--#{$prefix}alert-footer-gap, #{$alert-footer-gap});
   --#{$prefix}box-shadow: var(--#{$prefix}alert-box-shadow, #{$alert-shadow});

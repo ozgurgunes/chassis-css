@@ -7,4 +7,5 @@
 /site/static/sw.js
 /site/static/docs/**/assets/sw.js
 /site/layouts/partials/
+/hugo/
 /chassis-tokens/

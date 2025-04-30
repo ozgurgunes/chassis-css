@@ -43,7 +43,8 @@
     @extend %smooth-context-button;
   }
 
-  &.large {
+  &.large,
+  .button-group-large > & {
     --#{$prefix}padding-x: #{calc($button-large-padding-x - $button-border-width)};
     --#{$prefix}padding-y: #{calc($button-large-padding-y - $button-border-width)};
     --#{$prefix}gap: #{$button-large-gap};
@@ -52,7 +53,8 @@
     @include map-font($button-large-font, button);
   }
 
-  &.small {
+  &.small,
+  .button-group-small > & {
     --#{$prefix}padding-x: #{calc($button-small-padding-x - $button-border-width)};
     --#{$prefix}padding-y: #{calc($button-small-padding-y - $button-border-width)};
     --#{$prefix}gap: #{$button-small-gap};

@@ -2,24 +2,4 @@
 @import "component";
 @import "button";
 @import "interactive";
-
-%fg-color {
-  color: var(--#{$prefix}fg-color) if($enable-important-utilities, !important, null);
-}
-
-%bg-color {
-  background-color: var(--#{$prefix}bg-color) if($enable-important-utilities, !important, null);
-}
-
-%border-color {
-  border-color: var(--#{$prefix}border-color) if($enable-important-utilities, !important, null);
-}
-
-%icon-color {
-  color: var(--#{$prefix}icon-color) if($enable-important-utilities, !important, null);
-  fill: var(--#{$prefix}icon-color) if($enable-important-utilities, !important, null);
-}
-%link-color {
-  color: RGBA(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1)) if($enable-important-utilities, !important, null);
-  text-decoration-color: RGBA(var(--#{$prefix}link-color-rgb), var(--#{$prefix}underline-opacity, 1)) if($enable-important-utilities, !important, null);
-}
+@import "utility";

@@ -6,10 +6,10 @@
 // See: https://kittygiraudel.com/2016/10/13/css-hide-and-seek/
 
 @mixin visually-hidden() {
-  width: 1px !important;
-  height: 1px !important;
+  width: $utility-pixel-1 !important;
+  height: $utility-pixel-1 !important;
   padding: 0 !important;
-  margin: -1px !important; // Fix for https://github.com/twbs/bootstrap/issues/25686
+  margin: -1 * $utility-pixel-1 !important; // Fix for https://github.com/twbs/bootstrap/issues/25686
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;

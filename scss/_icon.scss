@@ -67,7 +67,7 @@ $utilities: () !default;
         values: map-merge-multiple(
           map-loop($context-icon-colors, varify, "$key"),
           map-loop($body-icon-colors, varify, "$key"),
-          ("icon-reset": currentcolor)
+          ("icon-reset": currentColor)
         )
       ),
       "icon-opacity": (

@@ -75,8 +75,8 @@
 //
 // Remix the default button sizing classes into new ones for easier manipulation.
 
-.button-group-small > .button { @extend .button, .small; }
-.button-group-large > .button { @extend .button, .large; }
+// .button-group-small > .button { @extend .button, .small; }
+// .button-group-large > .button { @extend .button, .large; }
 
 
 //
@@ -98,12 +98,12 @@
   }
 }
 
-.button-small + .dropdown-toggle-split {
+.button.small + .dropdown-toggle-split {
   padding-right: #{calc($button-small-padding-x * .75)};
   padding-left: #{calc($button-small-padding-x * .75)};
 }
 
-.button-large + .dropdown-toggle-split {
+.button.large + .dropdown-toggle-split {
   padding-right: #{calc($button-large-padding-x * .75)};
   padding-left: #{calc($button-large-padding-x * .75)};
 }

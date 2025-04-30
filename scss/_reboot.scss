@@ -30,6 +30,17 @@
     font-size: var(--#{$prefix}root-font-size); //stylelint-disable-line
   }
 
+  @if $font-size-root-large != $font-size-root {
+    @include media-breakpoint-up(large) {
+      font-size: var(--#{$prefix}root-font-size-large); //stylelint-disable-line
+    }
+  }
+  @if $font-size-root-small != $font-size-root {
+    @include media-breakpoint-down(small) {
+      font-size: var(--#{$prefix}root-font-size-small); //stylelint-disable-line
+    }
+  }
+
   @if $enable-smooth-scroll {
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
@@ -219,8 +230,8 @@ strong {
 // Add the correct font size in all browsers
 // autoprefixer: off
 small {
-  @include rfs(var(--#{$prefix}small-font-size, #{$font-size-smaller}), font-size);
-  @include rfs(var(--#{$prefix}small-line-height, #{line-height-smaller}), line-height);
+  @include rfs(var(--#{$prefix}small-font-size, #{$small-font-size}), font-size);
+  @include rfs(var(--#{$prefix}small-line-height, #{$small-line-height}), line-height);
 }
 // autoprefixer: on
 
@@ -228,8 +239,9 @@ small {
 
 mark {
   padding: $mark-padding;
-  color: var(--#{$prefix}highlight-color);
-  background-color: var(--#{$prefix}highlight-bg);
+  margin: -1 * $mark-padding;
+  color: $mark-fg-color;
+  background-color: $mark-bg-color;
 }
 
 
@@ -568,7 +580,7 @@ legend {
 
 [type="search"] {
   -webkit-appearance: textfield; // 1
-  outline-offset: -2px; // 2
+  outline-offset: -2 * $utility-pixel-1; // 2
 }
 
 // 1. A few input types should stay LTR

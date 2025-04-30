@@ -21,12 +21,14 @@
   --#{$prefix}idle-indicator-color: var(--#{$prefix}accordion-idle-indicator-color, #{$accordion-idle-indicator-color});
   --#{$prefix}active-indicator-color: var(--#{$prefix}accordion-active-indicator-color, #{$accordion-active-indicator-color});
   // Sizing
-  @include map-font($accordion-title-font, accordion-title, title);
-  @include map-font($accordion-body-font, accordion-body, body);
+  @include map-font($accordion-title-font, accordion, title);
+  @include map-font($accordion-body-font, accordion, body);
   --#{$prefix}title-padding-y: var(--#{$prefix}accordion-title-padding-y, #{$accordion-title-padding-y});
   --#{$prefix}title-padding-x: var(--#{$prefix}accordion-title-padding-x, #{$accordion-title-padding-x});
-  --#{$prefix}body-padding-y: var(--#{$prefix}accordion-body-padding-y, #{$accordion-body-padding-y});
-  --#{$prefix}body-padding-x: var(--#{$prefix}accordion-body-padding-x, #{$accordion-body-padding-x});
+  --#{$prefix}body-padding-t: var(--#{$prefix}accordion-body-padding-t, #{$accordion-body-padding-t});
+  --#{$prefix}body-padding-b: var(--#{$prefix}accordion-body-padding-b, #{$accordion-body-padding-b});
+  --#{$prefix}body-padding-s: var(--#{$prefix}accordion-body-padding-s, #{$accordion-body-padding-s});
+  --#{$prefix}body-padding-e: var(--#{$prefix}accordion-body-padding-e, #{$accordion-body-padding-e});
   --#{$prefix}indicator-size: var(--#{$prefix}accordion-indicator-size, #{$accordion-indicator-size});
   // Transition
   --#{$prefix}transition: var(--#{$prefix}accordion-transition, #{$accordion-transition});
@@ -37,21 +39,29 @@
   @include border-radius(var(--#{$prefix}border-radius));
 
   &.large {
-    @include map-font($accordion-large-title-font, accordion-large-title, title);
-    @include map-font($accordion-large-body-font, accordion-large-body, body);
+    @include map-font-size($accordion-large-title-font, accordion-large, title);
+    @include map-line-height($accordion-large-title-font, accordion-large, title);
+    @include map-font-size($accordion-large-body-font, accordion-large, body);
+    @include map-line-height($accordion-large-body-font, accordion-large, body);
     --#{$prefix}title-padding-y: var(--#{$prefix}accordion-large-title-padding-y, #{$accordion-large-title-padding-y});
     --#{$prefix}title-padding-x: var(--#{$prefix}accordion-large-title-padding-x, #{$accordion-large-title-padding-x});
-    --#{$prefix}body-padding-y: var(--#{$prefix}accordion-large-body-padding-y, #{$accordion-large-body-padding-y});
-    --#{$prefix}body-padding-x: var(--#{$prefix}accordion-large-body-padding-x, #{$accordion-large-body-padding-x});
+    --#{$prefix}body-padding-t: var(--#{$prefix}accordion-large-body-padding-t, #{$accordion-large-body-padding-t});
+    --#{$prefix}body-padding-b: var(--#{$prefix}accordion-large-body-padding-b, #{$accordion-large-body-padding-b});
+    --#{$prefix}body-padding-s: var(--#{$prefix}accordion-large-body-padding-s, #{$accordion-large-body-padding-s});
+    --#{$prefix}body-padding-e: var(--#{$prefix}accordion-large-body-padding-e, #{$accordion-large-body-padding-e});
     --#{$prefix}indicator-size: var(--#{$prefix}accordion-large-indicator-size, #{$accordion-large-indicator-size});
   }
   &.small {
-    @include map-font($accordion-small-title-font, accordion-small-title, title);
-    @include map-font($accordion-small-body-font, accordion-small-body, body);
+    @include map-font-size($accordion-small-title-font, accordion-small, title);
+    @include map-line-height($accordion-small-title-font, accordion-small, title);
+    @include map-font-size($accordion-small-body-font, accordion-small, body);
+    @include map-line-height($accordion-small-body-font, accordion-small, body);
     --#{$prefix}title-padding-y: var(--#{$prefix}accordion-small-title-padding-y, #{$accordion-small-title-padding-y});
     --#{$prefix}title-padding-x: var(--#{$prefix}accordion-small-title-padding-x, #{$accordion-small-title-padding-x});
-    --#{$prefix}body-padding-y: var(--#{$prefix}accordion-small-body-padding-y, #{$accordion-small-body-padding-y});
-    --#{$prefix}body-padding-x: var(--#{$prefix}accordion-small-body-padding-x, #{$accordion-small-body-padding-x});
+    --#{$prefix}body-padding-t: var(--#{$prefix}accordion-small-body-padding-t, #{$accordion-small-body-padding-t});
+    --#{$prefix}body-padding-b: var(--#{$prefix}accordion-small-body-padding-b, #{$accordion-small-body-padding-b});
+    --#{$prefix}body-padding-s: var(--#{$prefix}accordion-small-body-padding-s, #{$accordion-small-body-padding-s});
+    --#{$prefix}body-padding-e: var(--#{$prefix}accordion-small-body-padding-e, #{$accordion-small-body-padding-e});
     --#{$prefix}indicator-size: var(--#{$prefix}accordion-small-indicator-size, #{$accordion-small-indicator-size});
   }
   // scss-docs-end accordion-css-vars
@@ -127,13 +137,14 @@
 
     }
     > .accordion-content {
-      padding: var(--#{$prefix}body-padding-y) var(--#{$prefix}body-padding-x);
-      padding-left: #{calc(var(--#{$prefix}title-padding-x) + var(--#{$prefix}title-padding-x) + var(--#{$prefix}indicator-size))};
+      padding: var(--#{$prefix}body-padding-t) var(--#{$prefix}body-padding-e) var(--#{$prefix}body-padding-b) var(--#{$prefix}body-padding-s);
 
       * {
         @include font(body);
         color: var(--#{$prefix}fg-color);
       }
+
+      @include last-child();
     }
   }
 

@@ -53,61 +53,43 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <p class="h5">h5. Chassis - CSS</p>
 <p class="h6">h6. Chassis - CSS</p>`} />
 
-### Customizing headings
+### Utility segments
 
-Utility classes included to recreate the small secondary heading text.
+Use [utility classes]([[docsref:utilities/text]]) to partially format heading text.
 
 <Example code={`<h3>
-    Fancy display heading
+    An example heading
     <small class="fg-subtle">With faded secondary text</small>
   </h3>`} />
 
-## Display headings
+### Display headings
 
-Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style.
+Use display font and size classes for fancy headings to stand out.
 
-<div class="cxd-example">
-  <div class="font-display h1 pb-medium mb-medium border-bottom">Display 1</div>
-  <div class="font-display h2 pb-medium mb-medium border-bottom">Display 2</div>
-  <div class="font-display h3 pb-medium mb-medium border-bottom">Display 3</div>
-  <div class="font-display h4 pb-medium mb-medium border-bottom">Display 4</div>
-  <div class="font-display h5 pb-medium mb-medium border-bottom">Display 5</div>
-  <div class="font-display h6">Display 6</div>
-</div>
-
-```html
-<h1 class="font-display h1">Display 1</h1>
+<Example code={`<h1 class="font-display h1">Display 1</h1>
 <h1 class="font-display h2">Display 2</h1>
 <h1 class="font-display h3">Display 3</h1>
 <h1 class="font-display h4">Display 4</h1>
 <h1 class="font-display h5">Display 5</h1>
 <h1 class="font-display h6">Display 6</h1>
-```
+`} />
 
 Display headings are configured via the `$display-font-sizes` Sass map and two variables, `$display-font-weight` and `$display-line-height`.
 
 Display headings are customizable via two variables, `$display-font-family` and `$display-font-style`.
-
-## Lead
-
-Make a paragraph stand out by adding `.lead`.
-
-<Example code={`<p class="lead">
-    This is a lead paragraph. It stands out from regular paragraphs.
-  </p>`} />
 
 ## Inline text elements
 
 Styling for common inline HTML5 elements.
 
 <Example code={`<p>You can use the mark tag to <mark>highlight</mark> text.</p>
-<p><del>This line of text is meant to be treated as deleted text.</del></p>
-<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-<p><u>This line of text will render as underlined.</u></p>
-<p><small>This line of text is meant to be treated as fine print.</small></p>
-<p><strong>This line rendered as bold text.</strong></p>
-<p><em>This line rendered as italicized text.</em></p>`} />
+<p>This <del>example text</del> is meant to be treated as deleted.</p>
+<p>This <s>example text</s> is meant to be treated as no longer accurate.</p>
+<p>This <ins>example text</ins> is meant to be treated as an addition to the document.</p>
+<p>This <u>example text</u> rendered as underlined.</p>
+<p>This <small>example text</small> is meant to be treated as fine print.</p>
+<p>This <strong>example text</strong> rendered as bold text.</p>
+<p>This <em>example text</em> rendered as italic text.</p>`} />
 
 Beware that those tags should be used for semantic purpose:
 
@@ -118,8 +100,8 @@ Beware that those tags should be used for semantic purpose:
 
 If you want to style your text, you should use the following classes instead:
 
-- `.mark` will apply the same styles as `<mark>`.
-- `.small` will apply the same styles as `<small>`.
+- `.text-mark` will apply the same styles as `<mark>`.
+- `.text-small` will apply the same styles as `<small>`.
 - `.text-decoration-underline` will apply the same styles as `<u>`.
 - `.text-decoration-line-through` will apply the same styles as `<s>`.
 
@@ -129,10 +111,10 @@ While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant
 
 Stylized implementation of HTML’s `<abbr>` element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.
 
-Add `.initialism` to an abbreviation for a slightly smaller font-size.
+Add `.text-initials` to an abbreviation for a slightly smaller font-size.
 
 <Example code={`<p><abbr title="attribute">attr</abbr></p>
-<p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>`} />
+<p><abbr title="HyperText Markup Language" class="text-initials">html</abbr></p>`} />
 
 ## Blockquotes
 
@@ -144,13 +126,13 @@ For quoting blocks of content from another source within your document. Wrap `<b
 
 ### Naming a source
 
-The HTML spec requires that blockquote attribution be placed outside the `<blockquote>`. When providing attribution, wrap your `<blockquote>` in a `<figure>` and use a `<figcaption>` or a block level element (e.g., `<p>`) with the `.blockquote-footer` class. Be sure to wrap the name of the source work in `<cite>` as well.
+The HTML spec requires that blockquote attribution be placed outside the `<blockquote>`. When providing attribution, wrap your `<blockquote>` in a `<figure>` and use a `<figcaption>` or a block level element (e.g., `<p>`) with the `.attribution` class. Be sure to wrap the name of the source work in `<cite>` as well.
 
 <Example code={`<figure>
     <blockquote class="blockquote">
       <p>A well-known quote, contained in a blockquote element.</p>
     </blockquote>
-    <figcaption class="blockquote-footer">
+    <figcaption class="attribution">
       Someone famous in <cite title="Source Title">Source Title</cite>
     </figcaption>
   </figure>`} />
@@ -163,7 +145,7 @@ Use text utilities as needed to change the alignment of your blockquote.
     <blockquote class="blockquote">
       <p>A well-known quote, contained in a blockquote element.</p>
     </blockquote>
-    <figcaption class="blockquote-footer">
+    <figcaption class="attribution">
       Someone famous in <cite title="Source Title">Source Title</cite>
     </figcaption>
   </figure>`} />
@@ -172,12 +154,38 @@ Use text utilities as needed to change the alignment of your blockquote.
     <blockquote class="blockquote">
       <p>A well-known quote, contained in a blockquote element.</p>
     </blockquote>
-    <figcaption class="blockquote-footer">
+    <figcaption class="attribution">
       Someone famous in <cite title="Source Title">Source Title</cite>
     </figcaption>
   </figure>`} />
 
 ## Lists
+
+Default list styles are set in `_reboot.scss`.
+
+<Example code={`<ul>
+    <li>This is an unordered list.</li>
+    <li>Has bullets by default.</li>
+    <li>Has a nested list:
+      <ul>
+        <li>Second level</li>
+        <li>Second item of nested list</li>
+      </ul>
+    </li>
+    <li>Return to parent list.</li>
+  </ul>`} />
+
+<Example code={`<ol>
+    <li>This is an unordered list.</li>
+    <li>Has bullets by default.</li>
+    <li>Has a nested list:
+      <ul class="bulletless">
+        <li>Second level</li>
+        <li>Second item of nested list</li>
+      </ul>
+    </li>
+    <li>Return to parent list.</li>
+  </ul>`} />
 
 ### Bulletless
 
@@ -237,6 +245,42 @@ Align terms and descriptions horizontally by using our grid system’s predefine
     </dd>
   </dl>`} />
 
+## Context fonts
+
+Context text styles are also available. Use it with `.font-context` and `.{context-name}` classes.
+
+### Jumbo
+
+<Example code={`<p class="font-jumbo">This is a jumbo text, which can be used for headlines.</p>`} />
+
+### Hero
+
+<Example code={`<p class="font-hero">This is a hero text, which can be used in hero slides.</p>`} />
+
+### Heading
+
+<Example code={`<p class="font-heading">A special heading class.</p>`} />
+
+### Lead
+
+Make a paragraph stand out by adding `.font-lead`.
+
+<Example code={`<p class="font-lead">
+    This is a lead paragraph. It stands out from regular paragraphs.
+  </p>`} />
+
+### Title
+
+<Example code={`<p class="font-title large">A special title in large size, has its own margin-bottom.</p>
+<p class="font-title">A special title in medium size, has its own margin-bottom.</p>
+<p class="font-title small">A special title in small size, has its own margin-bottom.</p>`} />
+
+### Body
+
+<Example code={`<p class="font-body large">A large text class suitable for various contexts, such as articles, blogs, and more. It features custom styling to enhance readability and design.</p>
+<p class="font-body">A medium text class suitable for various contexts, such as articles, blogs, and more. It features custom styling to enhance readability and design.</p>
+<p class="font-body small">A small text class suitable for various contexts, such as articles, blogs, and more. It features custom styling to enhance readability and design.</p>`} />
+
 ## Text utilities
 
 Change text alignment, transform, style, weight, line-height, decoration and color with our [text utilities]([[docsref:/utilities/text]]) and [color utilities]([[docsref:/utilities/colors]]).
@@ -263,6 +307,6 @@ Miscellaneous typography elements covered here and in [Reboot]([[docsref:/conten
 
 Check [text utilities]([[docsref:/utilities/text]]) page for **base font** related variables.
 
-### Sass mixins
+### Typography tokens
 
-There are no dedicated mixins for typography, but Chassis - CSS does use [Responsive Font Sizing (RFS)]([[docsref:/getting-started/rfs]]).
+<ScssDocs name="typography-tokens" file="scss/tokens/_fonts.scss" />

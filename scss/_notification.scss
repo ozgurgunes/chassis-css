@@ -8,7 +8,7 @@
   --#{$prefix}border-width: var(--#{$prefix}notification-border-width, #{$notification-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}notification-border-radius, #{$notification-border-radius});
   @include map-font($notification-message-font, notification);
-  @include map-font($notification-title-font, notification-title, title);
+  @include map-font($notification-title-font, notification, title);
 
   position: relative;
   box-sizing: content-box;

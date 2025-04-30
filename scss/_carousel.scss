@@ -180,7 +180,7 @@
     padding: $carousel-indicator-padding-y $carousel-indicator-padding-x;
     margin-right: $carousel-indicator-margin;
     margin-left: $carousel-indicator-margin;
-    text-indent: -999px;
+    text-indent: -1 * $utility-pixel-999;
     cursor: pointer;
     background-color: transparent;
     background-clip: padding-box;

@@ -17,10 +17,10 @@ $enable-grid-classes:           true !default;
 $enable-container-classes:      true !default;
 $enable-cssgrid:                false !default;
 $enable-button-pointers:        true !default;
-$enable-rfs:                    true !default;
+$enable-rfs:                    false !default;
 $enable-validation-icons:       true !default;
 $enable-negative-margins:       true !default;
 $enable-deprecation-messages:   true !default;
 $enable-important-utilities:    true !default;
 
-@import "../chassis-tokens/dist/tokens/web/chassis-test/allTokens";
+@import "../chassis-tokens/dist/tokens/web/chassis-docs/allTokens";

@@ -1,0 +1,228 @@
+@import "../../vendor";
+@import "../../functions";
+//@import "../../../chassis-tokens/dist/tokens/web/chassis_docs_light";
+@import "../../tokens";
+@import "../../variables";
+@import "../../maps";
+@import "../../mixins";
+
+$test-font-map: (
+  "font-family": var(--#{$prefix}font-family-test),
+  "font-weight": var(--#{$prefix}font-weight-test),
+  "font-size": var(--#{$prefix}font-size-test),
+  "line-height": var(--#{$prefix}line-height-test),
+  "font-style": normal,
+  "letter-spacing": 0,
+  "margin-bottom": 0rem,
+  "text-transform": none,
+  "text-decoration": none
+) !default;
+
+@include describe("map-font mixin") {
+  @include it("creates font variables for a compnent") {
+    @include assert() {
+      @include output() {
+        .test-map-font-component-and-element {
+          @include map-font($test-font-map, "component");
+        }
+      }
+      @include expect() {
+        .test-map-font-component-and-element {
+          --#{$prefix}font-family: var(--#{$prefix}component-font-family, var(--#{$prefix}font-family-test));
+          --#{$prefix}font-size: var(--#{$prefix}component-font-size, var(--#{$prefix}font-size-test));
+          --#{$prefix}font-weight: var(--#{$prefix}component-font-weight, var(--#{$prefix}font-weight-test));
+          --#{$prefix}line-height: var(--#{$prefix}component-line-height, var(--#{$prefix}line-height-test));
+        }
+      }
+    }
+  }
+  @include it("creates font variables for child elements of a compnent") {
+    @include assert() {
+      @include output() {
+        .test-map-font-component-and-element {
+          @include map-font($test-font-map, "component", "element");
+        }
+      }
+      @include expect() {
+        .test-map-font-component-and-element {
+          --#{$prefix}element-font-family: var(--#{$prefix}component-element-font-family, var(--#{$prefix}font-family-test));
+          --#{$prefix}element-font-size: var(--#{$prefix}component-element-font-size, var(--#{$prefix}font-size-test));
+          --#{$prefix}element-font-weight: var(--#{$prefix}component-element-font-weight, var(--#{$prefix}font-weight-test));
+          --#{$prefix}element-line-height: var(--#{$prefix}component-element-line-height, var(--#{$prefix}line-height-test));
+        }
+      }
+    }
+  }
+  @include it("creates font properties for a compnent") {
+    @include assert() {
+      @include output() {
+        .test-map-font-component-and-element {
+          @include map-font($test-font-map, "component", $prop: true);
+        }
+      }
+      @include expect() {
+        .test-map-font-component-and-element {
+          font-family: var(--#{$prefix}component-font-family, var(--#{$prefix}font-family-test));
+          font-size: var(--#{$prefix}component-font-size, var(--#{$prefix}font-size-test)); // stylelint-disable-line property-disallowed-list
+          font-weight: var(--#{$prefix}component-font-weight, var(--#{$prefix}font-weight-test));
+          line-height: var(--#{$prefix}component-line-height, var(--#{$prefix}line-height-test));
+        }
+      }
+    }
+  }
+  @include it("font properties for child elements of a compnent") {
+    @include assert() {
+      @include output() {
+        .test-map-font-component-and-element {
+          @include map-font($test-font-map, "component", "element", true);
+        }
+      }
+      @include expect() {
+        .test-map-font-component-and-element {
+          font-family: var(--#{$prefix}component-element-font-family, var(--#{$prefix}font-family-test));
+          font-size: var(--#{$prefix}component-element-font-size, var(--#{$prefix}font-size-test)); // stylelint-disable-line property-disallowed-list
+          font-weight: var(--#{$prefix}component-element-font-weight, var(--#{$prefix}font-weight-test));
+          line-height: var(--#{$prefix}component-element-line-height, var(--#{$prefix}line-height-test));
+        }
+      }
+    }
+  }
+}
+
+@include describe("font mixin") {
+  @include it("creates font shorthand property for a class") {
+    @include assert() {
+      @include output() {
+        .test-default-font {
+          @include font();
+        }
+        .test-component-font {
+          @include font("component");
+        }
+      }
+      @include expect() {
+        .test-default-font {
+          font: var(--#{$prefix}font-weight) var(--#{$prefix}font-size) / var(--#{$prefix}line-height) var(--#{$prefix}font-family);
+        }
+        .test-component-font {
+          font: var(--#{$prefix}component-font-weight) var(--#{$prefix}component-font-size) / var(--#{$prefix}component-line-height) var(--#{$prefix}component-font-family);
+        }
+      }
+    }
+  }
+  @include it("creates font properties for a class") {
+    @include assert() {
+      @include output() {
+        .test-default-font {
+          @include font($short: false);
+        }
+        .test-component-font {
+          @include font("component", false);
+        }
+      }
+      @include expect() {
+        .test-default-font {
+          font-family: var(--#{$prefix}font-family);
+          font-size: var(--#{$prefix}font-size); // stylelint-disable-line property-disallowed-list
+          font-weight: var(--#{$prefix}font-weight);
+          line-height: var(--#{$prefix}line-height);
+        }
+        .test-component-font {
+          font-family: var(--#{$prefix}component-font-family);
+          font-size: var(--#{$prefix}component-font-size); // stylelint-disable-line property-disallowed-list
+          font-weight: var(--#{$prefix}component-font-weight);
+          line-height: var(--#{$prefix}component-line-height);
+        }
+      }
+    }
+  }
+}
+$enable-rfs: true;
+// stylelint-disable property-disallowed-list
+@include describe("font-size & line-height mixins") {
+  @include it("creates font-size & line height properti with default variables.") {
+    @include assert() {
+      @include output() {
+        .test-default-font-size {
+          @include font-size();
+        }
+        .test-font-size-var {
+          @include font-size($component: "component");
+        }
+        .test-default-line-height {
+          @include line-height();
+        }
+        .test-line-height-var {
+          @include line-height($component: "component");
+        }
+      }
+      @include expect() {
+        .test-default-font-size {
+          font-size: var(--#{$prefix}font-size);
+        }
+        .test-font-size-var {
+          font-size: var(--#{$prefix}component-font-size);
+        }
+        .test-default-line-height {
+          line-height: var(--#{$prefix}line-height);
+        }
+        .test-line-height-var {
+          line-height: var(--#{$prefix}component-line-height);
+        }
+      }
+    }
+  }
+  @include it("applies rfs to font size values") {
+    @include assert() {
+      @include output() {
+        .test-font-size-px {
+          @include font-size(96px);
+        }
+        .test-line-height-px {
+          @include line-height(96px);
+        }
+        .test-font-size-rem {
+          @include font-size(4rem);
+        }
+        .test-line-height-rem {
+          @include line-height(6rem);
+        }
+      }
+      @include expect() {
+        .test-font-size-px {
+          font-size: #{calc(1.725rem + 5.7vw)};
+        }
+        @media (min-width: 1200px) {
+          .test-font-size-px {
+            font-size: 6rem;
+          }
+        }
+        .test-line-height-px {
+          line-height: #{calc(1.725rem + 5.7vw)};
+        }
+        @media (min-width: 1200px) {
+          .test-line-height-px {
+            line-height: 6rem;
+          }
+        }
+        .test-font-size-rem {
+          font-size: #{calc(1.525rem + 3.3vw)};
+        }
+        @media (min-width: 1200px) {
+          .test-font-size-rem {
+            font-size: 4rem;
+          }
+        }
+        .test-line-height-rem {
+          line-height: #{calc(1.725rem + 5.7vw)};
+        }
+        @media (min-width: 1200px) {
+          .test-line-height-rem {
+            line-height: 6rem;
+          }
+        }
+      }
+    }
+  }
+}
+// stylelint-enable property-disallowed-list

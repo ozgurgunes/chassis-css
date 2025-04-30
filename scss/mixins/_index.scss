@@ -16,7 +16,7 @@
 @import "text-truncate";
 
 // Utilities
-@import "utilities";
+@import "utilities-api";
 
 // Components
 @import "backdrop";
@@ -43,7 +43,7 @@
 // @import "context";
 
 // scss-docs-start last-child-mixin
-@mixin last-child($tag: p) {
+@mixin last-child($tag: "> p") {
   #{$tag}:last-child {
     @extend .last-child;
   }

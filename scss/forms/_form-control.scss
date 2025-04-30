@@ -96,7 +96,7 @@
     //
     // On iOS Safari, form-control's "appearance: none" + "width: 100%" makes the input width too small
     // Tested under iOS 16.2 / Safari 16.2
-    min-width: 85px; // Seems to be a good minimum safe width
+    min-width: 5.5rem; // 85px; // Seems to be a good minimum safe width
 
     // Add some height to date inputs on iOS
     // https://github.com/twbs/bootstrap/issues/23307

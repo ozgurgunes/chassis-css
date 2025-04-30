@@ -136,14 +136,8 @@ Instead of applying button sizing classes to every button in a group, just add `
     <button type="button" class="button outline primary">Middle</button>
     <button type="button" class="button outline primary">Right</button>
   </div>
-  <br>
-  <div class="button-group" role="group" aria-label="Default button group">
-    <button type="button" class="button outline primary">Left</button>
-    <button type="button" class="button outline primary">Middle</button>
-    <button type="button" class="button outline primary">Right</button>
-  </div>
-  <br>
-  <div class="button-group button-group-xsmall" role="group" aria-label="Small button group">
+  <br /><br />
+  <div class="button-group button-group-small" role="group" aria-label="Small button group">
     <button type="button" class="button outline primary">Left</button>
     <button type="button" class="button outline primary">Middle</button>
     <button type="button" class="button outline primary">Right</button>
@@ -156,7 +150,6 @@ Place a `.button-group` within another `.button-group` when you want dropdown me
 <Example code={`<div class="button-group" role="group" aria-label="Button group with nested dropdown">
     <button type="button" class="button primary">1</button>
     <button type="button" class="button primary">2</button>
-
     <div class="button-group" role="group">
       <button type="button" class="button primary dropdown-toggle" data-cx-toggle="dropdown" aria-expanded="false">
         Dropdown

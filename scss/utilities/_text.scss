@@ -37,9 +37,9 @@ $utilities: map-merge(
       class: lh,
       values: (
         1: 1,
-        small: $line-height-smaller,
+        small: $small-line-height,
         base: $line-height-base,
-        large: $line-height-larger,
+        large: $large-line-height,
       )
     ),
     "text-align": (
