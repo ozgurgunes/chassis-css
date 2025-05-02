@@ -16,13 +16,13 @@
   --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color, #{$accordion-title-bg-color});
   --#{$prefix}active-fg-color: var(--#{$prefix}accordion-active-fg-color, #{$accordion-title-active-fg-color});
   --#{$prefix}active-bg-color: var(--#{$prefix}accordion-active-bg-color, #{$accordion-title-active-bg-color});
-  --#{$prefix}idle-indicator: var(--#{$prefix}accordion-idle-indicator, #{escape-svg($accordion-idle-indicator)});
-  --#{$prefix}active-indicator: var(--#{$prefix}accordion-active-indicator, #{escape-svg($accordion-active-indicator)});
-  --#{$prefix}idle-indicator-color: var(--#{$prefix}accordion-idle-indicator-color, #{$accordion-idle-indicator-color});
-  --#{$prefix}active-indicator-color: var(--#{$prefix}accordion-active-indicator-color, #{$accordion-active-indicator-color});
+  --#{$prefix}indicator: var(--#{$prefix}accordion-indicator, #{escape-svg($accordion-indicator)});
+  --#{$prefix}indicator-inactive-color: var(--#{$prefix}accordion-indicator-inactive-color, #{$accordion-indicator-inactive-color});
+  --#{$prefix}indicator-active-color: var(--#{$prefix}accordion-indicator-active-color, #{$accordion-indicator-active-color});
   // Sizing
   @include map-font($accordion-title-font, accordion, title);
   @include map-font($accordion-body-font, accordion, body);
+  --#{$prefix}gap: var(--#{$prefix}accordion-gap, #{$accordion-gap});
   --#{$prefix}title-padding-y: var(--#{$prefix}accordion-title-padding-y, #{$accordion-title-padding-y});
   --#{$prefix}title-padding-x: var(--#{$prefix}accordion-title-padding-x, #{$accordion-title-padding-x});
   --#{$prefix}body-padding-t: var(--#{$prefix}accordion-body-padding-t, #{$accordion-body-padding-t});
@@ -43,6 +43,7 @@
     @include map-line-height($accordion-large-title-font, accordion-large, title);
     @include map-font-size($accordion-large-body-font, accordion-large, body);
     @include map-line-height($accordion-large-body-font, accordion-large, body);
+    --#{$prefix}gap: var(--#{$prefix}accordion-large-gap, #{$accordion-large-gap});
     --#{$prefix}title-padding-y: var(--#{$prefix}accordion-large-title-padding-y, #{$accordion-large-title-padding-y});
     --#{$prefix}title-padding-x: var(--#{$prefix}accordion-large-title-padding-x, #{$accordion-large-title-padding-x});
     --#{$prefix}body-padding-t: var(--#{$prefix}accordion-large-body-padding-t, #{$accordion-large-body-padding-t});
@@ -56,6 +57,7 @@
     @include map-line-height($accordion-small-title-font, accordion-small, title);
     @include map-font-size($accordion-small-body-font, accordion-small, body);
     @include map-line-height($accordion-small-body-font, accordion-small, body);
+    --#{$prefix}gap: var(--#{$prefix}accordion-small-gap, #{$accordion-small-gap});
     --#{$prefix}title-padding-y: var(--#{$prefix}accordion-small-title-padding-y, #{$accordion-small-title-padding-y});
     --#{$prefix}title-padding-x: var(--#{$prefix}accordion-small-title-padding-x, #{$accordion-small-title-padding-x});
     --#{$prefix}body-padding-t: var(--#{$prefix}accordion-small-body-padding-t, #{$accordion-small-body-padding-t});
@@ -111,11 +113,11 @@
         flex-shrink: 0;
         width: var(--#{$prefix}indicator-size);
         height: var(--#{$prefix}indicator-size);
-        margin-right: var(--#{$prefix}title-padding-x);
+        margin-right: var(--#{$prefix}gap);
         margin-left: 0;
         content: "";
-        background-color: var(--#{$prefix}idle-indicator-color);
-        mask-image: var(--#{$prefix}idle-indicator);
+        background-color: var(--#{$prefix}indicator-inactive-color);
+        mask-image: var(--#{$prefix}indicator);
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: var(--#{$prefix}indicator-size);
@@ -161,6 +163,16 @@
 
       &:first-child { border-top: 0; }
       &:last-child { border-bottom: 0; }
+
+      > summary {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      > .accordion-content {
+        padding-right: 0;
+        padding-left: #{calc(var(--#{$prefix}body-padding-s) - var(--#{$prefix}title-padding-x))};
+      }
     }
   }
 
@@ -170,8 +182,8 @@
     // box-shadow: inset 0 calc(-1 * var(--#{$prefix}border-width)) 0 var(--#{$prefix}border-color); // stylelint-disable-line function-disallowed-list
 
     &::before {
-      background-color: var(--#{$prefix}active-indicator-color);
-      mask-image: var(--#{$prefix}active-indicator);
+      background-color: var(--#{$prefix}indicator-active-color);
+      mask-image: var(--#{$prefix}indicator);
       transform: var(--#{$prefix}indicator-transform);
     }
   }

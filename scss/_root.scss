@@ -81,6 +81,8 @@
   @if $text-align != null {
     --#{$prefix}text-align: #{$text-align};
   }
+  --#{$prefix}separator-size: #{$separator-size};
+  --#{$prefix}indicator-size: #{$indicator-size};
   // scss-docs-start root-body-mixins
   @include context($body-context);
   @include body-colors();
@@ -139,12 +141,12 @@
   @if $font-size-root != null {
     --#{$prefix}root-font-size: #{$font-size-root};
   }
-  --#{$prefix}body-font-family: var(--#{$prefix}font-family);
-  --#{$prefix}body-font-size: var(--#{$prefix}font-size);
-  --#{$prefix}body-font-weight: var(--#{$prefix}font-weight);
-  --#{$prefix}body-line-height: var(--#{$prefix}line-height);
+  --#{$prefix}body-font-family: #{$font-family-base};
+  --#{$prefix}body-font-size: #{$font-size-base};
+  --#{$prefix}body-font-weight: #{$font-weight-base};
+  --#{$prefix}body-line-height: #{$line-height-base};
   @if $text-align != null {
-    --#{$prefix}body-text-align: var(--#{$prefix}text-align);
+    --#{$prefix}body-text-align: #{$text-aligm};
   }
 
   // @each $color, $value in $grays {

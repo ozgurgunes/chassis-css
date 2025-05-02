@@ -4,12 +4,11 @@
 
 .table {
   // End of reset
-  --#{$prefix}padding-y: var(--#{$prefix}table-cell-padding-y, #{$table-cell-padding-y});
-  --#{$prefix}padding-x: var(--#{$prefix}table-cell-padding-x, #{$table-cell-padding-x});
-  --#{$prefix}fg-color: var(--#{$prefix}table-fg-color, #{$table-fg-color});
-  --#{$prefix}bg-color: var(--#{$prefix}table-bg-color, #{$table-bg-color});
+  --#{$prefix}cell-padding-y: var(--#{$prefix}table-cell-padding-y, #{$table-cell-padding-y});
+  --#{$prefix}cell-padding-x: var(--#{$prefix}table-cell-padding-x, #{$table-cell-padding-x});
+  --#{$prefix}fg-color: var(--#{$prefix}table-fg-color, #{$table-td-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}table-bg-color, #{$table-td-bg-color});
   --#{$prefix}border-color: var(--#{$prefix}table-border-color, #{$table-border-color});
-  --#{$prefix}border-radius: var(--#{$prefix}table-border-radius, #{$table-border-radius});
   --#{$prefix}th-fg-color: var(--#{$prefix}table-th-fg-color, #{$table-th-fg-color});
   --#{$prefix}th-bg-color: var(--#{$prefix}table-th-bg-color, #{$table-th-bg-color});
   --#{$prefix}striped-fg-color: var(--#{$prefix}table-striped-fg-color, #{$table-striped-fg-color});
@@ -18,7 +17,14 @@
   --#{$prefix}hover-bg-color: var(--#{$prefix}table-hover-bg-color, #{$table-hover-bg-color});
   --#{$prefix}active-fg-color: var(--#{$prefix}table-active-fg-color, #{$table-active-fg-color});
   --#{$prefix}active-bg-color: var(--#{$prefix}table-active-bg-color, #{$table-active-bg-color});
-
+  @if $enable-table-font-tokens {
+    @include map-font($table-cell-font, table, td); // e.g. --#{$prefix}td-[property-name]: var(--#{$prefix}table-tg-[propery-name], [value]);
+    @include map-font($table-head-font, table, th); // e.g. --#{$prefix}th-[property-name]: var(--#{$prefix}table-th-[propery-name], [value]);
+  }
+  @if $enable-table-border-radius {
+    --#{$prefix}border-radius: var(--#{$prefix}table-border-radius, #{$table-border-radius});
+    @include border-radius(var(--#{$prefix}border-radius));
+  }
   width: 100%;
   margin-bottom: $spacer;
   vertical-align: $table-cell-vertical-align;
@@ -28,18 +34,29 @@
   // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `.table` class.
   // We use the universal selectors here to simplify the selector (else we would need 6 different selectors).
   // Another advantage is that this generates less code and makes the selector less specific making it easier to override.
-  // stylelint-disable-next-line selector-max-universal
-  > :not(caption) > * > * {
-    padding: var(--#{$prefix}padding-y) var(--#{$prefix}padding-x);
-    color: var(--#{$prefix}fg-color);
-    background-color: var(--#{$prefix}bg-color);
-    // border-color: var(--#{$prefix}border-color);
-    border-bottom-width: var(--#{$prefix}border-width);
-    box-shadow: inset 0 0 0 (10 * $utility-pixel-999) var(--#{$prefix}bg-color);
+  > :not(caption) > * {
+    // stylelint-disable-next-line selector-max-universal
+    > * {
+      padding: var(--#{$prefix}cell-padding-y) var(--#{$prefix}cell-padding-x);
+      color: var(--#{$prefix}fg-color);
+      background-color: var(--#{$prefix}bg-color);
+      // border-color: var(--#{$prefix}border-color);
+      border-bottom-width: var(--#{$prefix}border-width);
+      box-shadow: inset 0 0 0 (10 * $utility-pixel-999) var(--#{$prefix}bg-color);
+    }
+    @if $enable-table-font-tokens {
+      > td {
+        @include font(td);
+      }
+
+      > th {
+        @include font(th);
+      }
+    }
   }
-  // stylelint-disable
-  &.rounded {
-    @include border-radius(var(--#{$prefix}border-radius));
+
+  @if $enable-table-border-radius {
+    // stylelint-disable
     > :not(caption):first-child > * {
       > *:first-child {
         @include border-top-start-radius(var(--#{$prefix}border-radius));
@@ -56,8 +73,8 @@
         @include border-bottom-end-radius(var(--#{$prefix}border-radius));
       }
     }
+    // stylelint-enable
   }
-  // stylelint-enable
 
   &.context {
     --#{$prefix}fg-color: var(--#{$prefix}fg-main);
@@ -90,22 +107,6 @@
     &.context {
       --#{$prefix}fg-color: var(--#{$prefix}fg-main);
       --#{$prefix}bg-color: var(--#{$prefix}bg-main);
-    }
-  }
-
-  //
-  // Condensed table w/ reduces padding and font size.
-  //
-  &.small {
-    --#{$prefix}padding-y: var(--#{$prefix}table-cell-padding-y-small, #{$table-cell-padding-y-small});
-    --#{$prefix}padding-x: var(--#{$prefix}table-cell-padding-x-small, #{$table-cell-padding-x-small});
-    --#{$prefix}font-size: var(--#{$prefix}font-size-small);
-    --#{$prefix}line-height: var(--#{$prefix}line-height-small);
-    // stylelint-disable-next-line selector-max-universal
-    > :not(caption) > * > * {
-      // padding: $table-cell-padding-y-small $table-cell-padding-x-small;
-      font-size: var(--#{$prefix}font-size-small); // stylelint-disable-line
-      line-height: var(--#{$prefix}line-height-small);
     }
   }
 
@@ -182,6 +183,24 @@
   > tbody > tr:nth-of-type(#{$table-striped-order}) > *.active {
     --#{$prefix}fg-color: var(--#{$prefix}active-fg-color);
     --#{$prefix}bg-color: var(--#{$prefix}active-bg-color);
+
+    // &:first-child::before {
+    //   position: absolute;
+    //   // bottom: 0;
+    //   width: 4px;
+    //   height: 100%;
+    //   content: " ";
+    //   background-color: var(--#{$prefix}primary);
+    // }
+  }
+
+  @if $enable-table-active-indicator {
+    // stylelint-disable-next-line selector-no-qualifying-type
+    > tbody > tr.active > *:first-child,
+    > tbody > tr > *.active {
+      padding-left: #{calc($table-cell-padding-x - $table-active-indicator-size)};
+      border-left: $table-active-indicator-size solid $table-active-indicator-color;
+    }
   }
 
 }

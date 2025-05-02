@@ -59,21 +59,6 @@ ol {
   }
 }
 
-.text-small {
-  //stylelint-disable-next-line property-disallowed-list
-  font-size: $small-font-size if($enable-important-utilities, !important, null);
-  line-height: $small-line-height if($enable-important-utilities, !important, null);
-}
-.text-large {
-  //stylelint-disable-next-line property-disallowed-list
-  font-size: $large-font-size if($enable-important-utilities, !important, null);
-  line-height: $large-line-height if($enable-important-utilities, !important, null);
-}
-
-.font-monospace {
-  @extend .font-code;
-}
-
 // Type display classes
 @each $name, $value in $display-font-sizes {
   .font-display.font-#{$name} {
@@ -157,13 +142,22 @@ ol {
 //   @extend small;
 // }
 
+.text-small {
+  //stylelint-disable-next-line property-disallowed-list
+  font-size: $small-font-size if($enable-important-utilities, !important, null);
+}
+.text-large {
+  //stylelint-disable-next-line property-disallowed-list
+  font-size: $large-font-size if($enable-important-utilities, !important, null);
+}
 .text-initials {
-  @include font-size($initials-font-size);
-  // @include line-height($initials-line-height);
+  //stylelint-disable-next-line property-disallowed-list
+  font-size: $initials-font-size if($enable-important-utilities, !important, null);
   text-transform: uppercase;
 }
-
 .text-mark {
   @extend mark;
 }
-
+.text-monospace {
+  @extend .font-code;
+}

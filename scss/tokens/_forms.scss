@@ -26,6 +26,7 @@ $input-medium-icon-size:                  $cx-size-icon-glyph-small !default;
 $input-large-icon-size:                   $cx-size-icon-glyph-medium !default;
 $input-small-icon-size:                   $cx-size-icon-glyph-xsmall !default;
 
+// fusv-disable
 // scss-docs-start form-font-tokens
 $input-medium-label-font:                 $cx-font-common-form-input-medium-label !default;
 $input-large-label-font:                  $cx-font-common-form-input-large-label !default;
@@ -99,3 +100,4 @@ $input-alternate-success-placeholder:     $cx-color-common-form-input-alternate-
 $input-alternate-success-assist:          $cx-color-common-form-input-alternate-success-assist !default;
 // scss-docs-end form-color-tokens
 // scss-docs-end form-tokens
+// fusv-enable

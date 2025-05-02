@@ -126,17 +126,39 @@ Add `.bordered` for borders on all sides of the table and cells.
 
 <Table class="table bordered border-primary" />
 
-Rounded tables also available with `.rounded` for a more modern look.
-
-<Table class="table context neutral bordered rounded" />
-
 ### Borderless tables
 
 Add `.borderless` for a table without borders.
 
 <Table class="table borderless" />
 
-<Table class="table context alternate borderless" />
+<Table class="table borderless context alternate" />
+
+### Border Radius
+
+Override the design tokens `border-radius` with css variables.
+
+<Table class="table bordered" style="--cx-border-radius: 0" />
+
+Or use it in a wrapper with table scoping.
+
+<div class="cxd-example">
+  <div style="--cx-table-border-radius: 1rem">
+    <TableDeep code="false" class="table bordered" />
+  </div>
+</div>
+
+```html
+<div style="--cx-table-border-radius: 1rem">
+  <table class="table bordered">
+    ...
+  </table>
+</div>
+```
+
+<Callout type="warning">
+ Border radius overriding needs `$enable-table-border-radius` to be set to `true` in `_vendor.scss`.
+</Callout>
 
 ## Color Modes
 
@@ -153,21 +175,40 @@ Add `data-cx-theme="light"` or `data-cx-theme="dark"` to any table elements.
 
 <Table class="table context primary smooth" />
 
-## Small tables
+## Tabe Sizing
 
-Add `.table-small` to make any `.table` more compact by cutting all cell `padding` in half.
+Use css variables to override design tokens.
 
-<Table class="table small" />
+<Table class="table" style="--cx-td-font-size: 1rem; --cx-cell-padding-y: 1rem" />
 
-<Table class="table small" theme="dark" />
+Set styles for `<thead>` & `<tbody>` or wrapper with scoping.
+
+<div class="cxd-example">
+  <div style="--cx-table-cell-padding-y: 1rem; --cx-table-th-font-size: 1rem;">
+    <TableDeep code="false" class="table" headStyle="--cx-cell-padding-y: .25rem" bodyStyle="--cx-td-font-size: 1rem" />
+  </div>
+</div>
+
+```html
+<div style="--cx-table-cell-padding-y: 1rem; --cx-table-th-font-size: 1rem;">
+  <table class="table">
+    <thead style="--cx-cell-padding-y: .25rem">
+      ...
+    </thead>
+    <tbody style="--cx-td-font-size: 1rem">
+      ...
+    </tbody>
+  </table>
+</div>
+```
 
 ## Table group dividers
 
 Add a thicker border, darker between table groups—`<thead>`, `<tbody>`, and `<tfoot>`—with `.table-divider`. Customize the color by changing the `border-top-color` (which we don’t currently provide a utility class for at this time).
 
-<TableDeep class="table" body="table-divider" />
+<TableDeep class="table" bodyClass="table-divider" />
 
-<TableDeep class="table context primary" body="table-divider" />
+<TableDeep class="table context primary" bodyClass="table-divider" />
 
 ## Vertical alignment
 
@@ -344,11 +385,11 @@ Apply the `context` class without a variant to enable the nested table to inheri
 
 Use context classes on head or color utilities on row to customize table heads.
 
-<TableDeep class="table" head="context default" />
+<TableDeep class="table" headClass="context default" />
 
-<TableDeep class="table" head="context alternate" />
+<TableDeep class="table" headClass="context alternate" />
 
-<TableDeep class="table" headRow="bg-main fg-primary" />
+<TableDeep class="table" headRowClass="bg-main fg-primary" />
 
 
 ### Table foot

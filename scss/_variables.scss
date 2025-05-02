@@ -195,17 +195,18 @@ $line-height-xsmall:        var(--#{$prefix}line-height-text-xsmall) !default;
 $line-height-2xsmall:       var(--#{$prefix}line-height-text-2xsmall) !default;
 
 $small-font-size:           .875em !default;
-$small-line-height:         $small-font-size !default;
 $large-font-size:           1.25em !default;
-$large-line-height:         $large-font-size !default;
 $initials-font-size:        $small-font-size !default;
-$initials-line-height:      $small-line-height !default;
+
+$small-line-height:         1.25em !default;
+$medium-line-height:          1.5em !default;
+$large-line-height:         1.75em !default;
 
 $sub-sup-font-size:         .75em !default;
 
 $font-weight-lighter:       lighter !default;
 $font-weight-light:         300 !default;
-$font-weight-normal:        400 !default;
+$font-weight-regular:       400 !default;
 $font-weight-medium:        500 !default;
 $font-weight-semibold:      600 !default;
 $font-weight-bold:          700 !default;
@@ -223,9 +224,8 @@ $bold-font-weight:          $font-weight-html-bold !default;
 
 $heading-margin-bottom:     .75rem !default;
 $heading-font-family:       var(--#{$prefix}font-family-html) !default;
-$heading-font-style:        null !default;
 $heading-font-weight:       var(--#{$prefix}font-weight-html-heading) !default;
-$heading-line-height:       null !default; // var(--#{$prefix}heading-line-height, 1.375em) !default;
+$heading-font-style:        null !default;
 $heading-color:             null !default; // var(--#{$prefix}heading-color, #{$fg-color}) !default;
 
 $h1-font-size:              var(--#{$prefix}font-size-html-h1) !default;
@@ -250,9 +250,10 @@ $list-inline-padding:       .5rem !default;
 $dt-font-weight:            $bold-font-weight !default;
 
 $blockquote-font:           $cx-font-html-blockquote !default;
+$blockquote-margin-y:       $spacer !default;
 $attribution-font:          $cx-font-html-cite !default;
 $attribution-color:         $fg-subtle !default;
-$blockquote-margin-y:       $spacer !default;
+// scss-docs-end type-variables
 
 // scss-docs-start mark-variables
 $mark-padding:              .125em !default;
@@ -367,9 +368,6 @@ $container-padding-x: $grid-gutter-width !default;
 $border-width:                $border-width-medium !default;
 $border-color:                $default-border-main !default;
 $border-style:                solid !default;
-// fusv-disable
-$separator-color:             $default-border-subtle !default;
-// fusv-enable
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
@@ -779,10 +777,8 @@ $form-validation-states: (
 // Most of tables settings are defined by design tokens, see `scss/tokens/_index.scss`.
 
 // scss-docs-start table-variables
-$table-cell-padding-y-small:        #{calc($table-cell-padding-y / 1.5)} !default;
-$table-cell-padding-x-small:        #{calc($table-cell-padding-x / 1.5)} !default;
 $table-cell-vertical-align:         top !default;
-$table-th-font-weight:              map-get($table-head-font, "font-weight") !default;
+$table-th-font-weight:              700 !default;
 $table-striped-fg-color:            var(--#{$prefix}fg-main) !default;
 $table-active-fg-color:             var(--#{$prefix}fg-main) !default;
 $table-hover-fg-color:              var(--#{$prefix}fg-main) !default;
@@ -790,7 +786,7 @@ $table-hover-bg-color:              var(--#{$prefix}bg-evident) !default;
 $table-border-color:                var(--#{$prefix}border-subtle) !default;
 $table-striped-order:               even !default;
 $table-striped-columns-order:       even !default;
-$table-divider-color:       currentcolor !default;
+$table-divider-color:               currentcolor !default;
 $table-caption-color:               var(--#{$prefix}secondary-color) !default;
 
 // $table-bg-scale:                    -80% !default;
@@ -1003,51 +999,12 @@ $accordion-border-width:              var(--#{$prefix}border-width-medium) !defa
 $accordion-border-color:              var(--#{$prefix}border-subtle) !default;
 $accordion-border-radius:             var(--#{$prefix}border-radius-medium) !default;
 $accordion-box-radius:                #{calc($accordion-border-radius - $accordion-border-width)} !default;
-
 $accordion-transition:                $button-transition, border-radius .15s ease !default;
 
-$accordion-title-font:                $cx-font-text-medium-strong !default;
-$accordion-body-font:                 $cx-font-text-medium-normal !default;
-$accordion-indicator-size:            1.25rem !default;
-$accordion-title-padding-y:           $space-small !default;
-$accordion-title-padding-x:           $space-medium !default;
-$accordion-body-padding-t:            $space-2xsmall !default;
-$accordion-body-padding-b:            $space-xlarge !default;
-$accordion-body-padding-s:            $accordion-title-padding-x * 2 + $accordion-indicator-size !default;
-$accordion-body-padding-e:            $accordion-title-padding-x !default;
-
-$accordion-large-title-font:          $cx-font-text-large-strong !default;
-$accordion-large-body-font:           $cx-font-text-large-normal !default;
-$accordion-large-indicator-size:      1.5rem !default;
-$accordion-large-title-padding-y:     $space-medium !default;
-$accordion-large-title-padding-x:     $space-large !default;
-$accordion-large-body-padding-t:      $space-xsmall !default;
-$accordion-large-body-padding-b:      $space-3xlarge !default;
-$accordion-large-body-padding-s:      $accordion-large-title-padding-x * 2 + $accordion-large-indicator-size !default;
-$accordion-large-body-padding-e:      $accordion-large-title-padding-x !default;
-
-$accordion-small-title-font:          $cx-font-text-small-strong !default;
-$accordion-small-body-font:           $cx-font-text-small-normal !default;
-$accordion-small-indicator-size:      1rem !default;
-$accordion-small-title-padding-y:     $space-xsmall !default;
-$accordion-small-title-padding-x:     $space-small !default;
-$accordion-small-body-padding-t:      $space-3xsmall !default;
-$accordion-small-body-padding-b:      $space-large !default;
-$accordion-small-body-padding-s:      $accordion-small-title-padding-x * 2 + $accordion-small-indicator-size !default;
-$accordion-small-body-padding-e:      $accordion-small-title-padding-x !default;
-
-$accordion-title-fg-color:            inherit !default;
-$accordion-title-bg-color:            inherit !default;
-$accordion-title-active-fg-color:     inherit !default;
-$accordion-title-active-bg-color:     inherit !default;
 $accordion-title-focus-box-shadow:    $focus-ring-box-shadow !default; //$button-focus-box-shadow !default;
-
 $accordion-indicator-transition:      transform .2s ease-in-out !default;
 $accordion-indicator-transform:       rotate(-180deg) !default;
-$accordion-idle-indicator-color:      var(--#{$prefix}fg-subtle) !default;
-$accordion-active-indicator-color:    var(--#{$prefix}icon-color) !default;
-$accordion-idle-indicator:            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>") !default;
-$accordion-active-indicator:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>") !default;
+$accordion-indicator:                 url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
 // scss-docs-end accordion-variables
 
 // Tooltips
@@ -1357,10 +1314,10 @@ $carousel-dark-control-icon-filter:  invert(1) grayscale(100) !default;
 // Sass only variable to set spinner style for `.spinner` class.
 $default-spinner:           spinner-border !default; // or spinner-grow
 // These variables are also reserved as CSS variables.
-$spinner-color:             var(--#{$prefix}icon-main-rgb) !default;
-$spinner-size:              2rem !default;
+$spinner-color:             var(--#{$prefix}icon-color) !default; //(var(--#{$prefix}icon-main-rgb), var(--#{$prefix}spinner-opacity, 1)) !default;
+$spinner-size:              1.6rem !default;
 $spinner-vertical-align:    -.125em !default;
-$spinner-border-width:      #{calc(var(--#{$prefix}size) / 8)} !default;
+$spinner-border-width:      #{calc(var(--#{$prefix}size) / 6)} !default;
 $spinner-animation-speed:   .75s !default;
 // See scss/maps/_index.scss for $spinner-sizes and $spinner-opacities variables.
 // scss-docs-end spinner-variables

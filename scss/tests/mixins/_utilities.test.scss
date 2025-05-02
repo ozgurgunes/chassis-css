@@ -1,4 +1,4 @@
-@import "../../vendor";
+@import "../../settings";
 $enable-important-utilities: false;
 // Important: Do not import rfs to check that the mixin just calls the appropriate functions from it
 @import "../../mixins/utilities-api";

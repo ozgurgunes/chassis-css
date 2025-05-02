@@ -4,23 +4,15 @@
 
 .spinner-grow,
 .spinner-border {
+  --#{$prefix}color: var(--#{$prefix}spinner-color, #{$spinner-color});
   --#{$prefix}size: var(--#{$prefix}spinner-size, #{$spinner-size});
   --#{$prefix}animation-speed: var(--#{$prefix}spinner-animation-speed, #{$spinner-animation-speed});
   display: inline-block;
   width: var(--#{$prefix}size);
   height: var(--#{$prefix}size);
   vertical-align: var(--#{$prefix}spinner-vertical-align, #{$spinner-vertical-align});
+  border-radius: var(--#{$prefix}spinner-border-radius, 50%); // stylelint-disable-line
   animation: var(--#{$prefix}animation-speed) linear infinite var(--#{$prefix}animation-name);
-
-  &::before {
-    position: absolute;
-    top: #{calc(var(--#{$prefix}size) * .1)};
-    left: #{calc(var(--#{$prefix}size) * .1)};
-    width: #{calc(var(--#{$prefix}size) * .8)};
-    height: #{calc(var(--#{$prefix}size) * .8)};
-    content: "";
-    border-radius: var(--#{$prefix}spinner-border-radius, 50%); // stylelint-disable-line
-  }
 
   .button > & {
     --#{$prefix}spinner-size: var(--#{$prefix}icon-size);
@@ -39,20 +31,16 @@
 
 .spinner-border {
   --#{$prefix}animation-name: spinner-border;
-  &::before {
-    border-color: rgba(var(--#{$prefix}spinner-color, #{$spinner-color}), var(--#{$prefix}spinner-opacity, 1));
-    border-style: solid;
-    border-width: var(--#{$prefix}spinner-border-width, #{$spinner-border-width});
-    border-right-color: transparent;
-  }
+  border-color: var(--#{$prefix}color);
+  border-style: solid;
+  border-width: var(--#{$prefix}spinner-border-width, #{$spinner-border-width});
+  border-right-color: transparent;
 }
 
 .spinner-grow {
   --#{$prefix}animation-name: spinner-grow;
+  background-color: var(--#{$prefix}color);
   opacity: 0;
-  &::before {
-    background-color: rgba(var(--#{$prefix}spinner-color, #{$spinner-color}), var(--#{$prefix}spinner-opacity, 1));
-  }
 }
 
 
@@ -101,7 +89,10 @@ $utilities: () !default;
         css-var: true,
         css-variable-name: spinner-color,
         class: spinner,
-        values: map-loop($context-colors, to-rgb, "$value")
+        values: map-merge(
+          map-loop(map-loop($context-colors, to-rgb, "$value"), rgba-css-var, #{"$key"}, #{"spinner"}),
+          ( "transparent": transparent )
+        )
       ),
       "spinner-opacity": (
         css-var: true,

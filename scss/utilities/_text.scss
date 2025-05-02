@@ -16,16 +16,16 @@ $utilities: map-merge(
     ),
     "font-style": (
       property: font-style,
-      class: fs,
+      class: text,
       values: italic normal
     ),
     "font-weight": (
       property: font-weight,
-      class: fw,
+      class: text,
       values: (
         lighter: $font-weight-lighter,
         light: $font-weight-light,
-        normal: $font-weight-normal,
+        regular: $font-weight-regular,
         medium: $font-weight-medium,
         semibold: $font-weight-semibold,
         bold: $font-weight-bold,
@@ -34,11 +34,11 @@ $utilities: map-merge(
     ),
     "line-height": (
       property: line-height,
-      class: lh,
+      class: text-lh,
       values: (
         1: 1,
         small: $small-line-height,
-        base: $line-height-base,
+        medium: $medium-line-height,
         large: $large-line-height,
       )
     ),

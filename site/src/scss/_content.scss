@@ -104,15 +104,15 @@
 
 .cxd-title {
   --cx-heading-color: var(--cx-fg-main);
-  --cx-fony-size: 3rem;
+  --cx-font-size: 3rem;
 }
 
-.cxd-lead {
-  // @include map-font($lead-font);
-  // @include font();
-  font-size: 1.2rem;
-  line-height: 1.5em;
-  font-family: var(--cx-font-family-display) !important;
+.cxd-subtitle {
+  @include map-font($font-context-lead, "blockquote");
+  @include font();
+  // font-size: 1.2rem;
+  // line-height: 1.5em;
+  // font-family: var(--cx-font-family-display) !important;
 }
 
 .bi {

@@ -1,28 +1,24 @@
 ---
 title: Typography
-description: Documentation and examples for Chassis - CSS typography, including global settings, headings, body text, lists, and more.
+description: Comprehensive documentation and examples for Chassis - CSS typography, including global settings, headings, body text, lists, and more.
 toc: true
 ---
 
-## Global settings
+## Global Settings
 
-Chassis - CSS sets basic global display, typography, and link styles. When more control is needed, check out the [textual utility classes]([[docsref:/utilities/text]]).
+Typography settings in Chassis - CSS are highly customizable, giving designers full control through the use of design tokens. These styles are primarily defined in `_reboot.scss` and `_type.scss`, with global variables located in `_variables.scss`. For additional control, explore the [textual utility classes]([[docsref:/utilities/text]]).
 
-- Use a [native font stack]([[docsref:/content/reboot#native-font-stack]]) that selects the best `font-family` for each OS and device.
-- For a more inclusive and accessible type scale, we use the browser’s default root `font-size` (typically 16px) so visitors can customize their browser defaults as needed.
-- Use the `$font-family-base`, `$font-size-base`, and `$line-height-base` attributes as our typographic base applied to the `<body>`.
-- Set the global link color via `$link-main`.
-- Use `$bg-main` to set a `background-color` on the `<body>` (`#fff` by default).
+### Key Features:
 
-These styles can be found within `_reboot.scss`, and the global variables are defined in `_variables.scss`. Make sure to set `$font-size-base` in `rem`.
+- **Native Font Stack**: Leverages a [native font stack]([[docsref:/content/reboot#native-font-stack]]) to select the optimal `font-family` for each operating system and device.
+- **Root Font Size**: Use the `$font-size-root` variable to define the `rem` size. By default, this is set to `null`.
+- **Base Typography**: Customize the typographic base applied to the `<body>` element using `$font-family-base`, `$font-size-base`, and `$line-height-base` variables.
 
-### Design tokens
-
-Most of above settings are under direct control of designer by using design tokens. Check [Design Tokens]([[docsref:/core-concepts/design-tokens]]) page for more information.
+For more details on design tokens, visit the [Design Tokens]([[docsref:/core-concepts/design-tokens]]) page.
 
 ## Headings
 
-All HTML headings, `<h1>` through `<h6>`, are available.
+Chassis - CSS supports all standard HTML headings, from `<h1>` to `<h6>`. These headings are styled to ensure consistency and readability across your project.
 
 <CxTable>
 | Heading | Example |
@@ -44,7 +40,9 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <h6>h6. Chassis - CSS</h6>
 ```
 
-`.h1` through `.h6` classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.
+### Heading Classes
+
+For scenarios where you need the styling of a heading but cannot use the corresponding HTML element, Chassis - CSS provides `.h1` through `.h6` classes.
 
 <Example code={`<p class="h1">h1. Chassis - CSS</p>
 <p class="h2">h2. Chassis - CSS</p>
@@ -53,34 +51,67 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 <p class="h5">h5. Chassis - CSS</p>
 <p class="h6">h6. Chassis - CSS</p>`} />
 
-### Utility segments
+### Utility Segments
 
-Use [utility classes]([[docsref:utilities/text]]) to partially format heading text.
+Enhance headings with [utility classes]([[docsref:utilities/text]]) to apply partial formatting. For example:
 
 <Example code={`<h3>
     An example heading
     <small class="fg-subtle">With faded secondary text</small>
   </h3>`} />
 
-### Display headings
+### Display Headings
 
-Use display font and size classes for fancy headings to stand out.
+Display headings are designed for impactful, large-scale typography. Use the `font-display` class along with heading tags to create standout text.
 
 <Example code={`<h1 class="font-display h1">Display 1</h1>
 <h1 class="font-display h2">Display 2</h1>
 <h1 class="font-display h3">Display 3</h1>
 <h1 class="font-display h4">Display 4</h1>
 <h1 class="font-display h5">Display 5</h1>
-<h1 class="font-display h6">Display 6</h1>
-`} />
+<h1 class="font-display h6">Display 6</h1>`} />
 
-Display headings are configured via the `$display-font-sizes` Sass map and two variables, `$display-font-weight` and `$display-line-height`.
+These headings are customizable via the `$display-font-sizes` Sass map and variables like `$display-font-weight`, `$display-line-height`, `$display-font-family`, and `$display-font-style`.
 
-Display headings are customizable via two variables, `$display-font-family` and `$display-font-style`.
+## Font Size
 
-## Inline text elements
+Font size utilities in Chassis - CSS allow you to quickly adjust the size of text elements while maintaining consistent line heights. These utilities are based on design tokens, ensuring scalability and uniformity across your project. Each utility class applies both `font-size` and the corresponding `line-height` for optimal readability.
 
-Styling for common inline HTML5 elements.
+### Available Font Size Classes
+
+The following classes can be used to adjust font sizes:
+
+<Example code={`<p class="font-5xlarge">.font-5xlarge</p>
+<p class="font-4xlarge">.font-4xlarge</p>
+<p class="font-3xlarge">.font-3xlarge</p>
+<p class="font-2xlarge">.font-2xlarge</p>
+<p class="font-xlarge">.font-xlarge</p>
+<p class="font-large">.font-large</p>
+<p class="font-medium">.font-medium</p>
+<p class="font-small">.font-small</p>
+<p class="font-xsmall">.font-xsmall</p>
+<p class="font-2xsmall">.font-2xsmall</p>`} />
+
+### Key Features
+
+- **Scalability**: Font sizes are defined using design tokens, ensuring they scale consistently across different screen sizes and devices.
+- **Line Height Integration**: Each font size class automatically applies a matching line height, eliminating the need for manual adjustments.
+- **Ease of Use**: Simply add the desired class to your HTML element to apply the corresponding font size.
+
+For responsive font sizes, refer to the [Responsive Font Sizes](#responsive-font-sizes) section, which explains how text scales dynamically based on the viewport size.
+
+## Font Weight
+
+Quickly change the `font-weight` between 4 values defined by tokens.
+
+<Example code={`<p class="font-mass">Mass text.</p>
+<p class="font-strong">Strong text.</p>
+<p class="font-normal">Normal text.</p>
+<p class="font-elegant">Elegant text.</p>`} />
+
+## Inline Text Elements
+
+Chassis - CSS provides styling for common inline HTML5 elements, ensuring semantic and visual consistency.
 
 <Example code={`<p>You can use the mark tag to <mark>highlight</mark> text.</p>
 <p>This <del>example text</del> is meant to be treated as deleted.</p>
@@ -91,42 +122,38 @@ Styling for common inline HTML5 elements.
 <p>This <strong>example text</strong> rendered as bold text.</p>
 <p>This <em>example text</em> rendered as italic text.</p>`} />
 
-Beware that those tags should be used for semantic purpose:
+### Semantic Usage
 
-- `<mark>` represents text which is marked or highlighted for reference or notation purposes.
-- `<small>` represents side-comments and small print, like copyright and legal text.
-- `<s>` represents element that are no longer relevant or no longer accurate.
-- `<u>` represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation.
+- `<mark>`: Highlights text for reference or notation purposes.
+- `<small>`: Represents side-comments or fine print, such as legal text.
+- `<s>`: Indicates text that is no longer relevant or accurate.
+- `<u>`: Denotes text with a non-textual annotation.
 
-If you want to style your text, you should use the following classes instead:
+For purely stylistic purposes, use the following classes:
 
-- `.text-mark` will apply the same styles as `<mark>`.
-- `.text-small` will apply the same styles as `<small>`.
-- `.text-decoration-underline` will apply the same styles as `<u>`.
-- `.text-decoration-line-through` will apply the same styles as `<s>`.
-
-While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or phrases without conveying additional importance, while `<i>` is mostly for voice, technical terms, etc.
+- `.text-mark`: Applies the same styles as `<mark>`.
+- `.text-small`: Mimics `<small>` styling.
+- `.text-decoration-underline`: Matches `<u>` styling.
+- `.text-decoration-line-through`: Matches `<s>` styling.
 
 ## Abbreviations
 
-Stylized implementation of HTML’s `<abbr>` element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.
-
-Add `.text-initials` to an abbreviation for a slightly smaller font-size.
+Use the `<abbr>` element to provide expanded versions of abbreviations and acronyms on hover. Add `.text-initials` for a smaller font size.
 
 <Example code={`<p><abbr title="attribute">attr</abbr></p>
 <p><abbr title="HyperText Markup Language" class="text-initials">html</abbr></p>`} />
 
 ## Blockquotes
 
-For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any HTML as the quote.
+Blockquotes are ideal for quoting content from other sources. Wrap the content in `<blockquote class="blockquote">`.
 
 <Example code={`<blockquote class="blockquote">
     <p>A well-known quote, contained in a blockquote element.</p>
   </blockquote>`} />
 
-### Naming a source
+### Attribution
 
-The HTML spec requires that blockquote attribution be placed outside the `<blockquote>`. When providing attribution, wrap your `<blockquote>` in a `<figure>` and use a `<figcaption>` or a block level element (e.g., `<p>`) with the `.attribution` class. Be sure to wrap the name of the source work in `<cite>` as well.
+For attribution, wrap the `<blockquote>` in a `<figure>` and use `<figcaption>` or a block-level element with the `.attribution` class. Example:
 
 <Example code={`<figure>
     <blockquote class="blockquote">
@@ -139,7 +166,7 @@ The HTML spec requires that blockquote attribution be placed outside the `<block
 
 ### Alignment
 
-Use text utilities as needed to change the alignment of your blockquote.
+Use text utilities to align blockquotes as needed:
 
 <Example code={`<figure class="text-center">
     <blockquote class="blockquote">
@@ -161,35 +188,9 @@ Use text utilities as needed to change the alignment of your blockquote.
 
 ## Lists
 
-Default list styles are set in `_reboot.scss`.
+### Bulletless Lists
 
-<Example code={`<ul>
-    <li>This is an unordered list.</li>
-    <li>Has bullets by default.</li>
-    <li>Has a nested list:
-      <ul>
-        <li>Second level</li>
-        <li>Second item of nested list</li>
-      </ul>
-    </li>
-    <li>Return to parent list.</li>
-  </ul>`} />
-
-<Example code={`<ol>
-    <li>This is an unordered list.</li>
-    <li>Has bullets by default.</li>
-    <li>Has a nested list:
-      <ul class="bulletless">
-        <li>Second level</li>
-        <li>Second item of nested list</li>
-      </ul>
-    </li>
-    <li>Return to parent list.</li>
-  </ul>`} />
-
-### Bulletless
-
-Remove the default `list-style` and left margin on list items (immediate children only) by adding `.bulletless` class. **This only applies to immediate children list items**, meaning you will need to add the class for any nested lists as well.
+Remove default `list-style` and left margin by adding the `.bulletless` class. Note: This applies only to immediate child elements.
 
 <Example code={`<ul class="bulletless">
     <li>This is a list.</li>
@@ -206,9 +207,9 @@ Remove the default `list-style` and left margin on list items (immediate childre
     <li>This may still come in handy in some situations.</li>
   </ul>`} />
 
-### Inline
+### Inline Lists
 
-Remove a list's bullets and apply some light `margin` by adding `.inline`.
+Display list items inline by adding the `.inline` class.
 
 <Example code={`<ul class="inline">
     <li>This is a list item.</li>
@@ -216,9 +217,9 @@ Remove a list's bullets and apply some light `margin` by adding `.inline`.
     <li>But they’re displayed inline.</li>
   </ul>`} />
 
-### Description list alignment
+### Description List Alignment
 
-Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a `.text-truncate` class to truncate the text with an ellipsis.
+Align terms and descriptions horizontally using grid classes or semantic mixins. Add `.text-truncate` to truncate long terms with ellipses.
 
 <Example code={`<dl class="row">
     <dt class="col-small-3">Description lists</dt>
@@ -245,13 +246,13 @@ Align terms and descriptions horizontally by using our grid system’s predefine
     </dd>
   </dl>`} />
 
-## Context fonts
+## Context Fonts
 
-Context text styles are also available. Use it with `.font-context` and `.{context-name}` classes.
+Chassis - CSS provides context-specific font styles for various use cases.
 
 ### Jumbo
 
-<Example code={`<p class="font-jumbo">This is a jumbo text, which can be used for headlines.</p>`} />
+<Example code={`<p class="font-jumbo">This is jumbo text, which can be used for headlines.</p>`} />
 
 ### Hero
 
@@ -263,7 +264,7 @@ Context text styles are also available. Use it with `.font-context` and `.{conte
 
 ### Lead
 
-Make a paragraph stand out by adding `.font-lead`.
+Highlight paragraphs by adding `.font-lead`.
 
 <Example code={`<p class="font-lead">
     This is a lead paragraph. It stands out from regular paragraphs.
@@ -281,13 +282,13 @@ Make a paragraph stand out by adding `.font-lead`.
 <p class="font-body">A medium text class suitable for various contexts, such as articles, blogs, and more. It features custom styling to enhance readability and design.</p>
 <p class="font-body small">A small text class suitable for various contexts, such as articles, blogs, and more. It features custom styling to enhance readability and design.</p>`} />
 
-## Text utilities
+## Text Utilities
 
-Change text alignment, transform, style, weight, line-height, decoration and color with our [text utilities]([[docsref:/utilities/text]]) and [color utilities]([[docsref:/utilities/colors]]).
+Modify text alignment, transformation, style, weight, line-height, decoration, and color using [text utilities]([[docsref:/utilities/text]]) and [color utilities]([[docsref:/utilities/colors]]).
 
-## Responsive font sizes
+## Responsive Font Sizes
 
-In Chassis - CSS 5, we’ve enabled responsive font sizes by default, allowing text to scale more naturally across device and viewport sizes. Have a look at the [RFS page]([[docsref:/getting-started/rfs]]) to find out how this works.
+Chassis - CSS 5 introduces responsive font sizes by default, allowing text to scale naturally across devices and viewports. Learn more on the [RFS page]([[docsref:/getting-started/rfs]]).
 
 ## CSS
 
@@ -299,14 +300,12 @@ In Chassis - CSS 5, we’ve enabled responsive font sizes by default, allowing t
 
 ### Sass Variables
 
-Typography variables, keeping token references as CSS variables.
+Typography variables are defined with token references as CSS variables.
 
 <ScssDocs name="type-variables" file="scss/_variables.scss" />
 
-Miscellaneous typography elements covered here and in [Reboot]([[docsref:/content/reboot]]) also have dedicated variables.
+Additional typography elements, including those in [Reboot]([[docsref:/content/reboot]]), have dedicated variables. Refer to the [text utilities]([[docsref:/utilities/text]]) page for base font-related variables.
 
-Check [text utilities]([[docsref:/utilities/text]]) page for **base font** related variables.
-
-### Typography tokens
+### Typography Tokens
 
 <ScssDocs name="typography-tokens" file="scss/tokens/_fonts.scss" />

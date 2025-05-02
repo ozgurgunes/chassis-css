@@ -14,8 +14,6 @@ Chassis - CSS “spinners” can be used to show the loading state in your proje
 For accessibility purposes, each loader here includes `role="status"` and a nested `<span class="visually-hidden">Loading...</span>`. We didn't include them in some examples here to keep focus on utilities.
 </Callout>
 
-<Callout name="info-prefersreducedmotion" />
-
 ## Border spinner
 
 Use the border spinners for a lightweight loading indicator.
@@ -70,10 +68,12 @@ Spinners use icon sizes for their sizing, use `.spinner-*` class to apply a size
 
 You can use custom CSS or inline styles to change the dimensions as needed.
 
-<Example code={`<span class="spinner-grow" style="--cx-spinner-size: 3rem;"></span>
-<span class="spinner-grow" style="--cx-spinner-size: 3rem; --cx-spinner-border-radius: 0;"></span>
-<span class="spinner-border" style="--cx-spinner-size: 3rem;"></span>
-<span class="spinner-border" style="--cx-spinner-size: 3rem; --cx-spinner-border-width: .5rem;"></span>`} />
+<Example code={`<div style="--cx-spinner-size: 3rem;">
+    <span class="spinner-grow"></span>
+    <span class="spinner-grow" style="--cx-spinner-border-radius: 0;"></span>
+    <span class="spinner-border" style="--cx-spinner-animation-speed: 2s"></span>
+    <span class="spinner-border" style="--cx-spinner-border-width: .25rem;"></span>
+  </div>`} />
 
 ### Adaptive
 
@@ -121,10 +121,10 @@ We use an RGB version of our `--cx-primary` (with the value of `255, 91, 20`) CS
 To change that opacity, override `--cx-spinner-opacity` via custom styles or inline styles, or choose from any of the `.spinner-opacity-*` utilities:
 
 <Example code={[`<span class="spinner"></span>
-<span class="spinner" style="--cx-spinner-opacity: .6;"></span>
+<span class="spinner spinner-primary" style="--cx-spinner-opacity: .6;"></span>
 
 <span class="vr mx-medium"></span>
-`].concat(getData('basic-opacities').map((opacity) => `<div class="spinner spinner-opacity-${opacity.name}" role="status">
+`].concat(getData('basic-opacities').map((opacity) => `<div class="spinner spinner-primary spinner-opacity-${opacity.name}" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>`))} />
 
@@ -133,14 +133,14 @@ To change that opacity, override `--cx-spinner-opacity` via custom styles or inl
 You can directly apply a **context opacity** utility to match `icon` contexts:
 
 <Example code={`<span class="spinner-border"></span>
-<span class="spinner-border spinner-opacity-subtle"></span>
-<span class="spinner-border spinner-opacity-slight"></span>
+<span class="spinner-border spinner-primary spinner-opacity-subtle"></span>
+<span class="spinner-border spinner-primary spinner-opacity-slight"></span>
 
 <span class="vr mx-medium"></span>
 
 <span class="spinner-grow"></span>
-<span class="spinner-grow spinner-opacity-subtle"></span>
-<span class="spinner-grow spinner-opacity-slight"></span>`} />
+<span class="spinner-grow spinner-primary spinner-opacity-subtle"></span>
+<span class="spinner-grow spinner-primary spinner-opacity-slight"></span>`} />
 
 
 ## Buttons
@@ -151,17 +151,23 @@ Spinners match to icon size and color automatically when placed inside a `.butto
 
 <div class="button-examples">
 <Example code={`<button class="button default" type="button">
-    <span class="spinner-border spinner-border"></span>
+    <span class="spinner-border"></span>
   </button>
   <button class="button default" type="button" disabled>
-    <span class="spinner-border spinner-border"></span>
+    <span class="spinner-border"></span>
     Loading...
   </button>
   <button class="button primary large" type="button">
-    <span class="spinner-border spinner-border"></span>
+    <span class="spinner-border"></span>
   </button>
   <button class="button primary large" type="button" disabled>
-    <span class="spinner-border spinner-border"></span>
+    <span class="spinner-border"></span>
+  </button>
+  <button class="button secondary small" type="button">
+    <span class="spinner-grow"></span>
+  </button>
+  <button class="button secondary small" type="button" disabled>
+    <span class="spinner-grow"></span>
     Loading...
   </button>`} />
 </div>

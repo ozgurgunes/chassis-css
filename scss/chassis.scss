@@ -5,7 +5,7 @@ $prefix: cx- !default;
 @include cxBanner(null);
 
 // fusv-disable
-@import "vendor";
+@import "settings";
 // fusv-enable
 
 // scss-docs-start import-stack
