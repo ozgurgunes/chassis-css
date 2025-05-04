@@ -75,18 +75,18 @@ $icon-subtle:           var(--#{$prefix}#{$body-context}-icon-subtle) !default;
 $icon-subtle-rgb:       var(--#{$prefix}#{$body-context}-icon-subtle-rgb) !default;
 $icon-slight:           var(--#{$prefix}#{$body-context}-icon-slight) !default;
 $icon-slight-rgb:       var(--#{$prefix}#{$body-context}-icon-slight-rgb) !default;
-$indicator-main:        var(--#{$prefix}#{$body-context}-indicator-main) !default;
-$indicator-main-rgb:    var(--#{$prefix}#{$body-context}-indicator-main-rgb) !default;
-$indicator-slight:      var(--#{$prefix}#{$body-context}-indicator-slight) !default;
-$indicator-slight-rgb:  var(--#{$prefix}#{$body-context}-indicator-slight-rgb) !default;
-$scene-shade:           var(--#{$prefix}#{$body-context}-scene-shade) !default;
-$scene-shade-rgb:       var(--#{$prefix}#{$body-context}-scene-shade-rgb) !default;
-$scene-dim:             var(--#{$prefix}#{$body-context}-scene-dim) !default;
-$scene-dim-rgb:         var(--#{$prefix}#{$body-context}-scene-dim-rgb) !default;
-$scene-blur:            var(--#{$prefix}#{$body-context}-scene-blur) !default;
-$scene-blur-rgb:        var(--#{$prefix}#{$body-context}-scene-blur-rgb) !default;
-$scene-clear:           var(--#{$prefix}#{$body-context}-scene-clear) !default;
-$scene-clear-rgb:       var(--#{$prefix}#{$body-context}-scene-clear-rgb) !default;
+$cue-main:              var(--#{$prefix}#{$body-context}-cue-main) !default;
+$cue-main-rgb:          var(--#{$prefix}#{$body-context}-cue-main-rgb) !default;
+$cue-slight:            var(--#{$prefix}#{$body-context}-cue-slight) !default;
+$cue-slight-rgb:        var(--#{$prefix}#{$body-context}-cue-slight-rgb) !default;
+$dim-slight:            var(--#{$prefix}#{$body-context}-dim-slight) !default;
+$dim-slight-rgb:        var(--#{$prefix}#{$body-context}-dim-slight-rgb) !default;
+$dim-main:              var(--#{$prefix}#{$body-context}-dim-main) !default;
+$dim-main-rgb:          var(--#{$prefix}#{$body-context}-dim-main-rgb) !default;
+$dim-subtle:            var(--#{$prefix}#{$body-context}-dim-subtle) !default;
+$dim-subtle-rgb:        var(--#{$prefix}#{$body-context}-dim-subtle-rgb) !default;
+$transparent-color:     var(--#{$prefix}#{$body-context}-transparent-color) !default;
+$transparent-color-rgb: var(--#{$prefix}#{$body-context}-transparent-color-rgb) !default;
 $link-main:             var(--#{$prefix}#{$body-context}-link-main) !default;
 $link-main-rgb:         var(--#{$prefix}#{$body-context}-link-main-rgb) !default;
 $link-visited:          var(--#{$prefix}#{$body-context}-link-visited) !default;
@@ -386,7 +386,7 @@ $shadow-color-opacity:      .2 !default;
 // scss-docs-start focus-ring-variables
 $focus-ring-width:      .25rem !default;
 $focus-ring-opacity:    .25 !default;
-$focus-ring-color:      rgba($default-indicator-main, $focus-ring-opacity) !default; //rgba($primary, $focus-ring-opacity) !default;
+$focus-ring-color:      rgba($default-cue-main, $focus-ring-opacity) !default; //rgba($primary, $focus-ring-opacity) !default;
 $focus-ring-blur:       0 !default;
 $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color !default;
 // scss-docs-end focus-ring-variables
@@ -446,53 +446,42 @@ $zindex-levels: (
 ) !default;
 // scss-docs-end zindex-levels-map
 
+//
+// Code
+//
+
+$code-font-size:                    $small-font-size !default;
+$code-color:                        $pink !default;
+
+$kbd-padding-y:                     .1875rem !default;
+$kbd-padding-x:                     .375rem !default;
+$kbd-font-size:                     $code-font-size !default;
+$kbd-color:                         var(--#{$prefix}bg-color) !default;
+$kbd-bg:                            var(--#{$prefix}fg-color) !default;
+$nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, removing in v6
+
+$pre-color:                         null !default;
 
 //
 //
-// Starting Components
+// Components
 //
-
 
 $component-active-fg-color:       $primary-contrast-color !default;
 // $component-active-fg-color-rgb:   to-rgb($component-active-fg-color) !default;
 $component-active-bg-color:       $primary-base-color !default;
 // $component-active-bg-color-rgb:   to-rgb($component-active-bg-color) !default;
 
-
+//
 // Badge
 //
-// scss-docs-start badge-variables
-$badge-medium-size:                 $icon-medium !default;
-$badge-medium-font:                 $cx-font-common-badge-medium !default;
-$badge-medium-padding-y:            $cx-space-common-badge-medium-padding-y !default;
-$badge-medium-padding-x:            $cx-space-common-badge-medium-padding-x !default;
-$badge-medium-gap:                  $cx-space-common-badge-medium-gap !default;
-$badge-medium-border-radius:        $cx-border-radius-common-badge-medium !default;
-$badge-medium-icon-size:            $icon-xsmall !default;
+// See tokens/_badge.scss for more.
+//
 
-$badge-large-size:                  $icon-large !default;
-$badge-large-font:                  $cx-font-common-badge-large !default;
-$badge-large-padding-y:             $cx-space-common-badge-large-padding-y !default;
-$badge-large-padding-x:             $cx-space-common-badge-large-padding-x !default;
-$badge-large-gap:                   $cx-space-common-badge-large-gap !default;
-$badge-large-border-radius:         $cx-border-radius-common-badge-large !default;
-$badge-large-icon-size:             $icon-small !default;
-
-$badge-small-size:                  $icon-small !default;
-$badge-small-font:                  $cx-font-common-badge-small !default;
-$badge-small-padding-y:             $cx-space-common-badge-small-padding-y !default;
-$badge-small-padding-x:             $cx-space-common-badge-small-padding-x !default;
-$badge-small-gap:                   $cx-space-common-badge-small-gap !default;
-$badge-small-border-radius:         $cx-border-radius-common-badge-small !default;
-$badge-small-icon-size:             $icon-2xsmall !default;
-
-$badge-border-width:                $cx-border-width-common-badge !default;
-// scss-docs-end badge-variables
-
-
+//
 // Buttons
 //
-// These are for web customization only, check button tokens for more.
+// See tokens/_badge.scss for more
 // scss-docs-start button-variables
 $button-white-space:                  null !default; // Set to `nowrap` to prevent text wrapping
 
@@ -506,22 +495,21 @@ $button-link-color:                   var(--#{$prefix}link-main) !default;
 $button-hover-color:                  var(--#{$prefix}link-hover) !default;
 // $button-link-disabled-color:          $fg-subtle !default;
 // $button-link-focus-shadow-rgb:        to-rgb(mix(color-contrast($link-color), $link-color, 15%)) !default;
+$button-transition:                   color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 // fusv-disable
-$button-hover-bg-shade-amount:        10% !default; //15% !default;
-$button-hover-bg-tint-amount:         10% !default; //15% !default;
-$button-hover-border-shade-amount:    0% !default; //20% !default;
-$button-hover-border-tint-amount:     0% !default; //10% !default;
-$button-press-bg-shade-amount:        0% !default; //20% !default;
-$button-press-bg-tint-amount:         0% !default; //20% !default;
-$button-press-border-shade-amount:    0% !default; //25% !default;
-$button-press-border-tint-amount:     0% !default; //10% !default;
-$button-transition:                   color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+// $button-hover-bg-shade-amount:        10% !default; //15% !default;
+// $button-hover-bg-tint-amount:         10% !default; //15% !default;
+// $button-hover-border-shade-amount:    0% !default; //20% !default;
+// $button-hover-border-tint-amount:     0% !default; //10% !default;
+// $button-press-bg-shade-amount:        0% !default; //20% !default;
+// $button-press-bg-tint-amount:         0% !default; //20% !default;
+// $button-press-border-shade-amount:    0% !default; //25% !default;
+// $button-press-border-tint-amount:     0% !default; //10% !default;
 // fusv-enable
-
 // scss-docs-end button-variables
 
-
+//
 // Forms
 //
 // Check design tokens for more.
@@ -770,7 +758,7 @@ $form-validation-states: (
 ) !default;
 // scss-docs-end form-validation-states
 
-
+//
 // Tables
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
@@ -792,8 +780,9 @@ $table-caption-color:               var(--#{$prefix}secondary-color) !default;
 // $table-bg-scale:                    -80% !default;
 // scss-docs-end table-variables
 
-
+//
 // Navs
+//
 
 // scss-docs-start nav-variables
 $nav-link-padding-y:                var(--#{$prefix}space-xsmall) !default;
@@ -809,7 +798,7 @@ $nav-tabs-border-color:             var(--#{$prefix}border-subtle) !default;
 $nav-tabs-border-width:             var(--#{$prefix}border-width-medium) !default;
 $nav-tabs-border-active-width:      var(--#{$prefix}border-width-2xlarge) !default;
 $nav-tabs-border-radius:            var(--#{$prefix}border-radius-medium) !default;
-$nav-tabs-link-hover-border-color:  var(--#{$prefix}scene-shade) var(--#{$prefix}scene-shade) $nav-tabs-border-color !default;
+$nav-tabs-link-hover-border-color:  var(--#{$prefix}dim-slight) var(--#{$prefix}dim-slight) $nav-tabs-border-color !default;
 $nav-tabs-link-active-fg-color:     var(--#{$prefix}fg-main) !default;
 $nav-tabs-link-active-bg-color:     var(--#{$prefix}bg-main) !default;
 $nav-tabs-link-active-border-color: var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-link-active-bg-color !default;
@@ -870,6 +859,7 @@ $navbar-dark-brand-color:           $navbar-dark-active-color !default;
 $navbar-dark-brand-hover-color:     $navbar-dark-active-color !default;
 // scss-docs-end navbar-dark-variables
 
+//
 // Dropdowns
 //
 // Dropdown menu container and contents.
@@ -913,8 +903,9 @@ $dropdown-header-padding-x:             $dropdown-item-padding-x !default;
 $dropdown-header-padding-y:             $dropdown-padding-y !default;
 // scss-docs-end dropdown-variables
 
-
+//
 // Pagination
+//
 
 // scss-docs-start pagination-variables
 $pagination-padding-y:                  $space-xsmall !default;
@@ -958,15 +949,18 @@ $pagination-disabled-border-color:      $pagination-border-color !default;
 $pagination-transition:                 color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 // scss-docs-end pagination-variables
 
-
-// Placeholders
+//
+// Skeletons
+//
 
 // scss-docs-start skeletons
 $skeleton-opacity-max:           .3 !default;
 $skeleton-opacity-min:           .15 !default;
 // scss-docs-end skeletons
 
+//
 // Cards
+//
 
 // scss-docs-start card-variables
 $card-spacer-y:                     $spacer !default;
@@ -990,8 +984,10 @@ $card-image-overlay-padding:        $spacer !default;
 $card-group-margin:                 $grid-gutter-width * .5 !default;
 // scss-docs-end card-variables
 
+//
 // Accordion
-
+// See `tokens/_accordion.scss` for more details.
+//
 // scss-docs-start accordion-variables
 $accordion-fg-color:                  var(--#{$prefix}fg-main) !default;
 $accordion-bg-color:                  var(--#{$prefix}bg-main) !default;
@@ -1001,13 +997,21 @@ $accordion-border-radius:             var(--#{$prefix}border-radius-medium) !def
 $accordion-box-radius:                #{calc($accordion-border-radius - $accordion-border-width)} !default;
 $accordion-transition:                $button-transition, border-radius .15s ease !default;
 
+$accordion-title-fg-context:          inherit !default;
+$accordion-title-bg-context:          inherit !default;
+$accordion-active-fg-context:         inherit !default;
+$accordion-active-bg-context:         inherit !default;
+$accordion-indicator-inactive-context:  var(--#{$prefix}icon-subtle) !default;
+$accordion-indicator-active-context:    var(--#{$prefix}icon-main) !default;
 $accordion-title-focus-box-shadow:    $focus-ring-box-shadow !default; //$button-focus-box-shadow !default;
 $accordion-indicator-transition:      transform .2s ease-in-out !default;
 $accordion-indicator-transform:       rotate(-180deg) !default;
 $accordion-indicator:                 url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
 // scss-docs-end accordion-variables
 
+//
 // Tooltips
+//
 
 // scss-docs-start tooltip-variables
 $tooltip-font:                      $cx-font-text-small-normal !default;
@@ -1034,8 +1038,9 @@ $form-feedback-tooltip-opacity:       $tooltip-opacity !default;
 $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
 // scss-docs-end tooltip-feedback-variables
 
-
+//
 // Popovers
+//
 
 // scss-docs-start popover-variables
 $popover-font:                      $cx-font-text-medium-normal !default;
@@ -1062,8 +1067,9 @@ $popover-arrow-width:               1rem !default;
 $popover-arrow-height:              .5rem !default;
 // scss-docs-end popover-variables
 
-
+//
 // Toasts
+//
 
 // scss-docs-start toast-variables
 $toast-max-width:                   22.5rem !default; //360px !default;
@@ -1071,7 +1077,7 @@ $toast-padding-x:                   .75rem !default;
 $toast-padding-y:                   .5rem !default;
 $toast-font-size:                   .875rem !default;
 $toast-fg-color:                    var(--#{$prefix}white-fg-main) !default;
-$toast-bg-color:                    var(--#{$prefix}black-scene-dim) !default;
+$toast-bg-color:                    var(--#{$prefix}black-dim-main) !default;
 $toast-border-width:                var(--#{$prefix}border-width-medium) !default;
 $toast-border-color:                var(--#{$prefix}white-border-subtle) !default;
 $toast-border-radius:               var(--#{$prefix}border-radius-medium) !default;
@@ -1083,8 +1089,9 @@ $toast-header-bg-color:             var(--#{$prefix}black-bg-main) !default;
 $toast-header-border-color:         $toast-border-color !default;
 // scss-docs-end toast-variables
 
-
+//
 // Modals
+//
 
 // scss-docs-start modal-variables
 $modal-small:                         18.75rem !default; //300px !default;
@@ -1133,7 +1140,7 @@ $modal-footer-border-color:           $default-border-subtle !default;
 $modal-footer-border-width:           $modal-header-border-width !default;
 // scss-docs-end modal-variables
 
-
+//
 // Alerts
 //
 // Definitions for alert dialogs.
@@ -1161,7 +1168,7 @@ $alert-title-margin:            $space-xsmall !default;
 $alert-icon-size:               $cx-size-icon-glyph-2xlarge !default;
 // scss-docs-end alert-variables
 
-
+//
 // Notifications
 //
 // Definitions for alert level notifications.
@@ -1182,8 +1189,9 @@ $notification-message-font:             $cx-font-common-notification-message !de
 $notification-title-margin-b:           $space-xsmall !default;
 // scss-docs-end notification-variables
 
-
+//
 // Progress bars
+//
 
 // scss-docs-start progress-variables
 $progress-height:                   1rem !default;
@@ -1197,8 +1205,9 @@ $progress-bar-animation-timing:     1s linear infinite !default;
 $progress-bar-transition:           width .6s ease !default;
 // scss-docs-end progress-variables
 
-
+//
 // Lists
+//
 
 // scss-docs-start list-variables
 $list-padding-y:              $spacer * .5 !default;
@@ -1229,8 +1238,9 @@ $list-disabled-bg-color:      inherit !default;
 
 // scss-docs-end list-variables
 
-
+//
 // Image thumbnails
+//
 
 // scss-docs-start thumbnail-variables
 $thumbnail-padding:                 .25rem !default;
@@ -1241,16 +1251,18 @@ $thumbnail-border-radius:           var(--#{$prefix}border-radius) !default;
 $thumbnail-box-shadow:              var(--#{$prefix}box-shadow-small) !default;
 // scss-docs-end thumbnail-variables
 
-
+//
 // Figures
+//
 
 // scss-docs-start figure-variables
 $figure-caption-font-size:          $small-font-size !default;
 $figure-caption-color:              var(--#{$prefix}secondary-color) !default;
 // scss-docs-end figure-variables
 
-
+//
 // Breadcrumbs
+//
 
 // scss-docs-start breadcrumb-variables
 $breadcrumb-font:               $cx-font-text-medium-normal !default;
@@ -1268,7 +1280,9 @@ $breadcrumb-border-color:       transparent !default;
 $breadcrumb-border-radius:      null !default;
 // scss-docs-end breadcrumb-variables
 
+//
 // Carousel
+//
 
 // scss-docs-start carousel-variables
 $carousel-control-color:              $fg-inverse !default;
@@ -1307,8 +1321,9 @@ $carousel-dark-caption-color:        $black !default;
 $carousel-dark-control-icon-filter:  invert(1) grayscale(100) !default;
 // scss-docs-end carousel-dark-variables
 
-
+//
 // Spinners
+//
 
 // scss-docs-start spinner-variables
 // Sass only variable to set spinner style for `.spinner` class.
@@ -1322,8 +1337,9 @@ $spinner-animation-speed:   .75s !default;
 // See scss/maps/_index.scss for $spinner-sizes and $spinner-opacities variables.
 // scss-docs-end spinner-variables
 
-
+//
 // Close Button
+//
 
 // scss-docs-start close-button-variables
 $close-button-medium-size:        1.5rem !default;
@@ -1333,6 +1349,8 @@ $close-button-padding-x:          var(--#{$prefix}space-2xsmall) !default;
 $close-button-padding-y:          var(--#{$prefix}space-2xsmall) !default;
 $close-button-fg-color:           var(--#{$prefix}fg-main) !default;
 $close-button-bg-color:           transparent !default;
+$close-button-fg-hover:           var(--#{$prefix}icon-main) !default;
+$close-button-bg-hover:           transparent !default;
 $close-button-svg:                url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'><path d='M19.148 17.56c.422.468.422 1.169 0 1.59-.468.467-1.171.467-1.593 0l-5.532-5.561-5.578 5.56c-.468.468-1.172.468-1.593 0-.47-.42-.47-1.121 0-1.588L10.43 12 4.852 6.44c-.47-.468-.47-1.169 0-1.59a1.03 1.03 0 0 1 1.546 0l5.625 5.608 5.579-5.56a1.03 1.03 0 0 1 1.546 0c.47.42.47 1.12 0 1.588L13.57 12z' /></svg>") !default;
 $close-button-focus-shadow:       $focus-ring-box-shadow !default;
 $close-button-idle-opacity:       .5 !default;
@@ -1341,7 +1359,9 @@ $close-button-focus-opacity:      1 !default;
 $close-button-disabled-opacity:   .25 !default;
 // scss-docs-end close-button-variables
 
+//
 // Offcanvas
+//
 
 // scss-docs-start offcanvas-variables
 $offcanvas-padding-y:               $modal-window-padding-y !default;
@@ -1358,17 +1378,3 @@ $offcanvas-box-shadow:              $modal-window-shadow-xsmall !default;
 $offcanvas-backdrop-color:          $modal-backdrop-color !default;
 $offcanvas-backdrop-opacity:        $modal-backdrop-opacity !default;
 // scss-docs-end offcanvas-variables
-
-// Code
-
-$code-font-size:                    $small-font-size !default;
-$code-color:                        $pink !default;
-
-$kbd-padding-y:                     .1875rem !default;
-$kbd-padding-x:                     .375rem !default;
-$kbd-font-size:                     $code-font-size !default;
-$kbd-color:                         var(--#{$prefix}bg-color) !default;
-$kbd-bg:                            var(--#{$prefix}fg-color) !default;
-$nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, removing in v6
-
-$pre-color:                         null !default;

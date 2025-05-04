@@ -80,25 +80,41 @@ Use `.icon-*` size classes to adjust icon size
 
 Same icon & text sizes align properly.
 
-<Example code={`<div>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+<Example code={`<div class="font-small">
+    <svg class="icon icon-small"><use xlink:href="#info-circle-solid"/></svg>
     Text with a leading SVG icon.
   </div>
-  <p class="font-2xlarge">
+  <div class="font-small">
+    <span class="icon icon-small icon-info-circle-solid"></span>
+    Text with a leading font icon.
+  </div>
+  <div class="font-2xlarge">
+    <svg class="icon icon-2xlarge"><use xlink:href="#info-circle-solid"/></svg>
+    Text with a leading SVG icon.
+  </div>
+  <div class="font-2xlarge">
     <span class="icon icon-2xlarge icon-info-circle-solid"></span>
     Text with a leading font icon.
-  <p>`} />
+  </div>`} />
 
 You can also use `.icon-adaptive` class to match `font-size`.
 
 <Example code={`<div class="font-small">
     <svg class="icon icon-adaptive"><use xlink:href="#info-circle-solid"/></svg>
-    Text with an adaptive leading SVG icon.
+    Text with a leading SVG icon.
   </div>
-  <p class="font-2xlarge">
+  <div class="font-small">
     <span class="icon icon-adaptive icon-info-circle-solid"></span>
-    Text with an adaptive leading font icon.
-  </p>`} />
+    Text with a leading font icon.
+  </div>
+  <div class="font-2xlarge">
+    <svg class="icon icon-adaptive"><use xlink:href="#info-circle-solid"/></svg>
+    Text with a leading SVG icon.
+  </div>
+  <div class="font-2xlarge">
+    <span class="icon icon-adaptive icon-info-circle-solid"></span>
+    Text with a leading font icon.
+  </div>`} />
 
 ## Opacity
 Using CSS variables for `icon` utilities allows for real-time color changes without compilation and dynamic alpha transparency changes.

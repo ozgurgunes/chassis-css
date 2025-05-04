@@ -47,7 +47,7 @@
 //   }
 // }
 
-@each $name, $value in map-merge($context-scene-colors, $body-scene-colors) {
+@each $name, $value in map-merge($context-dim-colors, $body-dim-colors) {
   .#{$name} {
     background-color: var(--#{$prefix}#{$name});
   }
@@ -91,16 +91,16 @@
 // .icon-subtle {}
 // .border-main {}
 // .icon-main {}
-// .indicator-main {}
+// .cue-main {}
 // .link-main {}
 // .link-disabled {}
 // .link-visited {}
 // .link-hover {}
 // .link-active {}
-// .scene-shade {}
-// .scene-dim {}
-// .scene-blur {}
-// .scene-clear {}
+// .dim-slight {}
+// .dim-main {}
+// .dim-subtle {}
+// .transparent-color {}
 // .fg-button {}
 // .fg-disabled {}
 // .fg-hover {}

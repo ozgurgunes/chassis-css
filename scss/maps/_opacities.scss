@@ -37,10 +37,10 @@ $context-opacities: (
   "border-subtle":              $opacity-border-subtle,
   "icon-subtle":                $opacity-icon-subtle,
   "icon-slight":                $opacity-icon-slight,
-  "scene-dim":                  $opacity-scene-dim,
-  "scene-blur":                 $opacity-scene-blur,
-  "scene-shade":                $opacity-scene-shade,
-  "scene-clear":                $opacity-scene-clear,
+  "dim-main":                  $opacity-dim-main,
+  "dim-subtle":                 $opacity-dim-subtle,
+  "dim-slight":                $opacity-dim-slight,
+  "transparent-color":                $opacity-transparent-color,
 ) !default;
 // scss-docs-end context-opacities-map
 // scss-docs-start fg-opacities-map
@@ -57,10 +57,10 @@ $fg-opacities: map-merge(
 $bg-opacities: map-merge(
   $opacities,
   (
-    "dim": $opacity-scene-dim,
-    "blur": $opacity-scene-blur,
-    "shade": $opacity-scene-shade,
-    "clear": $opacity-scene-clear,
+    "dim": $opacity-dim-main,
+    "blur": $opacity-dim-subtle,
+    "shade": $opacity-dim-slight,
+    "clear": $opacity-transparent-color,
   )
 ) !default;
 // scss-docs-end bg-opacities-map
@@ -89,7 +89,7 @@ $icon-opacities: map-merge(
 $indicator-opacities: map-merge(
   $basic-opacities,
   (
-    "slight": $opacity-indicator-slight,
+    "slight": $opacity-cue-slight,
   )
 ) !default;
 // scss-docs-end indicator-opacities-map

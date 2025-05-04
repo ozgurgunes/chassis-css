@@ -336,37 +336,37 @@ $icon-slight-colors-dark: (
 ) !default;
 // scss-docs-end icon-slight-colors-dark-map
 
-// scss-docs-start indicator-main-colors-dark-map
-$indicator-main-colors-dark: (
-  "default":             $default-indicator-main-dark,
-  "alternate":           $alternate-indicator-main-dark,
-  "primary":             $primary-indicator-main-dark,
-  "secondary":           $secondary-indicator-main-dark,
-  "neutral":             $neutral-indicator-main-dark,
-  "danger":              $danger-indicator-main-dark,
-  "success":             $success-indicator-main-dark,
-  "warning":             $warning-indicator-main-dark,
-  "info":                $info-indicator-main-dark,
-  "black":               $black-indicator-main-dark,
-  "white":               $white-indicator-main-dark,
+// scss-docs-start cue-main-colors-dark-map
+$cue-main-colors-dark: (
+  "default":             $default-cue-main-dark,
+  "alternate":           $alternate-cue-main-dark,
+  "primary":             $primary-cue-main-dark,
+  "secondary":           $secondary-cue-main-dark,
+  "neutral":             $neutral-cue-main-dark,
+  "danger":              $danger-cue-main-dark,
+  "success":             $success-cue-main-dark,
+  "warning":             $warning-cue-main-dark,
+  "info":                $info-cue-main-dark,
+  "black":               $black-cue-main-dark,
+  "white":               $white-cue-main-dark,
 ) !default;
-// scss-docs-end indicator-main-colors-dark-map
+// scss-docs-end cue-main-colors-dark-map
 
-// scss-docs-start indicator-main-colors-dark-map
-$indicator-slight-colors-dark: (
-  "default":             $default-indicator-slight-dark,
-  "alternate":           $alternate-indicator-slight-dark,
-  "primary":             $primary-indicator-slight-dark,
-  "secondary":           $secondary-indicator-slight-dark,
-  "neutral":             $neutral-indicator-slight-dark,
-  "danger":              $danger-indicator-slight-dark,
-  "success":             $success-indicator-slight-dark,
-  "warning":             $warning-indicator-slight-dark,
-  "info":                $info-indicator-slight-dark,
-  "black":               $black-indicator-slight-dark,
-  "white":               $white-indicator-slight-dark,
+// scss-docs-start cue-main-colors-dark-map
+$cue-slight-colors-dark: (
+  "default":             $default-cue-slight-dark,
+  "alternate":           $alternate-cue-slight-dark,
+  "primary":             $primary-cue-slight-dark,
+  "secondary":           $secondary-cue-slight-dark,
+  "neutral":             $neutral-cue-slight-dark,
+  "danger":              $danger-cue-slight-dark,
+  "success":             $success-cue-slight-dark,
+  "warning":             $warning-cue-slight-dark,
+  "info":                $info-cue-slight-dark,
+  "black":               $black-cue-slight-dark,
+  "white":               $white-cue-slight-dark,
 ) !default;
-// scss-docs-end indicator-main-colors-dark-map
+// scss-docs-end cue-main-colors-dark-map
 
 // scss-docs-start link-main-colors-dark-map
 $link-main-colors-dark: (
@@ -432,69 +432,69 @@ $active-colors-dark: (
 ) !default;
 // scss-docs-end active-colors-dark-map
 
-// scss-docs-start scene-clear-colors-dark-map
-$scene-clear-colors-dark: (
-  "default":                $default-scene-clear-dark,
-  "alternate":              $alternate-scene-clear-dark,
-  "primary":                $primary-scene-clear-dark,
-  "secondary":              $secondary-scene-clear-dark,
-  "neutral":                $neutral-scene-clear-dark,
-  "danger":                 $danger-scene-clear-dark,
-  "success":                $success-scene-clear-dark,
-  "warning":                $warning-scene-clear-dark,
-  "info":                   $info-scene-clear-dark,
-  "black":                  $black-scene-clear-dark,
-  "white":                  $white-scene-clear-dark,
+// scss-docs-start transparent-color-colors-dark-map
+$transparent-color-colors-dark: (
+  "default":                $default-transparent-color-dark,
+  "alternate":              $alternate-transparent-color-dark,
+  "primary":                $primary-transparent-color-dark,
+  "secondary":              $secondary-transparent-color-dark,
+  "neutral":                $neutral-transparent-color-dark,
+  "danger":                 $danger-transparent-color-dark,
+  "success":                $success-transparent-color-dark,
+  "warning":                $warning-transparent-color-dark,
+  "info":                   $info-transparent-color-dark,
+  "black":                  $black-transparent-color-dark,
+  "white":                  $white-transparent-color-dark,
 ) !default;
-// scss-docs-end scene-clear-colors-dark-map
+// scss-docs-end transparent-color-colors-dark-map
 
-// scss-docs-start scene-shade-colors-dark-map
-$scene-shade-colors-dark: (
-  "default":                $default-scene-shade-dark,
-  "alternate":              $alternate-scene-shade-dark,
-  "primary":                $primary-scene-shade-dark,
-  "secondary":              $secondary-scene-shade-dark,
-  "neutral":                $neutral-scene-shade-dark,
-  "danger":                 $danger-scene-shade-dark,
-  "success":                $success-scene-shade-dark,
-  "warning":                $warning-scene-shade-dark,
-  "info":                   $info-scene-shade-dark,
-  "black":                  $black-scene-shade-dark,
-  "white":                  $white-scene-shade-dark,
+// scss-docs-start dim-slight-colors-dark-map
+$dim-slight-colors-dark: (
+  "default":                $default-dim-slight-dark,
+  "alternate":              $alternate-dim-slight-dark,
+  "primary":                $primary-dim-slight-dark,
+  "secondary":              $secondary-dim-slight-dark,
+  "neutral":                $neutral-dim-slight-dark,
+  "danger":                 $danger-dim-slight-dark,
+  "success":                $success-dim-slight-dark,
+  "warning":                $warning-dim-slight-dark,
+  "info":                   $info-dim-slight-dark,
+  "black":                  $black-dim-slight-dark,
+  "white":                  $white-dim-slight-dark,
 ) !default;
-// scss-docs-end scene-shade-colors-dark-map
+// scss-docs-end dim-slight-colors-dark-map
 
-// scss-docs-start scene-dim-colors--darkmap
-$scene-dim-colors-dark: (
-  "default":             $default-scene-dim-dark,
-  "alternate":           $alternate-scene-dim-dark,
-  "primary":             $primary-scene-dim-dark,
-  "secondary":           $secondary-scene-dim-dark,
-  "neutral":             $neutral-scene-dim-dark,
-  "danger":              $danger-scene-dim-dark,
-  "success":             $success-scene-dim-dark,
-  "warning":             $warning-scene-dim-dark,
-  "info":                $info-scene-dim-dark,
-  "black":               $black-scene-dim-dark,
-  "white":               $white-scene-dim-dark,
+// scss-docs-start dim-main-colors--darkmap
+$dim-main-colors-dark: (
+  "default":             $default-dim-main-dark,
+  "alternate":           $alternate-dim-main-dark,
+  "primary":             $primary-dim-main-dark,
+  "secondary":           $secondary-dim-main-dark,
+  "neutral":             $neutral-dim-main-dark,
+  "danger":              $danger-dim-main-dark,
+  "success":             $success-dim-main-dark,
+  "warning":             $warning-dim-main-dark,
+  "info":                $info-dim-main-dark,
+  "black":               $black-dim-main-dark,
+  "white":               $white-dim-main-dark,
 ) !default;
-// scss-docs-end scene-dim-colors-dark-map
+// scss-docs-end dim-main-colors-dark-map
 
-// scss-docs-start scene-blur-colors-dark-map
-$scene-blur-colors-dark: (
-  "default":                $default-scene-blur-dark,
-  "alternate":              $alternate-scene-blur-dark,
-  "primary":                $primary-scene-blur-dark,
-  "secondary":              $secondary-scene-blur-dark,
-  "neutral":                $neutral-scene-blur-dark,
-  "danger":                 $danger-scene-blur-dark,
-  "success":                $success-scene-blur-dark,
-  "warning":                $warning-scene-blur-dark,
-  "info":                   $info-scene-blur-dark,
-  "black":                  $black-scene-blur-dark,
-  "white":                  $white-scene-blur-dark,
+// scss-docs-start dim-subtle-colors-dark-map
+$dim-subtle-colors-dark: (
+  "default":                $default-dim-subtle-dark,
+  "alternate":              $alternate-dim-subtle-dark,
+  "primary":                $primary-dim-subtle-dark,
+  "secondary":              $secondary-dim-subtle-dark,
+  "neutral":                $neutral-dim-subtle-dark,
+  "danger":                 $danger-dim-subtle-dark,
+  "success":                $success-dim-subtle-dark,
+  "warning":                $warning-dim-subtle-dark,
+  "info":                   $info-dim-subtle-dark,
+  "black":                  $black-dim-subtle-dark,
+  "white":                  $white-dim-subtle-dark,
 ) !default;
-// scss-docs-end scene-blur-colors-dark-map
+// scss-docs-end dim-subtle-colors-dark-map
 
 // scss-docs-start fg-button-colors-dark-map
 $fg-button-colors-dark: (
@@ -648,16 +648,16 @@ $context-palette-dark: map-merge-multiple(
   rename-keys($icon-main-colors-dark, "-icon-main", "end"),
   rename-keys($icon-subtle-colors-dark, "-icon-subtle", "end"),
   rename-keys($icon-slight-colors-dark, "-icon-slight", "end"),
-  rename-keys($indicator-main-colors-dark, "-indicator-main", "end"),
-  rename-keys($indicator-slight-colors-dark, "-indicator-slight", "end"),
+  rename-keys($cue-main-colors-dark, "-cue-main", "end"),
+  rename-keys($cue-slight-colors-dark, "-cue-slight", "end"),
   rename-keys($link-main-colors-dark, "-link-main", "end"),
   rename-keys($visited-colors-dark, "-link-visited", "end"),
   rename-keys($hover-colors-dark, "-link-hover", "end"),
   rename-keys($active-colors-dark, "-link-active", "end"),
-  rename-keys($scene-shade-colors-dark, "-scene-shade", "end"),
-  rename-keys($scene-dim-colors-dark, "-scene-dim", "end"),
-  rename-keys($scene-blur-colors-dark, "-scene-blur", "end"),
-  rename-keys($scene-clear-colors-dark, "-scene-clear", "end"),
+  rename-keys($dim-slight-colors-dark, "-dim-slight", "end"),
+  rename-keys($dim-main-colors-dark, "-dim-main", "end"),
+  rename-keys($dim-subtle-colors-dark, "-dim-subtle", "end"),
+  rename-keys($transparent-color-colors-dark, "-transparent-color", "end"),
   rename-keys($fg-button-colors-dark, "-fg-button", "end"),
   rename-keys($fg-disabled-colors-dark, "-fg-disabled", "end"),
   rename-keys($fg-hover-colors-dark, "-fg-hover", "end"),
@@ -689,16 +689,16 @@ $body-colors-dark: (
   "icon-main":              $icon-main-dark,
   "icon-subtle":            $icon-subtle-dark,
   "icon-slight":            $icon-slight-dark,
-  "indicator-main":         $indicator-main-dark,
-  "indicator-slight":       $indicator-slight-dark,
+  "cue-main":         $cue-main-dark,
+  "cue-slight":       $cue-slight-dark,
   "link-main":              $link-main-dark,
   "link-hover":             $link-hover-dark,
   "link-active":            $link-active-dark,
   "link-visited":           $link-visited-dark,
-  "scene-shade":            $scene-shade-dark,
-  "scene-dim":              $scene-dim-dark,
-  "scene-blur":             $scene-blur-dark,
-  "scene-clear":            $scene-clear-dark,
+  "dim-slight":            $dim-slight-dark,
+  "dim-main":              $dim-main-dark,
+  "dim-subtle":             $dim-subtle-dark,
+  "transparent-color":            $transparent-color-dark,
   "fg-button":              $fg-button-dark,
   "fg-disabled":            $fg-disabled-dark,
   "fg-hover":               $fg-hover-dark,

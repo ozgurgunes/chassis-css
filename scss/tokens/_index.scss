@@ -1,8 +1,10 @@
 @import "accordion";
+@import "badge";
 @import "colors";
 @import "colors-dark";
 @import "fonts";
 @import "buttons";
+@import "chips";
 @import "forms";
 @import "shadows";
 
@@ -55,13 +57,13 @@ $opacity-icon-subtle:       $cx-opacity-context-icon-subtle !default;
 $opacity-icon-slight:       $cx-opacity-context-icon-slight !default;
 // scss-docs-end icon-opacity-tokens
 // scss-docs-start indicator-opacity-tokens
-$opacity-indicator-slight:  $cx-opacity-context-icon-slight !default;
+$opacity-cue-slight:  $cx-opacity-context-icon-slight !default;
 // scss-docs-end icon-opacity-tokens
 // scss-docs-start bg-opacity-tokens
-$opacity-scene-dim:         $cx-opacity-context-scene-dim !default;
-$opacity-scene-blur:        $cx-opacity-context-scene-blur !default;
-$opacity-scene-shade:       $cx-opacity-context-scene-shade !default;
-$opacity-scene-clear:       $cx-opacity-context-scene-clear !default;
+$opacity-dim-main:         $cx-opacity-context-dim-main !default;
+$opacity-dim-subtle:        $cx-opacity-context-dim-subtle !default;
+$opacity-dim-slight:       $cx-opacity-context-dim-slight !default;
+$opacity-transparent-color:       $cx-opacity-context-transparent-color !default;
 // scss-docs-end bg-opacity-tokens
 // scss-docs-end context-opacity-tokens
 
@@ -114,6 +116,6 @@ $table-striped-bg-color:          $cx-color-common-table-default-bg-alt !default
 $table-active-bg-color:           $cx-color-common-table-default-bg-highlight !default;
 $table-cell-font:                 $cx-font-common-table-data-text !default;
 $table-head-font:                 $cx-font-common-table-head-text !default;
-$table-active-indicator-color:    $cx-color-common-table-default-indicator-main !default;
+$table-active-cue-color:    $cx-color-common-table-default-cue-main !default;
 $table-active-indicator-size:     $cx-size-asset-indicator !default;
 // scss-docs-end table-tokens

@@ -128,7 +128,7 @@
     height: 100%;
     @include border-radius(var(--#{$prefix}box-radius));
     content: "";
-    background-color: var(--#{$prefix}scene-dim);
+    background-color: var(--#{$prefix}dim-main);
     opacity: 1;
     transition: opacity .3s; //stylelint-disable-line
   }

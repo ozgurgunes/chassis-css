@@ -1,29 +1,32 @@
 $prefix: cx- !default;
 
-$enable-dark-mode:              true !default;
 $color-mode-type:               data !default; // `data` or `media-query`
 
-$enable-elevation-shadows:      true !default;
-$enable-visited-links:          true !default;
-
+$enable-accordion-sizes:        true !default;
+$enable-accordion-contexts:     true !default;
+$enable-button-pointers:        true !default;
 $enable-caret:                  true !default;
-$enable-rounded:                true !default;
-$enable-component-shadows:      false !default;
 $enable-component-gradients:    false !default;
-$enable-transitions:            true !default;
-$enable-reduced-motion:         true !default;
-$enable-smooth-scroll:          true !default;
-$enable-grid-classes:           true !default;
+$enable-component-shadows:      false !default;
 $enable-container-classes:      true !default;
 $enable-cssgrid:                false !default;
-$enable-button-pointers:        true !default;
+$enable-dark-mode:              true !default;
+$enable-deprecation-messages:   true !default;
+$enable-elevation-shadows:      true !default;
+$enable-grid-classes:           true !default;
+$enable-important-utilities:    true !default;
+$enable-negative-margins:       true !default;
+$enable-reduced-motion:         true !default;
 $enable-rfs:                    false !default;
+$enable-rounded:                true !default;
+$enable-smooth-scroll:          true !default;
+$enable-table-active-indicator: true !default;
 $enable-table-border-radius:    true !default;
 $enable-table-font-tokens:      true !default;
-$enable-table-active-indicator: true !default;
+$enable-transitions:            true !default;
 $enable-validation-icons:       true !default;
-$enable-negative-margins:       true !default;
-$enable-deprecation-messages:   true !default;
-$enable-important-utilities:    true !default;
+$enable-visited-links:          true !default;
 
-@import "../chassis-tokens/dist/tokens/web/chassis-docs/allTokens";
+// @import "../chassis-tokens/dist/tokens/web/chassis-docs/allTokens";
+// @import "@ozgurgunes/chassis-tokens/dist/tokens/web/chassis-docs/allTokens";
+@import "../node_modules/@ozgurgunes/chassis-tokens/dist/tokens/web/chassis-docs/allTokens";

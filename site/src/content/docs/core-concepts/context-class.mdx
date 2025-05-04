@@ -34,18 +34,18 @@ The `.context` class extends above placeholder selectors to create classes for e
 
 And now we've have all context & style variants of our components.
 
-<Example code={`<div class="context primary p-xsmall m-small">This is a primary basic context block</div>
-<div class="context primary solid p-xsmall m-small">This is a primary solid context block</div>
-<div class="context primary smooth p-xsmall m-small">This is a primary smooth context block</div>
-<div class="context primary outline border p-xsmall m-small">This is a primary outline context block</div>`} />
+<Example code={`<p class="context primary">This is primary basic context.</p>
+<p class="context primary solid">This is primary solid context.</p>
+<p class="context primary smooth">This is primary smooth context.</p>
+<p class="context primary outline">This is primary outline context.</p>`} />
 
 The difference between contexts...
 
-<Example code={`<div class="context default border p-xsmall m-small">This is a default basic context block</div>
-<div class="context alternate border p-xsmall m-small">This is a alternate basic context block</div>
-<div class="context neutral border p-xsmall m-small">This is a neutral basic context block</div>
-<div class="context black border p-xsmall m-small">This is a black basic context block</div>
-<div class="context white border p-xsmall m-small">This is a white basic context block</div>`} />
+<Example code={`<p class="context default border">This is default basic context.</p>
+<p class="context alternate border">This is alternate basic context.</p>
+<p class="context neutral border">This is neutral basic context.</p>
+<p class="context black border">This is black basic context.</p>
+<p class="context white border">This is white basic context.</p>`} />
 
 ## Sass Mixins
 
@@ -74,48 +74,53 @@ As you noticed, badge & notifications components are also extending the `%compon
 
 Lets say an `.example` component use a custom highlight color and falls back to context colors in failures.
 
-<ScssDocs name="example-1" file="site/src/scss/_context.scss" />
+<ScssDocs name="example-1" file="site/src/scss/_context-example.scss" />
 
 By doing this, the color can be changed easily if we want to give more emphasis somewhere and also it fallbacks to `--cx-fg-highlight` and adapts to context in any failure.
 
 <Example code={`<div>
-  <p class="example p-xsmall">--example-fg</p>
-</div>
-<div style="--example-fg: var(--cx-fg-main);">
-  <p class="example p-xsmall">--cx-fg-main</p>
-</div>
-<div style="--example-fg: var(--no-color);">
-  <p class="example p-xsmall">--cx-fg-highlight</p>
-</div>
-<div class="context primary">
-  <p class="example p-xsmall">--example-fg</p>
-</div>
-<div class="context primary" style="--example-fg: var(--no-color);">
-  <p class="example p-xsmall">--cx-fg-highlight</p>
-</div>
-<div class="context primary">
-  <p class="p-xsmall">--cx-fg-main</p>
-</div>`} />
+    <p class="example">--example-fg</p>
+  </div>
+
+  <div style="--example-fg: var(--cx-fg-highlight);">
+    <p class="example">--example-fg is --cx-fg-highlight</p>
+  </div>
+
+  <div style="--example-fg: var(--no-color);">
+    <p class="example">--example-fg falls back to --cx-fg-subtle</p>
+  </div>
+
+  <div class="context primary">
+    <p class="example">--example-fg</p>
+  </div>
+
+  <div class="context primary" style="--example-fg: var(--no-color);">
+    <p class="example">--example-fg falls back to --cx-fg-subtle</p>
+  </div>
+
+  <div class="context primary">
+    <p>--cx-fg-main</p>
+  </div>`} />
 
 ### Example 2
 
-Lets make `.example-2` a context component using --cx-fg-subtle for its `color` property.
+Lets make `.example-2` a context component uses `--cx-fg-subtle` for its `color` property.
 
 While doing this we're also reserving for `--example-fg-color` if we plan to manipulate it later.
 
-<ScssDocs name="example-2" file="site/src/scss/_context.scss" />
+<ScssDocs name="example-2" file="site/src/scss/_context-example.scss" />
 
 The `%solid-context` selector overrides the `--cx-fg-color` variable with **new** `--cx-fg-main`, we're intercepting it to set `--cx-fg-subtle` as `--cx-fg-color`.
 
-<Example code={`<p class="example-2 p-xsmall">--cx-fg-subtle</p>
-<p class="example-2 primary p-xsmall">--cx-fg-subtle</p>
-<p class="example-2 primary solid p-xsmall">--cx-fg-subtle</p>`} />
+<Example code={`<p class="example-2">--cx-fg-subtle</p>
+<p class="example-2 primary">--cx-fg-subtle</p>
+<p class="example-2 primary solid">--cx-fg-subtle</p>`} />
 
 The `%solid-context` selector overrides the component colors.
 
 ### Example 3
 
-<ScssDocs name="example-3" file="site/src/scss/_context.scss" />
+<ScssDocs name="example-3" file="site/src/scss/_context-example.scss" />
 
 <Example code={`<p class="example-3 p-xsmall">--cx-fg-main</p>
 <p class="example-3 primary p-xsmall">--cx-fg-main</p>

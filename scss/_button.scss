@@ -12,10 +12,11 @@
   --#{$prefix}hover-border-color: var(--#{$prefix}button-border-color, transparent);
   // Sizing
   --#{$prefix}padding-y: var(--#{$prefix}button-padding-y, #{$button-medium-padding-y});
-  --#{$prefix}padding-x: var(--#{$prefix}button-padding-x, #{$button-medium-padding-x});
+  --#{$prefix}padding-x: var(--#{$prefix}button-padding-x, #{$button-medium-padding-x + $button-medium-trim});
   --#{$prefix}gap: var(--#{$prefix}button-gap, #{$button-medium-gap});
+  --#{$prefix}trim: var(--#{$prefix}button-trim, #{$button-medium-trim});
   --#{$prefix}border-radius: var(--#{$prefix}button-border-radius, #{$button-medium-border-radius});
-  --#{$prefix}icon-size: var(--#{$prefix}button-icons-size, #{$icon-medium});
+  --#{$prefix}icon-size: var(--#{$prefix}button-icons-size, #{$button-medium-icon-size});
   @include map-font($button-medium-font, button);
 
   box-sizing: content-box;
@@ -45,22 +46,67 @@
 
   &.large,
   .button-group-large > & {
-    --#{$prefix}padding-x: #{calc($button-large-padding-x - $button-border-width)};
-    --#{$prefix}padding-y: #{calc($button-large-padding-y - $button-border-width)};
-    --#{$prefix}gap: #{$button-large-gap};
-    --#{$prefix}border-radius: #{$button-large-border-radius};
-    --#{$prefix}icon-size: #{$icon-large};
+    --#{$prefix}padding-y: var(--#{$prefix}button-large-padding-y, #{$button-large-padding-y});
+    --#{$prefix}padding-x: var(--#{$prefix}button-large-padding-x, #{$button-large-padding-x + $button-large-trim});
+    --#{$prefix}gap: var(--#{$prefix}button-large-gap, #{$button-large-gap});
+    --#{$prefix}trim: var(--#{$prefix}button-large-gap, #{$button-large-trim});
+    --#{$prefix}border-radius: var(--#{$prefix}button-large-border-radius, #{$button-large-border-radius});
+    --#{$prefix}icon-size: #{$button-large-icon-size};
     @include map-font($button-large-font, button);
   }
 
   &.small,
   .button-group-small > & {
-    --#{$prefix}padding-x: #{calc($button-small-padding-x - $button-border-width)};
-    --#{$prefix}padding-y: #{calc($button-small-padding-y - $button-border-width)};
-    --#{$prefix}gap: #{$button-small-gap};
-    --#{$prefix}border-radius: #{$button-small-border-radius};
-    --#{$prefix}icon-size: #{$icon-small};
+    --#{$prefix}padding-y: var(--#{$prefix}button-small-padding-y, #{$button-small-padding-y});
+    --#{$prefix}padding-x: var(--#{$prefix}button-small-padding-x, #{$button-small-padding-x + $button-small-trim});
+    --#{$prefix}gap: var(--#{$prefix}button-small-gap, #{$button-small-gap});
+    --#{$prefix}trim: var(--#{$prefix}button-small-gap, #{$button-small-trim});
+    --#{$prefix}border-radius: var(--#{$prefix}button-small-border-radius, #{$button-small-border-radius});
+    --#{$prefix}icon-size: #{$button-small-icon-size};
     @include map-font($button-small-font, button);
+  }
+
+  > .icon-start {
+    margin-right: var(--#{$prefix}trim);
+    margin-left: #{calc(-1 * var(--#{$prefix}trim))};
+  }
+  > .icon-end {
+    margin-right: #{calc(-1 * var(--#{$prefix}trim))};
+    margin-left: var(--#{$prefix}trim);
+  }
+
+  //
+  // Link buttons
+  //
+
+  // Make a button look and behave like a link
+  &.link {
+    --#{$prefix}font-weight: #{$font-weight-normal};
+    --#{$prefix}fg-color: #{$button-link-color};
+    --#{$prefix}bg-color: transparent;
+    --#{$prefix}border-color: transparent;
+    --#{$prefix}hover-fg-color: #{$button-hover-color};
+    --#{$prefix}hover-border-color: transparent;
+    --#{$prefix}press-fg-color: #{$button-hover-color};
+    --#{$prefix}press-border-color: transparent;
+    --#{$prefix}disabled-fg-color: #{$fg-subtle};
+    --#{$prefix}disabled-border-color: transparent;
+    --#{$prefix}box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
+
+    text-decoration: $link-decoration;
+    @if $enable-component-gradients {
+      background-image: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: $link-hover-decoration;
+    }
+
+    &:focus-visible {
+      color: var(--#{$prefix}fg-color);
+    }
+
   }
 
 }

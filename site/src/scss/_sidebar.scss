@@ -122,7 +122,7 @@
     font-weight: 600;
   }
   .active &:not(.active):hover {
-    background-color: var(--cx-secondary-scene-shade);
+    background-color: var(--cx-secondary-dim-slight);
   }
 
   &:visited:not(.active):not(:hover):not(:focus) {

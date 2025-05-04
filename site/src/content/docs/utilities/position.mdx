@@ -94,7 +94,7 @@ Where *position* is one of:
 <Example class="cxd-example-position-utils" code={`<div class="position-relative">
     <div class="position-absolute top-0 start-0"></div>
     <div class="position-absolute top-0 end-0"></div>
-    <div class="position-absolute top-xlarge0 start-50"></div>
+    <div class="position-absolute top-50 start-50"></div>
     <div class="position-absolute bottom-50 end-50"></div>
     <div class="position-absolute bottom-0 start-0"></div>
     <div class="position-absolute bottom-0 end-0"></div>
@@ -110,12 +110,12 @@ This class applies the transformations `translateX(-50%)` and `translateY(-50%)`
     <div class="position-absolute top-0 start-0 translate-middle"></div>
     <div class="position-absolute top-0 start-50 translate-middle"></div>
     <div class="position-absolute top-0 start-100 translate-middle"></div>
-    <div class="position-absolute top-xlarge0 start-0 translate-middle"></div>
-    <div class="position-absolute top-xlarge0 start-50 translate-middle"></div>
-    <div class="position-absolute top-xlarge0 start-100 translate-middle"></div>
-    <div class="position-absolute top-2xsmall00 start-0 translate-middle"></div>
-    <div class="position-absolute top-2xsmall00 start-50 translate-middle"></div>
-    <div class="position-absolute top-2xsmall00 start-100 translate-middle"></div>
+    <div class="position-absolute top-50 start-0 translate-middle"></div>
+    <div class="position-absolute top-50 start-50 translate-middle"></div>
+    <div class="position-absolute top-50 start-100 translate-middle"></div>
+    <div class="position-absolute top-100 start-0 translate-middle"></div>
+    <div class="position-absolute top-100 start-50 translate-middle"></div>
+    <div class="position-absolute top-100 start-100 translate-middle"></div>
   </div>`} />
 
 By adding `.translate-middle-x` or `.translate-middle-y` classes, elements can be positioned only in horizontal or vertical direction.
@@ -124,9 +124,9 @@ By adding `.translate-middle-x` or `.translate-middle-y` classes, elements can b
     <div class="position-absolute top-0 start-0"></div>
     <div class="position-absolute top-0 start-50 translate-middle-x"></div>
     <div class="position-absolute top-0 end-0"></div>
-    <div class="position-absolute top-xlarge0 start-0 translate-middle-y"></div>
-    <div class="position-absolute top-xlarge0 start-50 translate-middle"></div>
-    <div class="position-absolute top-xlarge0 end-0 translate-middle-y"></div>
+    <div class="position-absolute top-50 start-0 translate-middle-y"></div>
+    <div class="position-absolute top-50 start-50 translate-middle"></div>
+    <div class="position-absolute top-50 end-0 translate-middle-y"></div>
     <div class="position-absolute bottom-0 start-0"></div>
     <div class="position-absolute bottom-0 start-50 translate-middle-x"></div>
     <div class="position-absolute bottom-0 end-0"></div>
@@ -140,8 +140,8 @@ Here are some real life examples of these classes:
     Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
   </button>
 
-  <div class="position-relative py-xsmall px-large text-bg-secondary border border-secondary rounded-pill">
-    Marker <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-2xsmall00 start-50 translate-middle mt-2xsmall" fill="var(--cx-secondary)" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+  <div class="position-relative py-xsmall px-large bg-inverse fg-inverse border rounded-circle">
+    Marker <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-2xsmall" fill="var(--cx-bg-inverse)" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
   </div>
 
   <button type="button" class="button primary position-relative">

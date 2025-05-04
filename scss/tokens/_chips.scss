@@ -1,0 +1,35 @@
+// scss-docs-start chip-tokens
+$chip-medium-font:                      $cx-font-common-chip-medium !default;
+$chip-large-font:                       $cx-font-common-chip-large !default;
+$chip-small-font:                       $cx-font-common-chip-small !default;
+
+$chip-medium-padding-y:                 $cx-space-common-chip-medium-padding-y !default;
+$chip-medium-padding-x:                 $cx-space-common-chip-medium-padding-x !default;
+$chip-medium-gap:                       $cx-space-common-chip-medium-gap !default;
+$chip-medium-trim:                      $cx-space-common-chip-medium-trim !default;
+
+$chip-large-padding-y:                  $cx-space-common-chip-large-padding-y !default;
+$chip-large-padding-x:                  $cx-space-common-chip-large-padding-x !default;
+$chip-large-gap:                        $cx-space-common-chip-large-gap !default;
+$chip-large-trim:                       $cx-space-common-chip-large-trim !default;
+
+$chip-small-padding-y:                  $cx-space-common-chip-small-padding-y !default;
+$chip-small-padding-x:                  $cx-space-common-chip-small-padding-x !default;
+$chip-small-gap:                        $cx-space-common-chip-small-gap !default;
+$chip-small-trim:                       $cx-space-common-chip-small-trim !default;
+
+$chip-medium-icon-size:                 $cx-size-common-chip-medium-icon !default;
+$chip-large-icon-size:                  $cx-size-common-chip-large-icon !default;
+$chip-small-icon-size:                  $cx-size-common-chip-small-icon !default;
+
+$chip-medium-avatar-size:               $cx-size-common-chip-medium-avatar !default;
+$chip-large-avatar-size:                $cx-size-common-chip-large-avatar !default;
+$chip-small-avatar-size:                $cx-size-common-chip-small-avatar !default;
+
+$chip-border-width:                     $cx-border-width-common-chip !default;
+$chip-medium-border-radius:             $cx-border-radius-common-chip-medium !default;
+$chip-large-border-radius:              $cx-border-radius-common-chip-medium !default;
+$chip-small-border-radius:              $cx-border-radius-common-chip-small !default;
+
+$chip-remove-icon:                      url("data:image/svg+xml, #{$cx-icon-common-chip-remove}") !default;
+// scss-docs-end chip-tokens

@@ -85,7 +85,7 @@
     --#{$prefix}striped-fg-color: var(--#{$prefix}fg-main);
     --#{$prefix}striped-bg-color: var(--#{$prefix}bg-even);
     --#{$prefix}hover-fg-color: var(--#{$prefix}fg-main);
-    --#{$prefix}hover-bg-color: var(--#{$prefix}scene-shade);
+    --#{$prefix}hover-bg-color: var(--#{$prefix}dim-slight);
     --#{$prefix}active-fg-color: var(--#{$prefix}fg-highlight);
     --#{$prefix}active-bg-color: var(--#{$prefix}bg-highlight);
     // border-color: var(--#{$prefix}border-color);
@@ -199,7 +199,7 @@
     > tbody > tr.active > *:first-child,
     > tbody > tr > *.active {
       padding-left: #{calc($table-cell-padding-x - $table-active-indicator-size)};
-      border-left: $table-active-indicator-size solid $table-active-indicator-color;
+      border-left: $table-active-indicator-size solid $table-active-cue-color;
     }
   }
 

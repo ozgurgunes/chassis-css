@@ -100,40 +100,6 @@
     @include box-shadow(none);
   }
 
-  //
-  // Link buttons
-  //
-
-  // Make a button look and behave like a link
-  &.link {
-    --#{$prefix}font-weight: #{$font-weight-normal};
-    --#{$prefix}fg-color: #{$button-link-color};
-    --#{$prefix}bg-color: transparent;
-    --#{$prefix}border-color: transparent;
-    --#{$prefix}hover-fg-color: #{$button-hover-color};
-    --#{$prefix}hover-border-color: transparent;
-    --#{$prefix}press-fg-color: #{$button-hover-color};
-    --#{$prefix}press-border-color: transparent;
-    --#{$prefix}disabled-fg-color: #{$fg-subtle};
-    --#{$prefix}disabled-border-color: transparent;
-    --#{$prefix}box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
-
-    text-decoration: $link-decoration;
-    @if $enable-component-gradients {
-      background-image: none;
-    }
-
-    &:hover,
-    &:focus-visible {
-      text-decoration: $link-hover-decoration;
-    }
-
-    &:focus-visible {
-      color: var(--#{$prefix}fg-color);
-    }
-
-  }
-
   @if ($enable-visited-links) {
     &:visited {
       color: var(--#{$prefix}fg-color);

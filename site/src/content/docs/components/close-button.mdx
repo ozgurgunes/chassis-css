@@ -9,14 +9,14 @@ toc: true
 Provide an option to dismiss or close a component with `.close-button`. **Be sure to include text for screen readers**, as done here with `aria-label`.
 
 <Example code={`<button type="button" class="close-button" aria-label="Close">
-  <svg><use xlink:href="#xmark-large-solid"/></svg>
-</button>`} />
+    <svg class="icon"><use xlink:href="#xmark-large-solid"/></svg>
+  </button>`} />
 
 If there is not any svg in close button, system displays `content: $close-button-svg;` automatically.
 
 <Example code={`<button type="button" class="close-button" aria-label="Close"></button>`} />
 
-Modify the Sass variables to replace the default `background-image`.
+Modify the Sass variables to replace the default `icon`.
 
 ## Disabled state
 
@@ -26,21 +26,35 @@ Disabled close buttons change their `opacity`. We’ve also applied `pointer-eve
 
 ## Sizes
 
-<Example code={`<button type="button" class="close-button small" aria-label="Close"></button>
+Use `.small` or `.large` to adjust the size of the close button. The default size is `1.5rem`. You can also set a custom size using the `--cx-close-button-size` CSS variable.
+
+<Example class="d-flex align-items-center" code={`<button type="button" class="close-button small" aria-label="Close"></button>
 <button type="button" class="close-button" aria-label="Close"></button>
 <button type="button" class="close-button large" aria-label="Close"></button>
-<button type="button" class="close-button xlarge" aria-label="Close"></button>`} />
+<span class="vr mx-medium"></span>
+<button type="button" class="close-button" style="--cx-close-button-size: 2rem;" aria-label="Close"></button>`} />
+
+## Colors
+
+Adapts to context colors automatically.
+
+<Example code={`<div class="context secondary">
+    <button type="button" class="close-button" aria-label="Close"></button>
+    <button type="button" class="close-button" disabled aria-label="Close"></button>
+  </div>`} />
+
+Use CSS variables to set custom colors.
 
 ## Positioning
 
 Most components will automatically position close-button themselves. Use position utilities for exceptions.
 
-<Example code={`<div class="notification primary">
+<Example code={`<div class="notification success">
     <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
     <p class="message">This is a notification!</p>
   </div>
-  <div class="context primary border rounded px-medium py-xsmall position-relative">
-    <button type="button" class="close-button position-absolute end-0 top-xlarge0 translate-middle-y" data-cx-dismiss="context" aria-label="Close"></button>
+  <div class="context success border rounded px-medium py-small position-relative">
+    <button type="button" class="close-button position-absolute end-0 top-50 me-xsmall translate-middle-y" data-cx-dismiss="context" aria-label="Close"></button>
     This is a contextual div.
   </div>`} />
 

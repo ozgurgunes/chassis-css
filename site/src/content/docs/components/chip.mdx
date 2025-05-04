@@ -1,0 +1,250 @@
+---
+title: Chips
+description: Use Chassis - CSS's custom chips styles for synamically placed small buttons for tags and more.
+toc: true
+---
+
+import { getData } from '@libs/data'
+
+<div class="button-examples">
+
+## Base Class
+
+Chassis - CSS has a base `.button` class that sets up the basic layout, typography and interactions of the buttons. By default, `.button` controls have body border and color definitions interactive abilities like focus and hover.
+
+<Example code={`<span class="chip">Base class</span>
+<span class="chip default">Default Chip</span>
+<span class="chip primary">Primary Primary</span>`} />
+
+The `.chip` class is intended to be used in conjunction with a context class, or to serve as a basis for your own custom styles.
+
+### Chip tags
+
+The `.chip` class are designed to be used with the `<span>` element. However, you can also use these classes on `<div>`, `<button>` and `<a>` elements.
+
+When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
+
+<Example code={`<span class="chip primary">Span</span>
+<div class="chip primary">Div</div>
+<button class="chip primary" type="button">Button</button>
+<a class="chip primary" href="http://example.com" role="button">Link</a>`} />
+
+## Context Variants
+
+Chassis - CSS includes context color variants of buttons, each serving its own contextual purpose.
+
+<Example code={[...getData('context-colors').map((contextColor) => `<span class="chip ${contextColor.name}">${contextColor.title}</span>`)]} />
+
+<Callout name="warning-color-assistive-technologies" />
+
+### Outline Chips
+
+In need of a button, but not the hefty background colors they bring? Add `.outline` class to remove background of any button.
+
+<Example code={[...getData('context-colors').map((contextColor) => `<span class="chip ${contextColor.name} outline">${contextColor.title}</span>`)]} />
+
+<Callout>
+  Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
+</Callout>
+
+### Smooth Chips
+
+Add `.smooth` class to fade their backgrounds in need of less attraction.
+
+<Example code={[...getData('context-colors').map((contextColor) => `<span class="chip ${contextColor.name} smooth">${contextColor.title}</span>`)]} />
+
+## Icons
+
+Use the `.icon-start` or `.icon-end` classes for proper spacing to add icons to a chip. You can use icon font or SVG icon.
+
+<Example code={`<span class="chip default">
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
+    Default
+  </span>
+  <span class="chip primary">
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
+    Primary
+  </span>
+  <span class="chip default">
+    Default
+    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+  </span>
+  <span class="chip primary">
+    Primary
+    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+  </span>`} />
+
+## Remove Button
+
+<Example code={`<span class="chip default">
+    Default
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>
+  <span class="chip primary">
+    Primary
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>
+`} />
+
+## Sizes
+
+To use larger or smaller chips, add `.large` or `.small` to chip class.
+
+<Example code={`<span class="chip default">
+    Medium
+  </span>
+  <span class="chip default">
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
+    Medium
+  </span>
+  <span class="chip default large">
+    Large
+  </span>
+  <span class="chip default large">
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
+    Large
+  </span>
+  <span class="chip default small">
+    Small
+  </span>
+  <span class="chip default small">
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
+    Small
+  </span>`} />
+
+## Avatars
+
+Use the `.avatar` class to add an avatar to a chip. You can use an image or text as avatar.
+
+<Example code={`<span class="chip default">
+    <span class="avatar">
+      <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    </span>
+    Medium
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>
+  <span class="chip large default">
+    <span class="avatar">
+      <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    </span>
+    Large
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>
+  <span class="chip small default">
+    <span class="avatar">
+      <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    </span>
+    Small
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>`} />
+
+## Disabled state
+
+Make chips look inactive by adding the `disabled` boolean attribute for `<button>` element or `.disabled` class on others elements. Disabled chips have `pointer-events: none` applied to, preventing hover and active states from triggering.
+
+<Example code={`<span class="chip default disabled">
+    <span class="avatar">
+      <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    </span>
+    Medium
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>
+  <span class="chip large default disabled">
+    <span class="avatar">
+      <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    </span>
+    Large
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>
+  <span class="chip small default disabled">
+    <span class="avatar">
+      <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    </span>
+    Small
+    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+  </span>`} />
+
+### Toggle states
+
+Add `data-cx-toggle="button"` to toggle a chip’s `active` state. If you’re pre-toggling a button, you must manually add the `.active` class **and** `aria-pressed="true"` to ensure that it is conveyed appropriately to assistive technologies.
+
+<Example code={`<p class="d-inline-flex gap-xsmall">
+    <button type="button" class="chip default" data-cx-toggle="button" aria-pressed="false">Toggle button</button>
+    <button type="button" class="chip default active" data-cx-toggle="button" aria-pressed="true">Active toggle</button>
+    <button type="button" class="chip default" disabled data-cx-toggle="button" aria-pressed="false">Disabled toggle</button>
+    <button type="button" class="chip default active" disabled data-cx-toggle="button" aria-pressed="true">Disabled active</button>
+  </p>
+  <p class="d-inline-flex gap-xsmall">
+    <button type="button" class="chip primary" data-cx-toggle="button" aria-pressed="false">Toggle button</button>
+    <button type="button" class="chip primary active" data-cx-toggle="button" aria-pressed="true">Active toggle</button>
+    <button type="button" class="chip primary" disabled data-cx-toggle="button" aria-pressed="false">Disabled toggle</button>
+    <button type="button" class="chip primary active" disabled data-cx-toggle="button" aria-pressed="true">Disabled active</button>
+  </p>`} />
+
+<Example code={`<p class="d-inline-flex gap-xsmall">
+    <a href="#" class="chip default" role="button" data-cx-toggle="button" aria-pressed="false">Toggle link</a>
+    <a href="#" class="chip default active" role="button" data-cx-toggle="button" aria-pressed="true">Active toggle</a>
+    <a href="#" class="chip default disabled" aria-disabled="true" role="button" data-cx-toggle="button" aria-pressed="false">Disabled toggle</a>
+    <a href="#" class="chip default active disabled" aria-disabled="true" role="button" data-cx-toggle="button" aria-pressed="true">Disabled active</a>
+  </p>
+  <p class="d-inline-flex gap-xsmall">
+    <a href="#" class="chip primary" role="button" data-cx-toggle="button" aria-pressed="false">Toggle link</a>
+    <a href="#" class="chip primary active" role="button" data-cx-toggle="button" aria-pressed="true">Active toggle</a>
+    <a href="#" class="chip primary disabled" aria-disabled="true" role="button" data-cx-toggle="button" aria-pressed="false">Disabled toggle</a>
+    <a href="#" class="chip primary active disabled" aria-disabled="true" role="button" data-cx-toggle="button" aria-pressed="true">Disabled active</a>
+  </p>`} />
+
+
+## CSS
+
+<DocsCSS />
+
+### Variables
+
+<DocsCSSVars />
+
+### Sass variables
+
+<DocsSASSVars />
+
+<ScssDocs name="button-variables" file="scss/_variables.scss" />
+
+### Sass maps
+
+<ScssDocs  name="button-colors-map" file="scss/maps/_buttons.scss" />
+
+### Sass mixins
+
+Mixins used to create button variants
+
+#### Solid Button Mixin
+
+<ScssDocs  name="solid-button-mixin" file="scss/mixins/_button.scss" />
+
+#### Outline Button Mixin
+
+<ScssDocs  name="outline-button-mixin" file="scss/mixins/_button.scss" />
+
+#### Smooth Button Mixin
+
+<ScssDocs  name="smooth-button-mixin" file="scss/mixins/_button.scss" />
+
+#### Placeholder Selectors
+
+<ScssDocs  name="button-placeholder-selectors" file="scss/placeholders/_button.scss" />
+
+### Custom Buttons
+
+Below code is the actual code of buttons we are using in documentation site.
+
+<ScssDocs  name="cxd-button" file="site/src/scss/_buttons.scss" />
+
+This will create this button set:
+
+<Example code={`<button type="button" class="cxd-button">Base</button>
+<button type="button" class="cxd-button default">Default</button>
+<button type="button" class="cxd-button primary">Primary</button>
+<button type="button" class="cxd-button large">Large</button>
+<button type="button" class="cxd-button default large">Default</button>
+<button type="button" class="cxd-button primary large">Primary</button>`} />
+</div>

@@ -10,7 +10,7 @@
   --#{$prefix}size: var(--#{$prefix}badge-size, #{$badge-medium-size});
   --#{$prefix}gap: var(--#{$prefix}badge-gap, #{$badge-medium-gap});
   --#{$prefix}padding-y: var(--#{$prefix}badge-padding-y, #{$badge-medium-padding-y});
-  --#{$prefix}padding-x: var(--#{$prefix}badge-padding-x, #{$badge-medium-padding-x});
+  --#{$prefix}padding-x: var(--#{$prefix}badge-padding-x, #{$badge-medium-padding-x + $badge-medium-gap});
   --#{$prefix}border-width: var(--#{$prefix}badge-border-width, #{$badge-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}badge-border-radius, #{$badge-medium-border-radius});
   --#{$prefix}icon-size: var(--#{$prefix}badge-icon-size, #{$badge-medium-icon-size});
@@ -43,7 +43,7 @@
     --#{$prefix}size: #{$badge-large-size};
     --#{$prefix}gap: #{$badge-large-gap};
     --#{$prefix}padding-y: #{$badge-large-padding-y};
-    --#{$prefix}padding-x: #{$badge-large-padding-x};
+    --#{$prefix}padding-x: #{$badge-large-padding-x + $badge-large-gap};
     @include map-font($badge-large-font, badge);
     --#{$prefix}border-radius: #{$badge-large-border-radius};
     --#{$prefix}icon-size: #{$badge-large-icon-size};
@@ -53,19 +53,17 @@
     --#{$prefix}size: #{$badge-small-size};
     --#{$prefix}gap: #{$badge-small-gap};
     --#{$prefix}padding-y: #{$badge-small-padding-y};
-    --#{$prefix}padding-x: #{$badge-small-padding-x};
+    --#{$prefix}padding-x: #{$badge-small-padding-x + $badge-small-gap};
     @include map-font($badge-small-font, badge);
     --#{$prefix}border-radius: #{$badge-small-border-radius};
     --#{$prefix}icon-size: #{$badge-small-icon-size};
   }
 
-  .icon {
-    &:first-child {
-      margin-left: #{calc(-.5 * var(--#{$prefix}padding-x))};
-    }
-    &:last-child {
-      margin-right: #{calc(-.5 - var(--#{$prefix}padding-x))};
-    }
+  > .icon-start {
+    margin-left: #{calc(-1 * var(--#{$prefix}gap))};
+  }
+  > .icon-end {
+    margin-right: #{calc(-1 * var(--#{$prefix}gap))};
   }
 
   // Empty badges collapse automatically

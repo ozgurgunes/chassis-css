@@ -26,7 +26,7 @@
   val: 'test'
 - name: icon-subtle
   val: 'test'
-- name: indicator-main
+- name: cue-main
   val: 'test'
 - name: indicator-subtle
   val: 'test'
@@ -38,13 +38,13 @@
   val: 'test'
 - name: link-active
   val: 'test'
-- name: scene-shade
+- name: dim-slight
   val: 'test'
-- name: scene-dim
+- name: dim-main
   val: 'test'
-- name: scene-blur
+- name: dim-subtle
   val: 'test'
-- name: scene-clear
+- name: transparent-color
   val: 'test'
 - name: fg-button
   val: 'test'

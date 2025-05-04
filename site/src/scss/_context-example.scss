@@ -3,16 +3,16 @@
   --example-fg: #228822;
 }
 .example {
-  color: var(--example-fg, var(--cx-fg-highlight));
+  color: var(--example-fg, var(--cx-fg-subtle));
 }
 // scss-docs-end example-1
 // scss-docs-start example-2
 .example-2 {
   @extend %context;
-  // %solid-context will override --cx-fg-color with --cx-fg-main.
+  // %solid-context will override --cx-fg-color with --cx-fg-solid.
   --cx-fg-color: var(--example-fg-color, var(--cx-fg-subtle));
-  --cx-bg-color: var(--example-bg-color, var(--cx-bg-even));
-  // Intercepting override of %solid-context.
+  // --cx-bg-color: var(--example-bg-color, var(--cx-bg-even));
+  // Override the override of %solid-context.
   --cx-solid-fg-color: var(--cx-fg-subtle);
   color: var(--cx-fg-color);
   background-color: var(--cx-bg-color);

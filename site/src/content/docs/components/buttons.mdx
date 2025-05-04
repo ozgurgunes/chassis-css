@@ -49,13 +49,13 @@ Add `.smooth` class to fade their backgrounds in need of less attraction.
 
 ## Disable text wrapping
 
-If you don’t want the button text to wrap, you can add the `.text-nowrap` class to the button. In Sass, you can set `$utton-white-space: nowrap` to disable text wrapping for each button.
+If you don’t want the button text to wrap, you can add the `.text-nowrap` class to the button. In Sass, you can set `$button-white-space: nowrap` to disable text wrapping for each button.
 
 ## Button tags
 
 The `.button` classes are designed to be used with the `<button>` element. However, you can also use these classes on `<a>` or `<input>` elements (though some browsers may apply a slightly different rendering).
 
-When using button classes on `<a>` elements that are <a class="button" href="https://example.com">used</a> to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
+When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
 
 <Example code={`<button class="button primary" type="submit">Button</button>
 <input class="button primary" type="button" value="Input">
@@ -65,17 +65,23 @@ When using button classes on `<a>` elements that are <a class="button" href="htt
 
 ## Icons
 
-<Example code={`<button type="button" class="button">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
-    Base
-  </button>
-  <button type="button" class="button default">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+Use the `.icon-start` or `.icon-end` classes for proper spacing to add icons to a button. You can use icon font or SVG icon.
+
+<Example code={`<button type="button" class="button default">
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default
   </button>
   <button type="button" class="button primary">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Primary
+  </button>
+  <button type="button" class="button default">
+    Default
+    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+  </button>
+  <button type="button" class="button primary">
+    Primary
+    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
   </button>`} />
 
 ## Sizes
@@ -86,14 +92,14 @@ To use larger or smaller buttons, add `.large` or `.small` to button class.
     Default
   </button>
   <button type="button" class="button default large">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default
   </button>
   <button type="button" class="button primary large">
     Primary
   </button>
   <button type="button" class="button primary large">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Primary
   </button>`} />
 
@@ -101,14 +107,14 @@ To use larger or smaller buttons, add `.large` or `.small` to button class.
     Default
   </button>
   <button type="button" class="button default small">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default
   </button>
   <button type="button" class="button primary small">
     Primary
   </button>
   <button type="button" class="button primary small">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Primary
   </button>`} />
 
@@ -124,27 +130,27 @@ You can even roll your own custom sizing with CSS variables:
 Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.
 
 <Example code={`<button type="button" class="button default" disabled>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default Button
   </button>
   <button type="button" class="button default outline" disabled>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default button
   </button>
   <button type="button" class="button default smooth" disabled>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default button
   </button>
   <button type="button" class="button primary" disabled>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Primary Button
   </button>
   <button type="button" class="button primary outline" disabled>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Primary Button
   </button>
   <button type="button" class="button primary smooth" disabled>
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Primary Button
   </button>`} />
 

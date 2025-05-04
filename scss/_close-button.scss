@@ -6,14 +6,14 @@
 
 .close-button {
   --#{$prefix}size: var(--#{$prefix}close-button-size, #{$close-button-medium-size});
-  --#{$prefix}fg-color: var(--#{$prefix}close-button-fg-color, #{$close-button-fg-color});
+  --#{$prefix}icon: var(--#{$prefix}close-button-icon, #{$close-button-svg});
+  --#{$prefix}icon-color: var(--#{$prefix}close-button-fg-color, #{$close-button-fg-color});
   --#{$prefix}bg-color: var(--#{$prefix}close-button-bg-color, #{$close-button-bg-color});
   --#{$prefix}idle-opacity: var(--#{$prefix}close-button-idle-opacity, #{$close-button-idle-opacity});
   --#{$prefix}hover-opacity: var(--#{$prefix}close-button-hover-opacity, #{$close-button-hover-opacity});
   --#{$prefix}focus-shadow: var(--#{$prefix}close-button-focus-shadow, #{$close-button-focus-shadow});
   --#{$prefix}focus-opacity: var(--#{$prefix}close-button-focus-opacity, #{$close-button-focus-opacity});
   --#{$prefix}disabled-opacity: var(--#{$prefix}close-button-disabled-opacity, #{$close-button-disabled-opacity});
-  --#{$prefix}icon-color: var(--#{$prefix}close-button-fg-color, #{$close-button-fg-color});
 
   box-sizing: content-box;
   width: var(--#{$prefix}size);
@@ -23,10 +23,8 @@
   border: 0;
   @include border-radius();
   opacity: var(--#{$prefix}idle-opacity);
-  //content: $close-button-content;
 
-  svg {
-    //box-sizing: content-box;
+  > svg {
     width: var(--#{$prefix}size);
     height: var(--#{$prefix}size);
   }
@@ -38,15 +36,16 @@
     margin-top: #{calc(var(--#{$prefix}size) / -2)};
     margin-left: #{calc(var(--#{$prefix}size) / -2)};
     content: " ";
-    background-color: var(--#{$prefix}fg-color);
-    mask-image: $close-button-svg;
+    background-color: var(--#{$prefix}icon-color);
+    mask-image: var(--#{$prefix}icon);
     mask-position: center;
-    mask-size: var(--#{$prefix}size) var(--#{$prefix}size);
+    mask-size: #{calc(var(--#{$prefix}size) * 1.1875)} #{calc(var(--#{$prefix}size) * 1.1875)};
   }
 
   // Override <a>'s hover style
   &:hover {
-    color: var(--#{$prefix}fg-color);
+    --#{$prefix}icon-color: var(--#{$prefix}close-button-fg-hover, #{$close-button-fg-hover});
+    --#{$prefix}bg-color: var(--#{$prefix}close-button-bg-hover, #{$close-button-bg-hover});
     text-decoration: none;
     opacity: var(--#{$prefix}hover-opacity);
   }
@@ -64,16 +63,12 @@
     opacity: var(--#{$prefix}disabled-opacity);
   }
 
-  &.xlarge {
-    --#{$prefix}size: var(--#{$prefix}close-button-xlarge-size, #{$close-button-medium-size * 1.5});
-  }
-
   &.large {
-    --#{$prefix}size: var(--#{$prefix}close-button-large-size, #{$close-button-large-size});
+    --#{$prefix}close-button-size: #{$close-button-large-size};
   }
 
   &.small {
-    --#{$prefix}size: var(--#{$prefix}close-button-small-size, #{$close-button-small-size});
+    --#{$prefix}close-button-size: #{$close-button-small-size};
   }
 
 }

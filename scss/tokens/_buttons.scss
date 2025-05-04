@@ -1,10 +1,4 @@
 // scss-docs-start button-tokens
-$button-border-width:                     $cx-border-width-common-button !default;
-
-$button-medium-border-radius:             $cx-border-radius-common-button-medium !default;
-$button-large-border-radius:              $cx-border-radius-common-button-medium !default;
-$button-small-border-radius:              $cx-border-radius-common-button-small !default;
-
 $button-medium-font:                      $cx-font-common-button-medium !default;
 $button-large-font:                       $cx-font-common-button-large !default;
 $button-small-font:                       $cx-font-common-button-small !default;
@@ -12,14 +6,26 @@ $button-small-font:                       $cx-font-common-button-small !default;
 $button-medium-padding-y:                 $cx-space-common-button-medium-padding-y !default;
 $button-medium-padding-x:                 $cx-space-common-button-medium-padding-x !default;
 $button-medium-gap:                       $cx-space-common-button-medium-gap !default;
+$button-medium-trim:                      $cx-space-common-button-medium-trim !default;
 
 $button-large-padding-y:                  $cx-space-common-button-large-padding-y !default;
 $button-large-padding-x:                  $cx-space-common-button-large-padding-x !default;
 $button-large-gap:                        $cx-space-common-button-large-gap !default;
+$button-large-trim:                       $cx-space-common-button-large-trim !default;
 
 $button-small-padding-y:                  $cx-space-common-button-small-padding-y !default;
 $button-small-padding-x:                  $cx-space-common-button-small-padding-x !default;
 $button-small-gap:                        $cx-space-common-button-small-gap !default;
+$button-small-trim:                       $cx-space-common-button-small-trim !default;
+
+$button-medium-icon-size:                 $cx-size-common-button-medium-icon !default;
+$button-large-icon-size:                  $cx-size-common-button-large-icon !default;
+$button-small-icon-size:                  $cx-size-common-button-small-icon !default;
+
+$button-border-width:                     $cx-border-width-common-button !default;
+$button-medium-border-radius:             $cx-border-radius-common-button-medium !default;
+$button-large-border-radius:              $cx-border-radius-common-button-medium !default;
+$button-small-border-radius:              $cx-border-radius-common-button-small !default;
 
 // scss-docs-start button-color-tokens
 $button-default-fg-idle:                  $cx-color-common-button-default-fg-idle !default;
