@@ -31,5 +31,5 @@ $chip-medium-border-radius:             $cx-border-radius-common-chip-medium !de
 $chip-large-border-radius:              $cx-border-radius-common-chip-medium !default;
 $chip-small-border-radius:              $cx-border-radius-common-chip-small !default;
 
-$chip-remove-icon:                      url("data:image/svg+xml, #{$cx-icon-common-chip-remove}") !default;
+$chip-remove-icon:                      svg-icon($cx-icon-common-chip-remove) !default;
 // scss-docs-end chip-tokens

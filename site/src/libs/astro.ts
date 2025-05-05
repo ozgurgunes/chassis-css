@@ -28,10 +28,10 @@ const autoImportedComponentDirectories = ['shortcodes']
 const staticFileAliases = {
   '/docs/[version]/assets/img/favicons/apple-touch-icon.png': '/apple-touch-icon.png',
   '/docs/[version]/assets/img/favicons/favicon.ico': '/favicon.ico',
-  '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.min.css': '/icons/chassis-icons.min.css',
-  '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.svg': '/icons/chassis-icons.svg',
-  '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.woff': '/icons/chassis-icons.woff',
-  '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.woff2': '/icons/chassis-icons.woff2',
+  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.min.css': '/icons/chassis-icons.min.css',
+  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.svg': '/icons/chassis-icons.svg',
+  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.woff': '/icons/chassis-icons.woff',
+  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.woff2': '/icons/chassis-icons.woff2',
 }
 
 // A list of pages that will be excluded from the sitemap.
@@ -85,6 +85,7 @@ export function chassis(): AstroIntegration[] {
         'astro:config:done': () => {
           cleanPublicDirectory()
           copyChassis()
+          copyIcons()
           copyStatic()
           aliasStatic()
         },
@@ -155,6 +156,15 @@ function cleanPublicDirectory() {
 function copyChassis() {
   const source = path.join(process.cwd(), 'dist')
   const destination = path.join(getDocsPublicFsPath(), 'docs', getConfig().docs_version, 'dist')
+
+  fs.mkdirSync(destination, { recursive: true })
+  fs.cpSync(source, destination, { recursive: true })
+}
+
+// Copy the `icons` folder from the chassis-tokens repo to make it available from the `/icons` URL.
+function copyIcons() {
+  const source = path.join(process.cwd(), 'node_modules/@ozgurgunes/chassis-tokens/dist/icons')
+  const destination = path.join(getDocsPublicFsPath(), 'icons')
 
   fs.mkdirSync(destination, { recursive: true })
   fs.cpSync(source, destination, { recursive: true })

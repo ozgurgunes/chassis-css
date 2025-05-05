@@ -3,7 +3,7 @@
 // ++++++++++++++++++++++++++++++++++++++++++
 
 /*!
- * JavaScript for Chassis's docs (https://getchassis.com/)
+ * JavaScript for Chassis's docs (https://chassis-ui.com/)
  * Copyright 2024-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.

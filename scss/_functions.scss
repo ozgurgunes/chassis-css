@@ -330,3 +330,12 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
   @return #{rgba(var(--#{$prefix}#{$color}-rgb), $opacity)};
 }
 // scss-docs-end shadow-functions
+
+// scss-docs-start icon-functions
+@function svg-icon($icon) {
+  @if str-index($icon, "<svg") {
+    @return url("data:image/svg+xml,#{$icon}");
+  }
+  @return url("#{$icon-url-prefix}#{$icon}#{$icon-url-suffix}");
+}
+// scss-docs-end icon-functions

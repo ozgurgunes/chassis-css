@@ -19,7 +19,7 @@ class Accordion extends BaseComponent {
     super(element, config)
 
     this._summary = element.querySelector('summary')
-    this._content = element.querySelector('.accordion-content')
+    this._content = element.querySelector('.accordion-body')
     this._static = this._element.parentElement.classList.contains('static')
 
     this._isClosing = false

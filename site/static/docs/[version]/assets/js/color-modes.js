@@ -1,5 +1,5 @@
 /*!
- * Color mode toggler for Chassis's docs (https://getchassis.com/)
+ * Color mode toggler for Chassis's docs (https://chassis-ui.com/)
  * Copyright 2011-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  */

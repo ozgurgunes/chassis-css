@@ -27,6 +27,15 @@ $enable-transitions:            true !default;
 $enable-validation-icons:       true !default;
 $enable-visited-links:          true !default;
 
+
+//
+//
+// Icons
+//
+$icon-url-prefix:                "/icons/svgs/" !default;
+$icon-url-suffix:                ".svg" !default;
+
+
 // @import "../chassis-tokens/dist/tokens/web/chassis-docs/allTokens";
 // @import "@ozgurgunes/chassis-tokens/dist/tokens/web/chassis-docs/allTokens";
 @import "../node_modules/@ozgurgunes/chassis-tokens/dist/tokens/web/chassis-docs/allTokens";

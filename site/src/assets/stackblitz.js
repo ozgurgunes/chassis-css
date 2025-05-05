@@ -5,7 +5,7 @@
 // ++++++++++++++++++++++++++++++++++++++++++
 
 /*!
- * JavaScript for Chassis's docs (https://getchassis.com/)
+ * JavaScript for Chassis's docs (https://chassis-ui.com/)
  * Copyright 2024-2025 The Chassis Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
  * For details, see https://creativecommons.org/licenses/by/3.0/.
@@ -44,7 +44,7 @@ const openChassisSnippet = (htmlSnippet, jsSnippet, classes) => {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${CONFIG.cssCdn}" rel="stylesheet">
-    <link href="https://getchassis.com/docs/${CONFIG.docsVersion}/assets/css/docs.css" rel="stylesheet">
+    <link href="https://chassis-ui.com/docs/${CONFIG.docsVersion}/assets/css/docs.css" rel="stylesheet">
     <title>Chassis Example</title>
     <script defer src="${CONFIG.jsBundleCdn}"></script>
   </head>

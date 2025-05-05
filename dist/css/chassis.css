@@ -1178,6 +1178,43 @@
   --cx-link-hover: var(--cx-default-link-hover);
   --cx-link-active: var(--cx-default-link-active);
   --cx-link-visited: var(--cx-default-link-visited);
+  --cx-base-color-rgb: var(--cx-default-base-color-rgb);
+  --cx-contrast-color-rgb: var(--cx-default-contrast-color-rgb);
+  --cx-transparent-color-rgb: var(--cx-default-transparent-color-rgb);
+  --cx-fg-main-rgb: var(--cx-default-fg-main-rgb);
+  --cx-fg-subtle-rgb: var(--cx-default-fg-subtle-rgb);
+  --cx-fg-slight-rgb: var(--cx-default-fg-slight-rgb);
+  --cx-fg-inverse-rgb: var(--cx-default-fg-inverse-rgb);
+  --cx-fg-solid-rgb: var(--cx-default-fg-solid-rgb);
+  --cx-fg-highlight-rgb: var(--cx-default-fg-highlight-rgb);
+  --cx-bg-main-rgb: var(--cx-default-bg-main-rgb);
+  --cx-bg-even-rgb: var(--cx-default-bg-even-rgb);
+  --cx-bg-evident-rgb: var(--cx-default-bg-evident-rgb);
+  --cx-bg-inverse-rgb: var(--cx-default-bg-inverse-rgb);
+  --cx-bg-solid-rgb: var(--cx-default-bg-solid-rgb);
+  --cx-bg-highlight-rgb: var(--cx-default-bg-highlight-rgb);
+  --cx-border-main-rgb: var(--cx-default-border-main-rgb);
+  --cx-border-subtle-rgb: var(--cx-default-border-subtle-rgb);
+  --cx-icon-main-rgb: var(--cx-default-icon-main-rgb);
+  --cx-icon-subtle-rgb: var(--cx-default-icon-subtle-rgb);
+  --cx-icon-slight-rgb: var(--cx-default-icon-slight-rgb);
+  --cx-cue-main-rgb: var(--cx-default-cue-main-rgb);
+  --cx-cue-slight-rgb: var(--cx-default-cue-slight-rgb);
+  --cx-dim-main-rgb: var(--cx-default-dim-main-rgb);
+  --cx-dim-subtle-rgb: var(--cx-default-dim-subtle-rgb);
+  --cx-dim-slight-rgb: var(--cx-default-dim-slight-rgb);
+  --cx-link-main-rgb: var(--cx-default-link-main-rgb);
+  --cx-link-hover-rgb: var(--cx-default-link-hover-rgb);
+  --cx-link-active-rgb: var(--cx-default-link-active-rgb);
+  --cx-link-visited-rgb: var(--cx-default-link-visited-rgb);
+  --cx-fg-button-rgb: var(--cx-default-fg-button-rgb);
+  --cx-fg-hover-rgb: var(--cx-default-fg-hover-rgb);
+  --cx-fg-press-rgb: var(--cx-default-fg-press-rgb);
+  --cx-fg-disabled-rgb: var(--cx-default-fg-disabled-rgb);
+  --cx-bg-button-rgb: var(--cx-default-bg-button-rgb);
+  --cx-bg-hover-rgb: var(--cx-default-bg-hover-rgb);
+  --cx-bg-press-rgb: var(--cx-default-bg-press-rgb);
+  --cx-bg-disabled-rgb: var(--cx-default-bg-disabled-rgb);
   --cx-fg-color: var(--cx-context-fg-main, var(--cx-fg-main));
   --cx-bg-color: var(--cx-context-bg-main, var(--cx-bg-main));
   --cx-border-color: var(--cx-context-border-subtle, var(--cx-border-subtle));
@@ -3786,9 +3823,6 @@ progress {
   --cx-border-color: var(--cx-hover-border-color);
   outline: 0;
   box-shadow: var(--cx-focus-box-shadow);
-}
-[data-cx-toggle=button].chip:not(.active).default, [data-cx-toggle=button].button:not(.active).default, [data-cx-toggle=button].chip:not(.active).alternate, [data-cx-toggle=button].button:not(.active).alternate {
-  border-color: transparent;
 }
 .button-option:checked + .chip, .button-option:checked + .button, :not(.button-option) + .chip:active, :not(.button-option) + .button:active, .chip:first-child:active, .button:first-child:active, .active.chip, .active.button, .show.chip, .show.button {
   --cx-fg-color: var(--cx-button-press-fg-color, var(--cx-fg-press));
@@ -7988,7 +8022,7 @@ textarea.form-control {
   --cx-gap: var(--cx-chip-gap, 0.5rem);
   --cx-trim: var(--cx-chip-trim, 0.25rem);
   --cx-border-radius: var(--cx-chip-border-radius, var(--cx-border-radius-circle));
-  --cx-close-button-icon: var(--cx-chip-remove-icon, url("data:image/svg+xml, <svg width='24' height='24' viewBox='0 0 24 24' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'><path d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM8.83594 8.83594C8.44531 9.22656 8.44531 9.8125 8.83594 10.1641L10.6719 12L8.83594 13.8359C8.44531 14.2266 8.44531 14.8125 8.83594 15.1641C9.1875 15.5547 9.77344 15.5547 10.125 15.1641L11.9609 13.3281L13.7969 15.1641C14.1875 15.5547 14.7734 15.5547 15.125 15.1641C15.5156 14.8125 15.5156 14.2266 15.125 13.8359L13.2891 12L15.125 10.1641C15.5156 9.8125 15.5156 9.22656 15.125 8.83594C14.7734 8.48438 14.1875 8.48438 13.7969 8.83594L11.9609 10.6719L10.125 8.83594C9.77344 8.48438 9.1875 8.48438 8.83594 8.83594Z' fill='currentcolor'/></svg>"));
+  --cx-close-button-icon: var(--cx-chip-remove-icon, url("data:image/svg+xml,<svg width='24' height='24' viewBox='0 0 24 24' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'><path d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM8.83594 8.83594C8.44531 9.22656 8.44531 9.8125 8.83594 10.1641L10.6719 12L8.83594 13.8359C8.44531 14.2266 8.44531 14.8125 8.83594 15.1641C9.1875 15.5547 9.77344 15.5547 10.125 15.1641L11.9609 13.3281L13.7969 15.1641C14.1875 15.5547 14.7734 15.5547 15.125 15.1641C15.5156 14.8125 15.5156 14.2266 15.125 13.8359L13.2891 12L15.125 10.1641C15.5156 9.8125 15.5156 9.22656 15.125 8.83594C14.7734 8.48438 14.1875 8.48438 13.7969 8.83594L11.9609 10.6719L10.125 8.83594C9.77344 8.48438 9.1875 8.48438 8.83594 8.83594Z' fill='currentcolor'/></svg>"));
   --cx-close-button-fg-color: var(--cx-chip-remove-color, var(--cx-fg-color));
   --cx-close-button-fg-hover: var(--cx-chip-remove-hover, var(--cx-fg-color));
   --cx-close-button-idle-opacity: var(--cx-chip-remove-idle-opacity, 1);

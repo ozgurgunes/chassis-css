@@ -153,7 +153,7 @@
       }
 
     }
-    > .accordion-content {
+    > .accordion-body {
       padding: var(--#{$prefix}body-padding-t) var(--#{$prefix}body-padding-e) var(--#{$prefix}body-padding-b) var(--#{$prefix}body-padding-s);
 
       * {
@@ -184,7 +184,7 @@
         padding-left: 0;
       }
 
-      > .accordion-content {
+      > .accordion-body {
         padding-right: 0;
         padding-left: #{calc(var(--#{$prefix}body-padding-s) - var(--#{$prefix}title-padding-x))};
       }

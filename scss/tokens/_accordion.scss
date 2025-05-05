@@ -36,6 +36,6 @@ $accordion-title-bg-color:            inherit !default;
 $accordion-title-active-fg-color:     $cx-color-common-accordion-title-active !default;
 $accordion-title-active-bg-color:     inherit !default;
 
-$accordion-indicator:                 url("data:image/svg+xml,#{$cx-icon-common-accordion-indicator}") !default;
+$accordion-indicator:                 svg-icon($cx-icon-common-accordion-indicator) !default;
 $accordion-indicator-inactive-color:  $cx-color-common-accordion-indicator-inactive !default;
 $accordion-indicator-active-color:    $cx-color-common-accordion-indicator-active !default;

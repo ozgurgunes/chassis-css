@@ -1,5 +1,5 @@
 - group: v1.x
-  baseurl: 'https://getchassis.com'
+  baseurl: 'https://chassis-ui.com'
   description: 'Every minor and patch release from v1 is listed below.'
   versions:
     - '1.0.0'
@@ -10,7 +10,7 @@
     - '1.4.0'
 
 - group: v2.x
-  baseurl: 'https://getchassis.com'
+  baseurl: 'https://chassis-ui.com'
   description: 'Every minor and patch release from v2 is listed below.'
   versions:
     - '2.0.0'
@@ -28,14 +28,14 @@
     - '2.3.2'
 
 - group: v3.x
-  baseurl: 'https://getchassis.com/docs'
+  baseurl: 'https://chassis-ui.com/docs'
   description: 'Every minor release from v3 is listed below. Last update was v3.4.1.'
   versions:
     - '3.3'
     - '3.4'
 
 - group: v4.x
-  baseurl: 'https://getchassis.com/docs'
+  baseurl: 'https://chassis-ui.com/docs'
   description: 'Our previous major release with its minor releases. Last update was v4.6.2.'
   versions:
     - '4.0'
@@ -47,7 +47,7 @@
     - '4.6'
 
 - group: v5.x
-  baseurl: 'https://getchassis.com/docs'
+  baseurl: 'https://chassis-ui.com/docs'
   description: 'Current major release. Last update was v5.3.5.'
   versions:
     - '5.0'

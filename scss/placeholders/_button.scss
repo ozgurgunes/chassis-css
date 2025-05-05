@@ -47,13 +47,6 @@
     }
   }
 
-  &[data-cx-toggle="button"]:not(.active) {
-    &.default,
-    &.alternate {
-      border-color: transparent;
-    }
-  }
-
   .button-option:checked + &,
   :not(.button-option) + &:active,
   &:first-child:active,
