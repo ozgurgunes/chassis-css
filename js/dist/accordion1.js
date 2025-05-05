@@ -46,7 +46,7 @@
       // Store the <summary> element
       this._summary = element.querySelector('summary');
       // Store the <div class="content"> element
-      this._content = element.querySelector('.accordion-content');
+      this._content = element.querySelector('.accordion-body');
       // Store if the element is closing
       this._isOpening = false;
       // Store if the element is expanding

@@ -1,3 +1,4 @@
+// scss-docs-start accordion-tokens
 $accordion-title-font:                $cx-font-common-accordion-medium-title !default;
 $accordion-body-font:                 $cx-font-common-accordion-medium-body !default;
 $accordion-indicator-size:            $cx-size-common-accordion-medium-indicator !default;
@@ -39,3 +40,4 @@ $accordion-title-active-bg-color:     inherit !default;
 $accordion-indicator:                 svg-icon($cx-icon-common-accordion-indicator) !default;
 $accordion-indicator-inactive-color:  $cx-color-common-accordion-indicator-inactive !default;
 $accordion-indicator-active-color:    $cx-color-common-accordion-indicator-active !default;
+// scss-docs-end accordion-tokens

@@ -16,7 +16,7 @@
       // Store the <summary> element
       this.summary = el.querySelector('summary');
       // Store the <div class="content"> element
-      this.content = el.querySelector('.accordion-content');
+      this.content = el.querySelector('.accordion-body');
       // Store the animation object (so we can cancel it if needed)
       this.animation = null;
       // Store if the element is closing
