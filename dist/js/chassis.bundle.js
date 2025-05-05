@@ -9,140 +9,6 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global["chassis-css"] = factory());
 })(this, (function () { 'use strict';
 
-  class Accordion {
-    constructor(el) {
-      // Store the <details> element
-      this.el = el;
-      // Store the <summary> element
-      this.summary = el.querySelector('summary');
-      // Store the <div class="content"> element
-      this.content = el.querySelector('.accordion-content');
-      // Store the animation object (so we can cancel it if needed)
-      this.animation = null;
-      // Store if the element is closing
-      this.isClosing = false;
-      // Store if the element is expanding
-      this.isExpanding = false;
-      // Detect user clicks on the summary element
-      this.summary.addEventListener('click', e => this.onClick(e));
-    }
-    onClick(e) {
-      // Stop default behaviour from the browser
-      e.preventDefault();
-      // Add an overflow on the <details> to avoid content overflowing
-      this.el.style.overflow = 'hidden';
-      // Check if the element is being closed or is already closed
-      if (this.isClosing || !this.el.open) {
-        // Collapse other elements
-        // console.log(this.el.classList)
-        this.static = this.el.parentElement.classList.contains('static');
-        this.openItems = this.el.parentElement.querySelectorAll('details[open]');
-        if (!this.static && this.openItems) {
-          for (const e of this.openItems) {
-            const item = new Accordion(e);
-            // eslint-disable-next-line no-console
-            console.log(item.el);
-            if (item.el !== this.el) {
-              item.el.style.overflow = 'hidden';
-              item.shrink();
-            }
-          }
-        }
-        // this.mode = this.el.querySelector('data-cx-accordion')
-
-        // Store open elements
-        this.open();
-        // Check if the element is being openned or is already open
-      } else if (this.isExpanding || this.el.open) {
-        this.shrink();
-      }
-    }
-    shrink() {
-      // Set the element as "being closed"
-      this.isClosing = true;
-
-      // Store the current height of the element
-      const startHeight = `${this.el.offsetHeight}px`;
-      // Calculate the height of the summary
-      const endHeight = `${this.summary.offsetHeight}px`;
-
-      // If there is already an animation running
-      if (this.animation) {
-        // Cancel the current animation
-        this.animation.cancel();
-      }
-
-      // Start a WAAPI animation
-      this.animation = this.el.animate({
-        // Set the keyframes from the startHeight to endHeight
-        height: [startHeight, endHeight]
-      }, {
-        duration: 300,
-        easing: 'ease-out'
-      });
-
-      // When the animation is complete, call onAnimationFinish()
-      this.animation.onfinish = () => this.onAnimationFinish(false);
-      // If the animation is cancelled, isClosing variable is set to false
-      this.animation.addEventListener('cancel', () => {
-        this.isClosing = false;
-      });
-    }
-    open() {
-      // Apply a fixed height on the element
-      this.el.style.height = `${this.el.offsetHeight}px`;
-      // Force the [open] attribute on the details element
-      this.el.open = true;
-      // Wait for the next frame to call the expand function
-      window.requestAnimationFrame(() => this.expand());
-    }
-    expand() {
-      // Set the element as "being expanding"
-      this.isExpanding = true;
-      // Get the current fixed height of the element
-      const startHeight = `${this.el.offsetHeight}px`;
-      // Calculate the open height of the element (summary height + content height)
-      const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
-
-      // If there is already an animation running
-      if (this.animation) {
-        // Cancel the current animation
-        this.animation.cancel();
-      }
-
-      // Start a WAAPI animation
-      this.animation = this.el.animate({
-        // Set the keyframes from the startHeight to endHeight
-        height: [startHeight, endHeight]
-      }, {
-        duration: 300,
-        easing: 'ease-out'
-      });
-      // When the animation is complete, call onAnimationFinish()
-      this.animation.onfinish = () => this.onAnimationFinish(true);
-      // If the animation is cancelled, isExpanding variable is set to false
-      this.animation.addEventListener('cancel', () => {
-        this.isExpanding = false;
-      });
-    }
-    onAnimationFinish(open) {
-      // Set the open attribute based on the parameter
-      this.el.open = open;
-      // Clear the stored animation
-      this.animation = null;
-      // Reset isClosing & isExpanding
-      this.isClosing = false;
-      this.isExpanding = false;
-      // Remove the overflow hidden and the fixed height
-      this.el.style.height = '';
-      this.el.style.overflow = '';
-    }
-  }
-  for (const el of document.querySelectorAll('.accordion > details')) {
-    // eslint-disable-next-line no-new
-    new Accordion(el);
-  }
-
   /**
    * --------------------------------------------------------------------------
    * Chassis - CSS dom/data.js
@@ -837,6 +703,145 @@
       return `${name}${this.EVENT_KEY}`;
     }
   }
+
+  /**
+   * --------------------------------------------------------------------------
+   * Chassis - CSS accordion.js
+   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  const NAME$g = 'accordion';
+  class Accordion extends BaseComponent {
+    static get NAME() {
+      return NAME$g;
+    }
+    constructor(element, config) {
+      super(element, config);
+      this._summary = element.querySelector('summary');
+      this._content = element.querySelector('.accordion-content');
+      this._static = this._element.parentElement.classList.contains('static');
+      this._isClosing = false;
+      this._isOpening = false;
+      this._animation = null;
+      this._animationDuration = getComputedStyle(this._element)['transition-duration'];
+      this._animationTiming = getComputedStyle(this._element)['transition-timing-function'];
+      this._summary.addEventListener('click', e => this.onClick(e));
+    }
+    onClick(e) {
+      // Stop default behaviour from the browser
+      e.preventDefault();
+      // Add an overflow on the <details> to avoid content overflowing
+      this._element.style.overflow = 'hidden';
+      // Check if the element is being closed or is already closed
+      if (this._isClosing || !this._element.open) {
+        // Collapse other elements
+        // console.log(this._element.classList)
+        this._openItems = this._element.parentElement.querySelectorAll('details[open]');
+        if (!this._static && this._openItems) {
+          for (const e of this._openItems) {
+            const item = new Accordion(e);
+            if (item._element !== this._element) {
+              item._element.style.overflow = 'hidden';
+              item.close();
+            }
+          }
+        }
+        this.open();
+        // Check if the element is being opened or is already open
+      } else if (this._isOpening || this._element.open) {
+        this.close();
+      }
+    }
+    close() {
+      // Set the element as "being closed"
+      this._isClosing = true;
+
+      // Store the current height of the element
+      const startHeight = `${this._element.offsetHeight}px`;
+      // Get the height of the summary
+      const endHeight = `${this._summary.offsetHeight}px`;
+
+      // If there is already an animation running
+      if (this._animation) {
+        // Cancel the current animation
+        this._animation.cancel();
+      }
+
+      // Start a WAAPI animation
+      this._element.classList.add('notransition');
+      this._animation = this._element.animate({
+        // Set the keyframes from the startHeight to endHeight
+        height: [startHeight, endHeight]
+      }, {
+        duration: Number.parseFloat(this._animationDuration) * 1000,
+        easing: this._animationTiming
+      });
+
+      // When the animation is complete, call onAnimationFinish()
+      this._animation.onfinish = () => this.onAnimationFinish(false);
+      // If the animation is cancelled, isClosing variable is set to false
+      this._animation.addEventListener('cancel', () => {
+        this._isClosing = false;
+      });
+    }
+    open() {
+      // Apply a fixed height on the element
+      this._element.style.height = `${this._element.offsetHeight}px`;
+      // Force the [open] attribute on the details element
+      this._element.open = true;
+      // Wait for the next frame to call the expand function
+      window.requestAnimationFrame(() => this.expand());
+    }
+    expand() {
+      // Set the element as "being expanding"
+      this._isOpening = true;
+      // Get the current fixed height of the element
+      const startHeight = `${this._element.offsetHeight}px`;
+      // Calculate the open height of the element (summary height + content height)
+      const endHeight = `${this._summary.offsetHeight + this._content.offsetHeight}px`;
+
+      // If there is already an animation running
+      if (this._animation) {
+        // Cancel the current animation
+        this._animation.cancel();
+      }
+
+      // Start a WAAPI animation
+      this._element.classList.add('notransition');
+      this._animation = this._element.animate({
+        // Set the keyframes from the startHeight to endHeight
+        height: [startHeight, endHeight]
+      }, {
+        duration: Number.parseFloat(this._animationDuration) * 1000,
+        easing: this._animationTiming
+      });
+      // When the animation is complete, call onAnimationFinish()
+      this._animation.onfinish = () => this.onAnimationFinish(true);
+      // If the animation is cancelled, isExpanding variable is set to false
+      this._animation.addEventListener('cancel', () => {
+        this._isOpening = false;
+      });
+    }
+    onAnimationFinish(open) {
+      // Set the open attribute based on the parameter
+      this._element.open = open;
+      // Clear the stored animation
+      this._animation = null;
+      // Reset isClosing & isExpanding
+      this._isClosing = false;
+      this._isOpening = false;
+      // Remove the overflow hidden and the fixed height
+      this._element.style.height = '';
+      this._element.style.overflow = '';
+      this._element.classList.remove('notransition');
+    }
+  }
+  for (const element of document.querySelectorAll('.accordion > details')) {
+    // eslint-disable-next-line no-new
+    new Accordion(element);
+  }
+  defineJQueryPlugin(Accordion);
 
   /**
    * --------------------------------------------------------------------------

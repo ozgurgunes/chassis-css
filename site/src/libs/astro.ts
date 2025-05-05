@@ -60,7 +60,7 @@ export function chassis(): AstroIntegration[] {
           // Reload the config when the integration is modified.
           addWatchFile(path.join(getDocsFsPath(), 'src/libs/astro.ts'))
           addWatchFile(path.join(getDocsFsPath(), '../dist/css/chassis.css'))
-          addWatchFile(path.join(getDocsFsPath(), '../dist/css/chassis.js'))
+          addWatchFile(path.join(getDocsFsPath(), '../dist/js/chassis.js'))
 
           // Add the remark and rehype plugins.
           updateConfig({

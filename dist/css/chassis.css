@@ -248,6 +248,28 @@
   --cx-black-contrast-color-rgb: 255, 255, 255;
   --cx-white-contrast-color: #000000;
   --cx-white-contrast-color-rgb: 0, 0, 0;
+  --cx-default-transparent-color: rgba(0, 0, 0, 0);
+  --cx-default-transparent-color-rgb: 0, 0, 0;
+  --cx-alternate-transparent-color: rgba(255, 255, 255, 0);
+  --cx-alternate-transparent-color-rgb: 255, 255, 255;
+  --cx-primary-transparent-color: rgba(0, 164, 204, 0);
+  --cx-primary-transparent-color-rgb: 0, 164, 204;
+  --cx-secondary-transparent-color: rgba(245, 82, 0, 0);
+  --cx-secondary-transparent-color-rgb: 245, 82, 0;
+  --cx-neutral-transparent-color: rgba(111, 128, 133, 0);
+  --cx-neutral-transparent-color-rgb: 111, 128, 133;
+  --cx-danger-transparent-color: rgba(245, 35, 20, 0);
+  --cx-danger-transparent-color-rgb: 245, 35, 20;
+  --cx-success-transparent-color: rgba(16, 194, 99, 0);
+  --cx-success-transparent-color-rgb: 16, 194, 99;
+  --cx-warning-transparent-color: rgba(245, 163, 0, 0);
+  --cx-warning-transparent-color-rgb: 245, 163, 0;
+  --cx-info-transparent-color: rgba(20, 20, 245, 0);
+  --cx-info-transparent-color-rgb: 20, 20, 245;
+  --cx-black-transparent-color: rgba(0, 0, 0, 0);
+  --cx-black-transparent-color-rgb: 0, 0, 0;
+  --cx-white-transparent-color: rgba(255, 255, 255, 0);
+  --cx-white-transparent-color-rgb: 255, 255, 255;
   --cx-default-fg-main: #1c2021;
   --cx-default-fg-main-rgb: 28, 32, 33;
   --cx-alternate-fg-main: #e9eced;
@@ -271,49 +293,27 @@
   --cx-white-fg-main: #ffffff;
   --cx-white-fg-main-rgb: 255, 255, 255;
   --cx-default-fg-subtle: rgba(28, 32, 33, 0.5);
-  --cx-default-fg-subtle-rgb: 28, 32, 33;
   --cx-alternate-fg-subtle: rgba(233, 236, 237, 0.5);
-  --cx-alternate-fg-subtle-rgb: 233, 236, 237;
   --cx-primary-fg-subtle: rgba(0, 115, 143, 0.5);
-  --cx-primary-fg-subtle-rgb: 0, 115, 143;
   --cx-secondary-fg-subtle: rgba(172, 57, 0, 0.5);
-  --cx-secondary-fg-subtle-rgb: 172, 57, 0;
   --cx-neutral-fg-subtle: rgba(78, 90, 93, 0.5);
-  --cx-neutral-fg-subtle-rgb: 78, 90, 93;
   --cx-danger-fg-subtle: rgba(172, 25, 14, 0.5);
-  --cx-danger-fg-subtle-rgb: 172, 25, 14;
   --cx-success-fg-subtle: rgba(11, 136, 69, 0.5);
-  --cx-success-fg-subtle-rgb: 11, 136, 69;
   --cx-warning-fg-subtle: rgba(172, 114, 0, 0.5);
-  --cx-warning-fg-subtle-rgb: 172, 114, 0;
   --cx-info-fg-subtle: rgba(14, 14, 172, 0.5);
-  --cx-info-fg-subtle-rgb: 14, 14, 172;
   --cx-black-fg-subtle: rgba(0, 0, 0, 0.5);
-  --cx-black-fg-subtle-rgb: 0, 0, 0;
   --cx-white-fg-subtle: rgba(255, 255, 255, 0.5);
-  --cx-white-fg-subtle-rgb: 255, 255, 255;
   --cx-default-fg-slight: rgba(28, 32, 33, 0.25);
-  --cx-default-fg-slight-rgb: 28, 32, 33;
   --cx-alternate-fg-slight: rgba(233, 236, 237, 0.25);
-  --cx-alternate-fg-slight-rgb: 233, 236, 237;
   --cx-primary-fg-slight: rgba(0, 115, 143, 0.25);
-  --cx-primary-fg-slight-rgb: 0, 115, 143;
   --cx-secondary-fg-slight: rgba(172, 57, 0, 0.25);
-  --cx-secondary-fg-slight-rgb: 172, 57, 0;
   --cx-neutral-fg-slight: rgba(78, 90, 93, 0.25);
-  --cx-neutral-fg-slight-rgb: 78, 90, 93;
   --cx-danger-fg-slight: rgba(172, 25, 14, 0.25);
-  --cx-danger-fg-slight-rgb: 172, 25, 14;
   --cx-success-fg-slight: rgba(11, 136, 69, 0.25);
-  --cx-success-fg-slight-rgb: 11, 136, 69;
   --cx-warning-fg-slight: rgba(172, 114, 0, 0.25);
-  --cx-warning-fg-slight-rgb: 172, 114, 0;
   --cx-info-fg-slight: rgba(14, 14, 172, 0.25);
-  --cx-info-fg-slight-rgb: 14, 14, 172;
   --cx-black-fg-slight: rgba(0, 0, 0, 0.3);
-  --cx-black-fg-slight-rgb: 0, 0, 0;
   --cx-white-fg-slight: rgba(255, 255, 255, 0.3);
-  --cx-white-fg-slight-rgb: 255, 255, 255;
   --cx-default-fg-inverse: #e9eced;
   --cx-default-fg-inverse-rgb: 233, 236, 237;
   --cx-alternate-fg-inverse: #1c2021;
@@ -711,27 +711,16 @@
   --cx-white-border-main: rgba(255, 255, 255, 0.3);
   --cx-white-border-main-rgb: 255, 255, 255;
   --cx-default-border-subtle: rgba(28, 32, 33, 0.15);
-  --cx-default-border-subtle-rgb: 28, 32, 33;
   --cx-alternate-border-subtle: rgba(233, 236, 237, 0.15);
-  --cx-alternate-border-subtle-rgb: 233, 236, 237;
   --cx-primary-border-subtle: rgba(0, 115, 143, 0.15);
-  --cx-primary-border-subtle-rgb: 0, 115, 143;
   --cx-secondary-border-subtle: rgba(172, 57, 0, 0.15);
-  --cx-secondary-border-subtle-rgb: 172, 57, 0;
   --cx-neutral-border-subtle: rgba(78, 90, 93, 0.15);
-  --cx-neutral-border-subtle-rgb: 78, 90, 93;
   --cx-danger-border-subtle: rgba(172, 25, 14, 0.15);
-  --cx-danger-border-subtle-rgb: 172, 25, 14;
   --cx-success-border-subtle: rgba(11, 136, 69, 0.15);
-  --cx-success-border-subtle-rgb: 11, 136, 69;
   --cx-warning-border-subtle: rgba(172, 114, 0, 0.15);
-  --cx-warning-border-subtle-rgb: 172, 114, 0;
   --cx-info-border-subtle: rgba(14, 14, 172, 0.15);
-  --cx-info-border-subtle-rgb: 14, 14, 172;
   --cx-black-border-subtle: rgba(0, 0, 0, 0.15);
-  --cx-black-border-subtle-rgb: 0, 0, 0;
   --cx-white-border-subtle: rgba(255, 255, 255, 0.15);
-  --cx-white-border-subtle-rgb: 255, 255, 255;
   --cx-default-icon-main: #00A4CC;
   --cx-default-icon-main-rgb: 0, 164, 204;
   --cx-alternate-icon-main: #00A4CC;
@@ -755,49 +744,27 @@
   --cx-white-icon-main: #ffffff;
   --cx-white-icon-main-rgb: 255, 255, 255;
   --cx-default-icon-subtle: rgba(28, 32, 33, 0.4);
-  --cx-default-icon-subtle-rgb: 28, 32, 33;
   --cx-alternate-icon-subtle: rgba(233, 236, 237, 0.4);
-  --cx-alternate-icon-subtle-rgb: 233, 236, 237;
   --cx-primary-icon-subtle: rgba(0, 115, 143, 0.4);
-  --cx-primary-icon-subtle-rgb: 0, 115, 143;
   --cx-secondary-icon-subtle: rgba(172, 57, 0, 0.4);
-  --cx-secondary-icon-subtle-rgb: 172, 57, 0;
   --cx-neutral-icon-subtle: rgba(78, 90, 93, 0.4);
-  --cx-neutral-icon-subtle-rgb: 78, 90, 93;
   --cx-danger-icon-subtle: rgba(172, 25, 14, 0.4);
-  --cx-danger-icon-subtle-rgb: 172, 25, 14;
   --cx-success-icon-subtle: rgba(11, 136, 69, 0.4);
-  --cx-success-icon-subtle-rgb: 11, 136, 69;
   --cx-warning-icon-subtle: rgba(172, 114, 0, 0.4);
-  --cx-warning-icon-subtle-rgb: 172, 114, 0;
   --cx-info-icon-subtle: rgba(14, 14, 172, 0.4);
-  --cx-info-icon-subtle-rgb: 14, 14, 172;
   --cx-black-icon-subtle: rgba(0, 0, 0, 0.4);
-  --cx-black-icon-subtle-rgb: 0, 0, 0;
   --cx-white-icon-subtle: rgba(255, 255, 255, 0.4);
-  --cx-white-icon-subtle-rgb: 255, 255, 255;
   --cx-default-icon-slight: rgba(0, 164, 204, 0.2);
-  --cx-default-icon-slight-rgb: 0, 164, 204;
   --cx-alternate-icon-slight: rgba(0, 164, 204, 0.2);
-  --cx-alternate-icon-slight-rgb: 0, 164, 204;
   --cx-primary-icon-slight: rgba(0, 164, 204, 0.2);
-  --cx-primary-icon-slight-rgb: 0, 164, 204;
   --cx-secondary-icon-slight: rgba(245, 82, 0, 0.2);
-  --cx-secondary-icon-slight-rgb: 245, 82, 0;
   --cx-neutral-icon-slight: rgba(111, 128, 133, 0.2);
-  --cx-neutral-icon-slight-rgb: 111, 128, 133;
   --cx-danger-icon-slight: rgba(245, 35, 20, 0.2);
-  --cx-danger-icon-slight-rgb: 245, 35, 20;
   --cx-success-icon-slight: rgba(16, 194, 99, 0.2);
-  --cx-success-icon-slight-rgb: 16, 194, 99;
   --cx-warning-icon-slight: rgba(245, 163, 0, 0.2);
-  --cx-warning-icon-slight-rgb: 245, 163, 0;
   --cx-info-icon-slight: rgba(20, 20, 245, 0.2);
-  --cx-info-icon-slight-rgb: 20, 20, 245;
   --cx-black-icon-slight: rgba(0, 0, 0, 0.2);
-  --cx-black-icon-slight-rgb: 0, 0, 0;
   --cx-white-icon-slight: rgba(255, 255, 255, 0.2);
-  --cx-white-icon-slight-rgb: 255, 255, 255;
   --cx-default-cue-main: #00A4CC;
   --cx-default-cue-main-rgb: 0, 164, 204;
   --cx-alternate-cue-main: #00A4CC;
@@ -821,49 +788,27 @@
   --cx-white-cue-main: #ffffff;
   --cx-white-cue-main-rgb: 255, 255, 255;
   --cx-default-cue-slight: rgba(0, 164, 204, 0.2);
-  --cx-default-cue-slight-rgb: 0, 164, 204;
   --cx-alternate-cue-slight: rgba(0, 164, 204, 0.2);
-  --cx-alternate-cue-slight-rgb: 0, 164, 204;
   --cx-primary-cue-slight: rgba(0, 164, 204, 0.2);
-  --cx-primary-cue-slight-rgb: 0, 164, 204;
   --cx-secondary-cue-slight: rgba(245, 82, 0, 0.2);
-  --cx-secondary-cue-slight-rgb: 245, 82, 0;
   --cx-neutral-cue-slight: rgba(111, 128, 133, 0.2);
-  --cx-neutral-cue-slight-rgb: 111, 128, 133;
   --cx-danger-cue-slight: rgba(245, 35, 20, 0.2);
-  --cx-danger-cue-slight-rgb: 245, 35, 20;
   --cx-success-cue-slight: rgba(16, 194, 99, 0.2);
-  --cx-success-cue-slight-rgb: 16, 194, 99;
   --cx-warning-cue-slight: rgba(245, 163, 0, 0.2);
-  --cx-warning-cue-slight-rgb: 245, 163, 0;
   --cx-info-cue-slight: rgba(20, 20, 245, 0.2);
-  --cx-info-cue-slight-rgb: 20, 20, 245;
   --cx-black-cue-slight: rgba(0, 0, 0, 0.2);
-  --cx-black-cue-slight-rgb: 0, 0, 0;
   --cx-white-cue-slight: rgba(255, 255, 255, 0.2);
-  --cx-white-cue-slight-rgb: 255, 255, 255;
   --cx-default-dim-slight: rgba(0, 0, 0, 0.05);
-  --cx-default-dim-slight-rgb: 0, 0, 0;
   --cx-alternate-dim-slight: rgba(255, 255, 255, 0.05);
-  --cx-alternate-dim-slight-rgb: 255, 255, 255;
   --cx-primary-dim-slight: rgba(0, 164, 204, 0.1);
-  --cx-primary-dim-slight-rgb: 0, 164, 204;
   --cx-secondary-dim-slight: rgba(245, 82, 0, 0.1);
-  --cx-secondary-dim-slight-rgb: 245, 82, 0;
   --cx-neutral-dim-slight: rgba(111, 128, 133, 0.1);
-  --cx-neutral-dim-slight-rgb: 111, 128, 133;
   --cx-danger-dim-slight: rgba(245, 35, 20, 0.1);
-  --cx-danger-dim-slight-rgb: 245, 35, 20;
   --cx-success-dim-slight: rgba(16, 194, 99, 0.1);
-  --cx-success-dim-slight-rgb: 16, 194, 99;
   --cx-warning-dim-slight: rgba(245, 163, 0, 0.1);
-  --cx-warning-dim-slight-rgb: 245, 163, 0;
   --cx-info-dim-slight: rgba(20, 20, 245, 0.1);
-  --cx-info-dim-slight-rgb: 20, 20, 245;
   --cx-black-dim-slight: rgba(0, 0, 0, 0.1);
-  --cx-black-dim-slight-rgb: 0, 0, 0;
   --cx-white-dim-slight: rgba(255, 255, 255, 0.1);
-  --cx-white-dim-slight-rgb: 255, 255, 255;
   --cx-default-dim-main: rgba(0, 0, 0, 0.7);
   --cx-default-dim-main-rgb: 0, 0, 0;
   --cx-alternate-dim-main: rgba(255, 255, 255, 0.7);
@@ -887,49 +832,16 @@
   --cx-white-dim-main: rgba(255, 255, 255, 0.7);
   --cx-white-dim-main-rgb: 255, 255, 255;
   --cx-default-dim-subtle: rgba(0, 0, 0, 0.3);
-  --cx-default-dim-subtle-rgb: 0, 0, 0;
   --cx-alternate-dim-subtle: rgba(255, 255, 255, 0.3);
-  --cx-alternate-dim-subtle-rgb: 255, 255, 255;
   --cx-primary-dim-subtle: rgba(0, 164, 204, 0.3);
-  --cx-primary-dim-subtle-rgb: 0, 164, 204;
   --cx-secondary-dim-subtle: rgba(245, 82, 0, 0.3);
-  --cx-secondary-dim-subtle-rgb: 245, 82, 0;
   --cx-neutral-dim-subtle: rgba(111, 128, 133, 0.3);
-  --cx-neutral-dim-subtle-rgb: 111, 128, 133;
   --cx-danger-dim-subtle: rgba(245, 35, 20, 0.3);
-  --cx-danger-dim-subtle-rgb: 245, 35, 20;
   --cx-success-dim-subtle: rgba(16, 194, 99, 0.3);
-  --cx-success-dim-subtle-rgb: 16, 194, 99;
   --cx-warning-dim-subtle: rgba(245, 163, 0, 0.3);
-  --cx-warning-dim-subtle-rgb: 245, 163, 0;
   --cx-info-dim-subtle: rgba(20, 20, 245, 0.3);
-  --cx-info-dim-subtle-rgb: 20, 20, 245;
   --cx-black-dim-subtle: rgba(0, 0, 0, 0.3);
-  --cx-black-dim-subtle-rgb: 0, 0, 0;
   --cx-white-dim-subtle: rgba(255, 255, 255, 0.3);
-  --cx-white-dim-subtle-rgb: 255, 255, 255;
-  --cx-default-transparent-color: rgba(0, 0, 0, 0);
-  --cx-default-transparent-color-rgb: 0, 0, 0;
-  --cx-alternate-transparent-color: rgba(255, 255, 255, 0);
-  --cx-alternate-transparent-color-rgb: 255, 255, 255;
-  --cx-primary-transparent-color: rgba(0, 164, 204, 0);
-  --cx-primary-transparent-color-rgb: 0, 164, 204;
-  --cx-secondary-transparent-color: rgba(245, 82, 0, 0);
-  --cx-secondary-transparent-color-rgb: 245, 82, 0;
-  --cx-neutral-transparent-color: rgba(111, 128, 133, 0);
-  --cx-neutral-transparent-color-rgb: 111, 128, 133;
-  --cx-danger-transparent-color: rgba(245, 35, 20, 0);
-  --cx-danger-transparent-color-rgb: 245, 35, 20;
-  --cx-success-transparent-color: rgba(16, 194, 99, 0);
-  --cx-success-transparent-color-rgb: 16, 194, 99;
-  --cx-warning-transparent-color: rgba(245, 163, 0, 0);
-  --cx-warning-transparent-color-rgb: 245, 163, 0;
-  --cx-info-transparent-color: rgba(20, 20, 245, 0);
-  --cx-info-transparent-color-rgb: 20, 20, 245;
-  --cx-black-transparent-color: rgba(0, 0, 0, 0);
-  --cx-black-transparent-color-rgb: 0, 0, 0;
-  --cx-white-transparent-color: rgba(255, 255, 255, 0);
-  --cx-white-transparent-color-rgb: 255, 255, 255;
   --cx-default-link-main: #00A4CC;
   --cx-default-link-main-rgb: 0, 164, 204;
   --cx-alternate-link-main: #00A4CC;
@@ -1229,80 +1141,43 @@
   --cx-line-height: var(--cx-line-height-medium);
   --cx-separator-size: 0.0625rem;
   --cx-indicator-size: 0.25rem;
-  --cx-base-color: var(--cx-context-base-color, var(--cx-default-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-default-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-default-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-default-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-default-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-default-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-default-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-default-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-default-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-default-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-default-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-default-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-default-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-default-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-default-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-default-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-default-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-default-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-default-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-default-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-default-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-default-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-default-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-default-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-default-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-default-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-default-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-default-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-default-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-default-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-default-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-default-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-default-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-default-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-default-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-default-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-default-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-default-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-default-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-default-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-default-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-default-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-default-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-default-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-default-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-default-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-default-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-default-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-default-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-default-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-default-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-default-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-default-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-default-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-default-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-default-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-default-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-default-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-default-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-default-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-default-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-default-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-default-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-default-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-default-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-default-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-default-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-default-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-default-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-default-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-default-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-default-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-default-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-default-bg-disabled-rgb));
+  --cx-base-color: var(--cx-default-base-color);
+  --cx-contrast-color: var(--cx-default-contrast-color);
+  --cx-transparent-color: var(--cx-default-transparent-color);
+  --cx-fg-main: var(--cx-default-fg-main);
+  --cx-fg-subtle: var(--cx-default-fg-subtle);
+  --cx-fg-slight: var(--cx-default-fg-slight);
+  --cx-fg-inverse: var(--cx-default-fg-inverse);
+  --cx-fg-solid: var(--cx-default-fg-solid);
+  --cx-fg-highlight: var(--cx-default-fg-highlight);
+  --cx-fg-button: var(--cx-default-fg-button);
+  --cx-fg-disabled: var(--cx-default-fg-disabled);
+  --cx-fg-hover: var(--cx-default-fg-hover);
+  --cx-fg-press: var(--cx-default-fg-press);
+  --cx-bg-main: var(--cx-default-bg-main);
+  --cx-bg-even: var(--cx-default-bg-even);
+  --cx-bg-evident: var(--cx-default-bg-evident);
+  --cx-bg-inverse: var(--cx-default-bg-inverse);
+  --cx-bg-solid: var(--cx-default-bg-solid);
+  --cx-bg-highlight: var(--cx-default-bg-highlight);
+  --cx-bg-button: var(--cx-default-bg-button);
+  --cx-bg-disabled: var(--cx-default-bg-disabled);
+  --cx-bg-hover: var(--cx-default-bg-hover);
+  --cx-bg-press: var(--cx-default-bg-press);
+  --cx-border-main: var(--cx-default-border-main);
+  --cx-border-subtle: var(--cx-default-border-subtle);
+  --cx-icon-main: var(--cx-default-icon-main);
+  --cx-icon-subtle: var(--cx-default-icon-subtle);
+  --cx-icon-slight: var(--cx-default-icon-slight);
+  --cx-cue-main: var(--cx-default-cue-main);
+  --cx-cue-slight: var(--cx-default-cue-slight);
+  --cx-dim-main: var(--cx-default-dim-main);
+  --cx-dim-subtle: var(--cx-default-dim-subtle);
+  --cx-dim-slight: var(--cx-default-dim-slight);
+  --cx-link-main: var(--cx-default-link-main);
+  --cx-link-hover: var(--cx-default-link-hover);
+  --cx-link-active: var(--cx-default-link-active);
+  --cx-link-visited: var(--cx-default-link-visited);
   --cx-fg-color: var(--cx-context-fg-main, var(--cx-fg-main));
   --cx-bg-color: var(--cx-context-bg-main, var(--cx-bg-main));
   --cx-border-color: var(--cx-context-border-subtle, var(--cx-border-subtle));
@@ -1458,6 +1333,28 @@
   --cx-black-contrast-color-rgb: 255, 255, 255;
   --cx-white-contrast-color: #000000;
   --cx-white-contrast-color-rgb: 0, 0, 0;
+  --cx-default-transparent-color: rgba(0, 0, 0, 0);
+  --cx-default-transparent-color-rgb: 0, 0, 0;
+  --cx-alternate-transparent-color: rgba(0, 0, 0, 0);
+  --cx-alternate-transparent-color-rgb: 0, 0, 0;
+  --cx-primary-transparent-color: rgba(0, 164, 204, 0);
+  --cx-primary-transparent-color-rgb: 0, 164, 204;
+  --cx-secondary-transparent-color: rgba(245, 82, 0, 0);
+  --cx-secondary-transparent-color-rgb: 245, 82, 0;
+  --cx-neutral-transparent-color: rgba(111, 128, 133, 0);
+  --cx-neutral-transparent-color-rgb: 111, 128, 133;
+  --cx-danger-transparent-color: rgba(245, 35, 20, 0);
+  --cx-danger-transparent-color-rgb: 245, 35, 20;
+  --cx-success-transparent-color: rgba(16, 194, 99, 0);
+  --cx-success-transparent-color-rgb: 16, 194, 99;
+  --cx-warning-transparent-color: rgba(245, 163, 0, 0);
+  --cx-warning-transparent-color-rgb: 245, 163, 0;
+  --cx-info-transparent-color: rgba(20, 20, 245, 0);
+  --cx-info-transparent-color-rgb: 20, 20, 245;
+  --cx-black-transparent-color: rgba(0, 0, 0, 0);
+  --cx-black-transparent-color-rgb: 0, 0, 0;
+  --cx-white-transparent-color: rgba(255, 255, 255, 0);
+  --cx-white-transparent-color-rgb: 255, 255, 255;
   --cx-default-fg-main: #e9eced;
   --cx-default-fg-main-rgb: 233, 236, 237;
   --cx-alternate-fg-main: #ffffff;
@@ -2030,28 +1927,6 @@
   --cx-black-dim-subtle-rgb: 0, 0, 0;
   --cx-white-dim-subtle: rgba(255, 255, 255, 0.3);
   --cx-white-dim-subtle-rgb: 255, 255, 255;
-  --cx-default-transparent-color: rgba(0, 0, 0, 0);
-  --cx-default-transparent-color-rgb: 0, 0, 0;
-  --cx-alternate-transparent-color: rgba(0, 0, 0, 0);
-  --cx-alternate-transparent-color-rgb: 0, 0, 0;
-  --cx-primary-transparent-color: rgba(0, 164, 204, 0);
-  --cx-primary-transparent-color-rgb: 0, 164, 204;
-  --cx-secondary-transparent-color: rgba(245, 82, 0, 0);
-  --cx-secondary-transparent-color-rgb: 245, 82, 0;
-  --cx-neutral-transparent-color: rgba(111, 128, 133, 0);
-  --cx-neutral-transparent-color-rgb: 111, 128, 133;
-  --cx-danger-transparent-color: rgba(245, 35, 20, 0);
-  --cx-danger-transparent-color-rgb: 245, 35, 20;
-  --cx-success-transparent-color: rgba(16, 194, 99, 0);
-  --cx-success-transparent-color-rgb: 16, 194, 99;
-  --cx-warning-transparent-color: rgba(245, 163, 0, 0);
-  --cx-warning-transparent-color-rgb: 245, 163, 0;
-  --cx-info-transparent-color: rgba(20, 20, 245, 0);
-  --cx-info-transparent-color-rgb: 20, 20, 245;
-  --cx-black-transparent-color: rgba(0, 0, 0, 0);
-  --cx-black-transparent-color-rgb: 0, 0, 0;
-  --cx-white-transparent-color: rgba(255, 255, 255, 0);
-  --cx-white-transparent-color-rgb: 255, 255, 255;
   --cx-default-fg-button: #ffffff;
   --cx-default-fg-button-rgb: 255, 255, 255;
   --cx-alternate-fg-button: #000000;
@@ -2232,6 +2107,8 @@
   --cx-base-color-rgb: 255, 255, 255;
   --cx-contrast-color: #000000;
   --cx-contrast-color-rgb: 0, 0, 0;
+  --cx-transparent-color: rgba(0, 0, 0, 0);
+  --cx-transparent-color-rgb: 0, 0, 0;
   --cx-fg-main: #e9eced;
   --cx-fg-main-rgb: 233, 236, 237;
   --cx-fg-subtle: rgba(233, 236, 237, 0.5);
@@ -2278,14 +2155,12 @@
   --cx-link-active-rgb: 245, 35, 20;
   --cx-link-visited: #40bbd9;
   --cx-link-visited-rgb: 64, 187, 217;
-  --cx-dim-slight: rgba(255, 255, 255, 0.05);
-  --cx-dim-slight-rgb: 255, 255, 255;
   --cx-dim-main: rgba(0, 0, 0, 0.7);
   --cx-dim-main-rgb: 0, 0, 0;
   --cx-dim-subtle: rgba(255, 255, 255, 0.3);
   --cx-dim-subtle-rgb: 255, 255, 255;
-  --cx-transparent-color: rgba(0, 0, 0, 0);
-  --cx-transparent-color-rgb: 0, 0, 0;
+  --cx-dim-slight: rgba(255, 255, 255, 0.05);
+  --cx-dim-slight-rgb: 255, 255, 255;
   --cx-fg-button: #ffffff;
   --cx-fg-button-rgb: 255, 255, 255;
   --cx-fg-disabled: rgba(255, 255, 255, 0.25);
@@ -2726,8 +2601,9 @@ progress {
   display: none !important;
 }
 
-.default.notification, .default.badge, .default.avatar, .default.context, .list-group.list-action > .default.list-item.active,
-.list-group > .default.list-item.list-action.active {
+.notification, .badge, .avatar, .context, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group > .list-item.list-action.active,
+.list-group > .list-item.list-action.active:hover {
   --cx-base-color: var(--cx-context-base-color, var(--cx-default-base-color));
   --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-default-contrast-color));
   --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-default-transparent-color));
@@ -2803,885 +2679,1052 @@ progress {
   --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-default-bg-press-rgb));
   --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-default-bg-disabled-rgb));
 }
+.default.notification, .default.badge, .default.avatar, .default.context, .list-group.list-action > .default.list-item.active,
+.list-group > .default.list-item.list-action.active {
+  --cx-context-base-color: var(--cx-default-base-color);
+  --cx-context-contrast-color: var(--cx-default-contrast-color);
+  --cx-context-transparent-color: var(--cx-default-transparent-color);
+  --cx-context-fg-main: var(--cx-default-fg-main);
+  --cx-context-fg-subtle: var(--cx-default-fg-subtle);
+  --cx-context-fg-slight: var(--cx-default-fg-slight);
+  --cx-context-fg-inverse: var(--cx-default-fg-inverse);
+  --cx-context-fg-solid: var(--cx-default-fg-solid);
+  --cx-context-fg-highlight: var(--cx-default-fg-highlight);
+  --cx-context-bg-main: var(--cx-default-bg-main);
+  --cx-context-bg-even: var(--cx-default-bg-even);
+  --cx-context-bg-evident: var(--cx-default-bg-evident);
+  --cx-context-bg-inverse: var(--cx-default-bg-inverse);
+  --cx-context-bg-solid: var(--cx-default-bg-solid);
+  --cx-context-bg-highlight: var(--cx-default-bg-highlight);
+  --cx-context-border-main: var(--cx-default-border-main);
+  --cx-context-border-subtle: var(--cx-default-border-subtle);
+  --cx-context-icon-main: var(--cx-default-icon-main);
+  --cx-context-icon-subtle: var(--cx-default-icon-subtle);
+  --cx-context-icon-slight: var(--cx-default-icon-slight);
+  --cx-context-cue-main: var(--cx-default-cue-main);
+  --cx-context-cue-slight: var(--cx-default-cue-slight);
+  --cx-context-link-main: var(--cx-default-link-main);
+  --cx-context-link-hover: var(--cx-default-link-hover);
+  --cx-context-link-active: var(--cx-default-link-active);
+  --cx-context-link-visited: var(--cx-default-link-visited);
+  --cx-context-dim-main: var(--cx-default-dim-main);
+  --cx-context-dim-subtle: var(--cx-default-dim-subtle);
+  --cx-context-dim-slight: var(--cx-default-dim-slight);
+  --cx-context-fg-button: var(--cx-default-fg-button);
+  --cx-context-fg-hover: var(--cx-default-fg-hover);
+  --cx-context-fg-press: var(--cx-default-fg-press);
+  --cx-context-fg-disabled: var(--cx-default-fg-disabled);
+  --cx-context-bg-button: var(--cx-default-bg-button);
+  --cx-context-bg-hover: var(--cx-default-bg-hover);
+  --cx-context-bg-press: var(--cx-default-bg-press);
+  --cx-context-bg-disabled: var(--cx-default-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-default-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-default-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-default-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-default-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-default-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-default-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-default-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-default-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-default-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-default-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-default-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-default-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-default-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-default-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-default-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-default-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-default-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-default-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-default-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-default-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-default-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-default-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-default-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-default-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-default-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-default-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-default-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-default-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-default-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-default-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-default-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-default-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-default-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-default-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-default-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-default-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-default-bg-disabled-rgb);
+}
 .alternate.notification, .alternate.badge, .alternate.avatar, .alternate.context, .list-group.list-action > .alternate.list-item.active,
 .list-group > .alternate.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-alternate-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-alternate-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-alternate-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-alternate-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-alternate-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-alternate-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-alternate-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-alternate-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-alternate-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-alternate-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-alternate-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-alternate-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-alternate-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-alternate-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-alternate-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-alternate-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-alternate-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-alternate-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-alternate-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-alternate-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-alternate-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-alternate-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-alternate-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-alternate-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-alternate-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-alternate-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-alternate-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-alternate-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-alternate-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-alternate-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-alternate-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-alternate-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-alternate-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-alternate-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-alternate-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-alternate-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-alternate-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-alternate-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-alternate-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-alternate-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-alternate-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-alternate-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-alternate-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-alternate-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-alternate-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-alternate-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-alternate-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-alternate-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-alternate-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-alternate-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-alternate-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-alternate-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-alternate-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-alternate-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-alternate-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-alternate-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-alternate-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-alternate-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-alternate-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-alternate-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-alternate-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-alternate-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-alternate-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-alternate-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-alternate-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-alternate-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-alternate-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-alternate-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-alternate-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-alternate-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-alternate-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-alternate-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-alternate-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-alternate-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-alternate-base-color);
+  --cx-context-contrast-color: var(--cx-alternate-contrast-color);
+  --cx-context-transparent-color: var(--cx-alternate-transparent-color);
+  --cx-context-fg-main: var(--cx-alternate-fg-main);
+  --cx-context-fg-subtle: var(--cx-alternate-fg-subtle);
+  --cx-context-fg-slight: var(--cx-alternate-fg-slight);
+  --cx-context-fg-inverse: var(--cx-alternate-fg-inverse);
+  --cx-context-fg-solid: var(--cx-alternate-fg-solid);
+  --cx-context-fg-highlight: var(--cx-alternate-fg-highlight);
+  --cx-context-bg-main: var(--cx-alternate-bg-main);
+  --cx-context-bg-even: var(--cx-alternate-bg-even);
+  --cx-context-bg-evident: var(--cx-alternate-bg-evident);
+  --cx-context-bg-inverse: var(--cx-alternate-bg-inverse);
+  --cx-context-bg-solid: var(--cx-alternate-bg-solid);
+  --cx-context-bg-highlight: var(--cx-alternate-bg-highlight);
+  --cx-context-border-main: var(--cx-alternate-border-main);
+  --cx-context-border-subtle: var(--cx-alternate-border-subtle);
+  --cx-context-icon-main: var(--cx-alternate-icon-main);
+  --cx-context-icon-subtle: var(--cx-alternate-icon-subtle);
+  --cx-context-icon-slight: var(--cx-alternate-icon-slight);
+  --cx-context-cue-main: var(--cx-alternate-cue-main);
+  --cx-context-cue-slight: var(--cx-alternate-cue-slight);
+  --cx-context-link-main: var(--cx-alternate-link-main);
+  --cx-context-link-hover: var(--cx-alternate-link-hover);
+  --cx-context-link-active: var(--cx-alternate-link-active);
+  --cx-context-link-visited: var(--cx-alternate-link-visited);
+  --cx-context-dim-main: var(--cx-alternate-dim-main);
+  --cx-context-dim-subtle: var(--cx-alternate-dim-subtle);
+  --cx-context-dim-slight: var(--cx-alternate-dim-slight);
+  --cx-context-fg-button: var(--cx-alternate-fg-button);
+  --cx-context-fg-hover: var(--cx-alternate-fg-hover);
+  --cx-context-fg-press: var(--cx-alternate-fg-press);
+  --cx-context-fg-disabled: var(--cx-alternate-fg-disabled);
+  --cx-context-bg-button: var(--cx-alternate-bg-button);
+  --cx-context-bg-hover: var(--cx-alternate-bg-hover);
+  --cx-context-bg-press: var(--cx-alternate-bg-press);
+  --cx-context-bg-disabled: var(--cx-alternate-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-alternate-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-alternate-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-alternate-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-alternate-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-alternate-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-alternate-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-alternate-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-alternate-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-alternate-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-alternate-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-alternate-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-alternate-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-alternate-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-alternate-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-alternate-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-alternate-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-alternate-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-alternate-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-alternate-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-alternate-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-alternate-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-alternate-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-alternate-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-alternate-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-alternate-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-alternate-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-alternate-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-alternate-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-alternate-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-alternate-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-alternate-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-alternate-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-alternate-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-alternate-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-alternate-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-alternate-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-alternate-bg-disabled-rgb);
 }
 .primary.notification, .primary.badge, .primary.avatar, .primary.context, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
 .list-group > .list-item.list-action.active,
 .list-group > .list-item.list-action.active:hover {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-primary-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-primary-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-primary-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-primary-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-primary-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-primary-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-primary-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-primary-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-primary-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-primary-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-primary-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-primary-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-primary-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-primary-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-primary-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-primary-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-primary-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-primary-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-primary-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-primary-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-primary-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-primary-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-primary-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-primary-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-primary-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-primary-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-primary-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-primary-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-primary-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-primary-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-primary-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-primary-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-primary-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-primary-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-primary-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-primary-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-primary-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-primary-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-primary-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-primary-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-primary-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-primary-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-primary-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-primary-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-primary-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-primary-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-primary-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-primary-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-primary-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-primary-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-primary-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-primary-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-primary-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-primary-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-primary-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-primary-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-primary-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-primary-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-primary-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-primary-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-primary-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-primary-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-primary-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-primary-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-primary-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-primary-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-primary-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-primary-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-primary-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-primary-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-primary-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-primary-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-primary-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-primary-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-primary-base-color);
+  --cx-context-contrast-color: var(--cx-primary-contrast-color);
+  --cx-context-transparent-color: var(--cx-primary-transparent-color);
+  --cx-context-fg-main: var(--cx-primary-fg-main);
+  --cx-context-fg-subtle: var(--cx-primary-fg-subtle);
+  --cx-context-fg-slight: var(--cx-primary-fg-slight);
+  --cx-context-fg-inverse: var(--cx-primary-fg-inverse);
+  --cx-context-fg-solid: var(--cx-primary-fg-solid);
+  --cx-context-fg-highlight: var(--cx-primary-fg-highlight);
+  --cx-context-bg-main: var(--cx-primary-bg-main);
+  --cx-context-bg-even: var(--cx-primary-bg-even);
+  --cx-context-bg-evident: var(--cx-primary-bg-evident);
+  --cx-context-bg-inverse: var(--cx-primary-bg-inverse);
+  --cx-context-bg-solid: var(--cx-primary-bg-solid);
+  --cx-context-bg-highlight: var(--cx-primary-bg-highlight);
+  --cx-context-border-main: var(--cx-primary-border-main);
+  --cx-context-border-subtle: var(--cx-primary-border-subtle);
+  --cx-context-icon-main: var(--cx-primary-icon-main);
+  --cx-context-icon-subtle: var(--cx-primary-icon-subtle);
+  --cx-context-icon-slight: var(--cx-primary-icon-slight);
+  --cx-context-cue-main: var(--cx-primary-cue-main);
+  --cx-context-cue-slight: var(--cx-primary-cue-slight);
+  --cx-context-link-main: var(--cx-primary-link-main);
+  --cx-context-link-hover: var(--cx-primary-link-hover);
+  --cx-context-link-active: var(--cx-primary-link-active);
+  --cx-context-link-visited: var(--cx-primary-link-visited);
+  --cx-context-dim-main: var(--cx-primary-dim-main);
+  --cx-context-dim-subtle: var(--cx-primary-dim-subtle);
+  --cx-context-dim-slight: var(--cx-primary-dim-slight);
+  --cx-context-fg-button: var(--cx-primary-fg-button);
+  --cx-context-fg-hover: var(--cx-primary-fg-hover);
+  --cx-context-fg-press: var(--cx-primary-fg-press);
+  --cx-context-fg-disabled: var(--cx-primary-fg-disabled);
+  --cx-context-bg-button: var(--cx-primary-bg-button);
+  --cx-context-bg-hover: var(--cx-primary-bg-hover);
+  --cx-context-bg-press: var(--cx-primary-bg-press);
+  --cx-context-bg-disabled: var(--cx-primary-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-primary-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-primary-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-primary-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-primary-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-primary-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-primary-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-primary-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-primary-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-primary-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-primary-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-primary-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-primary-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-primary-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-primary-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-primary-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-primary-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-primary-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-primary-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-primary-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-primary-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-primary-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-primary-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-primary-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-primary-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-primary-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-primary-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-primary-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-primary-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-primary-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-primary-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-primary-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-primary-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-primary-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-primary-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-primary-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-primary-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-primary-bg-disabled-rgb);
 }
 .secondary.notification, .secondary.badge, .secondary.avatar, .secondary.context, .list-group.list-action > .secondary.list-item.active,
 .list-group > .secondary.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-secondary-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-secondary-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-secondary-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-secondary-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-secondary-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-secondary-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-secondary-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-secondary-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-secondary-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-secondary-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-secondary-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-secondary-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-secondary-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-secondary-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-secondary-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-secondary-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-secondary-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-secondary-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-secondary-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-secondary-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-secondary-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-secondary-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-secondary-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-secondary-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-secondary-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-secondary-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-secondary-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-secondary-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-secondary-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-secondary-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-secondary-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-secondary-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-secondary-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-secondary-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-secondary-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-secondary-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-secondary-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-secondary-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-secondary-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-secondary-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-secondary-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-secondary-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-secondary-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-secondary-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-secondary-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-secondary-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-secondary-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-secondary-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-secondary-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-secondary-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-secondary-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-secondary-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-secondary-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-secondary-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-secondary-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-secondary-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-secondary-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-secondary-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-secondary-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-secondary-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-secondary-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-secondary-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-secondary-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-secondary-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-secondary-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-secondary-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-secondary-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-secondary-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-secondary-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-secondary-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-secondary-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-secondary-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-secondary-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-secondary-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-secondary-base-color);
+  --cx-context-contrast-color: var(--cx-secondary-contrast-color);
+  --cx-context-transparent-color: var(--cx-secondary-transparent-color);
+  --cx-context-fg-main: var(--cx-secondary-fg-main);
+  --cx-context-fg-subtle: var(--cx-secondary-fg-subtle);
+  --cx-context-fg-slight: var(--cx-secondary-fg-slight);
+  --cx-context-fg-inverse: var(--cx-secondary-fg-inverse);
+  --cx-context-fg-solid: var(--cx-secondary-fg-solid);
+  --cx-context-fg-highlight: var(--cx-secondary-fg-highlight);
+  --cx-context-bg-main: var(--cx-secondary-bg-main);
+  --cx-context-bg-even: var(--cx-secondary-bg-even);
+  --cx-context-bg-evident: var(--cx-secondary-bg-evident);
+  --cx-context-bg-inverse: var(--cx-secondary-bg-inverse);
+  --cx-context-bg-solid: var(--cx-secondary-bg-solid);
+  --cx-context-bg-highlight: var(--cx-secondary-bg-highlight);
+  --cx-context-border-main: var(--cx-secondary-border-main);
+  --cx-context-border-subtle: var(--cx-secondary-border-subtle);
+  --cx-context-icon-main: var(--cx-secondary-icon-main);
+  --cx-context-icon-subtle: var(--cx-secondary-icon-subtle);
+  --cx-context-icon-slight: var(--cx-secondary-icon-slight);
+  --cx-context-cue-main: var(--cx-secondary-cue-main);
+  --cx-context-cue-slight: var(--cx-secondary-cue-slight);
+  --cx-context-link-main: var(--cx-secondary-link-main);
+  --cx-context-link-hover: var(--cx-secondary-link-hover);
+  --cx-context-link-active: var(--cx-secondary-link-active);
+  --cx-context-link-visited: var(--cx-secondary-link-visited);
+  --cx-context-dim-main: var(--cx-secondary-dim-main);
+  --cx-context-dim-subtle: var(--cx-secondary-dim-subtle);
+  --cx-context-dim-slight: var(--cx-secondary-dim-slight);
+  --cx-context-fg-button: var(--cx-secondary-fg-button);
+  --cx-context-fg-hover: var(--cx-secondary-fg-hover);
+  --cx-context-fg-press: var(--cx-secondary-fg-press);
+  --cx-context-fg-disabled: var(--cx-secondary-fg-disabled);
+  --cx-context-bg-button: var(--cx-secondary-bg-button);
+  --cx-context-bg-hover: var(--cx-secondary-bg-hover);
+  --cx-context-bg-press: var(--cx-secondary-bg-press);
+  --cx-context-bg-disabled: var(--cx-secondary-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-secondary-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-secondary-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-secondary-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-secondary-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-secondary-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-secondary-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-secondary-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-secondary-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-secondary-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-secondary-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-secondary-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-secondary-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-secondary-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-secondary-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-secondary-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-secondary-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-secondary-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-secondary-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-secondary-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-secondary-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-secondary-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-secondary-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-secondary-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-secondary-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-secondary-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-secondary-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-secondary-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-secondary-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-secondary-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-secondary-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-secondary-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-secondary-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-secondary-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-secondary-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-secondary-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-secondary-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-secondary-bg-disabled-rgb);
 }
 .neutral.notification, .neutral.badge, .neutral.avatar, .neutral.context, .list-group.list-action > .neutral.list-item.active,
 .list-group > .neutral.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-neutral-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-neutral-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-neutral-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-neutral-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-neutral-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-neutral-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-neutral-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-neutral-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-neutral-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-neutral-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-neutral-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-neutral-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-neutral-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-neutral-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-neutral-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-neutral-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-neutral-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-neutral-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-neutral-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-neutral-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-neutral-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-neutral-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-neutral-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-neutral-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-neutral-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-neutral-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-neutral-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-neutral-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-neutral-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-neutral-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-neutral-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-neutral-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-neutral-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-neutral-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-neutral-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-neutral-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-neutral-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-neutral-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-neutral-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-neutral-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-neutral-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-neutral-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-neutral-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-neutral-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-neutral-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-neutral-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-neutral-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-neutral-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-neutral-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-neutral-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-neutral-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-neutral-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-neutral-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-neutral-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-neutral-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-neutral-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-neutral-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-neutral-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-neutral-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-neutral-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-neutral-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-neutral-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-neutral-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-neutral-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-neutral-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-neutral-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-neutral-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-neutral-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-neutral-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-neutral-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-neutral-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-neutral-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-neutral-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-neutral-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-neutral-base-color);
+  --cx-context-contrast-color: var(--cx-neutral-contrast-color);
+  --cx-context-transparent-color: var(--cx-neutral-transparent-color);
+  --cx-context-fg-main: var(--cx-neutral-fg-main);
+  --cx-context-fg-subtle: var(--cx-neutral-fg-subtle);
+  --cx-context-fg-slight: var(--cx-neutral-fg-slight);
+  --cx-context-fg-inverse: var(--cx-neutral-fg-inverse);
+  --cx-context-fg-solid: var(--cx-neutral-fg-solid);
+  --cx-context-fg-highlight: var(--cx-neutral-fg-highlight);
+  --cx-context-bg-main: var(--cx-neutral-bg-main);
+  --cx-context-bg-even: var(--cx-neutral-bg-even);
+  --cx-context-bg-evident: var(--cx-neutral-bg-evident);
+  --cx-context-bg-inverse: var(--cx-neutral-bg-inverse);
+  --cx-context-bg-solid: var(--cx-neutral-bg-solid);
+  --cx-context-bg-highlight: var(--cx-neutral-bg-highlight);
+  --cx-context-border-main: var(--cx-neutral-border-main);
+  --cx-context-border-subtle: var(--cx-neutral-border-subtle);
+  --cx-context-icon-main: var(--cx-neutral-icon-main);
+  --cx-context-icon-subtle: var(--cx-neutral-icon-subtle);
+  --cx-context-icon-slight: var(--cx-neutral-icon-slight);
+  --cx-context-cue-main: var(--cx-neutral-cue-main);
+  --cx-context-cue-slight: var(--cx-neutral-cue-slight);
+  --cx-context-link-main: var(--cx-neutral-link-main);
+  --cx-context-link-hover: var(--cx-neutral-link-hover);
+  --cx-context-link-active: var(--cx-neutral-link-active);
+  --cx-context-link-visited: var(--cx-neutral-link-visited);
+  --cx-context-dim-main: var(--cx-neutral-dim-main);
+  --cx-context-dim-subtle: var(--cx-neutral-dim-subtle);
+  --cx-context-dim-slight: var(--cx-neutral-dim-slight);
+  --cx-context-fg-button: var(--cx-neutral-fg-button);
+  --cx-context-fg-hover: var(--cx-neutral-fg-hover);
+  --cx-context-fg-press: var(--cx-neutral-fg-press);
+  --cx-context-fg-disabled: var(--cx-neutral-fg-disabled);
+  --cx-context-bg-button: var(--cx-neutral-bg-button);
+  --cx-context-bg-hover: var(--cx-neutral-bg-hover);
+  --cx-context-bg-press: var(--cx-neutral-bg-press);
+  --cx-context-bg-disabled: var(--cx-neutral-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-neutral-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-neutral-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-neutral-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-neutral-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-neutral-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-neutral-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-neutral-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-neutral-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-neutral-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-neutral-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-neutral-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-neutral-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-neutral-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-neutral-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-neutral-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-neutral-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-neutral-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-neutral-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-neutral-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-neutral-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-neutral-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-neutral-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-neutral-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-neutral-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-neutral-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-neutral-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-neutral-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-neutral-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-neutral-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-neutral-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-neutral-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-neutral-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-neutral-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-neutral-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-neutral-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-neutral-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-neutral-bg-disabled-rgb);
 }
 .warning.notification, .warning.badge, .warning.avatar, .warning.context, .list-group.list-action > .warning.list-item.active,
 .list-group > .warning.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-warning-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-warning-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-warning-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-warning-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-warning-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-warning-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-warning-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-warning-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-warning-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-warning-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-warning-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-warning-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-warning-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-warning-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-warning-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-warning-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-warning-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-warning-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-warning-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-warning-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-warning-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-warning-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-warning-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-warning-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-warning-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-warning-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-warning-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-warning-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-warning-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-warning-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-warning-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-warning-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-warning-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-warning-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-warning-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-warning-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-warning-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-warning-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-warning-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-warning-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-warning-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-warning-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-warning-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-warning-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-warning-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-warning-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-warning-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-warning-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-warning-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-warning-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-warning-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-warning-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-warning-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-warning-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-warning-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-warning-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-warning-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-warning-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-warning-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-warning-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-warning-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-warning-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-warning-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-warning-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-warning-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-warning-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-warning-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-warning-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-warning-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-warning-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-warning-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-warning-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-warning-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-warning-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-warning-base-color);
+  --cx-context-contrast-color: var(--cx-warning-contrast-color);
+  --cx-context-transparent-color: var(--cx-warning-transparent-color);
+  --cx-context-fg-main: var(--cx-warning-fg-main);
+  --cx-context-fg-subtle: var(--cx-warning-fg-subtle);
+  --cx-context-fg-slight: var(--cx-warning-fg-slight);
+  --cx-context-fg-inverse: var(--cx-warning-fg-inverse);
+  --cx-context-fg-solid: var(--cx-warning-fg-solid);
+  --cx-context-fg-highlight: var(--cx-warning-fg-highlight);
+  --cx-context-bg-main: var(--cx-warning-bg-main);
+  --cx-context-bg-even: var(--cx-warning-bg-even);
+  --cx-context-bg-evident: var(--cx-warning-bg-evident);
+  --cx-context-bg-inverse: var(--cx-warning-bg-inverse);
+  --cx-context-bg-solid: var(--cx-warning-bg-solid);
+  --cx-context-bg-highlight: var(--cx-warning-bg-highlight);
+  --cx-context-border-main: var(--cx-warning-border-main);
+  --cx-context-border-subtle: var(--cx-warning-border-subtle);
+  --cx-context-icon-main: var(--cx-warning-icon-main);
+  --cx-context-icon-subtle: var(--cx-warning-icon-subtle);
+  --cx-context-icon-slight: var(--cx-warning-icon-slight);
+  --cx-context-cue-main: var(--cx-warning-cue-main);
+  --cx-context-cue-slight: var(--cx-warning-cue-slight);
+  --cx-context-link-main: var(--cx-warning-link-main);
+  --cx-context-link-hover: var(--cx-warning-link-hover);
+  --cx-context-link-active: var(--cx-warning-link-active);
+  --cx-context-link-visited: var(--cx-warning-link-visited);
+  --cx-context-dim-main: var(--cx-warning-dim-main);
+  --cx-context-dim-subtle: var(--cx-warning-dim-subtle);
+  --cx-context-dim-slight: var(--cx-warning-dim-slight);
+  --cx-context-fg-button: var(--cx-warning-fg-button);
+  --cx-context-fg-hover: var(--cx-warning-fg-hover);
+  --cx-context-fg-press: var(--cx-warning-fg-press);
+  --cx-context-fg-disabled: var(--cx-warning-fg-disabled);
+  --cx-context-bg-button: var(--cx-warning-bg-button);
+  --cx-context-bg-hover: var(--cx-warning-bg-hover);
+  --cx-context-bg-press: var(--cx-warning-bg-press);
+  --cx-context-bg-disabled: var(--cx-warning-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-warning-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-warning-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-warning-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-warning-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-warning-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-warning-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-warning-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-warning-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-warning-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-warning-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-warning-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-warning-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-warning-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-warning-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-warning-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-warning-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-warning-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-warning-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-warning-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-warning-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-warning-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-warning-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-warning-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-warning-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-warning-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-warning-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-warning-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-warning-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-warning-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-warning-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-warning-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-warning-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-warning-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-warning-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-warning-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-warning-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-warning-bg-disabled-rgb);
 }
 .success.notification, .success.badge, .success.avatar, .success.context, .list-group.list-action > .success.list-item.active,
 .list-group > .success.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-success-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-success-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-success-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-success-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-success-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-success-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-success-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-success-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-success-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-success-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-success-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-success-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-success-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-success-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-success-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-success-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-success-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-success-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-success-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-success-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-success-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-success-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-success-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-success-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-success-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-success-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-success-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-success-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-success-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-success-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-success-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-success-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-success-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-success-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-success-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-success-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-success-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-success-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-success-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-success-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-success-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-success-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-success-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-success-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-success-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-success-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-success-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-success-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-success-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-success-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-success-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-success-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-success-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-success-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-success-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-success-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-success-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-success-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-success-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-success-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-success-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-success-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-success-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-success-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-success-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-success-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-success-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-success-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-success-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-success-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-success-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-success-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-success-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-success-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-success-base-color);
+  --cx-context-contrast-color: var(--cx-success-contrast-color);
+  --cx-context-transparent-color: var(--cx-success-transparent-color);
+  --cx-context-fg-main: var(--cx-success-fg-main);
+  --cx-context-fg-subtle: var(--cx-success-fg-subtle);
+  --cx-context-fg-slight: var(--cx-success-fg-slight);
+  --cx-context-fg-inverse: var(--cx-success-fg-inverse);
+  --cx-context-fg-solid: var(--cx-success-fg-solid);
+  --cx-context-fg-highlight: var(--cx-success-fg-highlight);
+  --cx-context-bg-main: var(--cx-success-bg-main);
+  --cx-context-bg-even: var(--cx-success-bg-even);
+  --cx-context-bg-evident: var(--cx-success-bg-evident);
+  --cx-context-bg-inverse: var(--cx-success-bg-inverse);
+  --cx-context-bg-solid: var(--cx-success-bg-solid);
+  --cx-context-bg-highlight: var(--cx-success-bg-highlight);
+  --cx-context-border-main: var(--cx-success-border-main);
+  --cx-context-border-subtle: var(--cx-success-border-subtle);
+  --cx-context-icon-main: var(--cx-success-icon-main);
+  --cx-context-icon-subtle: var(--cx-success-icon-subtle);
+  --cx-context-icon-slight: var(--cx-success-icon-slight);
+  --cx-context-cue-main: var(--cx-success-cue-main);
+  --cx-context-cue-slight: var(--cx-success-cue-slight);
+  --cx-context-link-main: var(--cx-success-link-main);
+  --cx-context-link-hover: var(--cx-success-link-hover);
+  --cx-context-link-active: var(--cx-success-link-active);
+  --cx-context-link-visited: var(--cx-success-link-visited);
+  --cx-context-dim-main: var(--cx-success-dim-main);
+  --cx-context-dim-subtle: var(--cx-success-dim-subtle);
+  --cx-context-dim-slight: var(--cx-success-dim-slight);
+  --cx-context-fg-button: var(--cx-success-fg-button);
+  --cx-context-fg-hover: var(--cx-success-fg-hover);
+  --cx-context-fg-press: var(--cx-success-fg-press);
+  --cx-context-fg-disabled: var(--cx-success-fg-disabled);
+  --cx-context-bg-button: var(--cx-success-bg-button);
+  --cx-context-bg-hover: var(--cx-success-bg-hover);
+  --cx-context-bg-press: var(--cx-success-bg-press);
+  --cx-context-bg-disabled: var(--cx-success-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-success-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-success-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-success-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-success-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-success-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-success-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-success-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-success-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-success-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-success-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-success-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-success-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-success-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-success-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-success-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-success-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-success-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-success-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-success-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-success-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-success-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-success-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-success-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-success-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-success-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-success-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-success-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-success-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-success-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-success-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-success-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-success-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-success-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-success-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-success-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-success-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-success-bg-disabled-rgb);
 }
 .danger.notification, .danger.badge, .danger.avatar, .danger.context, .list-group.list-action > .danger.list-item.active,
 .list-group > .danger.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-danger-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-danger-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-danger-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-danger-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-danger-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-danger-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-danger-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-danger-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-danger-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-danger-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-danger-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-danger-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-danger-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-danger-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-danger-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-danger-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-danger-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-danger-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-danger-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-danger-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-danger-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-danger-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-danger-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-danger-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-danger-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-danger-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-danger-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-danger-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-danger-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-danger-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-danger-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-danger-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-danger-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-danger-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-danger-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-danger-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-danger-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-danger-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-danger-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-danger-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-danger-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-danger-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-danger-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-danger-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-danger-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-danger-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-danger-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-danger-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-danger-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-danger-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-danger-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-danger-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-danger-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-danger-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-danger-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-danger-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-danger-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-danger-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-danger-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-danger-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-danger-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-danger-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-danger-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-danger-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-danger-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-danger-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-danger-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-danger-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-danger-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-danger-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-danger-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-danger-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-danger-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-danger-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-danger-base-color);
+  --cx-context-contrast-color: var(--cx-danger-contrast-color);
+  --cx-context-transparent-color: var(--cx-danger-transparent-color);
+  --cx-context-fg-main: var(--cx-danger-fg-main);
+  --cx-context-fg-subtle: var(--cx-danger-fg-subtle);
+  --cx-context-fg-slight: var(--cx-danger-fg-slight);
+  --cx-context-fg-inverse: var(--cx-danger-fg-inverse);
+  --cx-context-fg-solid: var(--cx-danger-fg-solid);
+  --cx-context-fg-highlight: var(--cx-danger-fg-highlight);
+  --cx-context-bg-main: var(--cx-danger-bg-main);
+  --cx-context-bg-even: var(--cx-danger-bg-even);
+  --cx-context-bg-evident: var(--cx-danger-bg-evident);
+  --cx-context-bg-inverse: var(--cx-danger-bg-inverse);
+  --cx-context-bg-solid: var(--cx-danger-bg-solid);
+  --cx-context-bg-highlight: var(--cx-danger-bg-highlight);
+  --cx-context-border-main: var(--cx-danger-border-main);
+  --cx-context-border-subtle: var(--cx-danger-border-subtle);
+  --cx-context-icon-main: var(--cx-danger-icon-main);
+  --cx-context-icon-subtle: var(--cx-danger-icon-subtle);
+  --cx-context-icon-slight: var(--cx-danger-icon-slight);
+  --cx-context-cue-main: var(--cx-danger-cue-main);
+  --cx-context-cue-slight: var(--cx-danger-cue-slight);
+  --cx-context-link-main: var(--cx-danger-link-main);
+  --cx-context-link-hover: var(--cx-danger-link-hover);
+  --cx-context-link-active: var(--cx-danger-link-active);
+  --cx-context-link-visited: var(--cx-danger-link-visited);
+  --cx-context-dim-main: var(--cx-danger-dim-main);
+  --cx-context-dim-subtle: var(--cx-danger-dim-subtle);
+  --cx-context-dim-slight: var(--cx-danger-dim-slight);
+  --cx-context-fg-button: var(--cx-danger-fg-button);
+  --cx-context-fg-hover: var(--cx-danger-fg-hover);
+  --cx-context-fg-press: var(--cx-danger-fg-press);
+  --cx-context-fg-disabled: var(--cx-danger-fg-disabled);
+  --cx-context-bg-button: var(--cx-danger-bg-button);
+  --cx-context-bg-hover: var(--cx-danger-bg-hover);
+  --cx-context-bg-press: var(--cx-danger-bg-press);
+  --cx-context-bg-disabled: var(--cx-danger-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-danger-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-danger-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-danger-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-danger-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-danger-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-danger-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-danger-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-danger-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-danger-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-danger-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-danger-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-danger-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-danger-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-danger-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-danger-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-danger-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-danger-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-danger-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-danger-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-danger-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-danger-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-danger-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-danger-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-danger-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-danger-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-danger-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-danger-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-danger-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-danger-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-danger-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-danger-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-danger-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-danger-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-danger-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-danger-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-danger-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-danger-bg-disabled-rgb);
 }
 .info.notification, .info.badge, .info.avatar, .info.context, .list-group.list-action > .info.list-item.active,
 .list-group > .info.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-info-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-info-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-info-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-info-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-info-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-info-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-info-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-info-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-info-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-info-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-info-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-info-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-info-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-info-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-info-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-info-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-info-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-info-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-info-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-info-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-info-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-info-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-info-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-info-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-info-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-info-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-info-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-info-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-info-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-info-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-info-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-info-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-info-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-info-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-info-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-info-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-info-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-info-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-info-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-info-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-info-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-info-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-info-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-info-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-info-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-info-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-info-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-info-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-info-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-info-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-info-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-info-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-info-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-info-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-info-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-info-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-info-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-info-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-info-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-info-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-info-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-info-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-info-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-info-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-info-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-info-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-info-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-info-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-info-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-info-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-info-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-info-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-info-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-info-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-info-base-color);
+  --cx-context-contrast-color: var(--cx-info-contrast-color);
+  --cx-context-transparent-color: var(--cx-info-transparent-color);
+  --cx-context-fg-main: var(--cx-info-fg-main);
+  --cx-context-fg-subtle: var(--cx-info-fg-subtle);
+  --cx-context-fg-slight: var(--cx-info-fg-slight);
+  --cx-context-fg-inverse: var(--cx-info-fg-inverse);
+  --cx-context-fg-solid: var(--cx-info-fg-solid);
+  --cx-context-fg-highlight: var(--cx-info-fg-highlight);
+  --cx-context-bg-main: var(--cx-info-bg-main);
+  --cx-context-bg-even: var(--cx-info-bg-even);
+  --cx-context-bg-evident: var(--cx-info-bg-evident);
+  --cx-context-bg-inverse: var(--cx-info-bg-inverse);
+  --cx-context-bg-solid: var(--cx-info-bg-solid);
+  --cx-context-bg-highlight: var(--cx-info-bg-highlight);
+  --cx-context-border-main: var(--cx-info-border-main);
+  --cx-context-border-subtle: var(--cx-info-border-subtle);
+  --cx-context-icon-main: var(--cx-info-icon-main);
+  --cx-context-icon-subtle: var(--cx-info-icon-subtle);
+  --cx-context-icon-slight: var(--cx-info-icon-slight);
+  --cx-context-cue-main: var(--cx-info-cue-main);
+  --cx-context-cue-slight: var(--cx-info-cue-slight);
+  --cx-context-link-main: var(--cx-info-link-main);
+  --cx-context-link-hover: var(--cx-info-link-hover);
+  --cx-context-link-active: var(--cx-info-link-active);
+  --cx-context-link-visited: var(--cx-info-link-visited);
+  --cx-context-dim-main: var(--cx-info-dim-main);
+  --cx-context-dim-subtle: var(--cx-info-dim-subtle);
+  --cx-context-dim-slight: var(--cx-info-dim-slight);
+  --cx-context-fg-button: var(--cx-info-fg-button);
+  --cx-context-fg-hover: var(--cx-info-fg-hover);
+  --cx-context-fg-press: var(--cx-info-fg-press);
+  --cx-context-fg-disabled: var(--cx-info-fg-disabled);
+  --cx-context-bg-button: var(--cx-info-bg-button);
+  --cx-context-bg-hover: var(--cx-info-bg-hover);
+  --cx-context-bg-press: var(--cx-info-bg-press);
+  --cx-context-bg-disabled: var(--cx-info-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-info-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-info-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-info-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-info-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-info-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-info-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-info-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-info-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-info-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-info-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-info-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-info-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-info-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-info-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-info-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-info-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-info-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-info-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-info-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-info-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-info-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-info-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-info-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-info-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-info-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-info-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-info-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-info-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-info-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-info-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-info-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-info-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-info-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-info-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-info-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-info-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-info-bg-disabled-rgb);
 }
 .black.notification, .black.badge, .black.avatar, .black.context, .list-group.list-action > .black.list-item.active,
 .list-group > .black.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-black-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-black-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-black-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-black-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-black-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-black-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-black-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-black-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-black-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-black-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-black-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-black-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-black-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-black-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-black-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-black-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-black-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-black-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-black-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-black-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-black-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-black-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-black-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-black-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-black-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-black-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-black-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-black-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-black-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-black-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-black-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-black-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-black-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-black-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-black-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-black-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-black-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-black-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-black-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-black-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-black-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-black-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-black-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-black-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-black-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-black-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-black-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-black-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-black-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-black-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-black-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-black-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-black-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-black-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-black-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-black-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-black-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-black-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-black-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-black-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-black-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-black-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-black-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-black-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-black-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-black-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-black-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-black-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-black-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-black-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-black-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-black-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-black-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-black-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-black-base-color);
+  --cx-context-contrast-color: var(--cx-black-contrast-color);
+  --cx-context-transparent-color: var(--cx-black-transparent-color);
+  --cx-context-fg-main: var(--cx-black-fg-main);
+  --cx-context-fg-subtle: var(--cx-black-fg-subtle);
+  --cx-context-fg-slight: var(--cx-black-fg-slight);
+  --cx-context-fg-inverse: var(--cx-black-fg-inverse);
+  --cx-context-fg-solid: var(--cx-black-fg-solid);
+  --cx-context-fg-highlight: var(--cx-black-fg-highlight);
+  --cx-context-bg-main: var(--cx-black-bg-main);
+  --cx-context-bg-even: var(--cx-black-bg-even);
+  --cx-context-bg-evident: var(--cx-black-bg-evident);
+  --cx-context-bg-inverse: var(--cx-black-bg-inverse);
+  --cx-context-bg-solid: var(--cx-black-bg-solid);
+  --cx-context-bg-highlight: var(--cx-black-bg-highlight);
+  --cx-context-border-main: var(--cx-black-border-main);
+  --cx-context-border-subtle: var(--cx-black-border-subtle);
+  --cx-context-icon-main: var(--cx-black-icon-main);
+  --cx-context-icon-subtle: var(--cx-black-icon-subtle);
+  --cx-context-icon-slight: var(--cx-black-icon-slight);
+  --cx-context-cue-main: var(--cx-black-cue-main);
+  --cx-context-cue-slight: var(--cx-black-cue-slight);
+  --cx-context-link-main: var(--cx-black-link-main);
+  --cx-context-link-hover: var(--cx-black-link-hover);
+  --cx-context-link-active: var(--cx-black-link-active);
+  --cx-context-link-visited: var(--cx-black-link-visited);
+  --cx-context-dim-main: var(--cx-black-dim-main);
+  --cx-context-dim-subtle: var(--cx-black-dim-subtle);
+  --cx-context-dim-slight: var(--cx-black-dim-slight);
+  --cx-context-fg-button: var(--cx-black-fg-button);
+  --cx-context-fg-hover: var(--cx-black-fg-hover);
+  --cx-context-fg-press: var(--cx-black-fg-press);
+  --cx-context-fg-disabled: var(--cx-black-fg-disabled);
+  --cx-context-bg-button: var(--cx-black-bg-button);
+  --cx-context-bg-hover: var(--cx-black-bg-hover);
+  --cx-context-bg-press: var(--cx-black-bg-press);
+  --cx-context-bg-disabled: var(--cx-black-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-black-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-black-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-black-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-black-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-black-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-black-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-black-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-black-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-black-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-black-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-black-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-black-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-black-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-black-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-black-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-black-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-black-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-black-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-black-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-black-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-black-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-black-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-black-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-black-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-black-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-black-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-black-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-black-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-black-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-black-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-black-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-black-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-black-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-black-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-black-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-black-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-black-bg-disabled-rgb);
 }
 .white.notification, .white.badge, .white.avatar, .white.context, .list-group.list-action > .white.list-item.active,
 .list-group > .white.list-item.list-action.active {
-  --cx-base-color: var(--cx-context-base-color, var(--cx-white-base-color));
-  --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-white-contrast-color));
-  --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-white-transparent-color));
-  --cx-fg-main: var(--cx-context-fg-main, var(--cx-white-fg-main));
-  --cx-fg-subtle: var(--cx-context-fg-subtle, var(--cx-white-fg-subtle));
-  --cx-fg-slight: var(--cx-context-fg-slight, var(--cx-white-fg-slight));
-  --cx-fg-inverse: var(--cx-context-fg-inverse, var(--cx-white-fg-inverse));
-  --cx-fg-solid: var(--cx-context-fg-solid, var(--cx-white-fg-solid));
-  --cx-fg-highlight: var(--cx-context-fg-highlight, var(--cx-white-fg-highlight));
-  --cx-bg-main: var(--cx-context-bg-main, var(--cx-white-bg-main));
-  --cx-bg-even: var(--cx-context-bg-even, var(--cx-white-bg-even));
-  --cx-bg-evident: var(--cx-context-bg-evident, var(--cx-white-bg-evident));
-  --cx-bg-inverse: var(--cx-context-bg-inverse, var(--cx-white-bg-inverse));
-  --cx-bg-solid: var(--cx-context-bg-solid, var(--cx-white-bg-solid));
-  --cx-bg-highlight: var(--cx-context-bg-highlight, var(--cx-white-bg-highlight));
-  --cx-border-main: var(--cx-context-border-main, var(--cx-white-border-main));
-  --cx-border-subtle: var(--cx-context-border-subtle, var(--cx-white-border-subtle));
-  --cx-icon-main: var(--cx-context-icon-main, var(--cx-white-icon-main));
-  --cx-icon-subtle: var(--cx-context-icon-subtle, var(--cx-white-icon-subtle));
-  --cx-icon-slight: var(--cx-context-icon-slight, var(--cx-white-icon-slight));
-  --cx-cue-main: var(--cx-context-cue-main, var(--cx-white-cue-main));
-  --cx-cue-slight: var(--cx-context-cue-slight, var(--cx-white-cue-slight));
-  --cx-link-main: var(--cx-context-link-main, var(--cx-white-link-main));
-  --cx-link-hover: var(--cx-context-link-hover, var(--cx-white-link-hover));
-  --cx-link-active: var(--cx-context-link-active, var(--cx-white-link-active));
-  --cx-link-visited: var(--cx-context-link-visited, var(--cx-white-link-visited));
-  --cx-dim-main: var(--cx-context-dim-main, var(--cx-white-dim-main));
-  --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-white-dim-subtle));
-  --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-white-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-white-fg-button));
-  --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-white-fg-hover));
-  --cx-fg-press: var(--cx-context-fg-press, var(--cx-white-fg-press));
-  --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-white-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-white-bg-button));
-  --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-white-bg-hover));
-  --cx-bg-press: var(--cx-context-bg-press, var(--cx-white-bg-press));
-  --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-white-bg-disabled));
-  --cx-base-color-rgb: var(--cx-context-base-color-rgb, var(--cx-white-base-color-rgb));
-  --cx-contrast-color-rgb: var(--cx-context-contrast-color-rgb, var(--cx-white-contrast-color-rgb));
-  --cx-transparent-color-rgb: var(--cx-context-transparent-color-rgb, var(--cx-white-transparent-color-rgb));
-  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb, var(--cx-white-fg-main-rgb));
-  --cx-fg-subtle-rgb: var(--cx-context-fg-subtle-rgb, var(--cx-white-fg-subtle-rgb));
-  --cx-fg-slight-rgb: var(--cx-context-fg-slight-rgb, var(--cx-white-fg-slight-rgb));
-  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb, var(--cx-white-fg-inverse-rgb));
-  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb, var(--cx-white-fg-solid-rgb));
-  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb, var(--cx-white-fg-highlight-rgb));
-  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb, var(--cx-white-bg-main-rgb));
-  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb, var(--cx-white-bg-even-rgb));
-  --cx-bg-evident-rgb: var(--cx-context-bg-evident-rgb, var(--cx-white-bg-evident-rgb));
-  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb, var(--cx-white-bg-inverse-rgb));
-  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb, var(--cx-white-bg-solid-rgb));
-  --cx-bg-highlight-rgb: var(--cx-context-bg-highlight-rgb, var(--cx-white-bg-highlight-rgb));
-  --cx-border-main-rgb: var(--cx-context-border-main-rgb, var(--cx-white-border-main-rgb));
-  --cx-border-subtle-rgb: var(--cx-context-border-subtle-rgb, var(--cx-white-border-subtle-rgb));
-  --cx-icon-main-rgb: var(--cx-context-icon-main-rgb, var(--cx-white-icon-main-rgb));
-  --cx-icon-subtle-rgb: var(--cx-context-icon-subtle-rgb, var(--cx-white-icon-subtle-rgb));
-  --cx-icon-slight-rgb: var(--cx-context-icon-slight-rgb, var(--cx-white-icon-slight-rgb));
-  --cx-cue-main-rgb: var(--cx-context-cue-main-rgb, var(--cx-white-cue-main-rgb));
-  --cx-cue-slight-rgb: var(--cx-context-cue-main-rgb, var(--cx-white-cue-main-rgb));
-  --cx-link-main-rgb: var(--cx-context-link-main-rgb, var(--cx-white-link-main-rgb));
-  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb, var(--cx-white-link-hover-rgb));
-  --cx-link-active-rgb: var(--cx-context-link-active-rgb, var(--cx-white-link-active-rgb));
-  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb, var(--cx-white-link-visited-rgb));
-  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-white-dim-main-rgb));
-  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-white-dim-subtle-rgb));
-  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-white-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-white-fg-button-rgb));
-  --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-white-fg-hover-rgb));
-  --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-white-fg-press-rgb));
-  --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-white-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-white-bg-button-rgb));
-  --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-white-bg-hover-rgb));
-  --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-white-bg-press-rgb));
-  --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-white-bg-disabled-rgb));
+  --cx-context-base-color: var(--cx-white-base-color);
+  --cx-context-contrast-color: var(--cx-white-contrast-color);
+  --cx-context-transparent-color: var(--cx-white-transparent-color);
+  --cx-context-fg-main: var(--cx-white-fg-main);
+  --cx-context-fg-subtle: var(--cx-white-fg-subtle);
+  --cx-context-fg-slight: var(--cx-white-fg-slight);
+  --cx-context-fg-inverse: var(--cx-white-fg-inverse);
+  --cx-context-fg-solid: var(--cx-white-fg-solid);
+  --cx-context-fg-highlight: var(--cx-white-fg-highlight);
+  --cx-context-bg-main: var(--cx-white-bg-main);
+  --cx-context-bg-even: var(--cx-white-bg-even);
+  --cx-context-bg-evident: var(--cx-white-bg-evident);
+  --cx-context-bg-inverse: var(--cx-white-bg-inverse);
+  --cx-context-bg-solid: var(--cx-white-bg-solid);
+  --cx-context-bg-highlight: var(--cx-white-bg-highlight);
+  --cx-context-border-main: var(--cx-white-border-main);
+  --cx-context-border-subtle: var(--cx-white-border-subtle);
+  --cx-context-icon-main: var(--cx-white-icon-main);
+  --cx-context-icon-subtle: var(--cx-white-icon-subtle);
+  --cx-context-icon-slight: var(--cx-white-icon-slight);
+  --cx-context-cue-main: var(--cx-white-cue-main);
+  --cx-context-cue-slight: var(--cx-white-cue-slight);
+  --cx-context-link-main: var(--cx-white-link-main);
+  --cx-context-link-hover: var(--cx-white-link-hover);
+  --cx-context-link-active: var(--cx-white-link-active);
+  --cx-context-link-visited: var(--cx-white-link-visited);
+  --cx-context-dim-main: var(--cx-white-dim-main);
+  --cx-context-dim-subtle: var(--cx-white-dim-subtle);
+  --cx-context-dim-slight: var(--cx-white-dim-slight);
+  --cx-context-fg-button: var(--cx-white-fg-button);
+  --cx-context-fg-hover: var(--cx-white-fg-hover);
+  --cx-context-fg-press: var(--cx-white-fg-press);
+  --cx-context-fg-disabled: var(--cx-white-fg-disabled);
+  --cx-context-bg-button: var(--cx-white-bg-button);
+  --cx-context-bg-hover: var(--cx-white-bg-hover);
+  --cx-context-bg-press: var(--cx-white-bg-press);
+  --cx-context-bg-disabled: var(--cx-white-bg-disabled);
+  --cx-context-base-color-rgb: var(--cx-white-base-color-rgb);
+  --cx-context-contrast-color-rgb: var(--cx-white-contrast-color-rgb);
+  --cx-context-transparent-color-rgb: var(--cx-white-transparent-color-rgb);
+  --cx-context-fg-main-rgb: var(--cx-white-fg-main-rgb);
+  --cx-context-fg-subtle-rgb: var(--cx-white-fg-subtle-rgb);
+  --cx-context-fg-slight-rgb: var(--cx-white-fg-slight-rgb);
+  --cx-context-fg-inverse-rgb: var(--cx-white-fg-inverse-rgb);
+  --cx-context-fg-solid-rgb: var(--cx-white-fg-solid-rgb);
+  --cx-context-fg-highlight-rgb: var(--cx-white-fg-highlight-rgb);
+  --cx-context-bg-main-rgb: var(--cx-white-bg-main-rgb);
+  --cx-context-bg-even-rgb: var(--cx-white-bg-even-rgb);
+  --cx-context-bg-evident-rgb: var(--cx-white-bg-evident-rgb);
+  --cx-context-bg-inverse-rgb: var(--cx-white-bg-inverse-rgb);
+  --cx-context-bg-solid-rgb: var(--cx-white-bg-solid-rgb);
+  --cx-context-bg-highlight-rgb: var(--cx-white-bg-highlight-rgb);
+  --cx-context-border-main-rgb: var(--cx-white-border-main-rgb);
+  --cx-context-border-subtle-rgb: var(--cx-white-border-subtle-rgb);
+  --cx-context-icon-main-rgb: var(--cx-white-icon-main-rgb);
+  --cx-context-icon-subtle-rgb: var(--cx-white-icon-subtle-rgb);
+  --cx-context-icon-slight-rgb: var(--cx-white-icon-slight-rgb);
+  --cx-context-cue-main-rgb: var(--cx-white-cue-main-rgb);
+  --cx-context-cue-slight-rgb: var(--cx-white-cue-main-rgb);
+  --cx-context-link-main-rgb: var(--cx-white-link-main-rgb);
+  --cx-context-link-hover-rgb: var(--cx-white-link-hover-rgb);
+  --cx-context-link-active-rgb: var(--cx-white-link-active-rgb);
+  --cx-context-link-visited-rgb: var(--cx-white-link-visited-rgb);
+  --cx-context-dim-main-rgb: var(--cx-white-dim-main-rgb);
+  --cx-context-dim-subtle-rgb: var(--cx-white-dim-subtle-rgb);
+  --cx-context-dim-slight-rgb: var(--cx-white-dim-slight-rgb);
+  --cx-context-fg-button-rgb: var(--cx-white-fg-button-rgb);
+  --cx-context-fg-hover-rgb: var(--cx-white-fg-hover-rgb);
+  --cx-context-fg-press-rgb: var(--cx-white-fg-press-rgb);
+  --cx-context-fg-disabled-rgb: var(--cx-white-fg-disabled-rgb);
+  --cx-context-bg-button-rgb: var(--cx-white-bg-button-rgb);
+  --cx-context-bg-hover-rgb: var(--cx-white-bg-hover-rgb);
+  --cx-context-bg-press-rgb: var(--cx-white-bg-press-rgb);
+  --cx-context-bg-disabled-rgb: var(--cx-white-bg-disabled-rgb);
 }
 
-.notification, .context {
-  --cx-fg-color: var(--cx-basic-fg-main, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-basic-bg-main, var(--cx-bg-main));
-  --cx-border-color: var(--cx-basic-border-subtle, var(--cx-border-subtle));
-  --cx-separator-color: var(--cx-basic-border-subtle, var(--cx-border-subtle));
-  --cx-icon-color: var(--cx-basic-icon-main, var(--cx-icon-main));
-  --cx-bullet-color: var(--cx-basic-icon-subtle, var(--cx-icon-subtle));
-  --cx-cue-color: var(--cx-basic-cue-main, var(--cx-cue-main));
-  --cx-link-color: var(--cx-basic-link-main, var(--cx-link-main));
-  --cx-hover-color: var(--cx-basic-link-hover, var(--cx-link-hover));
-  --cx-active-color: var(--cx-basic-link-active, var(--cx-link-active));
-  --cx-visited-color: var(--cx-basic-link-visited, var(--cx-link-visited));
-  --cx-fg-color-rgb: var(--cx-basic-fg-main-rgb, var(--cx-fg-main-rgb));
-  --cx-bg-color-rgb: var(--cx-basic-bg-main-rgb, var(--cx-bg-main-rgb));
-  --cx-border-color-rgb: var(--cx-basic-border-main-rgb, var(--cx-border-main-rgb));
-  --cx-separator-color-rgb: var(--cx-basic-border-subtle-rgb, var(--cx-border-subtle-rgb));
-  --cx-icon-color-rgb: var(--cx-basic-icon-main-rgb, var(--cx-icon-main-rgb));
-  --cx-bullet-color-rgb: var(--cx-basic-icon-subtle-rgb, var(--cx-icon-subtle-rgb));
-  --cx-cue-color-rgb: var(--cx-basic-cue-main-rgb, var(--cx-cue-main-rgb));
-  --cx-link-color-rgb: var(--cx-basic-link-main-rgb, var(--cx-link-main-rgb));
-  --cx-hover-color-rgb: var(--cx-basic-link-hover-rgb, var(--cx-link-hover-rgb));
-  --cx-active-color-rgb: var(--cx-basic-link-active-rgb, var(--cx-link-active-rgb));
-  --cx-visited-color-rgb: var(--cx-basic-link-visited-rgb, var(--cx-link-visited-rgb));
+.notification, .badge, .avatar, .context, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group > .list-item.list-action.active,
+.list-group > .list-item.list-action.active:hover {
+  --cx-fg-color: var(--cx-fg-main);
+  --cx-bg-color: var(--cx-bg-main);
+  --cx-border-color: var(--cx-border-subtle);
+  --cx-separator-color: var(--cx-border-subtle);
+  --cx-icon-color: var(--cx-icon-main);
+  --cx-bullet-color: var(--cx-icon-subtle);
+  --cx-cue-color: var(--cx-cue-main);
+  --cx-link-color: var(--cx-link-main);
+  --cx-hover-color: var(--cx-link-hover);
+  --cx-active-color: var(--cx-link-active);
+  --cx-visited-color: var(--cx-link-visited);
+  --cx-fg-color-rgb: var(--cx-fg-main-rgb);
+  --cx-bg-color-rgb: var(--cx-bg-main-rgb);
+  --cx-border-color-rgb: var(--cx-border-main-rgb);
+  --cx-separator-color-rgb: var(--cx-border-subtle-rgb);
+  --cx-icon-color-rgb: var(--cx-icon-main-rgb);
+  --cx-bullet-color-rgb: var(--cx-icon-subtle-rgb);
+  --cx-cue-color-rgb: var(--cx-cue-main-rgb);
+  --cx-link-color-rgb: var(--cx-link-main-rgb);
+  --cx-hover-color-rgb: var(--cx-link-hover-rgb);
+  --cx-active-color-rgb: var(--cx-link-active-rgb);
+  --cx-visited-color-rgb: var(--cx-link-visited-rgb);
 }
 
 .notification.solid, .badge, .context.solid, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
 .list-group > .list-item.list-action.active,
 .list-group > .list-item.list-action.active:hover {
-  --cx-fg-main: var(--cx-fg-solid);
-  --cx-fg-subtle: rgba(var(--cx-fg-main-rgb), var(--cx-opacity-fg-subtle));
-  --cx-fg-slight: rgba(var(--cx-fg-main-rgb), var(--cx-opacity-fg-slight));
-  --cx-bg-main: var(--cx-bg-solid);
-  --cx-bg-even: var(--cx-bg-press);
-  --cx-bg-evident: var(--cx-bg-hover);
-  --cx-border-main: rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-border-main));
-  --cx-border-subtle: rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-border-subtle));
-  --cx-icon-main: var(--cx-fg-solid);
-  --cx-icon-subtle: rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-icon-subtle));
-  --cx-cue-main: var(--cx-fg-solid);
-  --cx-link-main: var(--cx-fg-solid);
-  --cx-link-hover: rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-fg-subtle));
-  --cx-fg-main-rgb: var(--cx-fg-solid-rgb);
-  --cx-fg-subtle-rgb: var(--cx-fg-subtle-rgb);
-  --cx-fg-slight-rgb: var(--cx-fg-slight-rgb);
-  --cx-bg-main-rgb: var(--cx-bg-solid-rgb);
-  --cx-bg-even-rgb: var(--cx-bg-inverse-rgb);
-  --cx-bg-evident-rgb: var(--cx-bg-inverse-rgb);
-  --cx-border-main-rgb: var(--cx-fg-solid-rgb);
-  --cx-border-subtle-rgb: var(--cx-fg-solid-rgb);
-  --cx-icon-main-rgb: var(--cx-fg-solid-rgb);
-  --cx-icon-subtle-rgb: var(--cx-fg-solid-rgb);
-  --cx-cue-main-rgb: var(--cx-fg-solid-rgb);
-  --cx-link-main-rgb: var(--cx-fg-solid-rgb);
-  --cx-link-hover-rgb: var(--cx-fg-solid-rgb);
-  --cx-fg-color: var(--cx-solid-fg-color, var(--cx-fg-solid));
-  --cx-bg-color: var(--cx-solid-bg-color, var(--cx-bg-solid));
-  --cx-border-color: var(--cx-solid-border-color, transparent);
-  --cx-separator-color: var(--cx-solid-separator-color, rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-border-subtle)));
-  --cx-icon-color: var(--cx-solid-icon-color, var(--cx-fg-solid));
-  --cx-bullet-color: var(--cx-solid-bullet-color, rgba(var(--cx-fg-solid-rgb), var(--cx-opacity-icon-subtle)));
-  --cx-cue-color: var(--cx-solid-cue-color, var(--cx-fg-solid));
-  --cx-link-color: var(--cx-solid-link-color, var(--cx-fg-solid));
-  --cx-hover-color: var(--cx-solid-hover-color, var(--cx-fg-solid));
-  --cx-active-color: var(--cx-solid-active-color, var(--cx-fg-solid));
-  --cx-disabled-color: var(--cx-solid-disabled-color, var(--cx-fg-solid));
-  --cx-fg-color-rgb: var(--cx-solid-fg-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-bg-color-rgb: var(--cx-solid-bg-color-rgb, var(--cx-bg-solid-rgb));
-  --cx-border-color-rgb: var(--cx-solid-border-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-separator-color-rgb: var(--cx-solid-separator-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-icon-color-rgb: var(--cx-solid-icon-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-bullet-color-rgb: var(--cx-solid-bullet-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-cue-color-rgb: var(--cx-solid-cue-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-link-color-rgb: var(--cx-solid-link-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-hover-color-rgb: var(--cx-solid-hover-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-active-color-rgb: var(--cx-solid-active-color-rgb, var(--cx-fg-solid-rgb));
-  --cx-disabled-color-rgb: var(--cx-solid-disabled-color-rgb, var(--cx-fg-solid-rgb));
+  --cx-fg-main: var(--cx-context-fg-solid);
+  --cx-fg-subtle: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-fg-subtle));
+  --cx-fg-slight: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-fg-slight));
+  --cx-fg-inverse: var(--cx-context-fg-inverse);
+  --cx-fg-solid: var(--cx-context-fg-solid);
+  --cx-fg-highlight: var(--cx-context-fg-inverse);
+  --cx-bg-main: var(--cx-context-bg-solid);
+  --cx-bg-even: var(--cx-context-bg-hover);
+  --cx-bg-evident: var(--cx-context-bg-press);
+  --cx-bg-inverse: var(--cx-context-bg-inverse);
+  --cx-bg-solid: var(--cx-context-bg-solid);
+  --cx-bg-highlight: var(--cx-context-bg-inverse);
+  --cx-border-main: var(--cx-context-fg-solid);
+  --cx-border-subtle: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-border-subtle));
+  --cx-icon-main: var(--cx-context-fg-solid);
+  --cx-icon-subtle: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-icon-subtle));
+  --cx-icon-slight: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-icon-slight));
+  --cx-cue-main: var(--cx-context-fg-solid);
+  --cx-cue-slight: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-cue-slight));
+  --cx-link-main: var(--cx-context-fg-solid);
+  --cx-link-hover: var(--cx-context-contrast-color);
+  --cx-link-active: var(--cx-context-fg-solid);
+  --cx-link-visited: var(--cx-context-fg-solid);
+  --cx-dim-main: rgba(var(--cx-context-bg-inverse-rgb), var(--cx-opacity-dim-main));
+  --cx-dim-subtle: rgba(var(--cx-context-bg-inverse-rgb), var(--cx-opacity-dim-subtle));
+  --cx-dim-slight: rgba(var(--cx-context-bg-inverse-rgb), var(--cx-opacity-dim-slight));
+  --cx-fg-main-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-fg-subtle-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-fg-slight-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb);
+  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-fg-highlight-rgb: var(--cx-context-fg-inverse-rgb);
+  --cx-bg-main-rgb: var(--cx-context-bg-solid-rgb);
+  --cx-bg-even-rgb: var(--cx-context-bg-hover-rgb);
+  --cx-bg-evident-rgb: var(--cx-context-bg-press-rgb);
+  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb);
+  --cx-bg-highlight-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-border-main-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-border-subtle-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-icon-main-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-icon-subtle-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-icon-slight-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-cue-main-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-cue-slight-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-link-main-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-link-hover-rgb: var(--cx-context-contrast-color-rgb);
+  --cx-link-active-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-link-visited-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-dim-main-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-dim-subtle-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-dim-slight-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-border-color: transparent;
 }
 
 .badge.smooth, .context.smooth {
-  --cx-fg-color: var(--cx-smooth-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-smooth-bg-color, var(--cx-bg-even));
-  --cx-border-color: var(--cx-smooth-border-color, transparent);
-  --cx-icon-color: var(--cx-smooth-icon-main, var(--cx-fg-main));
-  --cx-cue-color: var(--cx-smooth-border-color, var(--cx-fg-main));
-  --cx-link-color: var(--cx-smooth-link-color, var(--cx-fg-main));
-  --cx-bg-color-rgb: var(--cx-smooth-bg-color-rgb, var(--cx-bg-even-rgb));
-  --cx-icon-color-rgb: var(--cx-smooth-icon-color-rgb, var(--cx-fg-main-rgb));
-  --cx-cue-color-rgb: var(--cx-smooth-cue-color-rgb, var(--cx-fg-main-rgb));
-  --cx-link-color-rgb: var(--cx-smooth-link-color-rgb, var(--cx-fg-main-rgb));
+  --cx-fg-main: var(--cx-context-fg-main);
+  --cx-fg-subtle: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-fg-subtle));
+  --cx-fg-slight: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-fg-slight));
+  --cx-fg-inverse: var(--cx-context-fg-inverse);
+  --cx-fg-solid: var(--cx-context-fg-solid);
+  --cx-fg-highlight: var(--cx-context-fg-highlight);
+  --cx-bg-main: var(--cx-context-bg-evident);
+  --cx-bg-even: var(--cx-context-bg-even);
+  --cx-bg-evident: var(--cx-context-bg-main);
+  --cx-bg-inverse: var(--cx-context-bg-inverse);
+  --cx-bg-solid: var(--cx-context-bg-solid);
+  --cx-bg-highlight: var(--cx-context-bg-inverse);
+  --cx-border-main: var(--cx-context-fg-main);
+  --cx-border-subtle: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-border-subtle));
+  --cx-icon-main: var(--cx-context-fg-main);
+  --cx-icon-subtle: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-icon-subtle));
+  --cx-icon-slight: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-icon-slight));
+  --cx-cue-main: var(--cx-context-fg-main);
+  --cx-cue-slight: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-cue-slight));
+  --cx-link-main: var(--cx-context-link-main);
+  --cx-link-hover: var(--cx-context-link-hover);
+  --cx-link-active: var(--cx-context-link-active);
+  --cx-link-visited: var(--cx-context-link-visited);
+  --cx-dim-main: var(--cx-context-dim-main);
+  --cx-dim-subtle: var(--cx-context-dim-subtle);
+  --cx-dim-slight: var(--cx-context-dim-slight);
+  --cx-fg-main-rgb: var(--cx-context-fg-main-rgb);
+  --cx-fg-subtle-rgb: var(--cx-context-fg-main-rgb);
+  --cx-fg-slight-rgb: var(--cx-context-fg-main-rgb);
+  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb);
+  --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb);
+  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb);
+  --cx-bg-main-rgb: var(--cx-context-bg-evident-rgb);
+  --cx-bg-even-rgb: var(--cx-context-bg-even-rgb);
+  --cx-bg-evident-rgb: var(--cx-context-bg-main-rgb);
+  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb);
+  --cx-bg-highlight-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-border-main-rgb: var(--cx-context-fg-main-rgb);
+  --cx-border-subtle-rgb: var(--cx-context-fg-main-rgb);
+  --cx-icon-main-rgb: var(--cx-context-fg-main-rgb);
+  --cx-icon-subtle-rgb: var(--cx-context-fg-main-rgb);
+  --cx-icon-slight-rgb: var(--cx-context-fg-main-rgb);
+  --cx-cue-main-rgb: var(--cx-context-fg-main-rgb);
+  --cx-cue-slight-rgb: var(--cx-context-fg-main-rgb);
+  --cx-link-main-rgb: var(--cx-context-link-main-rgb);
+  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb);
+  --cx-link-active-rgb: var(--cx-context-link-active-rgb);
+  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb);
+  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb);
+  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb);
+  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb);
+  --cx-border-color: transparent;
 }
 
 .badge.outline, .context.outline {
-  --cx-fg-color: var(--cx-outline-fg-color, var(--cx-base-color));
-  --cx-bg-color: var(--cx-outline-bg-color, transparent);
-  --cx-border-color: var(--cx-outline-border-color, var(--cx-base-color));
-  --cx-separator-color: var(--cx-outline-separator-color, var(--cx-base-color));
-  --cx-icon-color: var(--cx-outline-icon-color, var(--cx-base-color));
-  --cx-bullet-color: var(--cx-outline-bullet-color, var(--cx-base-color));
-  --cx-cue-color: var(--cx-outline-cue-color, var(--cx-base-color));
-  --cx-fg-color-rgb: var(--cx-outline-fg-color-rgb, var(--cx-base-color-rgb));
-  --cx-bg-color-rgb: var(--cx-outline-bg-color-rgb, transparent);
-  --cx-border-color-rgb: var(--cx-outline-border-color-rgb, var(--cx-base-color-rgb));
-  --cx-separator-color-rgb: var(--cx-outline-separator-color-rgb, var(--cx-base-color-rgb));
-  --cx-icon-color-rgb: var(--cx-outline-icon-color-rgb, var(--cx-base-color-rgb));
-  --cx-bullet-color-rgb: var(--cx-outline-bullet-color-rgb, var(--cx-base-color-rgb));
-  --cx-cue-color-rgb: var(--cx-outline-cue-color-rgb, var(--cx-base-color-rgb));
+  --cx-fg-main: var(--cx-context-base-color);
+  --cx-fg-subtle: rgba(var(--cx-context-base-color-rgb), var(--cx-opacity-fg-subtle));
+  --cx-fg-slight: rgba(var(--cx-context-base-color-rgb), var(--cx-opacity-fg-slight));
+  --cx-fg-inverse: var(--cx-context-fg-inverse);
+  --cx-fg-solid: var(--cx-context-fg-solid);
+  --cx-fg-highlight: var(--cx-context-fg-highlight);
+  --cx-bg-main: transparent;
+  --cx-bg-even: var(--cx-context-dim-slight);
+  --cx-bg-evident: var(--cx-context-dim-subtle);
+  --cx-bg-inverse: var(--cx-context-bg-inverse);
+  --cx-bg-solid: var(--cx-context-bg-solid);
+  --cx-bg-highlight: var(--cx-context-bg-inverse);
+  --cx-border-main: var(--cx-context-base-color);
+  --cx-border-subtle: rgba(var(--cx-context-base-color-rgb), var(--cx-opacity-border-subtle));
+  --cx-icon-main: var(--cx-context-base-color);
+  --cx-icon-subtle: rgba(var(--cx-context-base-color-rgb), var(--cx-opacity-icon-subtle));
+  --cx-icon-slight: rgba(var(--cx-context-base-color-rgb), var(--cx-opacity-icon-slight));
+  --cx-cue-main: var(--cx-context-base-color);
+  --cx-cue-slight: rgba(var(--cx-context-base-color-rgb), var(--cx-opacity-cue-slight));
+  --cx-link-main: var(--cx-context-link-main);
+  --cx-link-hover: var(--cx-context-link-hover);
+  --cx-link-active: var(--cx-context-link-active);
+  --cx-link-visited: var(--cx-context-link-visited);
+  --cx-dim-main: var(--cx-context-dim-main);
+  --cx-dim-subtle: var(--cx-context-dim-subtle);
+  --cx-dim-slight: var(--cx-context-dim-slight);
+  --cx-fg-main-rgb: var(--cx-context-base-color-rgb);
+  --cx-fg-subtle-rgb: var(--cx-context-base-color-rgb);
+  --cx-fg-slight-rgb: var(--cx-context-base-color-rgb);
+  --cx-fg-inverse-rgb: var(--cx-context-fg-inverse);
+  --cx-fg-solid-rgb: var(--cx-context-fg-solid);
+  --cx-fg-highlight-rgb: var(--cx-context-fg-highlight);
+  --cx-bg-main-rgb: var(--cx-context-bg-main-rgb);
+  --cx-bg-even-rgb: var(--cx-context-base-color-rgb);
+  --cx-bg-evident-rgb: var(--cx-context-base-color-rgb);
+  --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-bg-solid-rgb: var(--cx-context-bg-solid-rgb);
+  --cx-bg-highlight-rgb: var(--cx-context-bg-inverse-rgb);
+  --cx-border-main-rgb: var(--cx-context-base-color-rgb);
+  --cx-border-subtle-rgb: var(--cx-context-base-color-rgb);
+  --cx-icon-main-rgb: var(--cx-context-base-color-rgb);
+  --cx-icon-subtle-rgb: var(--cx-context-base-color-rgb);
+  --cx-icon-slight-rgb: var(--cx-context-base-color-rgb);
+  --cx-cue-main-rgb: var(--cx-context-base-color-rgb);
+  --cx-cue-slight-rgb: var(--cx-context-base-color-rgb);
+  --cx-link-main-rgb: var(--cx-context-link-main-rgb);
+  --cx-link-hover-rgb: var(--cx-context-link-hover-rgb);
+  --cx-link-active-rgb: var(--cx-context-link-active-rgb);
+  --cx-link-visited-rgb: var(--cx-context-link-visited-rgb);
+  --cx-dim-main-rgb: var(--cx-context-dim-main-rgb);
+  --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb);
+  --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb);
   --cx-border-width: var(--cx-border-width-large);
+  --cx-border-color: var(--cx-context-base-color);
+  --cx-separator-color: var(--cx-context-base-color);
   border: var(--cx-border-width, 0) var(--cx-border-style, solid) var(--cx-border-color, transparent);
 }
 
@@ -8137,6 +8180,10 @@ textarea.form-control {
   z-index: 1;
 }
 
+.notransition {
+  transition: none !important;
+}
+
 .fade {
   transition: opacity 0.15s linear;
 }
@@ -8188,16 +8235,25 @@ textarea.form-control {
 }
 .dropdown-toggle::after {
   display: inline-block;
-  margin: 0 0.1em;
-  vertical-align: 0.34em;
+  margin: 0 0.1125em;
+  vertical-align: 0.3825em;
   content: "";
-  border-top: 0.4em solid;
-  border-right: 0.4em solid transparent;
+  border-top: 0.45em solid;
+  border-right: 0.45em solid transparent;
   border-bottom: 0;
-  border-left: 0.4em solid transparent;
+  border-left: 0.45em solid transparent;
 }
 .dropdown-toggle:empty::after {
   margin-left: 0;
+}
+.dropdown-toggle:not(.dropdown-toggle-split)::after {
+  margin-left: var(--cx-trim);
+}
+.dropstart > .dropdown-toggle:not(.dropdown-toggle-split)::before {
+  margin-right: var(--cx-trim);
+}
+.dropstart > .dropdown-toggle.dropdown-toggle-split::before {
+  margin: 0 var(--cx-trim);
 }
 
 .dropdown-menu {
@@ -8349,13 +8405,13 @@ textarea.form-control {
 }
 .dropup .dropdown-toggle::after {
   display: inline-block;
-  margin: 0 0.1em;
-  vertical-align: 0.34em;
+  margin: 0 0.1125em;
+  vertical-align: 0.3825em;
   content: "";
   border-top: 0;
-  border-right: 0.4em solid transparent;
-  border-bottom: 0.4em solid;
-  border-left: 0.4em solid transparent;
+  border-right: 0.45em solid transparent;
+  border-bottom: 0.45em solid;
+  border-left: 0.45em solid transparent;
 }
 .dropup .dropdown-toggle:empty::after {
   margin-left: 0;
@@ -8370,13 +8426,13 @@ textarea.form-control {
 }
 .dropend .dropdown-toggle::after {
   display: inline-block;
-  margin: 0 0.1em;
-  vertical-align: 0.34em;
+  margin: 0 0.1125em;
+  vertical-align: 0.3825em;
   content: "";
-  border-top: 0.4em solid transparent;
+  border-top: 0.45em solid transparent;
   border-right: 0;
-  border-bottom: 0.4em solid transparent;
-  border-left: 0.4em solid;
+  border-bottom: 0.45em solid transparent;
+  border-left: 0.45em solid;
 }
 .dropend .dropdown-toggle:empty::after {
   margin-left: 0;
@@ -8394,8 +8450,8 @@ textarea.form-control {
 }
 .dropstart .dropdown-toggle::after {
   display: inline-block;
-  margin: 0 0.1em;
-  vertical-align: 0.34em;
+  margin: 0 0.1125em;
+  vertical-align: 0.3825em;
   content: "";
 }
 .dropstart .dropdown-toggle::after {
@@ -8403,12 +8459,12 @@ textarea.form-control {
 }
 .dropstart .dropdown-toggle::before {
   display: inline-block;
-  margin-right: 0.1em;
-  vertical-align: 0.34em;
+  margin-right: 0.1125em;
+  vertical-align: 0.3825em;
   content: "";
-  border-top: 0.4em solid transparent;
-  border-right: 0.4em solid;
-  border-bottom: 0.4em solid transparent;
+  border-top: 0.45em solid transparent;
+  border-right: 0.45em solid;
+  border-bottom: 0.45em solid transparent;
 }
 .dropstart .dropdown-toggle:empty::after {
   margin-left: 0;
@@ -9302,6 +9358,12 @@ textarea.form-control {
 .accordion > details {
   color: var(--cx-fg-color);
   background-color: var(--cx-bg-color);
+  transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion > details {
+    transition: none;
+  }
 }
 .accordion > details:first-of-type, .accordion > details:first-of-type > summary {
   border-top-left-radius: var(--cx-box-radius);
@@ -11631,245 +11693,201 @@ textarea.form-control {
   background-color: RGBA(var(--cx-white-contrast-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.bg-default.fg-a11y,
-.bg-default.fg-ally {
+.bg-default.fg-a11y {
   color: #fff !important;
   background-color: RGBA(var(--cx-default-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-default.bg-a11y,
-.fg-default.bg-ally {
+.fg-default.bg-a11y {
   color: RGBA(var(--cx-default-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #fff !important;
 }
 
-.bg-alternate.fg-a11y,
-.bg-alternate.fg-ally {
+.bg-alternate.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-alternate-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-alternate.bg-a11y,
-.fg-alternate.bg-ally {
+.fg-alternate.bg-a11y {
   color: RGBA(var(--cx-alternate-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-primary.fg-a11y,
-.bg-primary.fg-ally {
+.bg-primary.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-primary-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-primary.bg-a11y,
-.fg-primary.bg-ally {
+.fg-primary.bg-a11y {
   color: RGBA(var(--cx-primary-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-secondary.fg-a11y,
-.bg-secondary.fg-ally {
+.bg-secondary.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-secondary-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-secondary.bg-a11y,
-.fg-secondary.bg-ally {
+.fg-secondary.bg-a11y {
   color: RGBA(var(--cx-secondary-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-neutral.fg-a11y,
-.bg-neutral.fg-ally {
+.bg-neutral.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-neutral-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-neutral.bg-a11y,
-.fg-neutral.bg-ally {
+.fg-neutral.bg-a11y {
   color: RGBA(var(--cx-neutral-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-warning.fg-a11y,
-.bg-warning.fg-ally {
+.bg-warning.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-warning-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-warning.bg-a11y,
-.fg-warning.bg-ally {
+.fg-warning.bg-a11y {
   color: RGBA(var(--cx-warning-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-success.fg-a11y,
-.bg-success.fg-ally {
+.bg-success.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-success-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-success.bg-a11y,
-.fg-success.bg-ally {
+.fg-success.bg-a11y {
   color: RGBA(var(--cx-success-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-danger.fg-a11y,
-.bg-danger.fg-ally {
+.bg-danger.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-danger-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-danger.bg-a11y,
-.fg-danger.bg-ally {
+.fg-danger.bg-a11y {
   color: RGBA(var(--cx-danger-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-.bg-info.fg-a11y,
-.bg-info.fg-ally {
+.bg-info.fg-a11y {
   color: #fff !important;
   background-color: RGBA(var(--cx-info-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-info.bg-a11y,
-.fg-info.bg-ally {
+.fg-info.bg-a11y {
   color: RGBA(var(--cx-info-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #fff !important;
 }
 
-.bg-black.fg-a11y,
-.bg-black.fg-ally {
+.bg-black.fg-a11y {
   color: #fff !important;
   background-color: RGBA(var(--cx-black-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-black.bg-a11y,
-.fg-black.bg-ally {
+.fg-black.bg-a11y {
   color: RGBA(var(--cx-black-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #fff !important;
 }
 
-.bg-white.fg-a11y,
-.bg-white.fg-ally {
+.bg-white.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-white-rgb), var(--cx-bg-opacity, 1)) !important;
 }
 
-.fg-white.bg-a11y,
-.fg-white.bg-ally {
+.fg-white.bg-a11y {
   color: RGBA(var(--cx-white-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
 
-[data-cx-theme=dark] .bg-default.fg-a11y,
-[data-cx-theme=dark] .bg-default.fg-ally {
+[data-cx-theme=dark] .bg-default.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-default-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-default.bg-a11y,
-[data-cx-theme=dark] .fg-default.bg-ally {
+[data-cx-theme=dark] .fg-default.bg-a11y {
   color: RGBA(var(--cx-default-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-alternate.fg-a11y,
-[data-cx-theme=dark] .bg-alternate.fg-ally {
+[data-cx-theme=dark] .bg-alternate.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-alternate-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-alternate.bg-a11y,
-[data-cx-theme=dark] .fg-alternate.bg-ally {
+[data-cx-theme=dark] .fg-alternate.bg-a11y {
   color: RGBA(var(--cx-alternate-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-primary.fg-a11y,
-[data-cx-theme=dark] .bg-primary.fg-ally {
+[data-cx-theme=dark] .bg-primary.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-primary-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-primary.bg-a11y,
-[data-cx-theme=dark] .fg-primary.bg-ally {
+[data-cx-theme=dark] .fg-primary.bg-a11y {
   color: RGBA(var(--cx-primary-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-secondary.fg-a11y,
-[data-cx-theme=dark] .bg-secondary.fg-ally {
+[data-cx-theme=dark] .bg-secondary.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-secondary-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-secondary.bg-a11y,
-[data-cx-theme=dark] .fg-secondary.bg-ally {
+[data-cx-theme=dark] .fg-secondary.bg-a11y {
   color: RGBA(var(--cx-secondary-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-neutral.fg-a11y,
-[data-cx-theme=dark] .bg-neutral.fg-ally {
+[data-cx-theme=dark] .bg-neutral.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-neutral-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-neutral.bg-a11y,
-[data-cx-theme=dark] .fg-neutral.bg-ally {
+[data-cx-theme=dark] .fg-neutral.bg-a11y {
   color: RGBA(var(--cx-neutral-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-warning.fg-a11y,
-[data-cx-theme=dark] .bg-warning.fg-ally {
+[data-cx-theme=dark] .bg-warning.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-warning-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-warning.bg-a11y,
-[data-cx-theme=dark] .fg-warning.bg-ally {
+[data-cx-theme=dark] .fg-warning.bg-a11y {
   color: RGBA(var(--cx-warning-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-success.fg-a11y,
-[data-cx-theme=dark] .bg-success.fg-ally {
+[data-cx-theme=dark] .bg-success.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-success-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-success.bg-a11y,
-[data-cx-theme=dark] .fg-success.bg-ally {
+[data-cx-theme=dark] .fg-success.bg-a11y {
   color: RGBA(var(--cx-success-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-danger.fg-a11y,
-[data-cx-theme=dark] .bg-danger.fg-ally {
+[data-cx-theme=dark] .bg-danger.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-danger-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-danger.bg-a11y,
-[data-cx-theme=dark] .fg-danger.bg-ally {
+[data-cx-theme=dark] .fg-danger.bg-a11y {
   color: RGBA(var(--cx-danger-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
-[data-cx-theme=dark] .bg-info.fg-a11y,
-[data-cx-theme=dark] .bg-info.fg-ally {
+[data-cx-theme=dark] .bg-info.fg-a11y {
   color: #fff !important;
   background-color: RGBA(var(--cx-info-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-info.bg-a11y,
-[data-cx-theme=dark] .fg-info.bg-ally {
+[data-cx-theme=dark] .fg-info.bg-a11y {
   color: RGBA(var(--cx-info-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #fff !important;
 }
-[data-cx-theme=dark] .bg-black.fg-a11y,
-[data-cx-theme=dark] .bg-black.fg-ally {
+[data-cx-theme=dark] .bg-black.fg-a11y {
   color: #fff !important;
   background-color: RGBA(var(--cx-black-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-black.bg-a11y,
-[data-cx-theme=dark] .fg-black.bg-ally {
+[data-cx-theme=dark] .fg-black.bg-a11y {
   color: RGBA(var(--cx-black-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #fff !important;
 }
-[data-cx-theme=dark] .bg-white.fg-a11y,
-[data-cx-theme=dark] .bg-white.fg-ally {
+[data-cx-theme=dark] .bg-white.fg-a11y {
   color: #000 !important;
   background-color: RGBA(var(--cx-white-rgb), var(--cx-bg-opacity, 1)) !important;
 }
-[data-cx-theme=dark] .fg-white.bg-a11y,
-[data-cx-theme=dark] .fg-white.bg-ally {
+[data-cx-theme=dark] .fg-white.bg-a11y {
   color: RGBA(var(--cx-white-rgb), var(--cx-bg-opacity, 1)) !important;
   background-color: #000 !important;
 }
@@ -13633,54 +13651,6 @@ textarea.form-control {
   background-color: var(--cx-white-dim-subtle);
 }
 
-.default-transparent-color {
-  background-color: var(--cx-default-transparent-color);
-}
-
-.alternate-transparent-color {
-  background-color: var(--cx-alternate-transparent-color);
-}
-
-.primary-transparent-color {
-  background-color: var(--cx-primary-transparent-color);
-}
-
-.secondary-transparent-color {
-  background-color: var(--cx-secondary-transparent-color);
-}
-
-.neutral-transparent-color {
-  background-color: var(--cx-neutral-transparent-color);
-}
-
-.danger-transparent-color {
-  background-color: var(--cx-danger-transparent-color);
-}
-
-.success-transparent-color {
-  background-color: var(--cx-success-transparent-color);
-}
-
-.warning-transparent-color {
-  background-color: var(--cx-warning-transparent-color);
-}
-
-.info-transparent-color {
-  background-color: var(--cx-info-transparent-color);
-}
-
-.black-transparent-color {
-  background-color: var(--cx-black-transparent-color);
-}
-
-.white-transparent-color {
-  background-color: var(--cx-white-transparent-color);
-}
-
-.dim-slight {
-  background-color: var(--cx-dim-slight);
-}
-
 .dim-main {
   background-color: var(--cx-dim-main);
 }
@@ -13689,8 +13659,8 @@ textarea.form-control {
   background-color: var(--cx-dim-subtle);
 }
 
-.transparent-color {
-  background-color: var(--cx-transparent-color);
+.dim-slight {
+  background-color: var(--cx-dim-slight);
 }
 
 .default-link-main {

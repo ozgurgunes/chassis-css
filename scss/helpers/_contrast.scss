@@ -13,13 +13,11 @@
 
 @each $color, $value in $context-colors {
   // $color: #{str-replace($color, "-base-color")};
-  .bg-#{$color}.fg-a11y,
-  .bg-#{$color}.fg-ally {
+  .bg-#{$color}.fg-a11y {
     color: #{color-contrast($value)} if($enable-important-utilities, !important, null);
     background-color: #{RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1))} if($enable-important-utilities, !important, null);
   }
-  .fg-#{$color}.bg-a11y,
-  .fg-#{$color}.bg-ally {
+  .fg-#{$color}.bg-a11y {
     color: #{RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1))} if($enable-important-utilities, !important, null);
     background-color: #{color-contrast($value)} if($enable-important-utilities, !important, null);
   }
@@ -28,13 +26,11 @@
 @include color-mode(dark) {
   @each $color, $value in $context-colors-dark {
     // $color: #{str-replace($color, "-base-color")};
-    .bg-#{$color}.fg-a11y,
-    .bg-#{$color}.fg-ally {
+    .bg-#{$color}.fg-a11y {
       color: #{color-contrast($value)} if($enable-important-utilities, !important, null);
       background-color: #{RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1))} if($enable-important-utilities, !important, null);
     }
-    .fg-#{$color}.bg-a11y,
-    .fg-#{$color}.bg-ally {
+    .fg-#{$color}.bg-a11y {
       color: #{RGBA(var(--#{$prefix}#{$color}-rgb), var(--#{$prefix}bg-opacity, 1))} if($enable-important-utilities, !important, null);
       background-color: #{color-contrast($value)} if($enable-important-utilities, !important, null);
     }

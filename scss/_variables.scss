@@ -41,6 +41,8 @@ $base-color:            var(--#{$prefix}#{$body-context}-base-color) !default;
 $base-color-rgb:        var(--#{$prefix}#{$body-context}-base-color-rgb) !default;
 $contrast-color:        var(--#{$prefix}#{$body-context}-contrast-color) !default;
 $contrast-color-rgb:    var(--#{$prefix}#{$body-context}-contrast-color-rgb) !default;
+$transparent-color:     var(--#{$prefix}#{$body-context}-transparent-color) !default;
+$transparent-color-rgb: var(--#{$prefix}#{$body-context}-transparent-color-rgb) !default;
 $fg-main:               var(--#{$prefix}#{$body-context}-fg-main) !default;
 $fg-main-rgb:           var(--#{$prefix}#{$body-context}-fg-main-rgb) !default;
 $fg-subtle:             var(--#{$prefix}#{$body-context}-fg-subtle) !default;
@@ -85,8 +87,6 @@ $dim-main:              var(--#{$prefix}#{$body-context}-dim-main) !default;
 $dim-main-rgb:          var(--#{$prefix}#{$body-context}-dim-main-rgb) !default;
 $dim-subtle:            var(--#{$prefix}#{$body-context}-dim-subtle) !default;
 $dim-subtle-rgb:        var(--#{$prefix}#{$body-context}-dim-subtle-rgb) !default;
-$transparent-color:     var(--#{$prefix}#{$body-context}-transparent-color) !default;
-$transparent-color-rgb: var(--#{$prefix}#{$body-context}-transparent-color-rgb) !default;
 $link-main:             var(--#{$prefix}#{$body-context}-link-main) !default;
 $link-main-rgb:         var(--#{$prefix}#{$body-context}-link-main-rgb) !default;
 $link-visited:          var(--#{$prefix}#{$body-context}-link-visited) !default;
@@ -392,7 +392,7 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color
 // scss-docs-end focus-ring-variables
 
 // scss-docs-start caret-variables
-$caret-width:                 .4em !default;
+$caret-width:                 .45em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
 $caret-spacing:               $caret-width * .25 !default;
 // scss-docs-end caret-variables
@@ -464,6 +464,59 @@ $pre-color:                         null !default;
 
 //
 //
+// Context Styles
+//
+
+// fusv-disable
+$solid-fg-color:                var(--#{$prefix}context-fg-solid) !default;
+$solid-fg-color-rgb:            var(--#{$prefix}context-fg-solid-rgb) !default;
+$solid-bg-color:                var(--#{$prefix}context-bg-solid) !default;
+$solid-bg-color-rgb:            var(--#{$prefix}context-bg-solid-rgb) !default;
+$solid-bg-even:                 var(--#{$prefix}context-bg-hover) !default;
+$solid-bg-even-rgb:             var(--#{$prefix}context-bg-hover-rgb) !default;
+$solid-bg-evident:              var(--#{$prefix}context-bg-press) !default;
+$solid-bg-evident-rgb:          var(--#{$prefix}context-bg-press-rgb) !default;
+$solid-border-color:            $solid-fg-color !default;
+$solid-border-color-rgb:        $solid-fg-color-rgb !default;
+$solid-icon-color:              $solid-fg-color !default;
+$solid-icon-color-rgb:          $solid-fg-color-rgb !default;
+$solid-cue-color:               $solid-fg-color !default;
+$solid-cue-color-rgb:           $solid-fg-color-rgb !default;
+
+$smooth-fg-color:               var(--#{$prefix}context-fg-main) !default;
+$smooth-fg-color-rgb:           var(--#{$prefix}context-fg-main-rgb) !default;
+$smooth-bg-color:               var(--#{$prefix}context-bg-evident) !default;
+$smooth-bg-color-rgb:           var(--#{$prefix}context-bg-evident-rgb) !default;
+$smooth-bg-even:                var(--#{$prefix}context-bg-even) !default;
+$smooth-bg-even-rgb:            var(--#{$prefix}context-bg-even-rgb) !default;
+$smooth-bg-evident:             var(--#{$prefix}context-bg-main) !default;
+$smooth-bg-evident-rgb:         var(--#{$prefix}context-bg-main-rgb) !default;
+$smooth-border-color:           $smooth-fg-color !default;
+$smooth-border-color-rgb:       $smooth-fg-color-rgb !default;
+$smooth-icon-color:             $smooth-fg-color !default;
+$smooth-icon-color-rgb:         $smooth-fg-color-rgb !default;
+$smooth-cue-color:              $smooth-fg-color !default;
+$smooth-cue-color-rgb:          $smooth-fg-color-rgb !default;
+
+$outline-fg-color:              var(--#{$prefix}context-base-color) !default;
+$outline-fg-color-rgb:          var(--#{$prefix}context-base-color-rgb) !default;
+$outline-bg-color:              transparent !default;
+$outline-bg-color-rgb:          var(--#{$prefix}context-bg-main-rgb) !default;
+$outline-bg-even:               var(--#{$prefix}context-dim-slight) !default;
+$outline-bg-even-rgb:           var(--#{$prefix}context-base-color-rgb) !default;
+$outline-bg-evident:            var(--#{$prefix}context-dim-subtle) !default;
+$outline-bg-evident-rgb:        var(--#{$prefix}context-base-color-rgb) !default;
+$outline-border-color:          $outline-fg-color !default;
+$outline-border-color-rgb:      $outline-fg-color-rgb !default;
+$outline-icon-color:            $outline-fg-color !default;
+$outline-icon-color-rgb:        $outline-fg-color-rgb !default;
+$outline-cue-color:             $outline-fg-color !default;
+$outline-cue-color-rgb:         $outline-fg-color-rgb !default;
+$outline-border-width:          var(--#{$prefix}border-width-large) !default;
+//fusv-enable
+
+//
+//
 // Components
 //
 
@@ -475,7 +528,9 @@ $component-active-bg-color:       $primary-base-color !default;
 //
 // Badge
 //
+// scss-docs-start badge-variables
 // See tokens/_badge.scss for more.
+// scss-docs-end badge-variables
 //
 
 //

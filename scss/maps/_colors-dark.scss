@@ -30,36 +30,68 @@ $contrast-colors-dark: (
 ) !default;
 // scss-docs-end contrast-colors-dark-map
 
+// scss-docs-start transparent-color-colors-dark-map
+// $transparent-colors-dark: (
+//   "default-transparent":        $default-transparent-color-dark,
+//   "alternate-transparent":      $alternate-transparent-color-dark,
+//   "primary-transparent":        $primary-transparent-color-dark,
+//   "secondary-transparent":      $secondary-transparent-color-dark,
+//   "neutral-transparent":        $neutral-transparent-color-dark,
+//   "danger-transparent":         $danger-transparent-color-dark,
+//   "success-transparent":        $success-transparent-color-dark,
+//   "warning-transparent":        $warning-transparent-color-dark,
+//   "info-transparent":           $info-transparent-color-dark,
+//   "black-transparent":          $black-transparent-color-dark,
+//   "white-transparent":          $white-transparent-color-dark,
+// ) !default;
+// scss-docs-end transparent-color-colors-dark-map
+
 // Dark mode color maps
 // scss-docs-start context-base-colors-dark-map
 $context-base-colors-dark: (
-  "default-base-color":                $default-base-color-dark,
-  "alternate-base-color":              $alternate-base-color-dark,
-  "primary-base-color":                $primary-base-color-dark,
-  "secondary-base-color":              $secondary-base-color-dark,
-  "neutral-base-color":                $neutral-base-color-dark,
-  "danger-base-color":                 $danger-base-color-dark,
-  "success-base-color":                $success-base-color-dark,
-  "warning-base-color":                $warning-base-color-dark,
-  "info-base-color":                   $info-base-color-dark,
-  "black-base-color":                  $black-base-color-dark,
-  "white-base-color":                  $white-base-color-dark,
+  "default-base-color":                 $default-base-color-dark,
+  "alternate-base-color":               $alternate-base-color-dark,
+  "primary-base-color":                 $primary-base-color-dark,
+  "secondary-base-color":               $secondary-base-color-dark,
+  "neutral-base-color":                 $neutral-base-color-dark,
+  "danger-base-color":                  $danger-base-color-dark,
+  "success-base-color":                 $success-base-color-dark,
+  "warning-base-color":                 $warning-base-color-dark,
+  "info-base-color":                    $info-base-color-dark,
+  "black-base-color":                   $black-base-color-dark,
+  "white-base-color":                   $white-base-color-dark,
 ) !default;
 // scss-docs-end context-base-colors-dark-map
 
 // scss-docs-start context-contrast-colors-dark-map
 $context-contrast-colors-dark: (
-  "default-contrast-color":                $default-contrast-color-dark,
-  "alternate-contrast-color":              $alternate-contrast-color-dark,
-  "primary-contrast-color":                $primary-contrast-color-dark,
-  "secondary-contrast-color":              $secondary-contrast-color-dark,
-  "neutral-contrast-color":                $neutral-contrast-color-dark,
-  "danger-contrast-color":                 $danger-contrast-color-dark,
-  "success-contrast-color":                $success-contrast-color-dark,
-  "warning-contrast-color":                $warning-contrast-color-dark,
-  "info-contrast-color":                   $info-contrast-color-dark,
-  "black-contrast-color":                  $black-contrast-color-dark,
-  "white-contrast-color":                  $white-contrast-color-dark,
+  "default-contrast-color":             $default-contrast-color-dark,
+  "alternate-contrast-color":           $alternate-contrast-color-dark,
+  "primary-contrast-color":             $primary-contrast-color-dark,
+  "secondary-contrast-color":           $secondary-contrast-color-dark,
+  "neutral-contrast-color":             $neutral-contrast-color-dark,
+  "danger-contrast-color":              $danger-contrast-color-dark,
+  "success-contrast-color":             $success-contrast-color-dark,
+  "warning-contrast-color":             $warning-contrast-color-dark,
+  "info-contrast-color":                $info-contrast-color-dark,
+  "black-contrast-color":               $black-contrast-color-dark,
+  "white-contrast-color":               $white-contrast-color-dark,
+) !default;
+// scss-docs-end context-contrast-colors-dark-map
+
+// scss-docs-start context-transparent-colors-dark-map
+$context-transparent-colors-dark: (
+  "default-transparent-color":          $default-transparent-color-dark,
+  "alternate-transparent-color":        $alternate-transparent-color-dark,
+  "primary-transparent-color":          $primary-transparent-color-dark,
+  "secondary-transparent-color":        $secondary-transparent-color-dark,
+  "neutral-transparent-color":          $neutral-transparent-color-dark,
+  "danger-transparent-color":           $danger-transparent-color-dark,
+  "success-transparent-color":          $success-transparent-color-dark,
+  "warning-transparent-color":          $warning-transparent-color-dark,
+  "info-transparent-color":             $info-transparent-color-dark,
+  "black-transparent-color":            $black-transparent-color-dark,
+  "white-transparent-color":            $white-transparent-color-dark,
 ) !default;
 // scss-docs-end context-contrast-colors-dark-map
 
@@ -432,22 +464,6 @@ $active-colors-dark: (
 ) !default;
 // scss-docs-end active-colors-dark-map
 
-// scss-docs-start transparent-color-colors-dark-map
-$transparent-color-colors-dark: (
-  "default":                $default-transparent-color-dark,
-  "alternate":              $alternate-transparent-color-dark,
-  "primary":                $primary-transparent-color-dark,
-  "secondary":              $secondary-transparent-color-dark,
-  "neutral":                $neutral-transparent-color-dark,
-  "danger":                 $danger-transparent-color-dark,
-  "success":                $success-transparent-color-dark,
-  "warning":                $warning-transparent-color-dark,
-  "info":                   $info-transparent-color-dark,
-  "black":                  $black-transparent-color-dark,
-  "white":                  $white-transparent-color-dark,
-) !default;
-// scss-docs-end transparent-color-colors-dark-map
-
 // scss-docs-start dim-slight-colors-dark-map
 $dim-slight-colors-dark: (
   "default":                $default-dim-slight-dark,
@@ -631,6 +647,7 @@ $bg-press-colors-dark: (
 $context-palette-dark: map-merge-multiple(
   $context-base-colors-dark,
   $context-contrast-colors-dark,
+  $context-transparent-colors-dark,
   rename-keys($fg-main-colors-dark, "-fg-main", "end"),
   rename-keys($fg-subtle-colors-dark, "-fg-subtle", "end"),
   rename-keys($fg-slight-colors-dark, "-fg-slight", "end"),
@@ -657,7 +674,6 @@ $context-palette-dark: map-merge-multiple(
   rename-keys($dim-slight-colors-dark, "-dim-slight", "end"),
   rename-keys($dim-main-colors-dark, "-dim-main", "end"),
   rename-keys($dim-subtle-colors-dark, "-dim-subtle", "end"),
-  rename-keys($transparent-color-colors-dark, "-transparent-color", "end"),
   rename-keys($fg-button-colors-dark, "-fg-button", "end"),
   rename-keys($fg-disabled-colors-dark, "-fg-disabled", "end"),
   rename-keys($fg-hover-colors-dark, "-fg-hover", "end"),
@@ -672,6 +688,7 @@ $context-palette-dark: map-merge-multiple(
 $body-colors-dark: (
   "base-color":             $base-color-dark,
   "contrast-color":         $contrast-color-dark,
+  "transparent-color":      $transparent-color-dark,
   "fg-main":                $fg-main-dark,
   "fg-subtle":              $fg-subtle-dark,
   "fg-slight":              $fg-slight-dark,
@@ -689,16 +706,15 @@ $body-colors-dark: (
   "icon-main":              $icon-main-dark,
   "icon-subtle":            $icon-subtle-dark,
   "icon-slight":            $icon-slight-dark,
-  "cue-main":         $cue-main-dark,
-  "cue-slight":       $cue-slight-dark,
+  "cue-main":               $cue-main-dark,
+  "cue-slight":             $cue-slight-dark,
   "link-main":              $link-main-dark,
   "link-hover":             $link-hover-dark,
   "link-active":            $link-active-dark,
   "link-visited":           $link-visited-dark,
-  "dim-slight":            $dim-slight-dark,
-  "dim-main":              $dim-main-dark,
+  "dim-main":               $dim-main-dark,
   "dim-subtle":             $dim-subtle-dark,
-  "transparent-color":            $transparent-color-dark,
+  "dim-slight":             $dim-slight-dark,
   "fg-button":              $fg-button-dark,
   "fg-disabled":            $fg-disabled-dark,
   "fg-hover":               $fg-hover-dark,

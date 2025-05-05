@@ -22,7 +22,7 @@ Just add the `open` attribute on the `details` element to render it is expanded 
 <Example code={`<div class="accordion">
   <details open>
     <summary>
-      <h4 class="accordion-title">Accordion Item #1</h4>
+      <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #1</h4>
     </summary>
     <div class="accordion-content">
       <p>
@@ -32,7 +32,7 @@ Just add the `open` attribute on the `details` element to render it is expanded 
   </details>
   <details>
     <summary>
-      <h4 class="accordion-title">Accordion Item #2</h4>
+      <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #2</h4>
     </summary>
     <div class="accordion-content">
       <p>
@@ -42,7 +42,7 @@ Just add the `open` attribute on the `details` element to render it is expanded 
   </details>
   <details>
     <summary>
-      <h4 class="accordion-title">Accordion Item #3</h4>
+      <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #3</h4>
     </summary>
     <div class="accordion-content">
       <p>
@@ -51,6 +51,10 @@ Just add the `open` attribute on the `details` element to render it is expanded 
     </div>
   </details>
 </div>`} />
+
+<Callout type="warning">
+  When using heading tags (e.g., `<h4>`) inside the `summary` element, it is recommended to include the `role="heading"` attribute and an `aria-level` attribute. This ensures that screen readers correctly interpret the heading structure within the accordion. The `aria-level` should match the appropriate heading level in the document hierarchy.
+</Callout>
 
 ### Static
 
@@ -381,9 +385,23 @@ Use `.context` class on accordions with a color or style, like `.primary` and `.
   ...
 </div>
 ```
+
 ## Accessibility
 
-No need to aria and role definitions. Sincse accordion component use HTML 5 details element, accessibility features would be set by browser automatically.
+No need to aria and role definitions. Since the accordion component uses the HTML5 `details` element, accessibility features are automatically handled by the browser.
+
+### Note on Heading Tags in Summary
+
+When using heading tags (e.g., `<h4>`) inside the `summary` element, it is recommended to include the `role="heading"` attribute and an `aria-level` attribute. This ensures that screen readers correctly interpret the heading structure within the accordion. The `aria-level` should match the appropriate heading level in the document hierarchy.
+
+For example:
+```html
+<summary>
+  <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #1</h4>
+</summary>
+```
+
+This approach improves accessibility by providing a clear and consistent heading structure for assistive technologies.
 
 ## CSS
 

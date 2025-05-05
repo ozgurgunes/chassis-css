@@ -1,6 +1,6 @@
 .notification {
 
-  @extend %context, %basic-context, %component;
+  @extend %context, %component;
 
   --#{$prefix}padding-y: var(--#{$prefix}notification-padding-y, #{$notification-padding-y});
   --#{$prefix}padding-x: var(--#{$prefix}notification-padding-x, #{$notification-padding-x});

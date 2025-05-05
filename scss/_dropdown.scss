@@ -13,6 +13,17 @@
 
   // Generate the caret automatically
   @include caret();
+
+  &:not(.dropdown-toggle-split)::after {
+    // margin-right: #{calc(-1 * var(--#{$prefix}trim))};
+    margin-left: var(--#{$prefix}trim);
+  }
+  .dropstart > &:not(.dropdown-toggle-split)::before {
+    margin-right: var(--#{$prefix}trim);
+  }
+  .dropstart > &.dropdown-toggle-split::before {
+    margin: 0 var(--#{$prefix}trim);
+  }
 }
 
 // The dropdown menu

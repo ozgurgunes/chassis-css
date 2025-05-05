@@ -583,38 +583,6 @@ $active-colors: (
 ) !default;
 // scss-docs-end active-colors-map
 
-// scss-docs-start transparent-color-colors-map
-$transparent-color-colors: (
-  "default":                $default-transparent-color,
-  "alternate":              $alternate-transparent-color,
-  "primary":                $primary-transparent-color,
-  "secondary":              $secondary-transparent-color,
-  "neutral":                $neutral-transparent-color,
-  "danger":                 $danger-transparent-color,
-  "success":                $success-transparent-color,
-  "warning":                $warning-transparent-color,
-  "info":                   $info-transparent-color,
-  "black":                  $black-transparent-color,
-  "white":                  $white-transparent-color,
-) !default;
-// scss-docs-end transparent-color-colors-map
-
-// scss-docs-start dim-slight-colors-map
-$dim-slight-colors: (
-  "default":                $default-dim-slight,
-  "alternate":              $alternate-dim-slight,
-  "primary":                $primary-dim-slight,
-  "secondary":              $secondary-dim-slight,
-  "neutral":                $neutral-dim-slight,
-  "danger":                 $danger-dim-slight,
-  "success":                $success-dim-slight,
-  "warning":                $warning-dim-slight,
-  "info":                   $info-dim-slight,
-  "black":                  $black-dim-slight,
-  "white":                  $white-dim-slight,
-) !default;
-// scss-docs-end dim-slight-colors-map
-
 // scss-docs-start dim-main-colors-map
 $dim-main-colors: (
   "default":             $default-dim-main,
@@ -646,6 +614,22 @@ $dim-subtle-colors: (
   "white":                  $white-dim-subtle,
 ) !default;
 // scss-docs-end dim-subtle-colors-map
+
+// scss-docs-start dim-slight-colors-map
+$dim-slight-colors: (
+  "default":                $default-dim-slight,
+  "alternate":              $alternate-dim-slight,
+  "primary":                $primary-dim-slight,
+  "secondary":              $secondary-dim-slight,
+  "neutral":                $neutral-dim-slight,
+  "danger":                 $danger-dim-slight,
+  "success":                $success-dim-slight,
+  "warning":                $warning-dim-slight,
+  "info":                   $info-dim-slight,
+  "black":                  $black-dim-slight,
+  "white":                  $white-dim-slight,
+) !default;
+// scss-docs-end dim-slight-colors-map
 
 // scss-docs-start fg-button-colors-map
 $fg-button-colors: (
@@ -807,6 +791,23 @@ $context-contrast-colors: (
 ) !default;
 // scss-docs-end context-contrast-colors-map
 
+// scss-docs-start context-transparent-colors-map
+$context-transparent-colors: (
+  "default-transparent-color":                $default-transparent-color,
+  "alternate-transparent-color":              $alternate-transparent-color,
+  "primary-transparent-color":                $primary-transparent-color,
+  "secondary-transparent-color":              $secondary-transparent-color,
+  "neutral-transparent-color":                $neutral-transparent-color,
+  "danger-transparent-color":                 $danger-transparent-color,
+  "success-transparent-color":                $success-transparent-color,
+  "warning-transparent-color":                $warning-transparent-color,
+  "info-transparent-color":                   $info-transparent-color,
+  "black-transparent-color":                  $black-transparent-color,
+  "white-transparent-color":                  $white-transparent-color,
+) !default;
+// scss-docs-end context-transparent-colors-map
+
+
 // scss-docs-start body-fg-colors-map
 $body-fg-colors:   (
   "fg-main":            $fg-main,
@@ -896,35 +897,17 @@ $context-icon-colors: map-merge-multiple(
 // scss-docs-end context-icon-colors-map
 
 // scss-docs-start body-cue-colors-map
-// $body-cue-colors: (
-//   "cue-main":      $cue-main,
-//   "cue-slight":    $cue-slight,
-// ) !default;
+$body-cue-colors: (
+  "cue-main":      $cue-main,
+  "cue-slight":    $cue-slight,
+) !default;
 // scss-docs-end body-cue-colors-map
-
 // scss-docs-start context-icon-colors-map
 $context-cue-colors: map-merge-multiple(
   rename-keys($cue-main-colors, "-cue-main", "end"),
   rename-keys($cue-slight-colors, "-cue-slight", "end"),
 ) !default;
 // scss-docs-end context-icon-colors-map
-
-// scss-docs-start body-dim-colors-map
-$body-dim-colors: (
-  "dim-slight":          $dim-slight,
-  "dim-main":            $dim-main,
-  "dim-subtle":           $dim-subtle,
-  "transparent-color":          $transparent-color,
-) !default;
-// scss-docs-end body-dim-colors-map
-// scss-docs-start context-dim-colors-map
-$context-dim-colors: map-merge-multiple(
-  rename-keys($dim-slight-colors, "-dim-slight", "end"),
-  rename-keys($dim-main-colors, "-dim-main", "end"),
-  rename-keys($dim-subtle-colors, "-dim-subtle", "end"),
-  rename-keys($transparent-color-colors, "-transparent-color", "end"),
-) !default;
-// scss-docs-end context-dim-colors-map
 
 // scss-docs-start body-link-colors-map
 $body-link-colors: (
@@ -943,37 +926,69 @@ $context-link-colors: map-merge-multiple(
 ) !default;
 // scss-docs-end context-link-colors-map
 
+// scss-docs-start body-dim-colors-map
+$body-dim-colors: (
+  "dim-main":            $dim-main,
+  "dim-subtle":          $dim-subtle,
+  "dim-slight":          $dim-slight,
+) !default;
+// scss-docs-end body-dim-colors-map
+// scss-docs-start context-dim-colors-map
+$context-dim-colors: map-merge-multiple(
+  rename-keys($dim-slight-colors, "-dim-slight", "end"),
+  rename-keys($dim-main-colors, "-dim-main", "end"),
+  rename-keys($dim-subtle-colors, "-dim-subtle", "end"),
+) !default;
+// scss-docs-end context-dim-colors-map
+
+// scss-docs-start body-button-colors-map
+$body-button-colors: (
+  "fg-button":         $fg-button,
+  "fg-hover":          $fg-hover,
+  "fg-press":          $fg-press,
+  "fg-disabled":       $fg-disabled,
+  "bg-button":         $bg-button,
+  "bg-hover":          $bg-hover,
+  "bg-press":          $bg-press,
+  "bg-disabled":       $bg-disabled,
+) !default;
+// scss-docs-end body-button-colors-map
 // scss-docs-start context-button-colors-map
 $context-button-colors: map-merge-multiple(
   rename-keys($fg-button-colors, "-fg-button", "end"),
-  rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
   rename-keys($fg-hover-colors, "-fg-hover", "end"),
   rename-keys($fg-press-colors, "-fg-press", "end"),
+  rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
   rename-keys($bg-button-colors, "-bg-button", "end"),
-  rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
   rename-keys($bg-hover-colors, "-bg-hover", "end"),
   rename-keys($bg-press-colors, "-bg-press", "end"),
+  rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
 ) !default;
 // scss-docs-end context-button-colors-map
 
 // scss-docs-start body-colors-map
-// $body-colors: map-merge-multiple(
-//   (
-//     "base-color":           $base-color,
-//     "contrast-color":       $contrast-color,
-//   ),
-//   $body-fg-colors,
-//   $body-bg-colors,
-//   $body-border-colors,
-//   $body-icon-colors,
-//   $body-dim-colors,
-//   $body-link-colors
-// ) !default;
+$body-colors: map-merge-multiple(
+  (
+    "base-color":            $base-color,
+    "contrast-color":        $contrast-color,
+    "transparent-color":     $transparent-color,
+  ),
+  $body-fg-colors,
+  $body-bg-colors,
+  $body-border-colors,
+  $body-icon-colors,
+  $body-cue-colors,
+  $body-dim-colors,
+  $body-link-colors,
+  $body-button-colors,
+) !default;
 // scss-docs-end body-colors-map
+
 // scss-docs-start context-palette-map
 $context-palette: map-merge-multiple(
   $context-base-colors,
   $context-contrast-colors,
+  $context-transparent-colors,
   $context-fg-colors,
   $context-bg-colors,
   $context-border-colors,

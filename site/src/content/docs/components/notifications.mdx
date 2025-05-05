@@ -63,6 +63,7 @@ Use the `.solid` class to give notifications some emphassis.
 Notifications can also contain additional HTML elements like headings, paragraphs and dividers.
 
 <Example code={`<div class="notification success d-flex fade show" role="alert">
+    <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
     <svg class="icon notification-icon" area-hidden="true"><use xlink:href="#check-solid"/></svg>
     <div>
       <h4 class="title">A success notification!</h4>
@@ -70,7 +71,6 @@ Notifications can also contain additional HTML elements like headings, paragraph
       <hr>
       <p>Component <code>p:last-item</code> margins are set to <code>0</code> by default.</p>
     </div>
-    <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
   </div>
 
   <div class="notification success solid d-flex pe-medium fade show" role="alert">

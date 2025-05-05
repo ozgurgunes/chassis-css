@@ -85,6 +85,7 @@
 
     color: var(--#{$prefix}fg-color);
     background-color: var(--#{$prefix}bg-color);
+    @include transition($transition-collapse);
 
     &:first-of-type,
     &:first-of-type > summary {

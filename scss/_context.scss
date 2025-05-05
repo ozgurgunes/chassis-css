@@ -1,6 +1,6 @@
 // scss-docs-start context-class
 .context {
-  @extend %context, %basic-context;
+  @extend %context;
   @include colors();
 
   &.solid {

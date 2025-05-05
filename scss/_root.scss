@@ -16,7 +16,10 @@
   }
   @each $name, $value in $context-palette {
     --#{$prefix}#{$name}: #{$value};
-    --#{$prefix}#{$name}-rgb: #{to-rgb($value)};
+    @if not str-index($name, "subtle") and not str-index($name, "slight") {
+      --#{$prefix}#{$name}-rgb: #{to-rgb($value)};
+    }
+    // --#{$prefix}#{$name}-rgb: #{to-rgb($value)};
   }
 
   // Generate font variables
@@ -83,10 +86,14 @@
   }
   --#{$prefix}separator-size: #{$separator-size};
   --#{$prefix}indicator-size: #{$indicator-size};
-  // scss-docs-start root-body-mixins
-  @include context($body-context);
+  // scss-docs-start root-body-colors
+  // Generate opacity variables
+  @each $name, $value in $body-colors {
+    --#{$prefix}#{$name}: #{$value};
+  }
+  // @include context($body-context);
   @include body-colors();
-  // scss-docs-end root-body-mixins
+  // scss-docs-end root-body-colors
 
   --#{$prefix}code-color: var(--#{$prefix}body-code-color, #{$code-color});
   --#{$prefix}mark-fg-color: var(--#{$prefix}body-mark-fg-color, #{$mark-fg-color});
