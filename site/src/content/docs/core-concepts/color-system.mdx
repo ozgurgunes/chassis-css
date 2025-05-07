@@ -3,8 +3,8 @@ title: Color System
 description: The Chassis - CSS provides a comprehensive approach to managing colors in UI design. Colors are categorized and defined based on area of use, and contextual palettes are created to ensure consistency and clarity across the user interface.
 toc: true
 ---
-import ContextPalette from '@components/docs/ContextPalette.astro'
-import BodyPalette from '@components/docs/BodyPalette.astro'
+import DocsBodyPalette from '@components/shortcodes/DocsBodyPalette.astro'
+import DocsContextPalette from '@components/shortcodes/DocsContextPalette.astro'
 import { getData } from '@libs/data'
 import { sassVars } from '@libs/sass'
 
@@ -65,7 +65,7 @@ While `default` usually inverts in dark mode, `alternate` may stay the same depe
 
 Common color needs of UI design have been defined, categorized, and named by their area of use. Palettes for each `context color` have been created by referencing primitive color palettes.
 
-<ContextPalette />
+<DocsContextPalette />
 
 These colors are created using `base color` and `opacity` references. This is done by design tokens, but here is an example Sass version to make it clear.
 
@@ -85,7 +85,7 @@ From the context colors, the `default` palette is copied as the `body` palette, 
 
 The body palette created above is used to declare body variables, which are then assigned to the related properties of the body and its children.
 
-<BodyPalette />
+<DocsBodyPalette />
 
 Switching between these palettes in contextual components is done by changing CSS variables.
 

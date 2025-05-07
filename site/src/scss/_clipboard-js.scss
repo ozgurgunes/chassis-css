@@ -19,10 +19,11 @@
 
 .button-clipboard,
 .button-edit {
+  --cx-icon-color: var(--cx-fg-color);
+  --cx-icon-size: var(--cx-icon-small);
   display: block;
-  padding: .5em;
+  padding: .25em;
   line-height: 1;
-  color: var(--cx-fg-color);
   background-color: var(--cxd-pre-bg);
   border: 0;
   @include border-radius(.25rem);
@@ -39,6 +40,6 @@
 .button-clipboard {
   position: relative;
   z-index: 2;
-  margin-top: 1.20rem;
+  margin-top: .75rem;
   margin-right: .75rem;
 }

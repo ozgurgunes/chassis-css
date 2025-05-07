@@ -20,7 +20,7 @@ Click the accordions below to expand/collapse the accordion content.
 Just add the `open` attribute on the `details` element to render it is expanded by default.
 
 <Example code={`<div class="accordion">
-  <details open>
+  <details name="example" open>
     <summary>
       <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #1</h4>
     </summary>
@@ -30,7 +30,7 @@ Just add the `open` attribute on the `details` element to render it is expanded 
       </p>
     </div>
   </details>
-  <details>
+  <details name="example">
     <summary>
       <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #2</h4>
     </summary>
@@ -40,7 +40,7 @@ Just add the `open` attribute on the `details` element to render it is expanded 
       </p>
     </div>
   </details>
-  <details>
+  <details name="example">
     <summary>
       <h4 class="accordion-title" role="heading" aria-level="4">Accordion Item #3</h4>
     </summary>

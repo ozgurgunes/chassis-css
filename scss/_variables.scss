@@ -199,9 +199,9 @@ $small-font-size:           .875em !default;
 $large-font-size:           1.25em !default;
 $initials-font-size:        $small-font-size !default;
 
-$small-line-height:         1.25em !default;
+$small-line-height:         1.5em !default;
 $medium-line-height:          1.5em !default;
-$large-line-height:         1.75em !default;
+$large-line-height:         1.5em !default;
 
 $sub-sup-font-size:         .75em !default;
 
@@ -451,12 +451,15 @@ $zindex-levels: (
 // Code
 //
 
-$code-font-size:                    $small-font-size !default;
+$code-font-family:                  $font-family-code !default;
+$code-font-size:                    $font-size-code-medium !default;
+$code-line-height:                  $line-height-code-medium !default;
 $code-color:                        $pink !default;
 
 $kbd-padding-y:                     .1875rem !default;
 $kbd-padding-x:                     .375rem !default;
 $kbd-font-size:                     $code-font-size !default;
+$kbd-line-height:                   $code-line-height !default;
 $kbd-color:                         var(--#{$prefix}bg-color) !default;
 $kbd-bg:                            var(--#{$prefix}fg-color) !default;
 $nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, removing in v6

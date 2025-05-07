@@ -266,23 +266,19 @@ sup { top: -.5em; }
 
 a {
   color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1));
-  //color: var(--#{$prefix}link-color);
   text-decoration: $link-decoration;
 
   &:hover {
-    //--#{$prefix}link-hover-color: var(--#{$prefix}link-visited);
     color: rgba(var(--#{$prefix}hover-color-rgb), var(--#{$prefix}link-opacity, 1));
     text-decoration: $link-hover-decoration;
   }
 
   &:active {
-    //--#{$prefix}link-color: var(--#{$prefix}link-active);
     color: rgba(var(--#{$prefix}active-color-rgb), var(--#{$prefix}link-opacity, 1));
   }
 
   @if ($enable-visited-links) {
     &:visited {
-      //--#{$prefix}link-color: var(--#{$prefix}link-visited);
       color: rgba(var(--#{$prefix}visited-color-rgb), var(--#{$prefix}link-opacity, 1));
     }
   }
@@ -309,9 +305,9 @@ pre,
 code,
 kbd,
 samp {
-  font-family: $font-family-code;
-  @include font-size(1em); // Correct the odd `em` font sizing in all browsers.
-  @include line-height();
+  font-family: var(--#{$prefix}code-font-family, $code-font-family);
+  @include font-size(var(--#{$prefix}code-font-size, $code-font-size));
+  @include line-height(var(--#{$prefix}code-line-height, $code-line-height));
 }
 
 // 1. Remove browser default top margin
@@ -319,27 +315,27 @@ samp {
 // 3. Don't allow content to break outside
 
 pre {
-  --#{$prefix}fg-color: var(--#{$prefix}pre-fg-color, #{$pre-color});
   display: block;
   margin-top: 0; // 1
   margin-bottom: 1rem; // 2
   overflow: auto; // 3
-  @include font-size(var(--#{$prefix}code-font-size));
-  @include line-height(var(--#{$prefix}code-line-height));
-  color: var(--#{$prefix}fg-color);
+  @include font-size(var(--#{$prefix}code-font-size, $code-font-size));
+  @include line-height(var(--#{$prefix}code-line-height, $code-line-height));
+  color: var(--#{$prefix}pre-fg-color, #{$pre-color});
 
   // Account for some code outputs that place code tags in pre tags
   code {
-    font-size: inherit; //stylelint-disable-line
+    @include font-size(inherit);
+    @include line-height(inherit);
     color: inherit;
     word-break: normal;
   }
 }
 
 code {
-  @include font-size(var(--#{$prefix}code-font-size));
-  @include line-height(var(--#{$prefix}code-line-height));
-  color: var(--#{$prefix}code-color);
+  @include font-size(var(--#{$prefix}code-font-size, $code-font-size));
+  @include line-height(var(--#{$prefix}code-line-height, $code-line-height));
+  color: var(--#{$prefix}code-color, $code-color);
   word-wrap: break-word;
 
   // Streamline the style when inside anchors to avoid broken underline and more
@@ -351,7 +347,7 @@ code {
 kbd {
   padding: $kbd-padding-y $kbd-padding-x;
   @include font-size($kbd-font-size);
-  @include line-height();
+  @include line-height($kbd-line-height);
   color: $kbd-color;
   background-color: $kbd-bg;
   @include border-radius($border-radius-small);

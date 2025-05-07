@@ -12,8 +12,10 @@ export declare global {
   export const Code: typeof import('@shortcodes/Code.astro').default
   export const CxTable: typeof import('@shortcodes/CxTable.astro').default
   export const DeprecatedIn: typeof import('@shortcodes/DeprecatedIn.astro').default
+  export const DocsBodyPalette: typeof import('@shortcodes/DocsBodyPalette.astro').default
   export const DocsCSS: typeof import('@shortcodes/DocsCSS.astro').default
   export const DocsCSSVars: typeof import('@shortcodes/DocsCSSVars.astro').default
+  export const DocsContextPalette: typeof import('@shortcodes/DocsContextPalette.astro').default
   export const DocsSASSVars: typeof import('@shortcodes/DocsSASSVars.astro').default
   export const Example: typeof import('@shortcodes/Example.astro').default
   export const JsDismiss: typeof import('@shortcodes/JsDismiss.astro').default

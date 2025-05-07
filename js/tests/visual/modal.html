@@ -39,13 +39,13 @@
       <h1>Modal <small>Bootstrap Visual Test</small></h1>
 
       <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div class="modal-container">
+          <div class="modal-window">
             <div class="modal-header">
               <h1 class="modal-title fs-4" id="myModalLabel">Modal title</h1>
               <button type="button" class="btn-close" data-cx-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-content">
               <h4>Text in a modal</h4>
               <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 
@@ -124,13 +124,13 @@
       </div>
 
       <div class="modal fade" id="firefoxModal" tabindex="-1" aria-labelledby="firefoxModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <div class="modal-container">
+          <div class="modal-window">
             <div class="modal-header">
               <h1 class="modal-title fs-4" id="firefoxModalLabel">Firefox Bug Test</h1>
               <button type="button" class="btn-close" data-cx-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-content">
               <ol>
                 <li>Ensure you're using Firefox.</li>
                 <li>Open a new tab and then switch back to this tab.</li>
@@ -148,13 +148,13 @@
       </div>
 
       <div class="modal fade" id="slowModal" tabindex="-1" aria-labelledby="slowModalLabel" aria-hidden="true" style="transition-duration: 5s;">
-        <div class="modal-dialog" style="transition-duration: inherit;">
-          <div class="modal-content">
+        <div class="modal-container" style="transition-duration: inherit;">
+          <div class="modal-window">
             <div class="modal-header">
               <h1 class="modal-title fs-4" id="slowModalLabel">Lorem slowly</h1>
               <button type="button" class="btn-close" data-cx-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-content">
               <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Nulla vitae elit libero, a pharetra augue.</p>
             </div>
             <div class="modal-footer">
@@ -192,7 +192,7 @@
         Tall body content to force the page to have a scrollbar.
       </div>
 
-      <button type="button" class="btn btn-secondary btn-large" data-cx-toggle="modal" data-cx-target="&#x3C;div class=&#x22;modal fade the-bad&#x22; tabindex=&#x22;-1&#x22;&#x3E;&#x3C;div class=&#x22;modal-dialog&#x22;&#x3E;&#x3C;div class=&#x22;modal-content&#x22;&#x3E;&#x3C;div class=&#x22;modal-header&#x22;&#x3E;&#x3C;button type=&#x22;button&#x22; class=&#x22;btn-close&#x22; data-cx-dismiss=&#x22;modal&#x22; aria-label=&#x22;Close&#x22;&#x3E;&#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;&#x3C;/button&#x3E;&#x3C;h1 class=&#x22;modal-title fs-4&#x22;&#x3E;The Bad Modal&#x3C;/h1&#x3E;&#x3C;/div&#x3E;&#x3C;div class=&#x22;modal-body&#x22;&#x3E;This modal&#x27;s HTTML source code is declared inline, inside the data-cx-target attribute of it&#x27;s show-button&#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;">
+      <button type="button" class="btn btn-secondary btn-large" data-cx-toggle="modal" data-cx-target="&#x3C;div class=&#x22;modal fade the-bad&#x22; tabindex=&#x22;-1&#x22;&#x3E;&#x3C;div class=&#x22;modal-container&#x22;&#x3E;&#x3C;div class=&#x22;modal-window&#x22;&#x3E;&#x3C;div class=&#x22;modal-header&#x22;&#x3E;&#x3C;button type=&#x22;button&#x22; class=&#x22;btn-close&#x22; data-cx-dismiss=&#x22;modal&#x22; aria-label=&#x22;Close&#x22;&#x3E;&#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;&#x3C;/button&#x3E;&#x3C;h1 class=&#x22;modal-title fs-4&#x22;&#x3E;The Bad Modal&#x3C;/h1&#x3E;&#x3C;/div&#x3E;&#x3C;div class=&#x22;modal-content&#x22;&#x3E;This modal&#x27;s HTTML source code is declared inline, inside the data-cx-target attribute of it&#x27;s show-button&#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;&#x3C;/div&#x3E;">
         Modal with an XSS inside the data-cx-target
       </button>
 

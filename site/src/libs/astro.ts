@@ -27,11 +27,7 @@ const autoImportedComponentDirectories = ['shortcodes']
 // A list of static file paths that will be aliased to a different path.
 const staticFileAliases = {
   '/docs/[version]/assets/img/favicons/apple-touch-icon.png': '/apple-touch-icon.png',
-  '/docs/[version]/assets/img/favicons/favicon.ico': '/favicon.ico',
-  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.min.css': '/icons/chassis-icons.min.css',
-  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.svg': '/icons/chassis-icons.svg',
-  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.woff': '/icons/chassis-icons.woff',
-  // '../../node_modules/@ozgurgunes/chassis-tokens/dist/icons/chassis-icons.woff2': '/icons/chassis-icons.woff2',
+  '/docs/[version]/assets/img/favicons/favicon.ico': '/favicon.ico'
 }
 
 // A list of pages that will be excluded from the sitemap.
@@ -49,18 +45,21 @@ export function chassis(): AstroIntegration[] {
     {
       name: 'chassis-integration',
       hooks: {
-        "astro:server:setup": ({ server }) => {
-          if (server.config.mode !== "development") {
-              return;
+        'astro:server:setup': ({ server }) => {
+          if (server.config.mode !== 'development') {
+            return
           }
-          server.watcher.add(path.join(getDocsFsPath(), '../dist/css/chassis.css'));
-          server.watcher.add(path.join(getDocsFsPath(), '../dist/js/chassis.js'));
+          server.watcher.add(path.join(getDocsFsPath(), '../dist/css/chassis.css'))
+          server.watcher.add(path.join(getDocsFsPath(), '../dist/js/chassis.js'))
         },
-        'astro:config:setup': ({ addWatchFile, updateConfig }) => {
+        'astro:config:setup': ({ command, addWatchFile, updateConfig }) => {
           // Reload the config when the integration is modified.
           addWatchFile(path.join(getDocsFsPath(), 'src/libs/astro.ts'))
-          addWatchFile(path.join(getDocsFsPath(), '../dist/css/chassis.css'))
-          addWatchFile(path.join(getDocsFsPath(), '../dist/js/chassis.js'))
+
+          if (command === 'dev') {
+            addWatchFile(path.join(getDocsFsPath(), '../dist/css/chassis.css'))
+            addWatchFile(path.join(getDocsFsPath(), '../dist/js/chassis.js'))
+          }
 
           // Add the remark and rehype plugins.
           updateConfig({
@@ -164,7 +163,7 @@ function copyChassis() {
 // Copy the `icons` folder from the chassis-tokens repo to make it available from the `/icons` URL.
 function copyIcons() {
   const source = path.join(process.cwd(), 'node_modules/@ozgurgunes/chassis-tokens/dist/icons')
-  const destination = path.join(getDocsPublicFsPath(), 'icons')
+  const destination = path.join(getDocsPublicFsPath(), 'docs', getConfig().docs_version, 'assets', 'icons')
 
   fs.mkdirSync(destination, { recursive: true })
   fs.cpSync(source, destination, { recursive: true })

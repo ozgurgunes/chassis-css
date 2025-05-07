@@ -33,6 +33,7 @@ Reset a text or link's color with `.fg-reset`, so that it inherits the color fro
 Change the alpha opacity of the link `rgba()` color value with utilities. Please be aware that changes to a color’s opacity can lead to links with [*insufficient* contrast]([[docsref:getting-started/accessibility/#color-contrast]]).
 
 <Example code={[...getData('basic-opacities').map((opacity) => `<p><a href="#" class="link-opacity-${opacity.name}">Link opacity ${opacity.name} link</a>`)]} />
+<Example code={[...getData('basic-opacities').map((opacity) => `<p><a href="#" class="link-secondary link-opacity-${opacity.name}">Link opacity ${opacity.name} link</a>`)]} />
 
 ### Hover opacity
 
@@ -48,7 +49,7 @@ Links underlines also be modified by their color and offset.
 
 Change the underline’s color independent of the link text color.
 
-<Example code={getData('context-colors').map((contextColor) => `<p><a href="#" class="text-underline-${contextColor.name}">${titleCase(contextColor.title)} underline</a></p>`)} />
+<Example code={getData('context-colors').map((contextColor) => `<p><a href="#" class="link-underline-${contextColor.name}">${titleCase(contextColor.title)} underline</a></p>`)} />
 
 ### Underline offset
 
@@ -63,13 +64,13 @@ Change the underline’s distance from your text. Offset is set in `em` units to
 
 Change the underline’s opacity. Requires adding `.text-underline` to first set an `rgba()` color we use to then modify the alpha opacity.
 
-<Example code={[...getData('basic-opacities').map((opacity) => `<p><a href="#" class="underline-offset-2 text-underline underline-opacity-${opacity.name}">Underline opacity ${opacity.name}</a>`)]} />
+<Example code={[...getData('basic-opacities').map((opacity) => `<p><a href="#" class="link-secondary link-underline underline-offset-2 underline-info underline-opacity-${opacity.name}">Underline opacity ${opacity.name}</a>`)]} />
 
 ### Hover variants
 
 Just like the `.link-opacity-*-hover` utilities, `.underline-offset` and `.underline-opacity` utilities include `:hover` variants by default. Mix and match to create unique link styles.
 
-<Example code={`<a class="underline-opacity-0 underline-opacity-50-hover text-underline underline-offset-3 underline-offset-3-hover" href="#">
+<Example code={`<a class="link-underline underline-opacity-0 underline-opacity-50-hover underline-offset-3" href="#">
     Underline opacity 0
   </a>`} />
 

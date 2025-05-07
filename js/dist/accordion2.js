@@ -4,10 +4,10 @@
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./base-component.js'), require('./util/index.js')) :
-  typeof define === 'function' && define.amd ? define(['./base-component', './util/index'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Accordion2 = factory(global.BaseComponent, global.Index));
-})(this, (function (BaseComponent, index_js) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./base-component.js')) :
+  typeof define === 'function' && define.amd ? define(['./base-component'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Accordion2 = factory(global.BaseComponent));
+})(this, (function (BaseComponent) { 'use strict';
 
   /**
    * --------------------------------------------------------------------------
@@ -15,6 +15,9 @@
    * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
+
+  // import EventHandler from './dom/event-handler.js'
+  // import SelectorEngine from './dom/selector-engine.js'
 
   const NAME = 'accordion';
   // const DATA_KEY = 'cx.accordion'
@@ -43,99 +46,56 @@
     constructor(element, config) {
       super(element, config);
       // Store the <details> element
-      // Store the <summary> element
+      this.complete = () => {
+        this._isTransitioning = false;
+        this._content.style.height = '';
+      };
       this._summary = element.querySelector('summary');
       // Store the <div class="content"> element
       this._content = element.querySelector('.accordion-body');
-      // Store if the element is closing
-      this._isOpening = false;
-      // Store if the element is expanding
-      this._isClosing = false;
-      // Detect user clicks on the summary element
-      this._summary.addEventListener('click', e => this.onClick(e));
+      // Store if the element is transitioning
+      this._isTransitioning = false;
+      // Detect if the parent element is static
       this._isStatic = this._element.parentElement.classList.contains('static');
-    }
-    onClick(e) {
-      // Stop default behaviour from the browser
-      e.preventDefault();
-      // Add an overflow on the <details> to avoid content overflowing
-      this._element.style.overflow = 'hidden';
-      // console.log(this._element.open) // eslint-disable-line no-console
-      if (this._isClosing || !this._element.open) {
-        // Collapse other elements
-        this._openItems = this._element.parentElement.querySelectorAll('details[open]');
-        if (!this._isStatic && this._openItems) {
-          for (const e of this._openItems) {
-            const item = new Accordion(e);
-            if (item._element !== this._element) {
-              item._element.style.overflow = 'hidden';
-              item.close();
+
+      // Replace the Proxy with a MutationObserver to watch for changes to the `open` attribute
+      const observer = new MutationObserver(mutationsList => {
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'open') {
+            if (this._element.open) {
+              this.open();
+            } else {
+              this.close();
             }
           }
         }
-        // this.mode = this._element.querySelector('data-cx-accordion')
-
-        // Store open elements
-        this.open();
-        // Check if the element is being openned or is already open
-      } else if (this._isOpening || this._element.open) {
-        this.close();
-      }
+      });
+      observer.observe(this._element, {
+        attributes: true
+      });
     }
     open() {
-      if (this._isOpening || this._element.open) {
+      if (this._isTransitioning) {
         return;
       }
-      this._isOpening = true;
-      // this._element.open = true
-
-      // EventHandler.trigger(this._element, EVENT_OPEN)
-      // if (startEvent.defaultPrevented) {
-      //   return
-      // }
-
-      this._element.style.height = `${this._element.offsetHeight}px`;
-      const complete = () => {
-        this._element.open = true;
-        this._isOpening = false;
-        this._element.style.overflow = '';
-        this._content.style.height = '';
-        // EventHandler.trigger(this._element, EVENT_OPENED)
-      };
+      this._isTransitioning = true;
+      this._element.style.height = `${this._summary.offsetHeight}px`;
       this._element.style.height = `${this._summary.offsetHeight + this._content.offsetHeight}px`;
-      // reflow(this._element)
-      this._queueCallback(complete, this._element, true);
+      this._queueCallback(this.complete(true), this._element, true);
     }
     close() {
-      if (this._isClosing || !this._element.open) {
+      if (this._isTransitioning) {
         return;
       }
-      this._isClosing = true;
-      // EventHandler.trigger(this._element, EVENT_CLOSE)
-      // if (startEvent.defaultPrevented) {
-      //   return
-      // }
-
+      this._isTransitioning = true;
       this._element.style.height = `${this._summary.offsetHeight + this._content.offsetHeight}px`;
-
-      // reflow(this._element)
-
-      const complete = () => {
-        this._element.open = false;
-        this._isClosing = false;
-        this._element.style.overflow = '';
-        this._element.style.height = '';
-        // EventHandler.trigger(this._element, EVENT_CLOSED)
-      };
       this._element.style.height = `${this._summary.offsetHeight}px`;
-      this._queueCallback(complete, this._element, true);
+      this._queueCallback(this.complete(false), this._element, true);
     }
   }
   for (const element of document.querySelectorAll('.accordion > details')) {
-    // eslint-disable-next-line no-new
-    new Accordion(element);
+    Accordion.getOrCreateInstance(element);
   }
-  index_js.defineJQueryPlugin(Accordion);
 
   return Accordion;
 

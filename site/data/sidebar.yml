@@ -2,7 +2,7 @@
 # The logic for the sidebar generation is in "site/layouts/partials/docs-sidebar.html".
 
 - title: Core Concepts
-  icon: book-half
+  icon: book-open-solid
   icon_color: cyan
   pages:
     - title: Overview
@@ -12,7 +12,7 @@
     - title: Design Tokens
 
 - title: Getting started
-  icon: book-half
+  icon: book-open-solid
   icon_color: indigo
   pages:
     - title: Introduction

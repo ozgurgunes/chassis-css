@@ -373,7 +373,7 @@ We use a subset of all colors to create a smaller color palette for generating c
   {getData('context-colors').map((contextColor) => {
     return (
       <div class="col-medium-4">
-        <div class={`p-medium mb-medium text-bg-${contextColor.name} rounded-3`}>{contextColor.title}</div>
+        <div class={`p-medium mb-medium bg-contrast fg-${contextColor.name} rounded-3`}>{contextColor.title}</div>
       </div>
     )
   })}

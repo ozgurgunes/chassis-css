@@ -80,11 +80,11 @@ if (filePath && fileMatch && codeToDisplay) {
   })
 
   clipboard.on('success', (event) => {
-    const iconFirstChild = event.trigger.querySelector('.bi')?.firstElementChild
+    const iconFirstChild = event.trigger.querySelector('.icon')?.firstElementChild
     const tooltipButton = chassis.Tooltip.getInstance(event.trigger)
     const namespace = 'http://www.w3.org/1999/xlink'
     const originalXhref = iconFirstChild?.getAttributeNS(namespace, 'href')
-    const isCheckIconVisible = originalXhref === '#check2'
+    const isCheckIconVisible = originalXhref === '#check-solid'
 
     if (isCheckIconVisible) {
       return
@@ -103,7 +103,7 @@ if (filePath && fileMatch && codeToDisplay) {
     event.clearSelection()
 
     if (originalXhref) {
-      iconFirstChild?.setAttributeNS(namespace, 'href', originalXhref.replace('clipboard', 'check2'))
+      iconFirstChild?.setAttributeNS(namespace, 'href', originalXhref.replace('clipboard-outline', 'check-solid'))
     }
 
     setTimeout(() => {
@@ -137,8 +137,8 @@ if (filePath && fileMatch && codeToDisplay) {
     ) : (
       <div class="cxd-clipboard">
         <button type="button" class="button-clipboard">
-          <svg class="bi" role="img" aria-label="Copy">
-            <use xlink:href="#clipboard" />
+          <svg class="icon" role="img" aria-label="Copy">
+            <use xlink:href="#clipboard-outline" />
           </svg>
         </button>
       </div>

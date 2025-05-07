@@ -100,9 +100,9 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/markdown-remark": "^6.3.1",
-    "@astrojs/mdx": "^4.2.4",
+    "@astrojs/mdx": "^4.2.6",
     "@astrojs/prism": "^3.2.0",
-    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/sitemap": "^3.3.1",
     "@babel/cli": "^7.27.0",
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
@@ -117,7 +117,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/mime": "^3.0.1",
     "@types/prismjs": "^1.26.0",
-    "astro": "^5.7.0",
+    "astro": "^5.7.10",
     "astro-auto-import": "^0.4.4",
     "autoprefixer": "^10.4.21",
     "bundlewatch": "^0.4.1",
@@ -149,9 +149,9 @@
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
     "karma-rollup-preprocessor": "7.0.7",
-    "lockfile-lint": "^4.14.0",
+    "lockfile-lint": "^4.14.1",
     "mime": "^4.0.7",
-    "nodemon": "^3.1.9",
+    "nodemon": "^3.1.10",
     "npm-run-all2": "^7.0.2",
     "picocolors": "^1.1.1",
     "postcss": "^8.5.3",
@@ -172,15 +172,14 @@
     "terser": "^5.39.0",
     "unist-util-visit": "^5.0.0",
     "vnu-jar": "24.10.17",
-    "zod": "^3.20.6"
+    "zod": "^3.24.3"
   },
   "files": [
     "dist/{css,js}/*.{css,js,map}",
     "js/{src,dist}/**/*.{js,map}",
     "js/index.{esm,umd}.js",
     "scss/**/*.scss",
-    "!scss/tests/**",
-    "chassis-tokens/dist/tokens/web/*.{css,scss}"
+    "!scss/tests/**"
   ],
   "jspm": {
     "registry": "npm",
@@ -199,6 +198,5 @@
     "peerDependencies": {
       "@popperjs/core": "^2.11.8"
     }
-  },
-  "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6"
+  }
 }

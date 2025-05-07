@@ -1,14 +1,19 @@
 import Prism, { type hooks } from 'prismjs'
 const { Token } = Prism
 
-let isPrismConfigured = false
+// Use a global variable to persist the state across server reloads
+declare global {
+  var isPrismConfigured: boolean | undefined
+}
+
+globalThis.isPrismConfigured = globalThis.isPrismConfigured || false
 
 export function configurePrism() {
-  if (isPrismConfigured) {
+  if (globalThis.isPrismConfigured) {
     return
   }
 
-  isPrismConfigured = true
+  globalThis.isPrismConfigured = true
 
   Prism.hooks.add('after-tokenize', lineWrapPlugin)
 }

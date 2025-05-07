@@ -355,7 +355,6 @@
   position: relative;
   padding: .5rem ($cxd-gutter-x * .5);
   background-color: var(--cxd-pre-bg, var(--cx-bg-even));
-  font-size: var(--cx-font-size-small);
 
 
   @include media-breakpoint-up(medium) {
@@ -375,6 +374,8 @@
     margin-bottom: 0;
     overflow: overlay;
     white-space: pre;
+    font-size: var(--cx-font-size-code-small);
+    line-height: var(--cx-line-height-code-small);
     background-color: transparent;
     border: 0;
   }
