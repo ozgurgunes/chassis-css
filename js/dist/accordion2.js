@@ -4,10 +4,10 @@
   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/raw/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./base-component.js')) :
-  typeof define === 'function' && define.amd ? define(['./base-component'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Accordion2 = factory(global.BaseComponent));
-})(this, (function (BaseComponent) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./base-component.js'), require('./dom/selector-engine.js'), require('./dom/event-handler.js'), require('./util/index.js')) :
+  typeof define === 'function' && define.amd ? define(['./base-component', './dom/selector-engine', './dom/event-handler', './util/index'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Accordion2 = factory(global.BaseComponent, global.SelectorEngine, global.EventHandler, global.Index));
+})(this, (function (BaseComponent, SelectorEngine, EventHandler, index_js) { 'use strict';
 
   /**
    * --------------------------------------------------------------------------
@@ -16,49 +16,27 @@
    * --------------------------------------------------------------------------
    */
 
-  // import EventHandler from './dom/event-handler.js'
-  // import SelectorEngine from './dom/selector-engine.js'
-
   const NAME = 'accordion';
-  // const DATA_KEY = 'cx.accordion'
-  // const EVENT_KEY = `.${DATA_KEY}`
-  // const DATA_API_KEY = '.data-api'
-
-  // const EVENT_OPEN = `open${EVENT_KEY}`
-  // const EVENT_OPENED = `opened${EVENT_KEY}`
-  // const EVENT_CLOSE = `close${EVENT_KEY}`
-  // const EVENT_CLOSED = `closed${EVENT_KEY}`
-  // const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
-
-  // const CLASS_NAME_OPEN = 'open'
-  // const CLASS_NAME_CLOSE = 'collapse'
-  // const CLASS_NAME_CLOSING = 'collapsing'
-  // const CLASS_NAME_CLOSED = 'collapsed'
-  // const CLASS_NAME_DEEPER_CHILDREN = `:scope .${CLASS_NAME_CLOSE} .${CLASS_NAME_CLOSING}`
-  // const CLASS_NAME_HORIZONTAL = 'collapse-horizontal'
-
-  // const SELECTOR_ACTIVES = '.open, .closing'
-
+  const DATA_KEY = 'cx.accordion';
+  const EVENT_KEY = `.${DATA_KEY}`;
+  const DATA_API_KEY = '.data-api';
+  const EVENT_OPEN = `open${EVENT_KEY}`;
+  const EVENT_OPENED = `opened${EVENT_KEY}`;
+  const EVENT_CLOSE = `close${EVENT_KEY}`;
+  const EVENT_CLOSED = `closed${EVENT_KEY}`;
+  const SELECTOR_DETAILS = '.accordion > details';
+  const SELECTOR_SUMMARY = 'summary';
+  const SELECTOR_CONTENT = '.accordion-body';
+  const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`;
   class Accordion extends BaseComponent {
     static get NAME() {
       return NAME;
     }
     constructor(element, config) {
       super(element, config);
-      // Store the <details> element
-      this.complete = () => {
-        this._isTransitioning = false;
-        this._content.style.height = '';
-      };
-      this._summary = element.querySelector('summary');
-      // Store the <div class="content"> element
-      this._content = element.querySelector('.accordion-body');
-      // Store if the element is transitioning
+      this._summary = SelectorEngine.findOne(SELECTOR_SUMMARY, element);
+      this._content = SelectorEngine.findOne(SELECTOR_CONTENT, element);
       this._isTransitioning = false;
-      // Detect if the parent element is static
-      this._isStatic = this._element.parentElement.classList.contains('static');
-
-      // Replace the Proxy with a MutationObserver to watch for changes to the `open` attribute
       const observer = new MutationObserver(mutationsList => {
         for (const mutation of mutationsList) {
           if (mutation.type === 'attributes' && mutation.attributeName === 'open') {
@@ -78,24 +56,49 @@
       if (this._isTransitioning) {
         return;
       }
+      const startEvent = EventHandler.trigger(this._element, EVENT_OPEN);
+      if (startEvent.defaultPrevented) {
+        return;
+      }
       this._isTransitioning = true;
+      this._summary.style['box-shadow'] = 'none';
+      this._element.style.overflow = 'hidden';
       this._element.style.height = `${this._summary.offsetHeight}px`;
       this._element.style.height = `${this._summary.offsetHeight + this._content.offsetHeight}px`;
-      this._queueCallback(this.complete(true), this._element, true);
+      const complete = () => {
+        this._isTransitioning = false;
+        this._summary.style['box-shadow'] = '';
+        this._element.style.overflow = '';
+        this._element.style.height = '';
+        EventHandler.trigger(this._element, EVENT_OPENED);
+      };
+      this._queueCallback(complete, this._element, true);
     }
     close() {
       if (this._isTransitioning) {
         return;
       }
+      const startEvent = EventHandler.trigger(this._element, EVENT_CLOSE);
+      if (startEvent.defaultPrevented) {
+        return;
+      }
       this._isTransitioning = true;
       this._element.style.height = `${this._summary.offsetHeight + this._content.offsetHeight}px`;
       this._element.style.height = `${this._summary.offsetHeight}px`;
-      this._queueCallback(this.complete(false), this._element, true);
+      const complete = () => {
+        this._isTransitioning = false;
+        this._element.style.height = '';
+        EventHandler.trigger(this._element, EVENT_CLOSED);
+      };
+      this._queueCallback(complete, this._element, true);
     }
   }
-  for (const element of document.querySelectorAll('.accordion > details')) {
-    Accordion.getOrCreateInstance(element);
-  }
+  EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DETAILS, () => {
+    for (const element of SelectorEngine.find(SELECTOR_DETAILS)) {
+      Accordion.getOrCreateInstance(element);
+    }
+  });
+  index_js.defineJQueryPlugin(Accordion);
 
   return Accordion;
 

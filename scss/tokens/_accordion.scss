@@ -1,7 +1,25 @@
 // scss-docs-start accordion-tokens
+// Font
 $accordion-title-font:                $cx-font-common-accordion-medium-title !default;
 $accordion-body-font:                 $cx-font-common-accordion-medium-body !default;
+$accordion-large-title-font:          $cx-font-common-accordion-large-title !default;
+$accordion-large-body-font:           $cx-font-common-accordion-large-body !default;
+$accordion-small-title-font:          $cx-font-common-accordion-small-title !default;
+$accordion-small-body-font:           $cx-font-common-accordion-small-body !default;
+// Color
+$accordion-item-fg-color:             $cx-color-common-accordion-item-fg-color !default;
+$accordion-item-bg-color:             $cx-color-common-accordion-item-bg-color !default;
+$accordion-title-fg-color:            $cx-color-common-accordion-title-fg-idle !default;
+$accordion-title-bg-color:            $cx-color-common-accordion-title-bg-idle !default;
+$accordion-title-fg-active:           $cx-color-common-accordion-title-fg-active !default;
+$accordion-title-bg-active:           $cx-color-common-accordion-title-bg-active !default;
+$accordion-indicator-idle-color:      $cx-color-common-accordion-indicator-idle !default;
+$accordion-indicator-active-color:    $cx-color-common-accordion-indicator-active !default;
+// Size
 $accordion-indicator-size:            $cx-size-common-accordion-medium-indicator !default;
+$accordion-large-indicator-size:      $cx-size-common-accordion-large-indicator !default;
+$accordion-small-indicator-size:      $cx-size-common-accordion-small-indicator !default;
+// Spacing
 $accordion-title-padding-y:           $cx-space-common-accordion-medium-title-padding-y !default;
 $accordion-title-padding-x:           $cx-space-common-accordion-medium-title-padding-x !default;
 $accordion-body-padding-t:            $cx-space-common-accordion-medium-body-padding-t !default;
@@ -9,10 +27,6 @@ $accordion-body-padding-b:            $cx-space-common-accordion-medium-body-pad
 $accordion-body-padding-s:            $cx-space-common-accordion-medium-body-padding-s !default;
 $accordion-body-padding-e:            $cx-space-common-accordion-medium-body-padding-e !default;
 $accordion-gap:                       $cx-space-common-accordion-medium-gap !default;
-
-$accordion-large-title-font:          $cx-font-common-accordion-large-title !default;
-$accordion-large-body-font:           $cx-font-common-accordion-large-body !default;
-$accordion-large-indicator-size:      $cx-size-common-accordion-large-indicator !default;
 $accordion-large-title-padding-y:     $cx-space-common-accordion-large-title-padding-y !default;
 $accordion-large-title-padding-x:     $cx-space-common-accordion-large-title-padding-x !default;
 $accordion-large-body-padding-t:      $cx-space-common-accordion-large-body-padding-t !default;
@@ -20,10 +34,6 @@ $accordion-large-body-padding-b:      $cx-space-common-accordion-large-body-padd
 $accordion-large-body-padding-s:      $cx-space-common-accordion-large-body-padding-s !default;
 $accordion-large-body-padding-e:      $cx-space-common-accordion-large-body-padding-e !default;
 $accordion-large-gap:                 $cx-space-common-accordion-large-gap !default;
-
-$accordion-small-title-font:          $cx-font-common-accordion-small-title !default;
-$accordion-small-body-font:           $cx-font-common-accordion-small-body !default;
-$accordion-small-indicator-size:      $cx-size-common-accordion-small-indicator !default;
 $accordion-small-title-padding-y:     $cx-space-common-accordion-small-title-padding-y !default;
 $accordion-small-title-padding-x:     $cx-space-common-accordion-small-title-padding-x !default;
 $accordion-small-body-padding-t:      $cx-space-common-accordion-small-body-padding-t !default;
@@ -31,13 +41,6 @@ $accordion-small-body-padding-b:      $cx-space-common-accordion-small-body-padd
 $accordion-small-body-padding-s:      $cx-space-common-accordion-small-body-padding-s !default;
 $accordion-small-body-padding-e:      $cx-space-common-accordion-small-body-padding-e !default;
 $accordion-small-gap:                 $cx-space-common-accordion-small-gap !default;
-
-$accordion-title-fg-color:            $cx-color-common-accordion-title-inactive !default;
-$accordion-title-bg-color:            inherit !default;
-$accordion-title-active-fg-color:     $cx-color-common-accordion-title-active !default;
-$accordion-title-active-bg-color:     inherit !default;
-
+// Icon
 $accordion-indicator:                 svg-icon($cx-icon-common-accordion-indicator) !default;
-$accordion-indicator-inactive-color:  $cx-color-common-accordion-indicator-inactive !default;
-$accordion-indicator-active-color:    $cx-color-common-accordion-indicator-active !default;
 // scss-docs-end accordion-tokens

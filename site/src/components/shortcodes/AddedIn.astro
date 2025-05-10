@@ -9,8 +9,5 @@ interface Props {
 
 const { version } = Astro.props
 ---
-
-<small
-  class="d-inline-flex mb-medium px-xsmall py-2xsmall fw-semibold text-success-emphasis bg-success-subtle border border-success-subtle rounded-2"
-  >Added in v{version}</small
+<span class="badge large success smooth mb-medium">Added in v{version}</span
 >

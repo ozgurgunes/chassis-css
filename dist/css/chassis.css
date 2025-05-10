@@ -3657,7 +3657,7 @@ progress {
   --cx-fg-inverse: var(--cx-context-fg-inverse);
   --cx-fg-solid: var(--cx-context-fg-solid);
   --cx-fg-highlight: var(--cx-context-fg-highlight);
-  --cx-bg-main: var(--cx-context-bg-evident);
+  --cx-bg-main: var(--cx-context-bg-even);
   --cx-bg-even: var(--cx-context-bg-even);
   --cx-bg-evident: var(--cx-context-bg-main);
   --cx-bg-inverse: var(--cx-context-bg-inverse);
@@ -3683,7 +3683,7 @@ progress {
   --cx-fg-inverse-rgb: var(--cx-context-fg-inverse-rgb);
   --cx-fg-solid-rgb: var(--cx-context-fg-solid-rgb);
   --cx-fg-highlight-rgb: var(--cx-context-fg-highlight-rgb);
-  --cx-bg-main-rgb: var(--cx-context-bg-evident-rgb);
+  --cx-bg-main-rgb: var(--cx-context-bg-even-rgb);
   --cx-bg-even-rgb: var(--cx-context-bg-even-rgb);
   --cx-bg-evident-rgb: var(--cx-context-bg-main-rgb);
   --cx-bg-inverse-rgb: var(--cx-context-bg-inverse-rgb);
@@ -8212,7 +8212,7 @@ textarea.form-control {
   z-index: 1;
 }
 
-.notransition {
+.no-transition {
   transition: none !important;
 }
 
@@ -9323,14 +9323,14 @@ textarea.form-control {
   --cx-body-font-size: var(--cx-accordion-body-font-size, var(--cx-font-size-medium));
   --cx-body-font-weight: var(--cx-accordion-body-font-weight, var(--cx-font-weight-normal));
   --cx-body-line-height: var(--cx-accordion-body-line-height, var(--cx-line-height-medium));
-  --cx-fg-color: var(--cx-accordion-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-accordion-bg-color, var(--cx-bg-main));
+  --cx-fg-color: var(--cx-accordion-fg-color, var(--cx-default-fg-main));
+  --cx-bg-color: var(--cx-accordion-bg-color, var(--cx-default-bg-main));
   --cx-title-fg-color: var(--cx-accordion-title-fg-color, var(--cx-default-fg-main));
-  --cx-title-bg-color: var(--cx-accordion-title-bg-color, inherit);
-  --cx-active-fg-color: var(--cx-accordion-active-fg-color, var(--cx-default-fg-main));
-  --cx-active-bg-color: var(--cx-accordion-active-bg-color, inherit);
+  --cx-title-bg-color: var(--cx-accordion-title-bg-color, var(--cx-default-bg-main));
+  --cx-title-fg-active: var(--cx-accordion-title-fg-active, var(--cx-default-fg-main));
+  --cx-title-bg-active: var(--cx-accordion-title-bg-active, var(--cx-default-bg-main));
   --cx-indicator: var(--cx-accordion-indicator, url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.3359 17.6641L3.83594 10.1641C3.44531 9.8125 3.44531 9.22656 3.83594 8.83594C4.1875 8.48438 4.77344 8.48438 5.16406 8.83594L12 15.7109L18.8359 8.875C19.1875 8.48438 19.7734 8.48438 20.1641 8.875C20.5156 9.22656 20.5156 9.8125 20.1641 10.1641L12.625 17.6641C12.2734 18.0547 11.6875 18.0547 11.3359 17.6641Z' fill='currentcolor'/%3e%3c/svg%3e"));
-  --cx-indicator-inactive-color: var(--cx-accordion-indicator-inactive-color, var(--cx-default-fg-main));
+  --cx-indicator-idle-color: var(--cx-accordion-indicator-idle-color, var(--cx-default-fg-main));
   --cx-indicator-active-color: var(--cx-accordion-indicator-active-color, var(--cx-default-icon-main));
   --cx-border-color: var(--cx-accordion-border-color, var(--cx-border-subtle));
   --cx-title-gap: var(--cx-accordion-gap, 1rem);
@@ -9345,7 +9345,8 @@ textarea.form-control {
   --cx-border-radius: var(--cx-accordion-border-radius, var(--cx-border-radius-medium));
   --cx-box-radius: var(--cx-accordion-box-radius, calc(var(--cx-border-radius-medium) - var(--cx-border-width-medium)));
   --cx-title-focus-box-shadow: var(--cx-accordion-title-focus-box-shadow, 0 0 0 0.25rem rgba(0, 164, 204, 0.25));
-  --cx-transition: var(--cx-accordion-transition, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease);
+  --cx-transition: var(--cx-accordion-transition, height 0.35s ease);
+  --cx-title-transition: var(--cx-accordion-title-transition, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease);
   --cx-indicator-transform: var(--cx-accordion-indicator-transform, rotate(-180deg));
   --cx-indicator-transition: var(--cx-accordion-indicator-transition, transform 0.2s ease-in-out);
   border: var(--cx-border-width) solid var(--cx-border-color);
@@ -9380,29 +9381,25 @@ textarea.form-control {
   --cx-indicator-size: var(--cx-accordion-indicator-size, 1.25rem);
 }
 .accordion.context {
-  --cx-title-fg-color: var(--cx-accordion-title-fg-color, inherit);
-  --cx-title-bg-color: var(--cx-accordion-title-bg-color, inherit);
-  --cx-active-fg-color: var(--cx-accordion-active-fg-color, inherit);
-  --cx-active-bg-color: var(--cx-accordion-active-bg-color, inherit);
-  --cx-indicator-inactive-color: var(--cx-accordion-indicator-inactive-color, var(--cx-icon-subtle));
+  --cx-fg-color: var(--cx-accordion-item-fg-color, var(--cx-fg-main));
+  --cx-bg-color: var(--cx-accordion-item-bg-color, var(--cx-bg-main));
+  --cx-title-fg-color: var(--cx-accordion-title-fg-color, var(--cx-fg-main));
+  --cx-title-bg-color: var(--cx-accordion-title-bg-color, var(--cx-bg-main));
+  --cx-title-fg-active: var(--cx-accordion-title-fg-active, var(--cx-fg-main));
+  --cx-title-bg-active: var(--cx-accordion-title-bg-active, var(--cx-bg-main));
+  --cx-indicator-idle-color: var(--cx-accordion-indicator-idle-color, var(--cx-icon-subtle));
   --cx-indicator-active-color: var(--cx-accordion-indicator-active-color, var(--cx-icon-main));
 }
 .accordion > details {
   color: var(--cx-fg-color);
   background-color: var(--cx-bg-color);
-  transition: height 0.35s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .accordion > details {
-    transition: none;
-  }
 }
 .accordion > details:first-of-type, .accordion > details:first-of-type > summary {
   border-top-left-radius: var(--cx-box-radius);
   border-top-right-radius: var(--cx-box-radius);
 }
-.accordion > details:not(:first-of-type) {
-  border-top: var(--cx-border-width) solid var(--cx-separator-color);
+.accordion > details:not(:last-of-type) {
+  border-bottom: var(--cx-border-width) solid var(--cx-separator-color);
 }
 .accordion > details:last-of-type, .accordion > details:last-of-type:not([open]) > summary {
   border-bottom-right-radius: var(--cx-box-radius);
@@ -9411,7 +9408,7 @@ textarea.form-control {
 .accordion > details > summary {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: top;
   width: 100%;
   padding: var(--cx-title-padding-y) var(--cx-title-padding-x);
   text-align: left;
@@ -9419,14 +9416,10 @@ textarea.form-control {
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
-  transition: var(--cx-transition);
 }
-@media (prefers-reduced-motion: reduce) {
-  .accordion > details > summary {
-    transition: none;
-  }
-}
+.accordion > details > summary,
 .accordion > details > summary > .accordion-title {
+  flex-grow: 1;
   margin-bottom: 0;
   font: var(--cx-title-font-weight) var(--cx-title-font-size)/var(--cx-title-line-height) var(--cx-title-font-family);
   color: var(--cx-title-fg-color);
@@ -9436,9 +9429,8 @@ textarea.form-control {
   width: var(--cx-indicator-size);
   height: var(--cx-indicator-size);
   margin-right: var(--cx-title-gap);
-  margin-left: 0;
   content: "";
-  background-color: var(--cx-indicator-inactive-color);
+  background-color: var(--cx-indicator-idle-color);
   -webkit-mask-image: var(--cx-indicator);
   mask-image: var(--cx-indicator);
   -webkit-mask-repeat: no-repeat;
@@ -9447,18 +9439,12 @@ textarea.form-control {
   mask-position: center;
   -webkit-mask-size: var(--cx-indicator-size);
   mask-size: var(--cx-indicator-size);
-  transition: var(--cx-indicator-transition);
-}
-@media (prefers-reduced-motion: reduce) {
-  .accordion > details > summary::before {
-    transition: none;
-  }
 }
 .accordion > details > summary:hover {
   z-index: 2;
 }
-.accordion > details > summary:focus {
-  z-index: 100;
+.accordion > details > summary:focus-visible {
+  z-index: 3;
   outline: 0;
   box-shadow: var(--cx-title-focus-box-shadow);
 }
@@ -9471,6 +9457,43 @@ textarea.form-control {
 .accordion > details > .accordion-body * {
   font: var(--cx-body-font-weight) var(--cx-body-font-size)/var(--cx-body-line-height) var(--cx-body-font-family);
   color: var(--cx-fg-color);
+}
+.accordion > [open] summary {
+  background-color: var(--cx-title-bg-active);
+}
+.accordion > [open] summary,
+.accordion > [open] summary > .accordion-title {
+  color: var(--cx-title-fg-active);
+}
+.accordion > [open] summary::before {
+  background-color: var(--cx-indicator-active-color);
+  -webkit-mask-image: var(--cx-indicator);
+  mask-image: var(--cx-indicator);
+  transform: var(--cx-indicator-transform);
+}
+.accordion:not(.no-transition) > details {
+  transition: var(--cx-transition);
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion:not(.no-transition) > details {
+    transition: none;
+  }
+}
+.accordion:not(.no-transition) > details > summary {
+  transition: var(--cx-title-transition);
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion:not(.no-transition) > details > summary {
+    transition: none;
+  }
+}
+.accordion:not(.no-transition) > details > summary::before {
+  transition: var(--cx-indicator-transition);
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion:not(.no-transition) > details > summary::before {
+    transition: none;
+  }
 }
 .accordion.flush {
   border: 0;
@@ -9495,15 +9518,20 @@ textarea.form-control {
   padding-right: 0;
   padding-left: calc(var(--cx-body-padding-s) - var(--cx-title-padding-x));
 }
-.accordion > [open] summary {
-  color: var(--cx-active-fg-color);
-  background-color: var(--cx-active-bg-color);
+.accordion.indicator-end > details > summary {
+  flex-direction: row-reverse;
 }
-.accordion > [open] summary::before {
-  background-color: var(--cx-indicator-active-color);
-  -webkit-mask-image: var(--cx-indicator);
-  mask-image: var(--cx-indicator);
-  transform: var(--cx-indicator-transform);
+.accordion.indicator-end > details > summary::before {
+  margin-right: 0;
+  margin-left: var(--cx-title-gap);
+}
+.accordion.indicator-end > details > .accordion-body {
+  padding-right: var(--cx-title-padding-x);
+  padding-left: var(--cx-title-padding-x);
+}
+.accordion.indicator-end.flush > details > .accordion-body {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .breadcrumb {

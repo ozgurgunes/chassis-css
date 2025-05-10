@@ -7,6 +7,7 @@
  */
 export declare global {
   export const AddedIn: typeof import('@shortcodes/AddedIn.astro').default
+  export const CSSOnly: typeof import('@shortcodes/CSSOnly.astro').default
   export const Callout: typeof import('@shortcodes/Callout.astro').default
   export const CalloutDeprecatedDarkVariants: typeof import('@shortcodes/CalloutDeprecatedDarkVariants.astro').default
   export const Code: typeof import('@shortcodes/Code.astro').default
@@ -16,6 +17,7 @@ export declare global {
   export const DocsCSS: typeof import('@shortcodes/DocsCSS.astro').default
   export const DocsCSSVars: typeof import('@shortcodes/DocsCSSVars.astro').default
   export const DocsContextPalette: typeof import('@shortcodes/DocsContextPalette.astro').default
+  export const DocsDesignTokens: typeof import('@shortcodes/DocsDesignTokens.astro').default
   export const DocsSASSVars: typeof import('@shortcodes/DocsSASSVars.astro').default
   export const Example: typeof import('@shortcodes/Example.astro').default
   export const JsDismiss: typeof import('@shortcodes/JsDismiss.astro').default

@@ -489,8 +489,8 @@ $solid-cue-color-rgb:           $solid-fg-color-rgb !default;
 
 $smooth-fg-color:               var(--#{$prefix}context-fg-main) !default;
 $smooth-fg-color-rgb:           var(--#{$prefix}context-fg-main-rgb) !default;
-$smooth-bg-color:               var(--#{$prefix}context-bg-evident) !default;
-$smooth-bg-color-rgb:           var(--#{$prefix}context-bg-evident-rgb) !default;
+$smooth-bg-color:               var(--#{$prefix}context-bg-even) !default;
+$smooth-bg-color-rgb:           var(--#{$prefix}context-bg-even-rgb) !default;
 $smooth-bg-even:                var(--#{$prefix}context-bg-even) !default;
 $smooth-bg-even-rgb:            var(--#{$prefix}context-bg-even-rgb) !default;
 $smooth-bg-evident:             var(--#{$prefix}context-bg-main) !default;
@@ -1048,24 +1048,25 @@ $card-group-margin:                 $grid-gutter-width * .5 !default;
 // See `tokens/_accordion.scss` for more details.
 //
 // scss-docs-start accordion-variables
-$accordion-fg-color:                  var(--#{$prefix}fg-main) !default;
-$accordion-bg-color:                  var(--#{$prefix}bg-main) !default;
-$accordion-border-width:              var(--#{$prefix}border-width-medium) !default;
-$accordion-border-color:              var(--#{$prefix}border-subtle) !default;
-$accordion-border-radius:             var(--#{$prefix}border-radius-medium) !default;
-$accordion-box-radius:                #{calc($accordion-border-radius - $accordion-border-width)} !default;
-$accordion-transition:                $button-transition, border-radius .15s ease !default;
-
-$accordion-title-fg-context:          inherit !default;
-$accordion-title-bg-context:          inherit !default;
-$accordion-active-fg-context:         inherit !default;
-$accordion-active-bg-context:         inherit !default;
-$accordion-indicator-inactive-context:  var(--#{$prefix}icon-subtle) !default;
+$accordion-border-width:                var(--#{$prefix}border-width-medium) !default;
+$accordion-border-color:                var(--#{$prefix}border-subtle) !default;
+$accordion-border-radius:               var(--#{$prefix}border-radius-medium) !default;
+$accordion-indicator:                   url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
+$accordion-box-radius:                  #{calc($accordion-border-radius - $accordion-border-width)} !default;
+$accordion-transition:                  $transition-collapse !default;
+$accordion-title-transition:            $button-transition, border-radius .15s ease !default;
+$accordion-indicator-transition:        transform .2s ease-in-out !default;
+$accordion-indicator-transform:         rotate(-180deg) !default;
+$accordion-title-focus-box-shadow:      $focus-ring-box-shadow !default; //$button-focus-box-shadow !default;
+// These variables are not exposed as CSS variables.
+$accordion-item-fg-color-context:       var(--#{$prefix}fg-main) !default;
+$accordion-item-bg-color-context:       var(--#{$prefix}bg-main) !default;
+$accordion-title-fg-color-context:      var(--#{$prefix}fg-main) !default;
+$accordion-title-bg-color-context:      var(--#{$prefix}bg-main) !default;
+$accordion-title-fg-active-context:     var(--#{$prefix}fg-main) !default;
+$accordion-title-bg-active-context:     var(--#{$prefix}bg-main) !default;
+$accordion-indicator-idle-context:      var(--#{$prefix}icon-subtle) !default;
 $accordion-indicator-active-context:    var(--#{$prefix}icon-main) !default;
-$accordion-title-focus-box-shadow:    $focus-ring-box-shadow !default; //$button-focus-box-shadow !default;
-$accordion-indicator-transition:      transform .2s ease-in-out !default;
-$accordion-indicator-transform:       rotate(-180deg) !default;
-$accordion-indicator:                 url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
 // scss-docs-end accordion-variables
 
 //

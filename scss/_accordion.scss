@@ -14,14 +14,14 @@
   --#{$prefix}body-font-weight: var(--#{$prefix}accordion-body-font-weight, #{map-get($accordion-body-font, font-weight)});
   --#{$prefix}body-line-height: var(--#{$prefix}accordion-body-line-height, #{map-get($accordion-body-font, line-height)});
   // Colors
-  --#{$prefix}fg-color: var(--#{$prefix}accordion-fg-color, #{$accordion-fg-color});
-  --#{$prefix}bg-color: var(--#{$prefix}accordion-bg-color, #{$accordion-bg-color});
+  --#{$prefix}fg-color: var(--#{$prefix}accordion-fg-color, #{$accordion-item-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}accordion-bg-color, #{$accordion-item-bg-color});
   --#{$prefix}title-fg-color: var(--#{$prefix}accordion-title-fg-color, #{$accordion-title-fg-color});
   --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color, #{$accordion-title-bg-color});
-  --#{$prefix}active-fg-color: var(--#{$prefix}accordion-active-fg-color, #{$accordion-title-active-fg-color});
-  --#{$prefix}active-bg-color: var(--#{$prefix}accordion-active-bg-color, #{$accordion-title-active-bg-color});
+  --#{$prefix}title-fg-active: var(--#{$prefix}accordion-title-fg-active, #{$accordion-title-fg-active});
+  --#{$prefix}title-bg-active: var(--#{$prefix}accordion-title-bg-active, #{$accordion-title-bg-active});
   --#{$prefix}indicator: var(--#{$prefix}accordion-indicator, #{escape-svg($accordion-indicator)});
-  --#{$prefix}indicator-inactive-color: var(--#{$prefix}accordion-indicator-inactive-color, #{$accordion-indicator-inactive-color});
+  --#{$prefix}indicator-idle-color: var(--#{$prefix}accordion-indicator-idle-color, #{$accordion-indicator-idle-color});
   --#{$prefix}indicator-active-color: var(--#{$prefix}accordion-indicator-active-color, #{$accordion-indicator-active-color});
   --#{$prefix}border-color: var(--#{$prefix}accordion-border-color, #{$accordion-border-color});
   // Spacing
@@ -39,6 +39,7 @@
   --#{$prefix}box-radius: var(--#{$prefix}accordion-box-radius, #{$accordion-box-radius});
   --#{$prefix}title-focus-box-shadow: var(--#{$prefix}accordion-title-focus-box-shadow, #{$accordion-title-focus-box-shadow});
   --#{$prefix}transition: var(--#{$prefix}accordion-transition, #{$accordion-transition});
+  --#{$prefix}title-transition: var(--#{$prefix}accordion-title-transition, #{$accordion-title-transition});
   --#{$prefix}indicator-transform: var(--#{$prefix}accordion-indicator-transform, #{$accordion-indicator-transform});
   --#{$prefix}indicator-transition: var(--#{$prefix}accordion-indicator-transition, #{$accordion-indicator-transition});
   // scss-docs-end accordion-css-vars
@@ -79,11 +80,13 @@
 
   @if $enable-accordion-contexts {
     &.context {
-      --#{$prefix}title-fg-color: var(--#{$prefix}accordion-title-fg-color, #{$accordion-title-fg-context});
-      --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color, #{$accordion-title-bg-context});
-      --#{$prefix}active-fg-color: var(--#{$prefix}accordion-active-fg-color, #{$accordion-active-fg-context});
-      --#{$prefix}active-bg-color: var(--#{$prefix}accordion-active-bg-color, #{$accordion-active-bg-context});
-      --#{$prefix}indicator-inactive-color: var(--#{$prefix}accordion-indicator-inactive-color, #{$accordion-indicator-inactive-context});
+      --#{$prefix}fg-color: var(--#{$prefix}accordion-item-fg-color, #{$accordion-item-fg-color-context});
+      --#{$prefix}bg-color: var(--#{$prefix}accordion-item-bg-color, #{$accordion-item-bg-color-context});
+      --#{$prefix}title-fg-color: var(--#{$prefix}accordion-title-fg-color, #{$accordion-title-fg-color-context});
+      --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color, #{$accordion-title-bg-color-context});
+      --#{$prefix}title-fg-active: var(--#{$prefix}accordion-title-fg-active, #{$accordion-title-fg-active-context});
+      --#{$prefix}title-bg-active: var(--#{$prefix}accordion-title-bg-active, #{$accordion-title-bg-active-context});
+      --#{$prefix}indicator-idle-color: var(--#{$prefix}accordion-indicator-idle-color, #{$accordion-indicator-idle-context});
       --#{$prefix}indicator-active-color: var(--#{$prefix}accordion-indicator-active-color, #{$accordion-indicator-active-context});
     }
   }
@@ -92,7 +95,6 @@
 
     color: var(--#{$prefix}fg-color);
     background-color: var(--#{$prefix}bg-color);
-    @include transition($transition-collapse);
 
     &:first-of-type,
     &:first-of-type > summary {
@@ -100,8 +102,8 @@
 
     }
 
-    &:not(:first-of-type) {
-      border-top: var(--#{$prefix}border-width) solid var(--#{$prefix}separator-color);
+    &:not(:last-of-type) {
+      border-bottom: var(--#{$prefix}border-width) solid var(--#{$prefix}separator-color);
     }
 
     // Only set a border-radius on the last item if the accordion is collapsed
@@ -114,7 +116,7 @@
     > summary {
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: top;
       width: 100%;
       padding: var(--#{$prefix}title-padding-y) var(--#{$prefix}title-padding-x);
       text-align: left; // Reset button style
@@ -122,9 +124,10 @@
       border: 0;
       @include border-radius(0);
       overflow-anchor: none;
-      @include transition(var(--#{$prefix}transition));
 
+      &,
       > .accordion-title {
+        flex-grow: 1;
         margin-bottom: 0;
         @include font(title);
         color: var(--#{$prefix}title-fg-color);
@@ -136,22 +139,20 @@
         width: var(--#{$prefix}indicator-size);
         height: var(--#{$prefix}indicator-size);
         margin-right: var(--#{$prefix}title-gap);
-        margin-left: 0;
         content: "";
-        background-color: var(--#{$prefix}indicator-inactive-color);
+        background-color: var(--#{$prefix}indicator-idle-color);
         mask-image: var(--#{$prefix}indicator);
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: var(--#{$prefix}indicator-size);
-        @include transition(var(--#{$prefix}indicator-transition));
       }
 
       &:hover {
         z-index: 2;
       }
 
-      &:focus {
-        z-index: 100;
+      &:focus-visible {
+        z-index: 3;
         outline: 0;
         box-shadow: var(--#{$prefix}title-focus-box-shadow);
       }
@@ -170,6 +171,31 @@
       }
 
       @include last-child();
+    }
+
+  }
+
+  > [open] summary {
+    background-color: var(--#{$prefix}title-bg-active);
+    &,
+    > .accordion-title {
+      color: var(--#{$prefix}title-fg-active);
+    }
+
+    &::before {
+      background-color: var(--#{$prefix}indicator-active-color);
+      mask-image: var(--#{$prefix}indicator);
+      transform: var(--#{$prefix}indicator-transform);
+    }
+  }
+
+  &:not(.no-transition) > details {
+    @include transition(var(--#{$prefix}transition));
+    > summary {
+      @include transition(var(--#{$prefix}title-transition));
+      &::before {
+        @include transition(var(--#{$prefix}indicator-transition));
+      }
     }
   }
 
@@ -199,17 +225,24 @@
     }
   }
 
-  > [open] summary {
-    color: var(--#{$prefix}active-fg-color);
-    background-color: var(--#{$prefix}active-bg-color);
-    // box-shadow: inset 0 calc(-1 * var(--#{$prefix}border-width)) 0 var(--#{$prefix}border-color); // stylelint-disable-line function-disallowed-list
+  &.indicator-end {
+    > details {
+      > summary {
+        flex-direction: row-reverse;
 
-    &::before {
-      background-color: var(--#{$prefix}indicator-active-color);
-      mask-image: var(--#{$prefix}indicator);
-      transform: var(--#{$prefix}indicator-transform);
+        &::before {
+          margin-right: 0;
+          margin-left: var(--#{$prefix}title-gap);
+        }
+      }
+      > .accordion-body {
+        padding-right: var(--#{$prefix}title-padding-x);
+        padding-left: var(--#{$prefix}title-padding-x);
+      }
+    }
+    &.flush > details > .accordion-body {
+      padding-right: 0;
+      padding-left: 0;
     }
   }
-
-
 }
