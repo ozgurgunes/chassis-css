@@ -37,13 +37,14 @@ Where *sides* is one of:
 
 Where *size* is one of:
 
-
-- `zero` or `0` - for classes that eliminate the `margin` or `padding` by setting it to `0`
+<ul>
+  <li>`zero` or `0` - for classes that eliminate the `margin` or `padding` by setting it to `0`</li>
 {
   Object.keys(sassVars('space')).map((key) => (
   <li><code>{key}</code> - default token value is <Fragment set:html={sassSpaceValue(key)} />.</li>
   ))}
-- `auto` - for classes that set the `margin` to auto
+  <li>`auto` - for classes that set the `margin` to auto</li>
+</ul>
 
 (You can add more sizes by adding entries to the `$spacers` Sass map variable.)
 

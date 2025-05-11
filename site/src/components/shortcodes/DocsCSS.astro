@@ -1,3 +1,7 @@
+---
+import { getConfig } from '@libs/config'
+---
+
 <p>
-  Chassis CSS implements design tokens, putting CSS variables and properties directly under the design team's control. This approach creates a seamless bridge between design systems and code implementation. See <a href="/docs/{config.docs_version}/core-concepts/design-tokens">design tokens</a> page for details.
+  Chassis CSS implements design tokens, putting CSS variables and properties directly under the design team's control. This approach creates a seamless bridge between design systems and code implementation. See <a href={`/docs/${getConfig().docs_version}/core-concepts/design-tokens`}>design tokens</a> page for details.
 </p>

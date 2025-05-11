@@ -13,26 +13,26 @@ import { getData } from '@libs/data'
 Icons can be used in both `SVG` or `font` format with same `.icon` class. It loads the icon font by class name if it is an empty `span` element.
 
 <Example
-  code={`<svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
+  code={`<svg class="icon"><use xlink:href="#info-circle-solid" /></svg>
 <span class="icon icon-info-circle-solid"></span>`} />
 
 ## Icon Colors
 
 Use `.icon-*` classes to adjust icon color
 
-<Example code={getData('context-colors').map((contextColor) => `<svg class="icon icon-${contextColor.name}"><use xlink:href="#info-circle-solid"/></svg>`)} />
+<Example code={getData('context-colors').map((contextColor) => `<svg class="icon icon-${contextColor.name}"><use xlink:href="#info-circle-solid" /></svg>`)} />
 <Example code={getData('context-colors').map((contextColor) => `<span class="icon icon-${contextColor.name} icon-info-circle-solid"></span>`)} />
 
 ### Context Colors
 
 Use context colors by their name.
 
-<Example code={`<svg class="icon icon-main"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-subtle"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-slight"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon secondary-icon-main"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon secondary-icon-subtle"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon secondary-icon-slight"><use xlink:href="#info-circle-solid"/></svg>
+<Example code={`<svg class="icon icon-main"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-subtle"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-slight"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon secondary-icon-main"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon secondary-icon-subtle"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon secondary-icon-slight"><use xlink:href="#info-circle-solid" /></svg>
 
 <span class="vr mx-medium"></span>
 
@@ -48,23 +48,23 @@ Use context colors by their name.
 Icons use `--cx-icon-main` color by default, add `.icon-reset` class to paint it to `--cx-fg-color`.
 
 <Example code={`<div class="info-fg-subtle">
-    <svg class="icon"><use xlink:href="#info-circle-solid"/></svg>
-    <svg class="icon icon-reset"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon"><use xlink:href="#info-circle-solid" /></svg>
+    <svg class="icon icon-reset"><use xlink:href="#info-circle-solid" /></svg>
   </div>`} />
 
 ## Icon Sizes
 
 Use `.icon-*` size classes to adjust icon size
 
-<Example code={`<svg class="icon icon-2xsmall"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-xsmall"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-small"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-medium"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-large"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-xlarge"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-2xlarge"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-3xlarge"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-4xlarge"><use xlink:href="#info-circle-solid"/></svg>`} />
+<Example code={`<svg class="icon icon-2xsmall"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-xsmall"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-small"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-medium"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-large"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-xlarge"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-2xlarge"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-3xlarge"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-4xlarge"><use xlink:href="#info-circle-solid" /></svg>`} />
 
 <Example code={`<span class="icon icon-2xsmall icon-info-circle-solid"></span>
 <span class="icon icon-xsmall icon-info-circle-solid"></span>
@@ -81,7 +81,7 @@ Use `.icon-*` size classes to adjust icon size
 Same icon & text sizes align properly.
 
 <Example code={`<div class="font-small">
-    <svg class="icon icon-small"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-small"><use xlink:href="#info-circle-solid" /></svg>
     Text with a leading SVG icon.
   </div>
   <div class="font-small">
@@ -89,7 +89,7 @@ Same icon & text sizes align properly.
     Text with a leading font icon.
   </div>
   <div class="font-2xlarge">
-    <svg class="icon icon-2xlarge"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-2xlarge"><use xlink:href="#info-circle-solid" /></svg>
     Text with a leading SVG icon.
   </div>
   <div class="font-2xlarge">
@@ -100,7 +100,7 @@ Same icon & text sizes align properly.
 You can also use `.icon-adaptive` class to match `font-size`.
 
 <Example code={`<div class="font-small">
-    <svg class="icon icon-adaptive"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-adaptive"><use xlink:href="#info-circle-solid" /></svg>
     Text with a leading SVG icon.
   </div>
   <div class="font-small">
@@ -108,7 +108,7 @@ You can also use `.icon-adaptive` class to match `font-size`.
     Text with a leading font icon.
   </div>
   <div class="font-2xlarge">
-    <svg class="icon icon-adaptive"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon icon-adaptive"><use xlink:href="#info-circle-solid" /></svg>
     Text with a leading SVG icon.
   </div>
   <div class="font-2xlarge">
@@ -143,25 +143,25 @@ We use an RGB version of our `--cx-primary` (with the value of `255, 91, 20`) CS
 
 To change that opacity, override `--cx-icon-opacity` via custom styles or inline styles, or choose from any of the `.icon-opacity-*` utilities:
 
-<Example code={[`<svg class="icon icon-secondary"><use xlink:href="#info-circle-solid"/></svg>
-<svg style="--cx-icon-opacity: .6;" class="icon icon-secondary"><use xlink:href="#info-circle-solid"/></svg>
+<Example code={[`<svg class="icon icon-secondary"><use xlink:href="#info-circle-solid" /></svg>
+<svg style="--cx-icon-opacity: .6;" class="icon icon-secondary"><use xlink:href="#info-circle-solid" /></svg>
 
 <span class="vr mx-medium"></span>
-`].concat(getData('basic-opacities').map((opacity) => `<svg class="icon icon-secondary icon-opacity-${opacity.name}"><use xlink:href="#info-circle-solid"/></svg>`))} />
+`].concat(getData('basic-opacities').map((opacity) => `<svg class="icon icon-secondary icon-opacity-${opacity.name}"><use xlink:href="#info-circle-solid" /></svg>`))} />
 
-<Example code={[`<span class="icon icon-secondary icon-info-circle-solid"/></span>
-<span style="--cx-icon-opacity: .6;" class="icon icon-secondary icon-info-circle-solid"/></span>
+<Example code={[`<span class="icon icon-secondary icon-info-circle-solid"></span>
+<span style="--cx-icon-opacity: .6;" class="icon icon-secondary icon-info-circle-solid"></span>
 
 <span class="vr mx-medium"></span>
-`].concat(getData('basic-opacities').map((opacity) => `<span class="icon icon-secondary icon-opacity-${opacity.name} icon-info-circle-solid"/></span>`))} />
+`].concat(getData('basic-opacities').map((opacity) => `<span class="icon icon-secondary icon-opacity-${opacity.name} icon-info-circle-solid"></span>`))} />
 
 ### Context Opacity
 
 You can directly apply a **context opacity** utility to match `fg-*` colors:
 
-<Example code={`<svg class="icon icon-secondary"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-secondary icon-opacity-subtle"><use xlink:href="#info-circle-solid"/></svg>
-<svg class="icon icon-secondary icon-opacity-slight"><use xlink:href="#info-circle-solid"/></svg>
+<Example code={`<svg class="icon icon-secondary"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-secondary icon-opacity-subtle"><use xlink:href="#info-circle-solid" /></svg>
+<svg class="icon icon-secondary icon-opacity-slight"><use xlink:href="#info-circle-solid" /></svg>
 
 <span class="vr mx-medium"></span>
 

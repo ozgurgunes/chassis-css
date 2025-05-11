@@ -1,5 +1,6 @@
 ---
 import { getData } from '@libs/data'
+import { getConfig } from '@libs/config'
 ---
 
 <div class="mb-medium overflow-scroll">
@@ -12,7 +13,7 @@ import { getData } from '@libs/data'
         <p class="font-small">
           Context base colors and their contrast counterparts for use with variable <code>opacity</code>. Contrast
           colors are for design purposes and may not be <a
-            href="/docs/{{ .Site.Params.docs_version }}/getting-started/accessibility">accessible</a
+            href={`/docs/${ getConfig().docs_version}/getting-started/accessibility`}>accessible</a
           >.
         </p>
       </div>

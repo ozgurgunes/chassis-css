@@ -223,7 +223,7 @@ class Dropdown extends BaseComponent {
 
   _createPopper() {
     if (typeof Popper === 'undefined') {
-      throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org/docs/v2/)')
+      throw new TypeError('Chassis\' dropdowns require Popper (https://popper.js.org/docs/v2/)')
     }
 
     let referenceElement = this._element

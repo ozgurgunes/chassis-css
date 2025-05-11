@@ -27,10 +27,10 @@ Designers have full control over settings such as sizing, spacing, icon colors, 
 Let’s apply these Figma font specifications using Chassis - CSS text utilities.
 
 <a href="#imageModal" data-cx-toggle="modal"
-  data-image-src="/assets/docs-figma-font-specs.png"
-  data-image-srcset="/assets/docs-figma-font-specs.png.png, /assets/docs-figma-font-specs@2x.png 2x"
+  data-image-src="/docs/[[config:docs_version]]/assets/img/docs-figma-font-specs.png"
+  data-image-srcset="/docs/[[config:docs_version]]/assets/img/docs-figma-font-specs.png.png, /docs/[[config:docs_version]]/assets/img/docs-figma-font-specs@2x.png 2x"
   data-image-alt="Figma text layer properties">
-  <img class="d-block mb-medium image-fluid rounded" srcset="/assets/docs-figma-font-specs.png.png, /assets/docs-figma-font-specs@2x.png 2x" src="/assets/docs-figma-font-specs.png" alt="Figma text layer properties" /></a>
+  <img class="d-block mb-medium image-fluid rounded" srcset="/docs/[[config:docs_version]]/assets/img/docs-figma-font-specs.png, /docs/[[config:docs_version]]/assets/img/docs-figma-font-specs@2x.png 2x" src="/docs/[[config:docs_version]]/assets/img/docs-figma-font-specs.png" alt="Figma text layer properties" /></a>
 
 These Figma properties can be applied as follows:
 
@@ -41,10 +41,10 @@ These Figma properties can be applied as follows:
 The same approach applies to other elements.
 
 <a href="#imageModal" data-cx-toggle="modal"
-  data-image-src="/assets/docs-figma-frame-specs.png"
-  data-image-srcset="/assets/docs-figma-frame-specs.png.png, /assets/docs-figma-frame-specs@2x.png 2x"
+  data-image-src="/docs/[[config:docs_version]]/assets/img/docs-figma-frame-specs.png"
+  data-image-srcset="/docs/[[config:docs_version]]/assets/img/docs-figma-frame-specs.png.png, /docs/[[config:docs_version]]/assets/img/docs-figma-frame-specs@2x.png 2x"
   data-image-alt="Figma frame layer properties">
-  <img id="image" class="d-block mb-medium image-fluid rounded" srcset="/assets/docs-figma-frame-specs.png.png, /assets/docs-figma-frame-specs@2x.png 2x" src="/assets/docs-figma-frame-specs.png" alt="Figma frame layer properties" /></a>
+  <img id="image" class="d-block mb-medium image-fluid rounded" srcset="/docs/[[config:docs_version]]/assets/img/docs-figma-frame-specs.png, /docs/[[config:docs_version]]/assets/img/docs-figma-frame-specs@2x.png 2x" src="/docs/[[config:docs_version]]/assets/img/docs-figma-frame-specs.png" alt="Figma frame layer properties" /></a>
 
 Let’s apply these frame specifications in left-to-right order:
 
@@ -74,14 +74,14 @@ Chassis - CSS Icons are available as both SVG sprites and icon fonts. They are e
 
 [Explore icons](/icons)
 
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
   <div class="modal-container lightbox">
   <button type="button" data-cx-dismiss="modal" aria-label="Close"
    class="close-button xlarge position-absolute top-0 end-0">
   <svg class="icon icon-white"><use href="#times-alt" /></svg></button>
   <div class="modal-content">
   <figure>
-    <img class="modal-image pointer-event-auto d-block my-auto mx-auto image-fluid rounded" />
+    <img id="modalImage" class="modal-image pointer-event-auto d-block my-auto mx-auto image-fluid rounded" src="." alt="" />
   </figure>
     </div>
   </div>

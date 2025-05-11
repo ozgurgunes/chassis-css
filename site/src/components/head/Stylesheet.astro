@@ -12,4 +12,4 @@ const { direction } = Astro.props
 ---
 
 <link {...getVersionedCxCssProps(direction)} />
-<link rel="stylesheet" href={new URL(getVersionedDocsPath(`assets/icons/chassis-icons.min.css`), Astro.site)} />
+<link rel="stylesheet" href={getVersionedDocsPath(`assets/icons/chassis-icons.min.css`)} />

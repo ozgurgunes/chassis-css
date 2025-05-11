@@ -79,12 +79,11 @@ export function sassVars(str: string): Record<string, string | undefined> {
 }
 
 export function sassSpaceValue(str: string) {
-  const spaceVars = sassVars('space');
-  const value = spaceVars[str];
+  const spaceVars = sassVars('space')
+  const value = spaceVars[str]
   if (value?.endsWith('px')) {
-    return `<code>${value}</code>`;
-  }
-  else {
-    return `<code>${value}</code> (<code>${value ? (parseFloat(value) * parseFloat(sassVars('setting')['baseFontSize'] || '16')) + "px" : 'NaN'}</code>)`;
+    return `<code>${value}</code>`
+  } else {
+    return `<code>${value}</code> (<code>${value ? parseFloat(value) * parseFloat(sassVars('setting')['baseFontSize'] || '16') + 'px' : 'NaN'}</code>)`
   }
 }

@@ -471,7 +471,6 @@ $pre-color:                         null !default;
 // Context Styles
 //
 
-// fusv-disable
 $solid-fg-color:                var(--#{$prefix}context-fg-solid) !default;
 $solid-fg-color-rgb:            var(--#{$prefix}context-fg-solid-rgb) !default;
 $solid-bg-color:                var(--#{$prefix}context-bg-solid) !default;
@@ -517,7 +516,6 @@ $outline-icon-color-rgb:        $outline-fg-color-rgb !default;
 $outline-cue-color:             $outline-fg-color !default;
 $outline-cue-color-rgb:         $outline-fg-color-rgb !default;
 $outline-border-width:          var(--#{$prefix}border-width-large) !default;
-//fusv-enable
 
 //
 //

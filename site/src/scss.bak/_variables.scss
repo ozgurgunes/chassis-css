@@ -1,14 +1,14 @@
 // Local docs variables
-$cxd-purple:        #4c0bce;
-$cxd-violet:        lighten(saturate($cxd-purple, 5%), 15%); // stylelint-disable-line function-disallowed-list
-$cxd-purple-light:  lighten(saturate($cxd-purple, 5%), 45%); // stylelint-disable-line function-disallowed-list
-$cxd-accent:        #ffe484;
+$cxd-purple: #4c0bce;
+$cxd-violet: lighten(saturate($cxd-purple, 5%), 15%); // stylelint-disable-line function-disallowed-list
+$cxd-purple-light: lighten(saturate($cxd-purple, 5%), 45%); // stylelint-disable-line function-disallowed-list
+$cxd-accent: #ffe484;
 
 $cxd-gutter-x: 3rem;
 $cxd-callout-variants: info, warning, danger !default;
 
 :root,
-[data-cx-theme="light"] {
+[data-cx-theme='light'] {
   --cxd-purple: #{$cxd-purple};
   --cxd-violet: #{$cxd-violet};
   --cxd-accent: #{$cxd-accent};
@@ -18,7 +18,7 @@ $cxd-callout-variants: info, warning, danger !default;
   --cxd-teal-rgb: #{to-rgb($teal-500)};
   --cxd-violet-bg: var(--cxd-violet);
   --cxd-toc-color: var(--cxd-violet);
-  --cxd-sidebar-link-bg: rgba(var(--cxd-violet-rgb), .1);
+  --cxd-sidebar-link-bg: rgba(var(--cxd-violet-rgb), 0.1);
   --cxd-callout-link: #{to-rgb($blue-600)};
   --cxd-callout-code-color: #{$pink-600};
   --cxd-pre-bg: var(--cx-tertiary-bg);
@@ -28,7 +28,7 @@ $cxd-callout-variants: info, warning, danger !default;
   --cxd-violet: #{mix($cxd-violet, $white, 75%)};
   --cxd-violet-bg: #{$cxd-violet};
   --cxd-toc-color: var(--#{$prefix}emphasis-color);
-  --cxd-sidebar-link-bg: rgba(#{to-rgb(mix($cxd-violet, $black, 75%))}, .5);
+  --cxd-sidebar-link-bg: rgba(#{to-rgb(mix($cxd-violet, $black, 75%))}, 0.5);
   --cxd-callout-link: #{to-rgb($blue-300)};
   --cxd-callout-code-color: #{$pink-300};
   --cxd-pre-bg: #{adjust-color($gray-900, $lightness: -2.5%)}; // stylelint-disable-line scss/at-function-named-arguments

@@ -26,8 +26,8 @@ async function main(file) {
 
   const pageTemplate = `---
 title: ${iconTitle}
-categories:
-tags:
+categories: test
+tags: test
 ---
 `
 

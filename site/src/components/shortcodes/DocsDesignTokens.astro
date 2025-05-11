@@ -1,3 +1,7 @@
+---
+import { getConfig } from '@libs/config'
+---
+
 <p>
-  These tokens with <code>$cx</code> prefixes are maintained by designers in Figma using the Tokens Studio plugin. See <a href="/docs/{config.docs_version}/core-concepts/design-tokens">design tokens</a> page for details.
+  These tokens with <code>$cx</code> prefixes are maintained by designers in Figma using the Tokens Studio plugin. See <a href={`/docs/${getConfig().docs_version}/core-concepts/design-tokens`}>design tokens</a> page for details.
 </p>

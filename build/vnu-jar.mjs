@@ -35,7 +35,13 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
     'Attribute “is:raw” is not serializable as XML 1.0.',
     'Attribute “is:raw” not allowed on element “code” at this point.',
     // Astro's expecting trailing slashes on HTML tags such as <br />
-    'Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.'
+    'Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.',
+    // Allow name attribute on details elements for accordion functionality
+    'Attribute “name” not allowed on element “details” at this point.',
+    // Allow heading role on summary elements for accordion functionality
+    'Bad value “button” for attribute “role” on element “h3”.',
+    'Bad value “heading” for attribute “role” on element “summary”.',
+    'Attribute “aria-level” not allowed on element “summary” at this point.'
   ].join('|')
 
   const args = [
@@ -59,6 +65,11 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
   return spawn('java', args, {
     shell: true,
     stdio: 'inherit'
+  }).on('exit', code => {
+    if (code === 0) {
+      console.log('HTML validation successful! No errors found.')
+    }
+
+    process.exit(code)
   })
-    .on('exit', process.exit)
 })

@@ -38,9 +38,7 @@ export function validateVersionedDocsPaths(distUrl: URL) {
 
     if (!docsPathExists) {
       // throw new Error(`A versioned docs path was generated but does not point to a valid page or asset: '${docsPath}'.`)
-      console.error(
-        `A versioned docs path was generated but does not point to a valid page or asset: '${docsPath}'.`
-      )
+      console.error(`A versioned docs path was generated but does not point to a valid page or asset: '${docsPath}'.`)
     }
   }
 }

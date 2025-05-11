@@ -11,7 +11,7 @@ import { getData } from '@libs/data'
 Use the `.avatar` class to create an avatar. The `.avatar-image` class is used for images, while `.avatar-text` is used for text.
 
 <Example code={`<span class="avatar">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
   </span>
   <span class="avatar">
     <span class="avatar-text">CX</span>
@@ -22,13 +22,13 @@ Use the `.avatar` class to create an avatar. The `.avatar-image` class is used f
 Use the `.small` or `.large` classes to set the size of the avatar. You can also use the `--cx-avatar-size` CSS variable to set a custom size.
 
 <Example class="d-flex align-items-center gap-small" code={`<span class="avatar large">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
   </span>
   <span class="avatar large">
     <span class="avatar-text">CX</span>
   </span>
   <span class="avatar small">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
   </span>
   <span class="avatar small">
     <span class="avatar-text">CX</span>
@@ -37,7 +37,7 @@ Use the `.small` or `.large` classes to set the size of the avatar. You can also
   <span class="vr mx-medium"></span>
 
   <span class="avatar" style="--cx-avatar-size: 2rem;">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
   </span>
   <span class="avatar" style="--cx-avatar-size: 2rem;">
     <span class="avatar-text">CX</span>
@@ -48,7 +48,7 @@ Use the `.small` or `.large` classes to set the size of the avatar. You can also
 Use the button tag with `.button` class to create an avatar button.
 
 <Example class="d-flex align-items-center gap-small" code={`<button type="button" class="button avatar">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
   </button>
   <button type="button" class="button avatar">
     <span class="avatar-text">CX</span>
@@ -59,7 +59,7 @@ Use the button tag with `.button` class to create an avatar button.
 Use the anchor tag with `.avatar` class to create an avatar link.
 
 <Example class="d-flex align-items-center gap-small" code={`<a class="avatar" href="#">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
   </a>
   <a class="avatar" href="#">
     <span class="avatar-text">CX</span>
@@ -101,6 +101,6 @@ Use the `.avatar-group` class to create a group of avatars. Use the `.avatar` cl
 <Example code={[`<div class="avatar-group">`, [...Array.from({ length: 9 }, (_, i) => {
                 const value = Math.floor(Math.random() * 64); // Generates 10, 20, ..., 90
                 return `<button type="button" class="button avatar">
-    <span class="avatar-image"><img src="https://i.pravatar.cc/256?img=${value}" /></span>
+    <span class="avatar-image"><img src="https://i.pravatar.cc/256?img=${value}" alt="Profile picture" /></span>
   </button>`})].join('\n'), `</div>`]} />
 

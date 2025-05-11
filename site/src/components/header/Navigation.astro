@@ -3,12 +3,12 @@ import type { CollectionEntry } from 'astro:content'
 import { getConfig } from '@libs/config'
 import { getVersionedDocsPath } from '@libs/path'
 import type { Layout } from '@libs/layout'
-import ChassisWhiteFillIcon from '@components/icons/ChassisWhiteFillIcon.astro'
-import GitHubIcon from '@components/icons/GitHubIcon.astro'
-import HamburgerIcon from '@components/icons/HamburgerIcon.astro'
+import ChassisWhiteFillIcon from '@components/svgs/ChassisWhiteFillIcon.astro'
+import GitHubIcon from '@components/svgs/GitHubIcon.astro'
+import HamburgerIcon from '@components/svgs/HamburgerIcon.astro'
 import LinkItem from '@components/header/LinkItem.astro'
-import OpenCollectiveIcon from '@components/icons/OpenCollectiveIcon.astro'
-import XIcon from '@components/icons/XIcon.astro'
+import OpenCollectiveIcon from '@components/svgs/OpenCollectiveIcon.astro'
+import XIcon from '@components/svgs/XIcon.astro'
 import Versions from '@components/header/Versions.astro'
 import ThemeToggler from '@layouts/partials/ThemeToggler.astro'
 
@@ -83,9 +83,9 @@ const { addedIn, layout, title } = Astro.props
           <LinkItem active={layout === 'docs'} href={getVersionedDocsPath('getting-started/introduction/')} track>
             Docs
           </LinkItem>
+          <LinkItem active={layout === 'icons'} href="/icons" track>Icons</LinkItem>
+          <LinkItem active={title === 'Tokens'} href="/tokens" track>Themes</LinkItem>
           <LinkItem active={title === 'Examples'} href={getVersionedDocsPath('examples/')} track>Examples</LinkItem>
-          <LinkItem href={getConfig().icons} target="_blank" rel="noopener" track>Icons</LinkItem>
-          <LinkItem href={getConfig().themes} target="_blank" rel="noopener" track>Themes</LinkItem>
           <LinkItem href={getConfig().blog} target="_blank" rel="noopener" track>Blog</LinkItem>
         </ul>
 

@@ -27,7 +27,7 @@ Add the `open` attribute to any `<details>` element to render it expanded by def
 <Example code={`<div class="accordion">
   <details name="example" open>
     <summary>
-      <p class="accordion-title">Accordion Item #1</p>
+      <span class="accordion-title">Accordion Item #1</span>
     </summary>
     <div class="accordion-body">
       <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -35,7 +35,7 @@ Add the `open` attribute to any `<details>` element to render it expanded by def
   </details>
   <details name="example">
     <summary>
-      <p class="accordion-title">Accordion Item #2</p>
+      <span class="accordion-title">Accordion Item #2</span>
     </summary>
     <div class="accordion-body">
       <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -43,7 +43,7 @@ Add the `open` attribute to any `<details>` element to render it expanded by def
   </details>
   <details name="example">
     <summary>
-      <p class="accordion-title">Accordion Item #3</p>
+      <span class="accordion-title">Accordion Item #3</span>
     </summary>
     <div class="accordion-body">
       <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -58,9 +58,9 @@ Because the `<summary>` element has a `button` role by default (which overrides 
 Fortunately, by swapping the ARIA roles of `<summary>` and `heading` elements and manually setting the `aria-expanded` attribute, you can create accessible accordions with headings using the `<details>` element.
 
 <Example code={`<div class="accordion">
-    <details name="example-headings" aria-labeled-by="accordionButton1" open>
+    <details name="example-headings" open>
       <summary role="heading" aria-level="3">
-        <p class="accordion-title" role="button" aria-expanded="true">Accordion Item #1</p>
+        <h3 class="accordion-title" role="button" aria-expanded="true">Accordion Item #1</h3>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -91,7 +91,7 @@ Accordions with the same `name` attribute form groups that close automatically w
 <Example code={`<div class="accordion">
     <details open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the first item's body, shown by default. Since it has <b>no name attribute</b>, it behaves independently and will only close when its own summary element is clicked.</p>
@@ -99,7 +99,7 @@ Accordions with the same `name` attribute form groups that close automatically w
     </details>
     <details name="example-static" open>
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This item shares the <b>example-static</b> name attribute with Accordion Item #3, forming a group. It will automatically close when <b>Accordion Item #3</b> is opened.</p>
@@ -107,7 +107,7 @@ Accordions with the same `name` attribute form groups that close automatically w
     </details>
     <details name="example-static">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This item shares the <b>example-static</b> name attribute with Accordion Item #2, forming a group. It will automatically close when <b>Accordion Item #2</b> is opened.</p>
@@ -124,7 +124,7 @@ Add `.flush` to remove some borders and rounded corners to render accordions edg
   <div class="accordion flush">
     <details name="example-flush" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -132,7 +132,7 @@ Add `.flush` to remove some borders and rounded corners to render accordions edg
     </details>
     <details name="example-flush">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -140,7 +140,7 @@ Add `.flush` to remove some borders and rounded corners to render accordions edg
     </details>
     <details name="example-flush">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -167,7 +167,7 @@ Add `.indicator-end` to the accordion container to move the indicator icon to th
   <div class="accordion indicator-end">
     <details name="example-end" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -175,7 +175,7 @@ Add `.indicator-end` to the accordion container to move the indicator icon to th
     </details>
     <details name="example-end">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -183,7 +183,7 @@ Add `.indicator-end` to the accordion container to move the indicator icon to th
     </details>
     <details name="example-end">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -208,7 +208,7 @@ Add `.no-transition` to the accordion container to disable the smooth transition
   <div class="accordion no-transition">
     <details name="example-no-transition" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -216,7 +216,7 @@ Add `.no-transition` to the accordion container to disable the smooth transition
     </details>
     <details name="example-no-transition">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -224,7 +224,7 @@ Add `.no-transition` to the accordion container to disable the smooth transition
     </details>
     <details name="example-no-transition">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -253,7 +253,7 @@ Add `.large` for larger font size and more generous spacing. Suitable for primar
   <div class="accordion large">
     <details name="example-large" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -261,7 +261,7 @@ Add `.large` for larger font size and more generous spacing. Suitable for primar
     </details>
     <details name="example-large">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -269,7 +269,7 @@ Add `.large` for larger font size and more generous spacing. Suitable for primar
     </details>
     <details name="example-large">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -294,7 +294,7 @@ Add `.small` for reduced font size and compact spacing. Suitable for secondary c
   <div class="accordion small">
     <details name="example-small" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -302,7 +302,7 @@ Add `.small` for reduced font size and compact spacing. Suitable for secondary c
     </details>
     <details name="example-small">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -310,7 +310,7 @@ Add `.small` for reduced font size and compact spacing. Suitable for secondary c
     </details>
     <details name="example-small">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -343,7 +343,7 @@ Use `.context` class on accordion with a color, like `.primary`.
   <div class="accordion context neutral small">
     <details name="example-neutral" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -351,7 +351,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-neutral">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -359,7 +359,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-neutral">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -372,7 +372,7 @@ Use `.context` class on accordion with a color, like `.primary`.
   <div class="accordion context primary small">
     <details name="example-primary" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -380,7 +380,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-primary">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -388,7 +388,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-primary">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -401,7 +401,7 @@ Use `.context` class on accordion with a color, like `.primary`.
   <div class="accordion context secondary small">
     <details name="example-secondary" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -409,7 +409,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-secondary">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -417,7 +417,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-secondary">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -430,7 +430,7 @@ Use `.context` class on accordion with a color, like `.primary`.
   <div class="accordion context alternate small">
     <details name="example-alternate" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -438,7 +438,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-alternate">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -446,7 +446,7 @@ Use `.context` class on accordion with a color, like `.primary`.
     </details>
     <details name="example-alternate">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -488,7 +488,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
   <div class="accordion context primary small">
     <details name="example-basic" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -496,7 +496,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-basic">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -504,7 +504,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-basic">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -517,7 +517,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
   <div class="accordion context primary solid small">
     <details name="example-solid" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -525,7 +525,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-solid">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -533,7 +533,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-solid">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -546,7 +546,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
   <div class="accordion context primary smooth small">
     <details name="example-smooth" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -554,7 +554,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-smooth">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -562,7 +562,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-smooth">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -575,7 +575,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
   <div class="accordion context primary outline small">
     <details name="example-outline" open>
       <summary>
-        <p class="accordion-title">Accordion Item #1</p>
+        <span class="accordion-title">Accordion Item #1</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>first item's body</b>, shown by default. It will automatically close when another item is opened by clicking its summary element.</p>
@@ -583,7 +583,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-outline">
       <summary>
-        <p class="accordion-title">Accordion Item #2</p>
+        <span class="accordion-title">Accordion Item #2</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>second item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>
@@ -591,7 +591,7 @@ Use `.context` class on accordions with a color and style, like `.primary` and `
     </details>
     <details name="example-outline">
       <summary>
-        <p class="accordion-title">Accordion Item #3</p>
+        <span class="accordion-title">Accordion Item #3</span>
       </summary>
       <div class="accordion-body">
         <p>This is the <b>third item's body</b>. It is hidden by default and will open when its summary element is clicked.</p>

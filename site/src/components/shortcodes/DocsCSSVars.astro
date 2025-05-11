@@ -1,3 +1,7 @@
+---
+import { getConfig } from '@libs/config'
+---
+
 <p>
-  Chassis - CSS components leverage CSS custom properties (variables) and <a href="https://www.w3.org/TR/css-variables-1/#example-c3e4e8d9">actively enable local redefinition</a> of global variables within their scopes. This powerful cascading inheritance model enables seamless variations in size, color, and style without redundant style declarations. See the <a href="/docs/{config.docs_version}/core-concepts/context-class">context class</a> page for implementation details.
+  Chassis - CSS components leverage CSS custom properties (variables) and <a href="https://www.w3.org/TR/css-variables-1/#example-c3e4e8d9">actively enable local redefinition</a> of global variables within their scopes. This powerful cascading inheritance model enables seamless variations in size, color, and style without redundant style declarations. See the <a href={`/docs/${getConfig().docs_version}/core-concepts/context-class`}>context class</a> page for implementation details.
 </p>

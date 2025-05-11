@@ -40,11 +40,11 @@ Links in notifications automatically adapt its context color and gets increased 
 Use [flexbox utilities]([[docsref:/utilities/flex]]) and [Chassis - CSS Icons]([[config:icons]]) to create notifications with icons. Depending on your icons and content, you may want to add more utilities or custom styles.
 
 <Example code={`<div class="notification success d-flex align-items-center" role="alert">
-    <svg class="icon notification-icon" area-hidden="true"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#info-circle-solid"/></svg>
     <p>An example notification with an icon and <a href="#">a link</a>!</p>
   </div>
   <div class="notification success d-flex align-items-center" role="alert">
-    <svg class="icon" area-hidden="true"><use xlink:href="#info-circle-solid"/></svg>
+    <svg class="icon" aria-hidden="true"><use xlink:href="#info-circle-solid"/></svg>
     <div>An example notification with a standard icon and a <a href="#" class="font-normal default-link-main">default link</a>!</div>
   </div>`} />
 
@@ -64,7 +64,7 @@ Notifications can also contain additional HTML elements like headings, paragraph
 
 <Example code={`<div class="notification success d-flex fade show" role="alert">
     <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
-    <svg class="icon notification-icon" area-hidden="true"><use xlink:href="#check-solid"/></svg>
+    <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#check-solid"/></svg>
     <div>
       <h4 class="title">A success notification!</h4>
       <p>This example text is going to run a bit longer so that you can see how spacing within an notification works with this kind of content.</p>
@@ -75,7 +75,7 @@ Notifications can also contain additional HTML elements like headings, paragraph
 
   <div class="notification success solid d-flex pe-medium fade show" role="alert">
     <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
-    <svg class="icon notification-icon" area-hidden="true"><use xlink:href="#check-solid"/></svg>
+    <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#check-solid"/></svg>
     <div>
       <h4 class="title">A solid success notification!</h4>
       <p>This example text is going to run a bit longer so that you can see how spacing within an notification works with this kind of content.</p>
