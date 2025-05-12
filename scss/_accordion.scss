@@ -1,8 +1,8 @@
 //
 // Base styles
 //
-
 .accordion {
+
   // scss-docs-start accordion-css-vars
   // Typograhpy
   --#{$prefix}title-font-family: var(--#{$prefix}accordion-title-font-family, #{map-get($accordion-title-font, font-family)});
@@ -14,16 +14,15 @@
   --#{$prefix}body-font-weight: var(--#{$prefix}accordion-body-font-weight, #{map-get($accordion-body-font, font-weight)});
   --#{$prefix}body-line-height: var(--#{$prefix}accordion-body-line-height, #{map-get($accordion-body-font, line-height)});
   // Colors
-  --#{$prefix}fg-color: var(--#{$prefix}accordion-fg-color, #{$accordion-item-fg-color});
-  --#{$prefix}bg-color: var(--#{$prefix}accordion-bg-color, #{$accordion-item-bg-color});
-  --#{$prefix}title-fg-color: var(--#{$prefix}accordion-title-fg-color, #{$accordion-title-fg-color});
-  --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color, #{$accordion-title-bg-color});
-  --#{$prefix}title-fg-active: var(--#{$prefix}accordion-title-fg-active, #{$accordion-title-fg-active});
-  --#{$prefix}title-bg-active: var(--#{$prefix}accordion-title-bg-active, #{$accordion-title-bg-active});
-  --#{$prefix}indicator: var(--#{$prefix}accordion-indicator, #{escape-svg($accordion-indicator)});
-  --#{$prefix}indicator-idle-color: var(--#{$prefix}accordion-indicator-idle-color, #{$accordion-indicator-idle-color});
-  --#{$prefix}indicator-active-color: var(--#{$prefix}accordion-indicator-active-color, #{$accordion-indicator-active-color});
-  --#{$prefix}border-color: var(--#{$prefix}accordion-border-color, #{$accordion-border-color});
+  --#{$prefix}item-fg-color: var(--#{$prefix}accordion-item-fg-color);
+  --#{$prefix}item-bg-color: var(--#{$prefix}accordion-item-bg-color);
+  --#{$prefix}title-fg-color: var(--#{$prefix}accordion-title-fg-color);
+  --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color);
+  --#{$prefix}title-fg-active: var(--#{$prefix}accordion-title-fg-active);
+  --#{$prefix}title-bg-active: var(--#{$prefix}accordion-title-bg-active);
+  --#{$prefix}indicator-idle-color: var(--#{$prefix}accordion-indicator-idle-color);
+  --#{$prefix}indicator-active-color: var(--#{$prefix}accordion-indicator-active-color);
+  --#{$prefix}border-color: var(--#{$prefix}accordion-border-color);
   // Spacing
   --#{$prefix}title-gap: var(--#{$prefix}accordion-gap, #{$accordion-gap});
   --#{$prefix}title-padding-y: var(--#{$prefix}accordion-title-padding-y, #{$accordion-title-padding-y});
@@ -33,6 +32,7 @@
   --#{$prefix}body-padding-s: var(--#{$prefix}accordion-body-padding-s, #{$accordion-body-padding-s});
   --#{$prefix}body-padding-e: var(--#{$prefix}accordion-body-padding-e, #{$accordion-body-padding-e});
   // Utilities
+  --#{$prefix}indicator: var(--#{$prefix}accordion-indicator, #{escape-svg($accordion-indicator)});
   --#{$prefix}indicator-size: var(--#{$prefix}accordion-indicator-size, #{$accordion-indicator-size});
   --#{$prefix}border-width: var(--#{$prefix}accordion-border-width, #{$accordion-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}accordion-border-radius, #{$accordion-border-radius});
@@ -47,54 +47,81 @@
   border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
   @include border-radius(var(--#{$prefix}border-radius));
 
+  &:not(.context),
+  &:not(.context).default {
+    --#{$prefix}accordion-item-fg-color: #{$accordion-default-item-fg-color};
+    --#{$prefix}accordion-item-bg-color: #{$accordion-default-item-bg-color};
+    --#{$prefix}accordion-title-fg-color: #{$accordion-default-title-fg-color};
+    --#{$prefix}accordion-title-bg-color: #{$accordion-default-title-bg-color};
+    --#{$prefix}accordion-title-fg-active: #{$accordion-default-title-fg-active};
+    --#{$prefix}accordion-title-bg-active: #{$accordion-default-title-bg-active};
+    --#{$prefix}accordion-indicator-idle-color: #{$accordion-default-indicator-idle-color};
+    --#{$prefix}accordion-indicator-active-color: #{$accordion-default-indicator-active-color};
+    --#{$prefix}accordion-border-color: #{$accordion-default-border-color};
+  }
+
+  &:not(.context).alternate {
+    --#{$prefix}accordion-item-fg-color: #{$accordion-alternate-item-fg-color};
+    --#{$prefix}accordion-item-bg-color: #{$accordion-alternate-item-bg-color};
+    --#{$prefix}accordion-title-fg-color: #{$accordion-alternate-title-fg-color};
+    --#{$prefix}accordion-title-bg-color: #{$accordion-alternate-title-bg-color};
+    --#{$prefix}accordion-title-fg-active: #{$accordion-alternate-title-fg-active};
+    --#{$prefix}accordion-title-bg-active: #{$accordion-alternate-title-bg-active};
+    --#{$prefix}accordion-indicator-idle-color: #{$accordion-alternate-indicator-idle-color};
+    --#{$prefix}accordion-indicator-active-color: #{$accordion-alternate-indicator-active-color};
+    --#{$prefix}accordion-border-color: #{$accordion-alternate-border-color};
+  }
+
   @if $enable-accordion-sizes {
     &.large {
-      --#{$prefix}title-font-size: var(--#{$prefix}accordion-title-font-size, #{map-get($accordion-large-title-font, font-size)});
-      --#{$prefix}title-line-height: var(--#{$prefix}accordion-title-line-height, #{map-get($accordion-large-title-font, line-height)});
-      --#{$prefix}body-font-size: var(--#{$prefix}accordion-body-font-size, #{map-get($accordion-large-body-font, font-size)});
-      --#{$prefix}body-line-height: var(--#{$prefix}accordion-body-line-height, #{map-get($accordion-large-body-font, line-height)});
-      --#{$prefix}title-gap: var(--#{$prefix}accordion-title-gap, #{$accordion-large-gap});
-      --#{$prefix}title-padding-y: var(--#{$prefix}accordion-title-padding-y, #{$accordion-large-title-padding-y});
-      --#{$prefix}title-padding-x: var(--#{$prefix}accordion-title-padding-x, #{$accordion-large-title-padding-x});
-      --#{$prefix}body-padding-t: var(--#{$prefix}accordion-body-padding-t, #{$accordion-large-body-padding-t});
-      --#{$prefix}body-padding-b: var(--#{$prefix}accordion-body-padding-b, #{$accordion-large-body-padding-b});
-      --#{$prefix}body-padding-s: var(--#{$prefix}accordion-body-padding-s, #{$accordion-large-body-padding-s});
-      --#{$prefix}body-padding-e: var(--#{$prefix}accordion-body-padding-e, #{$accordion-large-body-padding-e});
-      --#{$prefix}indicator-size: var(--#{$prefix}accordion-indicator-size, #{$accordion-large-indicator-size});
+      --#{$prefix}accordion-title-font-size: #{map-get($accordion-large-title-font, font-size)};
+      --#{$prefix}accordion-title-line-height: #{map-get($accordion-large-title-font, line-height)};
+      --#{$prefix}accordion-body-font-size: #{map-get($accordion-large-body-font, font-size)};
+      --#{$prefix}accordion-body-line-height: #{map-get($accordion-large-body-font, line-height)};
+      --#{$prefix}accordion-title-gap: #{$accordion-large-gap};
+      --#{$prefix}accordion-title-padding-y: #{$accordion-large-title-padding-y};
+      --#{$prefix}accordion-title-padding-x: #{$accordion-large-title-padding-x};
+      --#{$prefix}accordion-body-padding-t: #{$accordion-large-body-padding-t};
+      --#{$prefix}accordion-body-padding-b: #{$accordion-large-body-padding-b};
+      --#{$prefix}accordion-body-padding-s: #{$accordion-large-body-padding-s};
+      --#{$prefix}accordion-body-padding-e: #{$accordion-large-body-padding-e};
+      --#{$prefix}accordion-indicator-size: #{$accordion-large-indicator-size};
     }
     &.small {
-      --#{$prefix}title-font-size: var(--#{$prefix}accordion-title-font-size, #{map-get($accordion-small-title-font, font-size)});
-      --#{$prefix}title-line-height: var(--#{$prefix}accordion-title-line-height, #{map-get($accordion-small-title-font, line-height)});
-      --#{$prefix}body-font-size: var(--#{$prefix}accordion-body-font-size, #{map-get($accordion-small-body-font, font-size)});
-      --#{$prefix}body-line-height: var(--#{$prefix}accordion-body-line-height, #{map-get($accordion-small-body-font, line-height)});
-      --#{$prefix}title-gap: var(--#{$prefix}accordion-title-gap, #{$accordion-small-gap});
-      --#{$prefix}title-padding-y: var(--#{$prefix}accordion-title-padding-y, #{$accordion-small-title-padding-y});
-      --#{$prefix}title-padding-x: var(--#{$prefix}accordion-title-padding-x, #{$accordion-small-title-padding-x});
-      --#{$prefix}body-padding-t: var(--#{$prefix}accordion-body-padding-t, #{$accordion-small-body-padding-t});
-      --#{$prefix}body-padding-b: var(--#{$prefix}accordion-body-padding-b, #{$accordion-small-body-padding-b});
-      --#{$prefix}body-padding-s: var(--#{$prefix}accordion-body-padding-s, #{$accordion-small-body-padding-s});
-      --#{$prefix}body-padding-e: var(--#{$prefix}accordion-body-padding-e, #{$accordion-small-body-padding-e});
-      --#{$prefix}indicator-size: var(--#{$prefix}accordion-indicator-size, #{$accordion-small-indicator-size});
+      --#{$prefix}accordion-title-font-size: #{map-get($accordion-small-title-font, font-size)};
+      --#{$prefix}accordion-title-line-height: #{map-get($accordion-small-title-font, line-height)};
+      --#{$prefix}accordion-body-font-size: #{map-get($accordion-small-body-font, font-size)};
+      --#{$prefix}accordion-body-line-height: #{map-get($accordion-small-body-font, line-height)};
+      --#{$prefix}accordion-title-gap: #{$accordion-small-gap};
+      --#{$prefix}accordion-title-padding-y: #{$accordion-small-title-padding-y};
+      --#{$prefix}accordion-title-padding-x: #{$accordion-small-title-padding-x};
+      --#{$prefix}accordion-body-padding-t: #{$accordion-small-body-padding-t};
+      --#{$prefix}accordion-body-padding-b: #{$accordion-small-body-padding-b};
+      --#{$prefix}accordion-body-padding-s: #{$accordion-small-body-padding-s};
+      --#{$prefix}accordion-body-padding-e: #{$accordion-small-body-padding-e};
+      --#{$prefix}accordion-indicator-size: #{$accordion-small-indicator-size};
     }
   }
 
   @if $enable-accordion-contexts {
     &.context {
-      --#{$prefix}fg-color: var(--#{$prefix}accordion-item-fg-color, #{$accordion-item-fg-color-context});
-      --#{$prefix}bg-color: var(--#{$prefix}accordion-item-bg-color, #{$accordion-item-bg-color-context});
-      --#{$prefix}title-fg-color: var(--#{$prefix}accordion-title-fg-color, #{$accordion-title-fg-color-context});
-      --#{$prefix}title-bg-color: var(--#{$prefix}accordion-title-bg-color, #{$accordion-title-bg-color-context});
-      --#{$prefix}title-fg-active: var(--#{$prefix}accordion-title-fg-active, #{$accordion-title-fg-active-context});
-      --#{$prefix}title-bg-active: var(--#{$prefix}accordion-title-bg-active, #{$accordion-title-bg-active-context});
-      --#{$prefix}indicator-idle-color: var(--#{$prefix}accordion-indicator-idle-color, #{$accordion-indicator-idle-context});
-      --#{$prefix}indicator-active-color: var(--#{$prefix}accordion-indicator-active-color, #{$accordion-indicator-active-context});
+      --#{$prefix}accordion-item-fg-color: #{$accordion-item-fg-color-context};
+      --#{$prefix}accordion-item-bg-color: #{$accordion-item-bg-color-context};
+      --#{$prefix}accordion-title-fg-color: #{$accordion-title-fg-color-context};
+      --#{$prefix}accordion-title-bg-color: #{$accordion-title-bg-color-context};
+      --#{$prefix}accordion-title-fg-active: #{$accordion-title-fg-active-context};
+      --#{$prefix}accordion-title-bg-active: #{$accordion-title-bg-active-context};
+      --#{$prefix}accordion-indicator-idle-color: #{$accordion-indicator-idle-context};
+      --#{$prefix}accordion-indicator-active-color: #{$accordion-indicator-active-context};
+      --#{$prefix}accordion-border-color: #{$accordion-border-color-context};
     }
   }
 
   > details {
 
-    color: var(--#{$prefix}fg-color);
-    background-color: var(--#{$prefix}bg-color);
+    color: var(--#{$prefix}item-fg-color);
+    background-color: var(--#{$prefix}item-bg-color);
+    border-color: var(--#{$prefix}item-border-color);
 
     &:first-of-type,
     &:first-of-type > summary {
@@ -103,7 +130,7 @@
     }
 
     &:not(:last-of-type) {
-      border-bottom: var(--#{$prefix}border-width) solid var(--#{$prefix}separator-color);
+      border-bottom: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
     }
 
     // Only set a border-radius on the last item if the accordion is collapsed
@@ -164,12 +191,9 @@
     }
     > .accordion-body {
       padding: var(--#{$prefix}body-padding-t) var(--#{$prefix}body-padding-e) var(--#{$prefix}body-padding-b) var(--#{$prefix}body-padding-s);
-
-      * {
-        @include font(body);
-        color: var(--#{$prefix}fg-color);
-      }
-
+      // color: var(--#{$prefix}fg-color);
+      // background-color: var(--#{$prefix}bg-color);
+      @include font(body);
       @include last-child();
     }
 

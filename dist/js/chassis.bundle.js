@@ -3710,7 +3710,7 @@
     }
     _createPopper() {
       if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org/docs/v2/)');
+        throw new TypeError('Chassis\' dropdowns require Popper (https://popper.js.org/docs/v2/)');
       }
       let referenceElement = this._element;
       if (this._config.reference === 'parent') {
@@ -5173,7 +5173,7 @@
   class Tooltip extends BaseComponent {
     constructor(element, config) {
       if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org/docs/v2/)');
+        throw new TypeError('Chassis\' tooltips require Popper (https://popper.js.org/docs/v2/)');
       }
       super(element, config);
 

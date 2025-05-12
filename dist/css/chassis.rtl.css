@@ -2465,7 +2465,7 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: var(--cx-secondary-color);
+  color: var(--cx-fg-subtle);
   text-align: right;
 }
 
@@ -6641,19 +6641,20 @@ ol.inline li:not(:last-child) {
   border-color: var(--cx-border-color);
 }
 .table {
+  --cx-fg-color: var(--cx-table-td-fg-color);
+  --cx-bg-color: var(--cx-table-td-bg-color);
+  --cx-th-fg-color: var(--cx-table-th-fg-color);
+  --cx-th-bg-color: var(--cx-table-th-bg-color);
+  --cx-striped-fg-color: var(--cx-table-striped-fg-color);
+  --cx-striped-bg-color: var(--cx-table-striped-bg-color);
+  --cx-hover-fg-color: var(--cx-table-hover-fg-color);
+  --cx-hover-bg-color: var(--cx-table-hover-bg-color);
+  --cx-active-fg-color: var(--cx-table-active-fg-color);
+  --cx-active-bg-color: var(--cx-table-active-bg-color);
+  --cx-border-color: var(--cx-table-border-color);
+  --cx-cue-color: var(--cx-table-cue-color);
   --cx-cell-padding-y: var(--cx-table-cell-padding-y, 0.5rem);
   --cx-cell-padding-x: var(--cx-table-cell-padding-x, 0.5rem);
-  --cx-fg-color: var(--cx-table-fg-color, var(--cx-default-fg-main));
-  --cx-bg-color: var(--cx-table-bg-color, var(--cx-default-bg-main));
-  --cx-border-color: var(--cx-table-border-color, var(--cx-border-subtle));
-  --cx-th-fg-color: var(--cx-table-th-fg-color, var(--cx-default-fg-main));
-  --cx-th-bg-color: var(--cx-table-th-bg-color, var(--cx-default-bg-evident));
-  --cx-striped-fg-color: var(--cx-table-striped-fg-color, var(--cx-fg-main));
-  --cx-striped-bg-color: var(--cx-table-striped-bg-color, var(--cx-default-bg-even));
-  --cx-hover-fg-color: var(--cx-table-hover-fg-color, var(--cx-fg-main));
-  --cx-hover-bg-color: var(--cx-table-hover-bg-color, var(--cx-bg-evident));
-  --cx-active-fg-color: var(--cx-table-active-fg-color, var(--cx-fg-main));
-  --cx-active-bg-color: var(--cx-table-active-bg-color, var(--cx-default-bg-highlight));
   --cx-td-font-family: var(--cx-table-td-font-family, var(--cx-font-family-text));
   --cx-td-font-size: var(--cx-table-td-font-size, var(--cx-font-size-small));
   --cx-td-font-weight: var(--cx-table-td-font-weight, var(--cx-font-weight-normal));
@@ -6669,6 +6670,49 @@ ol.inline li:not(:last-child) {
   vertical-align: top;
   border-color: var(--cx-border-color);
 }
+.table:not(.context), .table:not(.context).default {
+  --cx-table-td-fg-color: var(--cx-default-fg-main);
+  --cx-table-td-bg-color: var(--cx-default-bg-main);
+  --cx-table-th-fg-color: var(--cx-default-fg-main);
+  --cx-table-th-bg-color: var(--cx-default-bg-evident);
+  --cx-table-striped-fg-color: var(--cx-default-fg-main);
+  --cx-table-striped-bg-color: var(--cx-default-bg-even);
+  --cx-table-hover-fg-color: var(--cx-default-fg-main);
+  --cx-table-hover-bg-color: var(--cx-default-bg-evident);
+  --cx-table-active-fg-color: var(--cx-default-fg-main);
+  --cx-table-active-bg-color: var(--cx-default-bg-highlight);
+  --cx-table-border-color: var(--cx-default-border-subtle);
+  --cx-table-cue-color: var(--cx-default-cue-main);
+}
+.table:not(.context).alternate {
+  --cx-table-td-fg-color: var(--cx-alternate-fg-main);
+  --cx-table-td-bg-color: var(--cx-alternate-bg-main);
+  --cx-table-th-fg-color: var(--cx-alternate-fg-main);
+  --cx-table-th-bg-color: var(--cx-alternate-bg-evident);
+  --cx-table-striped-fg-color: var(--cx-alternate-fg-main);
+  --cx-table-striped-bg-color: var(--cx-alternate-bg-even);
+  --cx-table-hover-fg-color: var(--cx-alternate-fg-main);
+  --cx-table-hover-bg-color: var(--cx-alternate-bg-evident);
+  --cx-table-active-fg-color: var(--cx-alternate-fg-main);
+  --cx-table-active-bg-color: var(--cx-alternate-bg-highlight);
+  --cx-table-border-color: var(--cx-alternate-border-subtle);
+  --cx-table-cue-color: var(--cx-alternate-cue-main);
+}
+.table.context {
+  --cx-table-td-fg-color: var(--cx-fg-main);
+  --cx-table-td-bg-color: var(--cx-bg-main);
+  --cx-table-th-fg-color: var(--cx-fg-main);
+  --cx-table-th-bg-color: var(--cx-bg-evident);
+  --cx-table-striped-fg-color: var(--cx-fg-main);
+  --cx-table-striped-bg-color: var(--cx-bg-even);
+  --cx-table-hover-fg-color: var(--cx-fg-main);
+  --cx-table-hover-bg-color: var(--cx-dim-slight);
+  --cx-table-active-fg-color: var(--cx-fg-highlight);
+  --cx-table-active-bg-color: var(--cx-bg-highlight);
+  --cx-table-border-color: var(--cx-border-subtle);
+  --cx-table-cue-color: var(--cx-cue-main);
+  --cx-border-color: var(--cx-border-subtle);
+}
 .table > :not(caption) > * > * {
   padding: var(--cx-cell-padding-y) var(--cx-cell-padding-x);
   color: var(--cx-fg-color);
@@ -6682,6 +6726,9 @@ ol.inline li:not(:last-child) {
 .table > :not(caption) > * > th {
   font: var(--cx-th-font-weight) var(--cx-th-font-size)/var(--cx-th-line-height) var(--cx-th-font-family);
 }
+.table > :not(caption):has(+ .table-divider) > :last-child {
+  border-bottom: 0;
+}
 .table > :not(caption):first-child > * > *:first-child {
   border-top-right-radius: var(--cx-border-radius);
 }
@@ -6694,19 +6741,6 @@ ol.inline li:not(:last-child) {
 .table > :not(caption):last-child > *:last-child > *:last-child {
   border-bottom-left-radius: var(--cx-border-radius);
 }
-.table.context {
-  --cx-fg-color: var(--cx-fg-main);
-  --cx-bg-color: var(--cx-bg-main);
-  --cx-border-color: var(--cx-border-subtle);
-  --cx-th-fg-color: var(--cx-fg-main);
-  --cx-th-bg-color: var(--cx-bg-evident);
-  --cx-striped-fg-color: var(--cx-fg-main);
-  --cx-striped-bg-color: var(--cx-bg-even);
-  --cx-hover-fg-color: var(--cx-fg-main);
-  --cx-hover-bg-color: var(--cx-dim-slight);
-  --cx-active-fg-color: var(--cx-fg-highlight);
-  --cx-active-bg-color: var(--cx-bg-highlight);
-}
 .table .text-center > * {
   justify-self: center;
 }
@@ -6714,8 +6748,8 @@ ol.inline li:not(:last-child) {
   vertical-align: inherit;
 }
 .table > thead {
-  --cx-fg-color: var(--cx-th-fg-color);
-  --cx-bg-color: var(--cx-th-bg-color);
+  --cx-fg-color: var(--cx-table-th-fg-color);
+  --cx-bg-color: var(--cx-table-th-bg-color);
   vertical-align: middle;
 }
 .table > thead.context {
@@ -6739,31 +6773,31 @@ ol.inline li:not(:last-child) {
   border-top-width: 0;
 }
 .table.striped > tbody > tr:nth-of-type(even) > * {
-  --cx-fg-color: var(--cx-striped-fg-color);
-  --cx-bg-color: var(--cx-striped-bg-color);
+  --cx-fg-color: var(--cx-table-striped-fg-color);
+  --cx-bg-color: var(--cx-table-striped-bg-color);
 }
 .table.striped-columns > tbody > tr > :nth-child(even) {
-  --cx-fg-color: var(--cx-striped-fg-color);
-  --cx-bg-color: var(--cx-striped-bg-color);
+  --cx-fg-color: var(--cx-table-striped-fg-color);
+  --cx-bg-color: var(--cx-table-striped-bg-color);
 }
-.table.hoverable > tbody > tr:hover > * {
-  --cx-fg-color: var(--cx-hover-fg-color);
-  --cx-bg-color: var(--cx-hover-bg-color);
+.table.hoverable > tbody > tr:not(.active):hover > *:not(.active) {
+  --cx-fg-color: var(--cx-table-hover-fg-color);
+  --cx-bg-color: var(--cx-table-hover-bg-color);
 }
 .table .active,
 .table > tbody > tr:nth-of-type(even).active > *,
 .table > tbody > tr:nth-of-type(even) > *.active {
-  --cx-fg-color: var(--cx-active-fg-color);
-  --cx-bg-color: var(--cx-active-bg-color);
+  --cx-fg-color: var(--cx-table-active-fg-color);
+  --cx-bg-color: var(--cx-table-active-bg-color);
 }
 .table > tbody > tr.active > *:first-child,
 .table > tbody > tr > *.active {
   padding-right: 0.25rem;
-  border-right: 0.25rem solid var(--cx-default-cue-main);
+  border-right: 0.25rem solid var(--cx-table-cue-color);
 }
 
 .table-divider > tr:first-child > * {
-  border-top: calc(var(--cx-border-width-medium) * 2) solid currentcolor;
+  border-top: calc(var(--cx-border-width-medium) * 2) solid var(--cx-table-divider-color, currentcolor);
 }
 
 .caption-top {
@@ -9321,16 +9355,15 @@ textarea.form-control {
   --cx-body-font-size: var(--cx-accordion-body-font-size, var(--cx-font-size-medium));
   --cx-body-font-weight: var(--cx-accordion-body-font-weight, var(--cx-font-weight-normal));
   --cx-body-line-height: var(--cx-accordion-body-line-height, var(--cx-line-height-medium));
-  --cx-fg-color: var(--cx-accordion-fg-color, var(--cx-default-fg-main));
-  --cx-bg-color: var(--cx-accordion-bg-color, var(--cx-default-bg-main));
-  --cx-title-fg-color: var(--cx-accordion-title-fg-color, var(--cx-default-fg-main));
-  --cx-title-bg-color: var(--cx-accordion-title-bg-color, var(--cx-default-bg-main));
-  --cx-title-fg-active: var(--cx-accordion-title-fg-active, var(--cx-default-fg-main));
-  --cx-title-bg-active: var(--cx-accordion-title-bg-active, var(--cx-default-bg-main));
-  --cx-indicator: var(--cx-accordion-indicator, url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.3359 17.6641L3.83594 10.1641C3.44531 9.8125 3.44531 9.22656 3.83594 8.83594C4.1875 8.48438 4.77344 8.48438 5.16406 8.83594L12 15.7109L18.8359 8.875C19.1875 8.48438 19.7734 8.48438 20.1641 8.875C20.5156 9.22656 20.5156 9.8125 20.1641 10.1641L12.625 17.6641C12.2734 18.0547 11.6875 18.0547 11.3359 17.6641Z' fill='currentcolor'/%3e%3c/svg%3e"));
-  --cx-indicator-idle-color: var(--cx-accordion-indicator-idle-color, var(--cx-default-fg-main));
-  --cx-indicator-active-color: var(--cx-accordion-indicator-active-color, var(--cx-default-icon-main));
-  --cx-border-color: var(--cx-accordion-border-color, var(--cx-border-subtle));
+  --cx-item-fg-color: var(--cx-accordion-item-fg-color);
+  --cx-item-bg-color: var(--cx-accordion-item-bg-color);
+  --cx-title-fg-color: var(--cx-accordion-title-fg-color);
+  --cx-title-bg-color: var(--cx-accordion-title-bg-color);
+  --cx-title-fg-active: var(--cx-accordion-title-fg-active);
+  --cx-title-bg-active: var(--cx-accordion-title-bg-active);
+  --cx-indicator-idle-color: var(--cx-accordion-indicator-idle-color);
+  --cx-indicator-active-color: var(--cx-accordion-indicator-active-color);
+  --cx-border-color: var(--cx-accordion-border-color);
   --cx-title-gap: var(--cx-accordion-gap, 1rem);
   --cx-title-padding-y: var(--cx-accordion-title-padding-y, 0.75rem);
   --cx-title-padding-x: var(--cx-accordion-title-padding-x, 1rem);
@@ -9338,6 +9371,7 @@ textarea.form-control {
   --cx-body-padding-b: var(--cx-accordion-body-padding-b, 1.75rem);
   --cx-body-padding-s: var(--cx-accordion-body-padding-s, 3.5rem);
   --cx-body-padding-e: var(--cx-accordion-body-padding-e, 1rem);
+  --cx-indicator: var(--cx-accordion-indicator, url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='currentcolor' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.3359 17.6641L3.83594 10.1641C3.44531 9.8125 3.44531 9.22656 3.83594 8.83594C4.1875 8.48438 4.77344 8.48438 5.16406 8.83594L12 15.7109L18.8359 8.875C19.1875 8.48438 19.7734 8.48438 20.1641 8.875C20.5156 9.22656 20.5156 9.8125 20.1641 10.1641L12.625 17.6641C12.2734 18.0547 11.6875 18.0547 11.3359 17.6641Z' fill='currentcolor'/%3e%3c/svg%3e"));
   --cx-indicator-size: var(--cx-accordion-indicator-size, 1.5rem);
   --cx-border-width: var(--cx-accordion-border-width, var(--cx-border-width-medium));
   --cx-border-radius: var(--cx-accordion-border-radius, var(--cx-border-radius-medium));
@@ -9350,54 +9384,78 @@ textarea.form-control {
   border: var(--cx-border-width) solid var(--cx-border-color);
   border-radius: var(--cx-border-radius);
 }
+.accordion:not(.context), .accordion:not(.context).default {
+  --cx-accordion-item-fg-color: var(--cx-default-fg-main);
+  --cx-accordion-item-bg-color: var(--cx-default-bg-main);
+  --cx-accordion-title-fg-color: var(--cx-default-fg-main);
+  --cx-accordion-title-bg-color: var(--cx-default-bg-main);
+  --cx-accordion-title-fg-active: var(--cx-default-fg-main);
+  --cx-accordion-title-bg-active: var(--cx-default-bg-main);
+  --cx-accordion-indicator-idle-color: var(--cx-default-fg-main);
+  --cx-accordion-indicator-active-color: var(--cx-default-icon-main);
+  --cx-accordion-border-color: var(--cx-default-border-subtle);
+}
+.accordion:not(.context).alternate {
+  --cx-accordion-item-fg-color: var(--cx-secondary-fg-main);
+  --cx-accordion-item-bg-color: var(--cx-secondary-bg-main);
+  --cx-accordion-title-fg-color: var(--cx-secondary-fg-main);
+  --cx-accordion-title-bg-color: var(--cx-secondary-bg-main);
+  --cx-accordion-title-fg-active: var(--cx-secondary-fg-main);
+  --cx-accordion-title-bg-active: var(--cx-secondary-bg-main);
+  --cx-accordion-indicator-idle-color: var(--cx-secondary-fg-main);
+  --cx-accordion-indicator-active-color: var(--cx-secondary-icon-main);
+  --cx-accordion-border-color: var(--cx-secondary-border-subtle);
+}
 .accordion.large {
-  --cx-title-font-size: var(--cx-accordion-title-font-size, var(--cx-font-size-large));
-  --cx-title-line-height: var(--cx-accordion-title-line-height, var(--cx-line-height-large));
-  --cx-body-font-size: var(--cx-accordion-body-font-size, var(--cx-font-size-large));
-  --cx-body-line-height: var(--cx-accordion-body-line-height, var(--cx-line-height-large));
-  --cx-title-gap: var(--cx-accordion-title-gap, 1.25rem);
-  --cx-title-padding-y: var(--cx-accordion-title-padding-y, 1rem);
-  --cx-title-padding-x: var(--cx-accordion-title-padding-x, 1.25rem);
-  --cx-body-padding-t: var(--cx-accordion-body-padding-t, 0.75rem);
-  --cx-body-padding-b: var(--cx-accordion-body-padding-b, 2rem);
-  --cx-body-padding-s: var(--cx-accordion-body-padding-s, 4.25rem);
-  --cx-body-padding-e: var(--cx-accordion-body-padding-e, 1.25rem);
-  --cx-indicator-size: var(--cx-accordion-indicator-size, 1.75rem);
+  --cx-accordion-title-font-size: var(--cx-font-size-large);
+  --cx-accordion-title-line-height: var(--cx-line-height-large);
+  --cx-accordion-body-font-size: var(--cx-font-size-large);
+  --cx-accordion-body-line-height: var(--cx-line-height-large);
+  --cx-accordion-title-gap: 1.25rem;
+  --cx-accordion-title-padding-y: 1rem;
+  --cx-accordion-title-padding-x: 1.25rem;
+  --cx-accordion-body-padding-t: 0.75rem;
+  --cx-accordion-body-padding-b: 2rem;
+  --cx-accordion-body-padding-s: 4.25rem;
+  --cx-accordion-body-padding-e: 1.25rem;
+  --cx-accordion-indicator-size: 1.75rem;
 }
 .accordion.small {
-  --cx-title-font-size: var(--cx-accordion-title-font-size, var(--cx-font-size-small));
-  --cx-title-line-height: var(--cx-accordion-title-line-height, var(--cx-line-height-small));
-  --cx-body-font-size: var(--cx-accordion-body-font-size, var(--cx-font-size-small));
-  --cx-body-line-height: var(--cx-accordion-body-line-height, var(--cx-line-height-small));
-  --cx-title-gap: var(--cx-accordion-title-gap, 0.75rem);
-  --cx-title-padding-y: var(--cx-accordion-title-padding-y, 0.75rem);
-  --cx-title-padding-x: var(--cx-accordion-title-padding-x, 0.75rem);
-  --cx-body-padding-t: var(--cx-accordion-body-padding-t, 0.125rem);
-  --cx-body-padding-b: var(--cx-accordion-body-padding-b, 1rem);
-  --cx-body-padding-s: var(--cx-accordion-body-padding-s, 2.75rem);
-  --cx-body-padding-e: var(--cx-accordion-body-padding-e, 0.75rem);
-  --cx-indicator-size: var(--cx-accordion-indicator-size, 1.25rem);
+  --cx-accordion-title-font-size: var(--cx-font-size-small);
+  --cx-accordion-title-line-height: var(--cx-line-height-small);
+  --cx-accordion-body-font-size: var(--cx-font-size-small);
+  --cx-accordion-body-line-height: var(--cx-line-height-small);
+  --cx-accordion-title-gap: 0.75rem;
+  --cx-accordion-title-padding-y: 0.75rem;
+  --cx-accordion-title-padding-x: 0.75rem;
+  --cx-accordion-body-padding-t: 0.125rem;
+  --cx-accordion-body-padding-b: 1rem;
+  --cx-accordion-body-padding-s: 2.75rem;
+  --cx-accordion-body-padding-e: 0.75rem;
+  --cx-accordion-indicator-size: 1.25rem;
 }
 .accordion.context {
-  --cx-fg-color: var(--cx-accordion-item-fg-color, var(--cx-fg-main));
-  --cx-bg-color: var(--cx-accordion-item-bg-color, var(--cx-bg-main));
-  --cx-title-fg-color: var(--cx-accordion-title-fg-color, var(--cx-fg-main));
-  --cx-title-bg-color: var(--cx-accordion-title-bg-color, var(--cx-bg-main));
-  --cx-title-fg-active: var(--cx-accordion-title-fg-active, var(--cx-fg-main));
-  --cx-title-bg-active: var(--cx-accordion-title-bg-active, var(--cx-bg-main));
-  --cx-indicator-idle-color: var(--cx-accordion-indicator-idle-color, var(--cx-icon-subtle));
-  --cx-indicator-active-color: var(--cx-accordion-indicator-active-color, var(--cx-icon-main));
+  --cx-accordion-item-fg-color: var(--cx-fg-main);
+  --cx-accordion-item-bg-color: var(--cx-bg-main);
+  --cx-accordion-title-fg-color: var(--cx-fg-main);
+  --cx-accordion-title-bg-color: var(--cx-bg-main);
+  --cx-accordion-title-fg-active: var(--cx-fg-main);
+  --cx-accordion-title-bg-active: var(--cx-bg-main);
+  --cx-accordion-indicator-idle-color: var(--cx-icon-subtle);
+  --cx-accordion-indicator-active-color: var(--cx-icon-main);
+  --cx-accordion-border-color: var(--cx-border-subtle);
 }
 .accordion > details {
-  color: var(--cx-fg-color);
-  background-color: var(--cx-bg-color);
+  color: var(--cx-item-fg-color);
+  background-color: var(--cx-item-bg-color);
+  border-color: var(--cx-item-border-color);
 }
 .accordion > details:first-of-type, .accordion > details:first-of-type > summary {
   border-top-right-radius: var(--cx-box-radius);
   border-top-left-radius: var(--cx-box-radius);
 }
 .accordion > details:not(:last-of-type) {
-  border-bottom: var(--cx-border-width) solid var(--cx-separator-color);
+  border-bottom: var(--cx-border-width) solid var(--cx-border-color);
 }
 .accordion > details:last-of-type, .accordion > details:last-of-type:not([open]) > summary {
   border-bottom-left-radius: var(--cx-box-radius);
@@ -9451,10 +9509,7 @@ textarea.form-control {
 }
 .accordion > details > .accordion-body {
   padding: var(--cx-body-padding-t) var(--cx-body-padding-s) var(--cx-body-padding-b) var(--cx-body-padding-e);
-}
-.accordion > details > .accordion-body * {
   font: var(--cx-body-font-weight) var(--cx-body-font-size)/var(--cx-body-line-height) var(--cx-body-font-family);
-  color: var(--cx-fg-color);
 }
 .accordion > [open] summary {
   background-color: var(--cx-title-bg-active);
@@ -10559,21 +10614,21 @@ textarea.form-control {
   }
 }
 .tooltip {
-  --cx-zindex: 1080;
-  --cx-max-width: 12.5rem;
-  --cx-padding-x: 0.5rem;
-  --cx-padding-y: 0.25rem;
-  --cx-margin: ;
+  --cx-zindex: var(--cx-tooltip-zindex, 1080);
+  --cx-max-width: var(--cx-tooltip-max-width, 12.5rem);
+  --cx-padding-x: var(--cx-tooltip-padding-x, 0.5rem);
+  --cx-padding-y: var(--cx-tooltip-padding-y, 0.25rem);
+  --cx-margin: var(--cx-tooltip-margin, );
   --cx-font-family: var(--cx-tooltip-font-family, var(--cx-font-family-text));
   --cx-font-size: var(--cx-tooltip-font-size, var(--cx-font-size-text-small));
   --cx-font-weight: var(--cx-tooltip-font-weight, var(--cx-font-weight-text-normal));
   --cx-line-height: var(--cx-tooltip-line-height, var(--cx-line-height-text-small));
-  --cx-fg-color: var(--cx-fg-inverse);
-  --cx-bg-color: var(--cx-bg-inverse);
-  --cx-border-radius: var(--cx-border-radius-medium);
-  --cx-opacity: 0.9;
-  --cx-arrow-width: 0.8rem;
-  --cx-arrow-height: 0.4rem;
+  --cx-fg-color: var(--cx-tooltip-fg-color, var(--cx-fg-inverse));
+  --cx-bg-color: var(--cx-tooltip-bg-color, var(--cx-bg-inverse));
+  --cx-border-radius: var(--cx-tooltip-border-radius, var(--cx-border-radius-medium));
+  --cx-opacity: var(--cx-tooltip-opacity, 0.9);
+  --cx-arrow-width: var(--cx-tooltip-arrow-width, 0.8rem);
+  --cx-arrow-height: var(--cx-tooltip-arrow-height, 0.4rem);
   z-index: var(--cx-zindex);
   display: block;
   margin: var(--cx-margin);

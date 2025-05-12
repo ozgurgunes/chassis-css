@@ -822,19 +822,25 @@ $form-validation-states: (
 // Most of tables settings are defined by design tokens, see `scss/tokens/_index.scss`.
 
 // scss-docs-start table-variables
+$table-divider-color:               currentcolor !default;
+// These variables are not exposed as CSS variables.
 $table-cell-vertical-align:         top !default;
 $table-th-font-weight:              700 !default;
-$table-striped-fg-color:            var(--#{$prefix}fg-main) !default;
-$table-active-fg-color:             var(--#{$prefix}fg-main) !default;
-$table-hover-fg-color:              var(--#{$prefix}fg-main) !default;
-$table-hover-bg-color:              var(--#{$prefix}bg-evident) !default;
-$table-border-color:                var(--#{$prefix}border-subtle) !default;
 $table-striped-order:               even !default;
 $table-striped-columns-order:       even !default;
-$table-divider-color:               currentcolor !default;
-$table-caption-color:               var(--#{$prefix}secondary-color) !default;
-
-// $table-bg-scale:                    -80% !default;
+$table-caption-color:               var(--#{$prefix}fg-subtle) !default;
+$table-td-fg-context:               var(--#{$prefix}fg-main) !default;
+$table-td-bg-context:               var(--#{$prefix}bg-main) !default;
+$table-th-fg-context:               var(--#{$prefix}fg-main) !default;
+$table-th-bg-context:               var(--#{$prefix}bg-evident) !default;
+$table-striped-fg-context:          var(--#{$prefix}fg-main) !default;
+$table-striped-bg-context:          var(--#{$prefix}bg-even) !default;
+$table-hover-fg-context:            var(--#{$prefix}fg-main) !default;
+$table-hover-bg-context:            var(--#{$prefix}dim-slight) !default;
+$table-active-fg-context:           var(--#{$prefix}fg-highlight) !default;
+$table-active-bg-context:           var(--#{$prefix}bg-highlight) !default;
+$table-border-context:              var(--#{$prefix}border-subtle) !default;
+$table-cue-context:                 var(--#{$prefix}cue-main) !default;
 // scss-docs-end table-variables
 
 //
@@ -1046,9 +1052,9 @@ $card-group-margin:                 $grid-gutter-width * .5 !default;
 // See `tokens/_accordion.scss` for more details.
 //
 // scss-docs-start accordion-variables
-$accordion-border-width:                var(--#{$prefix}border-width-medium) !default;
-$accordion-border-color:                var(--#{$prefix}border-subtle) !default;
-$accordion-border-radius:               var(--#{$prefix}border-radius-medium) !default;
+//$accordion-border-width:                var(--#{$prefix}border-width-medium) !default;
+//$accordion-border-color:                var(--#{$prefix}border-subtle) !default;
+//$accordion-border-radius:               var(--#{$prefix}border-radius-medium) !default;
 $accordion-indicator:                   url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
 $accordion-box-radius:                  #{calc($accordion-border-radius - $accordion-border-width)} !default;
 $accordion-transition:                  $transition-collapse !default;
@@ -1065,6 +1071,7 @@ $accordion-title-fg-active-context:     var(--#{$prefix}fg-main) !default;
 $accordion-title-bg-active-context:     var(--#{$prefix}bg-main) !default;
 $accordion-indicator-idle-context:      var(--#{$prefix}icon-subtle) !default;
 $accordion-indicator-active-context:    var(--#{$prefix}icon-main) !default;
+$accordion-border-color-context:        var(--#{$prefix}border-subtle) !default;
 // scss-docs-end accordion-variables
 
 //

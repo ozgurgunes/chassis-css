@@ -1,6 +1,6 @@
 ---
 title: Tables
-description: Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Chassis.
+description: Flexible table styles with opt-in classes for responsive, accessible, and customizable data presentation in Chassis CSS.
 toc: true
 ---
 
@@ -8,119 +8,67 @@ import { getData } from '@libs/data'
 
 ## Overview
 
-Due to the widespread use of `<table>` elements across third-party widgets like calendars and date pickers, Chassis - CSS’s tables are **opt-in**. Add the base class `.table` to any `<table>`, then extend with our optional modifier classes or custom styles. All table styles are not inherited in Chassis, meaning any nested tables can be styled independent from the parent.
-
-Using the most basic table markup, here’s how `.table`-based tables look in Chassis.
+Tables in Chassis CSS use an opt-in approach with the `.table` base class. This design choice respects the widespread use of native `<table>` elements in third-party plugins like calendars and datepickers. Add the base class to any `<table>`, then enhance with modifiers for borders, striping, hover states, and context variations. Table styles aren't inherited by nested tables, allowing for independent styling within complex layouts.
 
 <Table class="table" simplified={false} />
 
-## Variants
+## Alternate Variant
 
-Use contextual classes to color tables, table rows or individual cells.
+<InFigma />
 
-<div class="cxd-example">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Class</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Base</th>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-      {getData('context-colors').map((contextColor) => {
-        return (
-          <tr class={`context ${contextColor.name}`}>
-            <th scope="row">{contextColor.title}</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-        )
-      })}
-    </tbody>
-  </table>
-</div>
+Add `.alternate` to the table element to apply the design tokens based alternate variant to the entire table as in Figma.
 
-<Code code={[
-  `<!-- On tables -->`,
-  ...getData('context-colors').map((contextColor) => `<table class="table context ${contextColor.name}">...</table>`),
-  `
-  <!-- On heads -->
-  <thead class="context primary">
-    <tr>...</tr>
-  </thead>`,
-  `
-  <!-- On bodies -->
-  <tbody class="context primary">
-    <tr>...</tr>
-  </tbody>
-  <tbody class="context secondary">
-    <tr>...</tr>
-  </tbody>`,
-  `
-  <!-- On rows -->
-  <tr class="context primary">...</tr>
-  <tr class="context secondary">...</tr>`,
-  `
-  <!-- On cells (\`td\` or \`th\`) -->
-  <tr>
-    <td class="context primary">...</td>
-    <td class="context secondary">...</td>
-  </tr>`
-]} lang="html" />
+<Table class="table alternate" />
 
-<Callout name="warning-color-assistive-technologies" />
+<Callout name="info-figma-variant" />
 
 ## Accented tables
 
+Enhance your tables with visual accents to improve readability and create visual hierarchy. These options help users scan and interpret tabular data more effectively.
+
 ### Striped rows
 
-Use `.striped` to add zebra-striping to any table row within the `<tbody>`.
+Add `.striped` to create alternating background colors for rows within the `<tbody>`, making it easier to scan across wide tables.
 
 <Table class="table striped" />
 
-<Table class="table striped context primary" />
+<Table class="table striped alternate" />
 
 ### Striped columns
 
-Use `.striped-columns` to add zebra-striping to any table column.
+Use `.striped-columns` to apply zebra-striping to columns instead of rows, which can be useful for data-dense tables where vertical scanning is important.
 
 <Table class="table striped-columns" />
 
-<Table class="table striped-columns context primary" />
+<Table class="table striped-columns alternate" />
 
-### Hoverable rows
+## Hoverable rows
 
 Add `.hoverable` to enable a hover state on table rows within a `<tbody>`.
 
-<Table class="table hoverable" />
+<Table class="table hoverable striped" />
 
-These hoverable rows can also be combined with the striped tables and context variants:
-
-<Table class="table striped hoverable" />
-
-<Table class="table striped hoverable context primary" />
+<Table class="table hoverable striped alternate" />
 
 ## Active tables
 
 Highlight a table row or cell by adding a `.active` class.
 
-<TableDeep class="table striped" active />
+<TableDeep class="table hoverable striped" active />
 
-<TableDeep class="table striped context primary" active />
+<TableDeep class="table hoverable striped alternate" active />
 
 ## Table borders
 
+Control the visual boundaries of your tables using border modifiers. These classes help define table structure and separate content areas to improve readability and organization.
+
 ### Bordered tables
 
-Add `.bordered` for borders on all sides of the table and cells.
+Add `.bordered` to apply distinct borders to the entire table, including cell boundaries, creating clear visual separation between data points.
 
 <Table class="table bordered" />
+
+<Table class="table bordered alternate" />
 
 [Border color utilities]([[docsref:/utilities/borders#border-color]]) can be added to change colors:
 
@@ -128,15 +76,15 @@ Add `.bordered` for borders on all sides of the table and cells.
 
 ### Borderless tables
 
-Add `.borderless` for a table without borders.
+Apply `.borderless` to remove all borders from your table for a cleaner, more minimalist appearance.
 
 <Table class="table borderless" />
 
-<Table class="table borderless context alternate" />
+<Table class="table borderless alternate" />
 
 ### Border Radius
 
-Override the design tokens `border-radius` with css variables.
+Customize the corners of bordered tables using CSS variables to override the default border-radius design tokens.
 
 <Table class="table bordered" style="--cx-border-radius: 0" />
 
@@ -160,32 +108,118 @@ Or use it in a wrapper with table scoping.
  Border radius overriding needs `$enable-table-border-radius` to be set to `true` in `_vendor.scss`.
 </Callout>
 
-## Color Modes
+## Context Variants
 
-Add `data-cx-theme="light"` or `data-cx-theme="dark"` to any table elements.
+<CSSOnly />
 
-<Table class="table" theme="dark" />
+Use `.context` with a color name (like `.primary`) to apply a specific color scheme to your table. You can further customize the appearance using style modifiers like `.solid` or `.smooth`.
 
-<Table class="table context primary" theme="dark" />
+### Context Colors
 
+Add `.context` followed by a color name (e.g., `.context.primary`, `.context.success`) to apply that color scheme to tables, rows, or individual cells.
 
-## Context styles
+<Example showMarkup={false} code={`<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Class</th>
+        <th scope="col">Heading</th>
+        <th scope="col">Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Base</th>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      ${getData('context-colors').map((contextColor) => {
+        return (`
+          <tr class="context ${contextColor.name}">
+            <th scope="row">${contextColor.title}</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+        `)
+      }).join('')}
+    </tbody>
+  </table>`} />
+
+<Code code={[
+  `<!-- On tables -->`,
+  ...getData('context-colors').map((contextColor) => `<table class="table context ${contextColor.name}">...</table>`),
+  `
+  <!-- On heads -->
+  <thead class="context primary">
+    ...
+  </thead>`,
+  `
+  <!-- On bodies -->
+  <tbody class="context primary">
+    ...
+  </tbody>`,
+  `
+  <!-- On rows -->
+  <tr class="context primary">
+    ...
+  </tr>`,
+  `
+  <!-- On cells (\`td\` or \`th\`) -->
+  <td class="context primary">
+    ...
+  </td>`
+]} lang="html" />
+
+<Callout name="warning-color-assistive-technologies" />
+
+<TableDeep showMarkup={false} class="table striped hoverable context primary" active />
+
+<Code lang="html" code={`<table class="table striped hoverable context primary">
+  ...
+  </table>`} />
+
+### Context styles
+
+Add `.solid` or `.smooth` alongside `.context` and a color to modify how the context color appears. The `.solid` style creates a more prominent color effect, while `.smooth` provides a softer appearance.
 
 <Table class="table context primary solid" />
 
 <Table class="table context primary smooth" />
 
-## Tabe Sizing
+## Color Modes
 
-Use css variables to override design tokens.
+Apply different color themes to tables using the `data-cx-theme` attribute. This allows you to maintain visual consistency with dark or light themed interfaces regardless of the global theme setting.
+
+Add `data-cx-theme="light"` or `data-cx-theme="dark"` to any table element:
+
+<Table class="table" theme="dark" />
+
+Context variants work seamlessly with explicit theme settings:
+
+<Table class="table context primary" theme="dark" />
+
+<Callout type="info">
+  Both alternate variant and dark mode can be used together. In dark mode, the alternate variant maintains its designer-controlled style but adapts to the dark theme color palette, just as it does in light mode.
+</Callout>
+
+<Table class="table alternate primary" theme="dark" />
+
+## Table Sizing
+
+Customize table dimensions and text sizes using CSS variables to override design tokens, giving you fine-grained control over your table's appearance.
+
+### Basic sizing
+
+Adjust cell padding and font sizes directly on the table:
 
 <Table class="table" style="--cx-td-font-size: 1rem; --cx-cell-padding-y: 1rem" />
 
-Set styles for `<thead>` & `<tbody>` or wrapper with scoping.
+### Targeted elements
+
+Target specific table components by setting styles for `<thead>` & `<tbody>` elements or use a wrapper with scoping:
 
 <div class="cxd-example">
   <div style="--cx-table-cell-padding-y: 1rem; --cx-table-th-font-size: 1rem;">
-    <TableDeep code="false" class="table" headStyle="--cx-cell-padding-y: .25rem" bodyStyle="--cx-td-font-size: 1rem" />
+    <TableDeep example="false" class="table" headStyle="--cx-cell-padding-y: .25rem" bodyStyle="--cx-td-font-size: 1rem" />
   </div>
 </div>
 
@@ -202,17 +236,141 @@ Set styles for `<thead>` & `<tbody>` or wrapper with scoping.
 </div>
 ```
 
-## Table group dividers
+## Nesting
 
-Add a thicker border, darker between table groups—`<thead>`, `<tbody>`, and `<tfoot>`—with `.table-divider`. Customize the color by changing the `border-top-color` (which we don’t currently provide a utility class for at this time).
+Border styles and context variants are not inherited by nested tables.
 
-<TableDeep class="table" bodyClass="table-divider" />
+<div class="cxd-example">
+<table class="table striped bordered">
+  <thead>
+    <tr>
+      <th class="w-25" scope="col">Column 1</th>
+      <th scope="col">Column 2</th>
+      <th scope="col">Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="p-medium">
+      <TableDeep class="table mb-0" example={false} />
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-<TableDeep class="table context primary" bodyClass="table-divider" />
+```html
+<table class="table striped bordered">
+  ...
+  <tr>
+    <td colspan="3" class="p-medium">
+      <table class="table mb-0">
+        ...
+      </table>
+    </td>
+  </tr>
+  ...
+</table>
+```
+
+### Inherit context
+
+Apply the `context` class without a variant to enable the nested table to inherit the parent table's context.
+
+<div class="cxd-example">
+<table class="table striped bordered context primary">
+  <thead>
+    <tr>
+      <th class="w-25" scope="col">Column 1</th>
+      <th scope="col">Column 2</th>
+      <th scope="col">Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="p-medium">
+      <TableDeep class="table context mb-0" example={false} />
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">First</th>
+      <td>Second</td>
+      <td>Third</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+```html
+<table class="table striped bordered context primary">
+  ...
+  <tr>
+    <td colspan="3" class="p-medium">
+      <table class="table context mb-0">
+        ...
+      </table>
+    </td>
+  </tr>
+  ...
+</table>
+```
+
+## Anatomy
+
+Customize the structural elements of tables to create effective hierarchies and improve both visual presentation and accessibility.
+
+### Table head
+
+Add emphasis and visual hierarchy using custom styling for the `<thead>` element. Apply context classes to `<thead>` or utility classes to `<tr>` elements for custom appearances.
+
+<TableDeep class="table" headClass="context alternate" />
+
+<TableDeep class="table" headRowClass="bg-main fg-primary" />
+
+### Table foot
+
+Include a `<tfoot>` element to display summary information, totals, or notes at the bottom of the table. Apply context classes to `<tfoot>` or utility classes to `<tr>` elements for custom appearances.
+
+<TableDeep class="table" foot footClass="context neutral" />
+
+### Captions
+
+Improve accessibility and provide context by including a `<caption>` that briefly describes the table's content and purpose. Screen readers announce captions first, helping users decide if they want to explore the table.
+
+<Table class="table" caption="List of users" />
+
+You can also position the caption at the top of the table with `.caption-top` for greater visibility.
+
+<Table class="table caption-top" caption="List of users" />
+
+## Group dividers
+
+Create visual separation between table sections with enhanced borders using the `.table-divider` class.
+
+<TableDeep class="table" bodyClass="table-divider" foot={true} footClass="table-divider" />
+
+<TableDeep class="table context primary" bodyClass="table-divider" foot={true} footClass="table-divider" />
 
 ## Vertical alignment
 
-Table cells of `<thead>` are always vertical aligned to the bottom. Table cells in `<tbody>` inherit their alignment from `<table>` and are aligned to the top by default. Use the [vertical align]([[docsref:/utilities/vertical-align]]) classes to re-align where needed.
+Control the vertical positioning of content within table cells to handle varying content lengths and improve visual harmony. By default, `<thead>` cells align content to the bottom, while `<tbody>` cells inherit alignment from the table (defaulting to top alignment).
+
+Use the [vertical align]([[docsref:/utilities/vertical-align]]) utility classes (`.align-top`, `.align-middle`, or `.align-bottom`) on tables, rows, or individual cells to customize alignment:
 
 <div class="cxd-example">
   <div class="table-responsive">
@@ -220,9 +378,9 @@ Table cells of `<thead>` are always vertical aligned to the bottom. Table cells 
       <thead>
         <tr>
           <th scope="col" class="w-25">Column 1</th>
-          <th scope="col" class="w-25">Column 2</th>
-          <th scope="col" class="w-25">Column 3</th>
-          <th scope="col" class="w-25">Column 4</th>
+          <th scope="col">Column 2</th>
+          <th scope="col">Column 3</th>
+          <th scope="col">Column 4</th>
         </tr>
       </thead>
       <tbody>
@@ -274,137 +432,6 @@ Table cells of `<thead>` are always vertical aligned to the bottom. Table cells 
   </table>
 </div>
 ```
-
-## Nesting
-
-Border styles and context variants are not inherited by nested tables.
-
-<div class="cxd-example">
-<table class="table striped bordered">
-  <thead>
-    <tr>
-      <th class="w-25" scope="col">Column 1</th>
-      <th scope="col">Column 2</th>
-      <th scope="col">Column 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">First</th>
-      <td>Second</td>
-      <td>Third</td>
-    </tr>
-    <tr>
-      <td colspan="3" class="p-medium">
-      <TableDeep class="table mb-0" code="false" />
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">First</th>
-      <td>Second</td>
-      <td>Third</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-```html
-<table class="table striped bordered">
-  <thead>
-    ...
-  </thead>
-  <tbody>
-    ...
-    <tr>
-      <td colspan="3" class="p-medium">
-        <table class="table mb-0">
-          ...
-        </table>
-      </td>
-    </tr>
-    ...
-  </tbody>
-</table>
-```
-
-### Inherit context
-
-Apply the `context` class without a variant to enable the nested table to inherit the parent table's context.
-
-<div class="cxd-example">
-<table class="table striped bordered context primary">
-  <thead>
-    <tr>
-      <th class="w-25" scope="col">Column 1</th>
-      <th scope="col">Column 2</th>
-      <th scope="col">Column 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">First</th>
-      <td>Second</td>
-      <td>Third</td>
-    </tr>
-    <tr>
-      <td colspan="3" class="p-medium">
-      <TableDeep class="table mb-0 context" code="false" />
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">First</th>
-      <td>Second</td>
-      <td>Third</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-```html
-<table class="table striped bordered context primary">
-  <thead>
-    ...
-  </thead>
-  <tbody>
-    ...
-    <tr>
-      <td colspan="3" class="p-medium">
-        <table class="table mb-0 context">
-          ...
-        </table>
-      </td>
-    </tr>
-    ...
-  </tbody>
-</table>
-```
-
-## Anatomy
-
-### Table head
-
-Use context classes on head or color utilities on row to customize table heads.
-
-<TableDeep class="table" headClass="context default" />
-
-<TableDeep class="table" headClass="context alternate" />
-
-<TableDeep class="table" headRowClass="bg-main fg-primary" />
-
-
-### Table foot
-
-<Table class="table" foot />
-
-### Captions
-
-A `<caption>` functions like a heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide if they want to read it.
-
-<Table class="table" caption="List of users" />
-
-You can also put the `<caption>` on the top of the table with `.caption-top`.
-
-<Table class="table caption-top" caption="List of users" />
 
 ## Responsive tables
 
@@ -563,14 +590,16 @@ Use `.table-responsive{-small|-medium|-large|-xlarge|-2xlarge}` as needed to cre
 
 <DocsCSSVars />
 
+<ScssDocs name="table-variables" file="scss/_table.scss" />
+
 ### Sass variables
 
 <DocsSASSVars />
 
 <ScssDocs name="table-variables" file="scss/_variables.scss" />
-<ScssDocs name="table-tokens" file="scss/tokens/_index.scss" />
 
-### Customizing
+### Design tokens
 
-- The factor variables (`$table-striped-bg-factor`, `$table-active-bg-factor` & `$table-hover-bg-factor`) are used to determine the contrast in table variants.
-- Apart from the light & dark table variants, theme colors are lightened by the `$table-bg-scale` variable.
+<DocsDesignTokens />
+
+<ScssDocs name="table-tokens" file="scss/tokens/_table.scss" />

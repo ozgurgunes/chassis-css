@@ -50,7 +50,7 @@
 //
 //    >> breakpoint-infix(xsmall, (xsmall: 0, small: 576px, medium: 768px, large: 992px, xlarge: 1200px, 2xlarge: 1400px))
 //    ""  (Returns a blank string)
-//    >> breakpoint-infix(sm, (xsmall: 0, small: 576px, medium: 768px, large: 992px, xlarge: 1200px, 2xlarge: 1400px))
+//    >> breakpoint-infix(small, (xsmall: 0, small: 576px, medium: 768px, large: 992px, xlarge: 1200px, 2xlarge: 1400px))
 //    "-small"
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
   @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");

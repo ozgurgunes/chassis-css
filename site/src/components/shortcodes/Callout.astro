@@ -16,6 +16,7 @@ interface Props {
     | 'warning-color-assistive-technologies'
     | 'warning-data-cx-title-vs-title'
     | 'warning-input-support'
+    | 'info-figma-variant'
   /**
    * The type of callout to display. One of `info`, `danger`, or `warning`.
    * @default 'info'
@@ -39,6 +40,6 @@ if (name) {
 }
 ---
 
-<div class={`cxd-callout cxd-callout-${type}`}>
+<div class={`cxd-callout cxd-callout-${type} context ${type}`}>
   {Content ? <Content /> : <slot />}
 </div>

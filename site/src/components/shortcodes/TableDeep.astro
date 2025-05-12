@@ -13,10 +13,25 @@ interface Props {
   bodyStyle?: string
   headRowClass?: string
   active?: string
-  code?: boolean
+  foot?: boolean
+  footClass?: string
+  example?: boolean
+  showMarkup?: boolean
 }
 
-const { class: className, style, headClass, headStyle, bodyClass, bodyStyle, headRowClass, active, code = true } = Astro.props
+const { class: className, style, headClass, headStyle, bodyClass, bodyStyle, headRowClass, active, foot, footClass, example = true, showMarkup = true } = Astro.props
+
+const tableFoot = foot
+  ? `
+  <tfoot${footClass ? ` class="${footClass}"` : ''}>
+    <tr>
+      <td>Footer 1</td>
+      <td>Footer 2</td>
+      <td>Footer 3</td>
+      <td>Footer 4</td>
+    </tr>
+  </tfoot>`
+  : ''
 
 const headCode = headRowClass
   ? `<tr class="${headRowClass}">
@@ -37,17 +52,23 @@ const bodyCode = active
       ...
     </tr>`
   : '...'
+const footCode = foot
+  ? `
+  <tfoot${footClass ? ` class="${footClass}"` : ''}>
+    ...
+  </tfoot>`
+  : ''
 const tableCode = `<table${className ? ` class="${className}"` : ''}${style ? ` style="${style}"` : ''}>
   <thead${headClass ? ` class="${headClass}"` : ''}${headStyle ? ` style="${headStyle}"` : ''}>
     ${headCode}
   </thead>
   <tbody${bodyClass ? ` class="${bodyClass}"` : ''}${bodyStyle ? ` style="${bodyStyle}"` : ''}>
     ${bodyCode}
-  </tbody>
+  </tbody>${footCode}
 </table>`
 ---
 
-<Fragment set:html={code == true ? '<div class="cxd-example">' : ''} />
+<Fragment set:html={example == true ? '<div class="cxd-example">' : ''} />
 <Fragment
   set:html={`<table${className ? ` class="${className}"` : ''}${style ? ` style="${style}"` : ''}>
   <thead${headClass ? ` class="${headClass}"` : ''}${headStyle ? ` style="${headStyle}"` : ''}>
@@ -77,14 +98,14 @@ const tableCode = `<table${className ? ` class="${className}"` : ''}${style ? ` 
       <td>Doe</td>
       <td>@social</td>
     </tr>
-  </tbody>
+  </tbody>${tableFoot}
 </table>`}
 />
-<Fragment set:html={code == true ? '</div>' : ''} />
+<Fragment set:html={example == true ? '</div>' : ''} />
 
 {
   () => {
-    if (code == true) {
+    if (example == true && showMarkup == true) {
       return <Code code={tableCode} lang="html" />
     }
   }

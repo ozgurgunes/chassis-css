@@ -7,6 +7,7 @@
 @import "chips";
 @import "forms";
 @import "shadows";
+@import "table";
 
 // scss-docs-start asset-tokens
 $separator-size:       $cx-size-asset-separator !default;
@@ -102,20 +103,3 @@ $icon-2xsmall:      $cx-size-icon-glyph-2xsmall !default;
 $icon-3xsmall:      $cx-size-icon-glyph-3xsmall !default;
 $icon-size:         $icon-medium !default;
 // scss-docs-end icon-size-tokens
-
-// scss-docs-start table-tokens
-$table-cell-padding-y:            $cx-space-common-table-cell-padding-y !default;
-$table-cell-padding-x:            $cx-space-common-table-cell-padding-x !default;
-$table-border-width:              $cx-border-width-common-table !default;
-$table-border-radius:             $cx-border-radius-common-table !default;
-$table-td-fg-color:               $cx-color-common-table-default-fg-data !default;
-$table-td-bg-color:               $cx-color-common-table-default-bg-data !default;
-$table-th-fg-color:               $cx-color-common-table-default-fg-head !default;
-$table-th-bg-color:               $cx-color-common-table-default-bg-head !default;
-$table-striped-bg-color:          $cx-color-common-table-default-bg-alt !default;
-$table-active-bg-color:           $cx-color-common-table-default-bg-highlight !default;
-$table-cell-font:                 $cx-font-common-table-data-text !default;
-$table-head-font:                 $cx-font-common-table-head-text !default;
-$table-active-cue-color:    $cx-color-common-table-default-cue-main !default;
-$table-active-indicator-size:     $cx-size-asset-indicator !default;
-// scss-docs-end table-tokens

@@ -1,18 +1,18 @@
 // Base class
 .tooltip {
   // scss-docs-start tooltip-css-vars
-  --#{$prefix}zindex: #{$zindex-tooltip};
-  --#{$prefix}max-width: #{$tooltip-max-width};
-  --#{$prefix}padding-x: #{$tooltip-padding-x};
-  --#{$prefix}padding-y: #{$tooltip-padding-y};
-  --#{$prefix}margin: #{$tooltip-margin};
+  --#{$prefix}zindex: var(--#{$prefix}tooltip-zindex, #{$zindex-tooltip});
+  --#{$prefix}max-width: var(--#{$prefix}tooltip-max-width, #{$tooltip-max-width});
+  --#{$prefix}padding-x: var(--#{$prefix}tooltip-padding-x, #{$tooltip-padding-x});
+  --#{$prefix}padding-y: var(--#{$prefix}tooltip-padding-y, #{$tooltip-padding-y});
+  --#{$prefix}margin: var(--#{$prefix}tooltip-margin, #{$tooltip-margin});
   @include map-font($tooltip-font, tooltip);
-  --#{$prefix}fg-color: #{$tooltip-fg-color};
-  --#{$prefix}bg-color: #{$tooltip-bg-color};
-  --#{$prefix}border-radius: #{$tooltip-border-radius};
-  --#{$prefix}opacity: #{$tooltip-opacity};
-  --#{$prefix}arrow-width: #{$tooltip-arrow-width};
-  --#{$prefix}arrow-height: #{$tooltip-arrow-height};
+  --#{$prefix}fg-color: var(--#{$prefix}tooltip-fg-color, #{$tooltip-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}tooltip-bg-color, #{$tooltip-bg-color});
+  --#{$prefix}border-radius: var(--#{$prefix}tooltip-border-radius, #{$tooltip-border-radius});
+  --#{$prefix}opacity: var(--#{$prefix}tooltip-opacity, #{$tooltip-opacity});
+  --#{$prefix}arrow-width: var(--#{$prefix}tooltip-arrow-width, #{$tooltip-arrow-width});
+  --#{$prefix}arrow-height: var(--#{$prefix}tooltip-arrow-height, #{$tooltip-arrow-height});
   // scss-docs-end tooltip-css-vars
 
   z-index: var(--#{$prefix}zindex);

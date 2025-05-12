@@ -225,8 +225,8 @@
 
 // scss-docs-start custom-tooltip
 .custom-tooltip {
-  --cx-tooltip-bg: var(--cxd-subtle-bg);
-  --cx-tooltip-color: var(--cx-white);
+  --cx-tooltip-bg-color: var(--cx-primary-60);
+  --cx-tooltip-fg-color: var(--cx-primary-20);
 }
 // scss-docs-end custom-tooltip
 

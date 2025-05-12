@@ -20,6 +20,7 @@ export declare global {
   export const DocsDesignTokens: typeof import('@shortcodes/DocsDesignTokens.astro').default
   export const DocsSASSVars: typeof import('@shortcodes/DocsSASSVars.astro').default
   export const Example: typeof import('@shortcodes/Example.astro').default
+  export const InFigma: typeof import('@shortcodes/InFigma.astro').default
   export const JsDismiss: typeof import('@shortcodes/JsDismiss.astro').default
   export const JsDocs: typeof import('@shortcodes/JsDocs.astro').default
   export const Placeholder: typeof import('@shortcodes/Placeholder.astro').default

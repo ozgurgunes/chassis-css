@@ -1,0 +1,35 @@
+// scss-docs-start table-tokens
+$table-default-td-fg-color:           $cx-color-common-table-default-fg-data !default;
+$table-default-td-bg-color:           $cx-color-common-table-default-bg-data !default;
+$table-default-th-fg-color:           $cx-color-common-table-default-fg-head !default;
+$table-default-th-bg-color:           $cx-color-common-table-default-bg-head !default;
+$table-default-striped-fg-color:      $cx-color-common-table-default-fg-data !default;
+$table-default-striped-bg-color:      $cx-color-common-table-default-bg-alt !default;
+$table-default-active-fg-color:       $cx-color-common-table-default-fg-data !default;
+$table-default-active-bg-color:       $cx-color-common-table-default-bg-highlight !default;
+$table-default-hover-fg-color:        $cx-color-common-table-default-fg-data !default;
+$table-default-hover-bg-color:        $cx-color-common-table-default-bg-hover !default;
+$table-default-cue-color:             $cx-color-common-table-default-cue-main !default;
+$table-default-border-color:          $cx-color-common-table-default-border-main !default;
+
+$table-alternate-td-fg-color:         $cx-color-common-table-alternate-fg-data !default;
+$table-alternate-td-bg-color:         $cx-color-common-table-alternate-bg-data !default;
+$table-alternate-th-fg-color:         $cx-color-common-table-alternate-fg-head !default;
+$table-alternate-th-bg-color:         $cx-color-common-table-alternate-bg-head !default;
+$table-alternate-striped-fg-color:    $cx-color-common-table-alternate-fg-data !default;
+$table-alternate-striped-bg-color:    $cx-color-common-table-alternate-bg-alt !default;
+$table-alternate-active-fg-color:     $cx-color-common-table-alternate-fg-data !default;
+$table-alternate-active-bg-color:     $cx-color-common-table-alternate-bg-highlight !default;
+$table-alternate-hover-fg-color:      $cx-color-common-table-alternate-fg-data !default;
+$table-alternate-hover-bg-color:      $cx-color-common-table-alternate-bg-hover !default;
+$table-alternate-cue-color:           $cx-color-common-table-alternate-cue-main !default;
+$table-alternate-border-color:        $cx-color-common-table-alternate-border-main !default;
+
+$table-cell-padding-y:                $cx-space-common-table-cell-padding-y !default;
+$table-cell-padding-x:                $cx-space-common-table-cell-padding-x !default;
+$table-border-width:                  $cx-border-width-common-table !default;
+$table-border-radius:                 $cx-border-radius-common-table !default;
+$table-active-indicator-size:         $cx-size-asset-indicator !default;
+$table-th-font:                       $cx-font-common-table-head-text !default;
+$table-td-font:                       $cx-font-common-table-data-text !default;
+// scss-docs-end table-tokens
