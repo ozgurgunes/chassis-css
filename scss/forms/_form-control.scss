@@ -3,90 +3,13 @@
 //
 
 .form-control {
-  // scss-docs-start form-control-css-vars
-  --#{$prefix}padding-x: #{$input-medium-padding-x};
-  --#{$prefix}padding-y: #{$input-medium-padding-y};
-  --#{$prefix}min-height: #{$input-medium-height};
-  --#{$prefix}gap: #{$badge-medium-gap};
-  --#{$prefix}fg-color: #{$input-fg-color};
-  --#{$prefix}bg-color: #{$input-bg-color};
-  @include map-font($input-medium-font, input);
-  --#{$prefix}border-color: #{$input-border-color};
-  --#{$prefix}border-width: #{$input-border-width};
-  --#{$prefix}border-radius: #{$input-medium-border-radius};
-  // scss-docs-end form-control-css-vars
-
-  // box-sizing: content-box;
-  display: block;
-  width: 100%;
-  @include box-padding();
-  appearance: none; // Fix appearance for date inputs in Safari
-  background-clip: padding-box;
-
-  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
-  //@include border-radius($input-medium-border-radius, 0);
-
-  @include box-shadow($input-box-shadow);
-  @include transition($input-transition);
-
-  @extend %component;
+  @extend %component, %form-input;
 
   &[type="file"] {
     overflow: hidden; // prevent pseudo element button overlap
 
     &:not(:disabled):not([readonly]) {
       cursor: pointer;
-    }
-  }
-
-  // Form control sizing
-  //
-  // Build on `.form-control` with modifier classes to decrease or increase the
-  // height and font-size of form controls.
-  //
-  // Repeated in `_input_group.scss` to avoid Sass extend issues.
-
-  &.small {
-    --#{$prefix}padding-x: #{$input-small-padding-x};
-    --#{$prefix}padding-y: #{$input-small-padding-y};
-    --#{$prefix}min-height: #{$input-small-height};
-    @include map-font-size($input-small-font, input);
-    @include map-line-height($input-small-font, input);
-    --#{$prefix}border-radius: #{$input-small-border-radius};
-    min-height: $input-small-height;
-
-    &::file-selector-button {
-      margin: #{calc(-1 * #{$input-small-padding-y})} #{calc(-1 * #{$input-small-padding-x})};
-      margin-inline-end: $input-small-padding-x;
-    }
-  }
-
-  &.large {
-    --#{$prefix}padding-x: #{$input-large-padding-x};
-    --#{$prefix}padding-y: #{$input-large-padding-y};
-    --#{$prefix}min-height: #{$input-large-height};
-    @include map-font-size($input-large-font, input);
-    @include map-line-height($input-large-font, input);
-    --#{$prefix}border-radius: #{$input-large-border-radius};
-    min-height: $input-large-height;
-
-    &::file-selector-button {
-      margin: #{calc(-1 * #{$input-large-padding-y})} #{calc(-1 * #{$input-large-padding-x})};
-      margin-inline-end: $input-large-padding-x;
-    }
-  }
-
-  // Customize the `:focus` state to imitate native WebKit styles.
-  &:focus {
-    --#{$prefix}fg-color: #{$input-focus-fg-color};
-    --#{$prefix}bg-color: #{$input-focus-bg-color};
-    --#{$prefix}border-color: #{$input-focus-border-color};
-    outline: 0;
-    @if $enable-component-shadows {
-      @include box-shadow($input-box-shadow, $input-focus-box-shadow);
-    } @else {
-      // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: $input-focus-box-shadow;
     }
   }
 
@@ -102,7 +25,7 @@
     // https://github.com/twbs/bootstrap/issues/23307
     // TODO: we can remove this workaround once https://bugs.webkit.org/show_bug.cgi?id=198959 is resolved
     // Multiply line-height by 1em if it has no unit
-    $line-height: map-get($input-medium-font, "line-height");
+    $line-height: map-get($input-medium-text-font, "line-height");
     // height: if(unit($line-height) == "", #{calc($line-hexight * 1em)}, $line-height);
 
     // Android Chrome type="date" is taller than the other inputs
@@ -120,60 +43,32 @@
 
   // Placeholder
   &::placeholder {
-    color: $input-placeholder-color;
+    color: var(--#{$prefix}input-idle-fg-inactive);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
 
-  // Disabled inputs
-  //
-  // HTML5 says that controls under a fieldset > legend:first-child won't be
-  // disabled if the fieldset is disabled. Due to implementation difficulty, we
-  // don't honor that edge case; we style them as disabled anyway.
-  &:disabled {
-    --#{$prefix}fg-color: #{$input-placeholder-color};
-    --#{$prefix}bg-color: #{$input-disabled-bg-color};
-    --#{$prefix}border-color: #{$input-disabled-border-color};
-    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-    // color: $input-disabled-fg-color;
-    opacity: 1;
-
-    &::placeholder {
-      color: $input-disabled-fg-color;
-    }
-  }
-
   // File input buttons theming
   &::file-selector-button {
-    // --#{$prefix}padding-x: #{$input-medium-padding-x};
-    // --#{$prefix}padding-y: #{$input-medium-padding-y};
-    // --#{$prefix}gap: #{$badge-medium-gap};
-    --#{$prefix}fg-color: #{$form-file-button-fg-color};
-    --#{$prefix}bg-color: #{$input-bg-color};
-    // @include map-font($input-medium-font);
-    --#{$prefix}border-color: inherit;
-    --#{$prefix}border-width: 0;
-    //--#{$prefix}border-radius: #{$input-medium-border-radius};
+    --#{$prefix}input-fg-color: var(--#{$prefix}file-button-fg-color);
+    --#{$prefix}input-bg-color: var(--#{$prefix}file-button-bg-color);
+    --#{$prefix}input-border-color: inherit;
+    --#{$prefix}input-border-width: 0;
 
-    // padding: $input-medium-padding-y $input-medium-padding-x;
-    margin: #{calc(-1 * #{$input-medium-padding-y})} #{calc(-1 * #{$input-medium-padding-x})};
-    margin-inline-end: $input-medium-padding-x;
+    margin: #{calc(-1 * var(--#{$prefix}padding-y))} #{calc(-1 * var(--#{$prefix}padding-x))};
+    margin-inline-end: var(--#{$prefix}padding-x);
     @include padding();
-    // color: $form-file-button-fg-color;
-    @include gradient-bg($form-file-button-bg-color);
+    @include gradient-bg(var(--#{$prefix}file-button-bg-color));
     pointer-events: none;
-    // border-color: inherit;
-    // border-style: solid;
-    // border-width: 0;
-    border-inline-end-width: $input-border-width;
-    border-radius: 0; // stylelint-disable-line property-disallowed-list
+    border-inline-end-width: var(--#{$prefix}border-width);
+    @include border-radius(0);
     @include transition($button-transition);
 
     @extend %component;
   }
 
   &:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: $form-file-button-hover-bg-color;
+    background-color: var(--#{$prefix}file-button-bg-hover);
   }
 
   // Readonly controls as plain text
@@ -183,7 +78,7 @@
 
   &.plaintext {
     --#{$prefix}padding-x: 0;
-    --#{$prefix}fg-color: #{$input-plaintext-color};
+    --#{$prefix}fg-color: #{$form-input-plaintext-color};
     --#{$prefix}bg-color: transparent;
     --#{$prefix}border-width: 0;
     --#{$prefix}border-color: transparent;
@@ -192,25 +87,17 @@
     display: block;
     @include padding();
     margin-bottom: 0; // match inputs if this class comes on inputs with default margins
-    border-width: $input-border-width 0;
-    //border-width: $input-border-width 0;
     box-shadow: none;
 
     &:focus {
       outline: 0;
     }
-
-    &.small,
-    &.large {
-      padding-right: 0;
-      padding-left: 0;
-    }
   }
 
   &.color-control {
-    width: $form-color-width;
-    height: $input-medium-height;
-    padding: $input-medium-padding-y;
+    width: var(--#{$prefix}input-color-width, var(--#{$prefix}min-height));
+    height: var(--#{$prefix}input-color-height, var(--#{$prefix}min-height));
+    padding: var(--#{$prefix}input-color-padding, var(--#{$prefix}padding-y));
 
     &:not(:disabled):not([readonly]) {
       cursor: pointer;
@@ -218,16 +105,13 @@
 
     &::-moz-color-swatch {
       border: 0 !important; // stylelint-disable-line declaration-no-important
-      @include border-radius($input-medium-border-radius);
+      @include border-radius(var(--#{$prefix}border-radius));
     }
 
     &::-webkit-color-swatch {
       border: 0 !important; // stylelint-disable-line declaration-no-important
-      @include border-radius($input-medium-border-radius);
+      @include border-radius(var(--#{$prefix}border-radius));
     }
-
-    &.small { height: $input-medium-height; }
-    &.large { height: $input-medium-height; }
   }
 
 }

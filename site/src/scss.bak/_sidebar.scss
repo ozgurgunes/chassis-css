@@ -21,7 +21,7 @@
 }
 
 .cxd-links-heading {
-  color: var(--cx-emphasis-color);
+  color: var(--cx-fg-color);
 }
 
 .cxd-links-nav {
@@ -47,13 +47,13 @@
   padding: 0.1875rem 0.5rem;
   margin-top: 0.125rem;
   margin-left: 1.125rem;
-  color: var(--cx-body-color);
+  color: var(--cx-fg-color);
   text-decoration: if($link-decoration == none, null, none);
 
   &:hover,
   &:focus,
   &.active {
-    color: var(--cx-emphasis-color);
+    color: var(--cx-fg-color);
     text-decoration: if($link-hover-decoration == underline, none, null);
     background-color: var(--cxd-sidebar-link-bg);
   }

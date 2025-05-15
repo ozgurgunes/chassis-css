@@ -4,8 +4,8 @@
   > .form-control,
   > .form-control.plaintext,
   > .form-select {
-    // --#{$prefix}fg-color: #{$input-fg-color};
-    --#{$prefix}bg-color: var(--#{$prefix}bg-even);
+    // --#{$prefix}fg-color: #{$input-default-idle-fg-active};
+    --#{$prefix}input-bg-color: var(--#{$prefix}input-idle-bg-floating);
     --#{$prefix}border-width: 0;
     height: $form-floating-height;
     min-height: $form-floating-height;
@@ -14,6 +14,23 @@
     @include border-top-radius($input-floating-blunt-border-radius);
     @include border-bottom-radius($input-floating-sharp-border-radius);
     box-shadow: none;
+
+    &:focus {
+      --#{$prefix}input-bg-color: var(--#{$prefix}input-focus-bg-floating);
+    }
+
+    &[disabled],
+    &:disabled {
+      --#{$prefix}input-bg-color: var(--#{$prefix}input-disabled-bg-floating);
+    }
+
+    &:valid {
+      --#{$prefix}input-bg-color: var(--#{$prefix}input-success-bg-floating);
+    }
+
+    &:invalid {
+      --#{$prefix}input-bg-color: var(--#{$prefix}input-error-bg-floating);
+    }
   }
 
   > label {
@@ -28,7 +45,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     pointer-events: none;
-    border: $input-border-width solid transparent; // Required for aligning label's text with the input as it affects inner box model
+    border: $input-regular-border-width solid transparent; // Required for aligning label's text with the input as it affects inner box model
     transform-origin: 0 0;
     @include transition($form-floating-transition);
   }
@@ -69,7 +86,6 @@
   > .form-select {
     ~ label {
       --#{$prefix}fg-color: var(--#{$prefix}fg-subtle);
-      // color: rgba(var(--#{$prefix}body-color-rgb), #{$form-floating-label-opacity});
       transform: $form-floating-label-transform;
 
       &::after {
@@ -78,9 +94,25 @@
         z-index: -1;
         height: $form-floating-label-height;
         content: "";
-        //background-color: $input-bg-color;
+        //background-color: $input-default-idle-background;
         @include border-radius($input-medium-border-radius);
       }
+    }
+  }
+
+  > .form-control[type="file"] {
+    &::file-selector-button {
+      padding-top: 0;
+      padding-bottom: 0;
+      @include font-size(var(--#{$prefix}font-size-small));
+      @include line-height(var(--#{$prefix}line-height-small));
+      font-weight: var(--#{$prefix}font-weight-strong);
+      background-color: transparent;
+      border-right: var(--#{$prefix}border-width-medium) solid var(--#{$prefix}border-color);
+    }
+    &:hover::file-selector-button {
+      // background-color: transparent;
+      background-color: transparent;
     }
   }
   // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
@@ -94,7 +126,7 @@
   > .form-control.plaintext {
     background-color: inherit;
     ~ label {
-      border-width: $input-border-width 0; // Required to properly position label text - as explained above
+      border-width: $input-regular-border-width 0; // Required to properly position label text - as explained above
     }
   }
 
@@ -103,7 +135,7 @@
     color: $form-floating-label-disabled-fg-color;
 
     // &::after {
-    //   background-color: $input-disabled-bg-color;
+    //   background-color: $input-default-disabled-background;
     // }
   }
 }

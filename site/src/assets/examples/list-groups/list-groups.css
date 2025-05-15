@@ -23,7 +23,7 @@
   clip: rect(0, 0, 0, 0);
 }
 .list-item-check:hover + .list-item {
-  background-color: var(--cx-secondary-bg);
+  background-color: var(--cx-bg-even);
 }
 .list-item-check:checked + .list-item {
   color: #fff;
@@ -47,7 +47,7 @@
 }
 .list-group-radio .list-item:hover,
 .list-group-radio .list-item:focus {
-  background-color: var(--cx-secondary-bg);
+  background-color: var(--cx-bg-even);
 }
 
 .list-group-radio .option-input:checked + .list-item {

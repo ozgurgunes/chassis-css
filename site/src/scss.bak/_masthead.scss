@@ -3,7 +3,7 @@
   padding: 3rem 0;
   // stylelint-disable
   background-image:
-    linear-gradient(180deg, rgba(var(--cx-body-bg-rgb), 0.01), rgba(var(--cx-body-bg-rgb), 1) 85%),
+    linear-gradient(180deg, rgba(var(--cx-bg-color-rgb), 0.01), rgba(var(--cx-bg-color-rgb), 1) 85%),
     radial-gradient(ellipse at top left, rgba(var(--cx-primary-rgb), 0.5), transparent 50%),
     radial-gradient(ellipse at top right, rgba(var(--cxd-accent-rgb), 0.5), transparent 50%),
     radial-gradient(ellipse at center right, rgba(var(--cxd-violet-rgb), 0.5), transparent 50%),
@@ -11,14 +11,14 @@
   // stylelint-enable
 
   h1 {
-    --cx-heading-color: var(--cx-emphasis-color);
+    --cx-heading-color: var(--cx-fg-color);
     @include font-size(4rem);
   }
 
   .lead {
     @include font-size(1rem);
     font-weight: 400;
-    color: var(--cx-secondary-color);
+    color: var(--cx-fg-subtle);
   }
 
   .cxd-code-snippet {
@@ -34,7 +34,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    background-color: rgba(var(--cx-body-color-rgb), 0.075);
+    background-color: rgba(var(--cx-fg-color-rgb), 0.075);
     @include border-radius(calc(0.5rem - 1px));
 
     @include media-breakpoint-up(lg) {
@@ -70,7 +70,7 @@
   h2,
   h3,
   h4 {
-    --cx-heading-color: var(--cx-emphasis-color);
+    --cx-heading-color: var(--cx-fg-color);
   }
 
   .lead {
@@ -93,15 +93,15 @@
   mix-blend-mode: darken;
 
   svg {
-    filter: drop-shadow(0 1px 1px var(--cx-body-bg));
+    filter: drop-shadow(0 1px 1px var(--cx-bg-color));
   }
 }
 
 .masthead-notice {
   background-color: var(--cxd-accent);
   box-shadow:
-    inset 0 -1px 1px rgba(var(--cx-body-color-rgb), 0.15),
-    0 0.25rem 1.5rem rgba(var(--cx-body-bg-rgb), 0.75);
+    inset 0 -1px 1px rgba(var(--cx-fg-color-rgb), 0.15),
+    0 0.25rem 1.5rem rgba(var(--cx-bg-color-rgb), 0.75);
 }
 
 .animate-img {

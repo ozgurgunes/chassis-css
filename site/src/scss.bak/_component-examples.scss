@@ -175,8 +175,8 @@
   .ratio {
     display: inline-block;
     width: 10rem;
-    color: var(--cx-secondary-color);
-    background-color: var(--cx-tertiary-bg);
+    color: var(--cx-fg-subtle);
+    background-color: var(--cx-bg-evident);
     border: var(--cx-border-width) solid var(--cx-border-color);
 
     > div {
@@ -259,7 +259,7 @@
     width: 5rem;
     height: 5rem;
     margin: 0.25rem;
-    background-color: var(--cx-tertiary-bg);
+    background-color: var(--cx-bg-evident);
   }
 }
 
@@ -275,13 +275,13 @@
 
   .position-relative {
     height: 200px;
-    background-color: var(--cx-tertiary-bg);
+    background-color: var(--cx-bg-evident);
   }
 
   .position-absolute {
     width: 2rem;
     height: 2rem;
-    background-color: var(--cx-body-color);
+    background-color: var(--cx-fg-color);
     @include border-radius();
   }
 }
@@ -312,7 +312,7 @@
   min-height: 15rem;
 
   > div {
-    color: var(--cx-body-bg);
+    color: var(--cx-bg-color);
     background-color: var(--cxd-violet);
     border: 1px solid var(--cxd-purple);
 
@@ -373,7 +373,7 @@
 
   pre code {
     @include font-size(inherit);
-    color: var(--cx-body-color); // Effectively the base text color
+    color: var(--cx-fg-color); // Effectively the base text color
     word-wrap: normal;
   }
 }

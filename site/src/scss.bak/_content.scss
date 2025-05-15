@@ -6,7 +6,7 @@
   > h2,
   > h3,
   > h4 {
-    --cx-heading-color: var(--cx-emphasis-color);
+    --cx-heading-color: var(--cx-fg-color);
   }
 
   // Offset content from fixed navbar when jumping to headings
@@ -65,11 +65,11 @@
     }
 
     th {
-      color: var(--cx-emphasis-color);
+      color: var(--cx-fg-color);
     }
 
     strong {
-      color: var(--cx-emphasis-color);
+      color: var(--cx-fg-color);
     }
 
     // Prevent breaking of code
@@ -94,7 +94,7 @@
 
 .table-swatches {
   th {
-    color: var(--cx-emphasis-color);
+    color: var(--cx-fg-color);
   }
 
   td code {
@@ -108,7 +108,7 @@
 }
 
 .cxd-title {
-  --cx-heading-color: var(--cx-emphasis-color);
+  --cx-heading-color: var(--cx-fg-color);
   @include font-size(3rem);
 }
 
@@ -143,11 +143,11 @@
 
 // scss-docs-start custom-color-mode
 [data-cx-theme='blue'] {
-  --cx-body-color: var(--cx-white);
-  --cx-body-color-rgb: #{to-rgb($white)};
-  --cx-body-bg: var(--cx-blue);
-  --cx-body-bg-rgb: #{to-rgb($blue)};
-  --cx-tertiary-bg: #{$blue-600};
+  --cx-fg-color: var(--cx-white);
+  --cx-body-fg-rgb: #{to-rgb($white)};
+  --cx-bg-color: var(--cx-blue);
+  --cx-bg-color-rgb: #{to-rgb($blue)};
+  --cx-bg-evident: #{$blue-600};
 
   .dropdown-menu {
     --cx-dropdown-bg: #{mix($blue-500, $blue-600)};

@@ -112,6 +112,7 @@
   // // scss-docs-start root-border-var
   --#{$prefix}border-width: var(--#{$prefix}body-border-width, #{$border-width});
   --#{$prefix}border-style: var(--#{$prefix}body-border-style, #{$border-style});
+  --#{$prefix}border-color: var(--#{$prefix}body-border-color, #{$border-color});
   --#{$prefix}border-radius: var(--#{$prefix}body-border-radius, #{$border-radius});
   // // scss-docs-end root-border-var
 
@@ -169,13 +170,11 @@
   --#{$prefix}body-bg: var(--#{$prefix}bg-main);
   --#{$prefix}body-bg-rgb: var(--#{$prefix}bg-main-rgb);
 
-  --#{$prefix}emphasis-color: var(--#{$prefix}black-fg-main);
-  --#{$prefix}emphasis-color-rgb: var(--#{$prefix}black-fg-main-rgb);
+  --#{$prefix}fg-main: var(--#{$prefix}black-fg-main);
+  --#{$prefix}fg-main-rgb: var(--#{$prefix}black-fg-main-rgb);
 
   --#{$prefix}secondary-color: var(--#{$prefix}fg-subtle);
   --#{$prefix}secondary-color-rgb: var(--#{$prefix}fg-subtle-rgb);
-  --#{$prefix}secondary-bg: var(--#{$prefix}bg-even);
-  --#{$prefix}secondary-bg-rgb: var(--#{$prefix}bg-even-rgb);
 
   --#{$prefix}tertiary-color: var(--#{$prefix}fg-slight);
   --#{$prefix}tertiary-color-rgb: var(--#{$prefix}fg-slight-rgb);

@@ -21,13 +21,13 @@ $cxd-callout-variants: info, warning, danger !default;
   --cxd-sidebar-link-bg: rgba(var(--cxd-violet-rgb), 0.1);
   --cxd-callout-link: #{to-rgb($blue-600)};
   --cxd-callout-code-color: #{$pink-600};
-  --cxd-pre-bg: var(--cx-tertiary-bg);
+  --cxd-pre-bg: var(--cx-bg-evident);
 }
 
 @include color-mode(dark, true) {
   --cxd-violet: #{mix($cxd-violet, $white, 75%)};
   --cxd-violet-bg: #{$cxd-violet};
-  --cxd-toc-color: var(--#{$prefix}emphasis-color);
+  --cxd-toc-color: var(--#{$prefix}fg-color);
   --cxd-sidebar-link-bg: rgba(#{to-rgb(mix($cxd-violet, $black, 75%))}, 0.5);
   --cxd-callout-link: #{to-rgb($blue-300)};
   --cxd-callout-code-color: #{$pink-300};

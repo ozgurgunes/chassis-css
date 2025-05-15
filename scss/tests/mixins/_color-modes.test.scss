@@ -41,7 +41,7 @@
       @include output() {
         @include color-mode(dark) {
           .element {
-            color: var(--cx-primary-text-emphasis);
+            color: var(--cx-primary-fg-main);
             background-color: var(--cx-primary-bg-even);
           }
         }
@@ -52,7 +52,7 @@
       @include expect() {
         @media (prefers-color-scheme: dark) {
           .element {
-            color: var(--cx-primary-text-emphasis);
+            color: var(--cx-primary-fg-main);
             background-color: var(--cx-primary-bg-even);
           }
         }

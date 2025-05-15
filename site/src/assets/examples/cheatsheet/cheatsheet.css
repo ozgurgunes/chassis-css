@@ -26,29 +26,29 @@ body {
   padding: .1875rem .5rem;
   margin-top: .125rem;
   margin-left: .3125rem;
-  color: var(--cx-body-color);
+  color: var(--cx-fg-color);
 }
 
 .cxd-aside a:hover,
 .cxd-aside a:focus {
-  color: var(--cx-body-color);
+  color: var(--cx-fg-color);
   background-color: rgba(121, 82, 179, .1);
 }
 
 .cxd-aside .active {
   font-weight: 600;
-  color: var(--cx-body-color);
+  color: var(--cx-fg-color);
 }
 
 .cxd-aside .button {
   padding: .25rem .5rem;
   font-weight: 600;
-  color: var(--cx-body-color);
+  color: var(--cx-fg-color);
 }
 
 .cxd-aside .button:hover,
 .cxd-aside .button:focus {
-  color: var(--cx-body-color);
+  color: var(--cx-fg-color);
   background-color: rgba(121, 82, 179, .1);
 }
 

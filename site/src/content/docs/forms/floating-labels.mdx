@@ -100,6 +100,14 @@ Floating labels also support `.form-control-plaintext`, which can be helpful for
     <label for="floatingPlaintextInput">Input with value</label>
   </div>`} />
 
+## File Input
+
+<Example code={`<form class="form-floating">
+    <input type="file" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
+    <label for="floatingInputValue">Input with value</label>
+  </form>`} />
+
+
 ## Input groups
 
 Floating labels also support `.input-group`.
@@ -120,9 +128,22 @@ When using `.input-group` and `.form-floating` along with form validation, the `
       <input type="text" class="form-control is-invalid" id="floatingInputGroup2" placeholder="Username" required>
       <label for="floatingInputGroup2">Username</label>
     </div>
-    <div class="invalid-feedback">
+    <div class="invalid-feedback form-text">
       Please choose a username.
     </div>
+  </div>`} />
+
+## Icons
+
+Use the `.icon` class with `.input-addon` class to position icons inside the input.
+
+<Example code={`<div class="input-group mb-medium">
+    <svg class="icon input-addon"><use xlink:href="#lock-solid"></svg>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingInputGroup3" placeholder="Password">
+      <label for="floatingInputGroup3">Password</label>
+    </div>
+    <a href="#" class="icon input-addon"><svg class="icon"><use xlink:href="#eye-solid"></svg></a>
   </div>`} />
 
 ## Layout

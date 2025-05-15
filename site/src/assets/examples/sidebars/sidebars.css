@@ -20,13 +20,13 @@ main {
 .button-toggle {
   padding: .25rem .5rem;
   font-weight: 600;
-  color: var(--cx-emphasis-color);
+  color: var(--cx-fg-color);
   background-color: transparent;
 }
 .button-toggle:hover,
 .button-toggle:focus {
-  color: rgba(var(--cx-emphasis-color-rgb), .85);
-  background-color: var(--cx-tertiary-bg);
+  color: rgba(var(--cx-fg-color-rgb), .85);
+  background-color: var(--cx-bg-evident);
 }
 
 .button-toggle::before {
@@ -42,7 +42,7 @@ main {
 }
 
 .button-toggle[aria-expanded="true"] {
-  color: rgba(var(--cx-emphasis-color-rgb), .85);
+  color: rgba(var(--cx-fg-color-rgb), .85);
 }
 .button-toggle[aria-expanded="true"]::before {
   transform: rotate(90deg);
@@ -55,7 +55,7 @@ main {
 }
 .button-toggle-nav a:hover,
 .button-toggle-nav a:focus {
-  background-color: var(--cx-tertiary-bg);
+  background-color: var(--cx-bg-evident);
 }
 
 .scrollarea {

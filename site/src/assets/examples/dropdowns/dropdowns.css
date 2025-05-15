@@ -11,13 +11,13 @@
 }
 
 .button-hover-light {
-  color: var(--cx-body-color);
-  background-color: var(--cx-body-bg);
+  color: var(--cx-fg-color);
+  background-color: var(--cx-bg-color);
 }
 .button-hover-light:hover,
 .button-hover-light:focus {
   color: var(--cx-link-hover-color);
-  background-color: var(--cx-tertiary-bg);
+  background-color: var(--cx-bg-evident);
 }
 
 .cal-month,
@@ -43,11 +43,11 @@
 }
 .cal-button:not([disabled]) {
   font-weight: 500;
-  color: var(--cx-emphasis-color);
+  color: var(--cx-fg-color);
 }
 .cal-button:hover,
 .cal-button:focus {
-  background-color: var(--cx-secondary-bg);
+  background-color: var(--cx-bg-even);
 }
 .cal-button[disabled] {
   border: 0;

@@ -10,7 +10,7 @@
   // stylelint-enable
 
   h1 {
-    --cx-heading-color: var(--cx-emphasis-color);
+    --cx-heading-color: var(--cx-fg-color);
     font-size: 4rem;
     line-height: 1.25em;
   }
@@ -20,7 +20,7 @@
     line-height: 1.5em;
     font-family: var(--cx-font-family-display);
     font-weight: 400;
-    color: var(--cx-secondary-color);
+    color: var(--cx-fg-subtle);
   }
 
   .cxd-code-snippet {
@@ -73,7 +73,7 @@
   h2,
   h3,
   h4 {
-    --cx-heading-color: var(--cx-emphasis-color);
+    --cx-heading-color: var(--cx-fg-color);
   }
 
   .lead {

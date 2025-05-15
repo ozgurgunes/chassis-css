@@ -5,8 +5,185 @@
 // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
 // server-side validation.
 
-// scss-docs-start form-validation-states-loop
-@each $state, $data in $form-validation-states {
-  @include form-validation-state($state, $data...);
+.valid-feedback,
+.invalid-feedback {
+  @extend .form-text;
+  display: none;
+  width: 100%;
 }
+
+.valid-feedback {
+  color: var(--#{$prefix}input-success-assist-color);
+}
+.invalid-feedback {
+  color: var(--#{$prefix}input-error-assist-color);
+}
+
+.valid-tooltip,
+.invalid-tooltip {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  display: none;
+  max-width: 100%; // Contain to parent when possible
+  padding: $form-feedback-tooltip-padding-y $form-feedback-tooltip-padding-x;
+  margin-top: .1rem;
+  @include font-size($form-feedback-tooltip-font-size);
+  @include line-height($form-feedback-tooltip-line-height);
+  @include border-radius($form-feedback-tooltip-border-radius);
+}
+
+.valid-tooltip {
+  color: $form-valid-tooltip-fg-color;
+  background-color: $form-valid-tooltip-bg-color;
+}
+
+.invalid-tooltip {
+  color: $form-invalid-tooltip-fg-color;
+  background-color: $form-invalid-tooltip-bg-color;
+}
+
+.valid-feedback,
+.valid-tooltip {
+  #{if($form-validated-class, ".#{$form-validated-class} ", "")}:valid ~ &,
+  .#{$form-valid-class} ~ & {
+    display: block;
+  }
+}
+.invalid-feedback,
+.invalid-tooltip {
+  #{if($form-validated-class, ".#{$form-validated-class} ", "")}:invalid ~ &,
+  .#{$form-invalid-class} ~ & {
+    display: block;
+  }
+}
+
+#{if($form-validated-class, ".#{$form-validated-class} ", "")}:valid,
+.#{$form-valid-class} {
+  --#{$prefix}input-fg-color: var(--#{$prefix}input-success-fg-active);
+  --#{$prefix}input-bg-color: var(--#{$prefix}input-success-bg-regular);
+  --#{$prefix}input-border-color: var(--#{$prefix}input-success-border-color);
+  --#{$prefix}input-focus-box-shadow: #{$form-feedback-valid-box-shadow};
+  --#{$prefix}feedback-icon: #{svg-color(escape-svg($input-feedback-valid-icon), $input-default-success-assist)};
+  [data-cx-theme="dark"] &:not([data-cx-theme="dark"] [data-cx-theme="light"] &) {
+    --#{$prefix}feedback-icon: #{svg-color(escape-svg($input-feedback-valid-icon), $input-default-success-assist, dark)};
+  }
+}
+
+#{if($form-validated-class, ".#{$form-validated-class} ", "")}:invalid,
+.#{$form-invalid-class} {
+  --#{$prefix}input-fg-color: var(--#{$prefix}input-error-fg-active);
+  --#{$prefix}input-bg-color: var(--#{$prefix}input-error-bg-regular);
+  --#{$prefix}input-border-color: var(--#{$prefix}input-error-border-color);
+  --#{$prefix}input-focus-box-shadow: #{$form-feedback-invalid-box-shadow};
+  --#{$prefix}feedback-icon: #{svg-color(escape-svg($input-feedback-invalid-icon), $input-default-error-assist)};
+  [data-cx-theme="dark"] &:not([data-cx-theme="dark"] [data-cx-theme="light"] &) {
+    --#{$prefix}feedback-icon: #{svg-color(escape-svg($input-feedback-valid-icon), $input-default-error-assist, dark)};
+  }
+}
+
+.option-input {
+  #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:valid,
+  &.#{$form-valid-class} {
+    &:checked {
+      background-color: var(--#{$prefix}input-success-assist-color);
+    }
+    ~ .option-label {
+      color: var(--#{$prefix}input-success-assist-color);
+    }
+  }
+  #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:invalid,
+  &.#{$form-invalid-class} {
+    &:checked {
+      background-color: var(--#{$prefix}input-error-assist-color);
+    }
+    ~ .option-label {
+      color: var(--#{$prefix}input-error-assist-color);
+    }
+  }
+}
+
+@if $enable-validation-icons {
+  @include form-validation-icons-selector(".form-control") {
+    padding-right: $form-input-feedback-icon-padding-e;
+    background-image: var(--#{$prefix}feedback-icon);
+    background-repeat: no-repeat;
+    background-position: $form-input-feedback-icon-position;
+    background-size: $form-feedback-icon-size;
+    &:is(textarea) {
+      background-position: $form-textarea-feedback-icon-position;
+    }
+  }
+  @include form-validation-icons-selector(".form-select") {
+    &:not([multiple]):not([size]),
+    &:not([multiple])[size="1"] {
+      padding-right: $form-select-feedback-icon-padding-e;
+      background-position: $form-select-widget-position, $form-select-feedback-icon-position;
+      background-size: $form-feedback-icon-size;
+    }
+  }
+  @include form-validation-icons-selector(".color-control") {
+    &:not([multiple]):not([size]),
+    &:not([multiple])[size="1"] {
+      width: #{calc(var(--#{$prefix}input-color-width, var(--#{$prefix}min-height)) + $form-feedback-icon-size + var(--#{$prefix}padding-y) * 2)};
+    }
+  }
+
+  // .form-control {
+  //   .was-validated &:valid,
+  //   .was-validated &:invalid,
+  //   &.is-valid,
+  //   &.is-invalid {
+  //     padding-right: $form-input-feedback-icon-padding-e;
+  //     background-image: var(--#{$prefix}feedback-icon);
+  //     background-repeat: no-repeat;
+  //     background-position: $form-input-feedback-icon-position;
+  //     background-size: $form-feedback-icon-size;
+  //     &:is(textarea) {
+  //       background-position: $form-textarea-feedback-icon-position;
+  //     }
+  //   }
+  // }
+  // .form-select {
+  //   .was-validated &:valid,
+  //   .was-validated &:invalid,
+  //   &.is-valid,
+  //   &.is-invalid {
+  //     &:not([multiple]):not([size]),
+  //     &:not([multiple])[size="1"] {
+  //       padding-right: $form-select-feedback-icon-padding-e;
+  //       background-position: $form-select-widget-position, $form-select-feedback-icon-position;
+  //       background-size: $form-feedback-icon-size;
+  //     }
+  //   }
+  // }
+  .color-control {
+    #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:valid,
+    #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:invalid,
+    &.#{$form-valid-class},
+    &.#{$form-invalid-class} {
+      width: #{calc(var(--#{$prefix}input-color-width, var(--#{$prefix}min-height)) + $form-feedback-icon-size + var(--#{$prefix}padding-y) * 2)};
+    }
+  }
+}
+
+.input-group {
+  > .form-control:not(:focus),
+  > .form-select:not(:focus),
+  > .form-floating:not(:focus-within) {
+    #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:valid,
+    &.#{$form-valid-class} {
+      z-index: 3;
+    }
+    #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:invalid,
+    &.#{$form-invalid-class} {
+      z-index: 4;
+    }
+  }
+}
+
+// scss-docs-start form-validation-states-loop
+// @each $state, $data in $form-validation-states {
+//   @include form-validation-state($state, $data...);
+// }
 // scss-docs-end form-validation-states-loop

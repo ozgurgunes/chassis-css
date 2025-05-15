@@ -87,7 +87,7 @@
   @include media-breakpoint-down(medium) {
     nav {
       padding: 1.25rem 1.25rem 1.25rem 1rem;
-      background-color: var(--cx-tertiary-bg);
+      background-color: var(--cx-bg-evident);
       border: 1px solid var(--cx-border-color);
       @include border-radius(var(--cx-border-radius));
     }

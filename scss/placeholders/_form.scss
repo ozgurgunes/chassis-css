@@ -1,0 +1,197 @@
+// scss-docs-start %button-states-class
+%form-colors {
+  --#{$prefix}input-idle-bg-regular: #{$input-default-idle-bg-regular};
+  --#{$prefix}input-idle-fg-active: #{$input-default-idle-fg-active};
+  --#{$prefix}input-idle-fg-inactive: #{$input-default-idle-fg-inactive};
+  --#{$prefix}input-idle-border-color: #{$input-default-idle-border};
+  --#{$prefix}input-idle-assist-color: #{$input-default-idle-assist};
+  --#{$prefix}input-focus-bg-regular: #{$input-default-focus-bg-regular};
+  --#{$prefix}input-focus-fg-active: #{$input-default-focus-fg-active};
+  --#{$prefix}input-focus-fg-inactive: #{$input-default-focus-fg-inactive};
+  --#{$prefix}input-focus-border-color: #{$input-default-focus-border};
+  --#{$prefix}input-focus-assist-color: #{$input-default-focus-assist};
+  --#{$prefix}input-disabled-bg-regular: #{$input-default-disabled-bg-regular};
+  --#{$prefix}input-disabled-fg-active: #{$input-default-disabled-fg-active};
+  --#{$prefix}input-disabled-fg-inactive: #{$input-default-disabled-fg-inactive};
+  --#{$prefix}input-disabled-border-color: #{$input-default-disabled-border};
+  --#{$prefix}input-disabled-assist-color: #{$input-default-disabled-assist};
+  --#{$prefix}input-error-bg-regular: #{$input-default-error-bg-regular};
+  --#{$prefix}input-error-fg-active: #{$input-default-error-fg-active};
+  --#{$prefix}input-error-fg-inactive: #{$input-default-error-fg-inactive};
+  --#{$prefix}input-error-border-color: #{$input-default-error-border};
+  --#{$prefix}input-error-assist-color: #{$input-default-error-assist};
+  --#{$prefix}input-success-bg-regular: #{$input-default-success-bg-regular};
+  --#{$prefix}input-success-fg-active: #{$input-default-success-fg-active};
+  --#{$prefix}input-success-fg-inactive: #{$input-default-success-fg-inactive};
+  --#{$prefix}input-success-border-color: #{$input-default-success-border};
+  --#{$prefix}input-success-assist-color: #{$input-default-success-assist};
+
+  --#{$prefix}input-idle-bg-floating: #{$input-default-idle-bg-floating};
+  --#{$prefix}input-focus-bg-floating: #{$input-default-focus-bg-floating};
+  --#{$prefix}input-disabled-bg-floating: #{$input-default-disabled-bg-floating};
+  --#{$prefix}input-error-bg-floating: #{$input-default-error-bg-floating};
+  --#{$prefix}input-success-bg-floating: #{$input-default-success-bg-floating};
+
+  --#{$prefix}input-focus-box-shadow: #{$form-input-default-focus-box-shadow};
+
+  --#{$prefix}file-button-fg-color: #{$form-file-button-default-fg-color};
+  --#{$prefix}file-button-bg-color: #{$form-file-button-default-bg-color};
+  --#{$prefix}file-button-bg-hover: #{$form-file-button-default-bg-hover};
+
+  --#{$prefix}input-addon-fg-color: #{$form-input-addon-default-fg-color};
+  --#{$prefix}input-addon-bg-color: #{$form-input-addon-default-bg-color};
+  --#{$prefix}input-addon-border-color: #{$form-input-addon-default-border-color};
+
+  --#{$prefix}form-range-track-color: #{$form-range-default-track-color};
+  --#{$prefix}form-range-thumb-color: #{$form-range-default-thumb-color};
+  --#{$prefix}form-range-thumb-disabled: #{$form-range-default-thumb-disabled};
+  --#{$prefix}form-range-thumb-active: #{$form-range-default-thumb-active};
+
+  @if $enable-alternate-variants {
+    &.alternate {
+      @extend %form-color-alternate;
+    }
+  }
+}
+
+%form-color-alternate {
+  --#{$prefix}input-idle-bg-regular: #{$input-alternate-idle-bg-regular};
+  --#{$prefix}input-idle-fg-active: #{$input-alternate-idle-fg-active};
+  --#{$prefix}input-idle-fg-inactive: #{$input-alternate-idle-fg-inactive};
+  --#{$prefix}input-idle-border-color: #{$input-alternate-idle-border};
+  --#{$prefix}input-idle-assist-color: #{$input-alternate-idle-assist};
+  --#{$prefix}input-focus-bg-regular: #{$input-alternate-focus-bg-regular};
+  --#{$prefix}input-focus-fg-active: #{$input-alternate-focus-fg-active};
+  --#{$prefix}input-focus-fg-inactive: #{$input-alternate-focus-fg-inactive};
+  --#{$prefix}input-focus-border-color: #{$input-alternate-focus-border};
+  --#{$prefix}input-focus-assist-color: #{$input-alternate-focus-assist};
+  --#{$prefix}input-disabled-bg-regular: #{$input-alternate-disabled-bg-regular};
+  --#{$prefix}input-disabled-fg-active: #{$input-alternate-disabled-fg-active};
+  --#{$prefix}input-disabled-fg-inactive: #{$input-alternate-disabled-fg-inactive};
+  --#{$prefix}input-disabled-border-color: #{$input-alternate-disabled-border};
+  --#{$prefix}input-disabled-assist-color: #{$input-alternate-disabled-assist};
+  --#{$prefix}input-error-bg-regular: #{$input-alternate-error-bg-regular};
+  --#{$prefix}input-error-fg-active: #{$input-alternate-error-fg-active};
+  --#{$prefix}input-error-fg-inactive: #{$input-alternate-error-fg-inactive};
+  --#{$prefix}input-error-border-color: #{$input-alternate-error-border};
+  --#{$prefix}input-error-assist-color: #{$input-alternate-error-assist};
+  --#{$prefix}input-success-bg-regular: #{$input-alternate-success-bg-regular};
+  --#{$prefix}input-success-fg-active: #{$input-alternate-success-fg-active};
+  --#{$prefix}input-success-fg-inactive: #{$input-alternate-success-fg-inactive};
+  --#{$prefix}input-success-border-color: #{$input-alternate-success-border};
+  --#{$prefix}input-success-assist-color: #{$input-alternate-success-assist};
+
+  --#{$prefix}input-idle-bg-floating: #{$input-alternate-idle-bg-floating};
+  --#{$prefix}input-focus-bg-floating: #{$input-alternate-focus-bg-floating};
+  --#{$prefix}input-disabled-bg-floating: #{$input-alternate-disabled-bg-floating};
+  --#{$prefix}input-error-bg-floating: #{$input-alternate-error-bg-floating};
+  --#{$prefix}input-success-bg-floating: #{$input-alternate-success-bg-floating};
+
+  --#{$prefix}input-focus-box-shadow: #{$form-alternate-focus-box-shadow};
+
+  --#{$prefix}file-button-fg-color: #{$form-file-button-alternate-fg-color};
+  --#{$prefix}file-button-bg-color: #{$form-file-button-alternate-bg-color};
+  --#{$prefix}file-button-bg-hover: #{$form-file-button-alternate-bg-hover};
+
+  --#{$prefix}input-addon-fg-color: #{$form-input-addon-alternate-fg-color};
+  --#{$prefix}input-addon-bg-color: #{$form-input-addon-alternate-bg-color};
+  --#{$prefix}input-addon-border-color: #{$form-input-addon-alternate-border-color};
+
+  --#{$prefix}form-range-track-color: #{$form-range-alternate-track-color};
+  --#{$prefix}form-range-thumb-color: #{$form-range-alternate-thumb-color};
+  --#{$prefix}form-range-thumb-disabled: #{$form-range-alternate-thumb-disabled};
+  --#{$prefix}form-range-thumb-active: #{$form-range-alternate-thumb-active};
+}
+
+
+%form-size-medium {
+  @include map-font($input-medium-text-font, input);
+  --#{$prefix}padding-x: var(--#{$prefix}input-padding-x, #{$input-medium-padding-x});
+  --#{$prefix}padding-y: var(--#{$prefix}input-padding-y, #{$input-medium-padding-y});
+  --#{$prefix}gap: var(--#{$prefix}input-gap, #{$input-medium-gap});
+  --#{$prefix}border-width: var(--#{$prefix}input-border-width, #{$input-regular-border-width});
+  --#{$prefix}border-radius: var(--#{$prefix}input-border-radius, #{$input-medium-border-radius});
+  --#{$prefix}widget-size: var(--#{$prefix}input-widget-size, #{$input-medium-widget-size});
+  --#{$prefix}icon-size: var(--#{$prefix}input-icon-size, #{$input-medium-icon-size});
+}
+
+%form-size-small {
+  --#{$prefix}input-font-size: #{map-get($input-small-text-font, "font-size")};
+  --#{$prefix}input-line-height: #{map-get($input-small-text-font, "line-height")};
+  --#{$prefix}input-padding-x: #{$input-small-padding-x};
+  --#{$prefix}input-padding-y: #{$input-small-padding-y};
+  --#{$prefix}input-gap: #{$input-small-gap};
+  --#{$prefix}input-border-radius: #{$input-small-border-radius};
+  --#{$prefix}input-widget-size: #{$input-small-widget-size};
+  --#{$prefix}input-icon-size: #{$input-medium-icon-size};
+}
+
+%form-size-large {
+  --#{$prefix}input-font-size: #{map-get($input-large-text-font, "font-size")};
+  --#{$prefix}input-line-height: #{map-get($input-large-text-font, "line-height")};
+  --#{$prefix}input-padding-x: #{$input-large-padding-x};
+  --#{$prefix}input-padding-y: #{$input-large-padding-y};
+  --#{$prefix}input-gap: #{$input-large-gap};
+  --#{$prefix}input-border-radius: #{$input-large-border-radius};
+  --#{$prefix}input-widget-size: #{$input-large-widget-size};
+  --#{$prefix}input-icon-size: #{$input-medium-icon-size};
+}
+
+%form-input {
+  @extend %form-colors, %form-size-medium;
+  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
+  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}input-idle-bg-regular));
+  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}input-idle-border-color));
+
+  --#{$prefix}min-height: var(--#{$prefix}input-min-height, #{$form-input-min-height});
+
+  display: block;
+  width: 100%;
+  min-height: var(--#{$prefix}min-height);
+  @include box-padding();
+  appearance: none; // Fix appearance for date inputs in Safari
+  background-clip: padding-box;
+
+  @include box-shadow($form-input-box-shadow);
+  @include transition($form-input-transition);
+
+
+  // scss-docs-end form-control-css-vars
+
+  &.small {
+    @extend %form-size-small;
+  }
+
+  &.large {
+    @extend %form-size-large;
+  }
+
+  &:focus {
+    --#{$prefix}input-fg-color: var(--#{$prefix}input-focus-fg-active);
+    --#{$prefix}input-bg-color: var(--#{$prefix}input-focus-bg-regular);
+    --#{$prefix}input-border-color: var(--#{$prefix}input-focus-border-color);
+    outline: 0;
+    @if $enable-component-shadows {
+      @include box-shadow($form-input-box-shadow, var(--#{$prefix}input-focus-box-shadow));
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: var(--#{$prefix}input-focus-box-shadow);
+    }
+  }
+
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled {
+    --#{$prefix}input-fg-color: var(--#{$prefix}input-disabled-fg-active);
+    --#{$prefix}input-bg-color: var(--#{$prefix}input-disabled-bg-regular);
+    --#{$prefix}input-border-color: var(--#{$prefix}input-disabled-border-color);
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    // color: var(--#{$prefix}input-disabled-fg-active);
+    opacity: 1;
+    &::placeholder {
+      color: var(--#{$prefix}input-disabled-fg-inactive);
+    }
+  }
+
+}

@@ -81,7 +81,7 @@ If you’re migrating from our previous alpha release of v5.3.0, please review t
 
 - Added new `.border-black` utility to match our `.text-black` and `.bg-black` utilities.
 
-- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span> The `.text-muted` utility and `$text-muted` Sass variable have been deprecated and replaced with `.fg-subtle` and `$body-secondary-color`.
+- <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span> The `.text-muted` utility and `$text-muted` Sass variable have been deprecated and replaced with `.fg-subtle` and `$body-fg-subtle`.
 
 ### Docs
 
@@ -232,7 +232,7 @@ We’ve also introduced a new `.progress-stacked` class to more logically wrap [
 
 - <span class="badge text-warning-emphasis bg-warning-subtle">Deprecated</span> `.text-muted` will be replaced by `.fg-subtle` in v6.
 
-  With the addition of the expanded theme colors and variables, the `.text-muted` variables and utility have been deprecated with v5.3.0. Its default value has also been reassigned to the new `--cx-secondary-color` CSS variable to better support color modes. It will be removed in v6.0.0.
+  With the addition of the expanded theme colors and variables, the `.text-muted` variables and utility have been deprecated with v5.3.0. Its default value has also been reassigned to the new `--cx-fg-subtle` CSS variable to better support color modes. It will be removed in v6.0.0.
 
 - Adds new `.overflow-x`, `.overflow-y`, and several `.object-fit-*` utilities. _The object-fit property is used to specify how an `<img>` or `<video>` should be resized to fit its container, giving us a responsive alternative to using `background-image` for a resizable fill/fit image._
 
@@ -240,7 +240,7 @@ We’ve also introduced a new `.progress-stacked` class to more logically wrap [
 
 - Added new [`.z-*` utilities]([[docsref:/utilities/z-index]]) for `z-index`.
 
-- [Box shadow utilities]([[docsref:/utilities/shadows]]) (and Sass variables) have been updated for dark mode. They now use `--cx-body-color-rgb` to generate the `rgba()` color values, allowing them to easily adapt to color modes based on the specified foreground color.
+- [Box shadow utilities]([[docsref:/utilities/shadows]]) (and Sass variables) have been updated for dark mode. They now use `--cx-fg-color-rgb` to generate the `rgba()` color values, allowing them to easily adapt to color modes based on the specified foreground color.
 
 For a complete list of changes, [see the v5.3.0 project on GitHub](https://github.com/twbs/chassis-css/projects/).
 

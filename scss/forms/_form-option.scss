@@ -3,154 +3,171 @@
 //
 
 .form-option {
-  // display: block;
-  --#{$prefix}padding-s: #{$form-option-medium-padding-start};
-  --#{$prefix}margin-s: #{$form-option-medium-padding-start * -1};
-  @include map-font-size($input-medium-font, form-option);
-  @include map-line-height($input-medium-font, form-option);
+  @extend %form-colors;
+
+  --#{$prefix}input-size: #{$form-option-input-medium-size};
+  --#{$prefix}gap: #{$input-medium-gap};
+  @include map-font-size($input-medium-text-font, form-option);
+  @include map-line-height($input-medium-text-font, form-option);
+
   min-height: $form-option-min-height;
-  padding-left: var(--#{$prefix}padding-s);
   margin: $form-option-margin-y 0;
+
   @include font-size();
   @include line-height();
 
   &.small {
-    --#{$prefix}padding-s: #{$form-option-small-padding-start};
-    --#{$prefix}margin-s: #{$form-option-small-padding-start * -1};
-    @include map-font-size($input-small-font, form-option);
-    @include map-line-height($input-small-font, form-option);
+    --#{$prefix}input-size: #{$form-option-input-small-size};
+    --#{$prefix}gap: #{$input-small-gap};
+    @include map-font-size($input-small-text-font, form-option);
+    @include map-line-height($input-small-text-font, form-option);
   }
 
   &.large {
-    --#{$prefix}padding-s: #{$form-option-large-padding-start};
-    --#{$prefix}margin-s: #{$form-option-large-padding-start * -1};
-    @include map-font-size($input-large-font, form-option);
-    @include map-line-height($input-large-font, form-option);
+    --#{$prefix}input-size: #{$form-option-input-large-size};
+    --#{$prefix}gap: #{$input-large-gap};
+    @include map-font-size($input-large-text-font, form-option);
+    @include map-line-height($input-large-text-font, form-option);
   }
 
   .option-input {
     float: left;
     margin-top: var(--#{$prefix}margin-top);
-    margin-left: var(--#{$prefix}margin-s);
+    margin-right: var(--#{$prefix}gap);
   }
 
   &.reverse {
-    padding-right: var(--#{$prefix}padding-s);
-    padding-left: 0;
     text-align: right;
 
     .option-input {
       float: right;
-      margin-right: var(--#{$prefix}margin-s);
-      margin-left: 0;
+      margin-right: 0;
+      margin-left: var(--#{$prefix}gap);
     }
   }
 
 }
 
 .option-input {
-  --#{$prefix}bg-color: #{$option-input-bg-color};
-  --#{$prefix}size: #{$option-input-medium-size};
-  --#{$prefix}margin-top: #{subtract($line-height-text-medium, $option-input-medium-size) * .35}; // line-height minus check height
+  @extend %form-colors;
+
+  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
+  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}input-idle-bg-regular));
+  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}input-idle-border-color));
+  --#{$prefix}border-width: var(--#{$prefix}input-border-width, var(--#{$prefix}option-input-border-width, #{$form-option-input-border-width}));
+  --#{$prefix}border-radius: var(--#{$prefix}input-border-radius, var(--#{$prefix}option-input-border-width, #{$form-option-input-checkbox-border-radius}));
+
+  --#{$prefix}size: var(--#{$prefix}option-input-size, #{$form-option-input-medium-size});
+  --#{$prefix}margin-top: var(--#{$prefix}option-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .5)});
 
   flex-shrink: 0;
   width: var(--#{$prefix}size);
   height: var(--#{$prefix}size);
-  //margin-top: var(--#{$prefix}margin-top);
   vertical-align: top;
   appearance: none;
   background-color: var(--#{$prefix}bg-color);
-  background-image: var(--#{$prefix}bg-image);
+  background-image: var(--#{$prefix}icon);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: $option-input-border;
+  border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
   print-color-adjust: exact; // Keep themed appearance for print
   @include transition($form-option-transition);
 
   &[type="checkbox"] {
-    @include border-radius($option-input-medium-border-radius);
+    @include border-radius(var(--#{$prefix}option-input-border-radius));
   }
 
   &[type="radio"] {
     // stylelint-disable-next-line property-disallowed-list
-    border-radius: $form-option-radio-border-radius;
+    border-radius: $form-option-input-radio-border-radius;
   }
 
-  &:active {
-    filter: $option-input-active-filter;
-  }
+  // &:active {
+  //   filter: $option-input-active-filter;
+  // }
 
   &:focus {
-    border-color: $option-input-focus-border-color;
+    border-color: var(--#{$prefix}input-focus-border-color);
     outline: 0;
-    box-shadow: $option-input-focus-box-shadow;
+    box-shadow: $form-input-default-focus-box-shadow;
   }
 
   &:checked {
-    background-color: $option-input-checked-bg-color;
-    border-color: $option-input-checked-border-color;
+    background-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
+    border-color: var(--#{$prefix}input-checked-border-color, #{$form-option-input-checked-border-color});
 
     &[type="checkbox"] {
       @if $enable-component-gradients {
-        --#{$prefix}bg-image: #{escape-svg($option-input-checked-bg-image)}, var(--#{$prefix}bg-gradient);
+        --#{$prefix}icon: #{escape-svg($form-option-input-check-icon)}, var(--#{$prefix}bg-gradient);
       } @else {
-        --#{$prefix}bg-image: #{escape-svg($option-input-checked-bg-image)};
+        --#{$prefix}icon: #{escape-svg($form-option-input-check-icon)};
       }
     }
 
     &[type="radio"] {
       @if $enable-component-gradients {
-        --#{$prefix}bg-image: #{escape-svg($form-option-radio-checked-bg-image)}, var(--#{$prefix}bg-gradient);
+        --#{$prefix}icon: #{escape-svg($form-option-input-radio-icon)}, var(--#{$prefix}bg-gradient);
       } @else {
-        --#{$prefix}bg-image: #{escape-svg($form-option-radio-checked-bg-image)};
+        --#{$prefix}icon: #{escape-svg($form-option-input-radio-icon)};
       }
     }
   }
 
   &[type="checkbox"]:indeterminate {
-    background-color: $option-input-indeterminate-bg-color;
-    border-color: $option-input-indeterminate-border-color;
+    background-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
+    border-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
 
     @if $enable-component-gradients {
-      --#{$prefix}bg-image: #{escape-svg($option-input-indeterminate-bg-image)}, var(--#{$prefix}bg-gradient);
+      --#{$prefix}icon: #{escape-svg($form-option-input-indeterminate-icon)}, var(--#{$prefix}bg-gradient);
     } @else {
-      --#{$prefix}bg-image: #{escape-svg($option-input-indeterminate-bg-image)};
+      --#{$prefix}icon: #{escape-svg($form-option-input-indeterminate-icon)};
     }
   }
 
-  &:disabled {
-    pointer-events: none;
-    filter: none;
-    opacity: $option-input-disabled-opacity;
-  }
+  // &:disabled {
+  //   --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-idle-fg-active});
+  //   --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-idle-background});
+  //   pointer-events: none;
+  //   filter: none;
+  //   opacity: $form-option-input-disabled-opacity;
+  // }
 
   // Use disabled attribute in addition of :disabled pseudo-class
   // See: https://github.com/twbs/bootstrap/issues/28247
   &[disabled],
   &:disabled {
+    --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-disabled-fg-active});
+    --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
+    pointer-events: none;
+    filter: none;
+    opacity: $form-option-input-disabled-opacity;
     ~ .option-label {
+      // --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-disabled-fg-active});
       cursor: default;
-      opacity: $option-label-disabled-opacity;
+      opacity: $form-option-label-disabled-opacity;
     }
   }
 }
 
 .option-input.small,
 .form-option.small .option-input  {
-  --#{$prefix}size: #{$option-input-small-size};
-  --#{$prefix}margin-top: #{subtract($line-height-text-small, $option-input-small-size) * .06}; // line-height minus check height
+  --#{$prefix}size: #{$form-option-input-small-size};
+  // --#{$prefix}margin-top: #{subtract($line-height-text-small, $form-option-input-small-size) * .35}; // line-height minus check height
+  // --#{$prefix}margin-top: #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .35)}; // line-height minus check height
 }
 
 .option-input.large,
 .form-option.large .option-input  {
-  --#{$prefix}size: #{$option-input-large-size};
-  --#{$prefix}margin-top: #{subtract($line-height-text-large, $option-input-large-size) * .65}; // line-height minus check height
+  --#{$prefix}size: #{$form-option-input-large-size};
+  // --#{$prefix}margin-top: #{subtract($line-height-text-large, $form-option-input-large-size) * .35}; // line-height minus check height
 }
 
+
 .option-label {
-  color: $option-label-color;
-  cursor: $option-label-cursor;
+  @extend %form-colors;
+  color: var(--#{$prefix}fg-color, $form-option-label-color);
+  cursor: $form-option-label-cursor;
 }
 
 //
@@ -158,39 +175,39 @@
 //
 
 .form-switch {
-  padding-left: $form-switch-padding-start;
+  padding-left: $form-switch-padding-s;
 
   .option-input {
-    --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image)};
+    --#{$prefix}form-switch-icon: #{escape-svg($form-switch-icon)};
 
     width: $form-switch-width;
-    margin-left: $form-switch-padding-start * -1;
-    background-image: var(--#{$prefix}form-switch-bg);
+    margin-left: $form-switch-padding-s * -1;
+    background-image: var(--#{$prefix}form-switch-icon);
     background-position: left center;
     @include border-radius($form-switch-border-radius, 0);
     @include transition($form-switch-transition);
 
     &:focus {
-      --#{$prefix}form-switch-bg: #{escape-svg($form-switch-focus-bg-image)};
+      --#{$prefix}form-switch-icon: #{escape-svg($form-switch-focus-icon)};
     }
 
     &:checked {
-      background-position: $form-switch-checked-bg-position;
+      background-position: $form-switch-checked-icon-position;
 
       @if $enable-component-gradients {
-        --#{$prefix}form-switch-bg: #{escape-svg($form-switch-checked-bg-image)}, var(--#{$prefix}bg-gradient);
+        --#{$prefix}form-switch-icon: #{escape-svg($form-switch-checked-icon)}, var(--#{$prefix}bg-gradient);
       } @else {
-        --#{$prefix}form-switch-bg: #{escape-svg($form-switch-checked-bg-image)};
+        --#{$prefix}form-switch-icon: #{escape-svg($form-switch-checked-icon)};
       }
     }
   }
 
   &.reverse {
-    padding-right: $form-switch-padding-start;
+    padding-right: $form-switch-padding-s;
     padding-left: 0;
 
     .option-input {
-      margin-right: $form-switch-padding-start * -1;
+      margin-right: $form-switch-padding-s * -1;
       margin-left: 0;
     }
   }
@@ -211,7 +228,7 @@
     + .button {
       pointer-events: none;
       filter: none;
-      opacity: $form-option-button-option-disabled-opacity;
+      opacity: $form-option-button-disabled-opacity;
     }
   }
 }
@@ -219,7 +236,7 @@
 @if $enable-dark-mode {
   @include color-mode(dark) {
     .form-switch .option-input:not(:checked):not(:focus) {
-      --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image-dark)};
+      --#{$prefix}form-switch-icon: #{escape-svg($form-switch-icon-dark)};
     }
   }
 }

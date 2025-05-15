@@ -5,7 +5,7 @@
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  color: rgb(var(--cx-tertiary-color-rgb));
+  color: rgb(var(--cx-fg-slight-rgb));
 }
 
 

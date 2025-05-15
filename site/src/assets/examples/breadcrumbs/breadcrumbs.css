@@ -34,7 +34,7 @@
   height: 50px;
   margin-top: -25px;
   content: "";
-  background-color: var(--cx-tertiary-bg);
+  background-color: var(--cx-bg-evident);
   border-top-right-radius: .5rem;
   box-shadow: 1px -1px var(--cx-border-color);
   transform: scale(.707) rotate(45deg);

@@ -63,6 +63,16 @@ Due to limitations of browser support at the time, `border-radius` styles can on
     <input type="text" class="form-control d-none" placeholder="Hidden input" aria-label="Hidden input" aria-describedby="visible-addon">
   </div>`} />
 
+## Icons
+
+Use the `.icon` class with `.input-addon` class to position icons inside the input.
+
+<Example code={`<div class="input-group">
+    <svg class="icon input-addon" id="password-addon"><use xlink:href="#lock-solid"></svg>
+    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+    <a href="#" class="icon input-addon"><svg class="icon"><use xlink:href="#eye-solid"></svg></a>
+  </div>`} />
+
 ## Sizing
 
 Add the relative form sizing classes to the `.input-group` itself and contents within will automatically resize—no need for repeating the form control size classes on each element.

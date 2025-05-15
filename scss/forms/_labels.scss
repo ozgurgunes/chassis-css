@@ -16,8 +16,8 @@
   --#{$prefix}fg-color: $form-label-color;
   @include map-font($form-label-font);
 
-  padding-top: add($input-medium-padding-y, $input-border-width);
-  padding-bottom: add($input-medium-padding-y, $input-border-width);
+  padding-top: add($input-medium-padding-y, $input-regular-border-width);
+  padding-bottom: add($input-medium-padding-y, $input-regular-border-width);
   margin-bottom: 0; // Override the `<legend>` default
   @include font(); // Override the `<legend>` default
   @include font-size(inherit); // Override the `<legend>` default
@@ -26,15 +26,15 @@
 }
 
 .col-form-label-large {
-  padding-top: add($input-large-padding-y, $input-border-width);
-  padding-bottom: add($input-large-padding-y, $input-border-width);
-  @include font-size(map-get($input-large-font, "font-size"));
-  @include line-height(map-get($input-large-font, "line-height"));
+  padding-top: add($input-large-padding-y, $input-regular-border-width);
+  padding-bottom: add($input-large-padding-y, $input-regular-border-width);
+  @include font-size(map-get($input-large-text-font, "font-size"));
+  @include line-height(map-get($input-large-text-font, "line-height"));
 }
 
 .col-form-label-small {
-  padding-top: add($input-small-padding-y, $input-border-width);
-  padding-bottom: add($input-small-padding-y, $input-border-width);
-  @include font-size(map-get($input-small-font, "font-size"));
-  @include line-height(map-get($input-small-font, "line-height"));
+  padding-top: add($input-small-padding-y, $input-regular-border-width);
+  padding-bottom: add($input-small-padding-y, $input-regular-border-width);
+  @include font-size(map-get($input-small-text-font, "font-size"));
+  @include line-height(map-get($input-small-text-font, "line-height"));
 }
