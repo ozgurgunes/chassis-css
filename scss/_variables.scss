@@ -379,7 +379,7 @@ $border-radius:                 $border-radius-medium !default;
 $box-shadow-medium:         $shadow-default-20 !default; // 0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-small:          $shadow-default-05 !default; //0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow-large:          $shadow-default-50 !default; // 0 1rem 3rem rgba($black, .175) !default;
-$box-shadow-inset:          inset 0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow-inset:          inset 0 .125rem .25rem rgba($black, .125) !default;
 $box-shadow:                $box-shadow-medium !default;
 $shadow-color-opacity:      .2 !default;
 // scss-docs-end base-shadow-variables
@@ -578,7 +578,7 @@ $form-label-font:                     $input-medium-label-font !default;
 
 $form-input-focus-width:                   $focus-ring-width !default;
 $form-input-default-focus-box-shadow:              $focus-ring-box-shadow !default;
-$form-alternate-focus-box-shadow:              $focus-ring-box-shadow !default;
+$form-input-alternate-focus-box-shadow:              $focus-ring-box-shadow !default;
 
 // $input-placeholder-color:             $input-default-idle-fg-inactive !default;
 $form-input-plaintext-color:               var(--#{$prefix}idle-fg-active) !default;
@@ -603,13 +603,27 @@ $form-input-box-shadow:                    var(--#{$prefix}box-shadow-inset) !de
 
 // scss-docs-start input-group-variables
 $form-input-addon-default-fg-color:                  $input-default-idle-fg-active !default;
-$form-input-addon-default-bg-color:                  var(--#{$prefix}default-bg-evident) !default;
+$form-input-addon-default-bg-image:                linear-gradient(var(--#{$prefix}default-dim-slight), var(--#{$prefix}default-dim-slight)) !default;
+$form-input-addon-default-bg-color:                  $input-default-idle-bg-regular !default;
 $form-input-addon-default-border-color:              $input-default-idle-border !default;
+
 $form-input-addon-alternate-fg-color:                  $input-alternate-idle-fg-active !default;
-$form-input-addon-alternate-bg-color:                  var(--#{$prefix}alternate-bg-evident) !default;
+$form-input-addon-alternate-bg-image:                  linear-gradient(var(--#{$prefix}alternate-dim-slight), var(--#{$prefix}alternate-dim-slight)) !default;
+$form-input-addon-alternate-bg-color:                  $input-alternate-idle-bg-regular !default;
 $form-input-addon-alternate-border-color:              $input-alternate-idle-border !default;
 // scss-docs-end input-group-variables
 
+// scss-docs-start form-file-variables
+$form-file-button-default-fg-color:           $form-input-addon-default-fg-color !default;
+$form-file-button-default-bg-image:           $form-input-addon-default-bg-image !default;
+$form-file-button-default-bg-color:           $form-input-addon-default-bg-color !default;
+$form-file-button-default-bg-hover:           var(--#{$prefix}default-bg-even) !default;
+
+$form-file-button-alternate-fg-color:           $form-input-addon-alternate-fg-color !default;
+$form-file-button-alternate-bg-image:           $form-input-addon-alternate-bg-image !default;
+$form-file-button-alternate-bg-color:           $form-input-addon-alternate-bg-color !default;
+$form-file-button-alternate-bg-hover:           var(--#{$prefix}alternate-bg-even) !default;
+// scss-docs-end form-file-variables
 
 // scss-docs-start form-select-variables
 
@@ -622,8 +636,8 @@ $form-select-widget-position:               right var(--#{$prefix}padding-x) cen
 
 $form-feedback-icon-size:               var(--#{$prefix}icon-size) !default;
 
-$form-select-feedback-icon-position:    center right #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}gap) + var(--#{$prefix}widget-size))} !default;
-$form-select-feedback-icon-padding-e:   #{calc($form-feedback-icon-size + var(--#{$prefix}widget-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
+$form-select-feedback-icon-position:        center right #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}gap) + var(--#{$prefix}widget-size))} !default;
+$form-select-feedback-icon-padding-e:       #{calc($form-feedback-icon-size + var(--#{$prefix}widget-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
 $form-input-feedback-icon-position:              right var(--#{$prefix}padding-x) center !default;
 $form-input-feedback-icon-padding-e:              #{calc($form-feedback-icon-size + var(--#{$prefix}padding-x) + var(--#{$prefix}gap))} !default;
 $form-textarea-feedback-icon-position:              top var(--#{$prefix}padding-y) right var(--#{$prefix}padding-x) !default;
@@ -654,9 +668,9 @@ $form-option-input-checked-fg-color:             $component-active-fg-color !def
 $form-option-input-checked-bg-color:             $component-active-bg-color !default;
 $form-option-input-checked-border-color:         $form-option-input-checked-bg-color !default;
 
-$form-option-input-check-icon:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-option-input-checked-fg-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>") !default;
-$form-option-input-radio-icon:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-option-input-checked-fg-color}'/></svg>") !default;
-$form-option-input-indeterminate-icon:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-option-input-checked-fg-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10h8'/></svg>") !default;
+// $form-option-input-check-icon:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-option-input-checked-fg-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>") !default;
+// $form-option-input-radio-icon:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-option-input-checked-fg-color}'/></svg>") !default;
+// $form-option-input-indeterminate-icon:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-option-input-checked-fg-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10h8'/></svg>") !default;
 
 $form-option-input-disabled-opacity:             var(--#{$prefix}opacity-fg-slight) !default;
 $form-option-label-disabled-opacity:             $form-option-input-disabled-opacity !default;
@@ -710,15 +724,6 @@ $form-range-thumb-focus-box-shadow:         0 0 0 $utility-pixel-1 $bg-main, $fo
 $form-range-thumb-focus-box-shadow-width:   $form-input-focus-width !default; // For focus box shadow issue in Edge
 $form-range-thumb-transition:               background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 // scss-docs-end form-range-variables
-
-// scss-docs-start form-file-variables
-$form-file-button-default-fg-color:           $input-default-idle-fg-active !default;
-$form-file-button-default-bg-color:           var(--#{$prefix}default-bg-evident) !default;
-$form-file-button-default-bg-hover:           var(--#{$prefix}default-bg-even) !default;
-$form-file-button-alternate-fg-color:           $input-alternate-idle-fg-active !default;
-$form-file-button-alternate-bg-color:           var(--#{$prefix}alternate-bg-evident) !default;
-$form-file-button-alternate-bg-hover:           var(--#{$prefix}alternate-bg-even) !default;
-// scss-docs-end form-file-variables
 
 // scss-docs-start form-floating-variables
 $form-floating-height:                      add(3.5rem, $form-input-height-border) !default;

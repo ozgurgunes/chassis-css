@@ -2,6 +2,21 @@
 //
 // JS-based `Copy` buttons for code snippets.
 
+.cxd-mode {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: .75rem;
+  margin-right: .75rem;
+  z-index: 3;
+  .button-mode {
+    background-color: var(--cx-bg-button);
+    border: var(--cx-border-width) solid var(--cx-border-subtle);
+  }
+  &:not(.cxd-example:hover &) {
+    display: none;
+  }
+}
 .cxd-clipboard,
 .cxd-edit {
   position: relative;
@@ -17,9 +32,10 @@
   }
 }
 
+.button-mode,
 .button-clipboard,
 .button-edit {
-  --cx-icon-color: var(--cx-fg-color);
+  --cx-icon-color: var(--cx-fg-subtle);
   --cx-icon-size: var(--cx-icon-small);
   display: block;
   padding: .25em;
@@ -37,9 +53,11 @@
   }
 }
 
+.button-mode,
 .button-clipboard {
   position: relative;
   z-index: 2;
   margin-top: .75rem;
   margin-right: .75rem;
 }
+

@@ -16,15 +16,15 @@
   margin-bottom: 0;
 }
 
-.form-floating {
-
-  border-bottom-width: $input-floating-border-width;
-
-  > label {
-    color: var(--#{$prefix}fg-subtle);
-  }
-
-}
+// .form-floating {
+//
+//   border-bottom-width: $input-floating-border-width;
+//
+//   > label {
+//     color: var(--#{$prefix}fg-subtle);
+//   }
+//
+// }
 
 // @each $name, $value in $context-fg-colors {
 //   .#{$name} {

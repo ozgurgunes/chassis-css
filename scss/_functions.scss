@@ -340,28 +340,59 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
 }
 // scss-docs-end icon-functions
 
-@function get-sass-color($css-color-variable, $dark: false) {
+// scss-docs-start color-variable-functions
+@function get-sass-color($color-var, $dark: false) {
+
+  // If it's already a color, just return it
+  @if type-of($color-var) == "color" {
+    @return $color-var;
+  }
+
+  // Setup context map based on light/dark mode
   $palette: if($dark, $context-palette-dark, $context-palette);
   $map: map-merge($palette, $base-palette);
-  @if str-index($css-color-variable, "var(--#{$prefix}") {
-    $c: str-replace($css-color-variable, "var(--#{$prefix}", "");
-    $c: str-replace($c, ")", "");
-    $color: map-get($map, $c);
-    @debug $c;
-    @debug "=============";
+
+  // If it's a CSS variable string, extract the variable name
+  @if type-of($color-var) == "string" and str-index($color-var, "var(--#{$prefix}") {
+    $var-name: str-replace($color-var, "var(--#{$prefix}", "");
+    $var-name: str-replace($var-name, ")", "");
+
+    // Look up the variable name in our color map
+    $color: map-get($map, $var-name);
+
+    @if $color {
+      @return $color;
+    } @else {
+      @warn "Could not find color for variable #{$var-name} in the color palette.";
+      @return $color-var; // Return original if not found
+    }
+  }
+
+  // If it's a direct color name in our palette
+  @if type-of($color-var) == "string" {
+    $color: map-get($map, $color-var);
+
     @if $color {
       @return $color;
     }
-    @error "Cannot find "#{$css-color-variable}" in the Sass colors.";
   }
-  @error "Color name "#{$css-color-variable}" is not valid.";
+
+  @error "Could not find color for variable #{$var-name}.";
+  // If we get here, just return the original value
+  // @return $color-var;
 }
 
 @function svg-color($svg, $color, $dark: false) {
-  $c: get-sass-color($color, $dark);
-  $new-svg: escape-svg(str-replace($svg, "currentcolor", $c));
-  @if new-svg {
-    @return $new-svg;
+  // Set a default for $c
+  $c: $color;
+
+  // Color type-specific processing
+  @if type-of($color) == "color" {
+    // Use as-is, already set
+  } @else if type-of($color) == "string" and str-index($color, "var(--#{$prefix}") {
+    $c: get-sass-color($color, $dark);
   }
-  @error "Cannot find "currentcolor" in the SVG file.";
+  // Process the SVG
+  $new-svg: escape-svg(str-replace($svg, "currentcolor", $c));
+  @return $new-svg;
 }

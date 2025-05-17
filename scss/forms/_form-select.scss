@@ -6,7 +6,7 @@
 .form-select {
   @extend %component, %form-input;
 
-  --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-default-idle-fg-active)};
+  --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-idle-widget)};
 
   padding-right: #{calc(var(--#{$prefix}padding-x) * 2 + var(--#{$prefix}widget-size))};
   background-image: var(--#{$prefix}widget-icon), var(--#{$prefix}feedback-icon, none);
@@ -16,7 +16,7 @@
 
   &[disabled],
   &:disabled {
-    --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-default-disabled-fg-inactive)};
+    --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-disabled-widget)};
   }
 
   &[multiple],
@@ -31,65 +31,43 @@
     text-shadow: 0 0 0 var(--#{$prefix}fg-color);
   }
 
-  @if $enable-alternate-variants {
-    &.alternate {
-      --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-alternate-idle-fg-active)};
+  @if $enable-alternate-forms {
+    // .form-alternate &,
+    .form-alternate &:not(&.form-default, .form-default &),
+    .form-default .form-alternate &,
+    &.form-alternate {
+      --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-idle-widget)};
       &[disabled],
       &:disabled {
-        --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-alternate-disabled-fg-active)};
+        --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-disabled-widget)};
       }
     }
   }
 
 }
 
-// @mixin form-select-light() {
-//   --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-default-idle-fg-active)};
-//   &.alternate {
-//     --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-alternate-idle-fg-active)};
-//   }
-//   &[disabled],
-//   &:disabled {
-//     --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-default-disabled-fg-inactive)};
-//     // background-image: var(--#{$prefix}widget-icon, #{escape-svg($input-select-widget-icon)}), var(--#{$prefix}feedback-icon, none);
-//     &.alternate {
-//       --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-alternate-disabled-fg-active)};
-//     }
-//   }
-// }
-
 @mixin form-select-dark() {
-  --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-default-idle-fg-active, true)};
+  --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-idle-widget, true)};
 
   &[disabled],
   &:disabled {
-    --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-default-disabled-fg-inactive, true)};
+    --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-disabled-widget, true)};
   }
 
-  @if $enable-alternate-variants {
-    &.alternate {
-      --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-alternate-idle-fg-active, true)};
+  @if $enable-alternate-forms {
+    &:not(
+    .form-select.form-default,
+    .form-default .form-select),
+    &.form-alternate {
+      --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-idle-widget, true)};
       &[disabled],
       &:disabled {
-        --#{$prefix}widget-icon: #{svg-color(escape-svg($input-select-widget-icon), $input-alternate-disabled-fg-active, true)};
+        --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-disabled-widget, true)};
       }
     }
   }
 
 }
-
-// @include color-mode(light) {
-//   @if $color-mode-type == "media-query" {
-//     .form-select {
-//       @include form-select-light();
-//     }
-//   } @else {
-//     .form-select:not([data-cx-theme="light"] [data-cx-theme="dark"] .form-select),
-//     &.form-select {
-//       @include form-select-light();
-//     }
-//   }
-// }
 
 @if $enable-dark-mode {
   @include color-mode(dark) {
@@ -98,12 +76,12 @@
         @include form-select-dark();
       }
     } @else {
-      // .form-select:not([data-cx-theme="light"] .form-select):not([data-cx-theme="light"].form-select),
-      .form-select:not([data-cx-theme="dark"] [data-cx-theme="light"] .form-select):not([data-cx-theme="dark"] [data-cx-theme="light"].form-select),
+      .form-select:not(
+      .form-select[data-cx-theme="light"],
+      [data-cx-theme="dark"] [data-cx-theme="light"] .form-select),
       &.form-select {
         @include form-select-dark();
       }
     }
   }
 }
-

@@ -60,6 +60,7 @@
     @include padding();
     @include gradient-bg(var(--#{$prefix}file-button-bg-color));
     pointer-events: none;
+    background-image: var(--#{$prefix}file-button-bg-image);
     border-inline-end-width: var(--#{$prefix}border-width);
     @include border-radius(0);
     @include transition($button-transition);
@@ -68,7 +69,7 @@
   }
 
   &:hover:not(:disabled):not([readonly])::file-selector-button {
-    background-color: var(--#{$prefix}file-button-bg-hover);
+    background: var(--#{$prefix}file-button-bg-hover);
   }
 
   // Readonly controls as plain text

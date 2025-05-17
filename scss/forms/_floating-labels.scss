@@ -1,5 +1,6 @@
 .form-floating {
   position: relative;
+  border-bottom-width: $input-floating-border-width;
 
   > .form-control,
   > .form-control.plaintext,
@@ -13,7 +14,7 @@
     border-bottom-width: $input-floating-border-width;
     @include border-top-radius($input-floating-blunt-border-radius);
     @include border-bottom-radius($input-floating-sharp-border-radius);
-    box-shadow: none;
+    // box-shadow: none;
 
     &:focus {
       --#{$prefix}input-bg-color: var(--#{$prefix}input-focus-bg-floating);
@@ -34,6 +35,7 @@
   }
 
   > label {
+    @extend %form-colors;
     position: absolute;
     top: 0;
     left: 0;
@@ -41,6 +43,7 @@
     height: 100%; // allow textareas
     padding: $form-floating-padding-y $form-floating-padding-x;
     overflow: hidden;
+    color: var(--#{$prefix}label-color, var(--#{$prefix}input-idle-fg-inactive));
     text-align: start;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -74,6 +77,12 @@
     }
   }
 
+  > %form-input {
+    &:focus ~ label {
+      color: $input-default-focus-assist;
+    }
+  }
+
   > .form-select {
     padding: $form-floating-padding-y $form-floating-padding-x;
     padding-top: $form-floating-input-padding-t;
@@ -85,7 +94,7 @@
   > .form-control.plaintext,
   > .form-select {
     ~ label {
-      --#{$prefix}fg-color: var(--#{$prefix}fg-subtle);
+      // --#{$prefix}input-fg-color: var(--#{$prefix}input-border-color);
       transform: $form-floating-label-transform;
 
       &::after {

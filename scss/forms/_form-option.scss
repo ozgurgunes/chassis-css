@@ -50,8 +50,20 @@
 
 .option-input {
   @extend %form-colors;
+  // $default-idle-check-icon: svg-color($form-option-input-check-icon, $input-default-idle-fg-active);
+  // $default-idle-radio-icon: svg-color($form-option-input-radio-icon, $input--default-idle-fg-active);
+  // $default-idle-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-idle-fg-active);
+  $default-disabled-check-icon: svg-color($form-option-input-check-icon, $input-default-disabled-fg-inactive);
+  $default-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-default-disabled-fg-inactive);
+  $default-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-default-disabled-fg-inactive);
+  $alternate-disabled-check-icon: svg-color($form-option-input-check-icon, $input-alternate-disabled-fg-inactive);
+  $alternate-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-alternate-disabled-fg-inactive);
+  $alternate-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-alternate-disabled-fg-inactive);
+  $primary-idle-check-icon: svg-color($form-option-input-check-icon, $form-option-input-checked-fg-color);
+  $primary-idle-radio-icon: svg-color($form-option-input-radio-icon, $form-option-input-checked-fg-color);
+  $primary-idle-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $form-option-input-checked-fg-color);
 
-  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
+  // --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
   --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}input-idle-bg-regular));
   --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}input-idle-border-color));
   --#{$prefix}border-width: var(--#{$prefix}input-border-width, var(--#{$prefix}option-input-border-width, #{$form-option-input-border-width}));
@@ -66,13 +78,21 @@
   vertical-align: top;
   appearance: none;
   background-color: var(--#{$prefix}bg-color);
-  background-image: var(--#{$prefix}icon);
+  // background-image: var(--#{$prefix}icon);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   border: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
   print-color-adjust: exact; // Keep themed appearance for print
+  @include box-shadow($form-input-box-shadow);
   @include transition($form-option-transition);
+
+  @if $enable-component-gradients {
+    background-image: var(--#{$prefix}icon), var(--#{$prefix}bg-gradient);
+  } @else {
+    background-image: var(--#{$prefix}icon);
+  }
+
 
   &[type="checkbox"] {
     @include border-radius(var(--#{$prefix}option-input-border-radius));
@@ -88,41 +108,35 @@
   // }
 
   &:focus {
-    border-color: var(--#{$prefix}input-focus-border-color);
+    --#{$prefix}input-border-color: var(--#{$prefix}input-focus-border-color);
+    --#{$prefix}input-box-shadow: var(--#{$prefix}input-focus-box-shadow);
+
     outline: 0;
-    box-shadow: $form-input-default-focus-box-shadow;
+    @if $enable-component-shadows {
+      @include box-shadow($form-input-box-shadow, var(--#{$prefix}input-box-shadow));
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: var(--#{$prefix}input-box-shadow);
+    }
   }
 
   &:checked {
-    background-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
-    border-color: var(--#{$prefix}input-checked-border-color, #{$form-option-input-checked-border-color});
+    --#{$prefix}bg-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
+    --#{$prefix}border-color: var(--#{$prefix}input-checked-border-color, #{$form-option-input-checked-border-color});
 
     &[type="checkbox"] {
-      @if $enable-component-gradients {
-        --#{$prefix}icon: #{escape-svg($form-option-input-check-icon)}, var(--#{$prefix}bg-gradient);
-      } @else {
-        --#{$prefix}icon: #{escape-svg($form-option-input-check-icon)};
-      }
+      --#{$prefix}icon: #{$primary-idle-check-icon};
     }
 
     &[type="radio"] {
-      @if $enable-component-gradients {
-        --#{$prefix}icon: #{escape-svg($form-option-input-radio-icon)}, var(--#{$prefix}bg-gradient);
-      } @else {
-        --#{$prefix}icon: #{escape-svg($form-option-input-radio-icon)};
-      }
+      --#{$prefix}icon: #{$primary-idle-radio-icon};
     }
   }
 
   &[type="checkbox"]:indeterminate {
-    background-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
-    border-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
-
-    @if $enable-component-gradients {
-      --#{$prefix}icon: #{escape-svg($form-option-input-indeterminate-icon)}, var(--#{$prefix}bg-gradient);
-    } @else {
-      --#{$prefix}icon: #{escape-svg($form-option-input-indeterminate-icon)};
-    }
+    --#{$prefix}bg-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
+    --#{$prefix}border-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-input-checked-bg-color});
+    --#{$prefix}icon: #{$primary-idle-indeterminate-icon};
   }
 
   // &:disabled {
@@ -137,16 +151,52 @@
   // See: https://github.com/twbs/bootstrap/issues/28247
   &[disabled],
   &:disabled {
-    --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-disabled-fg-active});
     --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
+    --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border});
     pointer-events: none;
     filter: none;
-    opacity: $form-option-input-disabled-opacity;
+    // opacity: $form-option-input-disabled-opacity;
     ~ .option-label {
       // --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-disabled-fg-active});
       cursor: default;
       opacity: $form-option-label-disabled-opacity;
     }
+
+    &[type="checkbox"]:checked {
+      --#{$prefix}icon: #{$default-disabled-check-icon};
+    }
+
+    &[type="radio"]:checked {
+      --#{$prefix}icon: #{$default-disabled-radio-icon};
+    }
+
+    &[type="checkbox"]:indeterminate {
+      --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
+      --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border});
+      --#{$prefix}icon: #{$default-disabled-indeterminate-icon};
+    }
+
+    @if $enable-alternate-forms {
+      .form-alternate &,
+      &.form-alternate {
+        --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-alternate-disabled-bg-regular});
+        --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border});
+        &[type="checkbox"]:checked {
+          --#{$prefix}icon: #{$alternate-disabled-check-icon};
+        }
+
+        &[type="radio"]:checked {
+          --#{$prefix}icon: #{$alternate-disabled-radio-icon};
+        }
+
+        &[type="checkbox"]:indeterminate {
+          --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-alternate-disabled-bg-regular});
+          --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border});
+          --#{$prefix}icon: #{$alternate-disabled-indeterminate-icon};
+        }
+      }
+    }
+
   }
 }
 
@@ -237,6 +287,67 @@
   @include color-mode(dark) {
     .form-switch .option-input:not(:checked):not(:focus) {
       --#{$prefix}form-switch-icon: #{escape-svg($form-switch-icon-dark)};
+    }
+  }
+}
+
+@mixin option-input-dark() {
+  $default-disabled-check-icon: svg-color($form-option-input-check-icon, $input-default-disabled-fg-inactive, true);
+  $default-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-default-disabled-fg-inactive, true);
+  $default-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-default-disabled-fg-inactive, true);
+  $alternate-disabled-check-icon: svg-color($form-option-input-check-icon, $input-alternate-disabled-fg-inactive, true);
+  $alternate-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-alternate-disabled-fg-inactive, true);
+  $alternate-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-alternate-disabled-fg-inactive, true);
+
+  &[disabled],
+  &:disabled {
+    &[type="checkbox"]:checked {
+      --#{$prefix}icon: #{$default-disabled-check-icon};
+    }
+
+    &[type="radio"]:checked {
+      --#{$prefix}icon: #{$default-disabled-radio-icon};
+    }
+
+    &[type="checkbox"]:indeterminate {
+      --#{$prefix}icon: #{$default-disabled-indeterminate-icon};
+    }
+  }
+
+  @if $enable-alternate-forms {
+    .form-alternate &,
+    &.form-alternate {
+      &[disabled],
+      &:disabled {
+        &[type="checkbox"]:checked {
+          --#{$prefix}icon: #{$alternate-disabled-check-icon};
+        }
+
+        &[type="radio"]:checked {
+          --#{$prefix}icon: #{$alternate-disabled-radio-icon};
+        }
+
+        &[type="checkbox"]:indeterminate {
+          --#{$prefix}icon: #{$alternate-disabled-indeterminate-icon};
+        }
+      }
+    }
+  }
+
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    @if $color-mode-type == "media-query" {
+      .option-input {
+        @include option-input-dark();
+      }
+    } @else {
+      // .form-select:not([data-cx-theme="light"] .form-select):not([data-cx-theme="light"].form-select),
+      .option-input:not([data-cx-theme="dark"] [data-cx-theme="light"] .option-input):not([data-cx-theme="dark"] [data-cx-theme="light"].option-input),
+      &.option-input {
+        @include option-input-dark();
+      }
     }
   }
 }

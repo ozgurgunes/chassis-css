@@ -12,4 +12,11 @@
     }
   }
 }
+// @mixin form-option-icon($icon) {
+//   @if $enable-component-gradients {
+//     --#{$prefix}icon: #{$icon}, var(--#{$prefix}bg-gradient);
+//   } @else {
+//     --#{$prefix}icon: #{$icon};
+//   }
+// }
 // scss-docs-end form-validation-mixins

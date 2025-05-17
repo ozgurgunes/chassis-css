@@ -1,5 +1,4 @@
-// scss-docs-start %button-states-class
-%form-colors {
+%form-color-default {
   --#{$prefix}input-idle-bg-regular: #{$input-default-idle-bg-regular};
   --#{$prefix}input-idle-fg-active: #{$input-default-idle-fg-active};
   --#{$prefix}input-idle-fg-inactive: #{$input-default-idle-fg-inactive};
@@ -32,13 +31,13 @@
   --#{$prefix}input-error-bg-floating: #{$input-default-error-bg-floating};
   --#{$prefix}input-success-bg-floating: #{$input-default-success-bg-floating};
 
-  --#{$prefix}input-focus-box-shadow: #{$form-input-default-focus-box-shadow};
-
   --#{$prefix}file-button-fg-color: #{$form-file-button-default-fg-color};
+  --#{$prefix}file-button-bg-image: #{$form-file-button-default-bg-image};
   --#{$prefix}file-button-bg-color: #{$form-file-button-default-bg-color};
   --#{$prefix}file-button-bg-hover: #{$form-file-button-default-bg-hover};
 
   --#{$prefix}input-addon-fg-color: #{$form-input-addon-default-fg-color};
+  --#{$prefix}input-addon-bg-image: #{$form-input-addon-default-bg-image};
   --#{$prefix}input-addon-bg-color: #{$form-input-addon-default-bg-color};
   --#{$prefix}input-addon-border-color: #{$form-input-addon-default-border-color};
 
@@ -47,11 +46,7 @@
   --#{$prefix}form-range-thumb-disabled: #{$form-range-default-thumb-disabled};
   --#{$prefix}form-range-thumb-active: #{$form-range-default-thumb-active};
 
-  @if $enable-alternate-variants {
-    &.alternate {
-      @extend %form-color-alternate;
-    }
-  }
+  --#{$prefix}input-focus-box-shadow: #{$form-input-default-focus-box-shadow};
 }
 
 %form-color-alternate {
@@ -87,13 +82,13 @@
   --#{$prefix}input-error-bg-floating: #{$input-alternate-error-bg-floating};
   --#{$prefix}input-success-bg-floating: #{$input-alternate-success-bg-floating};
 
-  --#{$prefix}input-focus-box-shadow: #{$form-alternate-focus-box-shadow};
-
   --#{$prefix}file-button-fg-color: #{$form-file-button-alternate-fg-color};
+  --#{$prefix}file-button-bg-image: #{$form-file-button-alternate-bg-image};
   --#{$prefix}file-button-bg-color: #{$form-file-button-alternate-bg-color};
   --#{$prefix}file-button-bg-hover: #{$form-file-button-alternate-bg-hover};
 
   --#{$prefix}input-addon-fg-color: #{$form-input-addon-alternate-fg-color};
+  --#{$prefix}input-addon-bg-image: #{$form-input-addon-alternate-bg-image};
   --#{$prefix}input-addon-bg-color: #{$form-input-addon-alternate-bg-color};
   --#{$prefix}input-addon-border-color: #{$form-input-addon-alternate-border-color};
 
@@ -101,6 +96,25 @@
   --#{$prefix}form-range-thumb-color: #{$form-range-alternate-thumb-color};
   --#{$prefix}form-range-thumb-disabled: #{$form-range-alternate-thumb-disabled};
   --#{$prefix}form-range-thumb-active: #{$form-range-alternate-thumb-active};
+
+  --#{$prefix}input-focus-box-shadow: #{$form-input-alternate-focus-box-shadow};
+}
+
+
+%form-colors {
+  @extend %form-color-default;
+}
+
+@if $enable-alternate-forms {
+  .form-default,
+  .form-default *:not(*.form-alternate, .form-default .form-alternate *) {
+    @extend %form-color-default;
+  }
+
+  .form-alternate,
+  .form-alternate *:not(*.form-default, .form-alternate .form-default *){
+    @extend %form-color-alternate;
+  }
 }
 
 
@@ -142,6 +156,7 @@
   --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
   --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}input-idle-bg-regular));
   --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}input-idle-border-color));
+  // --#{$prefix}box-shadow: var(--#{$prefix}input-box-shadow, #{$form-input-box-shadow});
 
   --#{$prefix}min-height: var(--#{$prefix}input-min-height, #{$form-input-min-height});
 
@@ -170,12 +185,13 @@
     --#{$prefix}input-fg-color: var(--#{$prefix}input-focus-fg-active);
     --#{$prefix}input-bg-color: var(--#{$prefix}input-focus-bg-regular);
     --#{$prefix}input-border-color: var(--#{$prefix}input-focus-border-color);
+    --#{$prefix}input-box-shadow: var(--#{$prefix}input-focus-box-shadow);
     outline: 0;
     @if $enable-component-shadows {
-      @include box-shadow($form-input-box-shadow, var(--#{$prefix}input-focus-box-shadow));
+      @include box-shadow($form-input-box-shadow, var(--#{$prefix}input-box-shadow));
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: var(--#{$prefix}input-focus-box-shadow);
+      box-shadow: var(--#{$prefix}input-box-shadow);
     }
   }
 

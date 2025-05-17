@@ -95,38 +95,38 @@
   @include body-colors();
   // scss-docs-end root-body-colors
 
-  --#{$prefix}code-color: var(--#{$prefix}body-code-color, #{$code-color});
-  --#{$prefix}mark-fg-color: var(--#{$prefix}body-mark-fg-color, #{$mark-fg-color});
-  --#{$prefix}mark-bg-color: var(--#{$prefix}body-mark-bg-color, #{$mark-bg-color});
+  --#{$prefix}code-color: #{$code-color};
+  --#{$prefix}mark-fg-color: #{$mark-fg-color};
+  --#{$prefix}mark-bg-color: #{$mark-bg-color};
   // scss-docs-end root-body-variables
 
-  --#{$prefix}icon-size: var(--#{$prefix}body-icon-size, #{$icon-size});
+  --#{$prefix}icon-size: #{$icon-size};
   //--#{$prefix}border-width: var(--#{$prefix}border-width-medium);
 
-  --#{$prefix}link-decoration: var(--#{$prefix}body-link-decoration, #{$link-decoration});
+  --#{$prefix}link-decoration: #{$link-decoration};
   @if $link-hover-decoration != null {
-    --#{$prefix}link-hover-decoration: var(--#{$prefix}body-link-hover-decoration, #{$link-hover-decoration});
+    --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
   }
   // scss-docs-end root-body-variables
 
   // // scss-docs-start root-border-var
-  --#{$prefix}border-width: var(--#{$prefix}body-border-width, #{$border-width});
-  --#{$prefix}border-style: var(--#{$prefix}body-border-style, #{$border-style});
-  --#{$prefix}border-color: var(--#{$prefix}body-border-color, #{$border-color});
-  --#{$prefix}border-radius: var(--#{$prefix}body-border-radius, #{$border-radius});
+  --#{$prefix}border-width: #{$border-width};
+  --#{$prefix}border-style: #{$border-style};
+  --#{$prefix}border-color: #{$border-color};
+  --#{$prefix}border-radius: #{$border-radius};
   // // scss-docs-end root-border-var
 
   //--#{$prefix}box-shadow: #{$box-shadow};
-  --#{$prefix}box-shadow-small: var(--#{$prefix}body-box-shadow-small, #{$box-shadow-small});
-  --#{$prefix}box-shadow-medium: var(--#{$prefix}body-box-shadow-medium, #{$box-shadow-medium});
-  --#{$prefix}box-shadow-large: var(--#{$prefix}body-box-shadow-large, #{$box-shadow-large});
-  --#{$prefix}box-shadow-inset: var(--#{$prefix}body-box-shadow-inset, #{$box-shadow-inset});
+  --#{$prefix}box-shadow-small: #{$box-shadow-small};
+  --#{$prefix}box-shadow-medium: #{$box-shadow-medium};
+  --#{$prefix}box-shadow-large: #{$box-shadow-large};
+  --#{$prefix}box-shadow-inset: #{$box-shadow-inset};
 
   // Focus styles
   // scss-docs-start root-focus-variables
-  --#{$prefix}focus-ring-width: var(--#{$prefix}body-focus-ring-width, #{$focus-ring-width});
-  --#{$prefix}focus-ring-opacity: var(--#{$prefix}body-focus-ring-opacity, #{$focus-ring-opacity});
-  --#{$prefix}focus-ring-color: var(--#{$prefix}body-focus-ring-color, #{$focus-ring-color});
+  --#{$prefix}focus-ring-width: #{$focus-ring-width};
+  --#{$prefix}focus-ring-opacity: #{$focus-ring-opacity};
+  --#{$prefix}focus-ring-color: #{$focus-ring-color};
   // scss-docs-end root-focus-variables
 
   // scss-docs-start root-form-validation-variables
@@ -149,37 +149,9 @@
   @if $font-size-root != null {
     --#{$prefix}root-font-size: #{$font-size-root};
   }
-  --#{$prefix}body-font-family: #{$font-family-base};
-  --#{$prefix}body-font-size: #{$font-size-base};
-  --#{$prefix}body-font-weight: #{$font-weight-base};
-  --#{$prefix}body-line-height: #{$line-height-base};
   @if $text-align != null {
-    --#{$prefix}body-text-align: #{$text-aligm};
+    --#{$prefix}text-align: #{$text-aligm};
   }
-
-  // @each $color, $value in $grays {
-  //   // --#{$prefix}gray-#{$color}: #{$value};
-  //   --#{$prefix}gray-#{$color}: var(--#{$prefix}neutral-#{$color});
-  // }
-
-  //
-  // Bootstrap Colors
-  //
-  --#{$prefix}body-color: var(--#{$prefix}fg-main);
-  --#{$prefix}body-color-rgb: var(--#{$prefix}fg-main-rgb);
-  --#{$prefix}body-bg: var(--#{$prefix}bg-main);
-  --#{$prefix}body-bg-rgb: var(--#{$prefix}bg-main-rgb);
-
-  --#{$prefix}fg-main: var(--#{$prefix}black-fg-main);
-  --#{$prefix}fg-main-rgb: var(--#{$prefix}black-fg-main-rgb);
-
-  --#{$prefix}secondary-color: var(--#{$prefix}fg-subtle);
-  --#{$prefix}secondary-color-rgb: var(--#{$prefix}fg-subtle-rgb);
-
-  --#{$prefix}tertiary-color: var(--#{$prefix}fg-slight);
-  --#{$prefix}tertiary-color-rgb: var(--#{$prefix}fg-slight-rgb);
-  --#{$prefix}tertiary-bg: var(--#{$prefix}bg-evident);
-  --#{$prefix}tertiary-bg-rgb: var(--#{$prefix}bg-evident-rgb);
 
   --#{$prefix}heading-color: var(--#{$prefix}fg-main);
 
@@ -206,6 +178,8 @@
       --#{$prefix}#{$name}: #{$value};
       --#{$prefix}#{$name}-rgb: #{to-rgb($value)};
     }
+
+    @include body-colors();
     // scss-docs-end root-dark-mode-vars
 
     // --#{$prefix}code-color: #{$code-color-dark};

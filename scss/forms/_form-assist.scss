@@ -11,4 +11,10 @@
     margin-top: $form-option-assist-margin-t;
     margin-left: #{calc(var(--#{$prefix}input-size) + var(--#{$prefix}gap))};
   }
+  .form-range ~ & {
+    margin-top: $form-option-assist-margin-t;
+  }
+  .form-alternate > & {
+    @extend %form-color-alternate;
+  }
 }

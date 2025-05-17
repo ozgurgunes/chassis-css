@@ -5,9 +5,9 @@ $input-active-border-width:               $cx-border-width-common-form-input-act
 $input-select-widget-icon:                svg-icon($cx-icon-common-form-input-select-widget) !default;
 $input-feedback-valid-icon:               svg-icon($cx-icon-common-form-input-feedback-valid) !default;
 $input-feedback-invalid-icon:             svg-icon($cx-icon-common-form-input-feedback-invalid) !default;
-// $form-option-input-check-icon:                 svg-icon($cx-icon-common-form-input-option-check) !default;
-// $form-option-input-indeterminate-icon:               svg-icon($cx-icon-common-form-input-option-partial) !default;
-// $form-option-input-radio-icon:               svg-icon($cx-icon-common-form-input-option-radio) !default;
+$form-option-input-check-icon:                 svg-icon($cx-icon-common-form-input-option-check) !default;
+$form-option-input-indeterminate-icon:               svg-icon($cx-icon-common-form-input-option-partial) !default;
+$form-option-input-radio-icon:               svg-icon($cx-icon-common-form-input-option-radio) !default;
 // $input-inactive-border-width:             $cx-border-width-common-form-input-inactive !default;
 
 $input-medium-border-radius:              $cx-border-radius-common-form-input-medium !default;
@@ -54,6 +54,7 @@ $input-default-idle-border:               $cx-color-common-form-input-default-id
 $input-default-idle-fg-active:           $cx-color-common-form-input-default-idle-fg-active !default;
 $input-default-idle-fg-inactive:          $cx-color-common-form-input-default-idle-fg-inactive !default;
 $input-default-idle-assist:               $cx-color-common-form-input-default-idle-assist !default;
+$input-default-idle-widget:               $cx-color-common-form-input-default-idle-widget !default;
 
 $input-default-disabled-bg-regular:       $cx-color-common-form-input-default-disabled-bg-regular !default;
 $input-default-disabled-bg-floating:       $cx-color-common-form-input-default-disabled-bg-floating !default;
@@ -61,6 +62,7 @@ $input-default-disabled-border:           $cx-color-common-form-input-default-di
 $input-default-disabled-fg-active:       $cx-color-common-form-input-default-disabled-fg-active !default;
 $input-default-disabled-fg-inactive:      $cx-color-common-form-input-default-disabled-fg-inactive !default;
 $input-default-disabled-assist:           $cx-color-common-form-input-default-disabled-assist !default;
+$input-default-disabled-widget:           $cx-color-common-form-input-default-disabled-widget !default;
 
 $input-default-focus-bg-regular:          $cx-color-common-form-input-default-focus-bg-regular !default;
 $input-default-focus-bg-floating:          $cx-color-common-form-input-default-focus-bg-floating !default;
@@ -68,6 +70,7 @@ $input-default-focus-border:              $cx-color-common-form-input-default-fo
 $input-default-focus-fg-active:          $cx-color-common-form-input-default-focus-fg-active !default;
 $input-default-focus-fg-inactive:         $cx-color-common-form-input-default-focus-fg-inactive !default;
 $input-default-focus-assist:              $cx-color-common-form-input-default-focus-assist !default;
+$input-default-focus-widget:              $cx-color-common-form-input-default-focus-widget !default;
 
 $input-default-error-bg-regular:          $cx-color-common-form-input-default-error-bg-regular !default;
 $input-default-error-bg-floating:          $cx-color-common-form-input-default-error-bg-floating !default;
@@ -75,6 +78,7 @@ $input-default-error-border:              $cx-color-common-form-input-default-er
 $input-default-error-fg-active:          $cx-color-common-form-input-default-error-fg-active !default;
 $input-default-error-fg-inactive:         $cx-color-common-form-input-default-error-fg-inactive !default;
 $input-default-error-assist:              $cx-color-common-form-input-default-error-assist !default;
+$input-default-error-widget:              $cx-color-common-form-input-default-error-widget !default;
 
 $input-default-success-bg-regular:        $cx-color-common-form-input-default-success-bg-regular !default;
 $input-default-success-bg-floating:        $cx-color-common-form-input-default-success-bg-floating !default;
@@ -82,6 +86,7 @@ $input-default-success-border:            $cx-color-common-form-input-default-su
 $input-default-success-fg-active:        $cx-color-common-form-input-default-success-fg-active !default;
 $input-default-success-fg-inactive:       $cx-color-common-form-input-default-success-fg-inactive !default;
 $input-default-success-assist:            $cx-color-common-form-input-default-success-assist !default;
+$input-default-success-widget:            $cx-color-common-form-input-default-success-widget !default;
 
 $input-alternate-focus-bg-regular:        $cx-color-common-form-input-alternate-focus-bg-regular !default;
 $input-alternate-focus-bg-floating:        $cx-color-common-form-input-alternate-focus-bg-floating !default;
@@ -89,6 +94,7 @@ $input-alternate-focus-border:            $cx-color-common-form-input-alternate-
 $input-alternate-focus-fg-active:        $cx-color-common-form-input-alternate-focus-fg-active !default;
 $input-alternate-focus-fg-inactive:       $cx-color-common-form-input-alternate-focus-fg-inactive !default;
 $input-alternate-focus-assist:            $cx-color-common-form-input-alternate-focus-assist !default;
+$input-alternate-focus-widget:            $cx-color-common-form-input-alternate-focus-widget !default;
 
 $input-alternate-idle-bg-regular:         $cx-color-common-form-input-alternate-idle-bg-regular !default;
 $input-alternate-idle-bg-floating:         $cx-color-common-form-input-alternate-idle-bg-floating !default;
@@ -96,6 +102,7 @@ $input-alternate-idle-border:             $cx-color-common-form-input-alternate-
 $input-alternate-idle-fg-active:         $cx-color-common-form-input-alternate-idle-fg-active !default;
 $input-alternate-idle-fg-inactive:        $cx-color-common-form-input-alternate-idle-fg-inactive !default;
 $input-alternate-idle-assist:             $cx-color-common-form-input-alternate-idle-assist !default;
+$input-alternate-idle-widget:             $cx-color-common-form-input-alternate-idle-widget !default;
 
 $input-alternate-disabled-bg-regular:     $cx-color-common-form-input-alternate-disabled-bg-regular !default;
 $input-alternate-disabled-bg-floating:     $cx-color-common-form-input-alternate-disabled-bg-floating !default;
@@ -103,6 +110,7 @@ $input-alternate-disabled-border:         $cx-color-common-form-input-alternate-
 $input-alternate-disabled-fg-active:     $cx-color-common-form-input-alternate-disabled-fg-active !default;
 $input-alternate-disabled-fg-inactive:    $cx-color-common-form-input-alternate-disabled-fg-inactive !default;
 $input-alternate-disabled-assist:         $cx-color-common-form-input-alternate-disabled-assist !default;
+$input-alternate-disabled-widget:         $cx-color-common-form-input-alternate-disabled-widget !default;
 
 $input-alternate-error-bg-regular:        $cx-color-common-form-input-alternate-error-bg-regular !default;
 $input-alternate-error-bg-floating:        $cx-color-common-form-input-alternate-error-bg-floating !default;
@@ -110,6 +118,7 @@ $input-alternate-error-border:            $cx-color-common-form-input-alternate-
 $input-alternate-error-fg-active:        $cx-color-common-form-input-alternate-error-fg-active !default;
 $input-alternate-error-fg-inactive:       $cx-color-common-form-input-alternate-error-fg-inactive !default;
 $input-alternate-error-assist:            $cx-color-common-form-input-alternate-error-assist !default;
+$input-alternate-error-widget:            $cx-color-common-form-input-alternate-error-widget !default;
 
 $input-alternate-success-bg-regular:      $cx-color-common-form-input-alternate-success-bg-regular !default;
 $input-alternate-success-bg-floating:      $cx-color-common-form-input-alternate-success-bg-floating !default;
@@ -117,6 +126,7 @@ $input-alternate-success-border:          $cx-color-common-form-input-alternate-
 $input-alternate-success-fg-active:      $cx-color-common-form-input-alternate-success-fg-active !default;
 $input-alternate-success-fg-inactive:     $cx-color-common-form-input-alternate-success-fg-inactive !default;
 $input-alternate-success-assist:          $cx-color-common-form-input-alternate-success-assist !default;
+$input-alternate-success-widget:          $cx-color-common-form-input-alternate-success-widget !default;
 // scss-docs-end form-color-tokens
 // scss-docs-end form-tokens
 // fusv-enable

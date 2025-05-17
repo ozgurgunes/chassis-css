@@ -35,6 +35,9 @@
     margin-left: 0;
     border-width: 1px;
     @include border-radius(var(--cx-border-radius));
+    &:has(~ .highlight-toolbar) {
+      @include border-bottom-radius(0);
+    }
   }
 
   + p {

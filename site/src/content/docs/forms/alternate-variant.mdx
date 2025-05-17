@@ -1,0 +1,555 @@
+---
+title: Alternate Variant
+description: Use alternate styling for form elements with different color schemes that maintain consistency across themes.
+toc: true
+extra_js:
+  - src: "[[docsref:/assets/js/validate-forms.js]]"
+    async: true
+---
+
+import { getDocsRelativePath } from '@libs/path'
+
+## How it works
+
+Chassis CSS provides an alternate styling variant for form elements that uses a different color scheme than the default styling. This provides flexibility in design while maintaining consistent styling across light and dark themes. A key advantage of this variant is that form elements with the `.form-alternate` class retain their appearance when switching between themes, providing visual continuity. This is particularly useful in situations where you need.
+
+The `.form-alternate` class can be applied at different levels:
+- On an entire `<form>` element to cascade styling to all child form controls
+- On specific container elements like `.input-group` or form groups
+- Directly on individual form controls (`.form-control`, `.form-select`, etc.)
+
+When applied to container elements, the alternate styling automatically applies to all form controls within that container through CSS inheritance, eliminating the need to add the class to each individual form element.
+
+## Basic example
+
+Add the `.form-alternate` class to create form elements with alternate styling. This example shows the difference between default and alternate styles side by side.
+
+<Example showMarkup={false} code={`<div class="row g-xlarge">
+    <div class="col">
+      <h5>Default Style</h5>
+      <div class="mb-medium">
+        <label for="defaultInput" class="form-label">Default input</label>
+        <input type="text" class="form-control" id="defaultInput" placeholder="Default styling">
+      </div>
+      <div class="mb-medium">
+        <label for="defaultSelect" class="form-label">Default select</label>
+        <select class="form-select" id="defaultSelect">
+          <option selected>Open this select</option>
+          <option value="1">Option 1</option>
+        </select>
+      </div>
+      <div class="mb-medium">
+        <label for="defaultSelect" class="form-label">Default disabled</label>
+        <select class="form-select" id="defaultDisabled" disabled>
+          <option selected>Disabled select</option>
+          <option value="1">Option 1</option>
+        </select>
+      </div>
+      <div class="mb-medium">
+        <div class="form-option">
+          <input class="option-input" type="checkbox" id="defaultCheck">
+          <label class="option-label" for="defaultCheck">
+            Default checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <h5>Alternate Style</h5>
+      <div class="mb-medium">
+        <label for="alternateInput" class="form-label">Alternate input</label>
+        <input type="text" class="form-control form-alternate" id="alternateInput" placeholder="Alternate styling">
+      </div>
+      <div class="mb-medium">
+        <label for="alternateSelect" class="form-label">Alternate select</label>
+        <select class="form-select form-alternate" id="alternateSelect">
+          <option selected>Open this select</option>
+          <option value="1">Option 1</option>
+        </select>
+      </div>
+      <div class="mb-medium">
+        <label for="alternateDisabled" class="form-label">Alternate disabled</label>
+        <select class="form-select form-alternate" id="alternateDisabled" disabled>
+          <option selected>Disabled select</option>
+          <option value="1">Option 1</option>
+        </select>
+      </div>
+      <div class="mb-medium">
+        <div class="form-option form-alternate">
+          <input class="option-input" type="checkbox" id="alternateCheck">
+          <label class="option-label" for="alternateCheck">
+            Alternate checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+<Code lang="html" code={`<div class="row g-xlarge">
+    <div class="col">
+      <h5>Default Style</h5>
+      ...
+    </div>
+
+    <div class="col">
+      <h5>Alternate Style</h5>
+      <div class="mb-medium">
+        <label for="alternateInput" class="form-label">Alternate input</label>
+        <input type="text" class="form-control form-alternate" id="alternateInput" placeholder="Alternate styling">
+      </div>
+      <div class="mb-medium">
+        <label for="alternateSelect" class="form-label">Alternate select</label>
+        <select class="form-select form-alternate" id="alternateSelect">
+          <option selected>Open this select</option>
+          <option value="1">Option 1</option>
+        </select>
+      </div>
+      <div class="mb-medium">
+        <label for="alternateDisabled" class="form-label">Alternate disabled</label>
+        <select class="form-select form-alternate" id="alternateDisabled" disabled>
+          <option selected>Disabled select</option>
+          <option value="1">Option 1</option>
+        </select>
+      </div>
+      <div class="mb-medium">
+        <div class="form-option form-alternate">
+          <input class="option-input" type="checkbox" id="alternateCheck">
+          <label class="option-label" for="alternateCheck">
+            Alternate checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+## Container Elements
+
+Apply the `.form-alternate` class to various container elements to automatically style all descendant form elements with the alternate styling.
+
+### Form Element
+
+Adding the `.form-alternate` class to the `<form>` will affect all form controls within it.
+
+<Example code={`<form class="form-alternate">
+    <div class="mb-medium">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-medium">
+      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="button primary">Submit</button>
+  </form>`} />
+
+### Input Groups
+
+Input groups can also be styledby applying the `.form-alternate` class to the `.input-group` container.
+
+<Example code={`<div class="row g-xlarge">
+    <div class="col">
+      <label for="default-input-group" class="form-label">Default input group</label>
+      <div class="input-group mb-medium">
+        <span class="input-addon">@</span>
+        <input type="text" class="form-control" id="default-input-group" placeholder="Username">
+      </div>
+    </div>
+
+    <div class="col">
+      <label for="alternate-input-group" class="form-label">Alternate input group</label>
+      <div class="input-group mb-medium form-alternate">
+        <span class="input-addon">@</span>
+        <input type="text" class="form-control" id="alternate-input-group" placeholder="Username">
+      </div>
+    </div>
+  </div>
+  `} />
+
+### Selective Container
+
+You can apply `.form-alternate` to any container element to style specific sections of your form.
+
+<Example code={`<form>
+    <div class="form-default row g-xlarge">
+      <div class="mb-medium col-medium-6">
+        <label for="firstName" class="form-label">First name</label>
+        <input type="text" class="form-control" id="firstName">
+      </div>
+      <div class="mb-medium col-medium-6">
+        <label for="lastName" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="lastName">
+      </div>
+    </div>
+    <!-- Alternate section -->
+    <div class="form-alternate row g-xlarge">
+      <div class="mb-medium col-medium-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="mb-medium col-medium-6">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address">
+      </div>
+    </div>
+    <button type="submit" class="button primary">Submit</button>
+  </form>`} />
+
+## Validation states
+
+Apply the `.form-alternate` class to the parent wrapper element to style both form controls and their validation feedback messages with the alternate appearance.
+
+<Example showMarkup={false} code={`<div class="row g-xlarge form-alternate">
+    <div class="col-medium-6 form-default">
+      <h5>Default Validation</h5>
+      <div class="mb-medium">
+        <label for="validDefaultInput" class="form-label">Valid input</label>
+        <input type="text" class="form-control is-valid" id="validDefaultInput" value="Mark">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-medium">
+        <label for="invalidDefaultInput" class="form-label">Invalid input</label>
+        <select type class="form-select is-invalid" id="invalidDefaultInput" required>
+          <option>Open this select</option>
+          <option value="1">Option 1</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid input.
+        </div>
+      </div>
+      <div class="mb-medium">
+        <div class="form-option form-option-inline">
+          <input class="option-input is-valid" type="checkbox" id="validDefaultCheck">
+          <label class="option-label" for="validDefaultCheck">
+            Default valid
+          </label>
+        </div>
+        <div class="form-option form-option-inline">
+          <input class="option-input is-invalid" type="checkbox" id="invalidDefaultCheck">
+          <label class="option-label" for="invalidDefaultCheck">
+            Default invalid
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- Alternate validation -->
+    <div class="col-medium-6 form-alternate">
+      <h5>Alternate Validation</h5>
+      <div class="mb-medium">
+        <label for="validAlternateInput" class="form-label">Valid input</label>
+        <input type="text" class="form-control is-valid" id="validAlternateInput" value="Otto">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-medium">
+        <label for="invalidAlternateInput" class="form-label">Invalid input</label>
+        <select type class="form-select is-invalid" id="invalidAlternateInput" required>
+          <option>Open this select</option>
+          <option value="1">Option 1</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid input.
+        </div>
+      </div>
+      <div class="mb-medium">
+        <div class="form-option form-option-inline">
+          <input class="option-input is-valid" type="checkbox" id="validAlternateCheck">
+          <label class="option-label" for="validAlternateCheck">
+            Alternate valid
+          </label>
+        </div>
+        <div class="form-option form-option-inline">
+          <input class="option-input is-invalid" type="checkbox" id="invalidAlternateCheck">
+          <label class="option-label" for="invalidAlternateCheck">
+            Alternate invalid
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+<Code lang="html" code={`<div class="row g-xlarge">
+    <div class="col-medium-6">
+      <h5>Default Validation</h5>
+      ...
+    </div>
+    <!-- Alternate validation -->
+    <div class="col-medium-6">
+      <h5>Alternate Validation</h5>
+      <div class="form-alternate mb-medium">
+        <label for="validAlternateInput" class="form-label">Valid input</label>
+        <input type="text" class="form-control is-valid" id="validAlternateInput" value="Otto">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="form-alternate mb-medium">
+        <label for="invalidAlternateInput" class="form-label">Invalid input</label>
+        <select type class="form-select is-invalid" id="invalidAlternateInput" required>
+          <option>Open this select</option>
+          <option value="1">Option 1</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid input.
+        </div>
+      </div>
+      <div class="form-alternate mb-medium">
+        <div class="form-option form-option-inline">
+          <input class="option-input is-valid" type="checkbox" id="validAlternateCheck">
+          <label class="option-label" for="validAlternateCheck">
+            Alternate valid
+          </label>
+        </div>
+        <div class="form-alternate form-option form-option-inline">
+          <input class="option-input is-invalid" type="checkbox" id="invalidAlternateCheck">
+          <label class="option-label" for="invalidAlternateCheck">
+            Alternate invalid
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+## Floating Labels
+
+Floating labels work with alternate form styling as well. Simply add the `.form-alternate` class to the form or to the parent `.form-floating` container. This provides a consistent alternate appearance while maintaining the floating behavior.
+
+<Example showMarkup={false} code={`<div class="row g-xlarge">
+    <div class="col-medium-6">
+      <h5>Default Floating Labels</h5>
+      <div class="form-floating mb-medium">
+        <input type="email" class="form-control" id="floatingDefaultInput" placeholder="name@example.com">
+        <label for="floatingDefaultInput">Email address</label>
+      </div>
+      <div class="form-floating mb-medium">
+        <select class="form-select" id="floatingDefaultSelect">
+          <option selected>Select an option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <label for="floatingDefaultSelect">Select menu</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingDefaultTextarea" style="height: 100px"></textarea>
+        <label for="floatingDefaultTextarea">Comments</label>
+      </div>
+    </div>
+
+    <div class="col-medium-6">
+      <h5>Alternate Floating Labels</h5>
+      <div class="form-floating form-alternate mb-medium">
+        <input type="email" class="form-control" id="floatingAlternateInput" placeholder="name@example.com">
+        <label for="floatingAlternateInput">Email address</label>
+      </div>
+      <div class="form-floating form-alternate mb-medium">
+        <select class="form-select" id="floatingAlternateSelect">
+          <option selected>Select an option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <label for="floatingAlternateSelect">Select menu</label>
+      </div>
+      <div class="form-floating form-alternate">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingAlternateTextarea" style="height: 100px"></textarea>
+        <label for="floatingAlternateTextarea">Comments</label>
+      </div>
+    </div>
+  </div>`} />
+
+<Code lang="html" code={`<div class="row g-xlarge">
+    <div class="col-medium-6">
+      <h5>Default Floating Labels</h5>
+      ...
+    </div>
+
+    <div class="col-medium-6">
+      <h5>Alternate Floating Labels</h5>
+      <div class="form-floating form-alternate mb-medium">
+        <input type="email" class="form-control" id="floatingAlternateInput" placeholder="name@example.com">
+        <label for="floatingAlternateInput">Email address</label>
+      </div>
+      <div class="form-floating form-alternate mb-medium">
+        <select class="form-select" id="floatingAlternateSelect">
+          <option selected>Select an option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <label for="floatingAlternateSelect">Select menu</label>
+      </div>
+      <div class="form-floating form-alternate">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingAlternateTextarea" style="height: 100px"></textarea>
+        <label for="floatingAlternateTextarea">Comments</label>
+      </div>
+    </div>
+  </div>`} />
+
+Validation states can also be applied to floating labels with alternate styling.
+
+<Example code={`<div class="form-alternate">
+    <div class="form-floating mb-medium">
+      <input type="email" class="form-control is-valid" id="floatingValidInput" placeholder="name@example.com" value="valid@example.com">
+      <label for="floatingValidInput">Valid input</label>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="form-floating">
+      <input type="email" class="form-control is-invalid" id="floatingInvalidInput" placeholder="name@example.com" value="invalid@">
+      <label for="floatingInvalidInput">Invalid input</label>
+      <div class="invalid-feedback">
+        Please provide a valid email.
+      </div>
+    </div>
+  </div>`} />
+
+
+## TESTING SECTION
+
+<Example code={`<div class="row g-xlarge form-alternate">
+    <div class="col form-default">
+      <select class="form-select mb-medium" data-cx-theme="light">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select mb-medium" data-cx-theme="light" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+    <div class="col">
+      <select class="form-select mb-medium" data-cx-theme="light">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select mb-medium" data-cx-theme="light" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+  </div>`} />
+
+### Color & variant on elements
+
+<Example code={`<div class="row g-xlarge">
+    <div class="col">
+      <select class="form-select form-default mb-medium" data-cx-theme="light">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default mb-medium" data-cx-theme="light" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default mb-medium" data-cx-theme="dark">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default" data-cx-theme="dark" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+    <div class="col">
+      <select class="form-select form-alternate mb-medium" data-cx-theme="light">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate mb-medium" data-cx-theme="light" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate mb-medium" data-cx-theme="dark">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate" data-cx-theme="dark" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+  </div>`} />
+
+### Light on wrappers, opposite variant on wrappers & elements.
+
+<Example code={`<div class="row g-xlarge">
+    <div class="col form-alternate" data-cx-theme="light">
+      <select class="form-select form-default mb-medium">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default mb-medium" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default mb-medium" data-cx-theme="dark">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default" data-cx-theme="dark" disabled>
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+    <div class="col form-default" data-cx-theme="light">
+      <select class="form-select form-alternate mb-medium">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate mb-medium" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate mb-medium" data-cx-theme="dark">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate" data-cx-theme="dark" disabled>
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+  </div>`} />
+
+### Dark on wrappers, opposite variant on wrappers & elements.
+
+<Example code={`<div class="row g-xlarge">
+    <div class="col form-alternate" data-cx-theme="dark">
+      <select class="form-select form-default mb-medium" data-cx-theme="light">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default mb-medium" data-cx-theme="light" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default mb-medium">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-default" disabled>
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+    <div class="col form-default" data-cx-theme="dark">
+      <select class="form-select form-alternate mb-medium" data-cx-theme="light">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate mb-medium" data-cx-theme="light" disabled>
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate mb-medium">
+        <option selected>Open this select</option>
+        <option value="1">One</option>
+      </select>
+      <select class="form-select form-alternate" disabled>
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+  </div>`} />

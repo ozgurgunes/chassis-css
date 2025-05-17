@@ -59,6 +59,8 @@
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  background-image: var(--#{$prefix}input-addon-bg-image);
+  // background-color: transparent;
 
   @extend %component, %box-padding, %form-colors;
 
@@ -91,12 +93,12 @@
   //@include border-radius();
 }
 
-.input-group.alternate > .form-control,
-.input-group.alternate > .form-select,
-.input-group.alternate > .input-addon,
-.input-group.alternate > .button {
-  @extend %form-color-alternate;
-}
+// .input-group.alternate > .form-control,
+// .input-group.alternate > .form-select,
+// .input-group.alternate > .input-addon,
+// .input-group.alternate > .button {
+//   @extend %form-color-alternate;
+// }
 
 .input-group.large > .form-control,
 .input-group.large > .form-select,

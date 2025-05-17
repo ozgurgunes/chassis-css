@@ -12,6 +12,11 @@
   appearance: none;
   background-color: transparent;
 
+  &.form-alternate,
+  .form-alternate & {
+    @extend %form-color-alternate;
+  }
+
   &:focus {
     outline: 0;
 
