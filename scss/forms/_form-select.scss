@@ -1,22 +1,22 @@
-// Select
 //
-// Replaces the browser default select with a custom one, mostly pulled from
-// https://primer.github.io/.
+// Form Select
+//
+// Apply `.form-select` to a `<select>` element to style it.
 
 .form-select {
   @extend %component, %form-input;
 
-  --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-idle-widget)};
+  --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-idle-caret-color)};
 
-  padding-right: #{calc(var(--#{$prefix}padding-x) * 2 + var(--#{$prefix}widget-size))};
-  background-image: var(--#{$prefix}widget-icon), var(--#{$prefix}feedback-icon, none);
+  padding-right: #{calc(var(--#{$prefix}padding-x) * 2 + var(--#{$prefix}caret-size))};
+  background-image: var(--#{$prefix}caret-icon), var(--#{$prefix}feedback-icon, none);
   background-repeat: no-repeat;
-  background-position: $form-select-widget-position;
-  background-size: var(--#{$prefix}widget-size);
+  background-position: $form-select-caret-position;
+  background-size: var(--#{$prefix}caret-size);
 
   &[disabled],
   &:disabled {
-    --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-disabled-widget)};
+    --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-disabled-caret-color)};
   }
 
   &[multiple],
@@ -36,10 +36,10 @@
     .form-alternate &:not(&.form-default, .form-default &),
     .form-default .form-alternate &,
     &.form-alternate {
-      --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-idle-widget)};
+      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-idle-caret-color)};
       &[disabled],
       &:disabled {
-        --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-disabled-widget)};
+        --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-disabled-caret-color)};
       }
     }
   }
@@ -47,11 +47,11 @@
 }
 
 @mixin form-select-dark() {
-  --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-idle-widget, true)};
+  --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-idle-caret-color, true)};
 
   &[disabled],
   &:disabled {
-    --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-default-disabled-widget, true)};
+    --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-disabled-caret-color, true)};
   }
 
   @if $enable-alternate-forms {
@@ -59,10 +59,10 @@
     .form-select.form-default,
     .form-default .form-select),
     &.form-alternate {
-      --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-idle-widget, true)};
+      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-idle-caret-color, true)};
       &[disabled],
       &:disabled {
-        --#{$prefix}widget-icon: #{svg-color($input-select-widget-icon, $input-alternate-disabled-widget, true)};
+        --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-disabled-caret-color, true)};
       }
     }
   }

@@ -61,10 +61,10 @@
     --#{$prefix}input-box-shadow: #{$form-feedback-valid-box-shadow};
 
     @if $enable-validation-icons {
-      --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-default-success-assist)};
+      --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-default-success-assist-color)};
       @if $enable-dark-mode {
         [data-cx-theme="dark"] &:not([data-cx-theme="dark"] [data-cx-theme="light"] &, &[data-cx-theme="light"]) {
-          --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-default-success-assist, true)};
+          --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-default-success-assist-color, true)};
         }
       }
     }
@@ -78,10 +78,10 @@
     --#{$prefix}input-box-shadow: #{$form-feedback-invalid-box-shadow};
 
     @if $enable-validation-icons {
-      --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-default-error-assist)};
+      --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-default-error-assist-color)};
       @if $enable-dark-mode {
         [data-cx-theme="dark"] &:not([data-cx-theme="dark"] [data-cx-theme="light"] &, &[data-cx-theme="light"]) {
-          --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-default-error-assist, true)};
+          --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-default-error-assist-color, true)};
         }
       }
     }
@@ -149,7 +149,7 @@
     &:not([multiple]):not([size]),
     &:not([multiple])[size="1"] {
       padding-right: $form-select-feedback-icon-padding-e;
-      background-position: $form-select-widget-position, $form-select-feedback-icon-position;
+      background-position: $form-select-caret-position, $form-select-feedback-icon-position;
       background-size: $form-feedback-icon-size;
     }
   }
@@ -175,19 +175,19 @@
     %form-input.form-alternate {
       #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:valid,
       &.#{$form-valid-class} {
-        --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-alternate-success-assist)};
+        --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-alternate-success-assist-color)};
         @if $enable-dark-mode {
           [data-cx-theme="dark"] &:not([data-cx-theme="dark"] [data-cx-theme="light"] &) {
-            --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-alternate-success-assist, true)};
+            --#{$prefix}feedback-icon: #{svg-color($input-feedback-valid-icon, $input-alternate-success-assist-color, true)};
           }
         }
       }
       #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:invalid,
       &.#{$form-invalid-class} {
-        --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-alternate-error-assist)};
+        --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-alternate-error-assist-color)};
         @if $enable-dark-mode {
           [data-cx-theme="dark"] &:not([data-cx-theme="dark"] [data-cx-theme="light"] &) {
-            --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-alternate-error-assist, true)};
+            --#{$prefix}feedback-icon: #{svg-color($input-feedback-invalid-icon, $input-alternate-error-assist-color, true)};
           }
         }
       }

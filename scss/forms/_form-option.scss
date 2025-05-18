@@ -152,7 +152,7 @@
   &[disabled],
   &:disabled {
     --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
-    --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border});
+    --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border-color});
     pointer-events: none;
     filter: none;
     // opacity: $form-option-input-disabled-opacity;
@@ -172,7 +172,7 @@
 
     &[type="checkbox"]:indeterminate {
       --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
-      --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border});
+      --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border-color});
       --#{$prefix}icon: #{$default-disabled-indeterminate-icon};
     }
 
@@ -180,7 +180,7 @@
       .form-alternate &,
       &.form-alternate {
         --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-alternate-disabled-bg-regular});
-        --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border});
+        --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border-color});
         &[type="checkbox"]:checked {
           --#{$prefix}icon: #{$alternate-disabled-check-icon};
         }
@@ -191,7 +191,7 @@
 
         &[type="checkbox"]:indeterminate {
           --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-alternate-disabled-bg-regular});
-          --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border});
+          --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border-color});
           --#{$prefix}icon: #{$alternate-disabled-indeterminate-icon};
         }
       }

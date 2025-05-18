@@ -605,12 +605,12 @@ $form-input-box-shadow:                    var(--#{$prefix}box-shadow-inset) !de
 $form-input-addon-default-fg-color:                  $input-default-idle-fg-active !default;
 $form-input-addon-default-bg-image:                linear-gradient(var(--#{$prefix}default-dim-slight), var(--#{$prefix}default-dim-slight)) !default;
 $form-input-addon-default-bg-color:                  $input-default-idle-bg-regular !default;
-$form-input-addon-default-border-color:              $input-default-idle-border !default;
+$form-input-addon-default-border-color:              $input-default-idle-border-color !default;
 
 $form-input-addon-alternate-fg-color:                  $input-alternate-idle-fg-active !default;
 $form-input-addon-alternate-bg-image:                  linear-gradient(var(--#{$prefix}alternate-dim-slight), var(--#{$prefix}alternate-dim-slight)) !default;
 $form-input-addon-alternate-bg-color:                  $input-alternate-idle-bg-regular !default;
-$form-input-addon-alternate-border-color:              $input-alternate-idle-border !default;
+$form-input-addon-alternate-border-color:              $input-alternate-idle-border-color !default;
 // scss-docs-end input-group-variables
 
 // scss-docs-start form-file-variables
@@ -630,14 +630,14 @@ $form-file-button-alternate-bg-hover:           var(--#{$prefix}alternate-bg-eve
 // $form-select-indicator:                 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
 // $form-select-indicator:                   url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='var(--#{$prefix}primary)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.3359 17.6641L3.83594 10.1641C3.44531 9.8125 3.44531 9.22656 3.83594 8.83594C4.1875 8.48438 4.77344 8.48438 5.16406 8.83594L12 15.7109L18.8359 8.875C19.1875 8.48438 19.7734 8.48438 20.1641 8.875C20.5156 9.22656 20.5156 9.8125 20.1641 10.1641L12.625 17.6641C12.2734 18.0547 11.6875 18.0547 11.3359 17.6641Z' fill='var(--#{$prefix}primary)'/%3e%3c/svg%3e") !default;
 // $form-select-indicator-color:           $neutral-base-color !default; // Since they're css variables, we can't pass a context color here.
-// $form-select-widget-size:                   1.25em !default; // In pixels because image dimensions
-$form-select-widget-padding:         #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}widget-size) + var(--#{$prefix}gap))} !default; // Extra padding for background-image
-$form-select-widget-position:               right var(--#{$prefix}padding-x) center !default;
+// $form-select-caret-size:                   1.25em !default; // In pixels because image dimensions
+$form-select-caret-padding:         #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}caret-size) + var(--#{$prefix}gap))} !default; // Extra padding for background-image
+$form-select-caret-position:               right var(--#{$prefix}padding-x) center !default;
 
 $form-feedback-icon-size:               var(--#{$prefix}icon-size) !default;
 
-$form-select-feedback-icon-position:        center right #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}gap) + var(--#{$prefix}widget-size))} !default;
-$form-select-feedback-icon-padding-e:       #{calc($form-feedback-icon-size + var(--#{$prefix}widget-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
+$form-select-feedback-icon-position:        center right #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}gap) + var(--#{$prefix}caret-size))} !default;
+$form-select-feedback-icon-padding-e:       #{calc($form-feedback-icon-size + var(--#{$prefix}caret-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
 $form-input-feedback-icon-position:              right var(--#{$prefix}padding-x) center !default;
 $form-input-feedback-icon-padding-e:              #{calc($form-feedback-icon-size + var(--#{$prefix}padding-x) + var(--#{$prefix}gap))} !default;
 $form-textarea-feedback-icon-position:              top var(--#{$prefix}padding-y) right var(--#{$prefix}padding-x) !default;
@@ -681,7 +681,7 @@ $form-option-inline-margin-end:                  1rem !default;
 
 // scss-docs-start form-switch-variables
 $form-switch-color:                     rgba($black, .25) !default;
-$form-switch-focus-fg-color:            $input-default-focus-border !default;
+$form-switch-focus-fg-color:            $input-default-focus-border-color !default;
 $form-switch-checked-fg-color:          $component-active-fg-color !default;
 
 $form-switch-width:                     2em !default;
@@ -758,14 +758,14 @@ $form-feedback-invalid-box-shadow:  0 0 $focus-ring-blur $form-input-focus-width
 // scss-docs-end form-feedback-variables
 
 // scss-docs-start form-validation-colors
-$form-valid-fg-color:               $input-default-success-assist !default;
-$form-valid-border-color:           $input-default-success-border !default;
+$form-valid-fg-color:               $input-default-success-assist-color !default;
+$form-valid-border-color:           $input-default-success-border-color !default;
 $form-valid-tooltip-fg-color:           var(--#{$prefix}success-fg-solid) !default;
 $form-valid-tooltip-bg-color:           var(--#{$prefix}success-bg-solid) !default;
 $form-invalid-tooltip-fg-color:           var(--#{$prefix}danger-fg-solid) !default;
 $form-invalid-tooltip-bg-color:           var(--#{$prefix}danger-bg-solid) !default;
-$form-invalid-fg-color:             $input-default-error-assist !default;
-$form-invalid-border-color:         $input-default-error-border !default;
+$form-invalid-fg-color:             $input-default-error-assist-color !default;
+$form-invalid-border-color:         $input-default-error-border-color !default;
 // scss-docs-end form-validation-colors
 
 // scss-docs-start form-validation-states
