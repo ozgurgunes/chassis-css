@@ -6,7 +6,7 @@
   > .form-control.plaintext,
   > .form-select {
     // --#{$prefix}fg-color: #{$input-default-idle-fg-active};
-    --#{$prefix}input-bg-color: var(--#{$prefix}input-idle-bg-floating);
+    --#{$prefix}bg-color: var(--#{$prefix}idle-bg-floating);
     --#{$prefix}border-width: 0;
     height: $form-floating-height;
     min-height: $form-floating-height;
@@ -17,20 +17,20 @@
     // box-shadow: none;
 
     &:focus {
-      --#{$prefix}input-bg-color: var(--#{$prefix}input-focus-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}focus-bg-floating);
     }
 
     &[disabled],
     &:disabled {
-      --#{$prefix}input-bg-color: var(--#{$prefix}input-disabled-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-floating);
     }
 
     &:valid {
-      --#{$prefix}input-bg-color: var(--#{$prefix}input-success-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}success-bg-floating);
     }
 
     &:invalid {
-      --#{$prefix}input-bg-color: var(--#{$prefix}input-error-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}error-bg-floating);
     }
   }
 
@@ -43,7 +43,7 @@
     height: 100%; // allow textareas
     padding: $form-floating-padding-y $form-floating-padding-x;
     overflow: hidden;
-    color: var(--#{$prefix}label-color, var(--#{$prefix}input-idle-fg-inactive));
+    color: var(--#{$prefix}label-color, var(--#{$prefix}idle-fg-inactive));
     text-align: start;
     text-overflow: ellipsis;
     white-space: nowrap;

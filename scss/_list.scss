@@ -99,7 +99,8 @@
   @extend %interactive;
   &.active,
   &.active:hover {
-    @extend %active-component;
+    @extend .primary, %context, %solid-context;
+    z-index: 2; // Place active items above their siblings for proper border styling
   }
 
 }

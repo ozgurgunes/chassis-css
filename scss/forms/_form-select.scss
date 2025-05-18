@@ -1,87 +1,79 @@
 //
 // Form Select
 //
-// Apply `.form-select` to a `<select>` element to style it.
+// A themeable, accessible custom styling for select form elements.
+// Provides consistent appearance across browsers while maintaining accessibility.
+// Supports default and alternate styling variants, disabled states, and dark mode.
+//
+// Extends the %form-input placeholder to share common styling with other form controls
+// while adding select-specific features like dropdown indicators (carets).
+//
 
 .form-select {
-  @extend %component, %form-input;
+  // Uses %form-input placeholder to share common form styles with .form-control,
+  // avoiding duplicate property assignments across different form elements
+  // and ensuring consistent appearance between different input types.
+  @extend %form-input;
 
-  --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-idle-caret-color)};
+  // Define the dropdown indicator (caret) using SVG with theme-aware coloring.
+  @include form-select-caret("default", "idle");
 
+  // Adjust padding to accommodate the caret and potential validation icons.
   padding-right: #{calc(var(--#{$prefix}padding-x) * 2 + var(--#{$prefix}caret-size))};
   background-image: var(--#{$prefix}caret-icon), var(--#{$prefix}feedback-icon, none);
   background-repeat: no-repeat;
   background-position: $form-select-caret-position;
   background-size: var(--#{$prefix}caret-size);
 
+  // Disabled state styling - changes caret color to indicate disabled status.
   &[disabled],
   &:disabled {
-    --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-disabled-caret-color)};
+    @include form-select-caret("default", "disabled");
   }
 
+  // Remove caret for multi-select or size-specific selects
+  // since these don't use the standard dropdown UI.
   &[multiple],
   &[size]:not([size="1"]) {
     padding-right: var(--#{$prefix}padding-x);
     background-image: none;
   }
 
-  // Remove outline from select box in FF
+  // Firefox-specific fix to prevent focus ring from appearing inside the select
+  // Uses text-shadow to maintain text color visibility while making the text itself transparent.
   &:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 var(--#{$prefix}fg-color);
   }
 
+  // Dark mode styling for default variant
+  @if $enable-dark-mode {
+    @include form-select-dark("default");
+  }
+
   @if $enable-alternate-forms {
-    // .form-alternate &,
+    // Alternate styling variant
+    // Complex selector to handle various nesting scenarios while respecting specificity.
+    // - Direct application of .form-alternate class
+    // - Parent element with .form-alternate
+    // - Ensuring .form-default can override .form-alternate when needed
     .form-alternate &:not(&.form-default, .form-default &),
-    .form-default .form-alternate &,
+    // .form-default .form-alternate &,
     &.form-alternate {
-      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-idle-caret-color)};
+      // Use alternate theme colors for the caret icon
+      @include form-select-caret("alternate", "idle");
+
+      // Handle disabled state in alternate styling
       &[disabled],
       &:disabled {
-        --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-disabled-caret-color)};
+        @include form-select-caret("alternate", "disabled");
       }
-    }
-  }
 
-}
-
-@mixin form-select-dark() {
-  --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-idle-caret-color, true)};
-
-  &[disabled],
-  &:disabled {
-    --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-disabled-caret-color, true)};
-  }
-
-  @if $enable-alternate-forms {
-    &:not(
-    .form-select.form-default,
-    .form-default .form-select),
-    &.form-alternate {
-      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-idle-caret-color, true)};
-      &[disabled],
-      &:disabled {
-        --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-disabled-caret-color, true)};
-      }
-    }
-  }
-
-}
-
-@if $enable-dark-mode {
-  @include color-mode(dark) {
-    @if $color-mode-type == "media-query" {
-      .form-select {
-        @include form-select-dark();
-      }
-    } @else {
-      .form-select:not(
-      .form-select[data-cx-theme="light"],
-      [data-cx-theme="dark"] [data-cx-theme="light"] .form-select),
-      &.form-select {
-        @include form-select-dark();
+      // Dark mode styling for alternate variant
+      @if $enable-dark-mode {
+        @include form-select-dark("alternate");
       }
     }
   }
 }
+

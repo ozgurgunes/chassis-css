@@ -5,7 +5,7 @@
 .form-text {
   @extend %form-colors;
   margin-top: $form-field-assist-margin-t;
-  color: var(--#{$prefix}input-idle-assist-color);
+  color: var(--#{$prefix}idle-assist-color);
   @include font();
   .form-option > & {
     margin-top: $form-option-assist-margin-t;

@@ -21,8 +21,9 @@
 // Components
 @import "backdrop";
 @import "caret";
-@import "lists";
+@import "component";
 @import "forms";
+@import "lists";
 // @import "table-variants";
 
 // Skins
@@ -42,41 +43,3 @@
 @import "button";
 // @import "context";
 
-// scss-docs-start last-child-mixin
-@mixin last-child($tag: "> p") {
-  #{$tag}:last-child {
-    @extend .last-child;
-  }
-}
-// scss-docs-end color-mode-mixin
-
-// Assign colors according to component css vars.
-// scss-docs-start colors-mixin
-@mixin colors($comp: null) {
-  color: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}fg-color);
-  background-color: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}bg-color);
-  border-color: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-color);
-  // fill: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}icon-color);
-}
-// scss-docs-end colors-mixin
-
-// Remove border width from padding to match design tools' box-model
-// scss-docs-start box-padding-mixin
-@mixin padding($comp: null) {
-  padding: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x);
-}
-// scss-docs-end box-padding-mixin
-
-// Remove border width from padding to match design tools' box-model
-// scss-docs-start box-padding-mixin
-@mixin box-padding($comp: null) {
-  padding: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) - var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width))} #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x) - var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width))};
-}
-// scss-docs-end box-padding-mixin
-
-// Remove border width from padding to match design tools' box-model
-// scss-docs-start border-mixin
-@mixin border($comp: null) {
-  border: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width, 0) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-style, solid) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-color, transparent);
-}
-// scss-docs-end border-mixin

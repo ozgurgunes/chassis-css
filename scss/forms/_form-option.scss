@@ -63,9 +63,9 @@
   $primary-idle-radio-icon: svg-color($form-option-input-radio-icon, $form-option-input-checked-fg-color);
   $primary-idle-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $form-option-input-checked-fg-color);
 
-  // --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
-  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}input-idle-bg-regular));
-  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}input-idle-border-color));
+  // --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}idle-fg-active));
+  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}idle-bg-regular));
+  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}idle-border-color));
   --#{$prefix}border-width: var(--#{$prefix}input-border-width, var(--#{$prefix}option-input-border-width, #{$form-option-input-border-width}));
   --#{$prefix}border-radius: var(--#{$prefix}input-border-radius, var(--#{$prefix}option-input-border-width, #{$form-option-input-checkbox-border-radius}));
 
@@ -108,8 +108,8 @@
   // }
 
   &:focus {
-    --#{$prefix}input-border-color: var(--#{$prefix}input-focus-border-color);
-    --#{$prefix}input-box-shadow: var(--#{$prefix}input-focus-box-shadow);
+    --#{$prefix}input-border-color: var(--#{$prefix}focus-border-color);
+    --#{$prefix}input-box-shadow: var(--#{$prefix}focus-box-shadow);
 
     outline: 0;
     @if $enable-component-shadows {
@@ -140,8 +140,8 @@
   }
 
   // &:disabled {
-  //   --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-idle-fg-active});
-  //   --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-idle-background});
+  //   --#{$prefix}fg-color: var(--#{$prefix}disabled-fg-color, #{$input-default-idle-fg-active});
+  //   --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-default-idle-background});
   //   pointer-events: none;
   //   filter: none;
   //   opacity: $form-option-input-disabled-opacity;
@@ -151,13 +151,13 @@
   // See: https://github.com/twbs/bootstrap/issues/28247
   &[disabled],
   &:disabled {
-    --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
-    --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border-color});
+    --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-default-disabled-bg-regular});
+    --#{$prefix}border-color: var(--#{$prefix}disabled-border-color, #{$input-default-disabled-border-color});
     pointer-events: none;
     filter: none;
     // opacity: $form-option-input-disabled-opacity;
     ~ .option-label {
-      // --#{$prefix}fg-color: var(--#{$prefix}input-disabled-fg-color, #{$input-default-disabled-fg-active});
+      // --#{$prefix}fg-color: var(--#{$prefix}disabled-fg-color, #{$input-default-disabled-fg-active});
       cursor: default;
       opacity: $form-option-label-disabled-opacity;
     }
@@ -171,16 +171,16 @@
     }
 
     &[type="checkbox"]:indeterminate {
-      --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-default-disabled-bg-regular});
-      --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-default-disabled-border-color});
+      --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-default-disabled-bg-regular});
+      --#{$prefix}border-color: var(--#{$prefix}disabled-border-color, #{$input-default-disabled-border-color});
       --#{$prefix}icon: #{$default-disabled-indeterminate-icon};
     }
 
     @if $enable-alternate-forms {
       .form-alternate &,
       &.form-alternate {
-        --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-alternate-disabled-bg-regular});
-        --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border-color});
+        --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-alternate-disabled-bg-regular});
+        --#{$prefix}border-color: var(--#{$prefix}disabled-border-color, #{$input-alternate-disabled-border-color});
         &[type="checkbox"]:checked {
           --#{$prefix}icon: #{$alternate-disabled-check-icon};
         }
@@ -190,8 +190,8 @@
         }
 
         &[type="checkbox"]:indeterminate {
-          --#{$prefix}bg-color: var(--#{$prefix}input-disabled-bg-color, #{$input-alternate-disabled-bg-regular});
-          --#{$prefix}border-color: var(--#{$prefix}input-disabled-border-color, #{$input-alternate-disabled-border-color});
+          --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-alternate-disabled-bg-regular});
+          --#{$prefix}border-color: var(--#{$prefix}disabled-border-color, #{$input-alternate-disabled-border-color});
           --#{$prefix}icon: #{$alternate-disabled-indeterminate-icon};
         }
       }

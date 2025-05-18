@@ -1,7 +1,92 @@
-// This mixin uses an `if()` technique to be compatible with Dart Sass
-// See https://github.com/sass/sass/issues/1873#issuecomment-152293725 for more details
+//
+// Form Mixins
+//
+// This file contains mixins specifically for handling form-related styling,
+// particularly for validation states and other form functionality.
+// These mixins simplify complex selector generation and ensure consistent
+// styling across different form elements.
+//
+
+// scss-docs-start form-select-mixins
+// Utility mixin for setting form select caret icon
+// Makes the code more DRY by centralizing caret icon styling logic.
+//
+// @param {string} $variant - The variant of the select element ("default" or "alternate")
+// @param {string} $state - The state of the select element ("idle" or "disabled")
+// @param {boolean} $dark - Whether to use dark mode colors (default: false)
+@mixin form-select-caret($variant, $state, $dark: false) {
+  @if $variant == "default" {
+    @if $state == "idle" {
+      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-idle-caret-color, $dark)};
+    } @else if $state == "disabled" {
+      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-disabled-caret-color, $dark)};
+    }
+  } @else if $variant == "alternate" {
+    @if $state == "idle" {
+      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-idle-caret-color, $dark)};
+    } @else if $state == "disabled" {
+      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-disabled-caret-color, $dark)};
+    }
+  }
+}
+
+// Mixin for dark mode styling of default form select elements
+// Applies dark mode-specific colors to the default variant caret icon.
+@mixin form-select-default-dark() {
+  @include form-select-caret("default", "idle", true);
+
+  &[disabled],
+  &:disabled {
+    @include form-select-caret("default", "disabled", true);
+  }
+}
+
+// Mixin for dark mode styling of alternate form select elements
+// Applies dark mode-specific colors to the alternate variant caret icon.
+@mixin form-select-alternate-dark() {
+  @include form-select-caret("alternate", "idle", true);
+
+  &[disabled],
+  &:disabled {
+    @include form-select-caret("alternate", "disabled", true);
+  }
+}
+
+// Mixin for applying dark mode styling based on the color mode type
+// This centralizes the logic for both media query and class-based dark mode.
+@mixin form-select-dark($variant: "default") {
+  @if $color-mode-type == "media-query" {
+    // For media query-based dark mode
+    @media (prefers-color-scheme: dark) {
+      @if $variant == "default" {
+        @include form-select-default-dark();
+      } @else if $variant == "alternate" {
+        @include form-select-alternate-dark();
+      }
+    }
+  } @else {
+    // For class-based dark mode (data attribute)
+    [data-cx-theme="dark"] &:not(&[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] &),
+    &[data-cx-theme="dark"] {
+      @if $variant == "default" {
+        @include form-select-default-dark();
+      } @else if $variant == "alternate" {
+        @include form-select-alternate-dark();
+      }
+    }
+  }
+}
+// scss-docs-end form-select-mixins
 
 // scss-docs-start form-validation-mixins
+// Mixin for generating form validation state selectors
+//
+// Generates the appropriate selectors for form validation states,
+// supporting both native validation (:valid/:invalid) and class-based validation
+// (.is-valid/.is-invalid). Handles the complexity of nesting and parent selectors.
+//
+// @param {string} $element - The form element selector to apply validation styling to
+// @content - The styles to apply to elements in validation states
 @mixin form-validation-icons-selector($element) {
   #{$element} {
     #{if($form-validated-class, ".#{$form-validated-class} ", "")}#{if(&, "&", "")}:valid,
@@ -12,11 +97,35 @@
     }
   }
 }
-// @mixin form-option-icon($icon) {
-//   @if $enable-component-gradients {
-//     --#{$prefix}icon: #{$icon}, var(--#{$prefix}bg-gradient);
-//   } @else {
-//     --#{$prefix}icon: #{$icon};
-//   }
-// }
+
+// Mixin for applying dark mode styling to form validation icons.
+// This centralizes the logic for both media query and class-based dark mode.
+//
+// @param {string} $variant - The variant of the form ("default" or "alternate")
+// @param {string} $state - The validation state ("valid" or "invalid")
+@mixin form-validation-dark($variant: "default", $state: "valid") {
+  // Select the appropriate color variable based on variant and state
+  $icon: if($state == "valid", $input-feedback-valid-icon, $input-feedback-invalid-icon);
+  $color: if(
+    $state == "valid",
+    if($variant == "default", $input-default-success-assist-color, $input-alternate-success-assist-color),
+    if($variant == "default", $input-default-error-assist-color, $input-alternate-error-assist-color)
+  );
+
+  // Set the icon with dark mode colors
+  $dark-icon: svg-color($icon, $color, true);
+
+  @if $color-mode-type == "media-query" {
+    // For media query-based dark mode
+    @media (prefers-color-scheme: dark) {
+      --#{$prefix}feedback-icon: #{$dark-icon};
+    }
+  } @else {
+    // For class-based dark mode (data attribute)
+    [data-cx-theme="dark"] &:not(&[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] &),
+    &[data-cx-theme="dark"] {
+      --#{$prefix}feedback-icon: #{$dark-icon};
+    }
+  }
+}
 // scss-docs-end form-validation-mixins

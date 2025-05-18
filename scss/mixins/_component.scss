@@ -1,0 +1,80 @@
+//
+// Component Mixins
+//
+// A collection of utility mixins for consistent component styling across Chassis CSS.
+// These mixins help maintain consistent theming, spacing, and borders by using CSS
+// custom properties with optional component namespacing.
+//
+
+// scss-docs-start colors-mixin
+// Applies standard color properties using CSS custom properties.
+//
+// @param {string} $comp - Optional component namespace for CSS variables.
+//                         When provided, variables will be prefixed with "$comp-".
+//
+// Uses CSS variables for text color, background color, and border color,
+// enabling consistent theming across light and dark modes.
+@mixin colors($comp: null) {
+  color: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}fg-color);
+  background-color: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}bg-color);
+  border-color: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-color);
+  // fill: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}icon-color);
+}
+// scss-docs-end colors-mixin
+
+// scss-docs-start box-padding-mixin
+// Applies standard padding using CSS custom properties.
+//
+// @param {string} $comp - Optional component namespace for CSS variables.
+//                         When provided, variables will be prefixed with "$comp-".
+//
+// Applies vertical (padding-y) and horizontal (padding-x) padding values
+// defined in CSS custom properties.
+@mixin padding($comp: null) {
+  padding: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x);
+}
+// scss-docs-end box-padding-mixin
+
+// scss-docs-start box-padding-mixin
+// Applies adjusted padding that accounts for border width.
+//
+// @param {string} $comp - Optional component namespace for CSS variables.
+//                         When provided, variables will be prefixed with "$comp-".
+//
+// Subtracts border width from padding to achieve the exact visual padding
+// specified in design tools, maintaining the same apparent padding regardless
+// of border width. This ensures the content box precisely matches design specs.
+@mixin box-padding($comp: null) {
+  padding: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) - var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width))} #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x) - var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width))};
+}
+// scss-docs-end box-padding-mixin
+
+// scss-docs-start border-mixin
+// Applies consistent border styling using CSS custom properties.
+//
+// @param {string} $comp - Optional component namespace for CSS variables.
+//                         When provided, variables will be prefixed with "$comp-".
+//
+// Creates a border with width, style, and color from CSS variables.
+// Provides fallback values (0, solid, transparent) if the variables aren't defined.
+// This ensures elements maintain appropriate box model even without defined borders.
+@mixin border($comp: null) {
+  border: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width, 0) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-style, solid) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-color, transparent);
+}
+// scss-docs-end border-mixin
+
+// scss-docs-start last-child-mixin
+// Applies .last-child styling to the last child element of a specific type.
+//
+// @param {string} $tag - CSS selector for the target child elements.
+//                       Defaults to "> p" (direct paragraph children).
+//
+// Useful for managing spacing and margins of final elements within components,
+// ensuring consistent bottom margins/padding across different component types.
+@mixin last-child($tag: "> p") {
+  #{$tag}:last-child {
+    @extend .last-child;
+  }
+}
+// scss-docs-end last-child-mixin
+

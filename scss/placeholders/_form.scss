@@ -1,35 +1,35 @@
 %form-color-default {
-  --#{$prefix}input-idle-bg-regular: #{$input-default-idle-bg-regular};
-  --#{$prefix}input-idle-fg-active: #{$input-default-idle-fg-active};
-  --#{$prefix}input-idle-fg-inactive: #{$input-default-idle-fg-inactive};
-  --#{$prefix}input-idle-border-color: #{$input-default-idle-border-color};
-  --#{$prefix}input-idle-assist-color: #{$input-default-idle-assist-color};
-  --#{$prefix}input-focus-bg-regular: #{$input-default-focus-bg-regular};
-  --#{$prefix}input-focus-fg-active: #{$input-default-focus-fg-active};
-  --#{$prefix}input-focus-fg-inactive: #{$input-default-focus-fg-inactive};
-  --#{$prefix}input-focus-border-color: #{$input-default-focus-border-color};
-  --#{$prefix}input-focus-assist-color: #{$input-default-focus-assist-color};
-  --#{$prefix}input-disabled-bg-regular: #{$input-default-disabled-bg-regular};
-  --#{$prefix}input-disabled-fg-active: #{$input-default-disabled-fg-active};
-  --#{$prefix}input-disabled-fg-inactive: #{$input-default-disabled-fg-inactive};
-  --#{$prefix}input-disabled-border-color: #{$input-default-disabled-border-color};
-  --#{$prefix}input-disabled-assist-color: #{$input-default-disabled-assist-color};
-  --#{$prefix}input-error-bg-regular: #{$input-default-error-bg-regular};
-  --#{$prefix}input-error-fg-active: #{$input-default-error-fg-active};
-  --#{$prefix}input-error-fg-inactive: #{$input-default-error-fg-inactive};
-  --#{$prefix}input-error-border-color: #{$input-default-error-border-color};
-  --#{$prefix}input-error-assist-color: #{$input-default-error-assist-color};
-  --#{$prefix}input-success-bg-regular: #{$input-default-success-bg-regular};
-  --#{$prefix}input-success-fg-active: #{$input-default-success-fg-active};
-  --#{$prefix}input-success-fg-inactive: #{$input-default-success-fg-inactive};
-  --#{$prefix}input-success-border-color: #{$input-default-success-border-color};
-  --#{$prefix}input-success-assist-color: #{$input-default-success-assist-color};
+  --#{$prefix}idle-bg-regular: #{$input-default-idle-bg-regular};
+  --#{$prefix}idle-fg-active: #{$input-default-idle-fg-active};
+  --#{$prefix}idle-fg-inactive: #{$input-default-idle-fg-inactive};
+  --#{$prefix}idle-border-color: #{$input-default-idle-border-color};
+  --#{$prefix}idle-assist-color: #{$input-default-idle-assist-color};
+  --#{$prefix}focus-bg-regular: #{$input-default-focus-bg-regular};
+  --#{$prefix}focus-fg-active: #{$input-default-focus-fg-active};
+  --#{$prefix}focus-fg-inactive: #{$input-default-focus-fg-inactive};
+  --#{$prefix}focus-border-color: #{$input-default-focus-border-color};
+  --#{$prefix}focus-assist-color: #{$input-default-focus-assist-color};
+  --#{$prefix}disabled-bg-regular: #{$input-default-disabled-bg-regular};
+  --#{$prefix}disabled-fg-active: #{$input-default-disabled-fg-active};
+  --#{$prefix}disabled-fg-inactive: #{$input-default-disabled-fg-inactive};
+  --#{$prefix}disabled-border-color: #{$input-default-disabled-border-color};
+  --#{$prefix}disabled-assist-color: #{$input-default-disabled-assist-color};
+  --#{$prefix}error-bg-regular: #{$input-default-error-bg-regular};
+  --#{$prefix}error-fg-active: #{$input-default-error-fg-active};
+  --#{$prefix}error-fg-inactive: #{$input-default-error-fg-inactive};
+  --#{$prefix}error-border-color: #{$input-default-error-border-color};
+  --#{$prefix}error-assist-color: #{$input-default-error-assist-color};
+  --#{$prefix}success-bg-regular: #{$input-default-success-bg-regular};
+  --#{$prefix}success-fg-active: #{$input-default-success-fg-active};
+  --#{$prefix}success-fg-inactive: #{$input-default-success-fg-inactive};
+  --#{$prefix}success-border-color: #{$input-default-success-border-color};
+  --#{$prefix}success-assist-color: #{$input-default-success-assist-color};
 
-  --#{$prefix}input-idle-bg-floating: #{$input-default-idle-bg-floating};
-  --#{$prefix}input-focus-bg-floating: #{$input-default-focus-bg-floating};
-  --#{$prefix}input-disabled-bg-floating: #{$input-default-disabled-bg-floating};
-  --#{$prefix}input-error-bg-floating: #{$input-default-error-bg-floating};
-  --#{$prefix}input-success-bg-floating: #{$input-default-success-bg-floating};
+  --#{$prefix}idle-bg-floating: #{$input-default-idle-bg-floating};
+  --#{$prefix}focus-bg-floating: #{$input-default-focus-bg-floating};
+  --#{$prefix}disabled-bg-floating: #{$input-default-disabled-bg-floating};
+  --#{$prefix}error-bg-floating: #{$input-default-error-bg-floating};
+  --#{$prefix}success-bg-floating: #{$input-default-success-bg-floating};
 
   --#{$prefix}file-button-fg-color: #{$form-file-button-default-fg-color};
   --#{$prefix}file-button-bg-image: #{$form-file-button-default-bg-image};
@@ -46,41 +46,41 @@
   --#{$prefix}form-range-thumb-disabled: #{$form-range-default-thumb-disabled};
   --#{$prefix}form-range-thumb-active: #{$form-range-default-thumb-active};
 
-  --#{$prefix}input-focus-box-shadow: #{$form-input-default-focus-box-shadow};
+  --#{$prefix}focus-box-shadow: #{$form-input-default-focus-box-shadow};
 }
 
 %form-color-alternate {
-  --#{$prefix}input-idle-bg-regular: #{$input-alternate-idle-bg-regular};
-  --#{$prefix}input-idle-fg-active: #{$input-alternate-idle-fg-active};
-  --#{$prefix}input-idle-fg-inactive: #{$input-alternate-idle-fg-inactive};
-  --#{$prefix}input-idle-border-color: #{$input-alternate-idle-border-color};
-  --#{$prefix}input-idle-assist-color: #{$input-alternate-idle-assist-color};
-  --#{$prefix}input-focus-bg-regular: #{$input-alternate-focus-bg-regular};
-  --#{$prefix}input-focus-fg-active: #{$input-alternate-focus-fg-active};
-  --#{$prefix}input-focus-fg-inactive: #{$input-alternate-focus-fg-inactive};
-  --#{$prefix}input-focus-border-color: #{$input-alternate-focus-border-color};
-  --#{$prefix}input-focus-assist-color: #{$input-alternate-focus-assist-color};
-  --#{$prefix}input-disabled-bg-regular: #{$input-alternate-disabled-bg-regular};
-  --#{$prefix}input-disabled-fg-active: #{$input-alternate-disabled-fg-active};
-  --#{$prefix}input-disabled-fg-inactive: #{$input-alternate-disabled-fg-inactive};
-  --#{$prefix}input-disabled-border-color: #{$input-alternate-disabled-border-color};
-  --#{$prefix}input-disabled-assist-color: #{$input-alternate-disabled-assist-color};
-  --#{$prefix}input-error-bg-regular: #{$input-alternate-error-bg-regular};
-  --#{$prefix}input-error-fg-active: #{$input-alternate-error-fg-active};
-  --#{$prefix}input-error-fg-inactive: #{$input-alternate-error-fg-inactive};
-  --#{$prefix}input-error-border-color: #{$input-alternate-error-border-color};
-  --#{$prefix}input-error-assist-color: #{$input-alternate-error-assist-color};
-  --#{$prefix}input-success-bg-regular: #{$input-alternate-success-bg-regular};
-  --#{$prefix}input-success-fg-active: #{$input-alternate-success-fg-active};
-  --#{$prefix}input-success-fg-inactive: #{$input-alternate-success-fg-inactive};
-  --#{$prefix}input-success-border-color: #{$input-alternate-success-border-color};
-  --#{$prefix}input-success-assist-color: #{$input-alternate-success-assist-color};
+  --#{$prefix}idle-bg-regular: #{$input-alternate-idle-bg-regular};
+  --#{$prefix}idle-fg-active: #{$input-alternate-idle-fg-active};
+  --#{$prefix}idle-fg-inactive: #{$input-alternate-idle-fg-inactive};
+  --#{$prefix}idle-border-color: #{$input-alternate-idle-border-color};
+  --#{$prefix}idle-assist-color: #{$input-alternate-idle-assist-color};
+  --#{$prefix}focus-bg-regular: #{$input-alternate-focus-bg-regular};
+  --#{$prefix}focus-fg-active: #{$input-alternate-focus-fg-active};
+  --#{$prefix}focus-fg-inactive: #{$input-alternate-focus-fg-inactive};
+  --#{$prefix}focus-border-color: #{$input-alternate-focus-border-color};
+  --#{$prefix}focus-assist-color: #{$input-alternate-focus-assist-color};
+  --#{$prefix}disabled-bg-regular: #{$input-alternate-disabled-bg-regular};
+  --#{$prefix}disabled-fg-active: #{$input-alternate-disabled-fg-active};
+  --#{$prefix}disabled-fg-inactive: #{$input-alternate-disabled-fg-inactive};
+  --#{$prefix}disabled-border-color: #{$input-alternate-disabled-border-color};
+  --#{$prefix}disabled-assist-color: #{$input-alternate-disabled-assist-color};
+  --#{$prefix}error-bg-regular: #{$input-alternate-error-bg-regular};
+  --#{$prefix}error-fg-active: #{$input-alternate-error-fg-active};
+  --#{$prefix}error-fg-inactive: #{$input-alternate-error-fg-inactive};
+  --#{$prefix}error-border-color: #{$input-alternate-error-border-color};
+  --#{$prefix}error-assist-color: #{$input-alternate-error-assist-color};
+  --#{$prefix}success-bg-regular: #{$input-alternate-success-bg-regular};
+  --#{$prefix}success-fg-active: #{$input-alternate-success-fg-active};
+  --#{$prefix}success-fg-inactive: #{$input-alternate-success-fg-inactive};
+  --#{$prefix}success-border-color: #{$input-alternate-success-border-color};
+  --#{$prefix}success-assist-color: #{$input-alternate-success-assist-color};
 
-  --#{$prefix}input-idle-bg-floating: #{$input-alternate-idle-bg-floating};
-  --#{$prefix}input-focus-bg-floating: #{$input-alternate-focus-bg-floating};
-  --#{$prefix}input-disabled-bg-floating: #{$input-alternate-disabled-bg-floating};
-  --#{$prefix}input-error-bg-floating: #{$input-alternate-error-bg-floating};
-  --#{$prefix}input-success-bg-floating: #{$input-alternate-success-bg-floating};
+  --#{$prefix}idle-bg-floating: #{$input-alternate-idle-bg-floating};
+  --#{$prefix}focus-bg-floating: #{$input-alternate-focus-bg-floating};
+  --#{$prefix}disabled-bg-floating: #{$input-alternate-disabled-bg-floating};
+  --#{$prefix}error-bg-floating: #{$input-alternate-error-bg-floating};
+  --#{$prefix}success-bg-floating: #{$input-alternate-success-bg-floating};
 
   --#{$prefix}file-button-fg-color: #{$form-file-button-alternate-fg-color};
   --#{$prefix}file-button-bg-image: #{$form-file-button-alternate-bg-image};
@@ -97,7 +97,7 @@
   --#{$prefix}form-range-thumb-disabled: #{$form-range-alternate-thumb-disabled};
   --#{$prefix}form-range-thumb-active: #{$form-range-alternate-thumb-active};
 
-  --#{$prefix}input-focus-box-shadow: #{$form-input-alternate-focus-box-shadow};
+  --#{$prefix}focus-box-shadow: #{$form-input-alternate-focus-box-shadow};
 }
 
 
@@ -152,10 +152,11 @@
 }
 
 %form-input {
+  // Extend `%component` to assign the default component properties
   @extend %component, %form-colors, %form-size-medium;
-  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}input-idle-fg-active));
-  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}input-idle-bg-regular));
-  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}input-idle-border-color));
+  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}idle-fg-active));
+  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}idle-bg-regular));
+  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}idle-border-color));
   // --#{$prefix}box-shadow: var(--#{$prefix}input-box-shadow, #{$form-input-box-shadow});
 
   --#{$prefix}min-height: var(--#{$prefix}input-min-height, #{$form-input-min-height});
@@ -171,8 +172,6 @@
   @include transition($form-input-transition);
 
 
-  // scss-docs-end form-control-css-vars
-
   &.small {
     @extend %form-size-small;
   }
@@ -182,16 +181,16 @@
   }
 
   &:focus {
-    --#{$prefix}input-fg-color: var(--#{$prefix}input-focus-fg-active);
-    --#{$prefix}input-bg-color: var(--#{$prefix}input-focus-bg-regular);
-    --#{$prefix}input-border-color: var(--#{$prefix}input-focus-border-color);
-    --#{$prefix}input-box-shadow: var(--#{$prefix}input-focus-box-shadow);
+    --#{$prefix}fg-color: var(--#{$prefix}focus-fg-active);
+    --#{$prefix}bg-color: var(--#{$prefix}focus-bg-regular);
+    --#{$prefix}border-color: var(--#{$prefix}focus-border-color);
+    --#{$prefix}box-shadow: var(--#{$prefix}focus-box-shadow);
     outline: 0;
     @if $enable-component-shadows {
-      @include box-shadow($form-input-box-shadow, var(--#{$prefix}input-box-shadow));
+      @include box-shadow($form-input-box-shadow, var(--#{$prefix}box-shadow));
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: var(--#{$prefix}input-box-shadow);
+      box-shadow: var(--#{$prefix}box-shadow);
     }
   }
 
@@ -199,14 +198,14 @@
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled {
-    --#{$prefix}input-fg-color: var(--#{$prefix}input-disabled-fg-active);
-    --#{$prefix}input-bg-color: var(--#{$prefix}input-disabled-bg-regular);
-    --#{$prefix}input-border-color: var(--#{$prefix}input-disabled-border-color);
+    --#{$prefix}fg-color: var(--#{$prefix}disabled-fg-active);
+    --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-regular);
+    --#{$prefix}border-color: var(--#{$prefix}disabled-border-color);
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-    // color: var(--#{$prefix}input-disabled-fg-active);
+    // color: var(--#{$prefix}disabled-fg-active);
     opacity: 1;
     &::placeholder {
-      color: var(--#{$prefix}input-disabled-fg-inactive);
+      color: var(--#{$prefix}disabled-fg-inactive);
     }
   }
 

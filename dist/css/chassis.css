@@ -2642,9 +2642,9 @@ progress {
   display: none !important;
 }
 
-.notification, .badge, .avatar, .context, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
 .list-group > .list-item.list-action.active,
-.list-group > .list-item.list-action.active:hover {
+.list-group > .list-item.list-action.active:hover, .notification, .badge, .avatar, .context {
   --cx-base-color: var(--cx-context-base-color, var(--cx-default-base-color));
   --cx-contrast-color: var(--cx-context-contrast-color, var(--cx-default-contrast-color));
   --cx-transparent-color: var(--cx-context-transparent-color, var(--cx-default-transparent-color));
@@ -2720,8 +2720,8 @@ progress {
   --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-default-bg-press-rgb));
   --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-default-bg-disabled-rgb));
 }
-.default.notification, .default.badge, .default.avatar, .default.context, .list-group.list-action > .default.list-item.active,
-.list-group > .default.list-item.list-action.active {
+.list-group.list-action > .default.list-item.active,
+.list-group > .default.list-item.list-action.active, .default.notification, .default.badge, .default.avatar, .default.context {
   --cx-context-base-color: var(--cx-default-base-color);
   --cx-context-contrast-color: var(--cx-default-contrast-color);
   --cx-context-transparent-color: var(--cx-default-transparent-color);
@@ -2797,8 +2797,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-default-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-default-bg-disabled-rgb);
 }
-.alternate.notification, .alternate.badge, .alternate.avatar, .alternate.context, .list-group.list-action > .alternate.list-item.active,
-.list-group > .alternate.list-item.list-action.active {
+.list-group.list-action > .alternate.list-item.active,
+.list-group > .alternate.list-item.list-action.active, .alternate.notification, .alternate.badge, .alternate.avatar, .alternate.context {
   --cx-context-base-color: var(--cx-alternate-base-color);
   --cx-context-contrast-color: var(--cx-alternate-contrast-color);
   --cx-context-transparent-color: var(--cx-alternate-transparent-color);
@@ -2874,9 +2874,9 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-alternate-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-alternate-bg-disabled-rgb);
 }
-.primary.notification, .primary.badge, .primary.avatar, .primary.context, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
 .list-group > .list-item.list-action.active,
-.list-group > .list-item.list-action.active:hover {
+.list-group > .list-item.list-action.active:hover, .primary.notification, .primary.badge, .primary.avatar, .primary.context {
   --cx-context-base-color: var(--cx-primary-base-color);
   --cx-context-contrast-color: var(--cx-primary-contrast-color);
   --cx-context-transparent-color: var(--cx-primary-transparent-color);
@@ -2952,8 +2952,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-primary-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-primary-bg-disabled-rgb);
 }
-.secondary.notification, .secondary.badge, .secondary.avatar, .secondary.context, .list-group.list-action > .secondary.list-item.active,
-.list-group > .secondary.list-item.list-action.active {
+.list-group.list-action > .secondary.list-item.active,
+.list-group > .secondary.list-item.list-action.active, .secondary.notification, .secondary.badge, .secondary.avatar, .secondary.context {
   --cx-context-base-color: var(--cx-secondary-base-color);
   --cx-context-contrast-color: var(--cx-secondary-contrast-color);
   --cx-context-transparent-color: var(--cx-secondary-transparent-color);
@@ -3029,8 +3029,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-secondary-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-secondary-bg-disabled-rgb);
 }
-.neutral.notification, .neutral.badge, .neutral.avatar, .neutral.context, .list-group.list-action > .neutral.list-item.active,
-.list-group > .neutral.list-item.list-action.active {
+.list-group.list-action > .neutral.list-item.active,
+.list-group > .neutral.list-item.list-action.active, .neutral.notification, .neutral.badge, .neutral.avatar, .neutral.context {
   --cx-context-base-color: var(--cx-neutral-base-color);
   --cx-context-contrast-color: var(--cx-neutral-contrast-color);
   --cx-context-transparent-color: var(--cx-neutral-transparent-color);
@@ -3106,8 +3106,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-neutral-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-neutral-bg-disabled-rgb);
 }
-.warning.notification, .warning.badge, .warning.avatar, .warning.context, .list-group.list-action > .warning.list-item.active,
-.list-group > .warning.list-item.list-action.active {
+.list-group.list-action > .warning.list-item.active,
+.list-group > .warning.list-item.list-action.active, .warning.notification, .warning.badge, .warning.avatar, .warning.context {
   --cx-context-base-color: var(--cx-warning-base-color);
   --cx-context-contrast-color: var(--cx-warning-contrast-color);
   --cx-context-transparent-color: var(--cx-warning-transparent-color);
@@ -3183,8 +3183,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-warning-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-warning-bg-disabled-rgb);
 }
-.success.notification, .success.badge, .success.avatar, .success.context, .list-group.list-action > .success.list-item.active,
-.list-group > .success.list-item.list-action.active {
+.list-group.list-action > .success.list-item.active,
+.list-group > .success.list-item.list-action.active, .success.notification, .success.badge, .success.avatar, .success.context {
   --cx-context-base-color: var(--cx-success-base-color);
   --cx-context-contrast-color: var(--cx-success-contrast-color);
   --cx-context-transparent-color: var(--cx-success-transparent-color);
@@ -3260,8 +3260,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-success-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-success-bg-disabled-rgb);
 }
-.danger.notification, .danger.badge, .danger.avatar, .danger.context, .list-group.list-action > .danger.list-item.active,
-.list-group > .danger.list-item.list-action.active {
+.list-group.list-action > .danger.list-item.active,
+.list-group > .danger.list-item.list-action.active, .danger.notification, .danger.badge, .danger.avatar, .danger.context {
   --cx-context-base-color: var(--cx-danger-base-color);
   --cx-context-contrast-color: var(--cx-danger-contrast-color);
   --cx-context-transparent-color: var(--cx-danger-transparent-color);
@@ -3337,8 +3337,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-danger-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-danger-bg-disabled-rgb);
 }
-.info.notification, .info.badge, .info.avatar, .info.context, .list-group.list-action > .info.list-item.active,
-.list-group > .info.list-item.list-action.active {
+.list-group.list-action > .info.list-item.active,
+.list-group > .info.list-item.list-action.active, .info.notification, .info.badge, .info.avatar, .info.context {
   --cx-context-base-color: var(--cx-info-base-color);
   --cx-context-contrast-color: var(--cx-info-contrast-color);
   --cx-context-transparent-color: var(--cx-info-transparent-color);
@@ -3414,8 +3414,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-info-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-info-bg-disabled-rgb);
 }
-.black.notification, .black.badge, .black.avatar, .black.context, .list-group.list-action > .black.list-item.active,
-.list-group > .black.list-item.list-action.active {
+.list-group.list-action > .black.list-item.active,
+.list-group > .black.list-item.list-action.active, .black.notification, .black.badge, .black.avatar, .black.context {
   --cx-context-base-color: var(--cx-black-base-color);
   --cx-context-contrast-color: var(--cx-black-contrast-color);
   --cx-context-transparent-color: var(--cx-black-transparent-color);
@@ -3491,8 +3491,8 @@ progress {
   --cx-context-bg-press-rgb: var(--cx-black-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-black-bg-disabled-rgb);
 }
-.white.notification, .white.badge, .white.avatar, .white.context, .list-group.list-action > .white.list-item.active,
-.list-group > .white.list-item.list-action.active {
+.list-group.list-action > .white.list-item.active,
+.list-group > .white.list-item.list-action.active, .white.notification, .white.badge, .white.avatar, .white.context {
   --cx-context-base-color: var(--cx-white-base-color);
   --cx-context-contrast-color: var(--cx-white-contrast-color);
   --cx-context-transparent-color: var(--cx-white-transparent-color);
@@ -3569,9 +3569,9 @@ progress {
   --cx-context-bg-disabled-rgb: var(--cx-white-bg-disabled-rgb);
 }
 
-.notification, .badge, .avatar, .context, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
 .list-group > .list-item.list-action.active,
-.list-group > .list-item.list-action.active:hover {
+.list-group > .list-item.list-action.active:hover, .notification, .badge, .avatar, .context {
   --cx-fg-color: var(--cx-fg-main);
   --cx-bg-color: var(--cx-bg-main);
   --cx-border-color: var(--cx-border-subtle);
@@ -3596,9 +3596,9 @@ progress {
   --cx-visited-color-rgb: var(--cx-link-visited-rgb);
 }
 
-.notification.solid, .badge, .context.solid, .list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
 .list-group > .list-item.list-action.active,
-.list-group > .list-item.list-action.active:hover {
+.list-group > .list-item.list-action.active:hover, .notification.solid, .badge, .context.solid {
   --cx-fg-main: var(--cx-context-fg-solid);
   --cx-fg-subtle: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-fg-subtle));
   --cx-fg-slight: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-fg-slight));
@@ -3778,7 +3778,7 @@ progress {
   border: var(--cx-border-width, 0) var(--cx-border-style, solid) var(--cx-border-color, transparent);
 }
 
-.popover, .alert-window, .toast, .notification, .badge, .page-link, .breadcrumb, .card, .dropdown-menu, .chip, .button, .input-addon, .form-select, .form-control::file-selector-button, .form-control, .form-control {
+.popover, .alert-window, .toast, .notification, .badge, .page-link, .breadcrumb, .card, .dropdown-menu, .chip, .button, .input-addon, .form-control::file-selector-button, .form-select, .form-control {
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
   color: var(--cx-fg-color);
   background-color: var(--cx-bg-color);
@@ -3790,12 +3790,6 @@ progress {
 .badge, .input-addon {
   box-sizing: var(--cx-box-sizing, content-box);
   padding: calc(var(--cx-padding-y) - var(--cx-border-width)) calc(var(--cx-padding-x) - var(--cx-border-width));
-}
-
-.list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
-.list-group > .list-item.list-action.active,
-.list-group > .list-item.list-action.active:hover {
-  z-index: 2;
 }
 
 .chip, .button {
@@ -3885,8 +3879,8 @@ progress {
   --cx-bg-disabled: var(--cx-button-alternate-bg-disabled, var(--cx-alternate-bg-disabled));
   --cx-border-disabled: var(--cx-button-alternate-border-disabled, var(--cx-alternate-transparent-color));
 }
-.primary.chip, .primary.button, .list-group.list-action > .chip.list-item.active,
-.list-group > .chip.list-item.list-action.active, .list-group.list-action > .button.list-item.active,
+.primary.chip, .list-group.list-action > .chip.list-item.active,
+.list-group > .chip.list-item.list-action.active, .primary.button, .list-group.list-action > .button.list-item.active,
 .list-group > .button.list-item.list-action.active {
   --cx-fg-idle: var(--cx-button-primary-fg-idle, var(--cx-primary-fg-button));
   --cx-bg-idle: var(--cx-button-primary-bg-idle, var(--cx-primary-bg-button));
@@ -4044,8 +4038,8 @@ progress {
   --cx-border-disabled: var(--cx-button-outline-alternate-bg-disabled, var(--cx-alternate-bg-disabled));
   --cx-border-width: var(--cx-border-width-large);
 }
-.primary.chip.outline, .primary.button.outline, .list-group.list-action > .chip.outline.list-item.active,
-.list-group > .chip.outline.list-item.list-action.active, .list-group.list-action > .button.outline.list-item.active,
+.primary.chip.outline, .list-group.list-action > .chip.outline.list-item.active,
+.list-group > .chip.outline.list-item.list-action.active, .primary.button.outline, .list-group.list-action > .button.outline.list-item.active,
 .list-group > .button.outline.list-item.list-action.active {
   --cx-fg-idle: var(--cx-button-outline-primary-fg-idle, var(--cx-primary-base-color));
   --cx-bg-idle: var(--cx-button-outline-primary-bg-idle, transparent);
@@ -4210,8 +4204,8 @@ progress {
   --cx-bg-disabled: var(--cx-button-subtle-alternate-bg-disabled, var(--cx-alternate-bg-main));
   --cx-border-disabled: var(--cx-button-subtle-alternate-border-disabled, transparent);
 }
-.primary.chip.smooth, .primary.button.smooth, .list-group.list-action > .chip.smooth.list-item.active,
-.list-group > .chip.smooth.list-item.list-action.active, .list-group.list-action > .button.smooth.list-item.active,
+.primary.chip.smooth, .list-group.list-action > .chip.smooth.list-item.active,
+.list-group > .chip.smooth.list-item.list-action.active, .primary.button.smooth, .list-group.list-action > .button.smooth.list-item.active,
 .list-group > .button.smooth.list-item.list-action.active {
   --cx-fg-idle: var(--cx-button-subtle-primary-fg-idle, var(--cx-primary-fg-main));
   --cx-bg-idle: var(--cx-button-subtle-primary-bg-idle, var(--cx-primary-bg-even));
@@ -4345,36 +4339,36 @@ progress {
 .input-group > .input-addon,
 .input-group > .button, .input-addon, .form-floating > label, .form-range, .option-label, .option-input, .form-option, .form-text, .valid-feedback,
 .invalid-feedback, .form-select, .form-control {
-  --cx-input-idle-bg-regular: var(--cx-default-bg-main);
-  --cx-input-idle-fg-active: var(--cx-default-fg-main);
-  --cx-input-idle-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-input-idle-border-color: var(--cx-default-border-main);
-  --cx-input-idle-assist-color: var(--cx-default-fg-main);
-  --cx-input-focus-bg-regular: var(--cx-default-bg-main);
-  --cx-input-focus-fg-active: var(--cx-default-fg-main);
-  --cx-input-focus-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-input-focus-border-color: var(--cx-primary-icon-main);
-  --cx-input-focus-assist-color: var(--cx-primary-icon-main);
-  --cx-input-disabled-bg-regular: var(--cx-default-bg-disabled);
-  --cx-input-disabled-fg-active: var(--cx-default-fg-subtle);
-  --cx-input-disabled-fg-inactive: var(--cx-default-fg-slight);
-  --cx-input-disabled-border-color: var(--cx-default-fg-slight);
-  --cx-input-disabled-assist-color: var(--cx-default-fg-slight);
-  --cx-input-error-bg-regular: var(--cx-default-bg-main);
-  --cx-input-error-fg-active: var(--cx-default-fg-main);
-  --cx-input-error-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-input-error-border-color: var(--cx-danger-base-color);
-  --cx-input-error-assist-color: var(--cx-danger-fg-main);
-  --cx-input-success-bg-regular: var(--cx-default-bg-main);
-  --cx-input-success-fg-active: var(--cx-default-fg-main);
-  --cx-input-success-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-input-success-border-color: var(--cx-success-base-color);
-  --cx-input-success-assist-color: var(--cx-success-fg-main);
-  --cx-input-idle-bg-floating: var(--cx-default-bg-even);
-  --cx-input-focus-bg-floating: var(--cx-default-bg-even);
-  --cx-input-disabled-bg-floating: var(--cx-default-bg-disabled);
-  --cx-input-error-bg-floating: var(--cx-default-bg-even);
-  --cx-input-success-bg-floating: var(--cx-default-bg-even);
+  --cx-idle-bg-regular: var(--cx-default-bg-main);
+  --cx-idle-fg-active: var(--cx-default-fg-main);
+  --cx-idle-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-idle-border-color: var(--cx-default-border-main);
+  --cx-idle-assist-color: var(--cx-default-fg-main);
+  --cx-focus-bg-regular: var(--cx-default-bg-main);
+  --cx-focus-fg-active: var(--cx-default-fg-main);
+  --cx-focus-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-focus-border-color: var(--cx-primary-icon-main);
+  --cx-focus-assist-color: var(--cx-primary-icon-main);
+  --cx-disabled-bg-regular: var(--cx-default-bg-disabled);
+  --cx-disabled-fg-active: var(--cx-default-fg-subtle);
+  --cx-disabled-fg-inactive: var(--cx-default-fg-slight);
+  --cx-disabled-border-color: var(--cx-default-fg-slight);
+  --cx-disabled-assist-color: var(--cx-default-fg-slight);
+  --cx-error-bg-regular: var(--cx-default-bg-main);
+  --cx-error-fg-active: var(--cx-default-fg-main);
+  --cx-error-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-error-border-color: var(--cx-danger-base-color);
+  --cx-error-assist-color: var(--cx-danger-fg-main);
+  --cx-success-bg-regular: var(--cx-default-bg-main);
+  --cx-success-fg-active: var(--cx-default-fg-main);
+  --cx-success-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-success-border-color: var(--cx-success-base-color);
+  --cx-success-assist-color: var(--cx-success-fg-main);
+  --cx-idle-bg-floating: var(--cx-default-bg-even);
+  --cx-focus-bg-floating: var(--cx-default-bg-even);
+  --cx-disabled-bg-floating: var(--cx-default-bg-disabled);
+  --cx-error-bg-floating: var(--cx-default-bg-even);
+  --cx-success-bg-floating: var(--cx-default-bg-even);
   --cx-file-button-fg-color: var(--cx-default-fg-main);
   --cx-file-button-bg-image: linear-gradient(var(--cx-default-dim-slight), var(--cx-default-dim-slight));
   --cx-file-button-bg-color: var(--cx-default-bg-main);
@@ -4387,42 +4381,42 @@ progress {
   --cx-form-range-thumb-color: #00A4CC;
   --cx-form-range-thumb-disabled: var(--cx-default-bg-disabled);
   --cx-form-range-thumb-active: #007b99;
-  --cx-input-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
+  --cx-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
 }
 
 .form-range.form-alternate, .form-alternate .form-range, .form-alternate > .form-text, .form-alternate > .valid-feedback,
 .form-alternate > .invalid-feedback, .form-alternate,
 .form-alternate *:not(*.form-default, .form-alternate .form-default *) {
-  --cx-input-idle-bg-regular: var(--cx-neutral-05);
-  --cx-input-idle-fg-active: var(--cx-neutral-95);
-  --cx-input-idle-fg-inactive: var(--cx-neutral-40);
-  --cx-input-idle-border-color: var(--cx-neutral-40);
-  --cx-input-idle-assist-color: var(--cx-neutral-95);
-  --cx-input-focus-bg-regular: var(--cx-white-base);
-  --cx-input-focus-fg-active: var(--cx-neutral-95);
-  --cx-input-focus-fg-inactive: var(--cx-neutral-40);
-  --cx-input-focus-border-color: var(--cx-primary-50);
-  --cx-input-focus-assist-color: var(--cx-primary-50);
-  --cx-input-disabled-bg-regular: var(--cx-neutral-30);
-  --cx-input-disabled-fg-active: var(--cx-neutral-50);
-  --cx-input-disabled-fg-inactive: var(--cx-neutral-40);
-  --cx-input-disabled-border-color: var(--cx-neutral-40);
-  --cx-input-disabled-assist-color: var(--cx-neutral-50);
-  --cx-input-error-bg-regular: var(--cx-danger-05);
-  --cx-input-error-fg-active: var(--cx-neutral-95);
-  --cx-input-error-fg-inactive: var(--cx-neutral-40);
-  --cx-input-error-border-color: var(--cx-danger-50);
-  --cx-input-error-assist-color: var(--cx-danger-bg-inverse);
-  --cx-input-success-bg-regular: var(--cx-success-05);
-  --cx-input-success-fg-active: var(--cx-neutral-95);
-  --cx-input-success-fg-inactive: var(--cx-neutral-40);
-  --cx-input-success-border-color: var(--cx-success-50);
-  --cx-input-success-assist-color: var(--cx-success-bg-inverse);
-  --cx-input-idle-bg-floating: var(--cx-neutral-10);
-  --cx-input-focus-bg-floating: var(--cx-neutral-05);
-  --cx-input-disabled-bg-floating: var(--cx-neutral-30);
-  --cx-input-error-bg-floating: var(--cx-neutral-10);
-  --cx-input-success-bg-floating: var(--cx-neutral-10);
+  --cx-idle-bg-regular: var(--cx-neutral-05);
+  --cx-idle-fg-active: var(--cx-neutral-95);
+  --cx-idle-fg-inactive: var(--cx-neutral-40);
+  --cx-idle-border-color: var(--cx-neutral-40);
+  --cx-idle-assist-color: var(--cx-neutral-95);
+  --cx-focus-bg-regular: var(--cx-white-base);
+  --cx-focus-fg-active: var(--cx-neutral-95);
+  --cx-focus-fg-inactive: var(--cx-neutral-40);
+  --cx-focus-border-color: var(--cx-primary-50);
+  --cx-focus-assist-color: var(--cx-primary-50);
+  --cx-disabled-bg-regular: var(--cx-neutral-30);
+  --cx-disabled-fg-active: var(--cx-neutral-50);
+  --cx-disabled-fg-inactive: var(--cx-neutral-40);
+  --cx-disabled-border-color: var(--cx-neutral-40);
+  --cx-disabled-assist-color: var(--cx-neutral-50);
+  --cx-error-bg-regular: var(--cx-danger-bg-main);
+  --cx-error-fg-active: var(--cx-neutral-95);
+  --cx-error-fg-inactive: var(--cx-neutral-40);
+  --cx-error-border-color: var(--cx-danger-50);
+  --cx-error-assist-color: var(--cx-danger-bg-inverse);
+  --cx-success-bg-regular: var(--cx-success-05);
+  --cx-success-fg-active: var(--cx-neutral-95);
+  --cx-success-fg-inactive: var(--cx-neutral-40);
+  --cx-success-border-color: var(--cx-success-50);
+  --cx-success-assist-color: var(--cx-success-bg-inverse);
+  --cx-idle-bg-floating: var(--cx-neutral-10);
+  --cx-focus-bg-floating: var(--cx-neutral-05);
+  --cx-disabled-bg-floating: var(--cx-neutral-30);
+  --cx-error-bg-floating: var(--cx-neutral-10);
+  --cx-success-bg-floating: var(--cx-neutral-10);
   --cx-file-button-fg-color: var(--cx-neutral-95);
   --cx-file-button-bg-image: linear-gradient(var(--cx-alternate-dim-slight), var(--cx-alternate-dim-slight));
   --cx-file-button-bg-color: var(--cx-neutral-05);
@@ -4435,7 +4429,7 @@ progress {
   --cx-form-range-thumb-color: #00A4CC;
   --cx-form-range-thumb-disabled: var(--cx-alternate-bg-disabled);
   --cx-form-range-thumb-active: #40bbd9;
-  --cx-input-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
+  --cx-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
 }
 
 .input-group > .form-control,
@@ -4484,9 +4478,9 @@ progress {
 }
 
 .form-select, .form-control {
-  --cx-fg-color: var(--cx-input-fg-color, var(--cx-input-idle-fg-active));
-  --cx-bg-color: var(--cx-input-bg-color, var(--cx-input-idle-bg-regular));
-  --cx-border-color: var(--cx-input-border-color, var(--cx-input-idle-border-color));
+  --cx-fg-color: var(--cx-input-fg-color, var(--cx-idle-fg-active));
+  --cx-bg-color: var(--cx-input-bg-color, var(--cx-idle-bg-regular));
+  --cx-border-color: var(--cx-input-border-color, var(--cx-idle-border-color));
   --cx-min-height: var(--cx-input-min-height, calc(var(--cx-line-height) + var(--cx-padding-y) * 2));
   display: block;
   width: 100%;
@@ -4505,21 +4499,21 @@ progress {
   }
 }
 .form-select:focus, .form-control:focus {
-  --cx-input-fg-color: var(--cx-input-focus-fg-active);
-  --cx-input-bg-color: var(--cx-input-focus-bg-regular);
-  --cx-input-border-color: var(--cx-input-focus-border-color);
-  --cx-input-box-shadow: var(--cx-input-focus-box-shadow);
+  --cx-fg-color: var(--cx-focus-fg-active);
+  --cx-bg-color: var(--cx-focus-bg-regular);
+  --cx-border-color: var(--cx-focus-border-color);
+  --cx-box-shadow: var(--cx-focus-box-shadow);
   outline: 0;
-  box-shadow: var(--cx-box-shadow-inset), var(--cx-input-box-shadow);
+  box-shadow: var(--cx-box-shadow-inset), var(--cx-box-shadow);
 }
 .form-select:disabled, .form-control:disabled {
-  --cx-input-fg-color: var(--cx-input-disabled-fg-active);
-  --cx-input-bg-color: var(--cx-input-disabled-bg-regular);
-  --cx-input-border-color: var(--cx-input-disabled-border-color);
+  --cx-fg-color: var(--cx-disabled-fg-active);
+  --cx-bg-color: var(--cx-disabled-bg-regular);
+  --cx-border-color: var(--cx-disabled-border-color);
   opacity: 1;
 }
 .form-select:disabled::placeholder, .form-control:disabled::placeholder {
-  color: var(--cx-input-disabled-fg-inactive);
+  color: var(--cx-disabled-fg-inactive);
 }
 
 .list-group.list-action > .list-item,
@@ -7515,7 +7509,7 @@ ol.inline li:not(:last-child) {
 }
 .form-label {
   --cx-font-family: var(--cx-component-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-compoonent-font-size, var(--cx-font-size-medium));
+  --cx-font-size: var(--cx-component-font-size, var(--cx-font-size-medium));
   --cx-font-weight: var(--cx-component-font-weight, var(--cx-font-weight-strong));
   --cx-line-height: var(--cx-component-line-height, var(--cx-line-height-medium));
   margin-bottom: 0.5rem;
@@ -7526,7 +7520,7 @@ ol.inline li:not(:last-child) {
 .col-form-label {
   --cx-fg-color: $form-label-color;
   --cx-font-family: var(--cx-component-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-compoonent-font-size, var(--cx-font-size-medium));
+  --cx-font-size: var(--cx-component-font-size, var(--cx-font-size-medium));
   --cx-font-weight: var(--cx-component-font-weight, var(--cx-font-weight-strong));
   --cx-line-height: var(--cx-component-line-height, var(--cx-line-height-medium));
   padding-top: calc(0.5rem + var(--cx-border-width-medium));
@@ -7555,7 +7549,7 @@ ol.inline li:not(:last-child) {
 .form-text, .valid-feedback,
 .invalid-feedback {
   margin-top: 0.25rem;
-  color: var(--cx-input-idle-assist-color);
+  color: var(--cx-idle-assist-color);
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
 }
 .form-option > .form-text, .form-option > .valid-feedback,
@@ -7575,21 +7569,21 @@ ol.inline li:not(:last-child) {
 }
 .form-control::-webkit-date-and-time-value {
   min-width: 5.5rem;
+  height: var(--cx-line-height);
   margin: 0;
 }
 .form-control::-webkit-datetime-edit {
   display: block;
+  height: var(--cx-line-height);
   padding: 0;
 }
 .form-control::placeholder {
-  color: var(--cx-input-idle-fg-inactive);
+  color: var(--cx-idle-fg-inactive);
   opacity: 1;
 }
 .form-control::-webkit-file-upload-button {
-  --cx-input-fg-color: var(--cx-file-button-fg-color);
-  --cx-input-bg-color: var(--cx-file-button-bg-color);
-  --cx-input-border-color: inherit;
-  --cx-input-border-width: 0;
+  --cx-fg-color: var(--cx-file-button-fg-color);
+  --cx-bg-color: var(--cx-file-button-bg-color);
   margin: calc(-1 * var(--cx-padding-y)) calc(-1 * var(--cx-padding-x));
   -webkit-margin-end: var(--cx-padding-x);
   margin-inline-end: var(--cx-padding-x);
@@ -7604,10 +7598,8 @@ ol.inline li:not(:last-child) {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .form-control::file-selector-button {
-  --cx-input-fg-color: var(--cx-file-button-fg-color);
-  --cx-input-bg-color: var(--cx-file-button-bg-color);
-  --cx-input-border-color: inherit;
-  --cx-input-border-width: 0;
+  --cx-fg-color: var(--cx-file-button-fg-color);
+  --cx-bg-color: var(--cx-file-button-bg-color);
   margin: calc(-1 * var(--cx-padding-y)) calc(-1 * var(--cx-padding-x));
   -webkit-margin-end: var(--cx-padding-x);
   margin-inline-end: var(--cx-padding-x);
@@ -7630,10 +7622,10 @@ ol.inline li:not(:last-child) {
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-  background: var(--cx-file-button-bg-hover);
+  background-color: var(--cx-file-button-bg-hover);
 }
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
-  background: var(--cx-file-button-bg-hover);
+  background-color: var(--cx-file-button-bg-hover);
 }
 .form-control.plaintext {
   --cx-padding-x: 0;
@@ -7690,38 +7682,22 @@ textarea.form-control {
   color: transparent;
   text-shadow: 0 0 0 var(--cx-fg-color);
 }
-.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-default .form-alternate .form-select, .form-select.form-alternate {
-  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23ac3900' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
-}
-.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[disabled], .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select):disabled, .form-default .form-alternate .form-select[disabled], .form-default .form-alternate .form-select:disabled, .form-select.form-alternate[disabled], .form-select.form-alternate:disabled {
-  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(172, 57, 0, 0.25)' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
-}
-
-[data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select), [data-cx-theme=dark].form-select {
+[data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select), .form-select[data-cx-theme=dark] {
   --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%234f4ff8' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select)[disabled], [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select):disabled, [data-cx-theme=dark].form-select[disabled], [data-cx-theme=dark].form-select:disabled {
+[data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select)[disabled], [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select):disabled, .form-select[data-cx-theme=dark][disabled], .form-select[data-cx-theme=dark]:disabled {
   --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(79, 79, 248, 0.25)' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select):not(.form-select.form-default,
-.form-default .form-select), [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select).form-alternate, [data-cx-theme=dark].form-select:not(.form-select.form-default,
-.form-default .form-select), [data-cx-theme=dark].form-select.form-alternate {
+.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate {
+  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23ac3900' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
+}
+.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[disabled], .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select):disabled, .form-select.form-alternate[disabled], .form-select.form-alternate:disabled {
+  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(172, 57, 0, 0.25)' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
+}
+[data-cx-theme=dark] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select):not(.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select.form-alternate), .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=dark], [data-cx-theme=dark] .form-select.form-alternate:not(.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select.form-alternate), .form-select.form-alternate[data-cx-theme=dark] {
   --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23f87d40' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select):not(.form-select.form-default,
-.form-default .form-select)[disabled], [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select):not(.form-select.form-default,
-.form-default .form-select):disabled, [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select).form-alternate[disabled], [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light],
-[data-cx-theme=dark] [data-cx-theme=light] .form-select).form-alternate:disabled, [data-cx-theme=dark].form-select:not(.form-select.form-default,
-.form-default .form-select)[disabled], [data-cx-theme=dark].form-select:not(.form-select.form-default,
-.form-default .form-select):disabled, [data-cx-theme=dark].form-select.form-alternate[disabled], [data-cx-theme=dark].form-select.form-alternate:disabled {
+[data-cx-theme=dark] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select):not(.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select.form-alternate)[disabled], [data-cx-theme=dark] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select):not(.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select.form-alternate):disabled, .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=dark][disabled], .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=dark]:disabled, [data-cx-theme=dark] .form-select.form-alternate:not(.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select.form-alternate)[disabled], [data-cx-theme=dark] .form-select.form-alternate:not(.form-alternate .form-select:not(.form-select.form-default, .form-default .form-select)[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-select.form-default, .form-default .form-select), .form-select.form-alternate[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select.form-alternate):disabled, .form-select.form-alternate[data-cx-theme=dark][disabled], .form-select.form-alternate[data-cx-theme=dark]:disabled {
   --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(248, 125, 64, 0.25)' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
 }
 
@@ -7761,8 +7737,8 @@ textarea.form-control {
 }
 
 .option-input {
-  --cx-bg-color: var(--cx-input-bg-color, var(--cx-input-idle-bg-regular));
-  --cx-border-color: var(--cx-input-border-color, var(--cx-input-idle-border-color));
+  --cx-bg-color: var(--cx-input-bg-color, var(--cx-idle-bg-regular));
+  --cx-border-color: var(--cx-input-border-color, var(--cx-idle-border-color));
   --cx-border-width: var(--cx-input-border-width, var(--cx-option-input-border-width, var(--cx-border-width-medium)));
   --cx-border-radius: var(--cx-input-border-radius, var(--cx-option-input-border-width, 0.25rem));
   --cx-size: var(--cx-option-input-size, 1.25rem);
@@ -7792,8 +7768,8 @@ textarea.form-control {
   border-radius: 50%;
 }
 .option-input:focus {
-  --cx-input-border-color: var(--cx-input-focus-border-color);
-  --cx-input-box-shadow: var(--cx-input-focus-box-shadow);
+  --cx-input-border-color: var(--cx-focus-border-color);
+  --cx-input-box-shadow: var(--cx-focus-box-shadow);
   outline: 0;
   box-shadow: var(--cx-box-shadow-inset), var(--cx-input-box-shadow);
 }
@@ -7810,11 +7786,11 @@ textarea.form-control {
 .option-input[type=checkbox]:indeterminate {
   --cx-bg-color: var(--cx-input-checked-bg-color, #00A4CC);
   --cx-border-color: var(--cx-input-checked-bg-color, #00A4CC);
-  --cx-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.75 11.9805C5.75 9.75391 6.92188 7.72266 8.875 6.58984C10.7891 5.45703 13.1719 5.45703 15.125 6.58984C17.0391 7.72266 18.25 9.75391 18.25 11.9805C18.25 14.2461 17.0391 16.2773 15.125 17.4102C13.1719 18.543 10.7891 18.543 8.875 17.4102C6.92188 16.2773 5.75 14.2461 5.75 11.9805Z' fill='%23ffffff'/%3e%3c/svg%3e");
+  --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23ffffff' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 .option-input[disabled], .option-input:disabled {
-  --cx-bg-color: var(--cx-input-disabled-bg-color, var(--cx-default-bg-disabled));
-  --cx-border-color: var(--cx-input-disabled-border-color, var(--cx-default-fg-slight));
+  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-default-bg-disabled));
+  --cx-border-color: var(--cx-disabled-border-color, var(--cx-default-fg-slight));
   pointer-events: none;
   filter: none;
 }
@@ -7829,13 +7805,13 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(28, 32, 33, 0.25)' class='icon-circle-small-solid' viewBox='0 0 24 24'%3e%3cpath d='M6.25 12C6.25 9.77344 7.42188 7.74219 9.375 6.60938C11.2891 5.47656 13.6719 5.47656 15.625 6.60938C17.5391 7.74219 18.75 9.77344 18.75 12C18.75 14.2656 17.5391 16.2969 15.625 17.4297C13.6719 18.5625 11.2891 18.5625 9.375 17.4297C7.42188 16.2969 6.25 14.2656 6.25 12Z'/%3e%3c/svg%3e");
 }
 .option-input[disabled][type=checkbox]:indeterminate, .option-input:disabled[type=checkbox]:indeterminate {
-  --cx-bg-color: var(--cx-input-disabled-bg-color, var(--cx-default-bg-disabled));
-  --cx-border-color: var(--cx-input-disabled-border-color, var(--cx-default-fg-slight));
-  --cx-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='rgba(28, 32, 33, 0.25)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.75 11.9805C5.75 9.75391 6.92188 7.72266 8.875 6.58984C10.7891 5.45703 13.1719 5.45703 15.125 6.58984C17.0391 7.72266 18.25 9.75391 18.25 11.9805C18.25 14.2461 17.0391 16.2773 15.125 17.4102C13.1719 18.543 10.7891 18.543 8.875 17.4102C6.92188 16.2773 5.75 14.2461 5.75 11.9805Z' fill='rgba(28, 32, 33, 0.25)'/%3e%3c/svg%3e");
+  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-default-bg-disabled));
+  --cx-border-color: var(--cx-disabled-border-color, var(--cx-default-fg-slight));
+  --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(28, 32, 33, 0.25)' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 .form-alternate .option-input[disabled], .option-input[disabled].form-alternate, .form-alternate .option-input:disabled, .option-input:disabled.form-alternate {
-  --cx-bg-color: var(--cx-input-disabled-bg-color, var(--cx-neutral-30));
-  --cx-border-color: var(--cx-input-disabled-border-color, var(--cx-neutral-40));
+  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-neutral-30));
+  --cx-border-color: var(--cx-disabled-border-color, var(--cx-neutral-40));
 }
 .form-alternate .option-input[disabled][type=checkbox]:checked, .option-input[disabled].form-alternate[type=checkbox]:checked, .form-alternate .option-input:disabled[type=checkbox]:checked, .option-input:disabled.form-alternate[type=checkbox]:checked {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-check-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.3594 6.14062C20.8672 6.60938 20.8672 7.42969 20.3594 7.89844L10.3594 17.8984C9.89062 18.4062 9.07031 18.4062 8.60156 17.8984L3.60156 12.8984C3.09375 12.4297 3.09375 11.6094 3.60156 11.1406C4.07031 10.6328 4.89062 10.6328 5.35938 11.1406L9.5 15.2422L18.6016 6.14062C19.0703 5.63281 19.8906 5.63281 20.3594 6.14062Z'/%3e%3c/svg%3e");
@@ -7844,9 +7820,9 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-circle-small-solid' viewBox='0 0 24 24'%3e%3cpath d='M6.25 12C6.25 9.77344 7.42188 7.74219 9.375 6.60938C11.2891 5.47656 13.6719 5.47656 15.625 6.60938C17.5391 7.74219 18.75 9.77344 18.75 12C18.75 14.2656 17.5391 16.2969 15.625 17.4297C13.6719 18.5625 11.2891 18.5625 9.375 17.4297C7.42188 16.2969 6.25 14.2656 6.25 12Z'/%3e%3c/svg%3e");
 }
 .form-alternate .option-input[disabled][type=checkbox]:indeterminate, .option-input[disabled].form-alternate[type=checkbox]:indeterminate, .form-alternate .option-input:disabled[type=checkbox]:indeterminate, .option-input:disabled.form-alternate[type=checkbox]:indeterminate {
-  --cx-bg-color: var(--cx-input-disabled-bg-color, var(--cx-neutral-30));
-  --cx-border-color: var(--cx-input-disabled-border-color, var(--cx-neutral-40));
-  --cx-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%2393a0a4' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.75 11.9805C5.75 9.75391 6.92188 7.72266 8.875 6.58984C10.7891 5.45703 13.1719 5.45703 15.125 6.58984C17.0391 7.72266 18.25 9.75391 18.25 11.9805C18.25 14.2461 17.0391 16.2773 15.125 17.4102C13.1719 18.543 10.7891 18.543 8.875 17.4102C6.92188 16.2773 5.75 14.2461 5.75 11.9805Z' fill='%2393a0a4'/%3e%3c/svg%3e");
+  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-neutral-30));
+  --cx-border-color: var(--cx-disabled-border-color, var(--cx-neutral-40));
+  --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 
 .option-input.small,
@@ -7923,7 +7899,7 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(233, 236, 237, 0.25)' class='icon-circle-small-solid' viewBox='0 0 24 24'%3e%3cpath d='M6.25 12C6.25 9.77344 7.42188 7.74219 9.375 6.60938C11.2891 5.47656 13.6719 5.47656 15.625 6.60938C17.5391 7.74219 18.75 9.77344 18.75 12C18.75 14.2656 17.5391 16.2969 15.625 17.4297C13.6719 18.5625 11.2891 18.5625 9.375 17.4297C7.42188 16.2969 6.25 14.2656 6.25 12Z'/%3e%3c/svg%3e");
 }
 [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input)[disabled][type=checkbox]:indeterminate, [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input):disabled[type=checkbox]:indeterminate, [data-cx-theme=dark].option-input[disabled][type=checkbox]:indeterminate, [data-cx-theme=dark].option-input:disabled[type=checkbox]:indeterminate {
-  --cx-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='rgba(233, 236, 237, 0.25)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.75 11.9805C5.75 9.75391 6.92188 7.72266 8.875 6.58984C10.7891 5.45703 13.1719 5.45703 15.125 6.58984C17.0391 7.72266 18.25 9.75391 18.25 11.9805C18.25 14.2461 17.0391 16.2773 15.125 17.4102C13.1719 18.543 10.7891 18.543 8.875 17.4102C6.92188 16.2773 5.75 14.2461 5.75 11.9805Z' fill='rgba(233, 236, 237, 0.25)'/%3e%3c/svg%3e");
+  --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(233, 236, 237, 0.25)' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 .form-alternate [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input)[disabled][type=checkbox]:checked, .form-alternate [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input):disabled[type=checkbox]:checked, [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input).form-alternate[disabled][type=checkbox]:checked, [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input).form-alternate:disabled[type=checkbox]:checked, .form-alternate [data-cx-theme=dark].option-input[disabled][type=checkbox]:checked, .form-alternate [data-cx-theme=dark].option-input:disabled[type=checkbox]:checked, [data-cx-theme=dark].option-input.form-alternate[disabled][type=checkbox]:checked, [data-cx-theme=dark].option-input.form-alternate:disabled[type=checkbox]:checked {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-check-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.3594 6.14062C20.8672 6.60938 20.8672 7.42969 20.3594 7.89844L10.3594 17.8984C9.89062 18.4062 9.07031 18.4062 8.60156 17.8984L3.60156 12.8984C3.09375 12.4297 3.09375 11.6094 3.60156 11.1406C4.07031 10.6328 4.89062 10.6328 5.35938 11.1406L9.5 15.2422L18.6016 6.14062C19.0703 5.63281 19.8906 5.63281 20.3594 6.14062Z'/%3e%3c/svg%3e");
@@ -7932,7 +7908,7 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-circle-small-solid' viewBox='0 0 24 24'%3e%3cpath d='M6.25 12C6.25 9.77344 7.42188 7.74219 9.375 6.60938C11.2891 5.47656 13.6719 5.47656 15.625 6.60938C17.5391 7.74219 18.75 9.77344 18.75 12C18.75 14.2656 17.5391 16.2969 15.625 17.4297C13.6719 18.5625 11.2891 18.5625 9.375 17.4297C7.42188 16.2969 6.25 14.2656 6.25 12Z'/%3e%3c/svg%3e");
 }
 .form-alternate [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input)[disabled][type=checkbox]:indeterminate, .form-alternate [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input):disabled[type=checkbox]:indeterminate, [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input).form-alternate[disabled][type=checkbox]:indeterminate, [data-cx-theme=dark] .option-input:not([data-cx-theme=dark] [data-cx-theme=light] .option-input):not([data-cx-theme=dark] [data-cx-theme=light].option-input).form-alternate:disabled[type=checkbox]:indeterminate, .form-alternate [data-cx-theme=dark].option-input[disabled][type=checkbox]:indeterminate, .form-alternate [data-cx-theme=dark].option-input:disabled[type=checkbox]:indeterminate, [data-cx-theme=dark].option-input.form-alternate[disabled][type=checkbox]:indeterminate, [data-cx-theme=dark].option-input.form-alternate:disabled[type=checkbox]:indeterminate {
-  --cx-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%2393a0a4' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.75 11.9805C5.75 9.75391 6.92188 7.72266 8.875 6.58984C10.7891 5.45703 13.1719 5.45703 15.125 6.58984C17.0391 7.72266 18.25 9.75391 18.25 11.9805C18.25 14.2461 17.0391 16.2773 15.125 17.4102C13.1719 18.543 10.7891 18.543 8.875 17.4102C6.92188 16.2773 5.75 14.2461 5.75 11.9805Z' fill='%2393a0a4'/%3e%3c/svg%3e");
+  --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 
 .form-range {
@@ -8040,7 +8016,7 @@ textarea.form-control {
 .form-floating > .form-control,
 .form-floating > .form-control.plaintext,
 .form-floating > .form-select {
-  --cx-input-bg-color: var(--cx-input-idle-bg-floating);
+  --cx-bg-color: var(--cx-idle-bg-floating);
   --cx-border-width: 0;
   height: calc(3.5rem + calc(var(--cx-border-width-medium) * 2));
   min-height: calc(3.5rem + calc(var(--cx-border-width-medium) * 2));
@@ -8054,24 +8030,24 @@ textarea.form-control {
 .form-floating > .form-control:focus,
 .form-floating > .form-control.plaintext:focus,
 .form-floating > .form-select:focus {
-  --cx-input-bg-color: var(--cx-input-focus-bg-floating);
+  --cx-bg-color: var(--cx-focus-bg-floating);
 }
 .form-floating > .form-control[disabled], .form-floating > .form-control:disabled,
 .form-floating > .form-control.plaintext[disabled],
 .form-floating > .form-control.plaintext:disabled,
 .form-floating > .form-select[disabled],
 .form-floating > .form-select:disabled {
-  --cx-input-bg-color: var(--cx-input-disabled-bg-floating);
+  --cx-bg-color: var(--cx-disabled-bg-floating);
 }
 .form-floating > .form-control:valid,
 .form-floating > .form-control.plaintext:valid,
 .form-floating > .form-select:valid {
-  --cx-input-bg-color: var(--cx-input-success-bg-floating);
+  --cx-bg-color: var(--cx-success-bg-floating);
 }
 .form-floating > .form-control:invalid,
 .form-floating > .form-control.plaintext:invalid,
 .form-floating > .form-select:invalid {
-  --cx-input-bg-color: var(--cx-input-error-bg-floating);
+  --cx-bg-color: var(--cx-error-bg-floating);
 }
 .form-floating > label {
   position: absolute;
@@ -8081,7 +8057,7 @@ textarea.form-control {
   height: 100%;
   padding: 1rem 0.75rem;
   overflow: hidden;
-  color: var(--cx-label-color, var(--cx-input-idle-fg-inactive));
+  color: var(--cx-label-color, var(--cx-idle-fg-inactive));
   text-align: start;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -8307,11 +8283,11 @@ textarea.form-control {
 }
 
 .valid-feedback {
-  color: var(--cx-input-success-assist-color);
+  color: var(--cx-success-assist-color);
 }
 
 .invalid-feedback {
-  color: var(--cx-input-error-assist-color);
+  color: var(--cx-error-assist-color);
 }
 
 .valid-tooltip,
@@ -8351,56 +8327,56 @@ textarea.form-control {
 }
 
 .was-validated .form-control:valid, .was-validated .form-select:valid, .is-valid.form-control, .is-valid.form-select {
-  --cx-input-fg-color: var(--cx-input-success-fg-active);
-  --cx-input-bg-color: var(--cx-input-success-bg-regular);
-  --cx-input-border-color: var(--cx-input-success-border-color);
+  --cx-input-fg-color: var(--cx-success-fg-active);
+  --cx-input-bg-color: var(--cx-success-bg-regular);
+  --cx-input-border-color: var(--cx-success-border-color);
   --cx-input-box-shadow: 0 0 0 0.25rem rgba(var(--cx-success-rgb), 0.25);
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%230b8845' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%230b8845'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .was-validated .form-control:valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select), [data-cx-theme=dark] .was-validated .form-select:valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select), [data-cx-theme=dark] .is-valid.form-control:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select), [data-cx-theme=dark] .is-valid.form-select:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select) {
+[data-cx-theme=dark] .was-validated .form-control:valid:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), [data-cx-theme=dark] .was-validated .form-select:valid:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), .was-validated .form-control:valid[data-cx-theme=dark], .was-validated .form-select:valid[data-cx-theme=dark], [data-cx-theme=dark] .is-valid.form-control:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), [data-cx-theme=dark] .is-valid.form-select:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), .is-valid[data-cx-theme=dark].form-control, .is-valid[data-cx-theme=dark].form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%234cd18a' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%234cd18a'/%3e%3c/svg%3e");
 }
 .was-validated .form-control:invalid, .was-validated .form-select:invalid, .is-invalid.form-control, .is-invalid.form-select {
-  --cx-input-fg-color: var(--cx-input-error-fg-active);
-  --cx-input-bg-color: var(--cx-input-error-bg-regular);
-  --cx-input-border-color: var(--cx-input-error-border-color);
+  --cx-input-fg-color: var(--cx-error-fg-active);
+  --cx-input-bg-color: var(--cx-error-bg-regular);
+  --cx-input-border-color: var(--cx-error-border-color);
   --cx-input-box-shadow: 0 0 0 0.25rem rgba(var(--cx-danger-rgb), 0.25);
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23ac190e' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .was-validated .form-control:invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select), [data-cx-theme=dark] .was-validated .form-select:invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select), [data-cx-theme=dark] .is-invalid.form-control:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select), [data-cx-theme=dark] .is-invalid.form-select:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select) {
+[data-cx-theme=dark] .was-validated .form-control:invalid:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), [data-cx-theme=dark] .was-validated .form-select:invalid:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), .was-validated .form-control:invalid[data-cx-theme=dark], .was-validated .form-select:invalid[data-cx-theme=dark], [data-cx-theme=dark] .is-invalid.form-control:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), [data-cx-theme=dark] .is-invalid.form-select:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), .is-invalid[data-cx-theme=dark].form-control, .is-invalid[data-cx-theme=dark].form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23f85a4f' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
 
 .was-validated .form-floating > .form-control:valid ~ label, .was-validated .form-floating > .form-select:valid ~ label, .form-floating > .is-valid.form-control ~ label, .form-floating > .is-valid.form-select ~ label {
-  color: var(--cx-input-success-assist-color);
+  color: var(--cx-success-assist-color);
 }
 .was-validated .form-floating > .form-control:invalid ~ label, .was-validated .form-floating > .form-select:invalid ~ label, .form-floating > .is-invalid.form-control ~ label, .form-floating > .is-invalid.form-select ~ label {
-  color: var(--cx-input-error-assist-color);
+  color: var(--cx-error-assist-color);
 }
 
 .was-validated .option-input:valid, .option-input.is-valid {
-  --cx-input-bg-color: var(--cx-input-success-bg-regular);
-  --cx-input-border-color: var(--cx-input-success-border-color);
+  --cx-input-bg-color: var(--cx-success-bg-regular);
+  --cx-input-border-color: var(--cx-success-border-color);
   --cx-input-box-shadow: 0 0 0 0.25rem rgba(var(--cx-success-rgb), 0.25);
 }
 .was-validated .option-input:valid:checked, .option-input.is-valid:checked {
-  --cx-input-bg-color: var(--cx-input-success-assist-color);
-  --cx-input-border-color: var(--cx-input-success-border-color);
+  --cx-input-bg-color: var(--cx-success-assist-color);
+  --cx-input-border-color: var(--cx-success-border-color);
 }
 .was-validated .option-input:valid ~ .option-label, .option-input.is-valid ~ .option-label {
-  --cx-fg-color: var(--cx-input-success-assist-color);
+  --cx-fg-color: var(--cx-success-assist-color);
 }
 .was-validated .option-input:invalid, .option-input.is-invalid {
-  --cx-input-bg-color: var(--cx-input-error-bg-regular);
-  --cx-input-border-color: var(--cx-input-error-border-color);
+  --cx-input-bg-color: var(--cx-error-bg-regular);
+  --cx-input-border-color: var(--cx-error-border-color);
   --cx-input-box-shadow: 0 0 0 0.25rem rgba(var(--cx-danger-rgb), 0.25);
 }
 .was-validated .option-input:invalid:checked, .option-input.is-invalid:checked {
-  --cx-input-bg-color: var(--cx-input-error-assist-color);
-  --cx-input-border-color: var(--cx-input-error-border-color);
+  --cx-input-bg-color: var(--cx-error-assist-color);
+  --cx-input-border-color: var(--cx-error-border-color);
 }
 .was-validated .option-input:invalid ~ .option-label, .option-input.is-invalid ~ .option-label {
-  --cx-fg-color: var(--cx-input-error-assist-color);
+  --cx-fg-color: var(--cx-error-assist-color);
 }
 
 .was-validated .form-control:valid, .was-validated .form-control:invalid, .form-control.is-valid, .form-control.is-invalid {
@@ -8428,96 +8404,168 @@ textarea.form-control {
   width: calc(var(--cx-input-color-width, var(--cx-min-height)) + var(--cx-icon-size) + var(--cx-padding-y) * 2);
 }
 
-.was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
 .was-validated .form-alternate.form-control:valid,
 .was-validated .form-alternate.form-select:valid,
 .form-alternate.is-valid.form-control,
 .form-alternate.is-valid.form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%23043119' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%23043119'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+[data-cx-theme=dark] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), [data-cx-theme=dark] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), [data-cx-theme=dark] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), [data-cx-theme=dark] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=dark], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=dark], [data-cx-theme=dark] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), [data-cx-theme=dark] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), [data-cx-theme=dark] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select), .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=dark], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=dark],
+[data-cx-theme=dark] .was-validated .form-alternate.form-control:valid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
+[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
+[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select),
-[data-cx-theme=dark] .was-validated .form-alternate.form-control:valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+[data-cx-theme=dark] .was-validated .form-alternate.form-select:valid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select),
-[data-cx-theme=dark] .was-validated .form-alternate.form-select:valid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=dark],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=dark],
+[data-cx-theme=dark] .form-alternate.is-valid.form-control:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select),
-[data-cx-theme=dark] .form-alternate.is-valid.form-control:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
+[data-cx-theme=dark] .form-alternate.is-valid.form-select:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-control:valid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:valid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
+.form-alternate.is-valid[data-cx-theme=light].form-control,
+.form-alternate.is-valid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select),
-[data-cx-theme=dark] .form-alternate.is-valid.form-select:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-valid,
-[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:valid,
-[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:valid,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-valid.form-select) {
+.form-alternate.is-valid[data-cx-theme=dark].form-control,
+.form-alternate.is-valid[data-cx-theme=dark].form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%23dbf6e8' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%23dbf6e8'/%3e%3c/svg%3e");
 }
-.was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
 .was-validated .form-alternate.form-control:invalid,
 .was-validated .form-alternate.form-select:invalid,
 .form-alternate.is-invalid.form-control,
 .form-alternate.is-invalid.form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%233d0905' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+[data-cx-theme=dark] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), [data-cx-theme=dark] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), [data-cx-theme=dark] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), [data-cx-theme=dark] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=dark], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=dark], [data-cx-theme=dark] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), [data-cx-theme=dark] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), [data-cx-theme=dark] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
+[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select), .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=dark], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=dark],
+[data-cx-theme=dark] .was-validated .form-alternate.form-control:invalid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
+[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
+[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select),
-[data-cx-theme=dark] .was-validated .form-alternate.form-control:invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+[data-cx-theme=dark] .was-validated .form-alternate.form-select:invalid:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select),
-[data-cx-theme=dark] .was-validated .form-alternate.form-select:invalid:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=dark],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=dark],
+[data-cx-theme=dark] .form-alternate.is-invalid.form-control:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select),
-[data-cx-theme=dark] .form-alternate.is-invalid.form-control:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
+[data-cx-theme=dark] .form-alternate.is-invalid.form-select:not(.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-control:invalid[data-cx-theme=light],
+.was-validated .form-alternate.form-select:invalid[data-cx-theme=light],
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
 [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
+.form-alternate.is-invalid[data-cx-theme=light].form-control,
+.form-alternate.is-invalid[data-cx-theme=light].form-select,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
 [data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select),
-[data-cx-theme=dark] .form-alternate.is-invalid.form-select:not([data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select):invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-control:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid, [data-cx-theme=dark] [data-cx-theme=light] .form-alternate .form-select:not(.form-alternate .form-default .form-control):not(.form-alternate .form-default .form-select).is-invalid,
-[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-control:invalid,
-[data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-alternate.form-select:invalid,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-control,
-[data-cx-theme=dark] [data-cx-theme=light] .form-alternate.is-invalid.form-select) {
+.form-alternate.is-invalid[data-cx-theme=dark].form-control,
+.form-alternate.is-invalid[data-cx-theme=dark].form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23fededc' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
 
@@ -10658,6 +10706,12 @@ textarea.form-control {
 .list-numbered > .list-item::before {
   content: counters(section, ".") ". ";
   counter-increment: section;
+}
+
+.list-group.list-action > .list-item.active, .list-group.list-action > .list-item.active:hover,
+.list-group > .list-item.list-action.active,
+.list-group > .list-item.list-action.active:hover {
+  z-index: 2;
 }
 
 .list-horizontal {

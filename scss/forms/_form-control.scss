@@ -1,9 +1,19 @@
 //
-// General form controls (plus a few specific high-level interventions)
+// Form Control
+//
+// A themeable, accessible custom styling for form input elements.
+// Provides consistent appearance across browsers while maintaining accessibility.
+// Supports default and alternate styling variants, disabled states, and dark mode.
+//
+// Extends the %form-input placeholder to share common styling with other form controls
+// while adding input-specific features for different input types (file, date, color, etc.).
 //
 
 .form-control {
-  @extend %component, %form-input;
+  // Uses %form-input placeholder to share common form styles with .form-select,
+  // avoiding duplicate property assignments across different form elements
+  // and ensuring consistent appearance between different input types.
+  @extend %form-input;
 
   &[type="file"] {
     overflow: hidden; // prevent pseudo element button overlap
@@ -13,47 +23,46 @@
     }
   }
 
+  // Date and time input value styling
+  // Fixes display issues with date/time inputs across browsers.
   &::-webkit-date-and-time-value {
-    // On Android Chrome, form-control's "width: 100%" makes the input width too small
-    // Tested under Android 11 / Chrome 89, Android 12 / Chrome 100, Android 13 / Chrome 109
-    //
-    // On iOS Safari, form-control's "appearance: none" + "width: 100%" makes the input width too small
-    // Tested under iOS 16.2 / Safari 16.2
-    min-width: 5.5rem; // 85px; // Seems to be a good minimum safe width
+    // Prevents inputs from becoming too narrow on Chrome and Safari
+    // when using width: 100% and appearance: none.
+    min-width: 5.5rem; // Minimum safe width for date/time values
 
-    // Add some height to date inputs on iOS
+    // Prevents excessive date input height in Webkit
     // https://github.com/twbs/bootstrap/issues/23307
-    // TODO: we can remove this workaround once https://bugs.webkit.org/show_bug.cgi?id=198959 is resolved
-    // Multiply line-height by 1em if it has no unit
-    $line-height: map-get($input-medium-text-font, "line-height");
-    // height: if(unit($line-height) == "", #{calc($line-hexight * 1em)}, $line-height);
+    height: var(--#{$prefix}line-height);
 
-    // Android Chrome type="date" is taller than the other inputs
-    // because of "margin: 1px 24px 1px 4px" inside the shadow DOM
-    // Tested under Android 11 / Chrome 89, Android 12 / Chrome 100, Android 13 / Chrome 109
+    // Prevents unwanted margins in Chrome's date picker
+    // that cause inconsistent heights.
     margin: 0;
+
   }
 
-  // Prevent excessive date input height in Webkit
-  // https://github.com/twbs/bootstrap/issues/34433
+  // Prevents excessive date input height in Webkit
   &::-webkit-datetime-edit {
     display: block;
+    height: var(--#{$prefix}line-height);
     padding: 0;
   }
 
-  // Placeholder
+  // Placeholder styling
+  // Ensures consistent color and opacity across browsers.
   &::placeholder {
-    color: var(--#{$prefix}input-idle-fg-inactive);
+    color: var(--#{$prefix}idle-fg-inactive);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
 
-  // File input buttons theming
+  // File input button customization
+  // Applies consistent styling to the file upload button part of input[type="file"]
+  // while maintaining accessibility and usability across browsers.
   &::file-selector-button {
-    --#{$prefix}input-fg-color: var(--#{$prefix}file-button-fg-color);
-    --#{$prefix}input-bg-color: var(--#{$prefix}file-button-bg-color);
-    --#{$prefix}input-border-color: inherit;
-    --#{$prefix}input-border-width: 0;
+    @extend %component;
+
+    --#{$prefix}fg-color: var(--#{$prefix}file-button-fg-color);
+    --#{$prefix}bg-color: var(--#{$prefix}file-button-bg-color);
 
     margin: #{calc(-1 * var(--#{$prefix}padding-y))} #{calc(-1 * var(--#{$prefix}padding-x))};
     margin-inline-end: var(--#{$prefix}padding-x);
@@ -64,19 +73,16 @@
     border-inline-end-width: var(--#{$prefix}border-width);
     @include border-radius(0);
     @include transition($button-transition);
-
-    @extend %component;
   }
 
   &:hover:not(:disabled):not([readonly])::file-selector-button {
-    background: var(--#{$prefix}file-button-bg-hover);
+    background-color: var(--#{$prefix}file-button-bg-hover);
   }
 
   // Readonly controls as plain text
-  //
-  // Apply class to a readonly input to make it appear like regular plain
-  // text (without any border, background color, focus indicator)
-
+  // Apply the `.plaintext` class to a readonly input to display it as regular text
+  // without borders, background colors, or focus indicators, while maintaining proper spacing.
+  // Useful for non-editable form values that need to align with other form controls.
   &.plaintext {
     --#{$prefix}padding-x: 0;
     --#{$prefix}fg-color: #{$form-input-plaintext-color};
@@ -95,6 +101,9 @@
     }
   }
 
+  // Color input control styling
+  // Provides appropriate sizing and interaction for color picker inputs
+  // while maintaining consistent border-radius with other form controls.
   &.color-control {
     width: var(--#{$prefix}input-color-width, var(--#{$prefix}min-height));
     height: var(--#{$prefix}input-color-height, var(--#{$prefix}min-height));
@@ -117,12 +126,10 @@
 
 }
 
-// Make sure textareas don't shrink too much when resized
-// https://github.com/twbs/bootstrap/pull/29124
-// stylelint-disable selector-no-qualifying-type
+// Ensures proper minimum height for multiline text inputs.
 textarea {
+  // stylelint-disable-next-line selector-no-qualifying-type
   &.form-control {
     min-height: var(--#{$prefix}min-height);
   }
 }
-// stylelint-enable selector-no-qualifying-type

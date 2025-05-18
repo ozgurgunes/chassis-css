@@ -1,3 +1,19 @@
+//
+// Typography Mixins
+//
+// A collection of mixins for consistent typography handling across Chassis CSS components.
+// These mixins provide a systematic approach to:
+// - Extract typography values from font maps
+// - Create CSS custom properties for typography values
+// - Apply typography styles consistently
+// - Support component-specific variable scoping
+// - Enable both shorthand and expanded font property usage
+//
+// The system uses a combination of Sass maps and CSS custom properties to provide
+// flexibility in defining typography while maintaining design consistency and enabling
+// runtime theme customization.
+//
+
 // stylelint-disable property-disallowed-list
 
 // scss-docs-start map-font-family-mixin
@@ -32,7 +48,7 @@
 // @return e.g. --#{$prefix}element-font-size: var(--#{$prefix}component-element-font-size, $value);
 @mixin map-font-size($font-map, $component: null, $element: null, $prop: false) {
   $value: map-get($font-map, "font-size");
-  $comp: if($component, "#{$component}-", "compoonent-");
+  $comp: if($component, "#{$component}-", "component-");
   $elem: if($element, "#{$element}-", "");
   $css-var: if($prop, "", "--#{$prefix}");
   $elem-var: if($element and not $prop, "#{$element}-", "");
@@ -58,7 +74,7 @@
   $elem-var: if($element and not $prop, "#{$element}-", "");
   #{$css-var}#{$elem-var}font-weight: var(--#{$prefix}#{$comp}#{$elem}font-weight, $value);
 }
-// scss-docs-end map-font-size-mixin
+// scss-docs-end map-font-weight-mixin
 
 // scss-docs-start map-line-height-mixin
 // Get line-height from a font-map for a component.
@@ -78,7 +94,7 @@
   $elem-var: if($element and not $prop, "#{$element}-", "");
   #{$css-var}#{$elem-var}line-height: var(--#{$prefix}#{$comp}#{$elem}line-height, $value);
 }
-// scss-docs-end map-font-size-mixin
+// scss-docs-end map-line-height-mixin
 
 // scss-docs-start font-map-mixin
 // Get font-set from a font-map for a component.
