@@ -32,7 +32,7 @@
 
   .option-input {
     float: left;
-    margin-top: var(--#{$prefix}margin-top);
+    margin-top: var(--#{$prefix}margin-t);
     margin-right: var(--#{$prefix}gap);
   }
 
@@ -50,9 +50,6 @@
 
 .option-input {
   @extend %form-colors;
-  // $default-idle-check-icon: svg-color($form-option-input-check-icon, $input-default-idle-fg-active);
-  // $default-idle-radio-icon: svg-color($form-option-input-radio-icon, $input--default-idle-fg-active);
-  // $default-idle-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-idle-fg-active);
   $default-disabled-check-icon: svg-color($form-option-input-check-icon, $input-default-disabled-fg-inactive);
   $default-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-default-disabled-fg-inactive);
   $default-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-default-disabled-fg-inactive);
@@ -70,7 +67,7 @@
   --#{$prefix}border-radius: var(--#{$prefix}input-border-radius, var(--#{$prefix}option-input-border-width, #{$form-option-input-checkbox-border-radius}));
 
   --#{$prefix}size: var(--#{$prefix}option-input-size, #{$form-option-input-medium-size});
-  --#{$prefix}margin-top: var(--#{$prefix}option-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .5)});
+  --#{$prefix}margin-t: var(--#{$prefix}option-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .5)});
 
   flex-shrink: 0;
   width: var(--#{$prefix}size);
@@ -108,15 +105,15 @@
   // }
 
   &:focus {
-    --#{$prefix}input-border-color: var(--#{$prefix}focus-border-color);
-    --#{$prefix}input-box-shadow: var(--#{$prefix}focus-box-shadow);
+    --#{$prefix}border-color: var(--#{$prefix}focus-border-color);
+    --#{$prefix}box-shadow: var(--#{$prefix}focus-box-shadow);
 
     outline: 0;
     @if $enable-component-shadows {
-      @include box-shadow($form-input-box-shadow, var(--#{$prefix}input-box-shadow));
+      @include box-shadow($form-input-box-shadow, var(--#{$prefix}box-shadow));
     } @else {
       // Avoid using mixin so we can pass custom focus shadow properly
-      box-shadow: var(--#{$prefix}input-box-shadow);
+      box-shadow: var(--#{$prefix}box-shadow);
     }
   }
 
@@ -139,16 +136,7 @@
     --#{$prefix}icon: #{$primary-idle-indeterminate-icon};
   }
 
-  // &:disabled {
-  //   --#{$prefix}fg-color: var(--#{$prefix}disabled-fg-color, #{$input-default-idle-fg-active});
-  //   --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-default-idle-background});
-  //   pointer-events: none;
-  //   filter: none;
-  //   opacity: $form-option-input-disabled-opacity;
-  // }
-
   // Use disabled attribute in addition of :disabled pseudo-class
-  // See: https://github.com/twbs/bootstrap/issues/28247
   &[disabled],
   &:disabled {
     --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-color, #{$input-default-disabled-bg-regular});
@@ -203,14 +191,11 @@
 .option-input.small,
 .form-option.small .option-input  {
   --#{$prefix}size: #{$form-option-input-small-size};
-  // --#{$prefix}margin-top: #{subtract($line-height-text-small, $form-option-input-small-size) * .35}; // line-height minus check height
-  // --#{$prefix}margin-top: #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .35)}; // line-height minus check height
 }
 
 .option-input.large,
 .form-option.large .option-input  {
   --#{$prefix}size: #{$form-option-input-large-size};
-  // --#{$prefix}margin-top: #{subtract($line-height-text-large, $form-option-input-large-size) * .35}; // line-height minus check height
 }
 
 
@@ -225,30 +210,38 @@
 //
 
 .form-switch {
+  $form-switch-idle-icon:         svg-color($form-switch-icon, $form-switch-idle-color) !default;
+  $form-switch-disabled-icon:     svg-color($form-switch-icon, $form-switch-disabled-color) !default;
+  $form-switch-focus-icon:        svg-color($form-switch-icon, $form-switch-focus-color) !default;
+  $form-switch-checked-icon:      svg-color($form-switch-icon, $form-switch-checked-color) !default;
+
   padding-left: $form-switch-padding-s;
 
   .option-input {
-    --#{$prefix}form-switch-icon: #{escape-svg($form-switch-icon)};
+    --#{$prefix}form-switch-icon: #{$form-switch-idle-icon};
 
     width: $form-switch-width;
     margin-left: $form-switch-padding-s * -1;
-    background-image: var(--#{$prefix}form-switch-icon);
+    @if $enable-component-gradients {
+      background-image: var(--#{$prefix}form-switch-icon), var(--#{$prefix}bg-gradient);
+    } @else {
+      background-image: var(--#{$prefix}form-switch-icon);
+    }
     background-position: left center;
     @include border-radius($form-switch-border-radius, 0);
     @include transition($form-switch-transition);
 
     &:focus {
-      --#{$prefix}form-switch-icon: #{escape-svg($form-switch-focus-icon)};
+      --#{$prefix}form-switch-icon: #{$form-switch-focus-icon};
     }
 
     &:checked {
+      --#{$prefix}form-switch-icon: #{$form-switch-checked-icon};
       background-position: $form-switch-checked-icon-position;
+    }
 
-      @if $enable-component-gradients {
-        --#{$prefix}form-switch-icon: #{escape-svg($form-switch-checked-icon)}, var(--#{$prefix}bg-gradient);
-      } @else {
-        --#{$prefix}form-switch-icon: #{escape-svg($form-switch-checked-icon)};
-      }
+    &:disabled {
+      --#{$prefix}form-switch-icon: #{$form-switch-disabled-icon};
     }
   }
 
@@ -283,11 +276,24 @@
   }
 }
 
-@if $enable-dark-mode {
-  @include color-mode(dark) {
-    .form-switch .option-input:not(:checked):not(:focus) {
-      --#{$prefix}form-switch-icon: #{escape-svg($form-switch-icon-dark)};
-    }
+@mixin switch-dark() {
+  $form-switch-idle-icon:       svg-color($form-switch-icon, $form-switch-idle-color, true) !default;
+  $form-switch-disabled-icon:   svg-color($form-switch-icon, $form-switch-disabled-color, true) !default;
+  $form-switch-focus-icon:      svg-color($form-switch-icon, $form-switch-focus-color, true) !default;
+  $form-switch-checked-icon:    svg-color($form-switch-icon, $form-switch-checked-color, true) !default;
+
+  --#{$prefix}form-switch-icon: #{$form-switch-idle-icon};
+
+  &:focus {
+    --#{$prefix}form-switch-icon: #{$form-switch-focus-icon};
+  }
+
+  &:checked {
+    --#{$prefix}form-switch-icon: #{$form-switch-checked-icon};
+  }
+
+  &:disabled {
+    --#{$prefix}form-switch-icon: #{$form-switch-disabled-icon};
   }
 }
 
@@ -341,12 +347,21 @@
     @if $color-mode-type == "media-query" {
       .option-input {
         @include option-input-dark();
+
+      }
+      .form-switch .option-input {
+        @include switch-dark();
       }
     } @else {
       // .form-select:not([data-cx-theme="light"] .form-select):not([data-cx-theme="light"].form-select),
-      .option-input:not([data-cx-theme="dark"] [data-cx-theme="light"] .option-input):not([data-cx-theme="dark"] [data-cx-theme="light"].option-input),
+      .option-input:not(.option-input[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .option-input),
       &.option-input {
         @include option-input-dark();
+      }
+
+      .form-switch:not(.form-switch[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .form-switch) .option-input,
+      &.form-switch .option-input {
+        @include switch-dark();
       }
     }
   }
