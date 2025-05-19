@@ -1,97 +1,123 @@
-// Range
+// Range Input
 //
-// Style range inputs the same across browsers. Vendor-specific rules for pseudo
-// elements cannot be mixed. As such, there are no shared styles for focus or
-// active states on prefixed selectors.
+// A cross-browser implementation of the HTML5 range input (slider).
+//
+// Due to browser differences, vendor-specific selectors are required for consistent
+// styling across WebKit (Chrome, Safari, Edge) and Gecko (Firefox) browsers.
+// These pseudo-elements cannot be mixed in a single ruleset, requiring separate style
+// blocks for each browser.
+//
+// Features:
+// - Consistent appearance across browsers
+// - Standard, alternate, focus, active, and disabled states
+// - Customizable thumb and track styling
+// - Responsive width that adapts to container
 
 .form-range {
   @extend %form-colors;
   width: 100%;
+  // Height calculation accounts for thumb height plus focus shadow to prevent layout shifts
   height: add($form-range-thumb-height, $form-range-thumb-focus-box-shadow-width * 2);
-  padding: 0; // Need to reset padding
-  appearance: none;
-  background-color: transparent;
+  padding: 0; // Reset browser default padding
+  appearance: none; // Remove default browser styling
+  background-color: transparent; // Ensure background doesn't interfere with track
 
-  &.form-alternate,
-  .form-alternate & {
-    @extend %form-color-alternate;
-  }
-
+  // Focus state styling
   &:focus {
-    outline: 0;
+    outline: 0; // Remove default browser outline
 
-    // Pseudo-elements must be split across multiple rulesets to have an effect.
-    // No box-shadow() mixin for focus accessibility.
+    // Apply focus styling to the slider thumb
+    // Each browser requires its own selector for the thumb element
+    // Box shadow provides a visual indication of focus for accessibility
     &::-webkit-slider-thumb { box-shadow: $form-range-thumb-focus-box-shadow; }
     &::-moz-range-thumb     { box-shadow: $form-range-thumb-focus-box-shadow; }
   }
 
+  // Remove dotted focus outline in Firefox
   &::-moz-focus-outer {
     border: 0;
   }
 
+  // WebKit (Chrome, Safari, Edge) slider thumb styling
   &::-webkit-slider-thumb {
     width: $form-range-thumb-width;
     height: $form-range-thumb-height;
-    margin-top: ($form-range-track-height - $form-range-thumb-height) * .5; // Webkit specific
-    appearance: none;
+    // Center the thumb vertically on the track
+    margin-top: ($form-range-track-height - $form-range-thumb-height) * .5;
+    appearance: none; // Reset default styling
     @include gradient-bg(var(--#{$prefix}form-range-thumb-color));
     border: $form-range-thumb-border;
     @include border-radius($form-range-thumb-border-radius);
     @include box-shadow($form-range-thumb-box-shadow);
     @include transition($form-range-thumb-transition);
 
+    // Active state (when thumb is being dragged)
     &:active {
       @include gradient-bg(var(--#{$prefix}form-range-thumb-active));
     }
   }
 
+  // WebKit (Chrome, Safari, Edge) slider track styling
   &::-webkit-slider-runnable-track {
     width: $form-range-track-width;
     height: $form-range-track-height;
-    color: transparent; // Why?
+    color: transparent; // Prevents text color from affecting appearance
     cursor: $form-range-track-cursor;
     background-color: var(--#{$prefix}form-range-track-color);
-    border-color: transparent;
+    border-color: transparent; // Remove default border
     @include border-radius($form-range-track-border-radius);
     @include box-shadow($form-range-track-box-shadow);
   }
 
+  // Firefox (Gecko) slider thumb styling
   &::-moz-range-thumb {
     width: $form-range-thumb-width;
     height: $form-range-thumb-height;
-    appearance: none;
+    appearance: none; // Reset default styling
     @include gradient-bg(var(--#{$prefix}form-range-thumb-color));
     border: $form-range-thumb-border;
     @include border-radius($form-range-thumb-border-radius);
     @include box-shadow($form-range-thumb-box-shadow);
     @include transition($form-range-thumb-transition);
 
+    // Active state (when thumb is being dragged)
     &:active {
       @include gradient-bg(var(--#{$prefix}form-range-thumb-active));
     }
   }
 
+  // Firefox (Gecko) slider track styling
   &::-moz-range-track {
     width: $form-range-track-width;
     height: $form-range-track-height;
-    color: transparent;
+    color: transparent; // Prevents text color from affecting appearance
     cursor: $form-range-track-cursor;
     background-color: var(--#{$prefix}form-range-track-color);
-    border-color: transparent; // Firefox specific?
+    border-color: transparent; // Required explicitly for Firefox
     @include border-radius($form-range-track-border-radius);
     @include box-shadow($form-range-track-box-shadow);
   }
 
+  // Disabled state styling
   &:disabled {
-    pointer-events: none;
+    pointer-events: none; // Prevent interaction with disabled slider
 
+    // Apply disabled styling to WebKit thumb
     &::-webkit-slider-thumb {
       background-color: var(--#{$prefix}form-range-thumb-disabled);
     }
 
+    // Apply disabled styling to Firefox thumb
     &::-moz-range-thumb {
       background-color: var(--#{$prefix}form-range-thumb-disabled);
     }
+  }
+}
+
+// Support for alternate color schemes
+@if $enable-alternate-forms {
+  .form-range.form-alternate,
+  .form-alternate .form-range {
+    @extend %form-color-alternate;
   }
 }

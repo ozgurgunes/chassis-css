@@ -38,14 +38,14 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
     <div class="col-medium-4">
       <label for="validationCustom01" class="form-label">First name</label>
       <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <div class="valid-feedback form-text">
+      <div class="valid-feedback form-assist">
         Looks good!
       </div>
     </div>
     <div class="col-medium-4">
       <label for="validationCustom02" class="form-label">Last name</label>
       <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-      <div class="valid-feedback form-text">
+      <div class="valid-feedback form-assist">
         Looks good!
       </div>
     </div>
@@ -54,7 +54,7 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
       <div class="input-group has-validation">
         <span class="input-addon" id="inputGroupPrepend">@</span>
         <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback form-text">
+        <div class="invalid-feedback form-assist">
           Please choose a username.
         </div>
       </div>
@@ -62,7 +62,7 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
     <div class="col-medium-6">
       <label for="validationCustom03" class="form-label">City</label>
       <input type="text" class="form-control" id="validationCustom03" required>
-      <div class="invalid-feedback form-text">
+      <div class="invalid-feedback form-assist">
         Please provide a valid city.
       </div>
     </div>
@@ -72,14 +72,14 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
         <option selected disabled value="">Choose...</option>
         <option>...</option>
       </select>
-      <div class="invalid-feedback form-text">
+      <div class="invalid-feedback form-assist">
         Please select a valid state.
       </div>
     </div>
     <div class="col-medium-3">
       <label for="validationCustom05" class="form-label">Zip</label>
       <input type="text" class="form-control" id="validationCustom05" required>
-      <div class="invalid-feedback form-text">
+      <div class="invalid-feedback form-assist">
         Please provide a valid zip.
       </div>
     </div>
@@ -89,7 +89,7 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
         <label class="option-label" for="invalidCheck">
           Agree to terms and conditions
         </label>
-        <div class="invalid-feedback form-text">
+        <div class="invalid-feedback form-assist">
           You must agree before submitting.
         </div>
       </div>
@@ -220,7 +220,7 @@ While these feedback styles cannot be styled with CSS, you can still customize t
 
 We recommend using client-side validation, but in case you require server-side validation, you can indicate invalid and valid form fields with `.is-invalid` and `.is-valid`. Note that `.invalid-feedback` is also supported with these classes.
 
-For invalid fields, ensure that the invalid feedback/error message is associated with the relevant form field using `aria-describedby` (noting that this attribute allows more than one `id` to be referenced, in case the field already points to additional form text).
+For invalid fields, ensure that the invalid feedback/error message is associated with the relevant form field using `aria-describedby` (noting that this attribute allows more than one `id` to be referenced, in case the field already points to additional form assist).
 
 To fix [issues with border radius](https://github.com/twbs/chassis-css/issues/25110), input groups require an additional `.has-validation` class.
 

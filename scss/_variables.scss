@@ -557,7 +557,7 @@ $button-transition:                   color .15s ease-in-out, background-color .
 // Forms
 //
 // Check design tokens for more.
-// scss-docs-start form-text-variables
+// scss-docs-start form-assist-variables
 $form-validated-class:                     was-validated !default;
 $form-valid-class:                     is-valid !default;
 $form-invalid-class:                     is-invalid !default;
@@ -565,7 +565,7 @@ $form-invalid-class:                     is-invalid !default;
 $form-field-assist-margin-t:                $space-2xsmall !default;
 $form-option-assist-margin-t:               $space-zero !default;
 // $field-assist-font:                      $input-medium-text !default;
-// scss-docs-end form-text-variables
+// scss-docs-end form-assist-variables
 
 // scss-docs-start form-label-variables
 $form-label-margin-bottom:            $space-xsmall !default;
@@ -631,7 +631,7 @@ $form-file-button-alternate-bg-hover:           var(--#{$prefix}alternate-bg-eve
 // $form-select-indicator:                   url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='var(--#{$prefix}primary)' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11.3359 17.6641L3.83594 10.1641C3.44531 9.8125 3.44531 9.22656 3.83594 8.83594C4.1875 8.48438 4.77344 8.48438 5.16406 8.83594L12 15.7109L18.8359 8.875C19.1875 8.48438 19.7734 8.48438 20.1641 8.875C20.5156 9.22656 20.5156 9.8125 20.1641 10.1641L12.625 17.6641C12.2734 18.0547 11.6875 18.0547 11.3359 17.6641Z' fill='var(--#{$prefix}primary)'/%3e%3c/svg%3e") !default;
 // $form-select-indicator-color:           $neutral-base-color !default; // Since they're css variables, we can't pass a context color here.
 // $form-select-caret-size:                   1.25em !default; // In pixels because image dimensions
-$form-select-caret-padding:         #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}caret-size) + var(--#{$prefix}gap))} !default; // Extra padding for background-image
+// $form-select-caret-padding:         #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}caret-size) + var(--#{$prefix}gap))} !default; // Extra padding for background-image
 $form-select-caret-position:               right var(--#{$prefix}padding-x) center !default;
 
 $form-feedback-icon-size:               var(--#{$prefix}icon-size) !default;
@@ -640,7 +640,7 @@ $form-select-feedback-icon-position:        center right #{calc(var(--#{$prefix}
 $form-select-feedback-icon-padding-e:       #{calc($form-feedback-icon-size + var(--#{$prefix}caret-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
 $form-input-feedback-icon-position:              right var(--#{$prefix}padding-x) center !default;
 $form-input-feedback-icon-padding-e:              #{calc($form-feedback-icon-size + var(--#{$prefix}padding-x) + var(--#{$prefix}gap))} !default;
-$form-textarea-feedback-icon-position:              top var(--#{$prefix}padding-y) right var(--#{$prefix}padding-x) !default;
+$form-assistarea-feedback-icon-position:              top var(--#{$prefix}padding-y) right var(--#{$prefix}padding-x) !default;
 // scss-docs-end form-select-variables
 
 // scss-docs-start form-option-variables
@@ -703,14 +703,14 @@ $form-switch-checked-icon-position:       right center !default;
 // scss-docs-end form-switch-variables
 
 // scss-docs-start form-range-variables
-$form-range-default-track-color:                       var(--#{$prefix}default-bg-evident) !default;
-$form-range-default-thumb-color:                       $component-active-bg-color !default;
+$form-range-default-track-color:                 var(--#{$prefix}default-bg-evident) !default;
+$form-range-default-thumb-color:                 $component-active-bg-color !default;
 $form-range-default-thumb-disabled:              var(--#{$prefix}default-bg-disabled) !default;
 $form-range-default-thumb-active:                shade-color($component-active-bg-color, 25%) !default;
-$form-range-alternate-track-color:                       var(--#{$prefix}alternate-bg-evident) !default;
-$form-range-alternate-thumb-color:                       $component-active-bg-color !default;
-$form-range-alternate-thumb-disabled:              var(--#{$prefix}alternate-bg-disabled) !default;
-$form-range-alternate-thumb-active:                tint-color($component-active-bg-color, 25%) !default;
+$form-range-alternate-track-color:               $input-alternate-idle-bg-regular !default;
+$form-range-alternate-thumb-color:               $component-active-bg-color !default;
+$form-range-alternate-thumb-disabled:            $input-alternate-disabled-fg-inactive !default;
+$form-range-alternate-thumb-active:              tint-color($component-active-bg-color, 25%) !default;
 
 $form-range-track-box-shadow:               var(--#{$prefix}box-shadow-inset) !default;
 $form-range-track-width:                    100% !default;

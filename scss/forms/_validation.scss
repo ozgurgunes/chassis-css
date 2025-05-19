@@ -15,7 +15,7 @@
 // Text-based feedback that appears below form controls
 .valid-feedback,
 .invalid-feedback {
-  @extend .form-text;
+  @extend .form-assist;
   display: none;
   width: 100%;
 }
@@ -195,7 +195,7 @@
 
     // Special positioning for textareas
     &:is(textarea) {
-      background-position: $form-textarea-feedback-icon-position;
+      background-position: $form-assistarea-feedback-icon-position;
     }
   }
 

@@ -1,4 +1,19 @@
 //
+// Input Groups
+//
+// Input groups allow combining multiple form controls, text, and buttons
+// in a single composite component. They provide a seamless way to append,
+// prepend, or inset elements next to form controls.
+//
+// The component supports:
+// - Size variations (small, medium, large)
+// - Input addons (text and icons)
+// - Validation states
+// - Floating labels
+// - Icons with positioning
+//
+
+//
 // Base styles
 //
 
@@ -39,10 +54,14 @@
 }
 
 
-// Textual addons
 //
-// Serves as a catch-all element for any text or radio/checkbox input you wish
-// to prepend or append to an input.
+// Input Addons
+//
+// Flexible elements that can be prepended or appended to form controls
+// to provide additional context, actions, or visual indicators.
+// Automatically adapts to the size of its parent input group and
+// supports both text and icon content.
+//
 
 .input-addon {
   @extend %form-colors;
@@ -60,7 +79,6 @@
   text-align: center;
   white-space: nowrap;
   background-image: var(--#{$prefix}input-addon-bg-image);
-  // background-color: transparent;
 
   @extend %component, %box-padding, %form-colors;
 
@@ -72,48 +90,25 @@
 
 }
 
-// Sizing
 //
-// Remix the default form control sizing classes into new ones for easier
-// manipulation.
+// Size Variations
+//
+// Provides consistent sizing across all elements within an input group.
+// Uses shared form size placeholders for consistent sizing across form components.
+//
 
 .input-group > .form-control,
 .input-group > .form-select,
 .input-group > .input-addon,
 .input-group > .button {
   @extend %form-colors, %form-size-medium;
-  //padding: $input-large-padding-y $input-large-padding-x;
-  // --#{$prefix}padding-y: #{$input-medium-padding-y};
-  // --#{$prefix}padding-x: #{$input-medium-padding-x};
-  // --#{$prefix}height: #{$input-medium-min-height};
-  // @include map-font-size($input-medium-text-font, input-group);
-  // @include map-line-height($input-medium-text-font, input-group);
-  // --#{$prefix}border-radius: #{$input-medium-border-radius};
-  // --#{$prefix}icon-size: #{$input-medium-icon-size};
-  //@include border-radius();
 }
-
-// .input-group.alternate > .form-control,
-// .input-group.alternate > .form-select,
-// .input-group.alternate > .input-addon,
-// .input-group.alternate > .button {
-//   @extend %form-color-alternate;
-// }
 
 .input-group.large > .form-control,
 .input-group.large > .form-select,
 .input-group.large > .input-addon,
 .input-group.large > .button {
   @extend %form-size-large;
-  //padding: $input-large-padding-y $input-large-padding-x;
-  // --#{$prefix}padding-y: #{$input-large-padding-y};
-  // --#{$prefix}padding-x: #{$input-large-padding-x};
-  // --#{$prefix}height: #{$input-large-min-height};
-  // @include map-font-size($input-large-text-font, input-group);
-  // @include map-line-height($input-large-text-font, input-group);
-  // --#{$prefix}border-radius: #{$input-large-border-radius};
-  // --#{$prefix}icon-size: #{$input-large-icon-size};
-  //@include border-radius();
 }
 
 .input-group.small > .form-control,
@@ -121,26 +116,18 @@
 .input-group.small > .input-addon,
 .input-group.small > .button {
   @extend %form-size-small;
-  // --#{$prefix}padding-y: #{$input-small-padding-y};
-  // --#{$prefix}padding-x: #{$input-small-padding-x};
-  // --#{$prefix}height: #{$input-small-min-height};
-  // @include map-font-size($input-small-text-font, input-group);
-  // @include map-line-height($input-small-text-font, input-group);
-  // --#{$prefix}border-radius: #{$input-small-border-radius};
-  // --#{$prefix}icon-size: #{$input-small-icon-size};
 }
 
-// .input-group.large > .form-select,
-// .input-group.small > .form-select {
-//   padding-right: $input-medium-padding-x + $form-select-caret-padding;
-// }
-
-
-// Rounded corners
 //
-// These rulesets must come after the sizing ones to properly override sm and lg
-// border-radius values when extending. They're more specific than we'd like
-// with the `.input-group >` part, but without it, we cannot override the sizing.
+// Border Radius Management
+//
+// Controls the border radius of elements within input groups to ensure
+// visually connected components while handling various combinations of
+// elements and validation states.
+//
+// Elements at the ends of the group display appropriate rounded corners,
+// while internal elements have flattened sides to create a unified appearance.
+//
 
 // stylelint-disable-next-line no-duplicate-selectors
 .input-group {
@@ -181,18 +168,27 @@
   }
 }
 
+//
+// Icon Input Addon
+//
+// Specialized addon for displaying icons within input fields.
+// Supports positioning (prepend/append), floating labels, and
+// automatically adjusts spacing and appearance based on the
+// form control state (enabled/disabled).
+//
+
 .input-addon.icon {
-  --#{$prefix}bg-color: null;
-  --#{$prefix}border-width: 0rem;
   position: absolute;
   z-index: 10;
-  // height: var(--#{$prefix}min-height);
-  // padding: 0 var(--#{$prefix}padding-x);
+  background: none;
+  border: 0;
 
+  // Position icon on the right when it follows a form control
   .form-control + & {
     right: 0;
   }
 
+  // Position icon on the right when it follows a floating label
   .form-floating ~ & {
     right: 0;
     height: $form-floating-height;
@@ -200,6 +196,7 @@
     border: 0;
   }
 
+  // Adjust icon color when associated with a disabled form control
   &:has(+ .form-control:disabled),
   &:has(+ .form-floating > .form-control:disabled),
   .form-control:disabled ~ &,
@@ -207,27 +204,33 @@
     --#{$prefix}icon-color: #{$input-default-disabled-fg-active};
   }
 
+  // Adjust icon position when it's before a floating label
   &:has(+ .form-floating) {
     height: $form-floating-height;
     padding: 0 var(--#{$prefix}padding-x);
     border: 0;
   }
 
+  // Adjust left padding when icon is prepended to control or floating label
   + .form-control,
   + .form-floating > .form-control {
     padding-left: #{calc(var(--#{$prefix}icon-size) + var(--#{$prefix}padding-x) * 2)};
   }
+
+  // Adjust label position when icon is prepended to floating label
   + .form-floating > label {
     padding-left: #{calc(var(--#{$prefix}icon-size) + $input-medium-padding-x * 2)};
     transform-origin: 25% 0;
   }
 
+  // Adjust right padding when icon is appended to control or floating label
   .form-control:has(+ &),
   .form-floating:has(+ &) {
     padding-right: #{calc(var(--#{$prefix}icon-size) + var(--#{$prefix}padding-x) * 2)};
     @include border-radius($input-medium-border-radius);
   }
 
+  // Adjust form control padding when icon follows floating label
   .form-floating:has(~ &) > .form-control {
     padding-right: #{calc(var(--#{$prefix}icon-size) + var(--#{$prefix}padding-x) * 2)};
   }

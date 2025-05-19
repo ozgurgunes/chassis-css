@@ -1,5 +1,16 @@
 //
+// Form Option Components
+//
+// This file contains styling for form option components including checkboxes, radio buttons,
+// switches, and button options. It supports different sizes, states (checked, disabled),
+// and themes (default, alternate) with dark mode support.
+//
+
+//
 // Check/radio
+//
+// Standard styling for checkbox and radio input groups with labels.
+// Supports small, medium, and large sizing, as well as reverse layout.
 //
 
 .form-option {
@@ -47,6 +58,17 @@
   }
 
 }
+
+//
+// Option Input Styling
+//
+// Core styling for checkbox and radio inputs with support for:
+// - Default and alternate styling variants
+// - Various states (idle, focus, checked, disabled)
+// - Indeterminate state for checkboxes
+// - Customizable icons for different states
+// - Accessibility features including high contrast support
+//
 
 .option-input {
   @extend %form-colors;
@@ -206,7 +228,11 @@
 }
 
 //
-// Switch
+// Switch Component
+//
+// Toggle switch styling that transforms checkboxes into switches.
+// Features customizable icons, transitions, and states (idle, focus, checked, disabled).
+// Supports both left-to-right and right-to-left (reverse) layouts.
 //
 
 .form-switch {
@@ -256,11 +282,18 @@
   }
 }
 
+//
+// Utility Classes
+//
+
+// Inline form option - displays option groups horizontally instead of stacked
 .form-option-inline {
   display: inline-block;
   margin-right: $form-option-inline-margin-end;
 }
 
+// Button option - hidden input that can be used with button components
+// Used for creating button-based option groups where clicking buttons changes the selection
 .button-option {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -276,6 +309,16 @@
   }
 }
 
+//
+// Dark Mode Mixins
+//
+// These mixins provide dark mode styling for form option components.
+// They are used within the color-mode mixin to apply appropriate styling
+// based on the color mode type (media-query or class-based).
+//
+
+// Mixin for applying dark mode styling to form switches
+// Updates icon colors for idle, focus, checked, and disabled states
 @mixin switch-dark() {
   $form-switch-idle-icon:       svg-color($form-switch-icon, $form-switch-idle-color, true) !default;
   $form-switch-disabled-icon:   svg-color($form-switch-icon, $form-switch-disabled-color, true) !default;
@@ -297,7 +340,11 @@
   }
 }
 
+// Mixin for applying dark mode styling to checkboxes and radio inputs
+// Updates icon colors for checked, disabled, and indeterminate states
+// Handles both default and alternate styling variants
 @mixin option-input-dark() {
+  // Generate dark mode versions of the SVG icons
   $default-disabled-check-icon: svg-color($form-option-input-check-icon, $input-default-disabled-fg-inactive, true);
   $default-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-default-disabled-fg-inactive, true);
   $default-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-default-disabled-fg-inactive, true);
@@ -305,6 +352,7 @@
   $alternate-disabled-radio-icon: svg-color($form-option-input-radio-icon, $input-alternate-disabled-fg-inactive, true);
   $alternate-disabled-indeterminate-icon: svg-color($form-option-input-indeterminate-icon, $input-alternate-disabled-fg-inactive, true);
 
+  // Apply dark mode icons to disabled states
   &[disabled],
   &:disabled {
     &[type="checkbox"]:checked {
@@ -342,18 +390,25 @@
 
 }
 
+//
+// Dark Mode Implementation
+//
+// Applies dark mode styling based on the configured color mode type
+// (either media-query based or class-based).
+//
 @if $enable-dark-mode {
   @include color-mode(dark) {
     @if $color-mode-type == "media-query" {
+      // Apply dark mode styling with media query approach
       .option-input {
         @include option-input-dark();
-
       }
       .form-switch .option-input {
         @include switch-dark();
       }
     } @else {
-      // .form-select:not([data-cx-theme="light"] .form-select):not([data-cx-theme="light"].form-select),
+      // Apply dark mode styling with class-based approach
+      // Using explicit selectors to avoid conflicts with light theme overrides
       .option-input:not(.option-input[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .option-input),
       &.option-input {
         @include option-input-dark();

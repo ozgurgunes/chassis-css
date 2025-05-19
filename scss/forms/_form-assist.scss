@@ -1,20 +1,45 @@
 //
-// Form text
+// Form Assist
+//
+// Form assist provides contextual help text for form elements.
+// It is typically placed below form controls to provide additional guidance,
+// hints, or validation messages to users.
+//
+// Features:
+// - Consistent styling across different form contexts
+// - Automatic positioning based on parent form element type
+// - Support for alternate color schemes
+// - Accessible text size and color contrast
+//
+// When used with specific form elements:
+// - Standard form fields: Appears below the input
+// - Checkbox/radio options: Aligns with the option label
+// - Range inputs: Uses appropriate spacing to maintain visual hierarchy
 //
 
-.form-text {
-  @extend %form-colors;
-  margin-top: $form-field-assist-margin-t;
-  color: var(--#{$prefix}idle-assist-color);
-  @include font();
+.form-assist {
+  @extend %form-colors; // Inherit base form color variables
+  margin-top: $form-field-assist-margin-t; // Consistent spacing from the form control
+  color: var(--#{$prefix}idle-assist-color); // Uses a lighter text color to distinguish from primary content
+  @include font(); // Apply standard font styling
+
+  // Special positioning for form-assist within checkbox/radio options
+  // Aligns the text with the option label by adding left margin equal to
+  // the width of the input element plus the gap
   .form-option > & {
     margin-top: $form-option-assist-margin-t;
     margin-left: #{calc(var(--#{$prefix}input-size) + var(--#{$prefix}gap))};
   }
+
+  // Adjusted top margin when used with range inputs
   .form-range ~ & {
     margin-top: $form-option-assist-margin-t;
   }
-  .form-alternate > & {
+}
+
+// Support for alternate styling variant
+@if $enable-alternate-forms {
+  .form-alternate .form-assist:not(.form-alternate .form-default .form-assist) {
     @extend %form-color-alternate;
   }
 }

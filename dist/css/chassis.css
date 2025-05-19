@@ -4337,7 +4337,7 @@ progress {
 .form-default *:not(*.form-alternate, .form-default .form-alternate *), .input-group > .form-control,
 .input-group > .form-select,
 .input-group > .input-addon,
-.input-group > .button, .input-addon, .form-floating > label, .form-range, .option-label, .option-input, .form-option, .form-text, .valid-feedback,
+.input-group > .button, .input-addon, .form-floating > label, .form-range, .option-label, .option-input, .form-option, .form-assist, .valid-feedback,
 .invalid-feedback, .form-select, .form-control {
   --cx-idle-bg-regular: var(--cx-default-bg-main);
   --cx-idle-fg-active: var(--cx-default-fg-main);
@@ -4384,8 +4384,9 @@ progress {
   --cx-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
 }
 
-.form-range.form-alternate, .form-alternate .form-range, .form-alternate > .form-text, .form-alternate > .valid-feedback,
-.form-alternate > .invalid-feedback, .form-alternate,
+.form-range.form-alternate,
+.form-alternate .form-range, .form-alternate .form-assist:not(.form-alternate .form-default .form-assist):not(.form-alternate .form-default .valid-feedback):not(.form-alternate .form-default .invalid-feedback), .form-alternate .valid-feedback:not(.form-alternate .form-default .form-assist):not(.form-alternate .form-default .valid-feedback):not(.form-alternate .form-default .invalid-feedback),
+.form-alternate .invalid-feedback:not(.form-alternate .form-default .form-assist):not(.form-alternate .form-default .valid-feedback):not(.form-alternate .form-default .invalid-feedback), .form-alternate,
 .form-alternate *:not(*.form-default, .form-alternate .form-default *) {
   --cx-idle-bg-regular: var(--cx-neutral-05);
   --cx-idle-fg-active: var(--cx-neutral-95);
@@ -4425,9 +4426,9 @@ progress {
   --cx-input-addon-bg-image: linear-gradient(var(--cx-alternate-dim-slight), var(--cx-alternate-dim-slight));
   --cx-input-addon-bg-color: var(--cx-neutral-05);
   --cx-input-addon-border-color: var(--cx-neutral-40);
-  --cx-form-range-track-color: var(--cx-alternate-bg-evident);
+  --cx-form-range-track-color: var(--cx-neutral-05);
   --cx-form-range-thumb-color: #00A4CC;
-  --cx-form-range-thumb-disabled: var(--cx-alternate-bg-disabled);
+  --cx-form-range-thumb-disabled: var(--cx-neutral-40);
   --cx-form-range-thumb-active: #40bbd9;
   --cx-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
 }
@@ -7546,21 +7547,22 @@ ol.inline li:not(:last-child) {
   line-height: var(--cx-line-height-small);
 }
 
-.form-text, .valid-feedback,
+.form-assist, .valid-feedback,
 .invalid-feedback {
   margin-top: 0.25rem;
   color: var(--cx-idle-assist-color);
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
 }
-.form-option > .form-text, .form-option > .valid-feedback,
+.form-option > .form-assist, .form-option > .valid-feedback,
 .form-option > .invalid-feedback {
   margin-top: 0rem;
   margin-left: calc(var(--cx-input-size) + var(--cx-gap));
 }
-.form-range ~ .form-text, .form-range ~ .valid-feedback,
+.form-range ~ .form-assist, .form-range ~ .valid-feedback,
 .form-range ~ .invalid-feedback {
   margin-top: 0rem;
 }
+
 .form-control[type=file] {
   overflow: hidden;
 }
@@ -8249,10 +8251,10 @@ textarea.form-control {
 }
 
 .input-addon.icon {
-  --cx-bg-color: null;
-  --cx-border-width: 0rem;
   position: absolute;
   z-index: 10;
+  background: none;
+  border: 0;
 }
 .form-control + .input-addon.icon {
   right: 0;

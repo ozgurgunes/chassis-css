@@ -1,21 +1,46 @@
 //
-// Labels
+// Form Labels
+//
+// This file contains styling for form labels in different contexts and sizes.
+// Labels provide text descriptions for form controls and help users understand
+// the purpose of each input in a form.
+//
+// The implementation supports:
+// - Standard labels for stacked form layouts
+// - Column-aligned labels for horizontal/grid layouts
+// - Size variations (small, medium, large) for responsive design
+// - Proper alignment with form controls
 //
 
+//
+// Standard Form Label
+//
+// The basic label style for form controls in vertically stacked layouts.
+// Provides proper spacing, font styling, and color.
+//
 .form-label {
   @include map-font($form-label-font);
 
-  margin-bottom: $form-label-margin-bottom;
-  @include font();
-  color: $form-label-color;
+  margin-bottom: $form-label-margin-bottom; // Space between label and its form control
+  @include font(); // Apply standard font styling
+  color: $form-label-color; // Consistent label color
 }
 
+//
+// Column Form Label
+//
 // For use with horizontal and inline forms, when you need the label (or legend)
-// text to align with the form controls.
+// text to visually align with the form controls. This provides proper vertical
+// alignment by matching the height of medium-sized form controls.
+//
+// Can be used with both <label> and <legend> elements, with appropriate
+// overrides to ensure consistent styling.
+//
 .col-form-label {
-  --#{$prefix}fg-color: $form-label-color;
+  --#{$prefix}fg-color: $form-label-color; // Set color via CSS variable for theming support
   @include map-font($form-label-font);
 
+  // Match the height of the default (medium) form control
   padding-top: add($input-medium-padding-y, $input-regular-border-width);
   padding-bottom: add($input-medium-padding-y, $input-regular-border-width);
   margin-bottom: 0; // Override the `<legend>` default
@@ -25,16 +50,32 @@
   color: var(--#{$prefix}fg-color);
 }
 
+//
+// Large Column Form Label
+//
+// Size variant for column labels that aligns with large form controls.
+// Adjusts padding, font-size and line-height to match large inputs.
+//
 .col-form-label-large {
+  // Match the height of large form controls
   padding-top: add($input-large-padding-y, $input-regular-border-width);
   padding-bottom: add($input-large-padding-y, $input-regular-border-width);
+  // Use the same typography as large form controls
   @include font-size(map-get($input-large-text-font, "font-size"));
   @include line-height(map-get($input-large-text-font, "line-height"));
 }
 
+//
+// Small Column Form Label
+//
+// Size variant for column labels that aligns with small form controls.
+// Adjusts padding, font-size and line-height to match small inputs.
+//
 .col-form-label-small {
+  // Match the height of small form controls
   padding-top: add($input-small-padding-y, $input-regular-border-width);
   padding-bottom: add($input-small-padding-y, $input-regular-border-width);
+  // Use the same typography as small form controls
   @include font-size(map-get($input-small-text-font, "font-size"));
   @include line-height(map-get($input-small-text-font, "line-height"));
 }
