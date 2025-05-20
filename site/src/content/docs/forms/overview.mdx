@@ -1,44 +1,46 @@
 ---
 title: Forms
-description: Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
+description: Create accessible, responsive forms with Chassis CSS's comprehensive suite of form components, styling options, and validation features.
 toc: true
 aliases: "/docs/[[config:docs_version]]/forms/"
 sections:
-  - title: Form control
-    description: Style textual inputs and textareas with support for multiple states.
+  - title: Form input
+    description: Standardized text input fields with consistent styling across states and variants.
   - title: Select
-    description: Improve browser default select elements with a custom initial appearance.
+    description: Custom-styled dropdown menus with enhanced accessibility and user experience.
   - title: Checks & radios
-    description: Use our custom radio buttons and checkboxes in forms for selecting input options.
+    description: Visually appealing checkbox and radio controls with consistent behavior.
   - title: Range
-    description: Replace browser default range inputs with our custom version.
+    description: Customizable slider inputs for intuitive selection from numeric ranges.
   - title: Input group
-    description: Attach labels and buttons to your inputs for increased semantic value.
+    description: Unified input controls combined with buttons, text and other elements.
   - title: Floating labels
-    description: Create beautifully simple form labels that float over your input fields.
+    description: Space-saving inputs with smoothly animated label positioning effects.
   - title: Layout
-    description: Create inline, horizontal, or complex grid-based layouts with your forms.
+    description: Flexible form organization patterns adaptable to various screen sizes.
   - title: Validation
-    description: Validate your forms with custom or native validation behaviors and styles.
+    description: Clear visual feedback mechanisms for form validation and error states.
 ---
 
 ## Overview
 
-Chassis - CSS’s form controls expand on [our Rebooted form styles]([[docsref:/content/reboot#forms]]) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.
+Chassis CSS provides a complete form styling system built on modern CSS practices. The framework enhances the base [form styles in the Reboot module]([[docsref:/content/reboot#forms]]) with specialized classes for consistent rendering across browsers and devices.
 
-Be sure to use an appropriate `type` attribute on all inputs (e.g., `email` for email address or `number` for numerical information) to take advantage of newer input controls like email verification, number selection, and more.
+Form components utilize CSS variables for theming, making them highly customizable while maintaining visual consistency. This approach allows easy adaptation to different design systems and color schemes.
 
-Here’s a quick example to demonstrate Chassis - CSS’s form styles. Keep reading for documentation on required classes, form layout, and more.
+Always use appropriate HTML5 `type` attributes on input elements (e.g., `email`, `number`, `tel`) to leverage built-in browser validation and specialized input controls for better user experience.
+
+Here's a basic example demonstrating Chassis CSS form elements:
 
 <Example code={`<form>
     <div class="mb-medium">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-assist">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-medium">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input type="password" class="form-input" id="exampleInputPassword1">
     </div>
     <div class="mb-medium form-option">
       <input type="checkbox" class="option-input" id="exampleCheck1">
@@ -49,22 +51,22 @@ Here’s a quick example to demonstrate Chassis - CSS’s form styles. Keep read
 
 ## Disabled forms
 
-Add the `disabled` boolean attribute on an input to prevent user interactions and make it appear lighter.
+Apply the `disabled` boolean attribute to an input element to prevent user interactions and provide visual feedback by changing its appearance.
 
 ```html
-<input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+<input class="form-input" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
 ```
 
-Add the `disabled` attribute to a `<fieldset>` to disable all the controls within. Browsers treat all native form controls (`<input>`, `<select>`, and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them.
+To disable multiple form controls at once, add the `disabled` attribute to a parent `<fieldset>` element. All native form elements (`<input>`, `<select>`, and `<button>`) within a disabled fieldset will be programmatically disabled and visually styled accordingly.
 
-However, if your form also includes custom button-like elements such as `<a class="button *">...</a>`, these will only be given a style of `pointer-events: none`, meaning they are still focusable and operable using the keyboard. In this case, you must manually modify these controls by adding `tabindex="-1"` to prevent them from receiving focus and `aria-disabled="disabled"` to signal their state to assistive technologies.
+For custom interactive elements like `<a class="button">` within a disabled fieldset, Chassis CSS applies `pointer-events: none` to prevent mouse interactions. However, for complete accessibility, you should manually add `tabindex="-1"` to prevent keyboard focus and `aria-disabled="disabled"` to communicate the disabled state to assistive technologies.
 
 <Example code={`<form>
     <fieldset disabled>
       <legend>Disabled fieldset example</legend>
       <div class="mb-medium">
         <label for="disabledTextInput" class="form-label">Disabled input</label>
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+        <input type="text" id="disabledTextInput" class="form-input" placeholder="Disabled input">
       </div>
       <div class="mb-medium">
         <label for="disabledSelect" class="form-label">Disabled select menu</label>
@@ -74,9 +76,9 @@ However, if your form also includes custom button-like elements such as `<a clas
       </div>
       <div class="mb-medium">
         <div class="form-option">
-          <input class="option-input" type="checkbox" id="disabledFieldsetCheck" disabled checked>
+          <input class="option-input" type="checkbox" id="disabledFieldsetCheck">
           <label class="option-label" for="disabledFieldsetCheck">
-            Can’t check this
+            Can't check this
           </label>
         </div>
       </div>
@@ -86,20 +88,70 @@ However, if your form also includes custom button-like elements such as `<a clas
 
 ## Accessibility
 
-Ensure that all form controls have an appropriate accessible name so that their purpose can be conveyed to users of assistive technologies. The simplest way to achieve this is to use a `<label>` element, or—in the case of buttons—to include sufficiently descriptive text as part of the `<button>...</button>` content.
+Creating accessible forms is essential for users of assistive technologies. Chassis CSS form components are designed with accessibility in mind, but proper implementation requires attention to the following principles:
 
-For situations where it’s not possible to include a visible `<label>` or appropriate text content, there are alternative ways of still providing an accessible name, such as:
+### Accessible naming techniques
 
-- `<label>` elements hidden using the `.visually-hidden` class
-- Pointing to an existing element that can act as a label using `aria-labelledby`
-- Providing a `title` attribute
-- Explicitly setting the accessible name on an element using `aria-label`
+Every form control must have an accessible name that clearly communicates its purpose to assistive technology users. Without proper naming, users of screen readers and other assistive devices cannot understand what information is being requested.
 
-If none of these are present, assistive technologies may resort to using the `placeholder` attribute as a fallback for the accessible name on `<input>` and `<textarea>` elements. The examples in this section provide a few suggested, case-specific approaches.
+**Use explicit labels**
 
-While using visually hidden content (`.visually-hidden`, `aria-label`, and even `placeholder` content, which disappears once a form field has content) will benefit assistive technology users, a lack of visible label text may still be problematic for certain users. Some form of visible label is generally the best approach, both for accessibility and usability.
+- Connect inputs with labels using the `for` attribute that matches the input's `id`
+- Place checkboxes and radios inside label elements for automatic association
 
-## CSS
+**When visible labels aren't possible:**
 
-Many form variables are set at a general level to be re-used and extended by individual form components. You’ll see these most often as `$form-*` variables.
+- Visually hidden labels using the `.visually-hidden` utility class
+- Reference existing content with `aria-labelledby`
+- Add descriptive `title` attributes (not recommended as primary method)
+- Use `aria-label` for concise, explicit naming
 
+Never rely solely on `placeholder` attributes for accessible naming, as placeholders:
+
+- Disappear when the field contains content
+- Often have low color contrast
+- Cannot be accessed by all assistive technologies consistently
+
+### State communication
+
+Form controls should communicate their states (required, invalid, disabled) both visually and programmatically:
+
+- Use the `required` attribute for mandatory fields
+- Implement `aria-invalid="true"` for validation errors
+- Ensure error messages are associated with their fields using `aria-describedby`
+
+For detailed implementation guidance, refer to the accessibility section in each form component's documentation.
+
+## CSS variables and theming
+
+Chassis CSS forms use a comprehensive system of CSS variables to enable consistent styling and easy theming. The framework applies a state-based approach where form elements adapt their appearance based on:
+
+- Idle state (default appearance)
+- Focus state (when interacted with)
+- Disabled state (when not available)
+- Validation states (error, success)
+
+These states are implemented through CSS variables with predictable naming patterns:
+
+```css
+/* Example of state-based CSS variables */
+--cx-idle-bg-regular: #fff;        /* Background in idle state */
+--cx-focus-border-color: #0d6efd;  /* Border color in focus state */
+--cx-error-assist-color: #dc3545;  /* Text color for error messages */
+```
+
+This approach allows for:
+- Consistent appearance across all form elements
+- Easy theming by modifying a small set of root variables
+- Support for both default and alternate color schemes
+- Simplified implementation of dark mode and custom themes
+
+Additionally, size variants (small, medium, large) are available for all form components through either:
+- CSS classes (`.small`, `.large`)
+- SCSS placeholders (`%form-size-small`, `%form-size-large`)
+
+### Design Tokens
+
+<DocsDesignTokens />
+
+<ScssDocs name="form-tokens" file="scss/tokens/_forms.scss" />

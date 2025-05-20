@@ -43,7 +43,7 @@ If you’re migrating from our previous alpha release of v5.3.0, please review t
 
 - Form validation `border-color` and text `color` states now respond to dark mode, thanks to new Sass and CSS variables.
 
-- Dropped recently added form control background CSS variables and reassigned the Sass variables to use CSS variables instead. This simplifies the styling across color modes and avoids an issue where form controls in dark mode wouldn’t update properly.
+- Dropped recently added form input background CSS variables and reassigned the Sass variables to use CSS variables instead. This simplifies the styling across color modes and avoids an issue where form inputs in dark mode wouldn’t update properly.
 
 - Our `box-shadow`s will once again always stay dark instead of inverting to white when in dark mode.
 
@@ -220,7 +220,7 @@ We’ve also introduced a new `.progress-stacked` class to more logically wrap [
 
 ### Forms
 
-- `.form-control` is now styled with CSS variables to support color modes. This includes the addition of two new root CSS variables for the default and disabled form control backgrounds.
+- `.form-input` is now styled with CSS variables to support color modes. This includes the addition of two new root CSS variables for the default and disabled form input backgrounds.
 
 - `.form-option` and `.form-switch` components are now built with CSS variables for setting the `background-image`. The usage here differs from other components in that the various focus, active, etc states for each component aren’t set on the base class. Instead, the states override one variable (e.g., `--cx-form-switch-bg`).
 
@@ -250,7 +250,7 @@ For a complete list of changes, [see the v5.3.0 project on GitHub](https://githu
 
 ### Refreshed design
 
-Chassis - CSS v5.2.0 features a subtle design update for a handful of components and properties across the project, **most notably through refined `border-radius` values on buttons and form controls**. Our documentation also has been updated with a new homepage, simpler docs layout that no longer collapses sections of the sidebar, and more prominent examples of [Chassis - CSS Icons](https://icons.chassis-ui.com).
+Chassis - CSS v5.2.0 features a subtle design update for a handful of components and properties across the project, **most notably through refined `border-radius` values on buttons and form inputs**. Our documentation also has been updated with a new homepage, simpler docs layout that no longer collapses sections of the sidebar, and more prominent examples of [Chassis - CSS Icons](https://icons.chassis-ui.com).
 
 ### More CSS variables
 
@@ -416,12 +416,12 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.chassis-ui.com/
 - <span class="badge text-bg-danger">Breaking</span> **Removed previously deprecated mixins:**
   - `hover`, `hover-focus`, `plain-hover-focus`, and `hover-focus-active`
   - `float()`
-  - `form-control-mixin()`
+  - `form-input-mixin()`
   - `nav-divider()`
   - `retina-img()`
   - `text-hide()` (also dropped the associated utility class, `.text-hide`)
   - `visibility()`
-  - `form-control-focus()`
+  - `form-input-focus()`
 
 - <span class="badge text-bg-danger">Breaking</span> Renamed `scale-color()` function to `shift-color()` to avoid collision with Sass’s own color scaling function.
 
@@ -504,9 +504,9 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.chassis-ui.com/
   - `.custom-control.custom-radio` is now `.form-option`.
   - `.custom-control.custom-switch` is now `.form-option.form-switch`.
   - `.custom-select` is now `.form-select`.
-  - `.custom-file` and `.form-control-file` have been replaced by custom styles on top of `.form-control`.
+  - `.custom-file` and `.form-input-file` have been replaced by custom styles on top of `.form-input`.
   - `.custom-range` is now `.form-range`.
-  - Dropped native `.form-control-file` and `.form-control-range`.
+  - Dropped native `.form-input-file` and `.form-input-range`.
 
 - <span class="badge text-bg-danger">Breaking</span> Dropped `.input-group-append` and `.input-group-prepend`. You can now just add buttons and `.input-addon` as direct children of the input groups.
 
@@ -518,7 +518,7 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.chassis-ui.com/
 
 - <span class="badge text-bg-danger">Breaking</span> `.form-assist` no longer sets `display`, allowing you to create inline or block help text as you wish just by changing the HTML element.
 
-- Form controls no longer used fixed `height` when possible, instead deferring to `min-height` to improve customization and compatibility with other components.
+- Form inputs no longer used fixed `height` when possible, instead deferring to `min-height` to improve customization and compatibility with other components.
 
 - Validation icons are no longer applied to `<select>`s with `multiple`.
 

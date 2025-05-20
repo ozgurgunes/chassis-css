@@ -4,7 +4,7 @@
 // Floating labels provide an enhanced user experience by displaying input labels
 // that float above the input field when it contains text or receives focus.
 // This implementation provides consistent styling, transitions, and accessibility
-// support across different form control types.
+// support across different form input types.
 //
 // Key features:
 // - Support for text inputs, textareas, selects, and file inputs
@@ -16,40 +16,40 @@
 
 .form-floating {
   position: relative;
-  border-bottom-width: $input-floating-border-width;
+  border-bottom-width: $form-floating-border-width;
 
-  // Base styling for form controls within floating label context
+  // Base styling for form inputs within floating label context
   // Applies to standard inputs, plaintext inputs, and select elements
-  > .form-control,
-  > .form-control.plaintext,
+  > .form-input,
+  > .form-input.plaintext,
   > .form-select {
-    --#{$prefix}bg-color: var(--#{$prefix}idle-bg-floating);
+    --#{$prefix}bg-color: var(--#{$prefix}form-idle-bg-floating);
     --#{$prefix}border-width: 0;
     height: $form-floating-height;
     min-height: $form-floating-height;
     line-height: $form-floating-line-height;
-    border-bottom-width: $input-floating-border-width;
-    @include border-top-radius($input-floating-blunt-border-radius);
-    @include border-bottom-radius($input-floating-sharp-border-radius);
+    border-bottom-width: $form-floating-border-width;
+    @include border-top-radius($form-floating-blunt-border-radius);
+    @include border-bottom-radius($form-floating-sharp-border-radius);
 
     &:focus {
-      --#{$prefix}bg-color: var(--#{$prefix}focus-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}form-focus-bg-floating);
     }
 
     // Disabled state styling
     &[disabled],
     &:disabled {
-      --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-floating);
     }
 
     // Valid state styling
     &:valid {
-      --#{$prefix}bg-color: var(--#{$prefix}success-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}form-valid-bg-floating);
     }
 
     // Invalid state styling
     &:invalid {
-      --#{$prefix}bg-color: var(--#{$prefix}error-bg-floating);
+      --#{$prefix}bg-color: var(--#{$prefix}form-invalid-bg-floating);
     }
   }
 
@@ -64,19 +64,19 @@
     height: 100%; // Allow proper alignment with textareas
     padding: $form-floating-padding-y $form-floating-padding-x;
     overflow: hidden;
-    color: var(--#{$prefix}label-color, var(--#{$prefix}idle-fg-inactive));
+    color: var(--#{$prefix}label-color, var(--#{$prefix}form-idle-fg-inactive));
     text-align: start;
     text-overflow: ellipsis;
     white-space: nowrap;
     pointer-events: none; // Prevent accidental clicks on the label
-    border: $input-regular-border-width solid transparent; // Required for aligning label's text with the input
+    border: $form-regular-border-width solid transparent; // Required for aligning label's text with the input
     transform-origin: 0 0;
     @include transition($form-floating-transition);
   }
 
   // Text input and plaintext input specific styling
-  > .form-control,
-  > .form-control.plaintext {
+  > .form-input,
+  > .form-input.plaintext {
     padding: $form-floating-padding-y $form-floating-padding-x;
 
     // Hide placeholder when the label is shown
@@ -86,7 +86,7 @@
 
     // Increase bottom border width on focus for better visual indication
     &:focus {
-      border-bottom-width: $input-active-border-width;
+      border-bottom-width: $form-active-border-width;
     }
 
     // Adjust padding when label is floating to ensure text doesn't overlap
@@ -107,7 +107,7 @@
   // Focus state styling for the label
   > %form-input {
     &:focus ~ label {
-      color: $input-default-focus-assist-color;
+      color: $form-default-focus-assist-color;
     }
   }
 
@@ -120,9 +120,9 @@
 
   // Float label when input has content or focus
   // This covers all cases: focused inputs, filled inputs, plaintext, and selects
-  > .form-control:focus,
-  > .form-control:not(:placeholder-shown),
-  > .form-control.plaintext,
+  > .form-input:focus,
+  > .form-input:not(:placeholder-shown),
+  > .form-input.plaintext,
   > .form-select {
     ~ label {
       transform: $form-floating-label-transform;
@@ -134,21 +134,21 @@
         z-index: -1;
         height: $form-floating-label-height;
         content: "";
-        @include border-radius($input-medium-border-radius);
+        @include border-radius($form-medium-border-radius);
       }
     }
   }
 
   // File input styling
   // Customizes the file selector button to fit with the floating label design
-  > .form-control[type="file"] {
+  > .form-input[type="file"] {
     &::file-selector-button {
       padding-top: 0;
       padding-bottom: 0;
       @include font-size(var(--#{$prefix}font-size-small));
       @include line-height(var(--#{$prefix}line-height-small));
       font-weight: var(--#{$prefix}font-weight-strong);
-      background-color: transparent;
+      background: none;
       border-right: var(--#{$prefix}border-width-medium) solid var(--#{$prefix}border-color);
     }
     &:hover::file-selector-button {
@@ -158,7 +158,7 @@
 
   // Browser autofill handling for label positioning
   // Must be separate since :-webkit-autofill invalidates other selectors when grouped
-  > .form-control:-webkit-autofill {
+  > .form-input:-webkit-autofill {
     ~ label {
       color: var(--#{$prefix}fg-main);
       transform: $form-floating-label-transform;
@@ -167,16 +167,16 @@
 
   // Plaintext input styling
   // For read-only/display contexts where the input should appear as regular text
-  > .form-control.plaintext {
+  > .form-input.plaintext {
     background-color: inherit;
     ~ label {
-      border-width: $input-regular-border-width 0; // Required to properly position label text
+      border-width: $form-regular-border-width 0; // Required to properly position label text
     }
   }
 
   // Disabled state styling for labels
   > :disabled ~ label,
-  > .form-control:disabled ~ label { // Additional specificity required for form controls
+  > .form-input:disabled ~ label { // Additional specificity required for form inputs
     color: $form-floating-label-disabled-fg-color;
   }
 }

@@ -1,19 +1,21 @@
 ---
-title: Checks and radios
-description: Create consistent cross-browser and cross-device checkboxes and radios with our completely rewritten checks component.
+title: Checkboxes and Radio Buttons
+description: Create accessible, customized checkboxes and radio buttons with Chassis CSS's enhanced form controls.
 aliases: "/docs/[[config:docs_version]]/forms/checks/"
 toc: true
 ---
 
-## Approach
+## Design approach
 
-Browser default checkboxes and radios are replaced with the help of `.form-option`, a series of classes for both input types that improves the layout and behavior of their HTML elements, that provide greater customization and cross browser consistency. Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.
+Chassis CSS replaces browser default checkboxes and radios with custom-styled controls that maintain accessibility while providing consistent appearance across browsers and devices.
 
-Structurally, our `<input>`s and `<label>`s are sibling elements as opposed to an `<input>` within a `<label>`. This is slightly more verbose as you must specify `id` and `for` attributes to relate the `<input>` and `<label>`. We use the sibling selector (`~`) for all our `<input>` states, like `:checked` or `:disabled`. When combined with the `.option-label` class, we can easily style the text for each item based on the `<input>`’s state.
+The `.form-option` component creates controls that look consistent across browsers while supporting accessibility, different sizes, and various layouts.
 
-Our checks use custom Chassis - CSS icons to indicate checked or indeterminate states.
+It is possible to use both the traditional sibling `<input>` and `<label>` elements connected with `id` and `for` attributes and nested inputs within label elements for more compact markup. Both approaches look identical and maintain full accessibility, letting you choose the pattern that works best for your project.
 
-## Checks
+## Checkboxes
+
+Checkboxes allow users to select multiple options from a list. Chassis CSS enhances standard checkboxes with consistent styling and clear state indicators while maintaining accessibility.
 
 <Example code={`<div class="form-option">
     <input class="option-input" type="checkbox" value="" id="checkDefault">
@@ -28,9 +30,9 @@ Our checks use custom Chassis - CSS icons to indicate checked or indeterminate s
     </label>
   </div>`} />
 
-### Indeterminate
+### Indeterminate state
 
-Checkboxes can utilize the `:indeterminate` pseudo class when manually set via JavaScript (there is no available HTML attribute for specifying it).
+The indeterminate state provides a third visual state for checkboxes, useful for indicating partially selected options or group selections. Since HTML has no attribute for this state, it must be set via JavaScript using the `indeterminate` property.
 
 <Example addStackblitzJs class="cxd-example-indeterminate" code={`<div class="form-option">
     <input class="option-input" type="checkbox" value="" id="checkIndeterminate">
@@ -39,9 +41,9 @@ Checkboxes can utilize the `:indeterminate` pseudo class when manually set via J
     </label>
   </div>`} />
 
-### Disabled
+### Disabled state
 
-Add the `disabled` attribute and the associated `<label>`s are automatically styled to match with a lighter color to help indicate the input’s state.
+Apply the HTML `disabled` attribute to indicate that a checkbox is unavailable for interaction. Chassis CSS automatically styles both the checkbox and its label with visual cues to indicate the disabled state.
 
 <Example addStackblitzJs class="cxd-example-indeterminate" code={`<div class="form-option">
     <input class="option-input" type="checkbox" value="" id="checkIndeterminateDisabled" disabled>
@@ -62,7 +64,9 @@ Add the `disabled` attribute and the associated `<label>`s are automatically sty
     </label>
   </div>`} />
 
-## Radios
+## Radio buttons
+
+Radio buttons allow users to select a single option from a list of choices. Chassis CSS provides visually consistent radio buttons with clear states while maintaining native accessibility features.
 
 <Example code={`<div class="form-option">
     <input class="option-input" type="radio" name="radioDefault" id="radioDefault1">
@@ -77,9 +81,9 @@ Add the `disabled` attribute and the associated `<label>`s are automatically sty
     </label>
   </div>`} />
 
-### Disabled
+### Disabled radio buttons
 
-Add the `disabled` attribute and the associated `<label>`s are automatically styled to match with a lighter color to help indicate the input’s state.
+Like checkboxes, radio buttons can be disabled with the HTML `disabled` attribute. This prevents user interaction and applies a visual state that indicates the control is unavailable.
 
 <Example code={`<div class="form-option">
     <input class="option-input" type="radio" name="radioDisabled" id="radioDisabled" disabled>
@@ -94,7 +98,7 @@ Add the `disabled` attribute and the associated `<label>`s are automatically sty
     </label>
   </div>`} />
 
-## Sizes
+## Sizing options
 
 Add `.small` or `.large` classes to change the size of form option.
 
@@ -148,9 +152,11 @@ Or add `.small` or `.large` classes to input itself.
   <input class="option-input" name="radioSizeInput" type="radio">
   <input class="option-input small" name="radioSizeInput" type="radio">`} />
 
-## Switches
+## Toggle switches
 
-A switch has the markup of a custom checkbox but uses the `.form-switch` class to render a toggle switch. Consider using `role="switch"` to more accurately convey the nature of the control to assistive technologies that support this role. In older assistive technologies, it will simply be announced as a regular checkbox as a fallback. Switches also support the `disabled` attribute.
+Chassis CSS offers toggle switches as an alternative UI for boolean (on/off) selections. Switches are built on checkbox markup but with enhanced styling via the `.form-switch` class.
+
+Adding the `role="switch"` attribute improves accessibility by correctly communicating the control's purpose to assistive technologies that support this role. In older assistive technologies, it will simply be announced as a regular checkbox as a fallback. Switches also support the `disabled` attribute.
 
 <Example code={`<div class="form-option form-switch">
     <input class="option-input" type="checkbox" role="switch" id="switchCheckDefault">
@@ -169,9 +175,13 @@ A switch has the markup of a custom checkbox but uses the `.form-switch` class t
     <label class="option-label" for="switchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
   </div>`} />
 
-## Default (stacked)
+## Layout options
 
-By default, any number of checkboxes and radios that are immediate sibling will be vertically stacked and appropriately spaced with `.form-option`.
+Chassis CSS provides flexible layout options for checkboxes and radio buttons to accommodate different design patterns.
+
+### Stacked layout
+
+By default, `.form-option` elements stack vertically with appropriate spacing, creating a clean, readable list of options.
 
 <Example code={`<div class="form-option">
     <input class="option-input" type="checkbox" value="" id="defaultCheck1">
@@ -205,9 +215,9 @@ By default, any number of checkboxes and radios that are immediate sibling will 
     </label>
   </div>`} />
 
-## Inline
+### Inline layout
 
-Group checkboxes or radios on the same horizontal row by adding `.form-option-inline` to any `.form-option`.
+For horizontal layouts, add the `.form-option-inline` modifier class to display multiple options in a row. This is especially useful for brief options that should appear as a group.
 
 <Example code={`<div class="form-option form-option-inline">
     <input class="option-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -235,9 +245,9 @@ Group checkboxes or radios on the same horizontal row by adding `.form-option-in
     <label class="option-label" for="inlineRadio3">3 (disabled)</label>
   </div>`} />
 
-## Reverse
+### Reversed layout
 
-Put your checkboxes, radios, and switches on the opposite side with the `.form-option-reverse` modifier class.
+Use the `.reverse` modifier class to position the control on the right side of the label. This layout is useful for maintaining visual alignment with surrounding content or creating specific UI patterns.
 
 <Example code={`<div class="form-option reverse">
     <input class="option-input" type="checkbox" value="" id="reverseCheck1">
@@ -257,23 +267,55 @@ Put your checkboxes, radios, and switches on the opposite side with the `.form-o
     <label class="option-label" for="switchCheckReverse">Reverse switch checkbox input</label>
   </div>`} />
 
-## Without labels
+## Without visible labels
 
-Omit the wrapping `.form-option` for checkboxes and radios that have no label text. Remember to still provide some form of accessible name for assistive technologies (for instance, using `aria-label`). See the [forms overview accessibility]([[docsref:/forms/overview/#accessibility]]) section for details.
+For interface designs that require controls without visible text labels, omit the wrapping `.form-option` container. While this creates a visually minimal control, remember that all form elements must still have an accessible name for screen reader users (see [forms overview accessibility]([[docsref:/forms/overview/#accessibility]])).
 
 <Example code={`<div>
-    <input class="option-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+    <input class="option-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="Subscribe to newsletter">
   </div>
 
   <div>
-    <input class="option-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+    <input class="option-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="1" aria-label="Select first option">
+    <input class="option-input" type="radio" name="radioNoLabel" id="radioNoLabel2" value="2" aria-label="Select second option">
   </div>`} />
 
-## Toggle buttons
+## Input within labels
 
-Create button-like checkboxes and radio buttons by using `.button` styles rather than `.option-label` on the `<label>` elements. These toggle buttons can further be grouped in a [button group]([[docsref:/components/button-group]]) if needed.
+Chassis CSS fully supports nesting input elements inside label elements as a first-class pattern. This creates an implicit association between the input and its label without requiring `id` and `for` attributes, resulting in cleaner, more concise markup while maintaining full accessibility.
 
-### Checkbox toggle buttons
+<Example code={`<div>
+    <label class="form-option option-label">
+      <input class="option-input" type="checkbox">
+      Checkbox within label
+    </label>
+  </div>
+  <div>
+    <label class="form-option option-label form-option-inline">
+      <input class="option-input" type="radio" name="radioLabel">
+      Radio within label
+    </label>
+    <label class="form-option option-label form-option-inline">
+      <input class="option-input" type="radio" name="radioLabel">
+      Another radio within label
+    </label>
+  </div>
+  <div>
+    <label class="form-option form-switch option-label">
+      <input class="option-input" type="checkbox" role="switch">
+      Switch within label
+    </label>
+  </div>`} />
+
+Both the nested and sibling markup approaches receive identical styling and functionality in Chassis CSS, allowing you to choose the pattern that best suits your project requirements or team preferences.
+
+## Button-styled toggles
+
+Chassis CSS provides a way to style checkboxes and radio buttons as buttons, combining the semantic meaning of form controls with the visual appearance of buttons. These controls use the `.button-option` class on the input and `.button` styles on the corresponding `<label>` elements.
+
+### Checkbox button toggles
+
+Checkbox button toggles allow users to toggle options on and off with a button-like appearance. They maintain the same states and behaviors as standard checkboxes but with enhanced visual styling.
 
 <Example code={`<input type="checkbox" class="button-option" id="button-option" autocomplete="off">
 <label class="button primary" for="button-option">Single toggle</label>
@@ -283,21 +325,22 @@ Create button-like checkboxes and radio buttons by using `.button` styles rather
 
 <input type="checkbox" class="button-option" id="button-option-3" autocomplete="off" disabled>
 <label class="button primary" for="button-option-3">Disabled</label>`} />
-
 <Example code={`<input type="checkbox" class="button-option" id="button-option-4" autocomplete="off">
-<label class="button" for="button-option-4">Single toggle</label>
+<label class="button default" for="button-option-4">Single toggle</label>
 
 <input type="checkbox" class="button-option" id="button-option-5" checked autocomplete="off">
-<label class="button" for="button-option-5">Checked</label>
+<label class="button default" for="button-option-5">Checked</label>
 
 <input type="checkbox" class="button-option" id="button-option-6" autocomplete="off" disabled>
-<label class="button" for="button-option-6">Disabled</label>`} />
+<label class="button default" for="button-option-6">Disabled</label>`} />
 
 <Callout>
-Visually, these checkbox toggle buttons are identical to the [button plugin toggle buttons]([[docsref:/components/buttons#button-plugin]]). However, they are conveyed differently by assistive technologies: the checkbox toggles will be announced by screen readers as “checked”/“not checked” (since, despite their appearance, they are fundamentally still checkboxes), whereas the button plugin toggle buttons will be announced as “button”/“button pressed”. The choice between these two approaches will depend on the type of toggle you are creating, and whether or not the toggle will make sense to users when announced as a checkbox or as an actual button.
+From an accessibility perspective, button-styled checkboxes are announced by screen readers as "checkbox checked"/"checkbox not checked" since they maintain their semantic role. This differs from toggle buttons created with the [button component]([[docsref:/components/buttons#button-plugin]]), which are announced as "button"/"button pressed". Choose the appropriate approach based on whether the control's purpose is better communicated as a state change (checkbox) or an action trigger (button).
 </Callout>
 
-### Radio toggle buttons
+### Radio button toggles
+
+Radio button toggles provide a button-styled interface for mutually exclusive selections. They offer the same semantic meaning as standard radio buttons but with an enhanced visual appearance that may be more suitable for certain UI patterns.
 
 <Example code={`<input type="radio" class="button-option" name="options" id="option1" autocomplete="off" checked>
 <label class="button secondary" for="option1">Checked</label>
@@ -312,26 +355,28 @@ Visually, these checkbox toggle buttons are identical to the [button plugin togg
 <label class="button secondary" for="option4">Radio</label>`} />
 
 <Example code={`<input type="radio" class="button-option" name="options-base" id="option5" autocomplete="off" checked>
-<label class="button" for="option5">Checked</label>
+<label class="button default" for="option5">Checked</label>
 
 <input type="radio" class="button-option" name="options-base" id="option6" autocomplete="off">
-<label class="button" for="option6">Radio</label>
+<label class="button default" for="option6">Radio</label>
 
 <input type="radio" class="button-option" name="options-base" id="option7" autocomplete="off" disabled>
-<label class="button" for="option7">Disabled</label>
+<label class="button default" for="option7">Disabled</label>
 
 <input type="radio" class="button-option" name="options-base" id="option8" autocomplete="off">
-<label class="button" for="option8">Radio</label>`} />
+<label class="button default" for="option8">Radio</label>`} />
 
-### Outlined styles
+### Style variants
 
-Different variants of `.button`, such as the various outlined styles, are supported.
+Chassis CSS's button-styled toggles support all visual variants available to standard buttons. This includes outlined styles, which provide a lower-emphasis alternative that still clearly communicates the interactive nature of the control.
 
-<Example code={`<input type="checkbox" class="button-option" id="button-option-outlined" autocomplete="off">
-<label class="button primary" for="button-option-outlined">Single toggle</label><br>
+<Example class="button-examples" code={`<input type="checkbox" class="button-option" id="button-option-outlined" autocomplete="off">
+<label class="button primary" for="button-option-outlined">Single toggle</label>
 
 <input type="checkbox" class="button-option" id="button-option-2-outlined" checked autocomplete="off">
-<label class="button outline secondary" for="button-option-2-outlined">Checked</label><br>
+<label class="button outline secondary" for="button-option-2-outlined">Checked</label>
+
+<br>
 
 <input type="radio" class="button-option" name="options-outlined" id="success-outlined" autocomplete="off" checked>
 <label class="button outline success" for="success-outlined">Checked success radio</label>
@@ -339,14 +384,68 @@ Different variants of `.button`, such as the various outlined styles, are suppor
 <input type="radio" class="button-option" name="options-outlined" id="danger-outlined" autocomplete="off">
 <label class="button outline danger" for="danger-outlined">Danger radio</label>`} />
 
-## CSS
+## Accessibility considerations
 
-### Sass variables
+Chassis CSS's checkbox and radio components are designed with accessibility in mind, but there are several best practices to follow for optimal user experience:
 
-Variables for checks:
+### Grouping related controls
+
+When presenting multiple related options, use the `<fieldset>` and `<legend>` elements to create a semantic grouping:
+
+```html
+<fieldset>
+  <legend>Choose your delivery preferences:</legend>
+  <div class="form-option">
+    <input class="option-input" type="checkbox" id="optEmail">
+    <label class="option-label" for="optEmail">Email notifications</label>
+  </div>
+  <div class="form-option">
+    <input class="option-input" type="checkbox" id="optSMS">
+    <label class="option-label" for="optSMS">SMS notifications</label>
+  </div>
+</fieldset>
+```
+
+### Focus visibility
+
+Chassis CSS provides visible focus indicators for all form controls. Do not remove these indicators, as they are essential for keyboard users to navigate your forms.
+
+### State communication
+
+The different visual states of checkboxes and radio buttons (checked, unchecked, indeterminate, disabled) are designed to be perceivable through:
+
+- Visual design (color, shape changes)
+- High contrast ratios between states
+- Non-reliance on color alone to communicate state
+
+For more detailed accessibility guidance, see the [forms overview accessibility]([[docsref:/forms/overview/#accessibility]]) section.
+
+## Customization with CSS variables
+
+Chassis CSS uses CSS custom properties (variables) to control the appearance of checkboxes, radio buttons, and toggle switches. These variables make it easy to create custom themes or modify specific aspects of the controls to match your design system.
+
+### Form option variables
+
+These variables control the core appearance of checkboxes and radio buttons:
 
 <ScssDocs name="form-option-variables" file="scss/_variables.scss" />
 
-Variables for switches:
+### Toggle switch variables
+
+These variables specifically affect the appearance of toggle switches:
 
 <ScssDocs name="form-switch-variables" file="scss/_variables.scss" />
+
+### Theming examples
+
+You can override these variables in your own CSS to create custom-themed controls. For example:
+
+```css
+:root {
+  --chassis-option-checked-bg: #9c27b0;
+  --chassis-option-checked-border-color: #7b1fa2;
+  --chassis-option-focus-box-shadow: 0 0 0 0.25rem rgba(156, 39, 176, 0.25);
+}
+```
+
+This would create purple-themed checkboxes and radio buttons while maintaining all the functionality and accessibility features of the standard controls.

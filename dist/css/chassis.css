@@ -3769,7 +3769,7 @@ progress {
   border: var(--cx-border-width, 0) var(--cx-border-style, solid) var(--cx-border-color, transparent);
 }
 
-.form-control::-webkit-file-upload-button {
+.form-input::-webkit-file-upload-button {
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
   color: var(--cx-fg-color);
   background-color: var(--cx-bg-color);
@@ -3778,7 +3778,7 @@ progress {
   border: var(--cx-border-width, 0) var(--cx-border-style, solid) var(--cx-border-color, transparent);
 }
 
-.popover, .alert-window, .toast, .notification, .badge, .page-link, .breadcrumb, .card, .dropdown-menu, .chip, .button, .input-addon, .form-control::file-selector-button, .form-select, .form-control {
+.popover, .alert-window, .toast, .notification, .badge, .page-link, .breadcrumb, .card, .dropdown-menu, .chip, .button, .input-addon, .form-input::file-selector-button, .form-select, .form-input {
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
   color: var(--cx-fg-color);
   background-color: var(--cx-bg-color);
@@ -4334,41 +4334,43 @@ progress {
 }
 
 .form-default,
-.form-default *:not(*.form-alternate, .form-default .form-alternate *), .input-group > .form-control,
+.form-default *:not(.form-alternate, .form-alternate *), .input-group > .form-input,
 .input-group > .form-select,
 .input-group > .input-addon,
-.input-group > .button, .input-addon, .form-floating > label, .form-range, .option-label, .option-input, .form-option, .form-assist, .valid-feedback,
-.invalid-feedback, .form-select, .form-control {
-  --cx-idle-bg-regular: var(--cx-default-bg-main);
-  --cx-idle-fg-active: var(--cx-default-fg-main);
-  --cx-idle-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-idle-border-color: var(--cx-default-border-main);
-  --cx-idle-assist-color: var(--cx-default-fg-main);
-  --cx-focus-bg-regular: var(--cx-default-bg-main);
-  --cx-focus-fg-active: var(--cx-default-fg-main);
-  --cx-focus-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-focus-border-color: var(--cx-primary-icon-main);
-  --cx-focus-assist-color: var(--cx-primary-icon-main);
-  --cx-disabled-bg-regular: var(--cx-default-bg-disabled);
-  --cx-disabled-fg-active: var(--cx-default-fg-subtle);
-  --cx-disabled-fg-inactive: var(--cx-default-fg-slight);
-  --cx-disabled-border-color: var(--cx-default-fg-slight);
-  --cx-disabled-assist-color: var(--cx-default-fg-slight);
-  --cx-error-bg-regular: var(--cx-default-bg-main);
-  --cx-error-fg-active: var(--cx-default-fg-main);
-  --cx-error-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-error-border-color: var(--cx-danger-base-color);
-  --cx-error-assist-color: var(--cx-danger-fg-main);
-  --cx-success-bg-regular: var(--cx-default-bg-main);
-  --cx-success-fg-active: var(--cx-default-fg-main);
-  --cx-success-fg-inactive: var(--cx-default-fg-subtle);
-  --cx-success-border-color: var(--cx-success-base-color);
-  --cx-success-assist-color: var(--cx-success-fg-main);
-  --cx-idle-bg-floating: var(--cx-default-bg-even);
-  --cx-focus-bg-floating: var(--cx-default-bg-even);
-  --cx-disabled-bg-floating: var(--cx-default-bg-disabled);
-  --cx-error-bg-floating: var(--cx-default-bg-even);
-  --cx-success-bg-floating: var(--cx-default-bg-even);
+.input-group > .button, .input-addon, .form-floating > label, .form-range, .option-label, .option-input, .form-option, .form-assist,
+.valid-feedback,
+.invalid-feedback, .form-select, .form-input {
+  --cx-form-idle-bg-regular: var(--cx-default-bg-main);
+  --cx-form-idle-fg-active: var(--cx-default-fg-main);
+  --cx-form-idle-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-form-idle-border-color: var(--cx-default-border-main);
+  --cx-form-idle-assist-color: var(--cx-default-fg-main);
+  --cx-form-idle-bg-floating: var(--cx-default-bg-even);
+  --cx-form-focus-bg-regular: var(--cx-default-bg-main);
+  --cx-form-focus-fg-active: var(--cx-default-fg-main);
+  --cx-form-focus-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-form-focus-border-color: var(--cx-primary-icon-main);
+  --cx-form-focus-assist-color: var(--cx-primary-icon-main);
+  --cx-form-focus-bg-floating: var(--cx-default-bg-even);
+  --cx-form-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
+  --cx-form-disabled-bg-regular: var(--cx-default-bg-disabled);
+  --cx-form-disabled-fg-active: var(--cx-default-fg-subtle);
+  --cx-form-disabled-fg-inactive: var(--cx-default-fg-slight);
+  --cx-form-disabled-border-color: var(--cx-default-fg-slight);
+  --cx-form-disabled-assist-color: var(--cx-default-fg-slight);
+  --cx-form-disabled-bg-floating: var(--cx-default-bg-disabled);
+  --cx-form-invalid-bg-regular: var(--cx-default-bg-main);
+  --cx-form-invalid-fg-active: var(--cx-default-fg-main);
+  --cx-form-invalid-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-form-invalid-border-color: var(--cx-danger-base-color);
+  --cx-form-invalid-assist-color: var(--cx-danger-fg-main);
+  --cx-form-invalid-bg-floating: var(--cx-default-bg-even);
+  --cx-form-valid-bg-regular: var(--cx-default-bg-main);
+  --cx-form-valid-fg-active: var(--cx-default-fg-main);
+  --cx-form-valid-fg-inactive: var(--cx-default-fg-subtle);
+  --cx-form-valid-border-color: var(--cx-success-base-color);
+  --cx-form-valid-assist-color: var(--cx-success-fg-main);
+  --cx-form-valid-bg-floating: var(--cx-default-bg-even);
   --cx-file-button-fg-color: var(--cx-default-fg-main);
   --cx-file-button-bg-image: linear-gradient(var(--cx-default-dim-slight), var(--cx-default-dim-slight));
   --cx-file-button-bg-color: var(--cx-default-bg-main);
@@ -4381,43 +4383,44 @@ progress {
   --cx-form-range-thumb-color: #00A4CC;
   --cx-form-range-thumb-disabled: var(--cx-default-bg-disabled);
   --cx-form-range-thumb-active: #007b99;
-  --cx-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
 }
 
 .form-range.form-alternate,
-.form-alternate .form-range, .form-alternate .form-assist:not(.form-alternate .form-default .form-assist):not(.form-alternate .form-default .valid-feedback):not(.form-alternate .form-default .invalid-feedback), .form-alternate .valid-feedback:not(.form-alternate .form-default .form-assist):not(.form-alternate .form-default .valid-feedback):not(.form-alternate .form-default .invalid-feedback),
-.form-alternate .invalid-feedback:not(.form-alternate .form-default .form-assist):not(.form-alternate .form-default .valid-feedback):not(.form-alternate .form-default .invalid-feedback), .form-alternate,
-.form-alternate *:not(*.form-default, .form-alternate .form-default *) {
-  --cx-idle-bg-regular: var(--cx-neutral-05);
-  --cx-idle-fg-active: var(--cx-neutral-95);
-  --cx-idle-fg-inactive: var(--cx-neutral-40);
-  --cx-idle-border-color: var(--cx-neutral-40);
-  --cx-idle-assist-color: var(--cx-neutral-95);
-  --cx-focus-bg-regular: var(--cx-white-base);
-  --cx-focus-fg-active: var(--cx-neutral-95);
-  --cx-focus-fg-inactive: var(--cx-neutral-40);
-  --cx-focus-border-color: var(--cx-primary-50);
-  --cx-focus-assist-color: var(--cx-primary-50);
-  --cx-disabled-bg-regular: var(--cx-neutral-30);
-  --cx-disabled-fg-active: var(--cx-neutral-50);
-  --cx-disabled-fg-inactive: var(--cx-neutral-40);
-  --cx-disabled-border-color: var(--cx-neutral-40);
-  --cx-disabled-assist-color: var(--cx-neutral-50);
-  --cx-error-bg-regular: var(--cx-danger-bg-main);
-  --cx-error-fg-active: var(--cx-neutral-95);
-  --cx-error-fg-inactive: var(--cx-neutral-40);
-  --cx-error-border-color: var(--cx-danger-50);
-  --cx-error-assist-color: var(--cx-danger-bg-inverse);
-  --cx-success-bg-regular: var(--cx-success-05);
-  --cx-success-fg-active: var(--cx-neutral-95);
-  --cx-success-fg-inactive: var(--cx-neutral-40);
-  --cx-success-border-color: var(--cx-success-50);
-  --cx-success-assist-color: var(--cx-success-bg-inverse);
-  --cx-idle-bg-floating: var(--cx-neutral-10);
-  --cx-focus-bg-floating: var(--cx-neutral-05);
-  --cx-disabled-bg-floating: var(--cx-neutral-30);
-  --cx-error-bg-floating: var(--cx-neutral-10);
-  --cx-success-bg-floating: var(--cx-neutral-10);
+.form-alternate .form-range, .form-alternate .form-assist:not(.form-alternate .form-default .form-assist),
+.form-alternate .valid-feedback:not(.form-alternate .form-default .valid-feedback),
+.form-alternate .invalid-feedback:not(.form-alternate .form-default .invalid-feedback), .form-alternate,
+.form-alternate *:not(.form-default, .form-default *) {
+  --cx-form-idle-bg-regular: var(--cx-neutral-05);
+  --cx-form-idle-fg-active: var(--cx-neutral-95);
+  --cx-form-idle-fg-inactive: var(--cx-neutral-40);
+  --cx-form-idle-border-color: var(--cx-neutral-40);
+  --cx-form-idle-assist-color: var(--cx-neutral-95);
+  --cx-form-idle-bg-floating: var(--cx-neutral-10);
+  --cx-form-focus-bg-regular: var(--cx-white-base);
+  --cx-form-focus-fg-active: var(--cx-neutral-95);
+  --cx-form-focus-fg-inactive: var(--cx-neutral-40);
+  --cx-form-focus-border-color: var(--cx-primary-50);
+  --cx-form-focus-assist-color: var(--cx-primary-50);
+  --cx-form-focus-bg-floating: var(--cx-neutral-05);
+  --cx-form-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
+  --cx-form-disabled-bg-regular: var(--cx-neutral-30);
+  --cx-form-disabled-fg-active: var(--cx-neutral-50);
+  --cx-form-disabled-fg-inactive: var(--cx-neutral-40);
+  --cx-form-disabled-border-color: var(--cx-neutral-40);
+  --cx-form-disabled-assist-color: var(--cx-neutral-50);
+  --cx-form-disabled-bg-floating: var(--cx-neutral-30);
+  --cx-form-invalid-bg-regular: var(--cx-danger-bg-main);
+  --cx-form-invalid-fg-active: var(--cx-neutral-95);
+  --cx-form-invalid-fg-inactive: var(--cx-neutral-40);
+  --cx-form-invalid-border-color: var(--cx-danger-50);
+  --cx-form-invalid-assist-color: var(--cx-danger-bg-inverse);
+  --cx-form-invalid-bg-floating: var(--cx-neutral-10);
+  --cx-form-valid-bg-regular: var(--cx-success-05);
+  --cx-form-valid-fg-active: var(--cx-neutral-95);
+  --cx-form-valid-fg-inactive: var(--cx-neutral-40);
+  --cx-form-valid-border-color: var(--cx-success-50);
+  --cx-form-valid-assist-color: var(--cx-success-bg-inverse);
+  --cx-form-valid-bg-floating: var(--cx-neutral-10);
   --cx-file-button-fg-color: var(--cx-neutral-95);
   --cx-file-button-bg-image: linear-gradient(var(--cx-alternate-dim-slight), var(--cx-alternate-dim-slight));
   --cx-file-button-bg-color: var(--cx-neutral-05);
@@ -4430,13 +4433,12 @@ progress {
   --cx-form-range-thumb-color: #00A4CC;
   --cx-form-range-thumb-disabled: var(--cx-neutral-40);
   --cx-form-range-thumb-active: #40bbd9;
-  --cx-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
 }
 
-.input-group > .form-control,
+.input-group > .form-input,
 .input-group > .form-select,
 .input-group > .input-addon,
-.input-group > .button, .form-select, .form-control {
+.input-group > .button, .form-select, .form-input {
   --cx-font-family: var(--cx-input-font-family, var(--cx-font-family-text));
   --cx-font-size: var(--cx-input-font-size, var(--cx-font-size-medium));
   --cx-font-weight: var(--cx-input-font-weight, var(--cx-font-weight-normal));
@@ -4447,13 +4449,13 @@ progress {
   --cx-border-width: var(--cx-input-border-width, var(--cx-border-width-medium));
   --cx-border-radius: var(--cx-input-border-radius, var(--cx-border-radius-medium));
   --cx-caret-size: var(--cx-input-caret-size, 1.25rem);
-  --cx-icon-size: var(--cx-input-icon-size, 1.5rem);
+  --cx-icon-size: var(--cx-input-icon-size, 1.25rem);
 }
 
-.input-group.small > .form-control,
+.input-group.small > .form-input,
 .input-group.small > .form-select,
 .input-group.small > .input-addon,
-.input-group.small > .button, .small.form-select, .small.form-control {
+.input-group.small > .button, .small.form-select, .small.form-input {
   --cx-input-font-size: var(--cx-font-size-small);
   --cx-input-line-height: var(--cx-line-height-small);
   --cx-input-padding-x: 0.5rem;
@@ -4464,10 +4466,10 @@ progress {
   --cx-input-icon-size: 1.5rem;
 }
 
-.input-group.large > .form-control,
+.input-group.large > .form-input,
 .input-group.large > .form-select,
 .input-group.large > .input-addon,
-.input-group.large > .button, .large.form-select, .large.form-control {
+.input-group.large > .button, .large.form-select, .large.form-input {
   --cx-input-font-size: var(--cx-font-size-large);
   --cx-input-line-height: var(--cx-line-height-large);
   --cx-input-padding-x: 1rem;
@@ -4475,13 +4477,13 @@ progress {
   --cx-input-gap: 1rem;
   --cx-input-border-radius: var(--cx-border-radius-medium);
   --cx-input-caret-size: 1.5rem;
-  --cx-input-icon-size: 1.5rem;
+  --cx-input-icon-size: 1rem;
 }
 
-.form-select, .form-control {
-  --cx-fg-color: var(--cx-input-fg-color, var(--cx-idle-fg-active));
-  --cx-bg-color: var(--cx-input-bg-color, var(--cx-idle-bg-regular));
-  --cx-border-color: var(--cx-input-border-color, var(--cx-idle-border-color));
+.form-select, .form-input {
+  --cx-fg-color: var(--cx-input-fg-color, var(--cx-form-idle-fg-active));
+  --cx-bg-color: var(--cx-input-bg-color, var(--cx-form-idle-bg-regular));
+  --cx-border-color: var(--cx-input-border-color, var(--cx-form-idle-border-color));
   --cx-min-height: var(--cx-input-min-height, calc(var(--cx-line-height) + var(--cx-padding-y) * 2));
   display: block;
   width: 100%;
@@ -4495,26 +4497,26 @@ progress {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-select, .form-control {
+  .form-select, .form-input {
     transition: none;
   }
 }
-.form-select:focus, .form-control:focus {
-  --cx-fg-color: var(--cx-focus-fg-active);
-  --cx-bg-color: var(--cx-focus-bg-regular);
-  --cx-border-color: var(--cx-focus-border-color);
-  --cx-box-shadow: var(--cx-focus-box-shadow);
+.form-select:focus, .form-input:focus {
+  --cx-fg-color: var(--cx-form-focus-fg-active);
+  --cx-bg-color: var(--cx-form-focus-bg-regular);
+  --cx-border-color: var(--cx-form-focus-border-color);
+  --cx-box-shadow: var(--cx-form-focus-box-shadow);
   outline: 0;
   box-shadow: var(--cx-box-shadow-inset), var(--cx-box-shadow);
 }
-.form-select:disabled, .form-control:disabled {
-  --cx-fg-color: var(--cx-disabled-fg-active);
-  --cx-bg-color: var(--cx-disabled-bg-regular);
-  --cx-border-color: var(--cx-disabled-border-color);
+.form-select:disabled, .form-input:disabled {
+  --cx-fg-color: var(--cx-form-disabled-fg-active);
+  --cx-bg-color: var(--cx-form-disabled-bg-regular);
+  --cx-border-color: var(--cx-form-disabled-border-color);
   opacity: 1;
 }
-.form-select:disabled::placeholder, .form-control:disabled::placeholder {
-  color: var(--cx-disabled-fg-inactive);
+.form-select:disabled::placeholder, .form-input:disabled::placeholder {
+  color: var(--cx-form-disabled-fg-inactive);
 }
 
 .list-group.list-action > .list-item,
@@ -7547,43 +7549,46 @@ ol.inline li:not(:last-child) {
   line-height: var(--cx-line-height-small);
 }
 
-.form-assist, .valid-feedback,
+.form-assist,
+.valid-feedback,
 .invalid-feedback {
   margin-top: 0.25rem;
-  color: var(--cx-idle-assist-color);
+  color: var(--cx-form-idle-assist-color);
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
 }
-.form-option > .form-assist, .form-option > .valid-feedback,
+.form-option > .form-assist,
+.form-option > .valid-feedback,
 .form-option > .invalid-feedback {
   margin-top: 0rem;
   margin-left: calc(var(--cx-input-size) + var(--cx-gap));
 }
-.form-range ~ .form-assist, .form-range ~ .valid-feedback,
+.form-range ~ .form-assist,
+.form-range ~ .valid-feedback,
 .form-range ~ .invalid-feedback {
   margin-top: 0rem;
 }
 
-.form-control[type=file] {
+.form-input[type=file] {
   overflow: hidden;
 }
-.form-control[type=file]:not(:disabled):not([readonly]) {
+.form-input[type=file]:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
-.form-control::-webkit-date-and-time-value {
+.form-input::-webkit-date-and-time-value {
   min-width: 5.5rem;
   height: var(--cx-line-height);
   margin: 0;
 }
-.form-control::-webkit-datetime-edit {
+.form-input::-webkit-datetime-edit {
   display: block;
   height: var(--cx-line-height);
   padding: 0;
 }
-.form-control::placeholder {
-  color: var(--cx-idle-fg-inactive);
+.form-input::placeholder {
+  color: var(--cx-form-idle-fg-inactive);
   opacity: 1;
 }
-.form-control::-webkit-file-upload-button {
+.form-input::-webkit-file-upload-button {
   --cx-fg-color: var(--cx-file-button-fg-color);
   --cx-bg-color: var(--cx-file-button-bg-color);
   margin: calc(-1 * var(--cx-padding-y)) calc(-1 * var(--cx-padding-x));
@@ -7599,7 +7604,7 @@ ol.inline li:not(:last-child) {
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.form-control::file-selector-button {
+.form-input::file-selector-button {
   --cx-fg-color: var(--cx-file-button-fg-color);
   --cx-bg-color: var(--cx-file-button-bg-color);
   margin: calc(-1 * var(--cx-padding-y)) calc(-1 * var(--cx-padding-x));
@@ -7615,23 +7620,23 @@ ol.inline li:not(:last-child) {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control::-webkit-file-upload-button {
+  .form-input::-webkit-file-upload-button {
     -webkit-transition: none;
     transition: none;
   }
-  .form-control::file-selector-button {
+  .form-input::file-selector-button {
     transition: none;
   }
 }
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+.form-input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: var(--cx-file-button-bg-hover);
 }
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+.form-input:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: var(--cx-file-button-bg-hover);
 }
-.form-control.plaintext {
+.form-input.plaintext {
   --cx-padding-x: 0;
-  --cx-fg-color: var(--cx-idle-fg-active);
+  --cx-fg-color: var(--cx-form-idle-fg-active);
   --cx-bg-color: transparent;
   --cx-border-width: 0;
   --cx-border-color: transparent;
@@ -7641,27 +7646,27 @@ ol.inline li:not(:last-child) {
   margin-bottom: 0;
   box-shadow: none;
 }
-.form-control.plaintext:focus {
+.form-input.plaintext:focus {
   outline: 0;
 }
-.form-control.color-control {
+.form-input.color-input {
   width: var(--cx-input-color-width, var(--cx-min-height));
   height: var(--cx-input-color-height, var(--cx-min-height));
   padding: var(--cx-input-color-padding, var(--cx-padding-y));
 }
-.form-control.color-control:not(:disabled):not([readonly]) {
+.form-input.color-input:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
-.form-control.color-control::-moz-color-swatch {
+.form-input.color-input::-moz-color-swatch {
   border: 0 !important;
   border-radius: var(--cx-border-radius);
 }
-.form-control.color-control::-webkit-color-swatch {
+.form-input.color-input::-webkit-color-swatch {
   border: 0 !important;
   border-radius: var(--cx-border-radius);
 }
 
-textarea.form-control {
+textarea.form-input {
   min-height: var(--cx-min-height);
 }
 
@@ -7739,10 +7744,8 @@ textarea.form-control {
 }
 
 .option-input {
-  --cx-bg-color: var(--cx-input-bg-color, var(--cx-idle-bg-regular));
-  --cx-border-color: var(--cx-input-border-color, var(--cx-idle-border-color));
-  --cx-border-width: var(--cx-input-border-width, var(--cx-option-input-border-width, var(--cx-border-width-medium)));
-  --cx-border-radius: var(--cx-input-border-radius, var(--cx-option-input-border-width, 0.25rem));
+  --cx-bg-color: var(--cx-input-bg-color, var(--cx-form-idle-bg-regular));
+  --cx-border-color: var(--cx-input-border-color, var(--cx-form-idle-border-color));
   --cx-size: var(--cx-option-input-size, 1.25rem);
   --cx-margin-t: var(--cx-option-input-margin-t, calc((var(--cx-line-height) - var(--cx-size)) * 0.5));
   flex-shrink: 0;
@@ -7756,7 +7759,7 @@ textarea.form-control {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: var(--cx-border-width) solid var(--cx-border-color);
+  border: var(--cx-border-width-medium) solid var(--cx-border-color);
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
   print-color-adjust: exact;
@@ -7764,14 +7767,14 @@ textarea.form-control {
   background-image: var(--cx-icon), var(--cx-bg-gradient);
 }
 .option-input[type=checkbox] {
-  border-radius: var(--cx-option-input-border-radius);
+  border-radius: 0.125rem;
 }
 .option-input[type=radio] {
   border-radius: 50%;
 }
 .option-input:focus {
-  --cx-border-color: var(--cx-focus-border-color);
-  --cx-box-shadow: var(--cx-focus-box-shadow);
+  --cx-border-color: var(--cx-form-focus-border-color);
+  --cx-box-shadow: var(--cx-form-focus-box-shadow);
   outline: 0;
   box-shadow: var(--cx-box-shadow-inset), var(--cx-box-shadow);
 }
@@ -7791,12 +7794,12 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23ffffff' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 .option-input[disabled], .option-input:disabled {
-  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-default-bg-disabled));
-  --cx-border-color: var(--cx-disabled-border-color, var(--cx-default-fg-slight));
+  --cx-bg-color: var(--cx-form-disabled-bg-color, var(--cx-default-bg-disabled));
+  --cx-border-color: var(--cx-form-disabled-border-color, var(--cx-default-fg-slight));
   pointer-events: none;
   filter: none;
 }
-.option-input[disabled] ~ .option-label, .option-input:disabled ~ .option-label {
+.option-input[disabled] ~ .option-label, .option-label:has(.option-input[disabled], .option-input:disabled), .option-input:disabled ~ .option-label {
   cursor: default;
   opacity: var(--cx-opacity-fg-slight);
 }
@@ -7807,13 +7810,13 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(28, 32, 33, 0.25)' class='icon-circle-small-solid' viewBox='0 0 24 24'%3e%3cpath d='M6.25 12C6.25 9.77344 7.42188 7.74219 9.375 6.60938C11.2891 5.47656 13.6719 5.47656 15.625 6.60938C17.5391 7.74219 18.75 9.77344 18.75 12C18.75 14.2656 17.5391 16.2969 15.625 17.4297C13.6719 18.5625 11.2891 18.5625 9.375 17.4297C7.42188 16.2969 6.25 14.2656 6.25 12Z'/%3e%3c/svg%3e");
 }
 .option-input[disabled][type=checkbox]:indeterminate, .option-input:disabled[type=checkbox]:indeterminate {
-  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-default-bg-disabled));
-  --cx-border-color: var(--cx-disabled-border-color, var(--cx-default-fg-slight));
+  --cx-bg-color: var(--cx-form-disabled-bg-color, var(--cx-default-bg-disabled));
+  --cx-border-color: var(--cx-form-disabled-border-color, var(--cx-default-fg-slight));
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(28, 32, 33, 0.25)' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 .form-alternate .option-input[disabled], .option-input[disabled].form-alternate, .form-alternate .option-input:disabled, .option-input:disabled.form-alternate {
-  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-neutral-30));
-  --cx-border-color: var(--cx-disabled-border-color, var(--cx-neutral-40));
+  --cx-bg-color: var(--cx-form-disabled-bg-color, var(--cx-neutral-30));
+  --cx-border-color: var(--cx-form-disabled-border-color, var(--cx-neutral-40));
 }
 .form-alternate .option-input[disabled][type=checkbox]:checked, .option-input[disabled].form-alternate[type=checkbox]:checked, .form-alternate .option-input:disabled[type=checkbox]:checked, .option-input:disabled.form-alternate[type=checkbox]:checked {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-check-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.3594 6.14062C20.8672 6.60938 20.8672 7.42969 20.3594 7.89844L10.3594 17.8984C9.89062 18.4062 9.07031 18.4062 8.60156 17.8984L3.60156 12.8984C3.09375 12.4297 3.09375 11.6094 3.60156 11.1406C4.07031 10.6328 4.89062 10.6328 5.35938 11.1406L9.5 15.2422L18.6016 6.14062C19.0703 5.63281 19.8906 5.63281 20.3594 6.14062Z'/%3e%3c/svg%3e");
@@ -7822,8 +7825,8 @@ textarea.form-control {
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-circle-small-solid' viewBox='0 0 24 24'%3e%3cpath d='M6.25 12C6.25 9.77344 7.42188 7.74219 9.375 6.60938C11.2891 5.47656 13.6719 5.47656 15.625 6.60938C17.5391 7.74219 18.75 9.77344 18.75 12C18.75 14.2656 17.5391 16.2969 15.625 17.4297C13.6719 18.5625 11.2891 18.5625 9.375 17.4297C7.42188 16.2969 6.25 14.2656 6.25 12Z'/%3e%3c/svg%3e");
 }
 .form-alternate .option-input[disabled][type=checkbox]:indeterminate, .option-input[disabled].form-alternate[type=checkbox]:indeterminate, .form-alternate .option-input:disabled[type=checkbox]:indeterminate, .option-input:disabled.form-alternate[type=checkbox]:indeterminate {
-  --cx-bg-color: var(--cx-disabled-bg-color, var(--cx-neutral-30));
-  --cx-border-color: var(--cx-disabled-border-color, var(--cx-neutral-40));
+  --cx-bg-color: var(--cx-form-disabled-bg-color, var(--cx-neutral-30));
+  --cx-border-color: var(--cx-form-disabled-border-color, var(--cx-neutral-40));
   --cx-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2393a0a4' class='icon-minus-solid' viewBox='0 0 24 24'%3e%3cpath d='M20.125 12C20.125 12.7031 19.5391 13.25 18.875 13.25H5.125C4.42188 13.25 3.875 12.7031 3.875 12C3.875 11.3359 4.42188 10.75 5.125 10.75H18.875C19.5391 10.75 20.125 11.3359 20.125 12Z'/%3e%3c/svg%3e");
 }
 
@@ -7841,13 +7844,9 @@ textarea.form-control {
   color: var(--cx-fg-color, );
 }
 
-.form-switch {
-  padding-left: 2.5em;
-}
 .form-switch .option-input {
   --cx-form-switch-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(28, 32, 33, 0.5)'/%3e%3c/svg%3e");
   width: 2em;
-  margin-left: -2.5em;
   background-image: var(--cx-form-switch-icon), var(--cx-bg-gradient);
   background-position: left center;
   border-radius: 2em;
@@ -7867,14 +7866,6 @@ textarea.form-control {
 }
 .form-switch .option-input:disabled {
   --cx-form-switch-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(28, 32, 33, 0.25)'/%3e%3c/svg%3e");
-}
-.form-switch.reverse {
-  padding-right: 2.5em;
-  padding-left: 0;
-}
-.form-switch.reverse .option-input {
-  margin-right: -2.5em;
-  margin-left: 0;
 }
 
 .form-option-inline {
@@ -8026,10 +8017,10 @@ textarea.form-control {
   position: relative;
   border-bottom-width: var(--cx-border-width-xlarge);
 }
-.form-floating > .form-control,
-.form-floating > .form-control.plaintext,
+.form-floating > .form-input,
+.form-floating > .form-input.plaintext,
 .form-floating > .form-select {
-  --cx-bg-color: var(--cx-idle-bg-floating);
+  --cx-bg-color: var(--cx-form-idle-bg-floating);
   --cx-border-width: 0;
   height: calc(3.5rem + calc(var(--cx-border-width-medium) * 2));
   min-height: calc(3.5rem + calc(var(--cx-border-width-medium) * 2));
@@ -8040,27 +8031,27 @@ textarea.form-control {
   border-bottom-right-radius: var(--cx-border-radius-zero);
   border-bottom-left-radius: var(--cx-border-radius-zero);
 }
-.form-floating > .form-control:focus,
-.form-floating > .form-control.plaintext:focus,
+.form-floating > .form-input:focus,
+.form-floating > .form-input.plaintext:focus,
 .form-floating > .form-select:focus {
-  --cx-bg-color: var(--cx-focus-bg-floating);
+  --cx-bg-color: var(--cx-form-focus-bg-floating);
 }
-.form-floating > .form-control[disabled], .form-floating > .form-control:disabled,
-.form-floating > .form-control.plaintext[disabled],
-.form-floating > .form-control.plaintext:disabled,
+.form-floating > .form-input[disabled], .form-floating > .form-input:disabled,
+.form-floating > .form-input.plaintext[disabled],
+.form-floating > .form-input.plaintext:disabled,
 .form-floating > .form-select[disabled],
 .form-floating > .form-select:disabled {
-  --cx-bg-color: var(--cx-disabled-bg-floating);
+  --cx-bg-color: var(--cx-form-disabled-bg-floating);
 }
-.form-floating > .form-control:valid,
-.form-floating > .form-control.plaintext:valid,
+.form-floating > .form-input:valid,
+.form-floating > .form-input.plaintext:valid,
 .form-floating > .form-select:valid {
-  --cx-bg-color: var(--cx-success-bg-floating);
+  --cx-bg-color: var(--cx-form-valid-bg-floating);
 }
-.form-floating > .form-control:invalid,
-.form-floating > .form-control.plaintext:invalid,
+.form-floating > .form-input:invalid,
+.form-floating > .form-input.plaintext:invalid,
 .form-floating > .form-select:invalid {
-  --cx-bg-color: var(--cx-error-bg-floating);
+  --cx-bg-color: var(--cx-form-invalid-bg-floating);
 }
 .form-floating > label {
   position: absolute;
@@ -8070,7 +8061,7 @@ textarea.form-control {
   height: 100%;
   padding: 1rem 0.75rem;
   overflow: hidden;
-  color: var(--cx-label-color, var(--cx-idle-fg-inactive));
+  color: var(--cx-label-color, var(--cx-form-idle-fg-inactive));
   text-align: start;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -8084,30 +8075,30 @@ textarea.form-control {
     transition: none;
   }
 }
-.form-floating > .form-control,
-.form-floating > .form-control.plaintext {
+.form-floating > .form-input,
+.form-floating > .form-input.plaintext {
   padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::placeholder,
-.form-floating > .form-control.plaintext::placeholder {
+.form-floating > .form-input::placeholder,
+.form-floating > .form-input.plaintext::placeholder {
   color: transparent;
 }
-.form-floating > .form-control:focus,
-.form-floating > .form-control.plaintext:focus {
+.form-floating > .form-input:focus,
+.form-floating > .form-input.plaintext:focus {
   border-bottom-width: var(--cx-border-width-xlarge);
 }
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
-.form-floating > .form-control.plaintext:focus,
-.form-floating > .form-control.plaintext:not(:placeholder-shown) {
+.form-floating > .form-input:focus, .form-floating > .form-input:not(:placeholder-shown),
+.form-floating > .form-input.plaintext:focus,
+.form-floating > .form-input.plaintext:not(:placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:-webkit-autofill,
-.form-floating > .form-control.plaintext:-webkit-autofill {
+.form-floating > .form-input:-webkit-autofill,
+.form-floating > .form-input.plaintext:-webkit-autofill {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:focus ~ label, .form-floating > .form-select:focus ~ label {
+.form-floating > .form-input:focus ~ label, .form-floating > .form-select:focus ~ label {
   color: var(--cx-primary-icon-main);
 }
 .form-floating > .form-select {
@@ -8115,15 +8106,15 @@ textarea.form-control {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label,
-.form-floating > .form-control.plaintext ~ label,
+.form-floating > .form-input:focus ~ label,
+.form-floating > .form-input:not(:placeholder-shown) ~ label,
+.form-floating > .form-input.plaintext ~ label,
 .form-floating > .form-select ~ label {
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:focus ~ label::after,
-.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
-.form-floating > .form-control.plaintext ~ label::after,
+.form-floating > .form-input:focus ~ label::after,
+.form-floating > .form-input:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-input.plaintext ~ label::after,
 .form-floating > .form-select ~ label::after {
   position: absolute;
   inset: 1rem 0.375rem;
@@ -8132,53 +8123,52 @@ textarea.form-control {
   content: "";
   border-radius: var(--cx-border-radius-medium);
 }
-.form-floating > .form-control[type=file]::-webkit-file-upload-button {
+.form-floating > .form-input[type=file]::-webkit-file-upload-button {
   padding-top: 0;
   padding-bottom: 0;
   font-size: var(--cx-font-size-small);
   line-height: var(--cx-line-height-small);
   font-weight: var(--cx-font-weight-strong);
-  background-color: transparent;
+  background: none;
   border-right: var(--cx-border-width-medium) solid var(--cx-border-color);
 }
-.form-floating > .form-control[type=file]::file-selector-button {
+.form-floating > .form-input[type=file]::file-selector-button {
   padding-top: 0;
   padding-bottom: 0;
   font-size: var(--cx-font-size-small);
   line-height: var(--cx-line-height-small);
   font-weight: var(--cx-font-weight-strong);
-  background-color: transparent;
+  background: none;
   border-right: var(--cx-border-width-medium) solid var(--cx-border-color);
 }
-.form-floating > .form-control[type=file]:hover::-webkit-file-upload-button {
+.form-floating > .form-input[type=file]:hover::-webkit-file-upload-button {
   background-color: transparent;
 }
-.form-floating > .form-control[type=file]:hover::file-selector-button {
+.form-floating > .form-input[type=file]:hover::file-selector-button {
   background-color: transparent;
 }
-.form-floating > .form-control:-webkit-autofill ~ label {
+.form-floating > .form-input:-webkit-autofill ~ label {
   color: var(--cx-fg-main);
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control.plaintext {
+.form-floating > .form-input.plaintext {
   background-color: inherit;
 }
-.form-floating > .form-control.plaintext ~ label {
+.form-floating > .form-input.plaintext ~ label {
   border-width: var(--cx-border-width-medium) 0;
 }
 .form-floating > :disabled ~ label,
-.form-floating > .form-control:disabled ~ label {
+.form-floating > .form-input:disabled ~ label {
   color: var(--cx-default-fg-disabled);
 }
 
 .input-group {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
 }
-.input-group > .form-control,
+.input-group > .form-input,
 .input-group > .form-select,
 .input-group > .form-floating {
   position: relative;
@@ -8186,7 +8176,7 @@ textarea.form-control {
   width: 1%;
   min-width: 0;
 }
-.input-group > .form-control:focus,
+.input-group > .form-input:focus,
 .input-group > .form-select:focus,
 .input-group > .form-floating:focus-within {
   z-index: 5;
@@ -8210,7 +8200,8 @@ textarea.form-control {
   --cx-icon-color: var(--cx-input-addon-fg-color);
   --cx-border-width: var(--cx-border-width-medium);
   --cx-border-radius: var(--cx-border-radius-medium);
-  --cx-icon-size: 1.5rem;
+  --cx-icon-size: 1.25rem;
+  --cx-min-height: var(--cx-input-min-height, calc(var(--cx-line-height) + var(--cx-padding-y) * 2));
   display: flex;
   align-items: center;
   text-align: center;
@@ -8223,28 +8214,21 @@ textarea.form-control {
   border-width: 0 0 var(--cx-border-width-xlarge);
 }
 
-.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating):not(:has(~ .icon)),
-.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
-.input-group:not(.has-validation) > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-control,
-.input-group:not(.has-validation) > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-select {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
-.input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
-.input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {
+.input-group > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating):not(:has(~ .icon)),
+.input-group > .dropdown-toggle:nth-last-child(n+3),
+.input-group > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-input,
+.input-group > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: calc(var(--cx-border-width-medium) * -1);
 }
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback):not(.icon ~ .form-control) {
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback):not(.icon ~ .form-input) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.input-group > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-control,
+.input-group > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-input,
 .input-group > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-select {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -8253,10 +8237,12 @@ textarea.form-control {
 .input-addon.icon {
   position: absolute;
   z-index: 10;
+  min-height: var(--cx-min-height);
+  padding: 0 var(--cx-padding-x);
   background: none;
   border: 0;
 }
-.form-control + .input-addon.icon {
+.form-input + .input-addon.icon {
   right: 0;
 }
 .form-floating ~ .input-addon.icon {
@@ -8265,7 +8251,7 @@ textarea.form-control {
   padding: 0 var(--cx-padding-x);
   border: 0;
 }
-.input-addon.icon:has(+ .form-control:disabled), .input-addon.icon:has(+ .form-floating > .form-control:disabled), .form-control:disabled ~ .input-addon.icon, .form-floating:has(.form-control:disabled) ~ .input-addon.icon {
+.input-addon.icon:has(+ .form-input:disabled), .input-addon.icon:has(+ .form-floating > .form-input:disabled), .form-input:disabled ~ .input-addon.icon, .form-floating:has(.form-input:disabled) ~ .input-addon.icon {
   --cx-icon-color: var(--cx-default-fg-subtle);
 }
 .input-addon.icon:has(+ .form-floating) {
@@ -8273,20 +8259,24 @@ textarea.form-control {
   padding: 0 var(--cx-padding-x);
   border: 0;
 }
-.input-addon.icon + .form-control,
-.input-addon.icon + .form-floating > .form-control {
+.input-addon.icon + .form-input,
+.input-addon.icon + .form-floating > .form-input {
   padding-left: calc(var(--cx-icon-size) + var(--cx-padding-x) * 2);
 }
 .input-addon.icon + .form-floating > label {
   padding-left: calc(var(--cx-icon-size) + 1.5rem);
   transform-origin: 25% 0;
 }
-.form-control:has(+ .input-addon.icon), .form-floating:has(+ .input-addon.icon) {
+.form-input:has(+ .input-addon.icon), .form-floating:has(+ .input-addon.icon) {
   padding-right: calc(var(--cx-icon-size) + var(--cx-padding-x) * 2);
   border-radius: var(--cx-border-radius-medium);
 }
-.form-floating:has(~ .input-addon.icon) > .form-control {
+.form-floating:has(~ .input-addon.icon) > .form-input {
   padding-right: calc(var(--cx-icon-size) + var(--cx-padding-x) * 2);
+}
+
+.was-validated :valid:has(~ .valid-feedback) ~ .form-assist:not(.always-show), .was-validated :invalid:has(~ .invalid-feedback) ~ .form-assist:not(.always-show), .was-validated .input-group:has(:valid):has(~ .valid-feedback) ~ .form-assist:not(.always-show), .was-validated .input-group:has(:invalid):has(~ .invalid-feedback) ~ .form-assist:not(.always-show), .input-group:has(.is-valid):has(~ .valid-feedback) ~ .form-assist:not(.always-show), .input-group:has(.is-invalid):has(~ .invalid-feedback) ~ .form-assist:not(.always-show), .is-valid ~ .form-assist:not(.always-show):has(~ .valid-feedback), .is-invalid ~ .form-assist:not(.always-show):has(~ .invalid-feedback) {
+  display: none;
 }
 
 .valid-feedback,
@@ -8296,11 +8286,11 @@ textarea.form-control {
 }
 
 .valid-feedback {
-  color: var(--cx-success-assist-color);
+  color: var(--cx-form-valid-assist-color);
 }
 
 .invalid-feedback {
-  color: var(--cx-error-assist-color);
+  color: var(--cx-form-invalid-assist-color);
 }
 
 .valid-tooltip,
@@ -8327,85 +8317,96 @@ textarea.form-control {
   background-color: var(--cx-danger-bg-solid);
 }
 
-.was-validated :valid ~ .valid-feedback, .is-valid ~ .valid-feedback,
+.was-validated :valid ~ .valid-feedback, .was-validated .input-group:has(:valid) ~ .valid-feedback, .input-group:has(.is-valid) ~ .valid-feedback, .is-valid ~ .valid-feedback,
 .was-validated :valid ~ .valid-tooltip,
+.was-validated .input-group:has(:valid) ~ .valid-tooltip,
+.input-group:has(.is-valid) ~ .valid-tooltip,
 .is-valid ~ .valid-tooltip {
   display: block;
 }
 
-.was-validated :invalid ~ .invalid-feedback, .is-invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-feedback, .was-validated .input-group:has(:invalid) ~ .invalid-feedback, .input-group:has(.is-invalid) ~ .invalid-feedback, .is-invalid ~ .invalid-feedback,
 .was-validated :invalid ~ .invalid-tooltip,
+.was-validated .input-group:has(:invalid) ~ .invalid-tooltip,
+.input-group:has(.is-invalid) ~ .invalid-tooltip,
 .is-invalid ~ .invalid-tooltip {
   display: block;
 }
 
-.was-validated .form-control:valid, .was-validated .form-select:valid, .is-valid.form-control, .is-valid.form-select {
-  --cx-fg-color: var(--cx-success-fg-active);
-  --cx-bg-color: var(--cx-success-bg-regular);
-  --cx-border-color: var(--cx-success-border-color);
-  --cx-box-shadow: 0 0 0 0.25rem rgba(var(--cx-success-rgb), 0.25);
+.was-validated .form-input:valid, .was-validated .form-select:valid, .is-valid.form-input, .is-valid.form-select {
+  --cx-fg-color: var(--cx-form-valid-fg-active);
+  --cx-bg-color: var(--cx-form-valid-bg-regular);
+  --cx-border-color: var(--cx-form-valid-border-color);
+  --cx-box-shadow: 0 0 0 0.25rem rgba(var(--cx-form-valid-rgb), 0.25);
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%230b8845' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%230b8845'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .was-validated .form-control:valid:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), [data-cx-theme=dark] .was-validated .form-select:valid:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), .was-validated .form-control:valid[data-cx-theme=dark], .was-validated .form-select:valid[data-cx-theme=dark], [data-cx-theme=dark] .is-valid.form-control:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), [data-cx-theme=dark] .is-valid.form-select:not(.was-validated .form-control:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-control, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), .is-valid[data-cx-theme=dark].form-control, .is-valid[data-cx-theme=dark].form-select {
+[data-cx-theme=dark] .was-validated .form-input:valid:not(.was-validated .form-input:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-input, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), [data-cx-theme=dark] .was-validated .form-select:valid:not(.was-validated .form-input:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-input, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), .was-validated .form-input:valid[data-cx-theme=dark], .was-validated .form-select:valid[data-cx-theme=dark], [data-cx-theme=dark] .is-valid.form-input:not(.was-validated .form-input:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-input, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), [data-cx-theme=dark] .is-valid.form-select:not(.was-validated .form-input:valid[data-cx-theme=light], .was-validated .form-select:valid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:valid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:valid, .is-valid[data-cx-theme=light].form-input, .is-valid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-valid.form-select), .is-valid[data-cx-theme=dark].form-input, .is-valid[data-cx-theme=dark].form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%234cd18a' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%234cd18a'/%3e%3c/svg%3e");
 }
-.was-validated .form-control:invalid, .was-validated .form-select:invalid, .is-invalid.form-control, .is-invalid.form-select {
-  --cx-fg-color: var(--cx-error-fg-active);
-  --cx-bg-color: var(--cx-error-bg-regular);
-  --cx-border-color: var(--cx-error-border-color);
+.was-validated .form-input:invalid, .was-validated .form-select:invalid, .is-invalid.form-input, .is-invalid.form-select {
+  --cx-fg-color: var(--cx-form-invalid-fg-active);
+  --cx-bg-color: var(--cx-form-invalid-bg-regular);
+  --cx-border-color: var(--cx-form-invalid-border-color);
   --cx-box-shadow: 0 0 0 0.25rem rgba(var(--cx-danger-rgb), 0.25);
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23ac190e' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
-[data-cx-theme=dark] .was-validated .form-control:invalid:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), [data-cx-theme=dark] .was-validated .form-select:invalid:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), .was-validated .form-control:invalid[data-cx-theme=dark], .was-validated .form-select:invalid[data-cx-theme=dark], [data-cx-theme=dark] .is-invalid.form-control:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), [data-cx-theme=dark] .is-invalid.form-select:not(.was-validated .form-control:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-control:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-control, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-control, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), .is-invalid[data-cx-theme=dark].form-control, .is-invalid[data-cx-theme=dark].form-select {
+[data-cx-theme=dark] .was-validated .form-input:invalid:not(.was-validated .form-input:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-input, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), [data-cx-theme=dark] .was-validated .form-select:invalid:not(.was-validated .form-input:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-input, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), .was-validated .form-input:invalid[data-cx-theme=dark], .was-validated .form-select:invalid[data-cx-theme=dark], [data-cx-theme=dark] .is-invalid.form-input:not(.was-validated .form-input:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-input, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), [data-cx-theme=dark] .is-invalid.form-select:not(.was-validated .form-input:invalid[data-cx-theme=light], .was-validated .form-select:invalid[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-input:invalid, [data-cx-theme=dark] [data-cx-theme=light] .was-validated .form-select:invalid, .is-invalid[data-cx-theme=light].form-input, .is-invalid[data-cx-theme=light].form-select, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-input, [data-cx-theme=dark] [data-cx-theme=light] .is-invalid.form-select), .is-invalid[data-cx-theme=dark].form-input, .is-invalid[data-cx-theme=dark].form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23f85a4f' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
 
-.was-validated .form-floating > .form-control:valid ~ label, .was-validated .form-floating > .form-select:valid ~ label, .form-floating > .is-valid.form-control ~ label, .form-floating > .is-valid.form-select ~ label {
-  color: var(--cx-success-assist-color);
+.was-validated .form-floating > .form-input:valid ~ label, .was-validated .form-floating > .form-select:valid ~ label, .form-floating > .is-valid.form-input ~ label, .form-floating > .is-valid.form-select ~ label {
+  color: var(--cx-form-valid-assist-color);
 }
-.was-validated .form-floating > .form-control:invalid ~ label, .was-validated .form-floating > .form-select:invalid ~ label, .form-floating > .is-invalid.form-control ~ label, .form-floating > .is-invalid.form-select ~ label {
-  color: var(--cx-error-assist-color);
+.was-validated .form-floating > .form-input:invalid ~ label, .was-validated .form-floating > .form-select:invalid ~ label, .form-floating > .is-invalid.form-input ~ label, .form-floating > .is-invalid.form-select ~ label {
+  color: var(--cx-form-invalid-assist-color);
 }
 
 .was-validated .option-input:valid, .option-input.is-valid {
-  --cx-bg-color: var(--cx-success-bg-regular);
-  --cx-border-color: var(--cx-success-border-color);
-  --cx-box-shadow: 0 0 0 0.25rem rgba(var(--cx-success-rgb), 0.25);
+  --cx-bg-color: var(--cx-form-valid-bg-regular);
+  --cx-border-color: var(--cx-form-valid-border-color);
+  --cx-box-shadow: 0 0 0 0.25rem rgba(var(--cx-form-valid-rgb), 0.25);
 }
 .was-validated .option-input:valid:checked, .was-validated .option-input:valid[type=checkbox]:indeterminate, .option-input.is-valid:checked, .option-input.is-valid[type=checkbox]:indeterminate {
-  --cx-bg-color: var(--cx-success-assist-color);
-  --cx-border-color: var(--cx-success-border-color);
+  --cx-bg-color: var(--cx-form-valid-assist-color);
+  --cx-border-color: var(--cx-form-valid-border-color);
 }
 .was-validated .option-input:valid:disabled, .was-validated .option-input:valid[type=checkbox]:indeterminate:disabled, .option-input.is-valid:disabled, .option-input.is-valid[type=checkbox]:indeterminate:disabled {
-  --cx-bg-color: var(--cx-disabled-bg-regular);
+  --cx-bg-color: var(--cx-form-disabled-bg-regular);
 }
 .was-validated .option-input:valid ~ .option-label, .option-input.is-valid ~ .option-label {
-  --cx-fg-color: var(--cx-success-assist-color);
+  --cx-fg-color: var(--cx-form-valid-assist-color);
 }
 .was-validated .option-input:invalid, .option-input.is-invalid {
-  --cx-bg-color: var(--cx-error-bg-regular);
-  --cx-border-color: var(--cx-error-border-color);
+  --cx-bg-color: var(--cx-form-invalid-bg-regular);
+  --cx-border-color: var(--cx-form-invalid-border-color);
   --cx-box-shadow: 0 0 0 0.25rem rgba(var(--cx-danger-rgb), 0.25);
 }
 .was-validated .option-input:invalid:checked, .was-validated .option-input:invalid[type=checkbox]:indeterminate, .option-input.is-invalid:checked, .option-input.is-invalid[type=checkbox]:indeterminate {
-  --cx-bg-color: var(--cx-error-assist-color);
-  --cx-border-color: var(--cx-error-border-color);
+  --cx-bg-color: var(--cx-form-invalid-assist-color);
+  --cx-border-color: var(--cx-form-invalid-border-color);
 }
 .was-validated .option-input:invalid:disabled, .was-validated .option-input:invalid[type=checkbox]:indeterminate:disabled, .option-input.is-invalid:disabled, .option-input.is-invalid[type=checkbox]:indeterminate:disabled {
-  --cx-bg-color: var(--cx-disabled-bg-regular);
+  --cx-bg-color: var(--cx-form-disabled-bg-regular);
 }
 .was-validated .option-input:invalid ~ .option-label, .option-input.is-invalid ~ .option-label {
-  --cx-fg-color: var(--cx-error-assist-color);
+  --cx-fg-color: var(--cx-form-invalid-assist-color);
 }
 
-.was-validated .form-control:valid, .was-validated .form-control:invalid, .form-control.is-valid, .form-control.is-invalid {
+.was-validated .option-label:has(.option-input:valid), .option-label:has(.option-input.is-valid) {
+  --cx-fg-color: var(--cx-form-valid-assist-color);
+}
+.was-validated .option-label:has(.option-input:invalid), .option-label:has(.option-input.is-invalid) {
+  --cx-fg-color: var(--cx-form-invalid-assist-color);
+}
+
+.was-validated .form-input:valid, .was-validated .form-input:invalid, .form-input.is-valid, .form-input.is-invalid {
   padding-right: calc(var(--cx-icon-size) + var(--cx-padding-x) + var(--cx-gap));
   background-image: var(--cx-feedback-icon);
   background-repeat: no-repeat;
   background-position: right var(--cx-padding-x) center;
   background-size: var(--cx-icon-size);
 }
-.was-validated .form-control:valid:is(textarea), .was-validated .form-control:invalid:is(textarea), .form-control.is-valid:is(textarea), .form-control.is-invalid:is(textarea) {
+.was-validated .form-input:valid:is(textarea), .was-validated .form-input:invalid:is(textarea), .form-input.is-valid:is(textarea), .form-input.is-invalid:is(textarea) {
   background-position: top var(--cx-padding-y) right var(--cx-padding-x);
 }
 
@@ -8415,33 +8416,33 @@ textarea.form-control {
   background-size: var(--cx-icon-size);
 }
 
-.was-validated .color-control:valid, .was-validated .color-control:invalid, .color-control.is-valid, .color-control.is-invalid {
+.was-validated .color-input:valid, .was-validated .color-input:invalid, .color-input.is-valid, .color-input.is-invalid {
   width: calc(var(--cx-input-color-width, var(--cx-min-height)) + var(--cx-icon-size) + var(--cx-padding-y) * 2);
 }
 
-.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):valid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid, .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-valid,
-.was-validated .form-alternate.form-control:valid,
+.was-validated .form-alternate .form-input:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)):valid, .was-validated .form-alternate .form-select:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)):valid, .form-alternate .form-input:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)).is-valid, .form-alternate .form-select:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)).is-valid,
+.was-validated .form-alternate.form-input:valid,
 .was-validated .form-alternate.form-select:valid,
-.form-alternate.is-valid.form-control,
+.form-alternate.is-valid.form-input,
 .form-alternate.is-valid.form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='%23043119' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM16.4141 10.1641H16.375C16.7656 9.8125 16.7656 9.22656 16.375 8.83594C16.0234 8.48438 15.4375 8.48438 15.0859 8.83594L10.75 13.2109L8.91406 11.375C8.52344 10.9844 7.9375 10.9844 7.58594 11.375C7.19531 11.7266 7.19531 12.3125 7.58594 12.6641L10.0859 15.1641C10.4375 15.5547 11.0234 15.5547 11.4141 15.1641L16.4141 10.1641Z' fill='%23043119'/%3e%3c/svg%3e");
 }
-.was-validated .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .was-validated .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)):invalid, .form-alternate .form-control:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid, .form-alternate .form-select:not(.form-default.form-control, .form-default.form-select, .form-alternate .form-default .form-control:not(.form-alternate.form-control):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-control):not(.form-alternate.form-select)).is-invalid,
-.was-validated .form-alternate.form-control:invalid,
+.was-validated .form-alternate .form-input:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)):invalid, .was-validated .form-alternate .form-select:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)):invalid, .form-alternate .form-input:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)).is-invalid, .form-alternate .form-select:not(.form-default.form-input, .form-default.form-select, .form-alternate .form-default .form-input:not(.form-alternate.form-input):not(.form-alternate.form-select), .form-alternate .form-default .form-select:not(.form-alternate.form-input):not(.form-alternate.form-select)).is-invalid,
+.was-validated .form-alternate.form-input:invalid,
 .was-validated .form-alternate.form-select:invalid,
-.form-alternate.is-invalid.form-control,
+.form-alternate.is-invalid.form-input,
 .form-alternate.is-invalid.form-select {
   --cx-feedback-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%233d0905' class='icon-exclamation-circle-solid' viewBox='0 0 24 24'%3e%3cpath d='M12 22C8.40625 22 5.125 20.125 3.32812 17C1.53125 13.9141 1.53125 10.125 3.32812 7C5.125 3.91406 8.40625 2 12 2C15.5547 2 18.8359 3.91406 20.6328 7C22.4297 10.125 22.4297 13.9141 20.6328 17C18.8359 20.125 15.5547 22 12 22ZM12 7C11.4531 7 11.0625 7.42969 11.0625 7.9375V12.3125C11.0625 12.8594 11.4531 13.25 12 13.25C12.5078 13.25 12.9375 12.8594 12.9375 12.3125V7.9375C12.9375 7.42969 12.5078 7 12 7ZM10.75 15.75C10.75 16.4531 11.2969 17 12 17C12.6641 17 13.25 16.4531 13.25 15.75C13.25 15.0859 12.6641 14.5 12 14.5C11.2969 14.5 10.75 15.0859 10.75 15.75Z'/%3e%3c/svg%3e");
 }
 
-.was-validated .input-group > .form-control:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid,
+.was-validated .input-group > .form-input:not(:focus):valid, .input-group > .form-input:not(:focus).is-valid,
 .was-validated .input-group > .form-select:not(:focus):valid,
 .input-group > .form-select:not(:focus).is-valid,
 .was-validated .input-group > .form-floating:not(:focus-within):valid,
 .input-group > .form-floating:not(:focus-within).is-valid {
   z-index: 3;
 }
-.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid,
+.was-validated .input-group > .form-input:not(:focus):invalid, .input-group > .form-input:not(:focus).is-invalid,
 .was-validated .input-group > .form-select:not(:focus):invalid,
 .input-group > .form-select:not(:focus).is-invalid,
 .was-validated .input-group > .form-floating:not(:focus-within):invalid,

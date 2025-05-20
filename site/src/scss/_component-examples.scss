@@ -44,8 +44,8 @@
     margin-top: 2rem;
   }
 
-  > .form-control {
-    + .form-control {
+  > .form-input {
+    + .form-input {
       margin-top: .5rem;
     }
   }
@@ -79,11 +79,16 @@
   }
 
   // Buttons
-  .button-examples & > .cxd-button,
-  .button-examples & > .button,
-  .button-examples & > .button-group {
-    margin: .5rem .25rem;
+  .button-examples &,
+  &.button-examples {
+    > .cxd-button,
+    > .button,
+    > .button-group,
+    > .button-option {
+      margin: .5rem .25rem;
+    }
   }
+
   .button-examples & > .button-toolbar + .button-toolbar {
     margin-top: .5rem;
   }

@@ -1,6 +1,6 @@
 ---
-title: Validation
-description: Provide valuable, actionable feedback to your users with HTML5 form validation, via browser default behaviors or custom styles and JavaScript.
+title: Form Validation
+description: Provide clear, accessible feedback to users with Chassis CSS's form validation styles, utilizing HTML5 validation or custom implementations.
 toc: true
 extra_js:
   - src: "[[docsref:/assets/js/validate-forms.js]]"
@@ -9,124 +9,60 @@ extra_js:
 
 import { getDocsRelativePath } from '@libs/path'
 
-<Callout type="warning">
-We are aware that currently the client-side custom validation styles and tooltips are not accessible, since they are not exposed to assistive technologies. While we work on a solution, we’d recommend either using the server-side option or the default browser validation method.
+<Callout type="warning" title="Accessibility note">
+  When using client-side custom validation styles and tooltips, additional work is needed to ensure proper accessibility. For better out-of-the-box accessibility, consider using server-side validation or native browser validation.
 </Callout>
 
-## How it works
+## Understanding form validation
 
-Here’s how form validation works with Chassis:
+Chassis CSS provides flexible options for implementing form validation:
 
-- HTML form validation is applied via CSS’s two pseudo-classes, `:invalid` and `:valid`. It applies to `<input>`, `<select>`, and `<textarea>` elements.
-- Chassis - CSS scopes the `:invalid` and `:valid` styles to parent `.was-validated` class, usually applied to the `<form>`. Otherwise, any required field without a value shows up as invalid on page load. This way, you may choose when to activate them (typically after form submission is attempted).
-- To reset the appearance of the form (for instance, in the case of dynamic form submissions using Ajax), remove the `.was-validated` class from the `<form>` again after submission.
-- As a fallback, `.is-invalid` and `.is-valid` classes may be used instead of the pseudo-classes for [server-side validation](#server-side). They do not require a `.was-validated` parent class.
-- Due to constraints in how CSS works, we cannot (at present) apply styles to a `<label>` that comes before a form control in the DOM without the help of custom JavaScript.
-- All modern browsers support the [constraint validation API](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api), a series of JavaScript methods for validating form controls.
-- Feedback messages may utilize the [browser defaults](#browser-defaults) (different for each browser, and unstylable via CSS) or our custom feedback styles with additional HTML and CSS.
-- You may provide custom validity messages with `setCustomValidity` in JavaScript.
+- **Native validation**: Uses the browser's built-in `:invalid` and `:valid` pseudo-classes to style form controls based on validation state.
+- **Progressive enhancement**: Chassis uses the `.was-validated` class on forms to control when validation styles appear. This prevents invalid styles from showing when the page first loads.
+- **Server-side fallback**: The `.is-invalid` and `.is-valid` classes provide direct control for server-side validation scenarios.
+- **Custom validation messages**: Add contextual feedback to users with `.valid-feedback` and `.invalid-feedback` elements.
+- **API integration**: All validation styles work with the browser's [Constraint Validation API](https://html.spec.whatwg.org/multipage/form-input-infrastructure.html#the-constraint-validation-api), allowing you to create custom validation logic with JavaScript.
+- **Accessible feedback**: Position validation messages consistently outside input groups for optimal screen reader compatibility.
 
-With that in mind, consider the following demos for our custom form validation styles, optional server-side classes, and browser defaults.
+## Client-side validation
 
-## Custom styles
+For custom Chassis validation styles, add the `novalidate` attribute to your `<form>` element. This disables browser default tooltips but still allows JavaScript validation using the Constraint Validation API.
 
-For custom Chassis - CSS form validation messages, you’ll need to add the `novalidate` boolean attribute to your `<form>`. This disables the browser default feedback tooltips, but still provides access to the form validation APIs in JavaScript. Try to submit the form below; our JavaScript will intercept the submit button and relay feedback to you. When attempting to submit, you’ll see the `:invalid` and `:valid` styles applied to your form controls.
+Key features of Chassis validation:
 
-Custom feedback styles apply custom colors, borders, focus styles, and background icons to better communicate feedback. Background icons for `<select>`s are only available with `.form-select`, and not `.form-control`.
-
-<Example code={`<form class="row g-3 needs-validation" novalidate>
-    <div class="col-medium-4">
-      <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <div class="valid-feedback form-assist">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-medium-4">
-      <label for="validationCustom02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-      <div class="valid-feedback form-assist">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-medium-4">
-      <label for="validationCustomUsername" class="form-label">Username</label>
-      <div class="input-group has-validation">
-        <span class="input-addon" id="inputGroupPrepend">@</span>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback form-assist">
-          Please choose a username.
-        </div>
-      </div>
-    </div>
-    <div class="col-medium-6">
-      <label for="validationCustom03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
-      <div class="invalid-feedback form-assist">
-        Please provide a valid city.
-      </div>
-    </div>
-    <div class="col-medium-3">
-      <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" required>
-        <option selected disabled value="">Choose...</option>
-        <option>...</option>
-      </select>
-      <div class="invalid-feedback form-assist">
-        Please select a valid state.
-      </div>
-    </div>
-    <div class="col-medium-3">
-      <label for="validationCustom05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
-      <div class="invalid-feedback form-assist">
-        Please provide a valid zip.
-      </div>
-    </div>
-    <div class="col-12">
-      <div class="form-option">
-        <input class="option-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="option-label" for="invalidCheck">
-          Agree to terms and conditions
-        </label>
-        <div class="invalid-feedback form-assist">
-          You must agree before submitting.
-        </div>
-      </div>
-    </div>
-    <div class="col-12">
-      <button class="button primary" type="submit">Submit form</button>
-    </div>
-  </form>`} />
+- Custom feedback styles with contextual colors and icons
+- Support for all form controls including input groups
+- Consistent positioning of feedback messages
+- JavaScript integration for dynamic validation
 
 <Example code={`<form class="row g-3 needs-validation" novalidate>
     <div class="col-medium-4">
       <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      <input type="text" class="form-input" id="validationCustom01" value="Mark" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-medium-4">
       <label for="validationCustom02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+      <input type="text" class="form-input" id="validationCustom02" value="Otto" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-medium-4">
       <label for="validationCustomUsername" class="form-label">Username</label>
-      <div class="input-group has-validation">
+      <div class="input-group">
         <span class="input-addon" id="inputGroupPrepend">@</span>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please choose a username.
-        </div>
+        <input type="text" class="form-input" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+      </div>
+      <div class="invalid-feedback">
+        Please choose a username.
       </div>
     </div>
     <div class="col-medium-6">
       <label for="validationCustom03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
+      <input type="text" class="form-input" id="validationCustom03" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
@@ -135,7 +71,9 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
       <label for="validationCustom04" class="form-label">State</label>
       <select class="form-select" id="validationCustom04" required>
         <option selected disabled value="">Choose...</option>
-        <option>...</option>
+        <option>California</option>
+        <option>New York</option>
+        <option>Texas</option>
       </select>
       <div class="invalid-feedback">
         Please select a valid state.
@@ -143,7 +81,7 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
     </div>
     <div class="col-medium-3">
       <label for="validationCustom05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
+      <input type="text" class="form-input" id="validationCustom05" required>
       <div class="invalid-feedback">
         Please provide a valid zip.
       </div>
@@ -163,45 +101,49 @@ Custom feedback styles apply custom colors, borders, focus styles, and backgroun
       <button class="button primary" type="submit">Submit form</button>
     </div>
   </form>`} />
+
+<Callout type="info" title="Validation script">
+  The example below shows the JavaScript needed to implement custom validation with Chassis CSS.
+</Callout>
 
 <Code containerClass="cxd-example-snippet" lang="js" filePath={getDocsRelativePath('/static/docs/[version]/assets/js/validate-forms.js')} />
 
-## Browser defaults
+## Native browser validation
 
-Not interested in custom validation feedback messages or writing JavaScript to change form behaviors? All good, you can use the browser defaults. Try submitting the form below. Depending on your browser and OS, you’ll see a slightly different style of feedback.
-
-While these feedback styles cannot be styled with CSS, you can still customize the feedback text through JavaScript.
+If you prefer simpler implementation, you can use the browser's built-in validation. Chassis CSS works seamlessly with native validation UI, though these styles cannot be customized with CSS.
 
 <Example code={`<form class="row g-3">
     <div class="col-medium-4">
       <label for="validationDefault01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+      <input type="text" class="form-input" id="validationDefault01" value="Mark" required>
     </div>
     <div class="col-medium-4">
       <label for="validationDefault02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
+      <input type="text" class="form-input" id="validationDefault02" value="Otto" required>
     </div>
     <div class="col-medium-4">
       <label for="validationDefaultUsername" class="form-label">Username</label>
       <div class="input-group">
         <span class="input-addon" id="inputGroupPrepend2">@</span>
-        <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+        <input type="text" class="form-input" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
       </div>
     </div>
     <div class="col-medium-6">
       <label for="validationDefault03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationDefault03" required>
+      <input type="text" class="form-input" id="validationDefault03" required>
     </div>
     <div class="col-medium-3">
       <label for="validationDefault04" class="form-label">State</label>
       <select class="form-select" id="validationDefault04" required>
         <option selected disabled value="">Choose...</option>
-        <option>...</option>
+        <option>California</option>
+        <option>New York</option>
+        <option>Texas</option>
       </select>
     </div>
     <div class="col-medium-3">
       <label for="validationDefault05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationDefault05" required>
+      <input type="text" class="form-input" id="validationDefault05" required>
     </div>
     <div class="col-12">
       <div class="form-option">
@@ -216,25 +158,29 @@ While these feedback styles cannot be styled with CSS, you can still customize t
     </div>
   </form>`} />
 
-## Server-side
+<Callout type="info" title="Setting custom messages">
+  While native browser validation styles cannot be changed with CSS, you can customize the validation message text using JavaScript's `setCustomValidity()` method.
+</Callout>
 
-We recommend using client-side validation, but in case you require server-side validation, you can indicate invalid and valid form fields with `.is-invalid` and `.is-valid`. Note that `.invalid-feedback` is also supported with these classes.
+## Server-side validation
 
-For invalid fields, ensure that the invalid feedback/error message is associated with the relevant form field using `aria-describedby` (noting that this attribute allows more than one `id` to be referenced, in case the field already points to additional form assist).
+For applications that validate on the server, Chassis CSS provides the `.is-valid` and `.is-invalid` state classes that can be applied to form controls directly, without needing the `.was-validated` parent class.
 
-To fix [issues with border radius](https://github.com/twbs/chassis-css/issues/25110), input groups require an additional `.has-validation` class.
+<Callout type="warning" title="Accessibility best practices">
+  For invalid fields, always connect error messages to their inputs using `aria-describedby` to ensure screen readers announce feedback properly. Multiple IDs can be referenced if a field has both help text and error messages.
+</Callout>
 
 <Example code={`<form class="row g-3">
     <div class="col-medium-4">
       <label for="validationServer01" class="form-label">First name</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+      <input type="text" class="form-input is-valid" id="validationServer01" value="Mark" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-medium-4">
       <label for="validationServer02" class="form-label">Last name</label>
-      <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+      <input type="text" class="form-input is-valid" id="validationServer02" value="Otto" required>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -243,15 +189,15 @@ To fix [issues with border radius](https://github.com/twbs/chassis-css/issues/25
       <label for="validationServerUsername" class="form-label">Username</label>
       <div class="input-group has-validation">
         <span class="input-addon" id="inputGroupPrepend3">@</span>
-        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
-        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-          Please choose a username.
-        </div>
+        <input type="text" class="form-input is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+      </div>
+      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+        Please choose a username.
       </div>
     </div>
     <div class="col-medium-6">
       <label for="validationServer03" class="form-label">City</label>
-      <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+      <input type="text" class="form-input is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
       <div id="validationServer03Feedback" class="invalid-feedback">
         Please provide a valid city.
       </div>
@@ -260,7 +206,9 @@ To fix [issues with border radius](https://github.com/twbs/chassis-css/issues/25
       <label for="validationServer04" class="form-label">State</label>
       <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
         <option selected disabled value="">Choose...</option>
-        <option>...</option>
+        <option>California</option>
+        <option>New York</option>
+        <option>Texas</option>
       </select>
       <div id="validationServer04Feedback" class="invalid-feedback">
         Please select a valid state.
@@ -268,7 +216,7 @@ To fix [issues with border radius](https://github.com/twbs/chassis-css/issues/25
     </div>
     <div class="col-medium-3">
       <label for="validationServer05" class="form-label">Zip</label>
-      <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+      <input type="text" class="form-input is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
       <div id="validationServer05Feedback" class="invalid-feedback">
         Please provide a valid zip.
       </div>
@@ -289,18 +237,14 @@ To fix [issues with border radius](https://github.com/twbs/chassis-css/issues/25
     </div>
   </form>`} />
 
-## Supported elements
+## Supported form elements
 
-Validation styles are available for the following form controls and components:
-
-- `<input>`s and `<textarea>`s with `.form-control` (including up to one `.form-control` in input groups)
-- `<select>`s with `.form-select`
-- `.form-option`s
+Chassis CSS validation styles work consistently across all basic form elements:
 
 <Example code={`<form class="was-validated">
     <div class="mb-medium">
       <label for="validationTextarea" class="form-label">Textarea</label>
-      <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+      <textarea class="form-input" id="validationTextarea" placeholder="Required example textarea" required></textarea>
       <div class="invalid-feedback">
         Please enter a message in the textarea.
       </div>
@@ -324,16 +268,16 @@ Validation styles are available for the following form controls and components:
 
     <div class="mb-medium">
       <select class="form-select" required aria-label="select example">
-        <option value="">Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option value="">Choose an option</option>
+        <option value="1">Option One</option>
+        <option value="2">Option Two</option>
+        <option value="3">Option Three</option>
       </select>
       <div class="invalid-feedback">Example invalid select feedback</div>
     </div>
 
     <div class="mb-medium">
-      <input type="file" class="form-control" aria-label="file example" required>
+      <input type="file" class="form-input" aria-label="file example" required>
       <div class="invalid-feedback">Example invalid form file feedback</div>
     </div>
 
@@ -342,21 +286,25 @@ Validation styles are available for the following form controls and components:
     </div>
   </form>`} />
 
-## Tooltips
+## Tooltip validation
 
-If your form layout allows it, you can swap the `.{valid|invalid}-feedback` classes for `.{valid|invalid}-tooltip` classes to display validation feedback in a styled tooltip. Be sure to have a parent with `position: relative` on it for tooltip positioning. In the example below, our column classes have this already, but your project may require an alternative setup.
+For compact layouts, Chassis CSS provides tooltip-style validation feedback. Simply replace `.valid-feedback` and `.invalid-feedback` with `.valid-tooltip` and `.invalid-tooltip` classes.
+
+<Callout type="default" title="Positioning requirement">
+  Tooltips require a parent element with `position: relative`. The column classes in our examples already have this, but you may need to add it to your own layouts.
+</Callout>
 
 <Example code={`<form class="row g-3 needs-validation" novalidate>
     <div class="col-medium-4 position-relative">
       <label for="validationTooltip01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
+      <input type="text" class="form-input" id="validationTooltip01" value="Mark" required>
       <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
     <div class="col-medium-4 position-relative">
       <label for="validationTooltip02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+      <input type="text" class="form-input" id="validationTooltip02" value="Otto" required>
       <div class="valid-tooltip">
         Looks good!
       </div>
@@ -365,15 +313,15 @@ If your form layout allows it, you can swap the `.{valid|invalid}-feedback` clas
       <label for="validationTooltipUsername" class="form-label">Username</label>
       <div class="input-group has-validation">
         <span class="input-addon" id="validationTooltipUsernamePrepend">@</span>
-        <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
-        <div class="invalid-tooltip">
-          Please choose a unique and valid username.
-        </div>
+        <input type="text" class="form-input" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+      </div>
+      <div class="invalid-tooltip">
+        Please choose a unique and valid username.
       </div>
     </div>
     <div class="col-medium-6 position-relative">
       <label for="validationTooltip03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationTooltip03" required>
+      <input type="text" class="form-input" id="validationTooltip03" required>
       <div class="invalid-tooltip">
         Please provide a valid city.
       </div>
@@ -382,7 +330,9 @@ If your form layout allows it, you can swap the `.{valid|invalid}-feedback` clas
       <label for="validationTooltip04" class="form-label">State</label>
       <select class="form-select" id="validationTooltip04" required>
         <option selected disabled value="">Choose...</option>
-        <option>...</option>
+        <option>California</option>
+        <option>New York</option>
+        <option>Texas</option>
       </select>
       <div class="invalid-tooltip">
         Please select a valid state.
@@ -390,7 +340,7 @@ If your form layout allows it, you can swap the `.{valid|invalid}-feedback` clas
     </div>
     <div class="col-medium-3 position-relative">
       <label for="validationTooltip05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationTooltip05" required>
+      <input type="text" class="form-input" id="validationTooltip05" required>
       <div class="invalid-tooltip">
         Please provide a valid zip.
       </div>
@@ -400,42 +350,77 @@ If your form layout allows it, you can swap the `.{valid|invalid}-feedback` clas
     </div>
   </form>`} />
 
-## CSS
+## Form assists
 
-### Variables
+The `.form-assist` component is hidden by default when validation feedback is present. Add the `.always-show` class to keep form assists visible alongside validation feedback.
 
-<AddedIn version="5.3.0"/>
+Always place form assists and validation feedback elements as siblings after the input group.
 
-As part of Chassis - CSS’s evolving CSS variables approach, forms now use local CSS variables for validation for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+<Callout type="info" title="Accessibility">
+  The example below demonstrates proper ARIA attribute usage with `aria-describedby` referencing both the feedback and assist elements, ensuring screen readers announce both the error state and help text.
+</Callout>
+
+<Example code={`<div class="input-group">
+    <span class="input-addon">@</span>
+    <input type="text" class="form-input" id="username-input"
+      aria-describedby="username-feedback username-assist" placeholder="Username" required>
+  </div>
+  <div class="invalid-feedback" id="username-feedback"></div>
+  <div class="form-assist always-show" id="username-assist">Enter your username</div>
+  <div class="mt-medium">
+    <button class="button primary" type="button" onclick="validateUsername()">Validate username</button>
+  </div>`} />
+
+<Code lang="js" code={`function validateUsername() {
+    const input = document.getElementById("username-input")
+    const feedback = document.getElementById("username-feedback")
+    // Clear previous validation state
+    input.classList.remove("is-invalid")
+    feedback.innerText = ""
+    if (!input.validity.valid) {
+      // Apply invalid state
+      input.classList.add("is-invalid")
+      feedback.innerText = "Username is invalid."
+    }
+  }`} />
+
+<Fragment set:html={`<script>
+    function validateUsername() {
+      const input = document.getElementById("username-input")
+      const feedback = document.getElementById("username-feedback")
+      // Clear previous validation state
+      input.classList.remove("is-invalid")
+      feedback.innerText = ""
+      if (!input.validity.valid) {
+        // Apply invalid state
+        input.classList.add("is-invalid")
+        feedback.innerText = "Username is invalid."
+      }
+    }
+  </script>`} />
+
+## Customization
+
+Chassis CSS provides several ways to customize validation styles:
+
+### CSS Variables
 
 <ScssDocs name="root-form-validation-variables" file="scss/_root.scss" />
 
-These variables are also color mode adaptive, meaning they change color while in dark mode.
+These variables support color mode adaptation, automatically adjusting in dark mode for consistent user experience.
 
-### Sass variables
+### Sass Variables
 
 <ScssDocs name="form-feedback-variables" file="scss/_variables.scss" />
 
 <ScssDocs name="form-validation-colors" file="scss/_variables.scss" />
 
-### Sass mixins
-
-Two mixins are combined, through our [loop](#sass-loops), to generate our form validation feedback styles.
+### Sass Mixins
 
 <ScssDocs name="form-validation-mixins" file="scss/mixins/_forms.scss" />
 
-### Sass maps
-
-This is the validation Sass map from `_variables.scss`. Override or extend this to generate different or additional states.
+### Validation State Map
 
 <ScssDocs name="form-validation-states" file="scss/_variables.scss" />
 
-Maps of `$form-validation-states` can contain three optional parameters to override tooltips and focus styles.
-
-### Sass loops
-
-Used to iterate over `$form-validation-states` map values to generate our validation styles. Any modifications to the above Sass map will be reflected in your compiled CSS via this loop.
-
-### Customizing
-
-Validation states can be customized via Sass with the `$form-validation-states` map. Located in our `_variables.scss` file, this Sass map is how we generate the default `valid`/`invalid` validation states. Included is a nested map for customizing each state’s color, icon, tooltip color, and focus shadow. While no other states are supported by browsers, those using custom styles can easily add more complex form feedback.
+You can override or extend this map to create custom validation states beyond the standard valid/invalid states. Each entry can customize colors, icons, tooltip appearance, and focus styles.

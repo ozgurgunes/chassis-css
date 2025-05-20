@@ -27,7 +27,7 @@ Navbars come with built-in support for a handful of sub-components. Choose from 
 - `.navbar-brand` for your company, product, or project name.
 - `.navbar-nav` for a full-height and lightweight navigation (including support for dropdowns).
 - `.navbar-toggler` for use with our collapse plugin and other [navigation toggling](#responsive-behaviors) behaviors.
-- Flex and spacing utilities for any form controls and actions.
+- Flex and spacing utilities for any form inputs and actions.
 - `.navbar-text` for adding vertically centered strings of text.
 - `.collapse.navbar-collapse` for grouping and hiding navbar contents by a parent breakpoint.
 - Add an optional `.navbar-nav-scroll` to set a `max-height` and [scroll expanded navbar content](#scrolling).
@@ -64,7 +64,7 @@ Here’s an example of all the sub-components included in a responsive light-the
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button outline success" type="submit">Search</button>
         </form>
       </div>
@@ -208,12 +208,12 @@ You can also use dropdowns in your navbar. Dropdown menus require a wrapping ele
 
 ### Forms
 
-Place various form controls and components within a navbar:
+Place various form inputs and components within a navbar:
 
 <Example code={`<nav class="navbar bg-evident">
     <div class="container-fluid">
       <form class="d-flex" role="search">
-        <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+        <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
         <button class="button outline success" type="submit">Search</button>
       </form>
     </div>
@@ -225,7 +225,7 @@ Immediate child elements of `.navbar` use flex layout and will default to `justi
     <div class="container-fluid">
       <a class="navbar-brand">Navbar</a>
       <form class="d-flex" role="search">
-        <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+        <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
         <button class="button outline success" type="submit">Search</button>
       </form>
     </div>
@@ -237,7 +237,7 @@ Input groups work, too. If your navbar is an entire form, or mostly a form, you 
     <form class="container-fluid">
       <div class="input-group">
         <span class="input-addon" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
+        <input type="text" class="form-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"/>
       </div>
     </form>
   </nav>`} />
@@ -325,7 +325,7 @@ Navbar themes are easier than ever thanks to Chassis - CSS’s combination of Sa
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button default outline" type="submit">Search</button>
         </form>
       </div>
@@ -354,7 +354,7 @@ Navbar themes are easier than ever thanks to Chassis - CSS’s combination of Sa
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button default outline" type="submit">Search</button>
         </form>
       </div>
@@ -383,7 +383,7 @@ Navbar themes are easier than ever thanks to Chassis - CSS’s combination of Sa
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button primary outline" type="submit">Search</button>
         </form>
       </div>
@@ -499,7 +499,7 @@ Here’s an example navbar using `.navbar-nav-scroll` with `style="--cx-scroll-h
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button outline success" type="submit">Search</button>
         </form>
       </div>
@@ -537,7 +537,7 @@ With no `.navbar-brand` shown at the smallest breakpoint:
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button outline success" type="submit">Search</button>
         </form>
       </div>
@@ -565,7 +565,7 @@ With a brand name shown on the left and toggler on the right:
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button outline success" type="submit">Search</button>
         </form>
       </div>
@@ -593,7 +593,7 @@ With a toggler on the left and brand name on the right:
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+          <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
           <button class="button outline success" type="submit">Search</button>
         </form>
       </div>
@@ -660,7 +660,7 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
             </li>
           </ul>
           <form class="d-flex mt-medium" role="search">
-            <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+            <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
             <button class="button outline success" type="submit">Search</button>
           </form>
         </div>
@@ -718,7 +718,7 @@ When using offcanvas in a dark navbar, be aware that you may need to have a dark
             </li>
           </ul>
           <form class="d-flex mt-medium" role="search">
-            <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
+            <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search"/>
             <button class="button success" type="submit">Search</button>
           </form>
         </div>

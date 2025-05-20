@@ -17,15 +17,15 @@
 @mixin form-select-caret($variant, $state, $dark: false) {
   @if $variant == "default" {
     @if $state == "idle" {
-      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-idle-caret-color, $dark)};
+      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-default-idle-caret-color, $dark)};
     } @else if $state == "disabled" {
-      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-default-disabled-caret-color, $dark)};
+      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-default-disabled-caret-color, $dark)};
     }
   } @else if $variant == "alternate" {
     @if $state == "idle" {
-      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-idle-caret-color, $dark)};
+      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-alternate-idle-caret-color, $dark)};
     } @else if $state == "disabled" {
-      --#{$prefix}caret-icon: #{svg-color($input-select-caret-icon, $input-alternate-disabled-caret-color, $dark)};
+      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-alternate-disabled-caret-color, $dark)};
     }
   }
 }
@@ -105,11 +105,11 @@
 // @param {string} $state - The validation state ("valid" or "invalid")
 @mixin form-validation-dark($variant: "default", $state: "valid") {
   // Select the appropriate color variable based on variant and state
-  $icon: if($state == "valid", $input-feedback-valid-icon, $input-feedback-invalid-icon);
+  $icon: if($state == "valid", $form-feedback-valid-icon, $form-feedback-invalid-icon);
   $color: if(
     $state == "valid",
-    if($variant == "default", $input-default-success-assist-color, $input-alternate-success-assist-color),
-    if($variant == "default", $input-default-error-assist-color, $input-alternate-error-assist-color)
+    if($variant == "default", $form-default-valid-assist-color, $form-alternate-valid-assist-color),
+    if($variant == "default", $form-default-invalid-assist-color, $form-alternate-invalid-assist-color)
   );
 
   // Set the icon with dark mode colors

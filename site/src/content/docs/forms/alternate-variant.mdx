@@ -14,11 +14,11 @@ import { getDocsRelativePath } from '@libs/path'
 Chassis CSS provides an alternate styling variant for form elements that uses a different color scheme than the default styling. This provides flexibility in design while maintaining consistent styling across light and dark themes. A key advantage of this variant is that form elements with the `.form-alternate` class retain their appearance when switching between themes, providing visual continuity. This is particularly useful in situations where you need.
 
 The `.form-alternate` class can be applied at different levels:
-- On an entire `<form>` element to cascade styling to all child form controls
+- On an entire `<form>` element to cascade styling to all child form inputs
 - On specific container elements like `.input-group` or form groups
-- Directly on individual form controls (`.form-control`, `.form-select`, etc.)
+- Directly on individual form inputs (`.form-input`, `.form-select`, etc.)
 
-When applied to container elements, the alternate styling automatically applies to all form controls within that container through CSS inheritance, eliminating the need to add the class to each individual form element.
+When applied to container elements, the alternate styling automatically applies to all form inputs within that container through CSS inheritance, eliminating the need to add the class to each individual form element.
 
 ## Basic example
 
@@ -29,7 +29,7 @@ Add the `.form-alternate` class to create form elements with alternate styling. 
       <h5>Default Style</h5>
       <div class="mb-medium">
         <label for="defaultInput" class="form-label">Default input</label>
-        <input type="text" class="form-control" id="defaultInput" placeholder="Default styling">
+        <input type="text" class="form-input" id="defaultInput" placeholder="Default styling">
       </div>
       <div class="mb-medium">
         <label for="defaultSelect" class="form-label">Default select</label>
@@ -59,7 +59,7 @@ Add the `.form-alternate` class to create form elements with alternate styling. 
       <h5>Alternate Style</h5>
       <div class="mb-medium">
         <label for="alternateInput" class="form-label">Alternate input</label>
-        <input type="text" class="form-control form-alternate" id="alternateInput" placeholder="Alternate styling">
+        <input type="text" class="form-input form-alternate" id="alternateInput" placeholder="Alternate styling">
       </div>
       <div class="mb-medium">
         <label for="alternateSelect" class="form-label">Alternate select</label>
@@ -96,7 +96,7 @@ Add the `.form-alternate` class to create form elements with alternate styling. 
       <h5>Alternate Style</h5>
       <div class="mb-medium">
         <label for="alternateInput" class="form-label">Alternate input</label>
-        <input type="text" class="form-control form-alternate" id="alternateInput" placeholder="Alternate styling">
+        <input type="text" class="form-input form-alternate" id="alternateInput" placeholder="Alternate styling">
       </div>
       <div class="mb-medium">
         <label for="alternateSelect" class="form-label">Alternate select</label>
@@ -129,16 +129,16 @@ Apply the `.form-alternate` class to various container elements to automatically
 
 ### Form Element
 
-Adding the `.form-alternate` class to the `<form>` will affect all form controls within it.
+Adding the `.form-alternate` class to the `<form>` will affect all form inputs within it.
 
 <Example code={`<form class="form-alternate">
     <div class="mb-medium">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input type="email" class="form-input" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
     <div class="mb-medium">
       <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-input" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <button type="submit" class="button primary">Submit</button>
   </form>`} />
@@ -152,7 +152,7 @@ Input groups can also be styledby applying the `.form-alternate` class to the `.
       <label for="default-input-group" class="form-label">Default input group</label>
       <div class="input-group mb-medium">
         <span class="input-addon">@</span>
-        <input type="text" class="form-control" id="default-input-group" placeholder="Username">
+        <input type="text" class="form-input" id="default-input-group" placeholder="Username">
       </div>
     </div>
 
@@ -160,7 +160,7 @@ Input groups can also be styledby applying the `.form-alternate` class to the `.
       <label for="alternate-input-group" class="form-label">Alternate input group</label>
       <div class="input-group mb-medium form-alternate">
         <span class="input-addon">@</span>
-        <input type="text" class="form-control" id="alternate-input-group" placeholder="Username">
+        <input type="text" class="form-input" id="alternate-input-group" placeholder="Username">
       </div>
     </div>
   </div>
@@ -174,22 +174,22 @@ You can apply `.form-alternate` to any container element to style specific secti
     <div class="form-default row g-xlarge">
       <div class="mb-medium col-medium-6">
         <label for="firstName" class="form-label">First name</label>
-        <input type="text" class="form-control" id="firstName">
+        <input type="text" class="form-input" id="firstName">
       </div>
       <div class="mb-medium col-medium-6">
         <label for="lastName" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="lastName">
+        <input type="text" class="form-input" id="lastName">
       </div>
     </div>
     <!-- Alternate section -->
     <div class="form-alternate row g-xlarge">
       <div class="mb-medium col-medium-6">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-input" id="email">
       </div>
       <div class="mb-medium col-medium-6">
         <label for="address" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address">
+        <input type="text" class="form-input" id="address">
       </div>
     </div>
     <button type="submit" class="button primary">Submit</button>
@@ -197,14 +197,14 @@ You can apply `.form-alternate` to any container element to style specific secti
 
 ## Validation states
 
-Apply the `.form-alternate` class to the parent wrapper element to style both form controls and their validation feedback messages with the alternate appearance.
+Apply the `.form-alternate` class to the parent wrapper element to style both form inputs and their validation feedback messages with the alternate appearance.
 
 <Example showMarkup={false} code={`<div class="row g-xlarge form-alternate">
     <div class="col-medium-6 form-default">
       <h5>Default Validation</h5>
       <div class="mb-medium">
         <label for="validDefaultInput" class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" id="validDefaultInput" value="Mark">
+        <input type="text" class="form-input is-valid" id="validDefaultInput" value="Mark">
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -239,7 +239,7 @@ Apply the `.form-alternate` class to the parent wrapper element to style both fo
       <h5>Alternate Validation</h5>
       <div class="mb-medium">
         <label for="validAlternateInput" class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" id="validAlternateInput" value="Otto">
+        <input type="text" class="form-input is-valid" id="validAlternateInput" value="Otto">
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -281,7 +281,7 @@ Apply the `.form-alternate` class to the parent wrapper element to style both fo
       <h5>Alternate Validation</h5>
       <div class="form-alternate mb-medium">
         <label for="validAlternateInput" class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" id="validAlternateInput" value="Otto">
+        <input type="text" class="form-input is-valid" id="validAlternateInput" value="Otto">
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -321,7 +321,7 @@ Floating labels work with alternate form styling as well. Simply add the `.form-
     <div class="col-medium-6">
       <h5>Default Floating Labels</h5>
       <div class="form-floating mb-medium">
-        <input type="email" class="form-control" id="floatingDefaultInput" placeholder="name@example.com">
+        <input type="email" class="form-input" id="floatingDefaultInput" placeholder="name@example.com">
         <label for="floatingDefaultInput">Email address</label>
       </div>
       <div class="form-floating mb-medium">
@@ -333,7 +333,7 @@ Floating labels work with alternate form styling as well. Simply add the `.form-
         <label for="floatingDefaultSelect">Select menu</label>
       </div>
       <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingDefaultTextarea" style="height: 100px"></textarea>
+        <textarea class="form-input" placeholder="Leave a comment here" id="floatingDefaultTextarea" style="height: 100px"></textarea>
         <label for="floatingDefaultTextarea">Comments</label>
       </div>
     </div>
@@ -341,7 +341,7 @@ Floating labels work with alternate form styling as well. Simply add the `.form-
     <div class="col-medium-6">
       <h5>Alternate Floating Labels</h5>
       <div class="form-floating form-alternate mb-medium">
-        <input type="email" class="form-control" id="floatingAlternateInput" placeholder="name@example.com">
+        <input type="email" class="form-input" id="floatingAlternateInput" placeholder="name@example.com">
         <label for="floatingAlternateInput">Email address</label>
       </div>
       <div class="form-floating form-alternate mb-medium">
@@ -353,7 +353,7 @@ Floating labels work with alternate form styling as well. Simply add the `.form-
         <label for="floatingAlternateSelect">Select menu</label>
       </div>
       <div class="form-floating form-alternate">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingAlternateTextarea" style="height: 100px"></textarea>
+        <textarea class="form-input" placeholder="Leave a comment here" id="floatingAlternateTextarea" style="height: 100px"></textarea>
         <label for="floatingAlternateTextarea">Comments</label>
       </div>
     </div>
@@ -368,7 +368,7 @@ Floating labels work with alternate form styling as well. Simply add the `.form-
     <div class="col-medium-6">
       <h5>Alternate Floating Labels</h5>
       <div class="form-floating form-alternate mb-medium">
-        <input type="email" class="form-control" id="floatingAlternateInput" placeholder="name@example.com">
+        <input type="email" class="form-input" id="floatingAlternateInput" placeholder="name@example.com">
         <label for="floatingAlternateInput">Email address</label>
       </div>
       <div class="form-floating form-alternate mb-medium">
@@ -380,7 +380,7 @@ Floating labels work with alternate form styling as well. Simply add the `.form-
         <label for="floatingAlternateSelect">Select menu</label>
       </div>
       <div class="form-floating form-alternate">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingAlternateTextarea" style="height: 100px"></textarea>
+        <textarea class="form-input" placeholder="Leave a comment here" id="floatingAlternateTextarea" style="height: 100px"></textarea>
         <label for="floatingAlternateTextarea">Comments</label>
       </div>
     </div>
@@ -390,14 +390,14 @@ Validation states can also be applied to floating labels with alternate styling.
 
 <Example code={`<div class="form-alternate">
     <div class="form-floating mb-medium">
-      <input type="email" class="form-control is-valid" id="floatingValidInput" placeholder="name@example.com" value="valid@example.com">
+      <input type="email" class="form-input is-valid" id="floatingValidInput" placeholder="name@example.com" value="valid@example.com">
       <label for="floatingValidInput">Valid input</label>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="form-floating">
-      <input type="email" class="form-control is-invalid" id="floatingInvalidInput" placeholder="name@example.com" value="invalid@">
+      <input type="email" class="form-input is-invalid" id="floatingInvalidInput" placeholder="name@example.com" value="invalid@">
       <label for="floatingInvalidInput">Invalid input</label>
       <div class="invalid-feedback">
         Please provide a valid email.
@@ -560,14 +560,14 @@ This section demonstrates various combinations of form styling variants, theme s
 
 ### Mixed forms in containers
 
-This example demonstrates how to mix different form control types with various variants and themes within the same container.
+This example demonstrates how to mix different form input types with various variants and themes within the same container.
 
 <Example showMarkup={false} code={`<div class="row g-xlarge">
     <div class="col form-alternate" data-cx-theme="light">
       <h6>Alternate container + light theme</h6>
       <div class="mb-medium">
         <label class="form-label">Text input</label>
-        <input type="text" class="form-control" placeholder="Default input in alternate container">
+        <input type="text" class="form-input" placeholder="Default input in alternate container">
       </div>
       <div class="mb-medium">
         <label class="form-label">Default select in alternate wrapper</label>
@@ -588,7 +588,7 @@ This example demonstrates how to mix different form control types with various v
       <h6>Default container + dark theme</h6>
       <div class="mb-medium">
         <label class="form-label">Text input</label>
-        <input type="text" class="form-control" placeholder="Default input in default container">
+        <input type="text" class="form-input" placeholder="Default input in default container">
       </div>
       <div class="mb-medium">
         <label class="form-label">Alternate select in default wrapper</label>
@@ -616,12 +616,12 @@ This example demonstrates validation states with different theme and variant com
       <h6>Default + Light Theme</h6>
       <div class="mb-medium">
         <label class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" value="Valid input">
+        <input type="text" class="form-input is-valid" value="Valid input">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium">
         <label class="form-label">Invalid input</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input">
+        <input type="text" class="form-input is-invalid" value="Invalid input">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
     </div>
@@ -629,12 +629,12 @@ This example demonstrates validation states with different theme and variant com
       <h6>Alternate + Light Theme</h6>
       <div class="mb-medium">
         <label class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" value="Valid input">
+        <input type="text" class="form-input is-valid" value="Valid input">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium">
         <label class="form-label">Invalid input</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input">
+        <input type="text" class="form-input is-invalid" value="Invalid input">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
     </div>
@@ -644,12 +644,12 @@ This example demonstrates validation states with different theme and variant com
       <h6>Default + Dark Theme</h6>
       <div class="mb-medium">
         <label class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" value="Valid input">
+        <input type="text" class="form-input is-valid" value="Valid input">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium">
         <label class="form-label">Invalid input</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input">
+        <input type="text" class="form-input is-invalid" value="Invalid input">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
     </div>
@@ -657,12 +657,12 @@ This example demonstrates validation states with different theme and variant com
       <h6>Alternate + Dark Theme</h6>
       <div class="mb-medium">
         <label class="form-label">Valid input</label>
-        <input type="text" class="form-control is-valid" value="Valid input">
+        <input type="text" class="form-input is-valid" value="Valid input">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium">
         <label class="form-label">Invalid input</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input">
+        <input type="text" class="form-input is-invalid" value="Invalid input">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
     </div>
@@ -679,7 +679,7 @@ This example shows input groups with different theme and variant combinations.
         <label class="form-label">Light theme</label>
         <div class="input-group form-default" data-cx-theme="light">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-input" placeholder="Username">
           <button class="button primary">Submit</button>
         </div>
       </div>
@@ -687,7 +687,7 @@ This example shows input groups with different theme and variant combinations.
         <label class="form-label">Dark theme</label>
         <div class="input-group form-default" data-cx-theme="dark">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-input" placeholder="Username">
           <button class="button primary">Submit</button>
         </div>
       </div>
@@ -698,7 +698,7 @@ This example shows input groups with different theme and variant combinations.
         <label class="form-label">Light theme</label>
         <div class="input-group form-alternate" data-cx-theme="light">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-input" placeholder="Username">
           <button class="button primary">Submit</button>
         </div>
       </div>
@@ -706,7 +706,7 @@ This example shows input groups with different theme and variant combinations.
         <label class="form-label">Dark theme</label>
         <div class="input-group form-alternate" data-cx-theme="dark">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-input" placeholder="Username">
           <button class="button primary">Submit</button>
         </div>
       </div>
@@ -722,19 +722,19 @@ This example demonstrates floating labels with different theme and variant combi
       <h6>Default Floating Labels</h6>
       <div class="mb-medium">
         <div class="form-floating form-default" data-cx-theme="light">
-          <input type="email" class="form-control" id="floatingDefaultLight" placeholder="name@example.com">
+          <input type="email" class="form-input" id="floatingDefaultLight" placeholder="name@example.com">
           <label for="floatingDefaultLight">Light theme email</label>
         </div>
       </div>
       <div class="mb-medium">
         <div class="form-floating form-default" data-cx-theme="dark">
-          <input type="email" class="form-control" id="floatingDefaultDark" placeholder="name@example.com">
+          <input type="email" class="form-input" id="floatingDefaultDark" placeholder="name@example.com">
           <label for="floatingDefaultDark">Dark theme email</label>
         </div>
       </div>
       <div class="mb-medium">
         <div class="form-floating form-default" data-cx-theme="light">
-          <input type="email" class="form-control is-invalid" id="floatingDefaultLightInvalid" placeholder="name@example.com">
+          <input type="email" class="form-input is-invalid" id="floatingDefaultLightInvalid" placeholder="name@example.com">
           <label for="floatingDefaultLightInvalid">Invalid input</label>
           <div class="invalid-feedback">Please provide a valid email.</div>
         </div>
@@ -744,19 +744,19 @@ This example demonstrates floating labels with different theme and variant combi
       <h6>Alternate Floating Labels</h6>
       <div class="mb-medium">
         <div class="form-floating form-alternate" data-cx-theme="light">
-          <input type="email" class="form-control" id="floatingAlternateLight" placeholder="name@example.com">
+          <input type="email" class="form-input" id="floatingAlternateLight" placeholder="name@example.com">
           <label for="floatingAlternateLight">Light theme email</label>
         </div>
       </div>
       <div class="mb-medium">
         <div class="form-floating form-alternate" data-cx-theme="dark">
-          <input type="email" class="form-control" id="floatingAlternateDark" placeholder="name@example.com">
+          <input type="email" class="form-input" id="floatingAlternateDark" placeholder="name@example.com">
           <label for="floatingAlternateDark">Dark theme email</label>
         </div>
       </div>
       <div class="mb-medium">
         <div class="form-floating form-alternate" data-cx-theme="light">
-          <input type="email" class="form-control is-invalid" id="floatingAlternateLightInvalid" placeholder="name@example.com">
+          <input type="email" class="form-input is-invalid" id="floatingAlternateLightInvalid" placeholder="name@example.com">
           <label for="floatingAlternateLightInvalid">Invalid input</label>
           <div class="invalid-feedback">Please provide a valid email.</div>
         </div>
@@ -775,10 +775,10 @@ This example demonstrates complex nesting of containers with different theme and
         <h6>Dark background section</h6>
         <div class="form-alternate" data-cx-theme="dark">
           <label class="form-label">Nested alternate + dark</label>
-          <input type="text" class="form-control mb-small" placeholder="Alternate in dark">
+          <input type="text" class="form-input mb-small" placeholder="Alternate in dark">
           <div class="form-default">
             <label class="form-label">Nested default in alternate</label>
-            <input type="text" class="form-control" placeholder="Default in alternate">
+            <input type="text" class="form-input" placeholder="Default in alternate">
           </div>
         </div>
       </div>
@@ -789,10 +789,10 @@ This example demonstrates complex nesting of containers with different theme and
         <h6>Light background section</h6>
         <div class="form-default" data-cx-theme="light">
           <label class="form-label">Nested default + light</label>
-          <input type="text" class="form-control mb-small" placeholder="Default in light">
+          <input type="text" class="form-input mb-small" placeholder="Default in light">
           <div class="form-alternate">
             <label class="form-label">Nested alternate in default</label>
-            <input type="text" class="form-control" placeholder="Alternate in default">
+            <input type="text" class="form-input" placeholder="Alternate in default">
           </div>
         </div>
       </div>
@@ -808,12 +808,12 @@ This section demonstrates complex validation scenarios with different wrapper co
       <h6>Default + Light wrapper with mixed validation</h6>
       <div class="mb-medium">
         <label class="form-label">Default valid input</label>
-        <input type="text" class="form-control is-valid" value="Valid input">
+        <input type="text" class="form-input is-valid" value="Valid input">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium form-alternate">
         <label class="form-label">Alternate invalid in default</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input">
+        <input type="text" class="form-input is-invalid" value="Invalid input">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
       <div class="mb-medium">
@@ -828,12 +828,12 @@ This section demonstrates complex validation scenarios with different wrapper co
       <h6>Alternate + Dark wrapper with mixed validation</h6>
       <div class="mb-medium">
         <label class="form-label">Alternate valid input</label>
-        <input type="text" class="form-control is-valid" value="Valid input">
+        <input type="text" class="form-input is-valid" value="Valid input">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium form-default">
         <label class="form-label">Default invalid in alternate</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input">
+        <input type="text" class="form-input is-invalid" value="Invalid input">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
       <div class="mb-medium">
@@ -857,7 +857,7 @@ This example shows how validation states work with input groups in different wra
         <label class="form-label">Valid input group</label>
         <div class="input-group">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control is-valid" placeholder="Username" value="validuser">
+          <input type="text" class="form-input is-valid" placeholder="Username" value="validuser">
           <button class="button primary">Submit</button>
         </div>
         <div class="valid-feedback">Looks good!</div>
@@ -866,7 +866,7 @@ This example shows how validation states work with input groups in different wra
         <label class="form-label">Invalid input group</label>
         <div class="input-group">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control is-invalid" placeholder="Username" value="inv">
+          <input type="text" class="form-input is-invalid" placeholder="Username" value="inv">
         </div>
         <div class="invalid-feedback">Username is too short.</div>
       </div>
@@ -874,7 +874,7 @@ This example shows how validation states work with input groups in different wra
         <label class="form-label">Alternate input group in default</label>
         <div class="input-group form-alternate">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control is-valid" placeholder="Username" value="gooduser">
+          <input type="text" class="form-input is-valid" placeholder="Username" value="gooduser">
         </div>
         <div class="valid-feedback">Looks good!</div>
       </div>
@@ -885,7 +885,7 @@ This example shows how validation states work with input groups in different wra
         <label class="form-label">Valid input group</label>
         <div class="input-group">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control is-valid" placeholder="Username" value="validuser">
+          <input type="text" class="form-input is-valid" placeholder="Username" value="validuser">
           <button class="button primary">Submit</button>
         </div>
         <div class="valid-feedback">Looks good!</div>
@@ -894,7 +894,7 @@ This example shows how validation states work with input groups in different wra
         <label class="form-label">Invalid input group</label>
         <div class="input-group">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control is-invalid" placeholder="Username" value="inv">
+          <input type="text" class="form-input is-invalid" placeholder="Username" value="inv">
         </div>
         <div class="invalid-feedback">Username is too short.</div>
       </div>
@@ -902,7 +902,7 @@ This example shows how validation states work with input groups in different wra
         <label class="form-label">Default input group in alternate</label>
         <div class="input-group form-default">
           <span class="input-addon">@</span>
-          <input type="text" class="form-control is-valid" placeholder="Username" value="gooduser">
+          <input type="text" class="form-input is-valid" placeholder="Username" value="gooduser">
         </div>
         <div class="valid-feedback">Looks good!</div>
       </div>
@@ -911,19 +911,19 @@ This example shows how validation states work with input groups in different wra
 
 ### Theme-specific validation
 
-This example shows how validation states appear with explicit theme overrides on form controls and containers.
+This example shows how validation states appear with explicit theme overrides on form inputs and containers.
 
 <Example showMarkup={false} code={`<div class="row g-xlarge">
     <div class="col form-default">
       <h6>Default wrapper with theme overrides</h6>
       <div class="mb-medium">
         <label class="form-label">Light theme valid</label>
-        <input type="text" class="form-control is-valid" value="Valid input" data-cx-theme="light">
+        <input type="text" class="form-input is-valid" value="Valid input" data-cx-theme="light">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium">
         <label class="form-label">Dark theme invalid</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input" data-cx-theme="dark">
+        <input type="text" class="form-input is-invalid" value="Invalid input" data-cx-theme="dark">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
       <div class="mb-medium" data-cx-theme="dark">
@@ -939,12 +939,12 @@ This example shows how validation states appear with explicit theme overrides on
       <h6>Alternate wrapper with theme overrides</h6>
       <div class="mb-medium">
         <label class="form-label">Light theme valid</label>
-        <input type="text" class="form-control is-valid" value="Valid input" data-cx-theme="light">
+        <input type="text" class="form-input is-valid" value="Valid input" data-cx-theme="light">
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-medium">
         <label class="form-label">Dark theme invalid</label>
-        <input type="text" class="form-control is-invalid" value="Invalid input" data-cx-theme="dark">
+        <input type="text" class="form-input is-invalid" value="Invalid input" data-cx-theme="dark">
         <div class="invalid-feedback">Please check this field.</div>
       </div>
       <div class="mb-medium" data-cx-theme="light">
@@ -1039,17 +1039,17 @@ This example demonstrates deeply nested validation states with multiple levels o
       <div class="mb-medium p-small border">
         <div class="form-alternate">
           <label class="form-label">Level 1 Alternate in Default</label>
-          <input type="text" class="form-control is-valid" value="Valid Level 1">
+          <input type="text" class="form-input is-valid" value="Valid Level 1">
           <div class="valid-feedback">Level 1 feedback</div>
 
           <div class="mt-small p-small border form-default">
             <label class="form-label">Level 2 Default in Alternate</label>
-            <input type="text" class="form-control is-invalid" value="Invalid Level 2">
+            <input type="text" class="form-input is-invalid" value="Invalid Level 2">
             <div class="invalid-feedback">Level 2 feedback</div>
 
             <div class="mt-small p-small border form-alternate">
               <label class="form-label">Level 3 Alternate in Default</label>
-              <input type="text" class="form-control is-valid" value="Valid Level 3">
+              <input type="text" class="form-input is-valid" value="Valid Level 3">
               <div class="valid-feedback">Level 3 feedback</div>
             </div>
           </div>
@@ -1061,17 +1061,17 @@ This example demonstrates deeply nested validation states with multiple levels o
       <div class="mb-medium p-small border">
         <div class="form-default">
           <label class="form-label">Level 1 Default in Alternate</label>
-          <input type="text" class="form-control is-valid" value="Valid Level 1">
+          <input type="text" class="form-input is-valid" value="Valid Level 1">
           <div class="valid-feedback">Level 1 feedback</div>
 
           <div class="mt-small p-small border form-alternate">
             <label class="form-label">Level 2 Alternate in Default</label>
-            <input type="text" class="form-control is-invalid" value="Invalid Level 2">
+            <input type="text" class="form-input is-invalid" value="Invalid Level 2">
             <div class="invalid-feedback">Level 2 feedback</div>
 
             <div class="mt-small p-small border form-default">
               <label class="form-label">Level 3 Default in Alternate</label>
-              <input type="text" class="form-control is-valid" value="Valid Level 3">
+              <input type="text" class="form-input is-valid" value="Valid Level 3">
               <div class="valid-feedback">Level 3 feedback</div>
             </div>
           </div>
@@ -1091,12 +1091,12 @@ This example shows a more realistic form with mixed validation states and variou
         <div class="row g-medium mb-medium">
           <div class="col-medium-6">
             <label class="form-label">First name</label>
-            <input type="text" class="form-control is-valid" value="John">
+            <input type="text" class="form-input is-valid" value="John">
             <div class="valid-feedback">Looks good!</div>
           </div>
           <div class="col-medium-6">
             <label class="form-label">Last name</label>
-            <input type="text" class="form-control is-invalid" value="">
+            <input type="text" class="form-input is-invalid" value="">
             <div class="invalid-feedback">Please provide a last name.</div>
           </div>
         </div>
@@ -1108,7 +1108,7 @@ This example shows a more realistic form with mixed validation states and variou
               <label class="form-label">Email</label>
               <div class="input-group">
                 <span class="input-addon">@</span>
-                <input type="email" class="form-control is-valid" value="john@example.com">
+                <input type="email" class="form-input is-valid" value="john@example.com">
               </div>
               <div class="valid-feedback">Email looks valid.</div>
             </div>
@@ -1116,7 +1116,7 @@ This example shows a more realistic form with mixed validation states and variou
               <label class="form-label">Phone number</label>
               <div class="input-group">
                 <span class="input-addon">+1</span>
-                <input type="tel" class="form-control is-invalid" value="555">
+                <input type="tel" class="form-input is-invalid" value="555">
               </div>
               <div class="invalid-feedback">Please enter a complete phone number.</div>
             </div>
@@ -1126,12 +1126,12 @@ This example shows a more realistic form with mixed validation states and variou
             <h6>Address</h6>
             <div class="mb-small">
               <label class="form-label">Street address</label>
-              <input type="text" class="form-control is-valid" value="123 Example St">
+              <input type="text" class="form-input is-valid" value="123 Example St">
             </div>
             <div class="row g-medium">
               <div class="col">
                 <label class="form-label">City</label>
-                <input type="text" class="form-control" placeholder="City">
+                <input type="text" class="form-input" placeholder="City">
               </div>
               <div class="col">
                 <label class="form-label">State</label>
@@ -1144,7 +1144,7 @@ This example shows a more realistic form with mixed validation states and variou
               </div>
               <div class="col">
                 <label class="form-label">ZIP</label>
-                <input type="text" class="form-control" placeholder="ZIP Code">
+                <input type="text" class="form-input" placeholder="ZIP Code">
               </div>
             </div>
           </div>

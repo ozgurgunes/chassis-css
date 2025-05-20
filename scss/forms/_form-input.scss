@@ -5,11 +5,11 @@
 // Provides consistent appearance across browsers while maintaining accessibility.
 // Supports default and alternate styling variants, disabled states, and dark mode.
 //
-// Extends the %form-input placeholder to share common styling with other form controls
+// Extends the %form-input placeholder to share common styling with other form inputs
 // while adding input-specific features for different input types (file, date, color, etc.).
 //
 
-.form-control {
+.form-input {
   // Uses %form-input placeholder to share common form styles with .form-select,
   // avoiding duplicate property assignments across different form elements
   // and ensuring consistent appearance between different input types.
@@ -50,7 +50,7 @@
   // Placeholder styling
   // Ensures consistent color and opacity across browsers.
   &::placeholder {
-    color: var(--#{$prefix}idle-fg-inactive);
+    color: var(--#{$prefix}form-idle-fg-inactive);
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
@@ -82,7 +82,7 @@
   // Readonly controls as plain text
   // Apply the `.plaintext` class to a readonly input to display it as regular text
   // without borders, background colors, or focus indicators, while maintaining proper spacing.
-  // Useful for non-editable form values that need to align with other form controls.
+  // Useful for non-editable form values that need to align with other form inputs.
   &.plaintext {
     --#{$prefix}padding-x: 0;
     --#{$prefix}fg-color: #{$form-input-plaintext-color};
@@ -103,8 +103,8 @@
 
   // Color input control styling
   // Provides appropriate sizing and interaction for color picker inputs
-  // while maintaining consistent border-radius with other form controls.
-  &.color-control {
+  // while maintaining consistent border-radius with other form inputs.
+  &.color-input {
     width: var(--#{$prefix}input-color-width, var(--#{$prefix}min-height));
     height: var(--#{$prefix}input-color-height, var(--#{$prefix}min-height));
     padding: var(--#{$prefix}input-color-padding, var(--#{$prefix}padding-y));
@@ -129,7 +129,7 @@
 // Ensures proper minimum height for multiline text inputs.
 textarea {
   // stylelint-disable-next-line selector-no-qualifying-type
-  &.form-control {
+  &.form-input {
     min-height: var(--#{$prefix}min-height);
   }
 }

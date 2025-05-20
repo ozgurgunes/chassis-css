@@ -333,12 +333,12 @@ import Placeholder from "@shortcodes/Placeholder.astro"
         <form>
           <div class="mb-medium">
             <label for="exampleInputEmail1" class="form-label">البريد الإلكتروني</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-assist">لن نقوم بمشاركة بريدك الإلكتروني مع أي شخص آخر.</div>
           </div>
           <div class="mb-medium">
             <label for="exampleInputPassword1" class="form-label">كلمة السر</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-input" id="exampleInputPassword1">
           </div>
           <div class="mb-medium">
             <label for="exampleSelect" class="form-label">قائمة اختيار</label>
@@ -366,7 +366,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           </fieldset>
           <div class="mb-medium">
             <label class="form-label" for="customFile">رفع</label>
-            <input type="file" class="form-control" id="customFile">
+            <input type="file" class="form-input" id="customFile">
           </div>
           <div class="mb-medium form-option form-switch">
             <input class="option-input" type="checkbox" role="switch" id="switchCheckChecked" checked>
@@ -393,7 +393,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           <fieldset disabled aria-label="مثال على مجموعة الحقول المعطلة">
             <div class="mb-medium">
               <label for="disabledTextInput" class="form-label">حقل إدخال معطل</label>
-              <input type="text" id="disabledTextInput" class="form-control" placeholder="حقل إدخال معطل">
+              <input type="text" id="disabledTextInput" class="form-input" placeholder="حقل إدخال معطل">
             </div>
             <div class="mb-medium">
               <label for="disabledSelect" class="form-label">قائمة اختيار معطلة</label>
@@ -422,7 +422,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
             </fieldset>
             <div class="mb-medium">
               <label class="form-label" for="disabledCustomFile">رفع معطل</label>
-              <input type="file" class="form-control" id="disabledCustomFile" disabled>
+              <input type="file" class="form-input" id="disabledCustomFile" disabled>
             </div>
             <div class="mb-medium form-option form-switch">
               <input class="option-input" type="checkbox" role="switch" id="disabledSwitchCheckChecked" checked disabled>
@@ -441,13 +441,13 @@ import Placeholder from "@shortcodes/Placeholder.astro"
     <article class="my-medium" id="sizing">
       <div class="cxd-heading sticky-xlarge-top align-self-start mt-xlarge mb-medium mt-xlarge-0 mb-xlarge-2">
         <h3>الأحجام</h3>
-        <a class="d-flex align-items-center" hreflang="en" href={getVersionedDocsPath('forms/form-control#sizing')}>دليل الإستخدام</a>
+        <a class="d-flex align-items-center" hreflang="en" href={getVersionedDocsPath('forms/form-input#sizing')}>دليل الإستخدام</a>
       </div>
 
       <div>
         <Example showMarkup={false} code={`
         <div class="mb-medium">
-          <input class="form-control form-control-large" type="text" placeholder="حقل إدخال كبير" aria-label=".form-control-large مثال">
+          <input class="form-input form-input-large" type="text" placeholder="حقل إدخال كبير" aria-label=".form-input-large مثال">
         </div>
         <div class="mb-medium">
           <select class="form-select form-select-large" aria-label=".form-select-large مثال">
@@ -458,13 +458,13 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           </select>
         </div>
         <div class="mb-medium">
-          <input type="file" class="form-control form-control-large" aria-label="مثال على إدخال ملف كبير">
+          <input type="file" class="form-input form-input-large" aria-label="مثال على إدخال ملف كبير">
         </div>
         `} />
 
         <Example showMarkup={false} code={`
         <div class="mb-medium">
-          <input class="form-control form-control-small" type="text" placeholder="حقل إدخال صغير" aria-label=".form-control-small مثال">
+          <input class="form-input form-input-small" type="text" placeholder="حقل إدخال صغير" aria-label=".form-input-small مثال">
         </div>
         <div class="mb-medium">
           <select class="form-select form-select-small" aria-label=".form-select-small مثال">
@@ -475,7 +475,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           </select>
         </div>
         <div class="mb-medium">
-          <input type="file" class="form-control form-control-small" aria-label="مثال على إدخال ملف صغير">
+          <input type="file" class="form-input form-input-small" aria-label="مثال على إدخال ملف صغير">
         </div>
         `} />
       </div>
@@ -490,25 +490,25 @@ import Placeholder from "@shortcodes/Placeholder.astro"
         <Example showMarkup={false} code={`
         <div class="input-group mb-medium">
           <span class="input-addon" id="basic-addon1">أنا اسمي</span>
-          <input type="text" class="form-control" placeholder="فلان الفلاني" aria-label="الاسم" aria-describedby="basic-addon1">
+          <input type="text" class="form-input" placeholder="فلان الفلاني" aria-label="الاسم" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-medium">
-          <input type="text" class="form-control" placeholder="أنا أحب الكعك والقهوة" aria-label="الطعام المفضل" aria-describedby="basic-addon2">
+          <input type="text" class="form-input" placeholder="أنا أحب الكعك والقهوة" aria-label="الطعام المفضل" aria-describedby="basic-addon2">
           <span class="input-addon" id="basic-addon2">وغيرها</span>
         </div>
         <label for="basic-url" class="form-label">عنوان حسابك الشخصي</label>
         <div class="input-group mb-medium">
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          <input type="text" class="form-input" id="basic-url" aria-describedby="basic-addon3">
           <span class="input-addon" id="basic-addon3"><bdo lang="en" dir="ltr">https://example.com/users/</bdo></span>
         </div>
         <div class="input-group mb-medium">
           <span class="input-addon"><bdo lang="en" dir="ltr">.00</bdo></span>
-          <input type="text" class="form-control" aria-label="المبلغ (لأقرب دولار)">
+          <input type="text" class="form-input" aria-label="المبلغ (لأقرب دولار)">
           <span class="input-addon">$</span>
         </div>
         <div class="input-group">
           <span class="input-addon">مع textarea</span>
-          <textarea class="form-control" aria-label="مع textarea"></textarea>
+          <textarea class="form-input" aria-label="مع textarea"></textarea>
         </div>
         `} />
       </div>
@@ -523,11 +523,11 @@ import Placeholder from "@shortcodes/Placeholder.astro"
         <Example showMarkup={false} code={`
         <form>
           <div class="form-floating mb-medium">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-input" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">البريد الالكتروني</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="كلمة السر">
+            <input type="password" class="form-input" id="floatingPassword" placeholder="كلمة السر">
             <label for="floatingPassword">كلمة السر</label>
           </div>
         </form>
@@ -545,14 +545,14 @@ import Placeholder from "@shortcodes/Placeholder.astro"
         <form class="row g-3">
           <div class="col-medium-4">
             <label for="validationServer01" class="form-label">الاسم الاول</label>
-            <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+            <input type="text" class="form-input is-valid" id="validationServer01" value="Mark" required>
             <div class="valid-feedback">
               يبدو صحيحًا!
             </div>
           </div>
           <div class="col-medium-4">
             <label for="validationServer02" class="form-label">الكنية</label>
-            <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+            <input type="text" class="form-input is-valid" id="validationServer02" value="Otto" required>
             <div class="valid-feedback">
               يبدو صحيحًا!
             </div>
@@ -560,7 +560,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           <div class="col-medium-4">
             <label for="validationServerUsername" class="form-label">اسم المستخدم</label>
             <div class="input-group has-validation">
-              <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
+              <input type="text" class="form-input is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
               <span class="input-addon" id="inputGroupPrepend3">@</span>
               <div class="invalid-feedback">
                 يرجى اختيار اسم مستخدم.
@@ -569,7 +569,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           </div>
           <div class="col-medium-6">
             <label for="validationServer03" class="form-label">مدينة</label>
-            <input type="text" class="form-control is-invalid" id="validationServer03" required>
+            <input type="text" class="form-input is-invalid" id="validationServer03" required>
             <div class="invalid-feedback">
               يرجى إدخال مدينة صحيحة.
             </div>
@@ -586,7 +586,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           </div>
           <div class="col-medium-3">
             <label for="validationServer05" class="form-label">الرمز البريدي</label>
-            <input type="text" class="form-control is-invalid" id="validationServer05" required>
+            <input type="text" class="form-input is-invalid" id="validationServer05" required>
             <div class="invalid-feedback">
               يرجى إدخال رمز بريدي صحيح.
             </div>
@@ -1239,7 +1239,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
                 </li>
               </ul>
               <form class="d-flex" role="search">
-                <input class="form-control me-xsmall" type="search" placeholder="بحث" aria-label="بحث">
+                <input class="form-input me-xsmall" type="search" placeholder="بحث" aria-label="بحث">
                 <button class="button outline-dark" type="submit">بحث</button>
               </form>
             </div>
@@ -1278,7 +1278,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
                 </li>
               </ul>
               <form class="d-flex" role="search">
-                <input class="form-control me-xsmall" type="search" placeholder="بحث" aria-label="بحث">
+                <input class="form-input me-xsmall" type="search" placeholder="بحث" aria-label="بحث">
                 <button class="button outline-light" type="submit">بحث</button>
               </form>
             </div>

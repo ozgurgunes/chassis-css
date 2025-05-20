@@ -11,7 +11,7 @@ Every group of form fields should reside in a `<form>` element. Chassis - CSS pr
 - New to browser forms? Consider reviewing [the MDN form docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) for an overview and complete list of available attributes.
 - `<button>`s within a `<form>` default to `type="submit"`, so strive to be specific and always include a `type`.
 
-Since Chassis - CSS applies `display: block` and `width: 100%` to almost all our form controls, forms will by default stack vertically. Additional classes can be used to vary this layout on a per-form basis.
+Since Chassis - CSS applies `display: block` and `width: 100%` to almost all our form inputs, forms will by default stack vertically. Additional classes can be used to vary this layout on a per-form basis.
 
 ## Utilities
 
@@ -21,11 +21,11 @@ Feel free to build your forms however you like, with `<fieldset>`s, `<div>`s, or
 
 <Example code={`<div class="mb-medium">
     <label for="formGroupExampleInput" class="form-label">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+    <input type="text" class="form-input" id="formGroupExampleInput" placeholder="Example input placeholder">
   </div>
   <div class="mb-medium">
     <label for="formGroupExampleInput2" class="form-label">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+    <input type="text" class="form-input" id="formGroupExampleInput2" placeholder="Another input placeholder">
   </div>`} />
 
 ## Form grid
@@ -34,10 +34,10 @@ More complex forms can be built using our grid classes. Use these for form layou
 
 <Example code={`<div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+      <input type="text" class="form-input" placeholder="First name" aria-label="First name">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+      <input type="text" class="form-input" placeholder="Last name" aria-label="Last name">
     </div>
   </div>`} />
 
@@ -47,10 +47,10 @@ By adding [gutter modifier classes]([[docsref:/layout/gutters]]), you can have c
 
 <Example code={`<div class="row g-medium">
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+      <input type="text" class="form-input" placeholder="First name" aria-label="First name">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+      <input type="text" class="form-input" placeholder="Last name" aria-label="Last name">
     </div>
   </div>`} />
 
@@ -59,23 +59,23 @@ More complex layouts can also be created with the grid system.
 <Example code={`<form class="row g-medium">
     <div class="col-medium-6">
       <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
+      <input type="email" class="form-input" id="inputEmail4">
     </div>
     <div class="col-medium-6">
       <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
+      <input type="password" class="form-input" id="inputPassword4">
     </div>
     <div class="col-12">
       <label for="inputAddress" class="form-label">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      <input type="text" class="form-input" id="inputAddress" placeholder="1234 Main St">
     </div>
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+      <input type="text" class="form-input" id="inputAddress2" placeholder="Apartment, studio, or floor">
     </div>
     <div class="col-medium-6">
       <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input type="text" class="form-input" id="inputCity">
     </div>
     <div class="col-medium-4">
       <label for="inputState" class="form-label">State</label>
@@ -86,7 +86,7 @@ More complex layouts can also be created with the grid system.
     </div>
     <div class="col-medium-2">
       <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" class="form-input" id="inputZip">
     </div>
     <div class="col-12">
       <div class="form-option">
@@ -103,7 +103,7 @@ More complex layouts can also be created with the grid system.
 
 ## Horizontal form
 
-Create horizontal forms with the grid by adding the `.row` class to form groups and using the `.col-*-*` classes to specify the width of your labels and controls. Be sure to add `.col-form-label` to your `<label>`s as well so they’re vertically centered with their associated form controls.
+Create horizontal forms with the grid by adding the `.row` class to form groups and using the `.col-*-*` classes to specify the width of your labels and controls. Be sure to add `.col-form-label` to your `<label>`s as well so they’re vertically centered with their associated form inputs.
 
 At times, you maybe need to use margin or padding utilities to create that perfect alignment you need. For example, we’ve removed the `padding-top` on our stacked radio inputs label to better align the text baseline.
 
@@ -111,13 +111,13 @@ At times, you maybe need to use margin or padding utilities to create that perfe
     <div class="row mb-medium">
       <label for="inputEmail3" class="col-small-2 col-form-label">Email</label>
       <div class="col-small-10">
-        <input type="email" class="form-control" id="inputEmail3">
+        <input type="email" class="form-input" id="inputEmail3">
       </div>
     </div>
     <div class="row mb-medium">
       <label for="inputPassword3" class="col-small-2 col-form-label">Password</label>
       <div class="col-small-10">
-        <input type="password" class="form-control" id="inputPassword3">
+        <input type="password" class="form-input" id="inputPassword3">
       </div>
     </div>
     <fieldset class="row mb-medium">
@@ -158,24 +158,24 @@ At times, you maybe need to use margin or padding utilities to create that perfe
 
 ### Horizontal form label sizing
 
-Be sure to use `.col-form-label-small` or `.col-form-label-large` to your `<label>`s or `<legend>`s to correctly follow the size of `.form-control-large` and `.form-control-small`.
+Be sure to use `.col-form-label-small` or `.col-form-label-large` to your `<label>`s or `<legend>`s to correctly follow the size of `.form-input-large` and `.form-input-small`.
 
 <Example code={`<div class="row mb-medium">
     <label for="colFormLabelSm" class="col-small-2 col-form-label col-form-label-small">Email</label>
     <div class="col-small-10">
-      <input type="email" class="form-control small" id="colFormLabelSm" placeholder="col-form-label-small">
+      <input type="email" class="form-input small" id="colFormLabelSm" placeholder="col-form-label-small">
     </div>
   </div>
   <div class="row mb-medium">
     <label for="colFormLabel" class="col-small-2 col-form-label">Email</label>
     <div class="col-small-10">
-      <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+      <input type="email" class="form-input" id="colFormLabel" placeholder="col-form-label">
     </div>
   </div>
   <div class="row">
     <label for="colFormLabelLg" class="col-small-2 col-form-label col-form-label-large">Email</label>
     <div class="col-small-10">
-      <input type="email" class="form-control large" id="colFormLabelLg" placeholder="col-form-label-large">
+      <input type="email" class="form-input large" id="colFormLabelLg" placeholder="col-form-label-large">
     </div>
   </div>`} />
 
@@ -185,13 +185,13 @@ As shown in the previous examples, our grid system allows you to place any numbe
 
 <Example code={`<div class="row g-medium">
     <div class="col-small-7">
-      <input type="text" class="form-control" placeholder="City" aria-label="City">
+      <input type="text" class="form-input" placeholder="City" aria-label="City">
     </div>
     <div class="col-small">
-      <input type="text" class="form-control" placeholder="State" aria-label="State">
+      <input type="text" class="form-input" placeholder="State" aria-label="State">
     </div>
     <div class="col-small">
-      <input type="text" class="form-control" placeholder="Zip" aria-label="Zip">
+      <input type="text" class="form-input" placeholder="Zip" aria-label="Zip">
     </div>
   </div>`} />
 
@@ -202,13 +202,13 @@ The example below uses a flexbox utility to vertically center the contents and c
 <Example code={`<form class="row gy-small gx-medium align-items-center">
     <div class="col-auto">
       <label class="visually-hidden" for="autoSizingInput">Name</label>
-      <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
+      <input type="text" class="form-input" id="autoSizingInput" placeholder="Jane Doe">
     </div>
     <div class="col-auto">
       <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
       <div class="input-group">
         <div class="input-addon">@</div>
-        <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Username">
+        <input type="text" class="form-input" id="autoSizingInputGroup" placeholder="Username">
       </div>
     </div>
     <div class="col-auto">
@@ -238,13 +238,13 @@ You can then remix that once again with size-specific column classes.
 <Example code={`<form class="row gx-medium gy-small align-items-center">
     <div class="col-small-3">
       <label class="visually-hidden" for="specificSizeInputName">Name</label>
-      <input type="text" class="form-control" id="specificSizeInputName" placeholder="Jane Doe">
+      <input type="text" class="form-input" id="specificSizeInputName" placeholder="Jane Doe">
     </div>
     <div class="col-small-3">
       <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
       <div class="input-group">
         <div class="input-addon">@</div>
-        <input type="text" class="form-control" id="specificSizeInputGroupUsername" placeholder="Username">
+        <input type="text" class="form-input" id="specificSizeInputGroupUsername" placeholder="Username">
       </div>
     </div>
     <div class="col-small-3">
@@ -271,14 +271,14 @@ You can then remix that once again with size-specific column classes.
 
 ## Inline forms
 
-Use the `.row-cols-*` classes to create responsive horizontal layouts. By adding [gutter modifier classes]([[docsref:/layout/gutters]]), we'll have gutters in horizontal and vertical directions. On narrow mobile viewports, the `.col-12` helps stack the form controls and more. The `.align-items-center` aligns the form elements to the middle, making the `.form-option` align properly.
+Use the `.row-cols-*` classes to create responsive horizontal layouts. By adding [gutter modifier classes]([[docsref:/layout/gutters]]), we'll have gutters in horizontal and vertical directions. On narrow mobile viewports, the `.col-12` helps stack the form inputs and more. The `.align-items-center` aligns the form elements to the middle, making the `.form-option` align properly.
 
 <Example code={`<form class="row row-cols-large-auto g-medium align-items-center">
     <div class="col-12">
       <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
       <div class="input-group">
         <div class="input-addon">@</div>
-        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+        <input type="text" class="form-input" id="inlineFormInputGroupUsername" placeholder="Username">
       </div>
     </div>
 

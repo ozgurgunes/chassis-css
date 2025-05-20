@@ -317,12 +317,12 @@ export const body_class = 'bg-evident'
         <form>
           <div class="mb-medium">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-assist">We'll never share your email with anyone else.</div>
           </div>
           <div class="mb-medium">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-input" id="exampleInputPassword1">
           </div>
           <div class="mb-medium">
             <label for="exampleSelect" class="form-label">Select menu</label>
@@ -350,7 +350,7 @@ export const body_class = 'bg-evident'
           </fieldset>
           <div class="mb-medium">
             <label class="form-label" for="customFile">Upload</label>
-            <input type="file" class="form-control" id="customFile">
+            <input type="file" class="form-input" id="customFile">
           </div>
           <div class="mb-medium form-option form-switch">
             <input class="option-input" type="checkbox" role="switch" id="switchCheckChecked" checked>
@@ -376,7 +376,7 @@ export const body_class = 'bg-evident'
           <fieldset disabled aria-label="Disabled fieldset example">
             <div class="mb-medium">
               <label for="disabledTextInput" class="form-label">Disabled input</label>
-              <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+              <input type="text" id="disabledTextInput" class="form-input" placeholder="Disabled input">
             </div>
             <div class="mb-medium">
               <label for="disabledSelect" class="form-label">Disabled select menu</label>
@@ -405,7 +405,7 @@ export const body_class = 'bg-evident'
             </fieldset>
             <div class="mb-medium">
               <label class="form-label" for="disabledCustomFile">Upload</label>
-              <input type="file" class="form-control" id="disabledCustomFile" disabled>
+              <input type="file" class="form-input" id="disabledCustomFile" disabled>
             </div>
             <div class="mb-medium form-option form-switch">
               <input class="option-input" type="checkbox" role="switch" id="disabledSwitchCheckChecked" checked disabled>
@@ -423,13 +423,13 @@ export const body_class = 'bg-evident'
     <article class="my-medium" id="sizing">
       <div class="cxd-heading sticky-xlarge-top align-self-start mt-xlarge mb-medium mt-xlarge-0 mb-xlarge-2">
         <h3>Sizing</h3>
-        <a class="d-flex align-items-center" href={getVersionedDocsPath('forms/form-control#sizing')}>Documentation</a>
+        <a class="d-flex align-items-center" href={getVersionedDocsPath('forms/form-input#sizing')}>Documentation</a>
       </div>
 
       <div>
         <Example showMarkup={false} code={`
         <div class="mb-medium">
-          <input class="form-control form-control-large" type="text" placeholder=".form-control-large" aria-label=".form-control-large example">
+          <input class="form-input form-input-large" type="text" placeholder=".form-input-large" aria-label=".form-input-large example">
         </div>
         <div class="mb-medium">
           <select class="form-select form-select-large" aria-label=".form-select-large example">
@@ -440,12 +440,12 @@ export const body_class = 'bg-evident'
           </select>
         </div>
         <div class="mb-medium">
-          <input type="file" class="form-control form-control-large" aria-label="Large file input example">
+          <input type="file" class="form-input form-input-large" aria-label="Large file input example">
         </div>`} />
 
         <Example showMarkup={false} code={`
         <div class="mb-medium">
-          <input class="form-control form-control-small" type="text" placeholder=".form-control-small" aria-label=".form-control-small example">
+          <input class="form-input form-input-small" type="text" placeholder=".form-input-small" aria-label=".form-input-small example">
         </div>
         <div class="mb-medium">
           <select class="form-select form-select-small" aria-label=".form-select-small example">
@@ -456,7 +456,7 @@ export const body_class = 'bg-evident'
           </select>
         </div>
         <div class="mb-medium">
-          <input type="file" class="form-control form-control-small" aria-label="Small file input example">
+          <input type="file" class="form-input form-input-small" aria-label="Small file input example">
         </div>
         `} />
       </div>
@@ -471,25 +471,25 @@ export const body_class = 'bg-evident'
         <Example showMarkup={false} code={`
         <div class="input-group mb-medium">
           <span class="input-addon" id="basic-addon1">@</span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-medium">
-          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <input type="text" class="form-input" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
           <span class="input-addon" id="basic-addon2">@example.com</span>
         </div>
         <label for="basic-url" class="form-label">Your vanity URL</label>
         <div class="input-group mb-medium">
           <span class="input-addon" id="basic-addon3">https://example.com/users/</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          <input type="text" class="form-input" id="basic-url" aria-describedby="basic-addon3">
         </div>
         <div class="input-group mb-medium">
           <span class="input-addon">$</span>
-          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+          <input type="text" class="form-input" aria-label="Amount (to the nearest dollar)">
           <span class="input-addon">.00</span>
         </div>
         <div class="input-group">
           <span class="input-addon">With textarea</span>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
+          <textarea class="form-input" aria-label="With textarea"></textarea>
         </div>
         `} />
       </div>
@@ -504,11 +504,11 @@ export const body_class = 'bg-evident'
         <Example showMarkup={false} code={`
         <form>
           <div class="form-floating mb-medium">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-input" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-input" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
           </div>
         </form>
@@ -526,14 +526,14 @@ export const body_class = 'bg-evident'
         <form class="row g-3">
           <div class="col-medium-4">
             <label for="validationServer01" class="form-label">First name</label>
-            <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+            <input type="text" class="form-input is-valid" id="validationServer01" value="Mark" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-medium-4">
             <label for="validationServer02" class="form-label">Last name</label>
-            <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+            <input type="text" class="form-input is-valid" id="validationServer02" value="Otto" required>
             <div class="valid-feedback">
               Looks good!
             </div>
@@ -542,7 +542,7 @@ export const body_class = 'bg-evident'
             <label for="validationServerUsername" class="form-label">Username</label>
             <div class="input-group has-validation">
               <span class="input-addon" id="inputGroupPrepend3">@</span>
-              <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
+              <input type="text" class="form-input is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
               <div class="invalid-feedback">
                 Please choose a username.
               </div>
@@ -550,7 +550,7 @@ export const body_class = 'bg-evident'
           </div>
           <div class="col-medium-6">
             <label for="validationServer03" class="form-label">City</label>
-            <input type="text" class="form-control is-invalid" id="validationServer03" required>
+            <input type="text" class="form-input is-invalid" id="validationServer03" required>
             <div class="invalid-feedback">
               Please provide a valid city.
             </div>
@@ -567,7 +567,7 @@ export const body_class = 'bg-evident'
           </div>
           <div class="col-medium-3">
             <label for="validationServer05" class="form-label">Zip</label>
-            <input type="text" class="form-control is-invalid" id="validationServer05" required>
+            <input type="text" class="form-input is-invalid" id="validationServer05" required>
             <div class="invalid-feedback">
               Please provide a valid zip.
             </div>
@@ -1217,7 +1217,7 @@ export const body_class = 'bg-evident'
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
-                  <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search">
                   <button class="button outline-dark" type="submit">Search</button>
                 </form>
               </div>
@@ -1256,7 +1256,7 @@ export const body_class = 'bg-evident'
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
-                  <input class="form-control me-xsmall" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-input me-xsmall" type="search" placeholder="Search" aria-label="Search">
                   <button class="button outline-light" type="submit">Search</button>
                 </form>
               </div>

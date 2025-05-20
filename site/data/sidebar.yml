@@ -70,7 +70,7 @@
   icon_color: blue
   pages:
     - title: Overview
-    - title: Form control
+    - title: Form input
     - title: Select
     - title: Checks & radios
     - title: Range

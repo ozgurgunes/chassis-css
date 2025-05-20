@@ -2,7 +2,7 @@
 // Form Assist
 //
 // Form assist provides contextual help text for form elements.
-// It is typically placed below form controls to provide additional guidance,
+// It is typically placed below form inputs to provide additional guidance,
 // hints, or validation messages to users.
 //
 // Features:
@@ -17,10 +17,12 @@
 // - Range inputs: Uses appropriate spacing to maintain visual hierarchy
 //
 
-.form-assist {
+.form-assist,
+.valid-feedback,
+.invalid-feedback {
   @extend %form-colors; // Inherit base form color variables
-  margin-top: $form-field-assist-margin-t; // Consistent spacing from the form control
-  color: var(--#{$prefix}idle-assist-color); // Uses a lighter text color to distinguish from primary content
+  margin-top: $form-field-assist-margin-t; // Consistent spacing from the form input
+  color: var(--#{$prefix}form-idle-assist-color); // Uses a lighter text color to distinguish from primary content
   @include font(); // Apply standard font styling
 
   // Special positioning for form-assist within checkbox/radio options
@@ -39,7 +41,9 @@
 
 // Support for alternate styling variant
 @if $enable-alternate-forms {
-  .form-alternate .form-assist:not(.form-alternate .form-default .form-assist) {
+  .form-alternate .form-assist:not(.form-alternate .form-default .form-assist),
+  .form-alternate .valid-feedback:not(.form-alternate .form-default .valid-feedback),
+  .form-alternate .invalid-feedback:not(.form-alternate .form-default .invalid-feedback) {
     @extend %form-color-alternate;
   }
 }

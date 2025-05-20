@@ -1,12 +1,14 @@
 ---
 title: Select
-description: Customize the native `<select>`s with custom CSS that changes the element’s initial appearance.
+description: Create accessible, customized dropdown controls with Chassis CSS's enhanced native select styling.
 toc: true
 ---
 
-## Default
+## Overview
 
-Custom `<select>` menus need only a custom class, `.form-select` to trigger the custom styles. Custom styles are limited to the `<select>`’s initial appearance and cannot modify the `<option>`s due to browser limitations.
+Chassis CSS enhances native `<select>` elements with consistent styling that matches other form components while maintaining browser accessibility features.
+
+Apply the `.form-select` class to create styled dropdown menus with custom appearance, focus states, and sizing options.
 
 <Example code={`<select class="form-select" aria-label="Default select example">
     <option selected>Open this select menu</option>
@@ -15,9 +17,9 @@ Custom `<select>` menus need only a custom class, `.form-select` to trigger the 
     <option value="3">Three</option>
   </select>`} />
 
-## Sizing
+## Sizing options
 
-You may also choose from small and large custom selects to match our similarly sized text inputs.
+Use the `.small` and `.large` modifier classes to create select elements that match the dimensions of corresponding form inputs.
 
 <Example code={`<select class="form-select large mb-medium" aria-label="Large select example">
     <option selected>Open this select menu</option>
@@ -33,27 +35,31 @@ You may also choose from small and large custom selects to match our similarly s
     <option value="3">Three</option>
   </select>`} />
 
-The `multiple` attribute is also supported:
+## Multiple selections
+
+Chassis CSS styles support the native `multiple` attribute for selecting multiple options. The appearance remains consistent with other form elements while enabling multi-select functionality.
 
 <Example code={`<select class="form-select" multiple aria-label="Multiple select example">
-    <option selected>Open this select menu</option>
+    <option selected>Choose an option</option>
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
   </select>`} />
 
-As is the `size` attribute:
+### Visible options
+
+Control the number of visible options by using the `size` attribute. This creates a scrollable list with the specified number of options visible at once.
 
 <Example code={`<select class="form-select" size="3" aria-label="Size 3 select example">
-    <option selected>Open this select menu</option>
+    <option selected>Choose an option</option>
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
   </select>`} />
 
-## Disabled
+## Disabled state
 
-Add the `disabled` boolean attribute on a select to give it a grayed out appearance and remove pointer events.
+Apply the HTML `disabled` attribute to the select element to indicate it's unavailable for interaction. Disabled selects receive a muted appearance with visual cues that match other disabled form elements.
 
 <Example code={`<select class="form-select" aria-label="Disabled select example" disabled>
     <option selected>Open this select menu</option>
@@ -62,8 +68,24 @@ Add the `disabled` boolean attribute on a select to give it a grayed out appeara
     <option value="3">Three</option>
   </select>`} />
 
-## CSS
+## Accessibility considerations
 
-### Sass variables
+Chassis CSS select components maintain native browser accessibility features while providing enhanced styling. Keep these guidelines in mind:
+
+- Always include a descriptive label (either with a `<label>` element or with `aria-label`/`aria-labelledby`)
+- Use `aria-describedby` if additional description is needed
+- Consider adding a default instructional option (like "Choose an option...")
+- For required selects, use the `required` attribute
+
+## CSS variables & theming
+
+Chassis CSS select elements use the same state-based approach as other form components, with consistent styling across:
+- Idle state (default appearance)
+- Focus state (when interacted with)
+- Disabled state (when unavailable)
+
+### SCSS variables
+
+The following variables control select appearance:
 
 <ScssDocs name="form-select-variables" file="scss/_variables.scss" />

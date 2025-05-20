@@ -1,162 +1,320 @@
+//
+// Form Placeholders
+//
+// This file contains SCSS placeholders (%) that define the core styling for form elements.
+// These placeholders are used throughout the framework to provide consistent form styling
+// and to enable theming capabilities.
+//
+// The file implements a CSS variable-based approach for form styling, making it easy to:
+// - Apply consistent styling across all form elements
+// - Handle different form states (idle, focus, disabled, validation states)
+// - Support multiple themes via default and alternate color schemes
+// - Provide size variants (small, medium, large)
+//
+// Placeholders also promote DRY (Don't Repeat Yourself) principles by allowing multiple
+// selectors to share the same rules without duplicating CSS in the compiled output.
+//
+// Usage:
+//
+// ```scss
+// .custom-input {
+//   @extend %form-input;
+// }
+// ```
+
+//
+// Default Form Color Variables
+//
+// Defines the CSS variables used for default form theme styling.
+// These variables control the appearance of form elements in different states.
+//
+// State management is broken down into:
+// - idle: normal state when not interacted with
+// - focus: when the element has focus
+// - disabled: when the element is disabled
+// - error: validation state for invalid inputs
+// - success: validation state for valid inputs
+//
+// Each state has consistent properties for:
+// - bg-regular: Background color of the input
+// - fg-active: Text color for active content (input text)
+// - fg-inactive: Text color for inactive content (placeholders)
+// - border-color: Border color of the input
+// - assist-color: Color for assistant text (help text, errors)
+// - bg-floating: Background color used for floating labels
+//
 %form-color-default {
-  --#{$prefix}idle-bg-regular: #{$input-default-idle-bg-regular};
-  --#{$prefix}idle-fg-active: #{$input-default-idle-fg-active};
-  --#{$prefix}idle-fg-inactive: #{$input-default-idle-fg-inactive};
-  --#{$prefix}idle-border-color: #{$input-default-idle-border-color};
-  --#{$prefix}idle-assist-color: #{$input-default-idle-assist-color};
-  --#{$prefix}focus-bg-regular: #{$input-default-focus-bg-regular};
-  --#{$prefix}focus-fg-active: #{$input-default-focus-fg-active};
-  --#{$prefix}focus-fg-inactive: #{$input-default-focus-fg-inactive};
-  --#{$prefix}focus-border-color: #{$input-default-focus-border-color};
-  --#{$prefix}focus-assist-color: #{$input-default-focus-assist-color};
-  --#{$prefix}disabled-bg-regular: #{$input-default-disabled-bg-regular};
-  --#{$prefix}disabled-fg-active: #{$input-default-disabled-fg-active};
-  --#{$prefix}disabled-fg-inactive: #{$input-default-disabled-fg-inactive};
-  --#{$prefix}disabled-border-color: #{$input-default-disabled-border-color};
-  --#{$prefix}disabled-assist-color: #{$input-default-disabled-assist-color};
-  --#{$prefix}error-bg-regular: #{$input-default-error-bg-regular};
-  --#{$prefix}error-fg-active: #{$input-default-error-fg-active};
-  --#{$prefix}error-fg-inactive: #{$input-default-error-fg-inactive};
-  --#{$prefix}error-border-color: #{$input-default-error-border-color};
-  --#{$prefix}error-assist-color: #{$input-default-error-assist-color};
-  --#{$prefix}success-bg-regular: #{$input-default-success-bg-regular};
-  --#{$prefix}success-fg-active: #{$input-default-success-fg-active};
-  --#{$prefix}success-fg-inactive: #{$input-default-success-fg-inactive};
-  --#{$prefix}success-border-color: #{$input-default-success-border-color};
-  --#{$prefix}success-assist-color: #{$input-default-success-assist-color};
+  // Idle state variables
+  // Regular inputs in their default state
+  --#{$prefix}form-idle-bg-regular: #{$form-default-idle-bg-regular};
+  --#{$prefix}form-idle-fg-active: #{$form-default-idle-fg-active};
+  --#{$prefix}form-idle-fg-inactive: #{$form-default-idle-fg-inactive};
+  --#{$prefix}form-idle-border-color: #{$form-default-idle-border-color};
+  --#{$prefix}form-idle-assist-color: #{$form-default-idle-assist-color};
+  --#{$prefix}form-idle-bg-floating: #{$form-default-idle-bg-floating};
 
-  --#{$prefix}idle-bg-floating: #{$input-default-idle-bg-floating};
-  --#{$prefix}focus-bg-floating: #{$input-default-focus-bg-floating};
-  --#{$prefix}disabled-bg-floating: #{$input-default-disabled-bg-floating};
-  --#{$prefix}error-bg-floating: #{$input-default-error-bg-floating};
-  --#{$prefix}success-bg-floating: #{$input-default-success-bg-floating};
+  // Focus state variables
+  // Applied when the input receives focus
+  --#{$prefix}form-focus-bg-regular: #{$form-default-focus-bg-regular};
+  --#{$prefix}form-focus-fg-active: #{$form-default-focus-fg-active};
+  --#{$prefix}form-focus-fg-inactive: #{$form-default-focus-fg-inactive};
+  --#{$prefix}form-focus-border-color: #{$form-default-focus-border-color};
+  --#{$prefix}form-focus-assist-color: #{$form-default-focus-assist-color};
+  --#{$prefix}form-focus-bg-floating: #{$form-default-focus-bg-floating};
+  --#{$prefix}form-focus-box-shadow: #{$form-input-default-focus-box-shadow};
 
+  // Disabled state variables
+  // Applied when the input is disabled
+  --#{$prefix}form-disabled-bg-regular: #{$form-default-disabled-bg-regular};
+  --#{$prefix}form-disabled-fg-active: #{$form-default-disabled-fg-active};
+  --#{$prefix}form-disabled-fg-inactive: #{$form-default-disabled-fg-inactive};
+  --#{$prefix}form-disabled-border-color: #{$form-default-disabled-border-color};
+  --#{$prefix}form-disabled-assist-color: #{$form-default-disabled-assist-color};
+  --#{$prefix}form-disabled-bg-floating: #{$form-default-disabled-bg-floating};
+
+  // Error validation state variables
+  // Applied for invalid input validation
+  --#{$prefix}form-invalid-bg-regular: #{$form-default-invalid-bg-regular};
+  --#{$prefix}form-invalid-fg-active: #{$form-default-invalid-fg-active};
+  --#{$prefix}form-invalid-fg-inactive: #{$form-default-invalid-fg-inactive};
+  --#{$prefix}form-invalid-border-color: #{$form-default-invalid-border-color};
+  --#{$prefix}form-invalid-assist-color: #{$form-default-invalid-assist-color};
+  --#{$prefix}form-invalid-bg-floating: #{$form-default-invalid-bg-floating};
+
+  // Success validation state variables
+  // Applied for valid input validation
+  --#{$prefix}form-valid-bg-regular: #{$form-default-valid-bg-regular};
+  --#{$prefix}form-valid-fg-active: #{$form-default-valid-fg-active};
+  --#{$prefix}form-valid-fg-inactive: #{$form-default-valid-fg-inactive};
+  --#{$prefix}form-valid-border-color: #{$form-default-valid-border-color};
+  --#{$prefix}form-valid-assist-color: #{$form-default-valid-assist-color};
+  --#{$prefix}form-valid-bg-floating: #{$form-default-valid-bg-floating};
+
+  // Special input component styling
+  // File input button styling
   --#{$prefix}file-button-fg-color: #{$form-file-button-default-fg-color};
   --#{$prefix}file-button-bg-image: #{$form-file-button-default-bg-image};
   --#{$prefix}file-button-bg-color: #{$form-file-button-default-bg-color};
   --#{$prefix}file-button-bg-hover: #{$form-file-button-default-bg-hover};
 
+  // Input addon styling (for input groups)
   --#{$prefix}input-addon-fg-color: #{$form-input-addon-default-fg-color};
   --#{$prefix}input-addon-bg-image: #{$form-input-addon-default-bg-image};
   --#{$prefix}input-addon-bg-color: #{$form-input-addon-default-bg-color};
   --#{$prefix}input-addon-border-color: #{$form-input-addon-default-border-color};
 
+  // Range input styling
   --#{$prefix}form-range-track-color: #{$form-range-default-track-color};
   --#{$prefix}form-range-thumb-color: #{$form-range-default-thumb-color};
   --#{$prefix}form-range-thumb-disabled: #{$form-range-default-thumb-disabled};
   --#{$prefix}form-range-thumb-active: #{$form-range-default-thumb-active};
-
-  --#{$prefix}focus-box-shadow: #{$form-input-default-focus-box-shadow};
 }
 
+//
+// Alternate Form Color Variables
+//
+// Defines the CSS variables for the alternate form theme styling.
+// Uses the same state structure as the default theme but with
+// alternate color values for visual differentiation.
+//
+// This provides a secondary styling option that can be applied using
+// the `.form-alternate` class. Useful for:
+// - Dark mode alternatives
+// - Different contextual form styles
+// - Creating visual hierarchy with different form styles
+//
+// Note: Alternate forms are only included in the compiled CSS
+// when the $enable-alternate-forms variable is set to true.
+//
 %form-color-alternate {
-  --#{$prefix}idle-bg-regular: #{$input-alternate-idle-bg-regular};
-  --#{$prefix}idle-fg-active: #{$input-alternate-idle-fg-active};
-  --#{$prefix}idle-fg-inactive: #{$input-alternate-idle-fg-inactive};
-  --#{$prefix}idle-border-color: #{$input-alternate-idle-border-color};
-  --#{$prefix}idle-assist-color: #{$input-alternate-idle-assist-color};
-  --#{$prefix}focus-bg-regular: #{$input-alternate-focus-bg-regular};
-  --#{$prefix}focus-fg-active: #{$input-alternate-focus-fg-active};
-  --#{$prefix}focus-fg-inactive: #{$input-alternate-focus-fg-inactive};
-  --#{$prefix}focus-border-color: #{$input-alternate-focus-border-color};
-  --#{$prefix}focus-assist-color: #{$input-alternate-focus-assist-color};
-  --#{$prefix}disabled-bg-regular: #{$input-alternate-disabled-bg-regular};
-  --#{$prefix}disabled-fg-active: #{$input-alternate-disabled-fg-active};
-  --#{$prefix}disabled-fg-inactive: #{$input-alternate-disabled-fg-inactive};
-  --#{$prefix}disabled-border-color: #{$input-alternate-disabled-border-color};
-  --#{$prefix}disabled-assist-color: #{$input-alternate-disabled-assist-color};
-  --#{$prefix}error-bg-regular: #{$input-alternate-error-bg-regular};
-  --#{$prefix}error-fg-active: #{$input-alternate-error-fg-active};
-  --#{$prefix}error-fg-inactive: #{$input-alternate-error-fg-inactive};
-  --#{$prefix}error-border-color: #{$input-alternate-error-border-color};
-  --#{$prefix}error-assist-color: #{$input-alternate-error-assist-color};
-  --#{$prefix}success-bg-regular: #{$input-alternate-success-bg-regular};
-  --#{$prefix}success-fg-active: #{$input-alternate-success-fg-active};
-  --#{$prefix}success-fg-inactive: #{$input-alternate-success-fg-inactive};
-  --#{$prefix}success-border-color: #{$input-alternate-success-border-color};
-  --#{$prefix}success-assist-color: #{$input-alternate-success-assist-color};
+  // Idle state variables
+  --#{$prefix}form-idle-bg-regular: #{$form-alternate-idle-bg-regular};
+  --#{$prefix}form-idle-fg-active: #{$form-alternate-idle-fg-active};
+  --#{$prefix}form-idle-fg-inactive: #{$form-alternate-idle-fg-inactive};
+  --#{$prefix}form-idle-border-color: #{$form-alternate-idle-border-color};
+  --#{$prefix}form-idle-assist-color: #{$form-alternate-idle-assist-color};
+  --#{$prefix}form-idle-bg-floating: #{$form-alternate-idle-bg-floating};
 
-  --#{$prefix}idle-bg-floating: #{$input-alternate-idle-bg-floating};
-  --#{$prefix}focus-bg-floating: #{$input-alternate-focus-bg-floating};
-  --#{$prefix}disabled-bg-floating: #{$input-alternate-disabled-bg-floating};
-  --#{$prefix}error-bg-floating: #{$input-alternate-error-bg-floating};
-  --#{$prefix}success-bg-floating: #{$input-alternate-success-bg-floating};
+  // Focus state variables
+  --#{$prefix}form-focus-bg-regular: #{$form-alternate-focus-bg-regular};
+  --#{$prefix}form-focus-fg-active: #{$form-alternate-focus-fg-active};
+  --#{$prefix}form-focus-fg-inactive: #{$form-alternate-focus-fg-inactive};
+  --#{$prefix}form-focus-border-color: #{$form-alternate-focus-border-color};
+  --#{$prefix}form-focus-assist-color: #{$form-alternate-focus-assist-color};
+  --#{$prefix}form-focus-bg-floating: #{$form-alternate-focus-bg-floating};
+  --#{$prefix}form-focus-box-shadow: #{$form-input-alternate-focus-box-shadow};
 
+  // Disabled state variables
+  --#{$prefix}form-disabled-bg-regular: #{$form-alternate-disabled-bg-regular};
+  --#{$prefix}form-disabled-fg-active: #{$form-alternate-disabled-fg-active};
+  --#{$prefix}form-disabled-fg-inactive: #{$form-alternate-disabled-fg-inactive};
+  --#{$prefix}form-disabled-border-color: #{$form-alternate-disabled-border-color};
+  --#{$prefix}form-disabled-assist-color: #{$form-alternate-disabled-assist-color};
+  --#{$prefix}form-disabled-bg-floating: #{$form-alternate-disabled-bg-floating};
+
+  // Error validation state variables
+  --#{$prefix}form-invalid-bg-regular: #{$form-alternate-invalid-bg-regular};
+  --#{$prefix}form-invalid-fg-active: #{$form-alternate-invalid-fg-active};
+  --#{$prefix}form-invalid-fg-inactive: #{$form-alternate-invalid-fg-inactive};
+  --#{$prefix}form-invalid-border-color: #{$form-alternate-invalid-border-color};
+  --#{$prefix}form-invalid-assist-color: #{$form-alternate-invalid-assist-color};
+  --#{$prefix}form-invalid-bg-floating: #{$form-alternate-invalid-bg-floating};
+
+  // Success validation state variables
+  --#{$prefix}form-valid-bg-regular: #{$form-alternate-valid-bg-regular};
+  --#{$prefix}form-valid-fg-active: #{$form-alternate-valid-fg-active};
+  --#{$prefix}form-valid-fg-inactive: #{$form-alternate-valid-fg-inactive};
+  --#{$prefix}form-valid-border-color: #{$form-alternate-valid-border-color};
+  --#{$prefix}form-valid-assist-color: #{$form-alternate-valid-assist-color};
+  --#{$prefix}form-valid-bg-floating: #{$form-alternate-valid-bg-floating};
+
+  // Special input component styling
+  // File input button styling
   --#{$prefix}file-button-fg-color: #{$form-file-button-alternate-fg-color};
   --#{$prefix}file-button-bg-image: #{$form-file-button-alternate-bg-image};
   --#{$prefix}file-button-bg-color: #{$form-file-button-alternate-bg-color};
   --#{$prefix}file-button-bg-hover: #{$form-file-button-alternate-bg-hover};
 
+  // Input addon styling
   --#{$prefix}input-addon-fg-color: #{$form-input-addon-alternate-fg-color};
   --#{$prefix}input-addon-bg-image: #{$form-input-addon-alternate-bg-image};
   --#{$prefix}input-addon-bg-color: #{$form-input-addon-alternate-bg-color};
   --#{$prefix}input-addon-border-color: #{$form-input-addon-alternate-border-color};
 
+  // Range input styling
   --#{$prefix}form-range-track-color: #{$form-range-alternate-track-color};
   --#{$prefix}form-range-thumb-color: #{$form-range-alternate-thumb-color};
   --#{$prefix}form-range-thumb-disabled: #{$form-range-alternate-thumb-disabled};
   --#{$prefix}form-range-thumb-active: #{$form-range-alternate-thumb-active};
-
-  --#{$prefix}focus-box-shadow: #{$form-input-alternate-focus-box-shadow};
 }
-
 
 %form-colors {
   @extend %form-color-default;
 }
 
+//
+// Alternate Form Theme Conditional Inclusion
+//
+// This block conditionally includes the alternate form theme styling
+// when the $enable-alternate-forms variable is set to true.
+//
+// The selectors use specificity and proper nesting to ensure that:
+// - Elements within a .form-default container use default styling
+// - Elements within a .form-alternate container use alternate styling
+// - Proper specificity overrides are applied when nesting themes
+//
 @if $enable-alternate-forms {
   .form-default,
-  .form-default *:not(*.form-alternate, .form-default .form-alternate *) {
+  .form-default *:not(.form-alternate, .form-alternate *) {
     @extend %form-color-default;
   }
 
   .form-alternate,
-  .form-alternate *:not(*.form-default, .form-alternate .form-default *){
+  .form-alternate *:not(.form-default, .form-default *){
     @extend %form-color-alternate;
   }
 }
 
+//
+// Form Size Variants
+//
+// These placeholders define size variants for form elements.
+// Each variant sets font size, line height, padding, border radius,
+// and other size-related properties.
+//
+// Using placeholders for size variants allows components to share
+// common sizing properties without code duplication, supporting
+// a more maintainable and consistent design system.
+//
+// Three size variants are provided:
+// - %form-size-medium: Default size for form elements
+// - %form-size-small: Smaller, more compact size
+// - %form-size-large: Larger, more prominent size
+//
+// Usage example:
+// ```scss
+// .custom-field {
+//   @extend %form-input;
+//   @extend %form-size-small; // Apply small size variant
+// }
+// ```
+//
+// These can also be applied with modifier classes:
+// ```html
+// <input class="form-input small">
+// <input class="form-input large">
+// ```
+//
 
+
+// Medium size variant - used as the default size
+// Sets standard padding, font size, and spacing
 %form-size-medium {
-  @include map-font($input-medium-text-font, input);
-  --#{$prefix}padding-x: var(--#{$prefix}input-padding-x, #{$input-medium-padding-x});
-  --#{$prefix}padding-y: var(--#{$prefix}input-padding-y, #{$input-medium-padding-y});
-  --#{$prefix}gap: var(--#{$prefix}input-gap, #{$input-medium-gap});
-  --#{$prefix}border-width: var(--#{$prefix}input-border-width, #{$input-regular-border-width});
-  --#{$prefix}border-radius: var(--#{$prefix}input-border-radius, #{$input-medium-border-radius});
-  --#{$prefix}caret-size: var(--#{$prefix}input-caret-size, #{$input-medium-caret-size});
-  --#{$prefix}icon-size: var(--#{$prefix}input-icon-size, #{$input-medium-icon-size});
+  @include map-font($form-medium-text-font, input);
+  --#{$prefix}padding-x: var(--#{$prefix}input-padding-x, #{$form-medium-padding-x});
+  --#{$prefix}padding-y: var(--#{$prefix}input-padding-y, #{$form-medium-padding-y});
+  --#{$prefix}gap: var(--#{$prefix}input-gap, #{$form-medium-gap});
+  --#{$prefix}border-width: var(--#{$prefix}input-border-width, #{$form-regular-border-width});
+  --#{$prefix}border-radius: var(--#{$prefix}input-border-radius, #{$form-medium-border-radius});
+  --#{$prefix}caret-size: var(--#{$prefix}input-caret-size, #{$form-medium-caret-size});
+  --#{$prefix}icon-size: var(--#{$prefix}input-icon-size, #{$form-medium-icon-size});
 }
 
+// Small size variant - for compact UIs and dense layouts
+// Reduces all spacing and size properties for a more compact appearance
 %form-size-small {
-  --#{$prefix}input-font-size: #{map-get($input-small-text-font, "font-size")};
-  --#{$prefix}input-line-height: #{map-get($input-small-text-font, "line-height")};
-  --#{$prefix}input-padding-x: #{$input-small-padding-x};
-  --#{$prefix}input-padding-y: #{$input-small-padding-y};
-  --#{$prefix}input-gap: #{$input-small-gap};
-  --#{$prefix}input-border-radius: #{$input-small-border-radius};
-  --#{$prefix}input-caret-size: #{$input-small-caret-size};
-  --#{$prefix}input-icon-size: #{$input-medium-icon-size};
+  --#{$prefix}input-font-size: #{map-get($form-small-text-font, "font-size")};
+  --#{$prefix}input-line-height: #{map-get($form-small-text-font, "line-height")};
+  --#{$prefix}input-padding-x: #{$form-small-padding-x};
+  --#{$prefix}input-padding-y: #{$form-small-padding-y};
+  --#{$prefix}input-gap: #{$form-small-gap};
+  --#{$prefix}input-border-radius: #{$form-small-border-radius};
+  --#{$prefix}input-caret-size: #{$form-small-caret-size};
+  --#{$prefix}input-icon-size: #{$form-large-icon-size};
 }
 
+// Large size variant - for prominent form controls
+// Increases spacing and font size for greater visibility
 %form-size-large {
-  --#{$prefix}input-font-size: #{map-get($input-large-text-font, "font-size")};
-  --#{$prefix}input-line-height: #{map-get($input-large-text-font, "line-height")};
-  --#{$prefix}input-padding-x: #{$input-large-padding-x};
-  --#{$prefix}input-padding-y: #{$input-large-padding-y};
-  --#{$prefix}input-gap: #{$input-large-gap};
-  --#{$prefix}input-border-radius: #{$input-large-border-radius};
-  --#{$prefix}input-caret-size: #{$input-large-caret-size};
-  --#{$prefix}input-icon-size: #{$input-medium-icon-size};
+  --#{$prefix}input-font-size: #{map-get($form-large-text-font, "font-size")};
+  --#{$prefix}input-line-height: #{map-get($form-large-text-font, "line-height")};
+  --#{$prefix}input-padding-x: #{$form-large-padding-x};
+  --#{$prefix}input-padding-y: #{$form-large-padding-y};
+  --#{$prefix}input-gap: #{$form-large-gap};
+  --#{$prefix}input-border-radius: #{$form-large-border-radius};
+  --#{$prefix}input-caret-size: #{$form-large-caret-size};
+  --#{$prefix}input-icon-size: #{$form-small-icon-size};
 }
 
+//
+// Base Form Input Placeholder
+//
+// This is the main placeholder for form input styling. It provides all the
+// core styles needed for form controls and handles state management.
+//
+// The placeholder pattern allows multiple selectors to share the same rules without
+// duplicating CSS in the compiled output, promoting efficient, DRY code organization.
+//
+// Features:
+// - Applies base component styles through %component
+// - Sets default color scheme with %form-colors
+// - Sets default size with %form-size-medium
+// - Handles focus, disabled, and other states
+// - Provides size variant support through .small and .large modifiers
+//
+// Usage example:
+// ```scss
+// .form-input {
+//   @extend %form-input;
+// }
+// ```
+//
 %form-input {
   // Extend `%component` to assign the default component properties
   @extend %component, %form-colors, %form-size-medium;
-  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}idle-fg-active));
-  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}idle-bg-regular));
-  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}idle-border-color));
+  --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}form-idle-fg-active));
+  --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}form-idle-bg-regular));
+  --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}form-idle-border-color));
   // --#{$prefix}box-shadow: var(--#{$prefix}input-box-shadow, #{$form-input-box-shadow});
 
   --#{$prefix}min-height: var(--#{$prefix}input-min-height, #{$form-input-min-height});
@@ -171,7 +329,7 @@
   @include box-shadow($form-input-box-shadow);
   @include transition($form-input-transition);
 
-
+  // Size variants applied through class modifiers
   &.small {
     @extend %form-size-small;
   }
@@ -180,11 +338,13 @@
     @extend %form-size-large;
   }
 
+  // Focus state styling
+  // Changes colors and adds focus indication
   &:focus {
-    --#{$prefix}fg-color: var(--#{$prefix}focus-fg-active);
-    --#{$prefix}bg-color: var(--#{$prefix}focus-bg-regular);
-    --#{$prefix}border-color: var(--#{$prefix}focus-border-color);
-    --#{$prefix}box-shadow: var(--#{$prefix}focus-box-shadow);
+    --#{$prefix}fg-color: var(--#{$prefix}form-focus-fg-active);
+    --#{$prefix}bg-color: var(--#{$prefix}form-focus-bg-regular);
+    --#{$prefix}border-color: var(--#{$prefix}form-focus-border-color);
+    --#{$prefix}box-shadow: var(--#{$prefix}form-focus-box-shadow);
     outline: 0;
     @if $enable-component-shadows {
       @include box-shadow($form-input-box-shadow, var(--#{$prefix}box-shadow));
@@ -194,19 +354,21 @@
     }
   }
 
-  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // Disabled state styling
+  // Changes colors and maintains readability
+  //
+  // Note: HTML5 says that controls under a fieldset > legend:first-child won't be
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
   &:disabled {
-    --#{$prefix}fg-color: var(--#{$prefix}disabled-fg-active);
-    --#{$prefix}bg-color: var(--#{$prefix}disabled-bg-regular);
-    --#{$prefix}border-color: var(--#{$prefix}disabled-border-color);
+    --#{$prefix}fg-color: var(--#{$prefix}form-disabled-fg-active);
+    --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-regular);
+    --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color);
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-    // color: var(--#{$prefix}disabled-fg-active);
+    // color: var(--#{$prefix}form-disabled-fg-active);
     opacity: 1;
     &::placeholder {
-      color: var(--#{$prefix}disabled-fg-inactive);
+      color: var(--#{$prefix}form-disabled-fg-inactive);
     }
   }
-
 }
