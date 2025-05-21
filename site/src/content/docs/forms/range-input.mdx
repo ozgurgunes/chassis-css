@@ -83,24 +83,12 @@ When using range inputs, follow these best practices to ensure accessibility:
 - Use the `form-assist` class to provide additional context or instructions below the range input
 - Test keyboard navigation to ensure users can adjust values with arrow keys
 
-## CSS customization
+## CSS
 
-Range inputs use CSS variables for styling, making them easy to customize to match your design system.
+<DocsCSS sassOnly={true} />
 
-### CSS variables
+### Sass variables
 
-Chassis CSS uses these variables to control the appearance of range inputs:
+<DocsSASSVars notExposed={true} />
 
 <ScssDocs name="form-range-variables" file="scss/_variables.scss" />
-
-### Example customization
-
-You can override these variables to create custom-styled range inputs:
-
-```css
-:root {
-  --chassis-form-range-track-color: #e2e8f0;
-  --chassis-form-range-thumb-color: #3b82f6;
-  --chassis-form-range-thumb-active: #2563eb;
-}
-```

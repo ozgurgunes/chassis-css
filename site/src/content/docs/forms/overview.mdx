@@ -86,6 +86,57 @@ For custom interactive elements like `<a class="button">` within a disabled fiel
     </fieldset>
   </form>`} />
 
+## Dark mode
+
+Chassis CSS forms automatically adapt to dark mode environments using CSS variables that respond to theme context. When the `data-cx-theme="dark"` attribute is applied to a container or directly to form elements, the styling smoothly transitions to a dark-optimized palette that maintains accessibility and visual hierarchy.
+
+### Inheritance and override
+
+Form elements inherit their theme from parent elements but can be individually themed by applying the `data-cx-theme` attribute directly to specific inputs:
+
+- Apply `data-cx-theme="dark"` to a container for all child form controls to adopt dark mode
+- Apply `data-cx-theme="light"` to specific inputs within a dark container to create visual emphasis
+
+The example below demonstrates applying contrasting themes with individual controls and containers:
+
+<Example code={`<div class="row gap-xlarge">
+    <form class="col context p-medium" data-cx-theme="light">
+      <div class="mb-medium">
+        <label for="exampleInputEmailDark" class="form-label">Email address</label>
+        <input type="email" class="form-input" id="exampleInputEmailDark" aria-describedby="emailHelp" data-cx-theme="dark">
+      </div>
+      <div class="mb-medium">
+        <label for="exampleInputPasswordDark" class="form-label">Password</label>
+        <input type="password" class="form-input" id="exampleInputPasswordDark" data-cx-theme="dark">
+      </div>
+      <div class="mb-medium form-option">
+        <input type="checkbox" class="option-input" id="exampleCheckDark" data-cx-theme="dark">
+        <label class="option-label" for="exampleCheckDark">Check me out</label>
+      </div>
+      <button type="submit" class="button primary">Submit</button>
+    </form>
+
+    <form class="col context p-medium" data-cx-theme="dark">
+      <div class="mb-medium">
+        <label for="exampleInputEmailLight" class="form-label">Email address</label>
+        <input type="email" class="form-input" id="exampleInputEmailLight" aria-describedby="emailHelp" data-cx-theme="light">
+      </div>
+      <div class="mb-medium">
+        <label for="exampleInputPasswordLight" class="form-label">Password</label>
+        <input type="password" class="form-input" id="exampleInputPasswordLight" data-cx-theme="light">
+      </div>
+      <div class="mb-medium form-option">
+        <input type="checkbox" class="option-input" id="exampleCheckLight" data-cx-theme="light">
+        <label class="option-label" for="exampleCheckLight">Check me out</label>
+      </div>
+      <button type="submit" class="button primary">Submit</button>
+    </form>
+  </div>`} />
+
+<Callout type="info" title="Performance tip">
+  For best performance, apply theme attributes to container elements rather than individual form controls whenever possible. This reduces DOM complexity and improves rendering efficiency.
+</Callout>
+
 ## Accessibility
 
 Creating accessible forms is essential for users of assistive technologies. Chassis CSS form components are designed with accessibility in mind, but proper implementation requires attention to the following principles:
@@ -122,36 +173,51 @@ Form controls should communicate their states (required, invalid, disabled) both
 
 For detailed implementation guidance, refer to the accessibility section in each form component's documentation.
 
-## CSS variables and theming
+## CSS
 
 Chassis CSS forms use a comprehensive system of CSS variables to enable consistent styling and easy theming. The framework applies a state-based approach where form elements adapt their appearance based on:
 
 - Idle state (default appearance)
 - Focus state (when interacted with)
 - Disabled state (when not available)
-- Validation states (error, success)
+- Validation states (valid, invalid)
 
-These states are implemented through CSS variables with predictable naming patterns:
+These states are implemented through CSS custom properties (variables) with predictable naming patterns:
 
 ```css
 /* Example of state-based CSS variables */
---cx-idle-bg-regular: #fff;        /* Background in idle state */
---cx-focus-border-color: #0d6efd;  /* Border color in focus state */
---cx-error-assist-color: #dc3545;  /* Text color for error messages */
+--cx-idle-bg-regular: #fff;       /* Standard input background in idle state */
+--cx-idle-bg-floating: #eee;      /* Floating label input background in idle state */
+--cx-disabled-fg-active: #999;    /* Text color in disabled state */
+--cx-disabled-fg-inactive: #ccc;  /* Placeholder color in disabled state */
+--cx-focus-border-color: #00f;    /* Border color in focus state */
+--cx-invalid-assist-color: #f00;  /* Text & icon color for validation feedbacks */
 ```
 
-This approach allows for:
-- Consistent appearance across all form elements
-- Easy theming by modifying a small set of root variables
-- Support for both default and alternate color schemes
-- Simplified implementation of dark mode and custom themes
+### Custom properties
 
-Additionally, size variants (small, medium, large) are available for all form components through either:
-- CSS classes (`.small`, `.large`)
-- SCSS placeholders (`%form-size-small`, `%form-size-large`)
+These CSS variables are part of Chassis CSS's design token system, giving design teams control over component appearance. See the [design tokens]([[docsref:"core-concepts/design-tokens]]) page for more details.
+
+<ScssDocs name="form-color-variables" file="scss/placeholders/_form.scss" />
 
 ### Design Tokens
 
 <DocsDesignTokens />
 
-<ScssDocs name="form-tokens" file="scss/tokens/_forms.scss" />
+<hr />
+
+Typography tokens define consistent font properties across all form elements:
+
+<ScssDocs name="form-font-tokens" file="scss/tokens/_forms.scss" />
+
+Spacing tokens ensure consistent dimensions and proportions across form controls:
+
+<ScssDocs name="form-spacing-tokens" file="scss/tokens/_forms.scss" />
+
+Border tokens provide visual definition and interactive state indicators for form controls:
+
+<ScssDocs name="form-border-tokens" file="scss/tokens/_forms.scss" />
+
+Color tokens establish visual hierarchy and communicate state changes in form elements:
+
+<ScssDocs name="form-color-tokens" file="scss/tokens/_forms.scss" />

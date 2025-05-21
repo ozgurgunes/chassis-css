@@ -77,15 +77,46 @@ Chassis CSS select components maintain native browser accessibility features whi
 - Consider adding a default instructional option (like "Choose an option...")
 - For required selects, use the `required` attribute
 
-## CSS variables & theming
+## CSS
 
-Chassis CSS select elements use the same state-based approach as other form components, with consistent styling across:
-- Idle state (default appearance)
-- Focus state (when interacted with)
-- Disabled state (when unavailable)
+Chassis CSS uses a powerful combination of Sass and CSS variables to create a flexible form system that adapts to themes and design requirements.
 
-### SCSS variables
+<DocsCSS />
+
+### Custom properties
+
+<DocsCSSVars />
+
+<ScssDocs name="form-input-variables" file="scss/placeholders/_form.scss" />
+
+Check the [overview]([[docsref:forms/overview#custom-properties]]) page to see the CSS variables shared by all form elements.
+
+### Sass variables
+
+<DocsSASSVars notExposed={true} />
+
+<hr />
 
 The following variables control select appearance:
 
 <ScssDocs name="form-select-variables" file="scss/_variables.scss" />
+
+These variables control common properties for all form controls:
+
+<ScssDocs name="form-input-variables" file="scss/_variables.scss" />
+
+These variables define the appearance of form labels accross all form elements:
+
+<ScssDocs name="form-label-variables" file="scss/_variables.scss" />
+
+### Design tokens
+
+<DocsDesignTokens />
+
+<hr />
+
+The following design tokens define the caret icon appearance and size of select elements:
+
+<ScssDocs name="form-select-tokens" file="scss/tokens/_forms.scss" />
+
+Check the [overview]([[docsref:forms/overview#design-tokens]]) page to see the design tokens shared by all form elements.

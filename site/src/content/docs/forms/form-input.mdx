@@ -1,5 +1,5 @@
 ---
-title: Form inputs
+title: Form Inputs
 description: Style text inputs and textareas with Chassis CSS's custom appearance, responsive sizing, and accessibility features.
 toc: true
 ---
@@ -158,38 +158,38 @@ Enhance text inputs with autocompletion suggestions using the HTML5 `<datalist>`
     <option value="Chicago">
   </datalist>`} />
 
-## CSS variables and theming
+## CSS
 
-Chassis CSS uses a powerful combination of SCSS and CSS variables to create a flexible form system that adapts to themes and design requirements.
+Chassis CSS uses a powerful combination of Sass and CSS variables to create a flexible form system that adapts to themes and design requirements.
 
 <DocsCSS />
 
-### SCSS foundations
+### Custom properties
 
-The form styling is built on organized SCSS variable categories, which are compiled into the CSS variable system at build time.
+<DocsCSSVars />
 
-<DocsSASSVars />
+<ScssDocs name="form-input-variables" file="scss/placeholders/_form.scss" />
 
-#### Form input variables
+Check the [overview]([[docsref:forms/overview#custom-properties]]) page to see the CSS variables shared by all form elements.
+
+### Sass variables
+
+<DocsSASSVars notExposed={true} />
+
+<hr />
 
 These variables control common properties for all form inputs:
 
 <ScssDocs name="form-input-variables" file="scss/_variables.scss" />
 
-#### Form label variables
-
 These variables define the appearance of form labels:
 
 <ScssDocs name="form-label-variables" file="scss/_variables.scss" />
 
-#### Form assist variables
-
-These variables style the help text and validation messages:
-
-<ScssDocs name="form-assist-variables" file="scss/_variables.scss" />
-
-#### File input variables
-
 These variables customize the appearance of file inputs:
 
 <ScssDocs name="form-file-variables" file="scss/_variables.scss" />
+
+### Design tokens
+
+Check the [overview]([[docsref:forms/overview#design-tokens]]) page to see the design tokens shared by all form elements.

@@ -11,67 +11,38 @@
 // Utility mixin for setting form select caret icon
 // Makes the code more DRY by centralizing caret icon styling logic.
 //
-// @param {string} $variant - The variant of the select element ("default" or "alternate")
 // @param {string} $state - The state of the select element ("idle" or "disabled")
 // @param {boolean} $dark - Whether to use dark mode colors (default: false)
-@mixin form-select-caret($variant, $state, $dark: false) {
-  @if $variant == "default" {
-    @if $state == "idle" {
-      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-default-idle-caret-color, $dark)};
-    } @else if $state == "disabled" {
-      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-default-disabled-caret-color, $dark)};
-    }
-  } @else if $variant == "alternate" {
-    @if $state == "idle" {
-      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-alternate-idle-caret-color, $dark)};
-    } @else if $state == "disabled" {
-      --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-alternate-disabled-caret-color, $dark)};
-    }
-  }
-}
-
-// Mixin for dark mode styling of default form select elements
-// Applies dark mode-specific colors to the default variant caret icon.
-@mixin form-select-default-dark() {
-  @include form-select-caret("default", "idle", true);
-
-  &[disabled],
-  &:disabled {
-    @include form-select-caret("default", "disabled", true);
-  }
-}
-
-// Mixin for dark mode styling of alternate form select elements
-// Applies dark mode-specific colors to the alternate variant caret icon.
-@mixin form-select-alternate-dark() {
-  @include form-select-caret("alternate", "idle", true);
-
-  &[disabled],
-  &:disabled {
-    @include form-select-caret("alternate", "disabled", true);
+@mixin form-select-caret($state, $dark: false) {
+  @if $state == "idle" {
+    --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-idle-caret-color, $dark)};
+  } @else if $state == "disabled" {
+    --#{$prefix}caret-icon: #{svg-color($form-select-caret-icon, $form-disabled-caret-color, $dark)};
   }
 }
 
 // Mixin for applying dark mode styling based on the color mode type
 // This centralizes the logic for both media query and class-based dark mode.
-@mixin form-select-dark($variant: "default") {
+@mixin form-select-dark() {
   @if $color-mode-type == "media-query" {
     // For media query-based dark mode
     @media (prefers-color-scheme: dark) {
-      @if $variant == "default" {
-        @include form-select-default-dark();
-      } @else if $variant == "alternate" {
-        @include form-select-alternate-dark();
+      @include form-select-caret("idle", true);
+
+      &[disabled],
+      &:disabled {
+        @include form-select-caret("disabled", true);
       }
     }
   } @else {
     // For class-based dark mode (data attribute)
     [data-cx-theme="dark"] &:not(&[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] &),
     &[data-cx-theme="dark"] {
-      @if $variant == "default" {
-        @include form-select-default-dark();
-      } @else if $variant == "alternate" {
-        @include form-select-alternate-dark();
+      @include form-select-caret("idle", true);
+
+      &[disabled],
+      &:disabled {
+        @include form-select-caret("disabled", true);
       }
     }
   }
@@ -101,16 +72,11 @@
 // Mixin for applying dark mode styling to form validation icons.
 // This centralizes the logic for both media query and class-based dark mode.
 //
-// @param {string} $variant - The variant of the form ("default" or "alternate")
 // @param {string} $state - The validation state ("valid" or "invalid")
-@mixin form-validation-dark($variant: "default", $state: "valid") {
+@mixin form-validation-dark($state: "valid") {
   // Select the appropriate color variable based on variant and state
   $icon: if($state == "valid", $form-feedback-valid-icon, $form-feedback-invalid-icon);
-  $color: if(
-    $state == "valid",
-    if($variant == "default", $form-default-valid-assist-color, $form-alternate-valid-assist-color),
-    if($variant == "default", $form-default-invalid-assist-color, $form-alternate-invalid-assist-color)
-  );
+  $color: if($state == "valid", $form-valid-assist-color, $form-invalid-assist-color);
 
   // Set the icon with dark mode colors
   $dark-icon: svg-color($icon, $color, true);

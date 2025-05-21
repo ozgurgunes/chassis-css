@@ -3,7 +3,6 @@
 //
 // A themeable, accessible custom styling for select form elements.
 // Provides consistent appearance across browsers while maintaining accessibility.
-// Supports default and alternate styling variants, disabled states, and dark mode.
 //
 // Extends the %form-input placeholder to share common styling with other form inputs
 // while adding select-specific features like dropdown indicators (carets).
@@ -16,7 +15,7 @@
   @extend %form-input;
 
   // Define the dropdown indicator (caret) using SVG with theme-aware coloring.
-  @include form-select-caret("default", "idle");
+  @include form-select-caret("idle");
 
   // Adjust padding to accommodate the caret and potential validation icons.
   padding-right: #{calc(var(--#{$prefix}padding-x) * 2 + var(--#{$prefix}caret-size))};
@@ -28,7 +27,7 @@
   // Disabled state styling - changes caret color to indicate disabled status.
   &[disabled],
   &:disabled {
-    @include form-select-caret("default", "disabled");
+    @include form-select-caret("disabled");
   }
 
   // Remove caret for multi-select or size-specific selects
@@ -46,34 +45,10 @@
     text-shadow: 0 0 0 var(--#{$prefix}fg-color);
   }
 
-  // Dark mode styling for default variant
+  // Dark mode styling
   @if $enable-dark-mode {
-    @include form-select-dark("default");
+    @include form-select-dark();
   }
 
-  @if $enable-alternate-forms {
-    // Alternate styling variant
-    // Complex selector to handle various nesting scenarios while respecting specificity.
-    // - Direct application of .form-alternate class
-    // - Parent element with .form-alternate
-    // - Ensuring .form-default can override .form-alternate when needed
-    .form-alternate &:not(&.form-default, .form-default &),
-    // .form-default .form-alternate &,
-    &.form-alternate {
-      // Use alternate theme colors for the caret icon
-      @include form-select-caret("alternate", "idle");
-
-      // Handle disabled state in alternate styling
-      &[disabled],
-      &:disabled {
-        @include form-select-caret("alternate", "disabled");
-      }
-
-      // Dark mode styling for alternate variant
-      @if $enable-dark-mode {
-        @include form-select-dark("alternate");
-      }
-    }
-  }
 }
 

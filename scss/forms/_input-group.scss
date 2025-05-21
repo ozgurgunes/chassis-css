@@ -181,7 +181,7 @@
   // Position icon on the right when it follows a floating label
   .form-floating ~ & {
     right: 0;
-    height: $form-floating-height;
+    height: $form-floating-min-height;
     padding: 0 var(--#{$prefix}padding-x);
     border: 0;
   }
@@ -191,12 +191,12 @@
   &:has(+ .form-floating > .form-input:disabled),
   .form-input:disabled ~ &,
   .form-floating:has(.form-input:disabled) ~ & {
-    --#{$prefix}icon-color: #{$form-default-disabled-fg-active};
+    --#{$prefix}icon-color: #{$form-disabled-fg-active};
   }
 
   // Adjust icon position when it's before a floating label
   &:has(+ .form-floating) {
-    height: $form-floating-height;
+    height: $form-floating-min-height;
     padding: 0 var(--#{$prefix}padding-x);
     border: 0;
   }

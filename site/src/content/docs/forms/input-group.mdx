@@ -238,40 +238,6 @@ Create rich, contextual inputs by combining input groups with Chassis CSS's drop
 
 Dropdowns within input groups maintain proper z-indexing to ensure menus appear above other form elements. The border radius is automatically managed to create a seamless visual connection.
 
-## Design flexibility
-
-Chassis CSS's design token system allows input groups to adapt to different themes and styling needs while maintaining consistent behavior.
-
-### Alternate styling
-
-Apply the `.form-alternate` class to input groups to use Chassis CSS's alternate form styling, perfect for different visual contexts or emphasis needs.
-
-<Example code={`<div class="row g-xlarge">
-    <div class="col">
-      <label for="default-input-group" class="form-label">Default style</label>
-      <div class="input-group mb-medium">
-        <span class="input-addon">@</span>
-        <input type="text" class="form-input" id="default-input-group" placeholder="Username">
-      </div>
-    </div>
-
-    <div class="col">
-      <label for="alternate-input-group" class="form-label">Alternate style</label>
-      <div class="input-group mb-medium form-alternate">
-        <span class="input-addon">@</span>
-        <input type="text" class="form-input" id="alternate-input-group" placeholder="Username">
-      </div>
-    </div>
-  </div>`} />
-
-The alternate styling applies different background colors, border styles, and text colors throughout the input group while maintaining proper visual relationships between elements. This works with all addon types and form controls.
-
-### Theme and color mode support
-
-Input groups fully support Chassis CSS's theming system, including dark mode. Colors, borders, and contrast are automatically adjusted based on the current theme and color mode.
-
-Form validation states are also properly handled with input groups, with validation feedback placed outside the group for optimal visual hierarchy and accessibility.
-
 ## Accessibility considerations
 
 Creating accessible input groups requires attention to proper structure, labeling, and keyboard interaction. Follow these best practices:
@@ -296,18 +262,22 @@ Input groups utilize several key techniques:
 - **CSS variables** enable theming and runtime customization
 - **Sass placeholders** maintain consistent sizing across element types
 
-### CSS variables
+### CSS
 
-Input groups use these CSS variables for styling, making them highly customizable:
+Chassis CSS uses a powerful combination of Sass and CSS variables to create a flexible form system that adapts to themes and design requirements.
+
+<DocsCSS />
+
+### Custom properties
+
+Check the [overview]([[docsref:forms/overview#custom-properties]]) page to see the CSS variables shared by all form elements.
+
+### Sass variables
+
+<DocsSASSVars notExposed={true} />
 
 <ScssDocs name="input-group-variables" file="scss/_variables.scss" />
 
-You can override these variables in your custom CSS to adapt input groups to your design system:
+### Design tokens
 
-```css
-.custom-input-group {
-  --cx-input-addon-fg-color: #2563eb;
-  --cx-input-addon-bg-color: #eff6ff;
-  --cx-input-addon-border-color: #93c5fd;
-}
-```
+Check the [overview]([[docsref:forms/overview#design-tokens]]) page to see the design tokens shared by all form elements.

@@ -9,7 +9,7 @@
 //
 // Features:
 // - Consistent appearance across browsers
-// - Standard, alternate, focus, active, and disabled states
+// - Standard, focus, active, and disabled states
 // - Customizable thumb and track styling
 // - Responsive width that adapts to container
 
@@ -111,13 +111,5 @@
     &::-moz-range-thumb {
       background-color: var(--#{$prefix}form-range-thumb-disabled);
     }
-  }
-}
-
-// Support for alternate color schemes
-@if $enable-alternate-forms {
-  .form-range.form-alternate,
-  .form-alternate .form-range {
-    @extend %form-color-alternate;
   }
 }

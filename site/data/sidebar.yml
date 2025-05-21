@@ -73,12 +73,11 @@
     - title: Form input
     - title: Select
     - title: Checks & radios
-    - title: Range
+    - title: Range input
     - title: Input group
     - title: Floating labels
-    - title: Layout
+    - title: Form layout
     - title: Validation
-    - title: Alternate Variant
 
 - title: Components
   icon: menu-button-wide-fill

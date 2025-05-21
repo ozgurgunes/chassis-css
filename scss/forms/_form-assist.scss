@@ -8,7 +8,6 @@
 // Features:
 // - Consistent styling across different form contexts
 // - Automatic positioning based on parent form element type
-// - Support for alternate color schemes
 // - Accessible text size and color contrast
 //
 // When used with specific form elements:
@@ -36,14 +35,5 @@
   // Adjusted top margin when used with range inputs
   .form-range ~ & {
     margin-top: $form-option-assist-margin-t;
-  }
-}
-
-// Support for alternate styling variant
-@if $enable-alternate-forms {
-  .form-alternate .form-assist:not(.form-alternate .form-default .form-assist),
-  .form-alternate .valid-feedback:not(.form-alternate .form-default .valid-feedback),
-  .form-alternate .invalid-feedback:not(.form-alternate .form-default .invalid-feedback) {
-    @extend %form-color-alternate;
   }
 }

@@ -2,8 +2,8 @@
 // Form Option Components
 //
 // This file contains styling for form option components including checkboxes, radio buttons,
-// switches, and button options. It supports different sizes, states (checked, disabled),
-// and themes (default, alternate) with dark mode support.
+// switches, and button options. It supports different sizes, states (checked, disabled)
+// with dark mode support.
 //
 
 //
@@ -63,7 +63,6 @@
 // Option Input Styling
 //
 // Core styling for checkbox and radio inputs with support for:
-// - Default and alternate styling variants
 // - Various states (idle, focus, checked, disabled)
 // - Indeterminate state for checkboxes
 // - Customizable icons for different states
@@ -72,12 +71,9 @@
 
 .option-input {
   @extend %form-colors;
-  $default-disabled-check-icon: svg-color($form-option-check-icon, $form-default-disabled-fg-inactive);
-  $default-disabled-radio-icon: svg-color($form-option-radio-icon, $form-default-disabled-fg-inactive);
-  $default-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-default-disabled-fg-inactive);
-  $alternate-disabled-check-icon: svg-color($form-option-check-icon, $form-alternate-disabled-fg-inactive);
-  $alternate-disabled-radio-icon: svg-color($form-option-radio-icon, $form-alternate-disabled-fg-inactive);
-  $alternate-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-alternate-disabled-fg-inactive);
+  $default-disabled-check-icon: svg-color($form-option-check-icon, $form-disabled-fg-inactive);
+  $default-disabled-radio-icon: svg-color($form-option-radio-icon, $form-disabled-fg-inactive);
+  $default-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-disabled-fg-inactive);
   $primary-idle-check-icon: svg-color($form-option-check-icon, $form-option-checked-fg-color);
   $primary-idle-radio-icon: svg-color($form-option-radio-icon, $form-option-checked-fg-color);
   $primary-idle-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-option-checked-fg-color);
@@ -158,14 +154,14 @@
   // Use disabled attribute in addition of :disabled pseudo-class
   &[disabled],
   &:disabled {
-    --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-color, #{$form-default-disabled-bg-regular});
-    --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-default-disabled-border-color});
+    --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-color, #{$form-disabled-bg-regular});
+    --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-disabled-border-color});
     pointer-events: none;
     filter: none;
     // opacity: $form-option-disabled-opacity;
     ~ .option-label,
     .option-label:has(&) {
-      // --#{$prefix}fg-color: var(--#{$prefix}form-disabled-fg-color, #{$form-default-disabled-fg-active});
+      // --#{$prefix}fg-color: var(--#{$prefix}form-disabled-fg-color, #{$form-disabled-fg-active});
       cursor: default;
       opacity: $form-option-label-disabled-opacity;
     }
@@ -179,30 +175,9 @@
     }
 
     &[type="checkbox"]:indeterminate {
-      --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-color, #{$form-default-disabled-bg-regular});
-      --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-default-disabled-border-color});
+      --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-color, #{$form-disabled-bg-regular});
+      --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-disabled-border-color});
       --#{$prefix}icon: #{$default-disabled-indeterminate-icon};
-    }
-
-    @if $enable-alternate-forms {
-      .form-alternate &,
-      &.form-alternate {
-        --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-color, #{$form-alternate-disabled-bg-regular});
-        --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-alternate-disabled-border-color});
-        &[type="checkbox"]:checked {
-          --#{$prefix}icon: #{$alternate-disabled-check-icon};
-        }
-
-        &[type="radio"]:checked {
-          --#{$prefix}icon: #{$alternate-disabled-radio-icon};
-        }
-
-        &[type="checkbox"]:indeterminate {
-          --#{$prefix}bg-color: var(--#{$prefix}form-disabled-bg-color, #{$form-alternate-disabled-bg-regular});
-          --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-alternate-disabled-border-color});
-          --#{$prefix}icon: #{$alternate-disabled-indeterminate-icon};
-        }
-      }
     }
 
   }
@@ -272,7 +247,7 @@
 //
 
 // Inline form option - displays option groups horizontally instead of stacked
-.form-option-inline {
+.option-inline {
   display: inline-block;
   margin-right: $form-option-inline-margin-end;
 }
@@ -327,15 +302,11 @@
 
 // Mixin for applying dark mode styling to checkboxes and radio inputs
 // Updates icon colors for checked, disabled, and indeterminate states
-// Handles both default and alternate styling variants
 @mixin option-input-dark() {
   // Generate dark mode versions of the SVG icons
-  $default-disabled-check-icon: svg-color($form-option-check-icon, $form-default-disabled-fg-inactive, true);
-  $default-disabled-radio-icon: svg-color($form-option-radio-icon, $form-default-disabled-fg-inactive, true);
-  $default-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-default-disabled-fg-inactive, true);
-  $alternate-disabled-check-icon: svg-color($form-option-check-icon, $form-alternate-disabled-fg-inactive, true);
-  $alternate-disabled-radio-icon: svg-color($form-option-radio-icon, $form-alternate-disabled-fg-inactive, true);
-  $alternate-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-alternate-disabled-fg-inactive, true);
+  $default-disabled-check-icon: svg-color($form-option-check-icon, $form-disabled-fg-inactive, true);
+  $default-disabled-radio-icon: svg-color($form-option-radio-icon, $form-disabled-fg-inactive, true);
+  $default-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-disabled-fg-inactive, true);
 
   // Apply dark mode icons to disabled states
   &[disabled],
@@ -350,26 +321,6 @@
 
     &[type="checkbox"]:indeterminate {
       --#{$prefix}icon: #{$default-disabled-indeterminate-icon};
-    }
-  }
-
-  @if $enable-alternate-forms {
-    .form-alternate &,
-    &.form-alternate {
-      &[disabled],
-      &:disabled {
-        &[type="checkbox"]:checked {
-          --#{$prefix}icon: #{$alternate-disabled-check-icon};
-        }
-
-        &[type="radio"]:checked {
-          --#{$prefix}icon: #{$alternate-disabled-radio-icon};
-        }
-
-        &[type="checkbox"]:indeterminate {
-          --#{$prefix}icon: #{$alternate-disabled-indeterminate-icon};
-        }
-      }
     }
   }
 

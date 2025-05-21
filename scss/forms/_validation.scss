@@ -2,8 +2,7 @@
 // Form Validation
 //
 // Provides styling for form validation states (valid and invalid) including
-// feedback messages, tooltips, and visual indicators. Supports both default
-// and alternate form styling variants, as well as dark mode.
+// feedback messages, tooltips, and visual indicators. Supports dark mode.
 //
 // The validation system works with:
 // - Native form validation (:valid, :invalid pseudo-classes)
@@ -99,9 +98,9 @@
     --#{$prefix}box-shadow: #{$form-feedback-valid-box-shadow};
 
     @if $enable-validation-icons {
-      --#{$prefix}feedback-icon: #{svg-color($form-feedback-valid-icon, $form-default-valid-assist-color)};
+      --#{$prefix}feedback-icon: #{svg-color($form-feedback-valid-icon, $form-valid-assist-color)};
       @if $enable-dark-mode {
-        @include form-validation-dark("default", "valid");
+        @include form-validation-dark("valid");
       }
     }
   }
@@ -115,9 +114,9 @@
     --#{$prefix}box-shadow: #{$form-feedback-invalid-box-shadow};
 
     @if $enable-validation-icons {
-      --#{$prefix}feedback-icon: #{svg-color($form-feedback-invalid-icon, $form-default-invalid-assist-color)};
+      --#{$prefix}feedback-icon: #{svg-color($form-feedback-invalid-icon, $form-invalid-assist-color)};
       @if $enable-dark-mode {
-        @include form-validation-dark("default", "invalid");
+        @include form-validation-dark("invalid");
       }
     }
   }
@@ -227,7 +226,7 @@
 
     // Special positioning for textareas
     &:is(textarea) {
-      background-position: $form-assistarea-feedback-icon-position;
+      background-position: $form-textarea-feedback-icon-position;
     }
   }
 
@@ -245,37 +244,6 @@
   // Ensure color inputs have adequate width for validation icons
   @include form-validation-icons-selector(".color-input") {
     width: #{calc(var(--#{$prefix}input-color-width, var(--#{$prefix}min-height)) + $form-feedback-icon-size + var(--#{$prefix}padding-y) * 2)};
-  }
-
-  @if $enable-alternate-forms {
-    // Alternate styling for validation icons
-    // Apply to form elements with .form-alternate class or inside .form-alternate containers
-    .form-alternate %form-input:not(%form-input.form-default, .form-alternate .form-default %form-input:not(%form-input.form-alternate)),
-    %form-input.form-alternate {
-      // Valid state icon styling for alternate forms
-      #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:valid,
-      &.#{$form-valid-class} {
-        --#{$prefix}feedback-icon: #{svg-color($form-feedback-valid-icon, $form-alternate-valid-assist-color)};
-
-        // Dark mode support for alternate validation
-        // Not implemented due to complexity of selectors.
-        // @if $enable-dark-mode {
-        //   @include form-validation-dark("alternate", "valid");
-        // }
-      }
-
-      // Invalid state icon styling for alternate forms
-      #{if($form-validated-class, ".#{$form-validated-class} ", "")}&:invalid,
-      &.#{$form-invalid-class} {
-        --#{$prefix}feedback-icon: #{svg-color($form-feedback-invalid-icon, $form-alternate-invalid-assist-color)};
-
-        // Dark mode support for alternate validation
-        // Not implemented due to complexity of selectors.
-        // @if $enable-dark-mode {
-        //   @include form-validation-dark("alternate", "invalid");
-        // }
-      }
-    }
   }
 
 }

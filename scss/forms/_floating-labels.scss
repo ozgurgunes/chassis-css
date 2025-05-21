@@ -25,12 +25,12 @@
   > .form-select {
     --#{$prefix}bg-color: var(--#{$prefix}form-idle-bg-floating);
     --#{$prefix}border-width: 0;
-    height: $form-floating-height;
-    min-height: $form-floating-height;
+    height: $form-floating-min-height;
+    min-height: $form-floating-min-height;
     line-height: $form-floating-line-height;
     border-bottom-width: $form-floating-border-width;
-    @include border-top-radius($form-floating-blunt-border-radius);
-    @include border-bottom-radius($form-floating-sharp-border-radius);
+    @include border-top-radius($form-floating-border-radius-t);
+    @include border-bottom-radius($form-floating-border-radius-b);
 
     &:focus {
       --#{$prefix}bg-color: var(--#{$prefix}form-focus-bg-floating);
@@ -62,7 +62,7 @@
     left: 0;
     z-index: 2;
     height: 100%; // Allow proper alignment with textareas
-    padding: $form-floating-padding-y $form-floating-padding-x;
+    padding: $form-floating-inactive-padding-y $form-floating-padding-x;
     overflow: hidden;
     color: var(--#{$prefix}label-color, var(--#{$prefix}form-idle-fg-inactive));
     text-align: start;
@@ -77,7 +77,7 @@
   // Text input and plaintext input specific styling
   > .form-input,
   > .form-input.plaintext {
-    padding: $form-floating-padding-y $form-floating-padding-x;
+    padding: $form-floating-inactive-padding-y $form-floating-padding-x;
 
     // Hide placeholder when the label is shown
     &::placeholder {
@@ -86,36 +86,36 @@
 
     // Increase bottom border width on focus for better visual indication
     &:focus {
-      border-bottom-width: $form-active-border-width;
+      border-bottom-width: $form-floating-border-width;
     }
 
     // Adjust padding when label is floating to ensure text doesn't overlap
     &:focus,
     &:not(:placeholder-shown) {
-      padding-top: $form-floating-input-padding-t;
-      padding-bottom: $form-floating-input-padding-b;
+      padding-top: $form-floating-active-padding-t;
+      padding-bottom: $form-floating-active-padding-b;
     }
 
     // Handle browser autofill state
     // Must be separate since :-webkit-autofill invalidates other selectors when grouped
     &:-webkit-autofill {
-      padding-top: $form-floating-input-padding-t;
-      padding-bottom: $form-floating-input-padding-b;
+      padding-top: $form-floating-active-padding-t;
+      padding-bottom: $form-floating-active-padding-b;
     }
   }
 
   // Focus state styling for the label
   > %form-input {
     &:focus ~ label {
-      color: $form-default-focus-assist-color;
+      color: $form-focus-assist-color;
     }
   }
 
   // Select elements are always treated as having content
   > .form-select {
-    padding: $form-floating-padding-y $form-floating-padding-x;
-    padding-top: $form-floating-input-padding-t;
-    padding-bottom: $form-floating-input-padding-b;
+    padding: $form-floating-inactive-padding-y $form-floating-padding-x;
+    padding-top: $form-floating-active-padding-t;
+    padding-bottom: $form-floating-active-padding-b;
   }
 
   // Float label when input has content or focus
@@ -130,7 +130,7 @@
       // Create a background for the label to improve readability
       &::after {
         position: absolute;
-        inset: $form-floating-padding-y (#{calc($form-floating-padding-x * .5)});
+        inset: $form-floating-inactive-padding-y (#{calc($form-floating-padding-x * .5)});
         z-index: -1;
         height: $form-floating-label-height;
         content: "";

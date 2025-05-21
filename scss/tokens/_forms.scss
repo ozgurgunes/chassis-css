@@ -2,6 +2,9 @@
 // scss-docs-start form-icon-tokens
 $form-feedback-valid-icon:                svg-icon($cx-icon-common-form-input-feedback-valid) !default;
 $form-feedback-invalid-icon:              svg-icon($cx-icon-common-form-input-feedback-invalid) !default;
+$form-medium-icon-size:                   $cx-size-common-form-input-medium-icon !default;
+$form-large-icon-size:                    $cx-size-common-form-input-large-icon !default;
+$form-small-icon-size:                    $cx-size-common-form-input-small-icon !default;
 // scss-docs-end form-icon-tokens
 
 // scss-docs-start form-option-tokens
@@ -9,10 +12,6 @@ $form-option-check-icon:                  svg-icon($cx-icon-common-form-input-op
 $form-option-indeterminate-icon:          svg-icon($cx-icon-common-form-input-option-partial) !default;
 $form-option-radio-icon:                  svg-icon($cx-icon-common-form-input-option-radio) !default;
 // scss-docs-end form-option-tokens
-
-$form-medium-icon-size:                   $cx-size-common-form-input-medium-icon !default;
-$form-large-icon-size:                    $cx-size-common-form-input-large-icon !default;
-$form-small-icon-size:                    $cx-size-common-form-input-small-icon !default;
 
 // scss-docs-start form-select-tokens
 $form-select-caret-icon:                  svg-icon($cx-icon-common-form-input-select-caret) !default;
@@ -24,15 +23,13 @@ $form-small-caret-size:                   $cx-size-common-form-input-small-caret
 // scss-docs-start form-border-tokens
 $form-regular-border-width:               $cx-border-width-common-form-input-regular !default;
 $form-floating-border-width:              $cx-border-width-common-form-input-floating !default;
-$form-active-border-width:                $cx-border-width-common-form-input-active !default;
-// $form-inactive-border-width:              $cx-border-width-common-form-input-inactive !default;
 
 $form-medium-border-radius:               $cx-border-radius-common-form-input-medium !default;
 $form-large-border-radius:                $cx-border-radius-common-form-input-large !default;
 $form-small-border-radius:                $cx-border-radius-common-form-input-small !default;
 
-$form-floating-blunt-border-radius:       $cx-border-radius-common-form-input-floating-blunt !default;
-$form-floating-sharp-border-radius:       $cx-border-radius-common-form-input-floating-sharp !default;
+$form-floating-border-radius-t:           $cx-border-radius-common-form-input-floating-blunt !default;
+$form-floating-border-radius-b:           $cx-border-radius-common-form-input-floating-sharp !default;
 // scss-docs-end form-border-tokens
 
 // scss-docs-start form-spacing-tokens
@@ -61,84 +58,44 @@ $form-floating-label-font:                $cx-font-common-form-input-floating-la
 // fusv-enable
 
 // scss-docs-start form-color-tokens
-$form-default-idle-bg-regular:            $cx-color-common-form-input-default-idle-bg-regular !default;
-$form-default-idle-bg-floating:           $cx-color-common-form-input-default-idle-bg-floating !default;
-$form-default-idle-fg-active:             $cx-color-common-form-input-default-idle-fg-active !default;
-$form-default-idle-fg-inactive:           $cx-color-common-form-input-default-idle-fg-inactive !default;
-$form-default-idle-border-color:          $cx-color-common-form-input-default-idle-border !default;
-$form-default-idle-assist-color:          $cx-color-common-form-input-default-idle-assist !default;
-$form-default-idle-caret-color:           $cx-color-common-form-input-default-idle-caret !default;
+$form-idle-bg-regular:            $cx-color-common-form-input-idle-bg-regular !default;
+$form-idle-bg-floating:           $cx-color-common-form-input-idle-bg-floating !default;
+$form-idle-fg-active:             $cx-color-common-form-input-idle-fg-active !default;
+$form-idle-fg-inactive:           $cx-color-common-form-input-idle-fg-inactive !default;
+$form-idle-border-color:          $cx-color-common-form-input-idle-border !default;
+$form-idle-assist-color:          $cx-color-common-form-input-idle-assist !default;
+$form-idle-caret-color:           $cx-color-common-form-input-idle-caret !default;
 
-$form-default-disabled-bg-regular:        $cx-color-common-form-input-default-disabled-bg-regular !default;
-$form-default-disabled-bg-floating:       $cx-color-common-form-input-default-disabled-bg-floating !default;
-$form-default-disabled-fg-active:         $cx-color-common-form-input-default-disabled-fg-active !default;
-$form-default-disabled-fg-inactive:       $cx-color-common-form-input-default-disabled-fg-inactive !default;
-$form-default-disabled-border-color:      $cx-color-common-form-input-default-disabled-border !default;
-$form-default-disabled-assist-color:      $cx-color-common-form-input-default-disabled-assist !default;
-$form-default-disabled-caret-color:       $cx-color-common-form-input-default-disabled-caret !default;
+$form-disabled-bg-regular:        $cx-color-common-form-input-disabled-bg-regular !default;
+$form-disabled-bg-floating:       $cx-color-common-form-input-disabled-bg-floating !default;
+$form-disabled-fg-active:         $cx-color-common-form-input-disabled-fg-active !default;
+$form-disabled-fg-inactive:       $cx-color-common-form-input-disabled-fg-inactive !default;
+$form-disabled-border-color:      $cx-color-common-form-input-disabled-border !default;
+$form-disabled-assist-color:      $cx-color-common-form-input-disabled-assist !default;
+$form-disabled-caret-color:       $cx-color-common-form-input-disabled-caret !default;
 
-$form-default-focus-bg-regular:           $cx-color-common-form-input-default-focus-bg-regular !default;
-$form-default-focus-bg-floating:          $cx-color-common-form-input-default-focus-bg-floating !default;
-$form-default-focus-fg-active:            $cx-color-common-form-input-default-focus-fg-active !default;
-$form-default-focus-fg-inactive:          $cx-color-common-form-input-default-focus-fg-inactive !default;
-$form-default-focus-border-color:         $cx-color-common-form-input-default-focus-border !default;
-$form-default-focus-assist-color:         $cx-color-common-form-input-default-focus-assist !default;
-// $form-default-focus-caret-color:          $cx-color-common-form-input-default-focus-caret !default;
+$form-focus-bg-regular:           $cx-color-common-form-input-focus-bg-regular !default;
+$form-focus-bg-floating:          $cx-color-common-form-input-focus-bg-floating !default;
+$form-focus-fg-active:            $cx-color-common-form-input-focus-fg-active !default;
+$form-focus-fg-inactive:          $cx-color-common-form-input-focus-fg-inactive !default;
+$form-focus-border-color:         $cx-color-common-form-input-focus-border !default;
+$form-focus-assist-color:         $cx-color-common-form-input-focus-assist !default;
+// $form-focus-caret-color:          $cx-color-common-form-input-focus-caret !default;
 
-$form-default-invalid-bg-regular:         $cx-color-common-form-input-default-error-bg-regular !default;
-$form-default-invalid-bg-floating:        $cx-color-common-form-input-default-error-bg-floating !default;
-$form-default-invalid-fg-active:          $cx-color-common-form-input-default-error-fg-active !default;
-$form-default-invalid-fg-inactive:        $cx-color-common-form-input-default-error-fg-inactive !default;
-$form-default-invalid-border-color:       $cx-color-common-form-input-default-error-border !default;
-$form-default-invalid-assist-color:       $cx-color-common-form-input-default-error-assist !default;
-// $form-default-invalid-caret-color:        $cx-color-common-form-input-default-error-caret !default;
+$form-invalid-bg-regular:         $cx-color-common-form-input-error-bg-regular !default;
+$form-invalid-bg-floating:        $cx-color-common-form-input-error-bg-floating !default;
+$form-invalid-fg-active:          $cx-color-common-form-input-error-fg-active !default;
+$form-invalid-fg-inactive:        $cx-color-common-form-input-error-fg-inactive !default;
+$form-invalid-border-color:       $cx-color-common-form-input-error-border !default;
+$form-invalid-assist-color:       $cx-color-common-form-input-error-assist !default;
+// $form-invalid-caret-color:        $cx-color-common-form-input-error-caret !default;
 
-$form-default-valid-bg-regular:           $cx-color-common-form-input-default-success-bg-regular !default;
-$form-default-valid-bg-floating:          $cx-color-common-form-input-default-success-bg-floating !default;
-$form-default-valid-fg-active:            $cx-color-common-form-input-default-success-fg-active !default;
-$form-default-valid-fg-inactive:          $cx-color-common-form-input-default-success-fg-inactive !default;
-$form-default-valid-border-color:         $cx-color-common-form-input-default-success-border !default;
-$form-default-valid-assist-color:         $cx-color-common-form-input-default-success-assist !default;
-// $form-default-valid-caret-color:          $cx-color-common-form-input-default-success-caret !default;
-
-$form-alternate-idle-bg-regular:          $cx-color-common-form-input-alternate-idle-bg-regular !default;
-$form-alternate-idle-bg-floating:         $cx-color-common-form-input-alternate-idle-bg-floating !default;
-$form-alternate-idle-fg-active:           $cx-color-common-form-input-alternate-idle-fg-active !default;
-$form-alternate-idle-fg-inactive:         $cx-color-common-form-input-alternate-idle-fg-inactive !default;
-$form-alternate-idle-border-color:        $cx-color-common-form-input-alternate-idle-border !default;
-$form-alternate-idle-assist-color:        $cx-color-common-form-input-alternate-idle-assist !default;
-$form-alternate-idle-caret-color:         $cx-color-common-form-input-alternate-idle-caret !default;
-
-$form-alternate-disabled-bg-regular:      $cx-color-common-form-input-alternate-disabled-bg-regular !default;
-$form-alternate-disabled-bg-floating:     $cx-color-common-form-input-alternate-disabled-bg-floating !default;
-$form-alternate-disabled-fg-active:       $cx-color-common-form-input-alternate-disabled-fg-active !default;
-$form-alternate-disabled-fg-inactive:     $cx-color-common-form-input-alternate-disabled-fg-inactive !default;
-$form-alternate-disabled-border-color:    $cx-color-common-form-input-alternate-disabled-border !default;
-$form-alternate-disabled-assist-color:    $cx-color-common-form-input-alternate-disabled-assist !default;
-$form-alternate-disabled-caret-color:     $cx-color-common-form-input-alternate-disabled-caret !default;
-
-$form-alternate-focus-bg-regular:         $cx-color-common-form-input-alternate-focus-bg-regular !default;
-$form-alternate-focus-bg-floating:        $cx-color-common-form-input-alternate-focus-bg-floating !default;
-$form-alternate-focus-fg-active:          $cx-color-common-form-input-alternate-focus-fg-active !default;
-$form-alternate-focus-fg-inactive:        $cx-color-common-form-input-alternate-focus-fg-inactive !default;
-$form-alternate-focus-border-color:       $cx-color-common-form-input-alternate-focus-border !default;
-$form-alternate-focus-assist-color:       $cx-color-common-form-input-alternate-focus-assist !default;
-// $form-alternate-focus-caret-color:        $cx-color-common-form-input-alternate-focus-caret !default;
-
-$form-alternate-invalid-bg-regular:       $cx-color-common-form-input-alternate-error-bg-regular !default;
-$form-alternate-invalid-bg-floating:      $cx-color-common-form-input-alternate-error-bg-floating !default;
-$form-alternate-invalid-fg-active:        $cx-color-common-form-input-alternate-error-fg-active !default;
-$form-alternate-invalid-fg-inactive:      $cx-color-common-form-input-alternate-error-fg-inactive !default;
-$form-alternate-invalid-border-color:     $cx-color-common-form-input-alternate-error-border !default;
-$form-alternate-invalid-assist-color:     $cx-color-common-form-input-alternate-error-assist !default;
-// $form-alternate-invalid-caret-color:      $cx-color-common-form-input-alternate-error-caret !default;
-
-$form-alternate-valid-bg-regular:         $cx-color-common-form-input-alternate-success-bg-regular !default;
-$form-alternate-valid-bg-floating:        $cx-color-common-form-input-alternate-success-bg-floating !default;
-$form-alternate-valid-fg-active:          $cx-color-common-form-input-alternate-success-fg-active !default;
-$form-alternate-valid-fg-inactive:        $cx-color-common-form-input-alternate-success-fg-inactive !default;
-$form-alternate-valid-border-color:       $cx-color-common-form-input-alternate-success-border !default;
-$form-alternate-valid-assist-color:       $cx-color-common-form-input-alternate-success-assist !default;
-// $form-alternate-valid-caret-color:        $cx-color-common-form-input-alternate-success-caret !default;
+$form-valid-bg-regular:           $cx-color-common-form-input-success-bg-regular !default;
+$form-valid-bg-floating:          $cx-color-common-form-input-success-bg-floating !default;
+$form-valid-fg-active:            $cx-color-common-form-input-success-fg-active !default;
+$form-valid-fg-inactive:          $cx-color-common-form-input-success-fg-inactive !default;
+$form-valid-border-color:         $cx-color-common-form-input-success-border !default;
+$form-valid-assist-color:         $cx-color-common-form-input-success-assist !default;
+// $form-valid-caret-color:          $cx-color-common-form-input-success-caret !default;
 // scss-docs-end form-color-tokens
 // scss-docs-end form-tokens

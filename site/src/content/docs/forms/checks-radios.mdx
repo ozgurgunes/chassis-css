@@ -217,30 +217,30 @@ By default, `.form-option` elements stack vertically with appropriate spacing, c
 
 ### Inline layout
 
-For horizontal layouts, add the `.form-option-inline` modifier class to display multiple options in a row. This is especially useful for brief options that should appear as a group.
+For horizontal layouts, add the `.option-inline` modifier class to display multiple options in a row. This is especially useful for brief options that should appear as a group.
 
-<Example code={`<div class="form-option form-option-inline">
+<Example code={`<div class="form-option option-inline">
     <input class="option-input" type="checkbox" id="inlineCheckbox1" value="option1">
     <label class="option-label" for="inlineCheckbox1">1</label>
   </div>
-  <div class="form-option form-option-inline">
+  <div class="form-option option-inline">
     <input class="option-input" type="checkbox" id="inlineCheckbox2" value="option2">
     <label class="option-label" for="inlineCheckbox2">2</label>
   </div>
-  <div class="form-option form-option-inline">
+  <div class="form-option option-inline">
     <input class="option-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
     <label class="option-label" for="inlineCheckbox3">3 (disabled)</label>
   </div>`} />
 
-<Example code={`<div class="form-option form-option-inline">
+<Example code={`<div class="form-option option-inline">
     <input class="option-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
     <label class="option-label" for="inlineRadio1">1</label>
   </div>
-  <div class="form-option form-option-inline">
+  <div class="form-option option-inline">
     <input class="option-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
     <label class="option-label" for="inlineRadio2">2</label>
   </div>
-  <div class="form-option form-option-inline">
+  <div class="form-option option-inline">
     <input class="option-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
     <label class="option-label" for="inlineRadio3">3 (disabled)</label>
   </div>`} />
@@ -291,11 +291,11 @@ Chassis CSS fully supports nesting input elements inside label elements as a fir
     </label>
   </div>
   <div>
-    <label class="form-option option-label form-option-inline">
+    <label class="form-option option-label option-inline">
       <input class="option-input" type="radio" name="radioLabel">
       Radio within label
     </label>
-    <label class="form-option option-label form-option-inline">
+    <label class="form-option option-label option-inline">
       <input class="option-input" type="radio" name="radioLabel">
       Another radio within label
     </label>
@@ -420,32 +420,38 @@ The different visual states of checkboxes and radio buttons (checked, unchecked,
 
 For more detailed accessibility guidance, see the [forms overview accessibility]([[docsref:/forms/overview/#accessibility]]) section.
 
-## Customization with CSS variables
+## CSS
 
-Chassis CSS uses CSS custom properties (variables) to control the appearance of checkboxes, radio buttons, and toggle switches. These variables make it easy to create custom themes or modify specific aspects of the controls to match your design system.
+Chassis CSS uses a powerful combination of Sass and CSS variables to create a flexible form system that adapts to themes and design requirements.
 
-### Form option variables
+<DocsCSS />
 
-These variables control the core appearance of checkboxes and radio buttons:
+### Custom properties
+
+Check the [overview]([[docsref:forms/overview#custom-properties]]) page to see the CSS variables shared by all form elements.
+
+### Sass variables
+
+<DocsSASSVars notExposed={true} />
+
+<hr />
+
+These variables control the appearance of checkboxes and radio buttons:
 
 <ScssDocs name="form-option-variables" file="scss/_variables.scss" />
-
-### Toggle switch variables
 
 These variables specifically affect the appearance of toggle switches:
 
 <ScssDocs name="form-switch-variables" file="scss/_variables.scss" />
 
-### Theming examples
+### Design tokens
 
-You can override these variables in your own CSS to create custom-themed controls. For example:
+<DocsDesignTokens />
 
-```css
-:root {
-  --chassis-option-checked-bg: #9c27b0;
-  --chassis-option-checked-border-color: #7b1fa2;
-  --chassis-option-focus-box-shadow: 0 0 0 0.25rem rgba(156, 39, 176, 0.25);
-}
-```
+<hr />
 
-This would create purple-themed checkboxes and radio buttons while maintaining all the functionality and accessibility features of the standard controls.
+The following design tokens define the check and radio indicators for various states:
+
+<ScssDocs name="form-option-tokens" file="scss/tokens/_forms.scss" />
+
+Check the [overview]([[docsref:forms/overview#design-tokens]]) page to see the design tokens shared by all form elements.
