@@ -107,7 +107,7 @@
   // Focus state styling for the label
   > %form-input {
     &:focus ~ label {
-      color: $form-focus-assist-color;
+      color: $form-focus-help-color;
     }
   }
 

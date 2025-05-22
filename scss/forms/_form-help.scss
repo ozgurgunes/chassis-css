@@ -1,7 +1,7 @@
 //
-// Form Assist
+// Form Help
 //
-// Form assist provides contextual help text for form elements.
+// Form help provides contextual help text for form elements.
 // It is typically placed below form inputs to provide additional guidance,
 // hints, or validation messages to users.
 //
@@ -16,24 +16,24 @@
 // - Range inputs: Uses appropriate spacing to maintain visual hierarchy
 //
 
-.form-assist,
+.form-help,
 .valid-feedback,
 .invalid-feedback {
   @extend %form-colors; // Inherit base form color variables
-  margin-top: $form-field-assist-margin-t; // Consistent spacing from the form input
-  color: var(--#{$prefix}form-idle-assist-color); // Uses a lighter text color to distinguish from primary content
+  margin-top: $form-input-help-margin-t; // Consistent spacing from the form input
+  color: var(--#{$prefix}form-idle-help-color); // Uses a lighter text color to distinguish from primary content
   @include font(); // Apply standard font styling
 
-  // Special positioning for form-assist within checkbox/radio options
+  // Special positioning for form-help within checkbox/radio options
   // Aligns the text with the option label by adding left margin equal to
   // the width of the input element plus the gap
-  .form-option > & {
-    margin-top: $form-option-assist-margin-t;
+  .form-check > & {
+    margin-top: $form-check-help-margin-t;
     margin-left: #{calc(var(--#{$prefix}input-size) + var(--#{$prefix}gap))};
   }
 
   // Adjusted top margin when used with range inputs
   .form-range ~ & {
-    margin-top: $form-option-assist-margin-t;
+    margin-top: $form-check-help-margin-t;
   }
 }

@@ -24,8 +24,8 @@ Chassis CSS's Input Groups enable you to create cohesive, composite form control
       <span class="input-addon">https://</span>
       <input type="text" class="form-input" id="basic-url" aria-describedby="url-help">
     </div>
-    <!-- Form assists placed outside the input group -->
-    <div class="form-assist" id="url-help">Enter your website domain without the protocol</div>
+    <!-- Form helps placed outside the input group -->
+    <div class="form-help" id="url-help">Enter your website domain without the protocol</div>
   </div>`} />
 
 ### Key features and benefits
@@ -37,8 +37,8 @@ Chassis CSS's Input Groups enable you to create cohesive, composite form control
 - **Theme integration**: Works with both default and alternate form styles, plus dark mode support
 - **CSS variable customization**: Easy to adapt to your design system
 
-<Callout type="info" title="Form assist placement">
-  Remember to place form assists and validation feedbacks as siblings after the input group, not inside it. This ensures proper spacing, styling, and accessibility for error states and help text.
+<Callout type="info" title="Form help placement">
+  Remember to place form helps and validation feedbacks as siblings after the input group, not inside it. This ensures proper spacing, styling, and accessibility for error states and help text.
 </Callout>
 ## Addon types
 
@@ -102,19 +102,19 @@ Checks and radios can be incorporated into input groups by nesting them within `
 
 <Example code={`<div class="input-group mb-medium">
     <div class="input-addon">
-      <input class="option-input mt-0" type="checkbox" value="" aria-label="Subscribe to newsletter">
+      <input class="check-input mt-0" type="checkbox" value="" aria-label="Subscribe to newsletter">
     </div>
     <input type="email" class="form-input" placeholder="Email address" aria-label="Email for newsletter">
   </div>
 
   <div class="input-group">
     <div class="input-addon">
-      <input class="option-input mt-0" type="radio" name="priority" value="high" aria-label="High priority">
+      <input class="check-input mt-0" type="radio" name="priority" value="high" aria-label="High priority">
     </div>
     <input type="text" class="form-input" placeholder="Task description" aria-label="High priority task">
   </div>`} />
 
-When using form controls within addons, add the `.mt-0` class to the `.option-input` to ensure proper vertical alignment within the container.
+When using form controls within addons, add the `.mt-0` class to the `.check-input` to ensure proper vertical alignment within the container.
 
 ## Layout capabilities
 

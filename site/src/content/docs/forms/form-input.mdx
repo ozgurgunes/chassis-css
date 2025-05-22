@@ -25,27 +25,27 @@ Modify input sizes with the `.small` and `.large` modifier classes to maintain c
 <input class="form-input" type="text" placeholder="Default input" aria-label="Default form input example">
 <input class="form-input small" type="text" placeholder=".small" aria-label="Small form input example">`} />
 
-## Form assist
+## Form help
 
-The `.form-assist` class provides additional guidance text for form inputs. Use it to display validation messages, requirements, or other helpful information.
+The `.form-help` class provides additional guidance text for form inputs. Use it to display validation messages, requirements, or other helpful information.
 
 <Callout type="warning">
-Always connect form assist text to its related input using the `aria-describedby` attribute to ensure screen readers announce the guidance when users interact with the input.
+Always connect form help text to its related input using the `aria-describedby` attribute to ensure screen readers announce the guidance when users interact with the input.
 </Callout>
 
-### Block form assist
+### Block form help
 
-Add contextual help text below inputs using a block element with the `.form-assist` class. The class automatically adds appropriate spacing for visual hierarchy.
+Add contextual help text below inputs using a block element with the `.form-help` class. The class automatically adds appropriate spacing for visual hierarchy.
 
 <Example code={`<label for="inputPassword5" class="form-label">Password</label>
   <input type="password" id="inputPassword5" class="form-input" aria-describedby="passwordHelpBlock">
-  <div id="passwordHelpBlock" class="form-assist">
+  <div id="passwordHelpBlock" class="form-help">
     Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
   </div>`} />
 
-### Inline form assist
+### Inline form help
 
-For more compact layouts, use inline form assist by applying the `.form-assist` class to any inline element such as `<span>` or `<small>`.
+For more compact layouts, use inline form help by applying the `.form-help` class to any inline element such as `<span>` or `<small>`.
 
 <Example code={`<div class="row g-medium align-items-center">
     <div class="col-auto">
@@ -55,7 +55,7 @@ For more compact layouts, use inline form assist by applying the `.form-assist` 
       <input type="password" id="inputPassword6" class="form-input" aria-describedby="passwordHelpInline">
     </div>
     <div class="col-auto">
-      <span id="passwordHelpInline" class="form-assist">
+      <span id="passwordHelpInline" class="form-help">
         Must be 8-20 characters long.
       </span>
     </div>

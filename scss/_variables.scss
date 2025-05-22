@@ -452,8 +452,8 @@ $zindex-levels: (
 //
 
 $code-font-family:                  $font-family-code !default;
-$code-font-size:                    $font-size-code-medium !default;
-$code-line-height:                  $line-height-code-medium !default;
+$code-font-size:                    inherit !default;
+$code-line-height:                  inherit !default;
 $code-color:                        $pink !default;
 
 $kbd-padding-y:                     .1875rem !default;
@@ -556,19 +556,16 @@ $button-transition:                   color .15s ease-in-out, background-color .
 //
 // See tokens/_forms.scss for more.
 //
-// scss-docs-start form-assist-variables
-// $field-assist-color:                    $form-idle-fg-active !default;
-// $field-assist-font:                     $form-medium-text !default;
-$form-field-assist-margin-t:            $space-2xsmall !default;
-$form-option-assist-margin-t:           $space-zero !default;
-// scss-docs-end form-assist-variables
+// scss-docs-start form-help-variables
+$form-input-help-margin-t:              $space-2xsmall !default;
+$form-check-help-margin-t:              $space-zero !default;
+// scss-docs-end form-help-variables
 
 // scss-docs-start form-label-variables
 $form-label-font:                       $form-medium-label-font !default;
 $form-label-color:                      var(--#{$prefix}fg-main) !default;
 $form-label-margin-bottom:              $space-xsmall !default;
 // scss-docs-end form-label-variables
-
 
 // scss-docs-start form-input-variables
 $form-input-plaintext-color:            var(--#{$prefix}form-idle-fg-active) !default;
@@ -597,41 +594,31 @@ $form-file-button-bg-hover:             var(--#{$prefix}default-bg-even) !defaul
 $form-select-caret-position:            right var(--#{$prefix}padding-x) center !default;
 // scss-docs-end form-select-variables
 
-// scss-docs-start form-feedback-icon-variables
-$form-feedback-icon-size:               var(--#{$prefix}icon-size) !default;
+// scss-docs-start form-check-variables
+$form-check-medium-size:               $icon-small !default;
+$form-check-large-size:                $icon-medium !default;
+$form-check-small-size:                $icon-xsmall !default;
 
-$form-select-feedback-icon-position:    center right #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}gap) + var(--#{$prefix}caret-size))} !default;
-$form-select-feedback-icon-padding-e:   #{calc($form-feedback-icon-size + var(--#{$prefix}caret-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
-$form-input-feedback-icon-position:     right var(--#{$prefix}padding-x) center !default;
-$form-input-feedback-icon-padding-e:    #{calc($form-feedback-icon-size + var(--#{$prefix}padding-x) + var(--#{$prefix}gap))} !default;
-$form-textarea-feedback-icon-position:  top var(--#{$prefix}padding-y) right var(--#{$prefix}padding-x) !default;
-// scss-docs-end form-feedback-icon-variables
+$form-check-border-width:              $form-regular-border-width !default;
+$form-check-checkbox-border-radius:    $border-radius-xsmall !default;
+$form-check-radio-border-radius:       50% !default;
 
-// scss-docs-start form-option-variables
-$form-option-medium-size:               $icon-small !default;
-$form-option-large-size:                $icon-medium !default;
-$form-option-small-size:                $icon-xsmall !default;
+$form-check-min-height:                null !default;
+$form-check-margin-y:                  .5em !default;
+$form-check-label-color:               null !default;
+$form-check-label-cursor:              null !default;
+$form-check-transition:                null !default;
 
-$form-option-border-width:              $form-regular-border-width !default;
-$form-option-checkbox-border-radius:    $border-radius-xsmall !default;
-$form-option-radio-border-radius:       50% !default;
+$form-check-checked-fg-color:          $component-active-fg-color !default;
+$form-check-checked-bg-color:          $component-active-bg-color !default;
+$form-check-checked-border-color:      $form-check-checked-bg-color !default;
 
-$form-option-min-height:                null !default;
-$form-option-margin-y:                  .5em !default;
-$form-option-label-color:               null !default;
-$form-option-label-cursor:              null !default;
-$form-option-transition:                null !default;
+$form-check-disabled-opacity:          var(--#{$prefix}opacity-fg-slight) !default;
+$form-check-label-disabled-opacity:    $form-check-disabled-opacity !default;
+$form-check-button-disabled-opacity:   $button-disabled-opacity !default;
 
-$form-option-checked-fg-color:          $component-active-fg-color !default;
-$form-option-checked-bg-color:          $component-active-bg-color !default;
-$form-option-checked-border-color:      $form-option-checked-bg-color !default;
-
-$form-option-disabled-opacity:          var(--#{$prefix}opacity-fg-slight) !default;
-$form-option-label-disabled-opacity:    $form-option-disabled-opacity !default;
-$form-option-button-disabled-opacity:   $button-disabled-opacity !default;
-
-$form-option-inline-margin-end:         1rem !default;
-// scss-docs-end form-option-variables
+$form-check-inline-margin-end:         1rem !default;
+// scss-docs-end form-check-variables
 
 // scss-docs-start form-switch-variables
 $form-switch-idle-color:                $form-idle-fg-inactive !default;
@@ -683,58 +670,29 @@ $form-floating-transition:                  opacity .1s ease-in-out, transform .
 // scss-docs-end form-floating-variables
 
 // Form validation
+// scss-docs-start form-validation-variables
 $form-validated-class:                      was-validated !default;
 $form-valid-class:                          is-valid !default;
 $form-invalid-class:                        is-invalid !default;
 
+$form-valid-tooltip-fg-color:               var(--#{$prefix}success-fg-solid) !default;
+$form-valid-tooltip-bg-color:               var(--#{$prefix}success-bg-solid) !default;
 
-// scss-docs-start form-feedback-variables
-// $form-feedback-margin-t:          $form-field-assist-margin-t !default;
-// $form-feedback-font-size:           var(--#{$prefix}font-size-small) !default;
-// $form-feedback-font-style:          null !default;
-// $form-feedback-valid-color:         $form-valid-fg-active !default;
-// $form-feedback-invalid-color:       $form-invalid-fg-active !default;
+$form-invalid-tooltip-fg-color:             var(--#{$prefix}danger-fg-solid) !default;
+$form-invalid-tooltip-bg-color:             var(--#{$prefix}danger-bg-solid) !default;
 
-$form-feedback-valid-icon-color:    $success-base-color !default;
-$form-feedback-valid-icon:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$form-feedback-valid-icon-color}' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/></svg>") !default;
-$form-feedback-valid-box-shadow:    0 0 $focus-ring-blur $form-input-focus-width rgba(var(--#{$prefix}form-valid-rgb), $focus-ring-opacity) !default;
+$form-valid-box-shadow:                     0 0 $focus-ring-blur $form-input-focus-width rgba(var(--#{$prefix}success-rgb), $focus-ring-opacity) !default;
+$form-invalid-box-shadow:                   0 0 $focus-ring-blur $form-input-focus-width rgba(var(--#{$prefix}danger-rgb), $focus-ring-opacity) !default;
 
-$form-feedback-invalid-icon-color:  $danger-base-color !default;
-$form-feedback-invalid-icon:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$form-feedback-invalid-icon-color}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-invalid-icon-color}' stroke='none'/></svg>") !default;
-$form-feedback-invalid-box-shadow:  0 0 $focus-ring-blur $form-input-focus-width rgba(var(--#{$prefix}danger-rgb), $focus-ring-opacity) !default;
-// scss-docs-end form-feedback-variables
+$form-feedback-icon-size:                   var(--#{$prefix}icon-size) !default;
 
-// scss-docs-start form-validation-colors
-$form-valid-fg-color:               $form-valid-assist-color !default;
-$form-valid-border-color:           $form-valid-border-color !default;
-$form-valid-tooltip-fg-color:           var(--#{$prefix}success-fg-solid) !default;
-$form-valid-tooltip-bg-color:           var(--#{$prefix}success-bg-solid) !default;
-$form-invalid-tooltip-fg-color:           var(--#{$prefix}danger-fg-solid) !default;
-$form-invalid-tooltip-bg-color:           var(--#{$prefix}danger-bg-solid) !default;
-$form-invalid-fg-color:             $form-invalid-assist-color !default;
-$form-invalid-border-color:         $form-invalid-border-color !default;
-// scss-docs-end form-validation-colors
+$form-feedback-icon-input-position:         center right var(--#{$prefix}padding-x) !default;
+$form-feedback-icon-input-padding-e:        #{calc($form-feedback-icon-size + var(--#{$prefix}padding-x) + var(--#{$prefix}gap))} !default;
+$form-feedback-icon-textarea-position:      top var(--#{$prefix}padding-y) right var(--#{$prefix}padding-x) !default;
+$form-feedback-icon-select-position:        center right #{calc(var(--#{$prefix}padding-x) + var(--#{$prefix}gap) + var(--#{$prefix}caret-size))} !default;
+$form-feedback-icon-select-padding-e:       #{calc($form-feedback-icon-size + var(--#{$prefix}caret-size) + var(--#{$prefix}padding-x) + var(--#{$prefix}gap) * 2)} !default;
+// scss-docs-end form-validation-variables
 
-// scss-docs-start form-validation-states
-$form-validation-states: (
-  "valid": (
-    // "color": var(--#{$prefix}form-valid-color),
-    "icon": $form-feedback-valid-icon,
-    "tooltip-fg-color": var(--#{$prefix}success-fg-solid),
-    "tooltip-bg-color": var(--#{$prefix}success-bg-solid),
-    "focus-box-shadow": $form-feedback-valid-box-shadow
-    // "border-color": var(--#{$prefix}form-valid-border-color),
-  ),
-  "invalid": (
-    // "color": var(--#{$prefix}form-invalid-color),
-    "icon": $form-feedback-invalid-icon,
-    "tooltip-fg-color": var(--#{$prefix}danger-fg-solid),
-    "tooltip-bg-color": var(--#{$prefix}danger-bg-solid),
-    "focus-box-shadow": $form-feedback-invalid-box-shadow,
-    // "border-color": var(--#{$prefix}form-invalid-border-color),
-  )
-) !default;
-// scss-docs-end form-validation-states
 
 //
 // Tables
@@ -743,9 +701,10 @@ $form-validation-states: (
 // Most of tables settings are defined by design tokens, see `scss/tokens/_index.scss`.
 
 // scss-docs-start table-variables
+// CSS custom properties
 $table-divider-color:               currentcolor !default;
-// These variables are not exposed as CSS variables.
 $table-cell-vertical-align:         top !default;
+// Sass-only variables
 $table-th-font-weight:              700 !default;
 $table-striped-order:               even !default;
 $table-striped-columns-order:       even !default;
@@ -1075,6 +1034,7 @@ $toast-header-bg-color:             var(--#{$prefix}black-bg-main) !default;
 $toast-header-border-color:         $toast-border-color !default;
 // scss-docs-end toast-variables
 
+
 //
 // Modals
 //
@@ -1114,7 +1074,7 @@ $modal-header-padding-y:              $space-small !default;
 $modal-header-padding-x:              $space-medium !default;
 $modal-header-fg-color:               null !default;
 $modal-header-bg-color:               null !default;
-$modal-header-border-color:           $default-border-subtle !default;
+$modal-header-border-color:           var(--#{$prefix}border-subtle) !default;
 $modal-header-border-width:           $modal-window-border-width !default;
 
 $modal-footer-padding-y:              $space-medium !default;
@@ -1122,7 +1082,7 @@ $modal-footer-padding-x:              $modal-footer-padding-y !default;
 $modal-footer-gap:                    $space-medium !default;
 $modal-footer-fg-color:               null !default;
 $modal-footer-bg-color:               null !default;
-$modal-footer-border-color:           $default-border-subtle !default;
+$modal-footer-border-color:           var(--#{$prefix}border-subtle) !default;
 $modal-footer-border-width:           $modal-header-border-width !default;
 // scss-docs-end modal-variables
 
@@ -1152,6 +1112,11 @@ $alert-title-font:              $cx-font-text-large-strong !default;
 $alert-message-font:            $cx-font-text-medium-normal !default;
 $alert-title-margin:            $space-xsmall !default;
 $alert-icon-size:               $cx-size-icon-glyph-2xlarge !default;
+
+$alert-fade-transform:          translateY(-25%) !default;
+$alert-show-transform:          none !default;
+$alert-scale-transform:         scale(1.02) !default;
+$alert-transition:              transform .3s ease-out !default;
 // scss-docs-end alert-variables
 
 //

@@ -319,22 +319,16 @@ pre {
   margin-top: 0; // 1
   margin-bottom: 1rem; // 2
   overflow: auto; // 3
-  @include font-size(var(--#{$prefix}code-font-size, $code-font-size));
-  @include line-height(var(--#{$prefix}code-line-height, $code-line-height));
   color: var(--#{$prefix}pre-fg-color, #{$pre-color});
 
   // Account for some code outputs that place code tags in pre tags
   code {
-    @include font-size(inherit);
-    @include line-height(inherit);
     color: inherit;
     word-break: normal;
   }
 }
 
 code {
-  @include font-size(var(--#{$prefix}code-font-size, $code-font-size));
-  @include line-height(var(--#{$prefix}code-line-height, $code-line-height));
   color: var(--#{$prefix}code-color, $code-color);
   word-wrap: break-word;
 

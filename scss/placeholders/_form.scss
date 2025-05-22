@@ -50,7 +50,7 @@
   --#{$prefix}form-idle-fg-active: #{$form-idle-fg-active};
   --#{$prefix}form-idle-fg-inactive: #{$form-idle-fg-inactive};
   --#{$prefix}form-idle-border-color: #{$form-idle-border-color};
-  --#{$prefix}form-idle-assist-color: #{$form-idle-assist-color};
+  --#{$prefix}form-idle-help-color: #{$form-idle-help-color};
   --#{$prefix}form-idle-bg-floating: #{$form-idle-bg-floating};
 
   // Focus state variables
@@ -59,7 +59,7 @@
   --#{$prefix}form-focus-fg-active: #{$form-focus-fg-active};
   --#{$prefix}form-focus-fg-inactive: #{$form-focus-fg-inactive};
   --#{$prefix}form-focus-border-color: #{$form-focus-border-color};
-  --#{$prefix}form-focus-assist-color: #{$form-focus-assist-color};
+  --#{$prefix}form-focus-help-color: #{$form-focus-help-color};
   --#{$prefix}form-focus-bg-floating: #{$form-focus-bg-floating};
 
   // Disabled state variables
@@ -68,7 +68,7 @@
   --#{$prefix}form-disabled-fg-active: #{$form-disabled-fg-active};
   --#{$prefix}form-disabled-fg-inactive: #{$form-disabled-fg-inactive};
   --#{$prefix}form-disabled-border-color: #{$form-disabled-border-color};
-  --#{$prefix}form-disabled-assist-color: #{$form-disabled-assist-color};
+  --#{$prefix}form-disabled-help-color: #{$form-disabled-help-color};
   --#{$prefix}form-disabled-bg-floating: #{$form-disabled-bg-floating};
 
   // Error validation state variables
@@ -77,7 +77,7 @@
   --#{$prefix}form-invalid-fg-active: #{$form-invalid-fg-active};
   --#{$prefix}form-invalid-fg-inactive: #{$form-invalid-fg-inactive};
   --#{$prefix}form-invalid-border-color: #{$form-invalid-border-color};
-  --#{$prefix}form-invalid-assist-color: #{$form-invalid-assist-color};
+  --#{$prefix}form-invalid-help-color: #{$form-invalid-help-color};
   --#{$prefix}form-invalid-bg-floating: #{$form-invalid-bg-floating};
 
   // Success validation state variables
@@ -86,7 +86,7 @@
   --#{$prefix}form-valid-fg-active: #{$form-valid-fg-active};
   --#{$prefix}form-valid-fg-inactive: #{$form-valid-fg-inactive};
   --#{$prefix}form-valid-border-color: #{$form-valid-border-color};
-  --#{$prefix}form-valid-assist-color: #{$form-valid-assist-color};
+  --#{$prefix}form-valid-help-color: #{$form-valid-help-color};
   --#{$prefix}form-valid-bg-floating: #{$form-valid-bg-floating};
 
   // Special input component styling

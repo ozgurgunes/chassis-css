@@ -28,6 +28,7 @@ const {
   breakpointMedium,
   breakpointSmall,
   breakpointXsmall,
+  rootFontSize,
   baseFontSize
 } = variables
 
@@ -71,7 +72,7 @@ export function sassVars(str: string): Record<string, string | undefined> {
       }
     case 'setting':
       return {
-        baseFontSize
+        baseFontSize: baseFontSize || '16'
       }
     default:
       return {}
@@ -79,11 +80,21 @@ export function sassVars(str: string): Record<string, string | undefined> {
 }
 
 export function sassSpaceValue(str: string) {
-  const spaceVars = sassVars('space')
-  const value = spaceVars[str]
+  const vars = sassVars('space')
+  const value = vars[str]
   if (value?.endsWith('px')) {
     return `<code>${value}</code>`
   } else {
     return `<code>${value}</code> (<code>${value ? parseFloat(value) * parseFloat(sassVars('setting')['baseFontSize'] || '16') + 'px' : 'NaN'}</code>)`
+  }
+}
+
+export function sassBreakpointValue(str: string) {
+  const vars = sassVars('breakpoint')
+  const value = vars[str]
+  if (value?.endsWith('px')) {
+    return value
+  } else {
+    return value ? parseFloat(value) * parseFloat(sassVars('setting')['baseFontSize'] || '16') + 'px' : 'NaN'
   }
 }

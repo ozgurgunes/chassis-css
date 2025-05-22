@@ -222,7 +222,7 @@ We’ve also introduced a new `.progress-stacked` class to more logically wrap [
 
 - `.form-input` is now styled with CSS variables to support color modes. This includes the addition of two new root CSS variables for the default and disabled form input backgrounds.
 
-- `.form-option` and `.form-switch` components are now built with CSS variables for setting the `background-image`. The usage here differs from other components in that the various focus, active, etc states for each component aren’t set on the base class. Instead, the states override one variable (e.g., `--cx-form-switch-bg`).
+- `.form-check` and `.form-switch` components are now built with CSS variables for setting the `background-image`. The usage here differs from other components in that the various focus, active, etc states for each component aren’t set on the base class. Instead, the states override one variable (e.g., `--cx-form-switch-bg`).
 
 - Floating form labels now have a `background-color` to fix support for `<textarea>` elements. Additional changes have been made to also support disabled states and more.
 
@@ -323,7 +323,7 @@ Your custom Chassis - CSS CSS builds should now look something like this with a 
 
 - **Added new `.text-bg-{color}` helpers.** Instead of setting individual `.text-*` and `.bg-*` utilities, you can now use [the `.text-bg-*` helpers]([[docsref:utilities/contrast]]) to set a `background-color` with contrasting foreground `color`.
 
-- Added `.form-option-reverse` modifier to flip the order of labels and associated checkboxes/radios.
+- Added `.form-check-reverse` modifier to flip the order of labels and associated checkboxes/radios.
 
 - Added [striped columns]([[docsref:/content/tables#striped-columns]]) support to tables via the new `.table-striped-columns` class.
 
@@ -500,9 +500,9 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.chassis-ui.com/
 - **Added new floating forms!** We’ve promoted the Floating labels example to fully supported form components. [See the new Floating labels page.]([[docsref:/forms/floating-labels]])
 
 - <span class="badge text-bg-danger">Breaking</span> **Consolidated native and custom form elements.** Checkboxes, radios, selects, and other inputs that had native and custom classes in v4 have been consolidated. Now nearly all our form elements are entirely custom, most without the need for custom HTML.
-  - `.custom-control.custom-checkbox` is now `.form-option`.
-  - `.custom-control.custom-radio` is now `.form-option`.
-  - `.custom-control.custom-switch` is now `.form-option.form-switch`.
+  - `.custom-control.custom-checkbox` is now `.form-check`.
+  - `.custom-control.custom-radio` is now `.form-check`.
+  - `.custom-control.custom-switch` is now `.form-check.form-switch`.
   - `.custom-select` is now `.form-select`.
   - `.custom-file` and `.form-input-file` have been replaced by custom styles on top of `.form-input`.
   - `.custom-range` is now `.form-range`.
@@ -516,7 +516,7 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.chassis-ui.com/
 
 - <span class="badge text-bg-danger">Breaking</span> Form labels now require `.form-label`.
 
-- <span class="badge text-bg-danger">Breaking</span> `.form-assist` no longer sets `display`, allowing you to create inline or block help text as you wish just by changing the HTML element.
+- <span class="badge text-bg-danger">Breaking</span> `.form-help` no longer sets `display`, allowing you to create inline or block help text as you wish just by changing the HTML element.
 
 - Form inputs no longer used fixed `height` when possible, instead deferring to `min-height` to improve customization and compatibility with other components.
 
@@ -558,7 +558,7 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.chassis-ui.com/
 
 #### Buttons
 
-- <span class="badge text-bg-danger">Breaking</span> **[Toggle buttons]([[docsref:/forms/checks-radios#toggle-buttons]]), with checkboxes or radios, no longer require JavaScript and have new markup.** We no longer require a wrapping element, add `.button-option` to the `<input>`, and pair it with any `.button` classes on the `<label>`. [See #30650](https://github.com/twbs/chassis-css/pull/30650). _The docs for this has moved from our Buttons page to the new Forms section._
+- <span class="badge text-bg-danger">Breaking</span> **[Toggle buttons]([[docsref:/forms/checks-radios#toggle-buttons]]), with checkboxes or radios, no longer require JavaScript and have new markup.** We no longer require a wrapping element, add `.button-check` to the `<input>`, and pair it with any `.button` classes on the `<label>`. [See #30650](https://github.com/twbs/chassis-css/pull/30650). _The docs for this has moved from our Buttons page to the new Forms section._
 
 - <span class="badge text-bg-danger">Breaking</span> **Dropped `.button-block` for utilities.** Instead of using `.button-block` on the `.button`, wrap your buttons with `.d-grid` and a `.gap-*` utility to space them as needed. Switch to responsive classes for even more control over them. [Read the docs for some examples.]([[docsref:/components/buttons#block-buttons]])
 

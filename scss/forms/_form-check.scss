@@ -1,8 +1,8 @@
 //
-// Form Option Components
+// Form Check Components
 //
-// This file contains styling for form option components including checkboxes, radio buttons,
-// switches, and button options. It supports different sizes, states (checked, disabled)
+// This file contains styling for form check components including checkboxes, radio buttons,
+// switches, and button checks. It supports different sizes, states (checked, disabled)
 // with dark mode support.
 //
 
@@ -13,35 +13,35 @@
 // Supports small, medium, and large sizing, as well as reverse layout.
 //
 
-.form-option {
+.form-check {
   @extend %form-colors;
 
-  --#{$prefix}input-size: #{$form-option-medium-size};
+  --#{$prefix}input-size: #{$form-check-medium-size};
   --#{$prefix}gap: #{$form-medium-gap};
-  @include map-font-size($form-medium-text-font, form-option);
-  @include map-line-height($form-medium-text-font, form-option);
+  @include map-font-size($form-medium-text-font, form-check);
+  @include map-line-height($form-medium-text-font, form-check);
 
-  min-height: $form-option-min-height;
-  margin: $form-option-margin-y 0;
+  min-height: $form-check-min-height;
+  margin: $form-check-margin-y 0;
 
   @include font-size();
   @include line-height();
 
   &.small {
-    --#{$prefix}input-size: #{$form-option-small-size};
+    --#{$prefix}input-size: #{$form-check-small-size};
     --#{$prefix}gap: #{$form-small-gap};
-    @include map-font-size($form-small-text-font, form-option);
-    @include map-line-height($form-small-text-font, form-option);
+    @include map-font-size($form-small-text-font, form-check);
+    @include map-line-height($form-small-text-font, form-check);
   }
 
   &.large {
-    --#{$prefix}input-size: #{$form-option-large-size};
+    --#{$prefix}input-size: #{$form-check-large-size};
     --#{$prefix}gap: #{$form-large-gap};
-    @include map-font-size($form-large-text-font, form-option);
-    @include map-line-height($form-large-text-font, form-option);
+    @include map-font-size($form-large-text-font, form-check);
+    @include map-line-height($form-large-text-font, form-check);
   }
 
-  .option-input {
+  .check-input {
     float: left;
     margin-top: var(--#{$prefix}margin-t);
     margin-right: var(--#{$prefix}gap);
@@ -50,7 +50,7 @@
   &.reverse {
     text-align: right;
 
-    .option-input {
+    .check-input {
       float: right;
       margin-right: 0;
       margin-left: var(--#{$prefix}gap);
@@ -69,20 +69,20 @@
 // - Accessibility features including high contrast support
 //
 
-.option-input {
+.check-input {
   @extend %form-colors;
-  $default-disabled-check-icon: svg-color($form-option-check-icon, $form-disabled-fg-inactive);
-  $default-disabled-radio-icon: svg-color($form-option-radio-icon, $form-disabled-fg-inactive);
-  $default-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-disabled-fg-inactive);
-  $primary-idle-check-icon: svg-color($form-option-check-icon, $form-option-checked-fg-color);
-  $primary-idle-radio-icon: svg-color($form-option-radio-icon, $form-option-checked-fg-color);
-  $primary-idle-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-option-checked-fg-color);
+  $default-disabled-check-icon: svg-color($form-check-checkbox-icon, $form-disabled-fg-inactive);
+  $default-disabled-radio-icon: svg-color($form-check-radio-icon, $form-disabled-fg-inactive);
+  $default-disabled-indeterminate-icon: svg-color($form-check-indeterminate-icon, $form-disabled-fg-inactive);
+  $primary-idle-check-icon: svg-color($form-check-checkbox-icon, $form-check-checked-fg-color);
+  $primary-idle-radio-icon: svg-color($form-check-radio-icon, $form-check-checked-fg-color);
+  $primary-idle-indeterminate-icon: svg-color($form-check-indeterminate-icon, $form-check-checked-fg-color);
 
   // --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}form-idle-fg-active));
   --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}form-idle-bg-regular));
   --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}form-idle-border-color));
-  --#{$prefix}size: var(--#{$prefix}option-input-size, #{$form-option-medium-size});
-  --#{$prefix}margin-t: var(--#{$prefix}option-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .5)});
+  --#{$prefix}size: var(--#{$prefix}check-input-size, #{$form-check-medium-size});
+  --#{$prefix}margin-t: var(--#{$prefix}check-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .5)});
 
   flex-shrink: 0;
   width: var(--#{$prefix}size);
@@ -94,10 +94,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: $form-option-border-width solid var(--#{$prefix}border-color);
+  border: $form-check-border-width solid var(--#{$prefix}border-color);
   print-color-adjust: exact; // Keep themed appearance for print
   @include box-shadow($form-input-box-shadow);
-  @include transition($form-option-transition);
+  @include transition($form-check-transition);
 
   @if $enable-component-gradients {
     background-image: var(--#{$prefix}icon), var(--#{$prefix}bg-gradient);
@@ -107,16 +107,16 @@
 
 
   &[type="checkbox"] {
-    @include border-radius($form-option-checkbox-border-radius);
+    @include border-radius($form-check-checkbox-border-radius);
   }
 
   &[type="radio"] {
     // stylelint-disable-next-line property-disallowed-list
-    border-radius: $form-option-radio-border-radius;
+    border-radius: $form-check-radio-border-radius;
   }
 
   // &:active {
-  //   filter: $option-input-active-filter;
+  //   filter: $check-input-active-filter;
   // }
 
   &:focus {
@@ -133,8 +133,8 @@
   }
 
   &:checked {
-    --#{$prefix}bg-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-checked-bg-color});
-    --#{$prefix}border-color: var(--#{$prefix}input-checked-border-color, #{$form-option-checked-border-color});
+    --#{$prefix}bg-color: var(--#{$prefix}input-checked-bg-color, #{$form-check-checked-bg-color});
+    --#{$prefix}border-color: var(--#{$prefix}input-checked-border-color, #{$form-check-checked-border-color});
 
     &[type="checkbox"] {
       --#{$prefix}icon: #{$primary-idle-check-icon};
@@ -146,8 +146,8 @@
   }
 
   &[type="checkbox"]:indeterminate {
-    --#{$prefix}bg-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-checked-bg-color});
-    --#{$prefix}border-color: var(--#{$prefix}input-checked-bg-color, #{$form-option-checked-bg-color});
+    --#{$prefix}bg-color: var(--#{$prefix}input-checked-bg-color, #{$form-check-checked-bg-color});
+    --#{$prefix}border-color: var(--#{$prefix}input-checked-bg-color, #{$form-check-checked-bg-color});
     --#{$prefix}icon: #{$primary-idle-indeterminate-icon};
   }
 
@@ -158,12 +158,12 @@
     --#{$prefix}border-color: var(--#{$prefix}form-disabled-border-color, #{$form-disabled-border-color});
     pointer-events: none;
     filter: none;
-    // opacity: $form-option-disabled-opacity;
-    ~ .option-label,
-    .option-label:has(&) {
+    // opacity: $form-check-disabled-opacity;
+    ~ .check-label,
+    .check-label:has(&) {
       // --#{$prefix}fg-color: var(--#{$prefix}form-disabled-fg-color, #{$form-disabled-fg-active});
       cursor: default;
-      opacity: $form-option-label-disabled-opacity;
+      opacity: $form-check-label-disabled-opacity;
     }
 
     &[type="checkbox"]:checked {
@@ -183,21 +183,21 @@
   }
 }
 
-.option-input.small,
-.form-option.small .option-input  {
-  --#{$prefix}size: #{$form-option-small-size};
+.check-input.small,
+.form-check.small .check-input  {
+  --#{$prefix}size: #{$form-check-small-size};
 }
 
-.option-input.large,
-.form-option.large .option-input  {
-  --#{$prefix}size: #{$form-option-large-size};
+.check-input.large,
+.form-check.large .check-input  {
+  --#{$prefix}size: #{$form-check-large-size};
 }
 
 
-.option-label {
+.check-label {
   @extend %form-colors;
-  color: var(--#{$prefix}fg-color, $form-option-label-color);
-  cursor: $form-option-label-cursor;
+  color: var(--#{$prefix}fg-color, $form-check-label-color);
+  cursor: $form-check-label-cursor;
 }
 
 //
@@ -214,7 +214,7 @@
   $form-switch-focus-icon:        svg-color($form-switch-icon, $form-switch-focus-color) !default;
   $form-switch-checked-icon:      svg-color($form-switch-icon, $form-switch-checked-color) !default;
 
-  .option-input {
+  .check-input {
     --#{$prefix}form-switch-icon: #{$form-switch-idle-icon};
 
     width: $form-switch-width;
@@ -246,15 +246,15 @@
 // Utility Classes
 //
 
-// Inline form option - displays option groups horizontally instead of stacked
-.option-inline {
+// Inline form check - displays check groups horizontally instead of stacked
+.check-inline {
   display: inline-block;
-  margin-right: $form-option-inline-margin-end;
+  margin-right: $form-check-inline-margin-end;
 }
 
 // Button option - hidden input that can be used with button components
 // Used for creating button-based option groups where clicking buttons changes the selection
-.button-option {
+.button-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -264,7 +264,7 @@
     + .button {
       pointer-events: none;
       filter: none;
-      opacity: $form-option-button-disabled-opacity;
+      opacity: $form-check-button-disabled-opacity;
     }
   }
 }
@@ -272,7 +272,7 @@
 //
 // Dark Mode Mixins
 //
-// These mixins provide dark mode styling for form option components.
+// These mixins provide dark mode styling for form check components.
 // They are used within the color-mode mixin to apply appropriate styling
 // based on the color mode type (media-query or class-based).
 //
@@ -302,11 +302,11 @@
 
 // Mixin for applying dark mode styling to checkboxes and radio inputs
 // Updates icon colors for checked, disabled, and indeterminate states
-@mixin option-input-dark() {
+@mixin check-input-dark() {
   // Generate dark mode versions of the SVG icons
-  $default-disabled-check-icon: svg-color($form-option-check-icon, $form-disabled-fg-inactive, true);
-  $default-disabled-radio-icon: svg-color($form-option-radio-icon, $form-disabled-fg-inactive, true);
-  $default-disabled-indeterminate-icon: svg-color($form-option-indeterminate-icon, $form-disabled-fg-inactive, true);
+  $default-disabled-check-icon: svg-color($form-check-checkbox-icon, $form-disabled-fg-inactive, true);
+  $default-disabled-radio-icon: svg-color($form-check-radio-icon, $form-disabled-fg-inactive, true);
+  $default-disabled-indeterminate-icon: svg-color($form-check-indeterminate-icon, $form-disabled-fg-inactive, true);
 
   // Apply dark mode icons to disabled states
   &[disabled],
@@ -336,22 +336,22 @@
   @include color-mode(dark) {
     @if $color-mode-type == "media-query" {
       // Apply dark mode styling with media query approach
-      .option-input {
-        @include option-input-dark();
+      .check-input {
+        @include check-input-dark();
       }
-      .form-switch .option-input {
+      .form-switch .check-input {
         @include switch-dark();
       }
     } @else {
       // Apply dark mode styling with class-based approach
       // Using explicit selectors to avoid conflicts with light theme overrides
-      .option-input:not(.option-input[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .option-input),
-      &.option-input {
-        @include option-input-dark();
+      .check-input:not(.check-input[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .check-input),
+      &.check-input {
+        @include check-input-dark();
       }
 
-      .form-switch:not(.form-switch[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .form-switch) .option-input,
-      &.form-switch .option-input {
+      .form-switch:not(.form-switch[data-cx-theme="light"], [data-cx-theme="dark"] [data-cx-theme="light"] .form-switch) .check-input,
+      &.form-switch .check-input {
         @include switch-dark();
       }
     }

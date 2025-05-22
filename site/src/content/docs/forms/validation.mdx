@@ -87,9 +87,9 @@ Key features of Chassis validation:
       </div>
     </div>
     <div class="col-12">
-      <div class="form-option">
-        <input class="option-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="option-label" for="invalidCheck">
+      <div class="form-check">
+        <input class="check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="check-label" for="invalidCheck">
           Agree to terms and conditions
         </label>
         <div class="invalid-feedback">
@@ -146,9 +146,9 @@ If you prefer simpler implementation, you can use the browser's built-in validat
       <input type="text" class="form-input" id="validationDefault05" required>
     </div>
     <div class="col-12">
-      <div class="form-option">
-        <input class="option-input" type="checkbox" value="" id="invalidCheck2" required>
-        <label class="option-label" for="invalidCheck2">
+      <div class="form-check">
+        <input class="check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="check-label" for="invalidCheck2">
           Agree to terms and conditions
         </label>
       </div>
@@ -222,9 +222,9 @@ For applications that validate on the server, Chassis CSS provides the `.is-vali
       </div>
     </div>
     <div class="col-12">
-      <div class="form-option">
-        <input class="option-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-        <label class="option-label" for="invalidCheck3">
+      <div class="form-check">
+        <input class="check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+        <label class="check-label" for="invalidCheck3">
           Agree to terms and conditions
         </label>
         <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -250,19 +250,19 @@ Chassis CSS validation styles work consistently across all basic form elements:
       </div>
     </div>
 
-    <div class="form-option mb-medium">
-      <input type="checkbox" class="option-input" id="validationFormCheck1" required>
-      <label class="option-label" for="validationFormCheck1">Check this checkbox</label>
+    <div class="form-check mb-medium">
+      <input type="checkbox" class="check-input" id="validationFormCheck1" required>
+      <label class="check-label" for="validationFormCheck1">Check this checkbox</label>
       <div class="invalid-feedback">Example invalid feedback text</div>
     </div>
 
-    <div class="form-option">
-      <input type="radio" class="option-input" id="validationFormCheck2" name="radio-stacked" required>
-      <label class="option-label" for="validationFormCheck2">Toggle this radio</label>
+    <div class="form-check">
+      <input type="radio" class="check-input" id="validationFormCheck2" name="radio-stacked" required>
+      <label class="check-label" for="validationFormCheck2">Toggle this radio</label>
     </div>
-    <div class="form-option mb-medium">
-      <input type="radio" class="option-input" id="validationFormCheck3" name="radio-stacked" required>
-      <label class="option-label" for="validationFormCheck3">Or toggle this other radio</label>
+    <div class="form-check mb-medium">
+      <input type="radio" class="check-input" id="validationFormCheck3" name="radio-stacked" required>
+      <label class="check-label" for="validationFormCheck3">Or toggle this other radio</label>
       <div class="invalid-feedback">More example invalid feedback text</div>
     </div>
 
@@ -350,23 +350,23 @@ For compact layouts, Chassis CSS provides tooltip-style validation feedback. Sim
     </div>
   </form>`} />
 
-## Form assists
+## Form helps
 
-The `.form-assist` component is hidden by default when validation feedback is present. Add the `.always-show` class to keep form assists visible alongside validation feedback.
+The `.form-help` component is hidden by default when validation feedback is present. Add the `.always-show` class to keep form helps visible alongside validation feedback.
 
-Always place form assists and validation feedback elements as siblings after the input group.
+Always place form help and validation feedback elements as siblings after the input group.
 
 <Callout type="info" title="Accessibility">
-  The example below demonstrates proper ARIA attribute usage with `aria-describedby` referencing both the feedback and assist elements, ensuring screen readers announce both the error state and help text.
+  The example below demonstrates proper ARIA attribute usage with `aria-describedby` referencing both the feedback and assist elements, ensuring screen readers announce both the error state and help text. Check the [Smashing Magazine article](https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation/) for more details on accessible form validation.
 </Callout>
 
 <Example code={`<div class="input-group">
     <span class="input-addon">@</span>
     <input type="text" class="form-input" id="username-input"
-      aria-describedby="username-feedback username-assist" placeholder="Username" required>
+      aria-describedby="username-feedback username-help" placeholder="Username" required>
   </div>
   <div class="invalid-feedback" id="username-feedback"></div>
-  <div class="form-assist always-show" id="username-assist">Enter your username</div>
+  <div class="form-help always-show" id="username-help">Enter your username</div>
   <div class="mt-medium">
     <button class="button primary" type="button" onclick="validateUsername()">Validate username</button>
   </div>`} />
@@ -399,28 +399,28 @@ Always place form assists and validation feedback elements as siblings after the
     }
   </script>`} />
 
-## Customization
+## CSS
 
-Chassis CSS provides several ways to customize validation styles:
+Chassis CSS uses a powerful combination of Sass and CSS variables to create a flexible form system that adapts to themes and design requirements.
 
-### CSS Variables
+### Custom properties
 
-<ScssDocs name="root-form-validation-variables" file="scss/_root.scss" />
+Check the [overview]([[docsref:forms/overview#custom-properties]]) page to see the CSS variables shared by all form elements.
 
-These variables support color mode adaptation, automatically adjusting in dark mode for consistent user experience.
+### Sass variables
 
-### Sass Variables
+<DocsSASSVars notExposed={true} />
 
-<ScssDocs name="form-feedback-variables" file="scss/_variables.scss" />
+<ScssDocs name="form-validation-variables" file="scss/_variables.scss" />
 
-<ScssDocs name="form-validation-colors" file="scss/_variables.scss" />
+### Design tokens
 
-### Sass Mixins
+<DocsDesignTokens />
 
-<ScssDocs name="form-validation-mixins" file="scss/mixins/_forms.scss" />
+<hr />
 
-### Validation State Map
+The following design tokens define the validation icons and sizes:
 
-<ScssDocs name="form-validation-states" file="scss/_variables.scss" />
+<ScssDocs name="form-icon-tokens" file="scss/tokens/_forms.scss" />
 
-You can override or extend this map to create custom validation states beyond the standard valid/invalid states. Each entry can customize colors, icons, tooltip appearance, and focus styles.
+Check the [overview]([[docsref:forms/overview#design-tokens]]) page to see the design tokens shared by all form elements.

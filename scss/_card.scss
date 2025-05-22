@@ -199,7 +199,7 @@
       }
 
       // Handle rounded corners
-      @if $enable-rounded {
+      @if $enable-rounded-borders {
         &:not(:last-child) {
           @include border-end-radius(0);
 

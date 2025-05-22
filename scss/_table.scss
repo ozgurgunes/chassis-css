@@ -4,18 +4,18 @@
 
 .table {
   // scss-docs-start table-variables
-  --#{$prefix}fg-color: var(--#{$prefix}table-td-fg-color);
-  --#{$prefix}bg-color: var(--#{$prefix}table-td-bg-color);
-  --#{$prefix}th-fg-color: var(--#{$prefix}table-th-fg-color);
-  --#{$prefix}th-bg-color: var(--#{$prefix}table-th-bg-color);
-  --#{$prefix}striped-fg-color: var(--#{$prefix}table-striped-fg-color);
-  --#{$prefix}striped-bg-color: var(--#{$prefix}table-striped-bg-color);
-  --#{$prefix}hover-fg-color: var(--#{$prefix}table-hover-fg-color);
-  --#{$prefix}hover-bg-color: var(--#{$prefix}table-hover-bg-color);
-  --#{$prefix}active-fg-color: var(--#{$prefix}table-active-fg-color);
-  --#{$prefix}active-bg-color: var(--#{$prefix}table-active-bg-color);
-  --#{$prefix}border-color: var(--#{$prefix}table-border-color);
-  --#{$prefix}cue-color: var(--#{$prefix}table-cue-color);
+  --#{$prefix}fg-color: var(--#{$prefix}table-td-fg-color, #{$table-td-fg-color});
+  --#{$prefix}bg-color: var(--#{$prefix}table-td-bg-color, #{$table-td-bg-color});
+  --#{$prefix}th-fg-color: var(--#{$prefix}table-th-fg-color, #{$table-th-fg-color});
+  --#{$prefix}th-bg-color: var(--#{$prefix}table-th-bg-color, #{$table-th-bg-color});
+  --#{$prefix}striped-fg-color: var(--#{$prefix}table-striped-fg-color, #{$table-striped-fg-color});
+  --#{$prefix}striped-bg-color: var(--#{$prefix}table-striped-bg-color, #{$table-striped-bg-color});
+  --#{$prefix}hover-fg-color: var(--#{$prefix}table-hover-fg-color, #{$table-hover-fg-color});
+  --#{$prefix}hover-bg-color: var(--#{$prefix}table-hover-bg-color, #{$table-hover-bg-color});
+  --#{$prefix}active-fg-color: var(--#{$prefix}table-active-fg-color, #{$table-active-fg-color});
+  --#{$prefix}active-bg-color: var(--#{$prefix}table-active-bg-color, #{$table-active-bg-color});
+  --#{$prefix}border-color: var(--#{$prefix}table-border-color, #{$table-border-color});
+  --#{$prefix}cue-color: var(--#{$prefix}table-cue-color, #{$table-cue-color});
 
   --#{$prefix}cell-padding-y: var(--#{$prefix}table-cell-padding-y, #{$table-cell-padding-y});
   --#{$prefix}cell-padding-x: var(--#{$prefix}table-cell-padding-x, #{$table-cell-padding-x});
@@ -32,39 +32,8 @@
 
   width: 100%;
   margin-bottom: $spacer;
-  vertical-align: $table-cell-vertical-align;
+  vertical-align: var(--#{$prefix}table-cell-verticle-align, $table-cell-vertical-align);
   border-color: var(--#{$prefix}border-color);
-
-  &:not(.context),
-  &:not(.context).default {
-    --#{$prefix}table-td-fg-color: #{$table-default-td-fg-color};
-    --#{$prefix}table-td-bg-color: #{$table-default-td-bg-color};
-    --#{$prefix}table-th-fg-color: #{$table-default-th-fg-color};
-    --#{$prefix}table-th-bg-color: #{$table-default-th-bg-color};
-    --#{$prefix}table-striped-fg-color: #{$table-default-striped-fg-color};
-    --#{$prefix}table-striped-bg-color: #{$table-default-striped-bg-color};
-    --#{$prefix}table-hover-fg-color: #{$table-default-hover-fg-color};
-    --#{$prefix}table-hover-bg-color: #{$table-default-hover-bg-color};
-    --#{$prefix}table-active-fg-color: #{$table-default-active-fg-color};
-    --#{$prefix}table-active-bg-color: #{$table-default-active-bg-color};
-    --#{$prefix}table-border-color: #{$table-default-border-color};
-    --#{$prefix}table-cue-color: #{$table-default-cue-color};
-  }
-
-  &:not(.context).alternate {
-    --#{$prefix}table-td-fg-color: #{$table-alternate-td-fg-color};
-    --#{$prefix}table-td-bg-color: #{$table-alternate-td-bg-color};
-    --#{$prefix}table-th-fg-color: #{$table-alternate-th-fg-color};
-    --#{$prefix}table-th-bg-color: #{$table-alternate-th-bg-color};
-    --#{$prefix}table-striped-fg-color: #{$table-alternate-striped-fg-color};
-    --#{$prefix}table-striped-bg-color: #{$table-alternate-striped-bg-color};
-    --#{$prefix}table-hover-fg-color: #{$table-alternate-hover-fg-color};
-    --#{$prefix}table-hover-bg-color: #{$table-alternate-hover-bg-color};
-    --#{$prefix}table-active-fg-color: #{$table-alternate-active-fg-color};
-    --#{$prefix}table-active-bg-color: #{$table-alternate-active-bg-color};
-    --#{$prefix}table-border-color: #{$table-alternate-border-color};
-    --#{$prefix}table-cue-color: #{$table-alternate-cue-color};
-  }
 
   &.context {
     --#{$prefix}table-td-fg-color: #{$table-td-fg-context};
@@ -140,8 +109,8 @@
   }
 
   > thead {
-    --#{$prefix}fg-color: var(--#{$prefix}table-th-fg-color);
-    --#{$prefix}bg-color: var(--#{$prefix}table-th-bg-color);
+    --#{$prefix}fg-color: var(--#{$prefix}th-fg-color);
+    --#{$prefix}bg-color: var(--#{$prefix}th-bg-color);
     vertical-align: middle;
     // stylelint-disable-next-line selector-no-qualifying-type
     &.context {
@@ -190,16 +159,16 @@
   // For rows
   &.striped {
     > tbody > tr:nth-of-type(#{$table-striped-order}) > * {
-      --#{$prefix}fg-color: var(--#{$prefix}table-striped-fg-color);
-      --#{$prefix}bg-color: var(--#{$prefix}table-striped-bg-color);
+      --#{$prefix}fg-color: var(--#{$prefix}striped-fg-color);
+      --#{$prefix}bg-color: var(--#{$prefix}striped-bg-color);
     }
   }
 
   // For columns
   &.striped-columns {
     > tbody > tr > :nth-child(#{$table-striped-columns-order}) {
-      --#{$prefix}fg-color: var(--#{$prefix}table-striped-fg-color);
-      --#{$prefix}bg-color: var(--#{$prefix}table-striped-bg-color);
+      --#{$prefix}fg-color: var(--#{$prefix}striped-fg-color);
+      --#{$prefix}bg-color: var(--#{$prefix}striped-bg-color);
     }
   }
 
@@ -209,8 +178,8 @@
 
   &.hoverable {
     > tbody > tr:not(.active):hover > *:not(.active) {
-      --#{$prefix}fg-color: var(--#{$prefix}table-hover-fg-color);
-      --#{$prefix}bg-color: var(--#{$prefix}table-hover-bg-color);
+      --#{$prefix}fg-color: var(--#{$prefix}hover-fg-color);
+      --#{$prefix}bg-color: var(--#{$prefix}hover-bg-color);
     }
   }
 
@@ -221,8 +190,8 @@
   .active,
   > tbody > tr:nth-of-type(#{$table-striped-order}).active > *,
   > tbody > tr:nth-of-type(#{$table-striped-order}) > *.active {
-    --#{$prefix}fg-color: var(--#{$prefix}table-active-fg-color);
-    --#{$prefix}bg-color: var(--#{$prefix}table-active-bg-color);
+    --#{$prefix}fg-color: var(--#{$prefix}active-fg-color);
+    --#{$prefix}bg-color: var(--#{$prefix}active-bg-color);
 
     // &:first-child::before {
     //   position: absolute;
@@ -234,19 +203,19 @@
     // }
   }
 
-  @if $enable-table-active-indicator {
+  @if $enable-table-active-border {
     // stylelint-disable-next-line selector-no-qualifying-type
     > tbody > tr.active > *:first-child,
     > tbody > tr > *.active {
       padding-left: #{calc($table-cell-padding-x - $table-active-indicator-size)};
-      border-left: $table-active-indicator-size solid var(--#{$prefix}table-cue-color);
+      border-left: $table-active-indicator-size solid var(--#{$prefix}cue-color);
     }
   }
 
 }
 
 .table-divider > tr:first-child > * {
-  border-top: calc(#{$table-border-width} * 2) solid var(--#{$prefix}table-divider-color, $table-divider-color); // stylelint-disable-line function-disallowed-list
+  border-top: calc(#{$table-border-width} * 2) solid var(--#{$prefix}divider-color, $table-divider-color); // stylelint-disable-line function-disallowed-list
 }
 
 //

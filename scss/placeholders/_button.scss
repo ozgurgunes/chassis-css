@@ -15,7 +15,7 @@
     color: var(--#{$prefix}fg-color);
     text-decoration: if($link-hover-decoration == underline, none, null);
 
-    .button-option + & {
+    .button-check + & {
       // override for the checkbox/radio buttons
       --#{$prefix}fg-color: var(--#{$prefix}fg-idle);
       --#{$prefix}bg-color: var(--#{$prefix}bg-idle);
@@ -36,7 +36,7 @@
     }
   }
 
-  .button-option:focus-visible + & {
+  .button-check:focus-visible + & {
     --#{$prefix}border-color: var(--#{$prefix}hover-border-color);
     outline: 0;
     // Avoid using mixin so we can pass custom focus shadow properly
@@ -47,8 +47,8 @@
     }
   }
 
-  .button-option:checked + &,
-  :not(.button-option) + &:active,
+  .button-check:checked + &,
+  :not(.button-check) + &:active,
   &:first-child:active,
   &.active,
   &.show {
@@ -70,7 +70,7 @@
     }
   }
 
-  .button-option:checked:focus-visible + & {
+  .button-check:checked:focus-visible + & {
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-component-shadows {
       box-shadow: var(--#{$prefix}press-shadow), var(--#{$prefix}focus-box-shadow);
@@ -81,7 +81,7 @@
 
   &:disabled,
   &.disabled,
-  .button-option:disabled + &,
+  .button-check:disabled + &,
   fieldset:disabled & {
     --#{$prefix}fg-color: var(--#{$prefix}button-disabled-fg-color, var(--#{$prefix}fg-disabled));
     --#{$prefix}bg-color: var(--#{$prefix}button-disabled-bg-color, var(--#{$prefix}bg-disabled));

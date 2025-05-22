@@ -129,20 +129,6 @@
   --#{$prefix}focus-ring-color: #{$focus-ring-color};
   // scss-docs-end root-focus-variables
 
-  // scss-docs-start root-form-validation-variables
-  --#{$prefix}form-valid-color: #{$form-valid-fg-color};
-  --#{$prefix}form-valid-border-color: #{$form-valid-border-color};
-  --#{$prefix}form-invalid-color: #{$form-invalid-fg-color};
-  --#{$prefix}form-invalid-border-color: #{$form-invalid-border-color};
-  // scss-docs-end root-form-validation-variables
-
-  //
-  // Bootstrap Fonts
-  //
-  // Note: Use `inspect` for lists so that quoted items keep the quotes.
-  // See https://github.com/sass/sass/issues/2383#issuecomment-336349172
-  --#{$prefix}font-sans-serif: var(--#{$prefix}font-family-text);
-  --#{$prefix}font-monospace: var(--#{$prefix}font-family-code);
   --#{$prefix}bg-gradient: #{$bg-gradient};
 
   // Root and body

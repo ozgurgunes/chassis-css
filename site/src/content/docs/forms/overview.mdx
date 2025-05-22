@@ -36,15 +36,15 @@ Here's a basic example demonstrating Chassis CSS form elements:
     <div class="mb-medium">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-assist">We'll never share your email with anyone else.</div>
+      <div id="emailHelp" class="form-help">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-medium">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-input" id="exampleInputPassword1">
     </div>
-    <div class="mb-medium form-option">
-      <input type="checkbox" class="option-input" id="exampleCheck1">
-      <label class="option-label" for="exampleCheck1">Check me out</label>
+    <div class="mb-medium form-check">
+      <input type="checkbox" class="check-input" id="exampleCheck1">
+      <label class="check-label" for="exampleCheck1">Check me out</label>
     </div>
     <button type="submit" class="button primary">Submit</button>
   </form>`} />
@@ -75,9 +75,9 @@ For custom interactive elements like `<a class="button">` within a disabled fiel
         </select>
       </div>
       <div class="mb-medium">
-        <div class="form-option">
-          <input class="option-input" type="checkbox" id="disabledFieldsetCheck">
-          <label class="option-label" for="disabledFieldsetCheck">
+        <div class="form-check">
+          <input class="check-input" type="checkbox" id="disabledFieldsetCheck">
+          <label class="check-label" for="disabledFieldsetCheck">
             Can't check this
           </label>
         </div>
@@ -109,9 +109,9 @@ The example below demonstrates applying contrasting themes with individual contr
         <label for="exampleInputPasswordDark" class="form-label">Password</label>
         <input type="password" class="form-input" id="exampleInputPasswordDark" data-cx-theme="dark">
       </div>
-      <div class="mb-medium form-option">
-        <input type="checkbox" class="option-input" id="exampleCheckDark" data-cx-theme="dark">
-        <label class="option-label" for="exampleCheckDark">Check me out</label>
+      <div class="mb-medium form-check">
+        <input type="checkbox" class="check-input" id="exampleCheckDark" data-cx-theme="dark">
+        <label class="check-label" for="exampleCheckDark">Check me out</label>
       </div>
       <button type="submit" class="button primary">Submit</button>
     </form>
@@ -125,9 +125,9 @@ The example below demonstrates applying contrasting themes with individual contr
         <label for="exampleInputPasswordLight" class="form-label">Password</label>
         <input type="password" class="form-input" id="exampleInputPasswordLight" data-cx-theme="light">
       </div>
-      <div class="mb-medium form-option">
-        <input type="checkbox" class="option-input" id="exampleCheckLight" data-cx-theme="light">
-        <label class="option-label" for="exampleCheckLight">Check me out</label>
+      <div class="mb-medium form-check">
+        <input type="checkbox" class="check-input" id="exampleCheckLight" data-cx-theme="light">
+        <label class="check-label" for="exampleCheckLight">Check me out</label>
       </div>
       <button type="submit" class="button primary">Submit</button>
     </form>
@@ -191,7 +191,7 @@ These states are implemented through CSS custom properties (variables) with pred
 --cx-disabled-fg-active: #999;    /* Text color in disabled state */
 --cx-disabled-fg-inactive: #ccc;  /* Placeholder color in disabled state */
 --cx-focus-border-color: #00f;    /* Border color in focus state */
---cx-invalid-assist-color: #f00;  /* Text & icon color for validation feedbacks */
+--cx-invalid-help-color: #f00;  /* Text & icon color for validation feedbacks */
 ```
 
 ### Custom properties

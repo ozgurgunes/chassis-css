@@ -76,7 +76,7 @@
 @mixin form-validation-dark($state: "valid") {
   // Select the appropriate color variable based on variant and state
   $icon: if($state == "valid", $form-feedback-valid-icon, $form-feedback-invalid-icon);
-  $color: if($state == "valid", $form-valid-assist-color, $form-invalid-assist-color);
+  $color: if($state == "valid", $form-valid-help-color, $form-invalid-help-color);
 
   // Set the icon with dark mode colors
   $dark-icon: svg-color($icon, $color, true);

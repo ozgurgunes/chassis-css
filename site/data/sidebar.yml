@@ -84,7 +84,7 @@
   icon_color: cyan
   pages:
     - title: Accordion
-    - title: Alerts
+    - title: Alert
     - title: Avatar
     - title: Badge
     - title: Breadcrumb

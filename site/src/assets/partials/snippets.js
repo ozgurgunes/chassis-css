@@ -133,22 +133,22 @@ export default () => {
   // -------------------------------
   // Modal 'Varying modal content' example in docs and StackBlitz
   // js-docs-start varying-modal-window
-  const exampleModal = document.getElementById('exampleModal')
-  if (exampleModal) {
-    exampleModal.addEventListener('show.cx.modal', event => {
+  // JavaScript to handle dynamic content in the modal
+  const dynamicModal = document.getElementById('dynamicModal')
+  if (dynamicModal) {
+    dynamicModal.addEventListener('show.cx.modal', event => {
       // Button that triggered the modal
       const button = event.relatedTarget
-      // Extract info from data-cx-* attributes
+
+      // Extract data from data-cx-* attributes
       const recipient = button.getAttribute('data-cx-whatever')
-      // If necessary, you could initiate an Ajax request here
-      // and then do the updating in a callback.
 
       // Update the modal's content.
-      const modalTitle = exampleModal.querySelector('.modal-title')
-      const modalBodyInput = exampleModal.querySelector('.modal-content input')
+      const modalTitle = dynamicModal.querySelector('.modal-title')
+      const recipientInput = dynamicModal.querySelector('#recipient-name')
 
       modalTitle.textContent = `New message to ${recipient}`
-      modalBodyInput.value = recipient
+      recipientInput.value = recipient
     })
   }
   // js-docs-end varying-modal-window

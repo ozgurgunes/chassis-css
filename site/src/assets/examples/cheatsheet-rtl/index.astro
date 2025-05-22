@@ -334,7 +334,7 @@ import Placeholder from "@shortcodes/Placeholder.astro"
           <div class="mb-medium">
             <label for="exampleInputEmail1" class="form-label">البريد الإلكتروني</label>
             <input type="email" class="form-input" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-assist">لن نقوم بمشاركة بريدك الإلكتروني مع أي شخص آخر.</div>
+            <div id="emailHelp" class="form-help">لن نقوم بمشاركة بريدك الإلكتروني مع أي شخص آخر.</div>
           </div>
           <div class="mb-medium">
             <label for="exampleInputPassword1" class="form-label">كلمة السر</label>
@@ -349,28 +349,28 @@ import Placeholder from "@shortcodes/Placeholder.astro"
               <option value="3">ثلاثة</option>
             </select>
           </div>
-          <div class="mb-medium form-option">
-            <input type="checkbox" class="option-input" id="exampleCheck1">
-            <label class="option-label" for="exampleCheck1">اخترني</label>
+          <div class="mb-medium form-check">
+            <input type="checkbox" class="check-input" id="exampleCheck1">
+            <label class="check-label" for="exampleCheck1">اخترني</label>
           </div>
           <fieldset class="mb-medium">
             <legend>أزرار الاختيار الأحادي</legend>
-            <div class="form-option">
-              <input type="radio" name="radios" class="option-input" id="exampleRadio1" checked>
-              <label class="option-label" for="exampleRadio1">الخيار الافتراضي</label>
+            <div class="form-check">
+              <input type="radio" name="radios" class="check-input" id="exampleRadio1" checked>
+              <label class="check-label" for="exampleRadio1">الخيار الافتراضي</label>
             </div>
-            <div class="mb-medium form-option">
-              <input type="radio" name="radios" class="option-input" id="exampleRadio2">
-              <label class="option-label" for="exampleRadio2">خيار آخر</label>
+            <div class="mb-medium form-check">
+              <input type="radio" name="radios" class="check-input" id="exampleRadio2">
+              <label class="check-label" for="exampleRadio2">خيار آخر</label>
             </div>
           </fieldset>
           <div class="mb-medium">
             <label class="form-label" for="customFile">رفع</label>
             <input type="file" class="form-input" id="customFile">
           </div>
-          <div class="mb-medium form-option form-switch">
-            <input class="option-input" type="checkbox" role="switch" id="switchCheckChecked" checked>
-            <label class="option-label" for="switchCheckChecked">زر على شكل مفتاح اختيار.</label>
+          <div class="mb-medium form-check form-switch">
+            <input class="check-input" type="checkbox" role="switch" id="switchCheckChecked" checked>
+            <label class="check-label" for="switchCheckChecked">زر على شكل مفتاح اختيار.</label>
           </div>
           <div class="mb-medium">
             <label for="customRange3" class="form-label">مثال على حقل اختيار نطاقي</label>
@@ -402,31 +402,31 @@ import Placeholder from "@shortcodes/Placeholder.astro"
               </select>
             </div>
             <div class="mb-medium">
-              <div class="form-option">
-                <input class="option-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                <label class="option-label" for="disabledFieldsetCheck">
+              <div class="form-check">
+                <input class="check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                <label class="check-label" for="disabledFieldsetCheck">
                   زر اختيار معطل
                 </label>
               </div>
             </div>
             <fieldset class="mb-medium">
               <legend>أزرار اختيار أحادي معطلين</legend>
-              <div class="form-option">
-                <input type="radio" name="radios" class="option-input" id="disabledRadio1" disabled>
-                <label class="option-label" for="disabledRadio1">خيار معطل</label>
+              <div class="form-check">
+                <input type="radio" name="radios" class="check-input" id="disabledRadio1" disabled>
+                <label class="check-label" for="disabledRadio1">خيار معطل</label>
               </div>
-              <div class="mb-medium form-option">
-                <input type="radio" name="radios" class="option-input" id="disabledRadio2" disabled>
-                <label class="option-label" for="disabledRadio2">خيار آخر معطل</label>
+              <div class="mb-medium form-check">
+                <input type="radio" name="radios" class="check-input" id="disabledRadio2" disabled>
+                <label class="check-label" for="disabledRadio2">خيار آخر معطل</label>
               </div>
             </fieldset>
             <div class="mb-medium">
               <label class="form-label" for="disabledCustomFile">رفع معطل</label>
               <input type="file" class="form-input" id="disabledCustomFile" disabled>
             </div>
-            <div class="mb-medium form-option form-switch">
-              <input class="option-input" type="checkbox" role="switch" id="disabledSwitchCheckChecked" checked disabled>
-              <label class="option-label" for="disabledSwitchCheckChecked">زر معطل على شكل مفتاح اختيار.</label>
+            <div class="mb-medium form-check form-switch">
+              <input class="check-input" type="checkbox" role="switch" id="disabledSwitchCheckChecked" checked disabled>
+              <label class="check-label" for="disabledSwitchCheckChecked">زر معطل على شكل مفتاح اختيار.</label>
             </div>
             <div class="mb-medium">
               <label for="disabledRange" class="form-label">حقل اختيار نطاقي معطل</label>
@@ -592,9 +592,9 @@ import Placeholder from "@shortcodes/Placeholder.astro"
             </div>
           </div>
           <div class="col-12">
-            <div class="form-option">
-              <input class="option-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-              <label class="option-label" for="invalidCheck3">
+            <div class="form-check">
+              <input class="check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+              <label class="check-label" for="invalidCheck3">
                 أوافق على الشروط والأحكام
               </label>
               <div class="invalid-feedback">

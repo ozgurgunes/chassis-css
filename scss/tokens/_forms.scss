@@ -7,11 +7,11 @@ $form-large-icon-size:                    $cx-size-common-form-input-large-icon 
 $form-small-icon-size:                    $cx-size-common-form-input-small-icon !default;
 // scss-docs-end form-icon-tokens
 
-// scss-docs-start form-option-tokens
-$form-option-check-icon:                  svg-icon($cx-icon-common-form-input-option-check) !default;
-$form-option-indeterminate-icon:          svg-icon($cx-icon-common-form-input-option-partial) !default;
-$form-option-radio-icon:                  svg-icon($cx-icon-common-form-input-option-radio) !default;
-// scss-docs-end form-option-tokens
+// scss-docs-start form-check-tokens
+$form-check-checkbox-icon:                svg-icon($cx-icon-common-form-input-check-checkbox) !default;
+$form-check-indeterminate-icon:           svg-icon($cx-icon-common-form-input-check-indeterminate) !default;
+$form-check-radio-icon:                   svg-icon($cx-icon-common-form-input-check-radio) !default;
+// scss-docs-end form-check-tokens
 
 // scss-docs-start form-select-tokens
 $form-select-caret-icon:                  svg-icon($cx-icon-common-form-input-select-caret) !default;
@@ -63,7 +63,7 @@ $form-idle-bg-floating:           $cx-color-common-form-input-idle-bg-floating !
 $form-idle-fg-active:             $cx-color-common-form-input-idle-fg-active !default;
 $form-idle-fg-inactive:           $cx-color-common-form-input-idle-fg-inactive !default;
 $form-idle-border-color:          $cx-color-common-form-input-idle-border !default;
-$form-idle-assist-color:          $cx-color-common-form-input-idle-assist !default;
+$form-idle-help-color:            $cx-color-common-form-input-idle-help !default;
 $form-idle-caret-color:           $cx-color-common-form-input-idle-caret !default;
 
 $form-disabled-bg-regular:        $cx-color-common-form-input-disabled-bg-regular !default;
@@ -71,7 +71,7 @@ $form-disabled-bg-floating:       $cx-color-common-form-input-disabled-bg-floati
 $form-disabled-fg-active:         $cx-color-common-form-input-disabled-fg-active !default;
 $form-disabled-fg-inactive:       $cx-color-common-form-input-disabled-fg-inactive !default;
 $form-disabled-border-color:      $cx-color-common-form-input-disabled-border !default;
-$form-disabled-assist-color:      $cx-color-common-form-input-disabled-assist !default;
+$form-disabled-help-color:        $cx-color-common-form-input-disabled-help !default;
 $form-disabled-caret-color:       $cx-color-common-form-input-disabled-caret !default;
 
 $form-focus-bg-regular:           $cx-color-common-form-input-focus-bg-regular !default;
@@ -79,7 +79,7 @@ $form-focus-bg-floating:          $cx-color-common-form-input-focus-bg-floating 
 $form-focus-fg-active:            $cx-color-common-form-input-focus-fg-active !default;
 $form-focus-fg-inactive:          $cx-color-common-form-input-focus-fg-inactive !default;
 $form-focus-border-color:         $cx-color-common-form-input-focus-border !default;
-$form-focus-assist-color:         $cx-color-common-form-input-focus-assist !default;
+$form-focus-help-color:           $cx-color-common-form-input-focus-help !default;
 // $form-focus-caret-color:          $cx-color-common-form-input-focus-caret !default;
 
 $form-invalid-bg-regular:         $cx-color-common-form-input-error-bg-regular !default;
@@ -87,7 +87,7 @@ $form-invalid-bg-floating:        $cx-color-common-form-input-error-bg-floating 
 $form-invalid-fg-active:          $cx-color-common-form-input-error-fg-active !default;
 $form-invalid-fg-inactive:        $cx-color-common-form-input-error-fg-inactive !default;
 $form-invalid-border-color:       $cx-color-common-form-input-error-border !default;
-$form-invalid-assist-color:       $cx-color-common-form-input-error-assist !default;
+$form-invalid-help-color:         $cx-color-common-form-input-error-help !default;
 // $form-invalid-caret-color:        $cx-color-common-form-input-error-caret !default;
 
 $form-valid-bg-regular:           $cx-color-common-form-input-success-bg-regular !default;
@@ -95,7 +95,7 @@ $form-valid-bg-floating:          $cx-color-common-form-input-success-bg-floatin
 $form-valid-fg-active:            $cx-color-common-form-input-success-fg-active !default;
 $form-valid-fg-inactive:          $cx-color-common-form-input-success-fg-inactive !default;
 $form-valid-border-color:         $cx-color-common-form-input-success-border !default;
-$form-valid-assist-color:         $cx-color-common-form-input-success-assist !default;
+$form-valid-help-color:           $cx-color-common-form-input-success-help !default;
 // $form-valid-caret-color:          $cx-color-common-form-input-success-caret !default;
 // scss-docs-end form-color-tokens
 // scss-docs-end form-tokens

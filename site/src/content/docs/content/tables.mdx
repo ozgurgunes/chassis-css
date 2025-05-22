@@ -12,16 +12,6 @@ Tables in Chassis CSS use an opt-in approach with the `.table` base class. This 
 
 <Table class="table" simplified={false} />
 
-## Alternate Variant
-
-<InFigma />
-
-Add `.alternate` to the table element to apply the design tokens based alternate variant to the entire table as in Figma.
-
-<Table class="table alternate" />
-
-<Callout name="info-figma-variant" />
-
 ## Accented tables
 
 Enhance your tables with visual accents to improve readability and create visual hierarchy. These options help users scan and interpret tabular data more effectively.
@@ -32,15 +22,11 @@ Add `.striped` to create alternating background colors for rows within the `<tbo
 
 <Table class="table striped" />
 
-<Table class="table striped alternate" />
-
 ### Striped columns
 
 Use `.striped-columns` to apply zebra-striping to columns instead of rows, which can be useful for data-dense tables where vertical scanning is important.
 
 <Table class="table striped-columns" />
-
-<Table class="table striped-columns alternate" />
 
 ## Hoverable rows
 
@@ -48,15 +34,11 @@ Add `.hoverable` to enable a hover state on table rows within a `<tbody>`.
 
 <Table class="table hoverable striped" />
 
-<Table class="table hoverable striped alternate" />
-
 ## Active tables
 
 Highlight a table row or cell by adding a `.active` class.
 
 <TableDeep class="table hoverable striped" active />
-
-<TableDeep class="table hoverable striped alternate" active />
 
 ## Table borders
 
@@ -68,8 +50,6 @@ Add `.bordered` to apply distinct borders to the entire table, including cell bo
 
 <Table class="table bordered" />
 
-<Table class="table bordered alternate" />
-
 [Border color utilities]([[docsref:/utilities/borders#border-color]]) can be added to change colors:
 
 <Table class="table bordered border-primary" />
@@ -79,8 +59,6 @@ Add `.bordered` to apply distinct borders to the entire table, including cell bo
 Apply `.borderless` to remove all borders from your table for a cleaner, more minimalist appearance.
 
 <Table class="table borderless" />
-
-<Table class="table borderless alternate" />
 
 ### Border Radius
 
@@ -196,12 +174,6 @@ Add `data-cx-theme="light"` or `data-cx-theme="dark"` to any table element:
 Context variants work seamlessly with explicit theme settings:
 
 <Table class="table context primary" theme="dark" />
-
-<Callout type="info">
-  Both alternate variant and dark mode can be used together. In dark mode, the alternate variant maintains its designer-controlled style but adapts to the dark theme color palette, just as it does in light mode.
-</Callout>
-
-<Table class="table alternate primary" theme="dark" />
 
 ## Table Sizing
 
@@ -586,7 +558,7 @@ Use `.table-responsive{-small|-medium|-large|-xlarge|-2xlarge}` as needed to cre
 
 <DocsCSS />
 
-### Variables
+### Custom properties
 
 <DocsCSSVars />
 
