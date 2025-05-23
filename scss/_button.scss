@@ -3,21 +3,13 @@
 //
 .button {
 
-  @extend %button, %solid-context-button, %component;
-
+  @extend %button, %button-medium, %solid-button, %component;
+  // scss-docs-start button-css-vars
   --#{$prefix}border-width: var(--#{$prefix}button-border-width, #{$button-border-width});
-  --#{$prefix}disabled-opacity: var(--#{$prefix}button-disabled-opacity, #{$button-disabled-opacity});
   --#{$prefix}box-shadow: var(--#{$prefix}button-box-shadow, #{$button-box-shadow});
   --#{$prefix}focus-box-shadow: var(--#{$prefix}button-focus-box-shadow, #{$button-focus-box-shadow});
-  --#{$prefix}hover-border-color: var(--#{$prefix}button-border-color, transparent);
-  // Sizing
-  --#{$prefix}padding-y: var(--#{$prefix}button-padding-y, #{$button-medium-padding-y});
-  --#{$prefix}padding-x: var(--#{$prefix}button-padding-x, #{$button-medium-padding-x + $button-medium-trim});
-  --#{$prefix}gap: var(--#{$prefix}button-gap, #{$button-medium-gap});
-  --#{$prefix}trim: var(--#{$prefix}button-trim, #{$button-medium-trim});
-  --#{$prefix}border-radius: var(--#{$prefix}button-border-radius, #{$button-medium-border-radius});
-  --#{$prefix}icon-size: var(--#{$prefix}button-icons-size, #{$button-medium-icon-size});
-  @include map-font($button-medium-font, button);
+  --#{$prefix}transition: var(--#{$prefix}button-transition, $button-transition);
+  // scss-docs-end button-css-vars
 
   box-sizing: content-box;
   display: inline-flex;
@@ -34,36 +26,22 @@
 
   @include gradient-bg(var(--#{$prefix}bg-color));
   @include box-shadow(var(--#{$prefix}box-shadow));
-  @include transition($button-transition);
+  @include transition(var(--#{$prefix}transition));
 
   &.outline {
-    @extend %outline-context-button;
+    @extend %outline-button;
   }
 
   &.smooth {
-    @extend %smooth-context-button;
+    @extend %smooth-button;
   }
 
-  &.large,
-  .button-group-large > & {
-    --#{$prefix}padding-y: var(--#{$prefix}button-large-padding-y, #{$button-large-padding-y});
-    --#{$prefix}padding-x: var(--#{$prefix}button-large-padding-x, #{$button-large-padding-x + $button-large-trim});
-    --#{$prefix}gap: var(--#{$prefix}button-large-gap, #{$button-large-gap});
-    --#{$prefix}trim: var(--#{$prefix}button-large-gap, #{$button-large-trim});
-    --#{$prefix}border-radius: var(--#{$prefix}button-large-border-radius, #{$button-large-border-radius});
-    --#{$prefix}icon-size: #{$button-large-icon-size};
-    @include map-font($button-large-font, button);
+  &.large {
+    @extend %button-large;
   }
 
-  &.small,
-  .button-group-small > & {
-    --#{$prefix}padding-y: var(--#{$prefix}button-small-padding-y, #{$button-small-padding-y});
-    --#{$prefix}padding-x: var(--#{$prefix}button-small-padding-x, #{$button-small-padding-x + $button-small-trim});
-    --#{$prefix}gap: var(--#{$prefix}button-small-gap, #{$button-small-gap});
-    --#{$prefix}trim: var(--#{$prefix}button-small-gap, #{$button-small-trim});
-    --#{$prefix}border-radius: var(--#{$prefix}button-small-border-radius, #{$button-small-border-radius});
-    --#{$prefix}icon-size: #{$button-small-icon-size};
-    @include map-font($button-small-font, button);
+  &.small {
+    @extend %button-small;
   }
 
   > .icon-start {
@@ -81,16 +59,19 @@
 
   // Make a button look and behave like a link
   &.link {
-    --#{$prefix}font-weight: #{$font-weight-normal};
-    --#{$prefix}fg-color: #{$button-link-color};
-    --#{$prefix}bg-color: transparent;
-    --#{$prefix}border-color: transparent;
-    --#{$prefix}hover-fg-color: #{$button-hover-color};
-    --#{$prefix}hover-border-color: transparent;
-    --#{$prefix}press-fg-color: #{$button-hover-color};
-    --#{$prefix}press-border-color: transparent;
-    --#{$prefix}disabled-fg-color: #{$fg-subtle};
-    --#{$prefix}disabled-border-color: transparent;
+    --#{$prefix}button-font-weight: #{$font-weight-normal};
+    --#{$prefix}button-idle-fg-color: #{$button-link-color};
+    --#{$prefix}button-idle-bg-color: transparent;
+    --#{$prefix}button-idle-border-color: transparent;
+    --#{$prefix}button-hover-fg-color: #{$button-hover-color};
+    --#{$prefix}button-hover-bg-color: transparent;
+    --#{$prefix}button-hover-border-color: transparent;
+    --#{$prefix}button-press-fg-color: #{$button-hover-color};
+    --#{$prefix}button-press-bg-color: transparent;
+    --#{$prefix}button-press-border-color: transparent;
+    --#{$prefix}button-disabled-fg-color: #{$fg-subtle};
+    --#{$prefix}button-disabled-bg-color: transparent;
+    --#{$prefix}button-disabled-border-color: transparent;
     --#{$prefix}box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
 
     text-decoration: $link-decoration;

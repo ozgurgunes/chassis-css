@@ -3,13 +3,11 @@
 //
 .chip {
 
-  @extend %button, %solid-context-button, %component;
+  @extend %button, %solid-button, %component;
 
   --#{$prefix}border-width: var(--#{$prefix}chip-border-width, #{$chip-border-width});
-  --#{$prefix}disabled-opacity: var(--#{$prefix}chip-disabled-opacity, #{$button-disabled-opacity});
   --#{$prefix}box-shadow: var(--#{$prefix}chip-box-shadow, #{$button-box-shadow});
   --#{$prefix}focus-box-shadow: var(--#{$prefix}chip-focus-box-shadow, #{$button-focus-box-shadow});
-  --#{$prefix}hover-border-color: var(--#{$prefix}chip-border-color, transparent);
   // Sizing
   --#{$prefix}padding-y: var(--#{$prefix}chip-padding-y, #{$chip-medium-padding-y + $chip-medium-trim});
   --#{$prefix}padding-x: var(--#{$prefix}chip-padding-x, #{$chip-medium-padding-x + $chip-medium-gap});
@@ -44,11 +42,11 @@
   @include transition($button-transition);
 
   &.outline {
-    @extend %outline-context-button;
+    @extend %outline-button;
   }
 
   &.smooth {
-    @extend %smooth-context-button;
+    @extend %smooth-button;
   }
 
   &.large {

@@ -76,11 +76,11 @@ export default () => {
   // Used in 'Show live notification' example in docs or StackBlitz
 
   // js-docs-start live-notification
-  const notificationPlaceholder = document.getElementById('liveNotificationPlaceholder')
+  const notificationPlaceholder = document.getElementById('notificationPlaceholder')
   const appendNotification = (message, type) => {
     const wrapper = document.createElement('div')
     wrapper.innerHTML = [
-      `<div class="notification ${type} dismissible" role="alert">`,
+      `<div class="notification ${type} dismissible fade show" role="alert">`,
       `   <div>${message}</div>`,
       '   <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>',
       '</div>'
@@ -89,7 +89,7 @@ export default () => {
     notificationPlaceholder.append(wrapper)
   }
 
-  const notificationTrigger = document.getElementById('liveNotificationButton')
+  const notificationTrigger = document.getElementById('notificationButton')
   if (notificationTrigger) {
     notificationTrigger.addEventListener('click', () => {
       appendNotification('Nice, you triggered this notification message!', 'success')

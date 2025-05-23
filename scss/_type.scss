@@ -112,7 +112,7 @@ ol {
   margin-bottom: $blockquote-margin-y;
   font: $font-style $font-weight #{$font-size} / #{$line-height} $font-family;
 
-  @include last-child();
+  @include last-mb-0();
 }
 
 .attribution {

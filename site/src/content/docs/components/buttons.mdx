@@ -1,73 +1,71 @@
 ---
 title: Buttons
-description: Use Chassis - CSS's custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+description: Explore Chassis CSS's button components — precision-crafted controls that seamlessly bridge your Figma designs and code implementation through design tokens.
 toc: true
 ---
 
 import { getData } from '@libs/data'
 
-<div class="button-examples">
+## Introduction
 
-## Base Class
+Buttons in Chassis CSS are designed to provide consistent interactive controls across your interface while maintaining pixel-perfect fidelity with your Figma designs. Unlike other frameworks that provide generic button styles, Chassis buttons are built on design tokens that synchronize directly with your Figma components, ensuring design-to-development coherence.
 
-Chassis - CSS has a base `.button` class that sets up the basic layout, typography and interactions of the buttons. By default, `.button` controls have body border and color definitions interactive abilities like focus and hover.
+## Foundation Class
 
-<Example code={`<button type="button" class="button">Base class</button>
+Chassis CSS provides a foundational `.button` class that establishes the core interactive behavior, layout parameters, and typographic treatment for all button variants. This class serves as the structural backbone upon which all button variants are built.
+
+<Example class="button-examples" code={`<button type="button" class="button">Foundation class</button>
 <button type="button" class="button default">Default Button</button>
 <button type="button" class="button primary">Primary Button</button>
 <button type="button" class="button link">Link</button>`} />
 
-The `.button` class is intended to be used in conjunction with a context class, or to serve as a basis for your own custom styles.
+The `.button` foundation class is designed to be extended with contextual classes that define purpose-specific styling, or to serve as a starting point for your own custom button implementations.
 
-<Callout type="warning">
-If you are using the `.button` class on its own, remember to at least define some explicit `:focus` and/or `:focus-visible` styles.
+<Callout type="info">
+  <strong>Accessibility:</strong> The foundational `.button` class already includes built-in focus styles that ensure proper keyboard navigation and accessibility compliance.
 </Callout>
 
-## Context Variants
+## Button Variants
 
-Chassis - CSS includes context color variants of buttons, each serving its own contextual purpose.
+Chassis CSS provides a range of purpose-driven button variants, each mapped to a specific design token context. These variants ensure consistent semantics across your interface.
 
-<Example code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name}">${contextColor.title}</button>`)]} />
+<Example class="button-examples" code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name}">${contextColor.title}</button>`)]} />
 
 <Callout name="warning-color-assistive-technologies" />
 
-### Outline Buttons
+### Outline Variants
 
-In need of a button, but not the hefty background colors they bring? Add `.outline` class to remove background of any button.
+For interfaces requiring more subtle interaction elements, the `.outline` modifier transforms any button into a borderline-focused variant with a transparent background while retaining its semantic color context.
 
-<Example code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name} outline">${contextColor.title}</button>`)]} />
+<Example class="button-examples" code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name} outline">${contextColor.title}</button>`)]} />
 
 <Callout>
-  Some of the button styles use a relatively light foreground color, and should only be used on a dark background in order to have sufficient contrast.
+  Some button variants use lighter foreground colors and are optimized for dark backgrounds to ensure proper contrast ratios.
 </Callout>
 
-### Smooth Buttons
+### Smooth Variants
 
-Add `.smooth` class to fade their backgrounds in need of less attraction.
+The `.smooth` modifier applies a reduced-opacity background to buttons, creating a more subdued presence in the interface while maintaining their contextual meaning.
 
-<Example code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name} smooth">${contextColor.title}</button>`)]} />
+<Example class="button-examples" code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name} smooth">${contextColor.title}</button>`)]} />
 
-## Disable text wrapping
+## Element Compatibility
 
-If you don’t want the button text to wrap, you can add the `.text-nowrap` class to the button. In Sass, you can set `$button-white-space: nowrap` to disable text wrapping for each button.
+While the `.button` classes are optimized for the semantic `<button>` element, they work equally well with alternative elements:
 
-## Button tags
-
-The `.button` classes are designed to be used with the `<button>` element. However, you can also use these classes on `<a>` or `<input>` elements (though some browsers may apply a slightly different rendering).
-
-When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
-
-<Example code={`<button class="button primary" type="submit">Button</button>
+<Example class="button-examples" code={`<button class="button primary" type="submit">Button</button>
 <input class="button primary" type="button" value="Input">
 <input class="button primary" type="submit" value="Submit">
 <input class="button primary" type="reset" value="Reset">
-<a class="button primary" href="http://example.com" role="button">Link</a>`} />
+<a class="button primary" href="" role="button">Link</a>`} />
 
-## Icons
+When using button classes on `<a>` elements for in-page functionality rather than navigation, include `role="button"` to ensure proper semantic meaning for assistive technologies.
 
-Use the `.icon-start` or `.icon-end` classes for proper spacing to add icons to a button. You can use icon font or SVG icon.
+## Icon Integration
 
-<Example code={`<button type="button" class="button default">
+Chassis CSS provides purpose-built classes for icon placement within buttons. Use `.icon-start` or `.icon-end` with the `.icon` class for proper alignment and spacing with both SVG icons and icon fonts.
+
+<Example class="button-examples" code={`<button type="button" class="button default">
     <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default
   </button>
@@ -84,11 +82,11 @@ Use the `.icon-start` or `.icon-end` classes for proper spacing to add icons to 
     <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
   </button>`} />
 
-## Sizes
+## Size Variants
 
-To use larger or smaller buttons, add `.large` or `.small` to button class.
+Chassis provides three predefined size variants through the `.large` and `.small` modifier classes, with the default size applied when no modifier is present.
 
-<Example code={`<button type="button" class="button default large">
+<Example class="button-examples" code={`<button type="button" class="button default large">
     Default
   </button>
   <button type="button" class="button default large">
@@ -103,7 +101,7 @@ To use larger or smaller buttons, add `.large` or `.small` to button class.
     Primary
   </button>`} />
 
-<Example code={`<button type="button" class="button default small">
+<Example class="button-examples" code={`<button type="button" class="button default small">
     Default
   </button>
   <button type="button" class="button default small">
@@ -118,18 +116,20 @@ To use larger or smaller buttons, add `.large` or `.small` to button class.
     Primary
   </button>`} />
 
-You can even roll your own custom sizing with CSS variables:
+### Custom Sizing
 
-<Example code={`<button type="button" class="button primary"
+Beyond the predefined sizes, Chassis's token-based architecture enables precise sizing control through CSS variables:
+
+<Example class="button-examples" code={`<button type="button" class="button primary"
     style="--cx-button-padding-y: .75rem; --cx-button-padding-x: 1.5rem; --cx-button-font-size: .75rem;">
-    Custom button
+    Custom-sized button
   </button>`} />
 
-## Disabled state
+## Disabled State
 
-Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element. Disabled buttons have `pointer-events: none` applied to, preventing hover and active states from triggering.
+Chassis CSS handles button disabling in a semantically appropriate way. For native button elements, use the `disabled` attribute:
 
-<Example code={`<button type="button" class="button default" disabled>
+<Example class="button-examples" code={`<button type="button" class="button default" disabled>
     <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
     Default Button
   </button>
@@ -154,68 +154,86 @@ Make buttons look inactive by adding the `disabled` boolean attribute to any `<b
     Primary Button
   </button>`} />
 
-Disabled buttons using the `<a>` element behave a bit different:
+For link-based buttons using the `<a>` element, Chassis provides a different approach:
 
-- `<a>`s don’t support the `disabled` attribute, so you must add the `.disabled` class to make it visually appear disabled.
-- Some future-friendly styles are included to disable all `pointer-events` on anchor buttons.
-- Disabled buttons using `<a>` should include the `aria-disabled="true"` attribute to indicate the state of the element to assistive technologies.
-- Disabled buttons using `<a>` *should not* include the `href` attribute.
-
-<Example code={`<a class="button default disabled" role="button" aria-disabled="true">Default Link</a>
+<Example class="button-examples" code={`<a class="button default disabled" role="button" aria-disabled="true">Default Link</a>
 <a class="button primary disabled" role="button" aria-disabled="true">Primary Link</a>
 <a class="button secondary disabled" role="button" aria-disabled="true">Secondary Link</a>`} />
 
-### Link functionality caveat
+### Disabled Links
 
-To cover cases where you have to keep the `href` attribute on a disabled link, the `.disabled` class uses `pointer-events: none` to try to disable the link functionality of `<a>`s. Note that this CSS property is not yet standardized for HTML, but all modern browsers support it. In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, in addition to `aria-disabled="true"`, also include a `tabindex="-1"` attribute on these links to prevent them from receiving keyboard focus, and use custom JavaScript to disable their functionality altogether.
+When implementing disabled link buttons, follow these guidelines:
 
-<Example code={`<a href="#" class="button default disabled" tabindex="-1" role="button" aria-disabled="true">Default Link</a>
+1. Add the `.disabled` class to apply the visual disabled state
+2. Include `aria-disabled="true"` to communicate the disabled state to assistive technologies
+3. Omit the `href` attribute when possible to prevent navigation
+
+For cases where the `href` must be retained:
+
+<Example class="button-examples" code={`<a href="#" class="button default disabled" tabindex="-1" role="button" aria-disabled="true">Default Link</a>
 <a href="#" class="button primary disabled" tabindex="-1" role="button" aria-disabled="true">Primary Link</a>
 <a href="#" class="button secondary disabled" tabindex="-1" role="button" aria-disabled="true">Secondary Link</a>`} />
 
-## Block buttons
+In these instances, the `.disabled` class applies `pointer-events: none` which disables mouse interaction in modern browsers. However, since keyboard navigation remains possible, add `tabindex="-1"` to prevent keyboard focus and implement JavaScript to fully disable the functionality.
 
-Create responsive stacks of full-width, “block buttons” with a mix of our display and gap utilities. By using utilities instead of button-specific classes, we have much greater control over spacing, alignment, and responsive behaviors.
+## Layout Patterns
 
-<Example code={`<div class="d-grid gap-xsmall">
+Chassis CSS leverages its utility system for flexible button layouts rather than providing specific button-container classes. This approach provides greater control over spacing, alignment, and responsive behavior.
+
+### Full-Width Buttons
+
+Create responsive stacks of full-width buttons using Chassis's grid utilities:
+
+<Example class="button-examples" code={`<div class="d-grid gap-xsmall">
     <button class="button default" type="button">Default</button>
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-Here we create a responsive variation, starting with vertically stacked buttons until the `md` breakpoint, where `.d-medium-block` replaces the `.d-grid` class, thus nullifying the `gap-xsmall` utility. Resize your browser to see them change.
+### Responsive Buttons
 
-<Example code={`<div class="d-grid gap-xsmall d-medium-block">
+Transform button layouts at different breakpoints using Chassis's responsive utilities:
+
+<Example class="button-examples" code={`<div class="d-grid gap-xsmall d-medium-block">
     <button class="button default" type="button">Default</button>
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-You can adjust the width of your block buttons with grid column width classes. For example, for a half-width “block button”, use `.col-6`. Center it horizontally with `.mx-auto`, too.
+### Width Control
 
-<Example code={`<div class="d-grid gap-xsmall col-6 mx-auto">
+Apply grid column utilities to control button width precisely:
+
+<Example class="button-examples" code={`<div class="d-grid gap-xsmall col-6 mx-auto">
     <button class="button default" type="button">Default</button>
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-Additional utilities can be used to adjust the alignment of buttons when horizontal. Here we’ve taken our previous responsive example and added some flex utilities and a margin utility on the button to right-align the buttons when they’re no longer stacked.
+### Alignment Control
 
-<Example code={`<div class="d-grid gap-xsmall d-medium-flex justify-content-medium-end">
+Use flex utilities to control button alignment within groups:
+
+<Example class="button-examples" code={`<div class="d-grid gap-xsmall d-medium-flex justify-content-medium-end">
     <button class="button default" type="button">Default</button>
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-## Button plugin
+## Text Handling
 
-The button plugin allows you to create simple on/off toggle buttons.
+By default, button text will wrap to accommodate its container. To prevent text wrapping, add the `.text-nowrap` utility class. For global control in your Sass build, configure the `$button-white-space: nowrap` variable.
 
-<Callout>
-Visually, these toggle buttons are identical to the [checkbox toggle buttons]([[docsref:/forms/checks-radios#checkbox-toggle-buttons]]). However, they are conveyed differently by assistive technologies: the checkbox toggles will be announced by screen readers as “checked”/“not checked” (since, despite their appearance, they are fundamentally still checkboxes), whereas these toggle buttons will be announced as “button”/“button pressed”. The choice between these two approaches will depend on the type of toggle you are creating, and whether or not the toggle will make sense to users when announced as a checkbox or as an actual button.
-</Callout>
+<Example class="button-examples" code={`<div style="max-width: 200px;">
+    <p><button type="button" class="button primary">Button with a longer text that will wrap</button></p>
+    <p><button type="button" class="button primary text-nowrap">While no-wrap text will extend beyond boundaries</button><p>
+  </div>`} />
 
-### Toggle states
+## Toggle Functionality
 
-Add `data-cx-toggle="button"` to toggle a button’s `active` state. If you’re pre-toggling a button, you must manually add the `.active` class **and** `aria-pressed="true"` to ensure that it is conveyed appropriately to assistive technologies.
+Chassis includes a toggle button plugin for implementing stateful buttons. These differ from checkbox toggles in how they're communicated to assistive technologies (announced as "button"/"button pressed" rather than "checked"/"not checked").
 
-<Example code={`<p class="d-inline-flex gap-xsmall">
+### Toggle States
+
+Add `data-cx-toggle="button"` to enable toggle functionality. For pre-toggled buttons, add both the `.active` class and `aria-pressed="true"` attribute:
+
+<Example class="button-examples" code={`<p class="d-inline-flex gap-xsmall">
     <button type="button" class="button default" data-cx-toggle="button" aria-pressed="false">Toggle button</button>
     <button type="button" class="button default active" data-cx-toggle="button" aria-pressed="true">Active toggle</button>
     <button type="button" class="button default" disabled data-cx-toggle="button" aria-pressed="false">Disabled toggle</button>
@@ -228,7 +246,9 @@ Add `data-cx-toggle="button"` to toggle a button’s `active` state. If you’re
     <button type="button" class="button primary active" disabled data-cx-toggle="button" aria-pressed="true">Disabled active</button>
   </p>`} />
 
-<Example code={`<p class="d-inline-flex gap-xsmall">
+Toggle functionality is also available for link buttons:
+
+<Example class="button-examples" code={`<p class="d-inline-flex gap-xsmall">
     <a href="#" class="button default" role="button" data-cx-toggle="button" aria-pressed="false">Toggle link</a>
     <a href="#" class="button default active" role="button" data-cx-toggle="button" aria-pressed="true">Active toggle</a>
     <a href="#" class="button default disabled" aria-disabled="true" role="button" data-cx-toggle="button" aria-pressed="false">Disabled toggle</a>
@@ -241,9 +261,9 @@ Add `data-cx-toggle="button"` to toggle a button’s `active` state. If you’re
     <a href="#" class="button primary active disabled" aria-disabled="true" role="button" data-cx-toggle="button" aria-pressed="true">Disabled active</a>
   </p>`} />
 
-### Methods
+## JavaScript API
 
-You can create a button instance with the button constructor, for example:
+The Button component provides a JavaScript API for programmatic control:
 
 ```js
 const cxButton = new chassis.Button('#myButton')
@@ -252,13 +272,13 @@ const cxButton = new chassis.Button('#myButton')
 <CxTable>
 | Method | Description |
 | --- | --- |
-| `dispose` | Destroys an element’s button. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the button instance associated with a DOM element, you can use it like this: `chassis.Button.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a button instance associated with a DOM element or creates a new one in case it wasn’t initialized. You can use it like this: `chassis.Button.getOrCreateInstance(element)`. |
-| `toggle` | Toggles push state. Gives the button the appearance that it has been activated. |
+| `dispose` | Cleans up a button instance and removes associated DOM data |
+| `getInstance` | Static method that retrieves the button instance associated with a DOM element: `chassis.Button.getInstance(element)` |
+| `getOrCreateInstance` | Static method that returns an existing button instance or creates one if none exists: `chassis.Button.getOrCreateInstance(element)` |
+| `toggle` | Toggles the button's active state |
 </CxTable>
 
-For example, to toggle all buttons
+Example of toggling all buttons programmatically:
 
 ```js
 document.querySelectorAll('.button').forEach(buttonElement => {
@@ -271,52 +291,56 @@ document.querySelectorAll('.button').forEach(buttonElement => {
 
 <DocsCSS />
 
-### Custom properties
+### Custom Properties
 
 <DocsCSSVars />
+<hr />
+Sizing:
+<ScssDocs name="button-medium-css-vars" file="scss/placeholders/_button.scss" />
+Idle (default) state:
+<ScssDocs name="button-idle-css-vars" file="scss/placeholders/_button.scss" />
+Hover state:
+<ScssDocs name="button-hover-css-vars" file="scss/placeholders/_button.scss" />
+Press (active) state:
+<ScssDocs name="button-press-css-vars" file="scss/placeholders/_button.scss" />
+Focus state:
+<ScssDocs name="button-disabled-css-vars" file="scss/placeholders/_button.scss" />
+Common variables:
+<ScssDocs name="button-css-vars" file="scss/_button.scss" />
 
-### Sass variables
+### Sass Variables
 
-<DocsSASSVars />
+<DocsSASSVars notExposed={true} />
 
 <ScssDocs name="button-variables" file="scss/_variables.scss" />
 
-### Sass maps
+### Sass Mixins
 
-<ScssDocs  name="button-colors-map" file="scss/maps/_buttons.scss" />
-
-### Sass mixins
-
-Mixins used to create button variants
+Chassis CSS automatically applies these specialized mixins to each semantic context color to generate the complete suite of button variants while maintaining design token consistency:
 
 #### Solid Button Mixin
 
-<ScssDocs  name="solid-button-mixin" file="scss/mixins/_button.scss" />
+<ScssDocs name="solid-button-mixin" file="scss/mixins/_button.scss" />
 
 #### Outline Button Mixin
 
-<ScssDocs  name="outline-button-mixin" file="scss/mixins/_button.scss" />
+<ScssDocs name="outline-button-mixin" file="scss/mixins/_button.scss" />
 
 #### Smooth Button Mixin
 
-<ScssDocs  name="smooth-button-mixin" file="scss/mixins/_button.scss" />
-
-#### Placeholder Selectors
-
-<ScssDocs  name="button-placeholder-selectors" file="scss/placeholders/_button.scss" />
+<ScssDocs name="smooth-button-mixin" file="scss/mixins/_button.scss" />
 
 ### Custom Buttons
 
-Below code is the actual code of buttons we are using in documentation site.
+The following example demonstrates how the documentation site implements its custom button set:
 
-<ScssDocs  name="cxd-button" file="site/src/scss/_buttons.scss" />
+<ScssDocs name="cxd-button" file="site/src/scss/_buttons.scss" />
 
-This will create this button set:
+This code produces the following button variants:
 
-<Example code={`<button type="button" class="cxd-button">Base</button>
+<Example class="button-examples" code={`<button type="button" class="cxd-button">Base</button>
 <button type="button" class="cxd-button default">Default</button>
 <button type="button" class="cxd-button primary">Primary</button>
 <button type="button" class="cxd-button large">Large</button>
 <button type="button" class="cxd-button default large">Default</button>
 <button type="button" class="cxd-button primary large">Primary</button>`} />
-</div>

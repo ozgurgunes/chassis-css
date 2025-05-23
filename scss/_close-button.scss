@@ -13,7 +13,6 @@
   --#{$prefix}hover-opacity: var(--#{$prefix}close-button-hover-opacity, #{$close-button-hover-opacity});
   --#{$prefix}focus-shadow: var(--#{$prefix}close-button-focus-shadow, #{$close-button-focus-shadow});
   --#{$prefix}focus-opacity: var(--#{$prefix}close-button-focus-opacity, #{$close-button-focus-opacity});
-  --#{$prefix}disabled-opacity: var(--#{$prefix}close-button-disabled-opacity, #{$close-button-disabled-opacity});
 
   box-sizing: content-box;
   width: var(--#{$prefix}size);
@@ -60,7 +59,7 @@
   &.disabled {
     pointer-events: none;
     user-select: none;
-    opacity: var(--#{$prefix}disabled-opacity);
+    opacity: $close-button-disabled-opacity;
   }
 
   &.large {

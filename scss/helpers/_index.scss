@@ -12,8 +12,12 @@
 @import "text-truncation";
 @import "vr";
 
-.last-child {
+.last-mb-0 > p:last-child {
   margin-bottom: 0;
+}
+
+.last-mb-reset > p:last-child {
+  margin-bottom: revert !important; // stylelint-disable-line declaration-no-important
 }
 
 // .form-floating {

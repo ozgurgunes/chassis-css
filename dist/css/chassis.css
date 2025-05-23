@@ -3599,7 +3599,7 @@ progress {
   --cx-bg-inverse: var(--cx-context-bg-inverse);
   --cx-bg-solid: var(--cx-context-bg-solid);
   --cx-bg-highlight: var(--cx-context-bg-inverse);
-  --cx-border-main: var(--cx-context-fg-solid);
+  --cx-border-main: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-border-main));
   --cx-border-subtle: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-border-subtle));
   --cx-icon-main: var(--cx-context-fg-solid);
   --cx-icon-subtle: rgba(var(--cx-context-fg-solid-rgb), var(--cx-opacity-icon-subtle));
@@ -3655,7 +3655,7 @@ progress {
   --cx-bg-inverse: var(--cx-context-bg-inverse);
   --cx-bg-solid: var(--cx-context-bg-solid);
   --cx-bg-highlight: var(--cx-context-bg-inverse);
-  --cx-border-main: var(--cx-context-fg-main);
+  --cx-border-main: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-border-main));
   --cx-border-subtle: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-border-subtle));
   --cx-icon-main: var(--cx-context-fg-main);
   --cx-icon-subtle: rgba(var(--cx-context-fg-main-rgb), var(--cx-opacity-icon-subtle));
@@ -3791,23 +3791,20 @@ progress {
   --cx-bg-color: var(--cx-button-hover-bg-color, var(--cx-bg-hover));
   --cx-icon-color: var(--cx-button-hover-icon-color, var(--cx-fg-hover));
   --cx-border-color: var(--cx-button-hover-border-color, var(--cx-border-hover));
-  color: var(--cx-fg-color);
 }
 .button-check + .chip:hover, .button-check + .button:hover {
   --cx-fg-color: var(--cx-fg-idle);
   --cx-bg-color: var(--cx-bg-idle);
   --cx-border-color: var(--cx-border-idle);
 }
-.chip:focus-visible, .button:focus-visible {
+.chip:hover:is(a), .button:hover:is(a) {
+  color: var(--cx-fg-color);
+}
+.chip:focus-visible, .button:focus-visible, .button-check:focus-visible + .chip, .button-check:focus-visible + .button {
   --cx-fg-color: var(--cx-fg-hover);
   --cx-border-color: var(--cx-border-hover);
   background-color: var(--cx-bg-hover);
   background-image: var(--cx-bg-gradient);
-  outline: 0;
-  box-shadow: var(--cx-box-shadow), var(--cx-focus-box-shadow);
-}
-.button-check:focus-visible + .chip, .button-check:focus-visible + .button {
-  --cx-border-color: var(--cx-hover-border-color);
   outline: 0;
   box-shadow: var(--cx-box-shadow), var(--cx-focus-box-shadow);
 }
@@ -3832,11 +3829,46 @@ progress {
   --cx-border-color: var(--cx-button-disabled-border-color, var(--cx-border-disabled));
   pointer-events: none;
   background-image: none;
-  opacity: var(--cx-opacity-disabled);
+  opacity: 1;
   box-shadow: none;
 }
 .chip:visited, .button:visited {
   color: var(--cx-fg-color);
+}
+
+.button {
+  --cx-padding-y: var(--cx-button-padding-y, 0.5rem);
+  --cx-padding-x: var(--cx-button-padding-x, 1rem);
+  --cx-gap: var(--cx-button-gap, 0.5rem);
+  --cx-trim: var(--cx-button-trim, 0.25rem);
+  --cx-border-radius: var(--cx-button-border-radius, var(--cx-border-radius-medium));
+  --cx-icon-size: var(--cx-button-icon-size, 1.5rem);
+  --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
+  --cx-font-size: var(--cx-button-font-size, var(--cx-font-size-medium));
+  --cx-font-weight: var(--cx-button-font-weight, var(--cx-font-weight-mass));
+  --cx-line-height: var(--cx-button-line-height, var(--cx-line-height-medium));
+}
+
+.button-group.large > .button, .button.large {
+  --cx-button-padding-y: 0.625rem;
+  --cx-button-padding-x: 1.25rem;
+  --cx-button-gap: 0.75rem;
+  --cx-button-trim: 0.25rem;
+  --cx-button-border-radius: var(--cx-border-radius-medium);
+  --cx-button-icon-size: 1.75rem;
+  --cx-button-font-size: var(--cx-font-size-large);
+  --cx-button-line-height: var(--cx-line-height-large);
+}
+
+.button-group.small > .button, .button.small {
+  --cx-button-padding-y: 0.375rem;
+  --cx-button-padding-x: 0.75rem;
+  --cx-button-gap: 0.25rem;
+  --cx-button-trim: 0.25rem;
+  --cx-button-border-radius: var(--cx-border-radius-medium);
+  --cx-button-icon-size: 1.25rem;
+  --cx-button-font-size: var(--cx-font-size-small);
+  --cx-button-line-height: var(--cx-line-height-small);
 }
 
 .default.chip, .default.button {
@@ -3845,10 +3877,10 @@ progress {
   --cx-border-idle: var(--cx-button-default-border-idle, var(--cx-default-border-main));
   --cx-fg-hover: var(--cx-button-default-fg-hover, var(--cx-default-fg-hover));
   --cx-bg-hover: var(--cx-button-default-bg-hover, var(--cx-default-bg-hover));
-  --cx-border-hover: var(--cx-button-default-border-hover, var(--cx-default-border-subtle));
+  --cx-border-hover: var(--cx-button-default-border-hover, var(--cx-default-border-main));
   --cx-fg-press: var(--cx-button-default-fg-press, var(--cx-default-fg-press));
   --cx-bg-press: var(--cx-button-default-bg-press, var(--cx-default-bg-press));
-  --cx-border-press: var(--cx-button-default-border-press, var(--cx-default-border-main));
+  --cx-border-press: var(--cx-button-default-border-press, var(--cx-default-fg-button));
   --cx-fg-disabled: var(--cx-button-default-fg-disabled, var(--cx-default-fg-disabled));
   --cx-bg-disabled: var(--cx-button-default-bg-disabled, var(--cx-default-bg-disabled));
   --cx-border-disabled: var(--cx-button-default-border-disabled, var(--cx-default-transparent-color));
@@ -3859,10 +3891,10 @@ progress {
   --cx-border-idle: var(--cx-button-alternate-border-idle, var(--cx-alternate-border-main));
   --cx-fg-hover: var(--cx-button-alternate-fg-hover, var(--cx-alternate-fg-hover));
   --cx-bg-hover: var(--cx-button-alternate-bg-hover, var(--cx-alternate-bg-hover));
-  --cx-border-hover: var(--cx-button-alternate-border-hover, var(--cx-alternate-border-subtle));
+  --cx-border-hover: var(--cx-button-alternate-border-hover, var(--cx-alternate-border-main));
   --cx-fg-press: var(--cx-button-alternate-fg-press, var(--cx-alternate-fg-press));
   --cx-bg-press: var(--cx-button-alternate-bg-press, var(--cx-alternate-bg-press));
-  --cx-border-press: var(--cx-button-alternate-border-press, var(--cx-alternate-border-main));
+  --cx-border-press: var(--cx-button-alternate-border-press, var(--cx-alternate-fg-button));
   --cx-fg-disabled: var(--cx-button-alternate-fg-disabled, var(--cx-alternate-fg-disabled));
   --cx-bg-disabled: var(--cx-button-alternate-bg-disabled, var(--cx-alternate-bg-disabled));
   --cx-border-disabled: var(--cx-button-alternate-border-disabled, var(--cx-alternate-transparent-color));
@@ -4754,6 +4786,7 @@ ol.inline li:not(:last-child) {
   margin-bottom: 1rem;
   font: italic var(--cx-font-weight-html-blockquote) var(--cx-font-size-html-blockquote)/var(--cx-line-height-html-blockquote) var(--cx-font-family-html);
 }
+
 .attribution {
   font: normal var(--cx-font-weight-html-cite) var(--cx-font-size-html-cite)/var(--cx-line-height-html-cite) var(--cx-font-family-html);
   color: var(--cx-default-fg-subtle);
@@ -8310,20 +8343,9 @@ textarea.form-input {
 
 .button {
   --cx-border-width: var(--cx-button-border-width, var(--cx-border-width-medium));
-  --cx-disabled-opacity: var(--cx-button-disabled-opacity, 1);
   --cx-box-shadow: var(--cx-button-box-shadow, inset 0 0.0625rem 0 rgba(255, 255, 255, 0.15), 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.075));
   --cx-focus-box-shadow: var(--cx-button-focus-box-shadow, 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25));
-  --cx-hover-border-color: var(--cx-button-border-color, transparent);
-  --cx-padding-y: var(--cx-button-padding-y, 0.5rem);
-  --cx-padding-x: var(--cx-button-padding-x, 1rem);
-  --cx-gap: var(--cx-button-gap, 0.5rem);
-  --cx-trim: var(--cx-button-trim, 0.25rem);
-  --cx-border-radius: var(--cx-button-border-radius, var(--cx-border-radius-medium));
-  --cx-icon-size: var(--cx-button-icons-size, 1.5rem);
-  --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-button-font-size, var(--cx-font-size-medium));
-  --cx-font-weight: var(--cx-button-font-weight, var(--cx-font-weight-mass));
-  --cx-line-height: var(--cx-button-line-height, var(--cx-line-height-medium));
+  --cx-transition: var(--cx-button-transition, $button-transition);
   box-sizing: content-box;
   display: inline-flex;
   gap: var(--cx-gap);
@@ -8340,36 +8362,12 @@ textarea.form-input {
   background-color: var(--cx-bg-color);
   background-image: var(--cx-bg-gradient);
   box-shadow: var(--cx-box-shadow);
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: var(--cx-transition);
 }
 @media (prefers-reduced-motion: reduce) {
   .button {
     transition: none;
   }
-}
-.button.large, .button-group-large > .button {
-  --cx-padding-y: var(--cx-button-large-padding-y, 0.625rem);
-  --cx-padding-x: var(--cx-button-large-padding-x, 1.25rem);
-  --cx-gap: var(--cx-button-large-gap, 0.75rem);
-  --cx-trim: var(--cx-button-large-gap, 0.25rem);
-  --cx-border-radius: var(--cx-button-large-border-radius, var(--cx-border-radius-medium));
-  --cx-icon-size: 1.25rem;
-  --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-button-font-size, var(--cx-font-size-large));
-  --cx-font-weight: var(--cx-button-font-weight, var(--cx-font-weight-mass));
-  --cx-line-height: var(--cx-button-line-height, var(--cx-line-height-large));
-}
-.button.small, .button-group-small > .button {
-  --cx-padding-y: var(--cx-button-small-padding-y, 0.375rem);
-  --cx-padding-x: var(--cx-button-small-padding-x, 0.75rem);
-  --cx-gap: var(--cx-button-small-gap, 0.25rem);
-  --cx-trim: var(--cx-button-small-gap, 0.25rem);
-  --cx-border-radius: var(--cx-button-small-border-radius, var(--cx-border-radius-medium));
-  --cx-icon-size: 1.25rem;
-  --cx-font-family: var(--cx-button-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-button-font-size, var(--cx-font-size-small));
-  --cx-font-weight: var(--cx-button-font-weight, var(--cx-font-weight-mass));
-  --cx-line-height: var(--cx-button-line-height, var(--cx-line-height-small));
 }
 .button > .icon-start {
   margin-right: var(--cx-trim);
@@ -8380,16 +8378,19 @@ textarea.form-input {
   margin-left: var(--cx-trim);
 }
 .button.link {
-  --cx-font-weight: var(--cx-font-weight-text-normal);
-  --cx-fg-color: var(--cx-link-main);
-  --cx-bg-color: transparent;
-  --cx-border-color: transparent;
-  --cx-hover-fg-color: var(--cx-link-hover);
-  --cx-hover-border-color: transparent;
-  --cx-press-fg-color: var(--cx-link-hover);
-  --cx-press-border-color: transparent;
-  --cx-disabled-fg-color: var(--cx-default-fg-subtle);
-  --cx-disabled-border-color: transparent;
+  --cx-button-font-weight: var(--cx-font-weight-text-normal);
+  --cx-button-idle-fg-color: var(--cx-link-main);
+  --cx-button-idle-bg-color: transparent;
+  --cx-button-idle-border-color: transparent;
+  --cx-button-hover-fg-color: var(--cx-link-hover);
+  --cx-button-hover-bg-color: transparent;
+  --cx-button-hover-border-color: transparent;
+  --cx-button-press-fg-color: var(--cx-link-hover);
+  --cx-button-press-bg-color: transparent;
+  --cx-button-press-border-color: transparent;
+  --cx-button-disabled-fg-color: var(--cx-default-fg-subtle);
+  --cx-button-disabled-bg-color: transparent;
+  --cx-button-disabled-border-color: transparent;
   --cx-box-shadow: 0 0 0 #000;
   text-decoration: underline;
   background-image: none;
@@ -8457,7 +8458,6 @@ textarea.form-input {
 .button-group > .button-group > .button:not(.outline) {
   border-left: var(--cx-border-width) solid var(--cx-fg-disabled);
 }
-
 .dropdown-toggle-split {
   padding-right: 0.5625rem;
   padding-left: 0.5625rem;
@@ -8517,10 +8517,8 @@ textarea.form-input {
 
 .chip {
   --cx-border-width: var(--cx-chip-border-width, var(--cx-border-width-medium));
-  --cx-disabled-opacity: var(--cx-chip-disabled-opacity, 1);
   --cx-box-shadow: var(--cx-chip-box-shadow, inset 0 0.0625rem 0 rgba(255, 255, 255, 0.15), 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.075));
   --cx-focus-box-shadow: var(--cx-chip-focus-box-shadow, 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25));
-  --cx-hover-border-color: var(--cx-chip-border-color, transparent);
   --cx-padding-y: var(--cx-chip-padding-y, 0.375rem);
   --cx-padding-x: var(--cx-chip-padding-x, 0.75rem);
   --cx-gap: var(--cx-chip-gap, 0.5rem);
@@ -10250,6 +10248,7 @@ textarea.form-input {
 }
 
 .notification {
+  --cx-bg-color: var(--cx-notification-bg-color, var(--cx-bg-main));
   --cx-padding-y: var(--cx-notification-padding-y, 0.75rem);
   --cx-padding-x: var(--cx-notification-padding-x, 1rem);
   --cx-gap: var(--cx-notification-gap, 1rem);
@@ -10271,7 +10270,7 @@ textarea.form-input {
 }
 .notification .close-button {
   position: absolute;
-  top: 0.375rem;
+  top: calc(0.375rem + var(--cx-border-width-medium));
   right: 0.5rem;
 }
 .notification a {
@@ -10279,6 +10278,10 @@ textarea.form-input {
 }
 .notification:has(.close-button) {
   padding-right: 3.5rem;
+}
+.notification:has(.notification-icon) {
+  display: flex;
+  align-items: center;
 }
 
 .notification-title {
@@ -10289,6 +10292,7 @@ textarea.form-input {
 .notification-icon {
   --cx-icon-color: var(--cx-notification-icon-color, var(--cx-fg-main));
   --cx-icon-size: var(--cx-notification-icon-size, 1.75rem);
+  align-self: flex-start;
 }
 
 @keyframes progress-bar-stripes {
@@ -10589,7 +10593,6 @@ textarea.form-input {
   --cx-hover-opacity: var(--cx-close-button-hover-opacity, 0.75);
   --cx-focus-shadow: var(--cx-close-button-focus-shadow, 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25));
   --cx-focus-opacity: var(--cx-close-button-focus-opacity, 1);
-  --cx-disabled-opacity: var(--cx-close-button-disabled-opacity, 0.25);
   box-sizing: content-box;
   width: var(--cx-size);
   height: var(--cx-size);
@@ -10634,7 +10637,7 @@ textarea.form-input {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  opacity: var(--cx-disabled-opacity);
+  opacity: 0.25;
 }
 .close-button.large {
   --cx-close-button-size: 1.75rem;
@@ -14122,8 +14125,12 @@ textarea.form-input {
   opacity: var(--cx-opacity-solid);
 }
 
-.last-child, .blockquote > p:last-child, .accordion > details > .accordion-body > p:last-child, .notification > p:last-child {
+.last-mb-0 > p:last-child, .blockquote > p:last-child, .accordion > details > .accordion-body > p:last-child, .notification > p:last-child {
   margin-bottom: 0;
+}
+
+.last-mb-reset > p:last-child {
+  margin-bottom: revert !important;
 }
 
 .default-dim-slight {

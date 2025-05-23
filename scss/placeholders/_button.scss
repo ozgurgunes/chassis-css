@@ -1,18 +1,19 @@
-// scss-docs-start %button-states-class
 %button {
-
+  // scss-docs-start button-idle-css-vars
   --#{$prefix}fg-color: var(--#{$prefix}button-idle-fg-color, var(--#{$prefix}fg-idle));
   --#{$prefix}bg-color: var(--#{$prefix}button-idle-bg-color, var(--#{$prefix}bg-idle));
   --#{$prefix}icon-color: var(--#{$prefix}button-idle-icon-color, var(--#{$prefix}fg-idle));
   --#{$prefix}border-color: var(--#{$prefix}button-idle-border-color, var(--#{$prefix}border-idle));
+  // scss-docs-end button-idle-css-vars
 
   &:hover {
+    // scss-docs-start button-hover-css-vars
     --#{$prefix}fg-color: var(--#{$prefix}button-hover-fg-color, var(--#{$prefix}fg-hover));
     --#{$prefix}bg-color: var(--#{$prefix}button-hover-bg-color, var(--#{$prefix}bg-hover));
     --#{$prefix}icon-color: var(--#{$prefix}button-hover-icon-color, var(--#{$prefix}fg-hover));
     --#{$prefix}border-color: var(--#{$prefix}button-hover-border-color, var(--#{$prefix}border-hover));
+    // scss-docs-end button-hover-css-vars
 
-    color: var(--#{$prefix}fg-color);
     text-decoration: if($link-hover-decoration == underline, none, null);
 
     .button-check + & {
@@ -21,25 +22,19 @@
       --#{$prefix}bg-color: var(--#{$prefix}bg-idle);
       --#{$prefix}border-color: var(--#{$prefix}border-idle);
     }
+    // Override anchor hover color
+    &:is(a) {
+      color: var(--#{$prefix}fg-color);
+    }
+
   }
 
-  &:focus-visible {
+  &:focus-visible,
+  .button-check:focus-visible + & {
     --#{$prefix}fg-color: var(--#{$prefix}fg-hover);
     --#{$prefix}border-color: var(--#{$prefix}border-hover);
     @include gradient-bg(var(--#{$prefix}bg-hover));
     outline: 0;
-    // Avoid using mixin so we can pass custom focus shadow properly
-    @if $enable-component-shadows {
-      box-shadow: var(--#{$prefix}box-shadow), var(--#{$prefix}focus-box-shadow);
-    } @else {
-      box-shadow: var(--#{$prefix}focus-box-shadow);
-    }
-  }
-
-  .button-check:focus-visible + & {
-    --#{$prefix}border-color: var(--#{$prefix}hover-border-color);
-    outline: 0;
-    // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-component-shadows {
       box-shadow: var(--#{$prefix}box-shadow), var(--#{$prefix}focus-box-shadow);
     } @else {
@@ -52,10 +47,13 @@
   &:first-child:active,
   &.active,
   &.show {
+    // scss-docs-start button-press-css-vars
     --#{$prefix}fg-color: var(--#{$prefix}button-press-fg-color, var(--#{$prefix}fg-press));
     --#{$prefix}bg-color: var(--#{$prefix}button-press-bg-color, var(--#{$prefix}bg-press));
     --#{$prefix}icon-color: var(--#{$prefix}button-press-icon-color, var(--#{$prefix}fg-press));
     --#{$prefix}border-color: var(--#{$prefix}button-press-border-color, var(--#{$prefix}border-press));
+    // scss-docs-end button-press-css-vars
+
     // Remove CSS gradients if they're enabled
     background-image: if($enable-component-gradients, none, null);
     @include box-shadow(var(--#{$prefix}press-shadow));
@@ -83,13 +81,16 @@
   &.disabled,
   .button-check:disabled + &,
   fieldset:disabled & {
+    // scss-docs-start button-disabled-css-vars
     --#{$prefix}fg-color: var(--#{$prefix}button-disabled-fg-color, var(--#{$prefix}fg-disabled));
     --#{$prefix}bg-color: var(--#{$prefix}button-disabled-bg-color, var(--#{$prefix}bg-disabled));
     --#{$prefix}icon-color: var(--#{$prefix}button-disabled-icon-color, var(--#{$prefix}fg-disabled));
     --#{$prefix}border-color: var(--#{$prefix}button-disabled-border-color, var(--#{$prefix}border-disabled));
+    // scss-docs-end button-disabled-css-vars
+
     pointer-events: none;
     background-image: if($enable-component-gradients, none, null);
-    opacity: var(--#{$prefix}opacity-disabled);
+    opacity: $button-disabled-opacity;
     @include box-shadow(none);
   }
 
@@ -101,9 +102,46 @@
 
 }
 
+%button-medium {
+  // scss-docs-start button-medium-css-vars
+  --#{$prefix}padding-y: var(--#{$prefix}button-padding-y, #{$button-medium-padding-y});
+  --#{$prefix}padding-x: var(--#{$prefix}button-padding-x, #{$button-medium-padding-x + $button-medium-trim});
+  --#{$prefix}gap: var(--#{$prefix}button-gap, #{$button-medium-gap});
+  --#{$prefix}trim: var(--#{$prefix}button-trim, #{$button-medium-trim});
+  --#{$prefix}border-radius: var(--#{$prefix}button-border-radius, #{$button-medium-border-radius});
+  --#{$prefix}icon-size: var(--#{$prefix}button-icon-size, #{$button-medium-icon-size});
+  --#{$prefix}font-family: var(--#{$prefix}button-font-family, #{map-get($button-medium-font, "font-family")});
+  --#{$prefix}font-size: var(--#{$prefix}button-font-size, #{map-get($button-medium-font, "font-size")});
+  --#{$prefix}font-weight: var(--#{$prefix}button-font-weight, #{map-get($button-medium-font, "font-weight")});
+  --#{$prefix}line-height: var(--#{$prefix}button-line-height, #{map-get($button-medium-font, "line-height")});
+  // scss-docs-end button-medium-css-vars
+}
+
+%button-large {
+  --#{$prefix}button-padding-y: #{$button-large-padding-y};
+  --#{$prefix}button-padding-x: #{$button-large-padding-x + $button-large-trim};
+  --#{$prefix}button-gap: #{$button-large-gap};
+  --#{$prefix}button-trim: #{$button-large-trim};
+  --#{$prefix}button-border-radius: #{$button-large-border-radius};
+  --#{$prefix}button-icon-size: #{$button-large-icon-size};
+  --#{$prefix}button-font-size: #{map-get($button-large-font, "font-size")};
+  --#{$prefix}button-line-height: #{map-get($button-large-font, "line-height")};
+}
+
+%button-small {
+  --#{$prefix}button-padding-y: #{$button-small-padding-y};
+  --#{$prefix}button-padding-x: #{$button-small-padding-x + $button-small-trim};
+  --#{$prefix}button-gap: #{$button-small-gap};
+  --#{$prefix}button-trim: #{$button-small-trim};
+  --#{$prefix}button-border-radius: #{$button-small-border-radius};
+  --#{$prefix}button-icon-size: #{$button-small-icon-size};
+  --#{$prefix}button-font-size: #{map-get($button-small-font, "font-size")};
+  --#{$prefix}button-line-height: #{map-get($button-small-font, "line-height")};
+}
+
 // scss-docs-start button-placeholder-selectors
 // scss-docs-start solid-button-placeholder-selector
-%solid-context-button {
+%solid-button {
   @each $color in map-keys($context-colors) {
     &.#{$color} {
       @include solid-button($color);
@@ -112,7 +150,7 @@
 }
 // scss-docs-end solid-button-placeholder-selector
 // scss-docs-start outline-button-placeholder-selector
-%outline-context-button {
+%outline-button {
   @each $color in map-keys($context-colors) {
     &.#{$color} {
       @include outline-button($color);
@@ -121,7 +159,7 @@
 }
 // scss-docs-end outline-button-placeholder-selector
 // scss-docs-start smooth-button-placeholder-selector
-%smooth-context-button {
+%smooth-button {
   @each $color in map-keys($context-colors) {
     &.#{$color} {
       @include smooth-button($color);

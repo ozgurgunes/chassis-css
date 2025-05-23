@@ -23,13 +23,13 @@
   align-items: center;
   text-decoration: if($link-decoration == none, null, none);
 
-  @extend %button, %solid-context-button, %component, %box-padding;
+  @extend %button, %solid-button, %component, %box-padding;
 
   &.large {
-    --#{$prefix}font-size: var(--#{$prefix}font-size-xlargearge);
-    --#{$prefix}line-height: var(--#{$prefix}line-height-xlargearge);
+    --#{$prefix}font-size: var(--#{$prefix}font-size-xlarge);
+    --#{$prefix}line-height: var(--#{$prefix}line-height-xlarge);
     --#{$prefix}font-weight: var(--#{$prefix}font-weight-strong);
-    --#{$prefix}icon-size: var(--#{$prefix}icon-xlargearge);
+    --#{$prefix}icon-size: var(--#{$prefix}icon-xlarge);
   }
 
 }

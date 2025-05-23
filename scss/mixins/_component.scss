@@ -63,18 +63,13 @@
 }
 // scss-docs-end border-mixin
 
-// scss-docs-start last-child-mixin
-// Applies .last-child styling to the last child element of a specific type.
+// scss-docs-start last-mb-0-mixin
+// Removes bottom margin from the last paragraph element.
 //
-// @param {string} $tag - CSS selector for the target child elements.
-//                       Defaults to "> p" (direct paragraph children).
-//
-// Useful for managing spacing and margins of final elements within components,
-// ensuring consistent bottom margins/padding across different component types.
-@mixin last-child($tag: "> p") {
-  #{$tag}:last-child {
-    @extend .last-child;
-  }
+// Extends the .last-mb-0 utility class, which sets margin-bottom: 0
+// specifically on the last paragraph (p) child of the parent element.
+@mixin last-mb-0 {
+  @extend .last-mb-0;
 }
-// scss-docs-end last-child-mixin
+// scss-docs-end last-mb-0-mixin
 

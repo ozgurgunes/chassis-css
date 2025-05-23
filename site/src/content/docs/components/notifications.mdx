@@ -1,14 +1,29 @@
 ---
 title: Notifications
-description: Provide contextual feedback messages for typical user actions with the handful of available and flexible notification messages.
+description: Display instant feedback and status messages with Chassis CSS's token-driven notification system, seamlessly integrated with your design language.
 toc: true
 ---
 
 import { getData } from '@libs/data'
 
-## Examples
+## Introduction
 
-Notifications are available for any length of text, as well as an optional close button. For proper styling, use one of the eight **required** contextual classes (e.g., `.success`). For inline dismissal, use the [notifications JavaScript plugin](#dismissing).
+Notifications in Chassis CSS provide contextual feedback that can be triggered by user actions or system events. Unlike traditional alert dialogs (handled by Chassis's separate Alert component), these notifications are designed for non-blocking messages that inform without interrupting the user's workflow.
+
+### Interactive example
+
+The following example shows a notification that appears in response to a user action and can be dismissed with the built-in close button.
+
+<Example addStackblitzJs code={`<div id="notificationPlaceholder"></div>
+<button type="button" class="button primary" id="notificationButton">Show notification</button>`} />
+
+The JavaScript that powers this interactive example:
+
+<JsDocs name="live-notification" file="site/src/assets/partials/snippets.js" />
+
+## Semantic variants
+
+Chassis CSS provides a semantic notification for each contextual color in the design system. Each variant is built on design tokens that synchronize with your Figma components, ensuring visual consistency between design and implementation.
 
 <Example code={getData('context-colors').map((contextColor) => `<div class="notification ${contextColor.name}" role="alert">
     A simple ${contextColor.name} notification — check it out!
@@ -16,101 +31,93 @@ Notifications are available for any length of text, as well as an optional close
 
 <Callout name="warning-color-assistive-technologies" />
 
-### Live example
+### Solid style
 
-Click the button below to show an notification (hidden with inline styles to start), then dismiss (and destroy) it with the built-in close button.
+For higher-emphasis messaging, apply the `.solid` modifier to create notifications with a more prominent visual weight. This style works particularly well in contexts where the notification needs to stand out from surrounding content.
 
-<Example addStackblitzJs code={`<div id="liveNotificationPlaceholder"></div>
-<button type="button" class="button primary" id="liveNotificationButton">Show live notification</button>`} />
+<Example code={getData('context-colors').map((contextColor) => `<div class="notification ${contextColor.name} solid" role="alert">
+    <svg class="icon notification-icon"><use xlink:href="#info-circle-solid"/></svg>
+    <p>A simple ${contextColor.name} solid notification with icon and <a href="#">link</a>.
+  </div>`)} />
 
-The following JavaScript used to trigger the live notification demo:
+## Dismissible notifications
 
-<JsDocs name="live-notification" file="site/src/assets/partials/snippets.js" />
+Chassis CSS includes JavaScript functionality to dismiss notifications inline. This feature is particularly useful for transient messages that users may want to clear after reading.
 
-### Links
+### Implementation
 
-Links in notifications automatically adapt its context color and gets increased `font-weight`.
+To create dismissible notifications:
+
+- Ensure the notification plugin or compiled Chassis CSS JavaScript is loaded
+- Add the `.dismissible` class to create space for the close button
+- Include a close button with `data-cx-dismiss="notification"` attribute
+- Add `.fade` and `.show` classes for smooth transition animations
+
+<Example code={`<div class="notification warning dismissible fade show" role="alert">
+    <strong>Important:</strong> This message requires your attention but can be dismissed.
+    <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
+  </div>`} />
+
+<Callout type="info">
+  <strong>Accessibility note:</strong> When a notification is dismissed, it's completely removed from the DOM. To maintain proper keyboard navigation, add JavaScript that listens for the `closed.cx.notification` event and sets focus to an appropriate element in the page.
+</Callout>
+
+## Content enhancements
+
+### Actionable links
+
+Notification links automatically inherit appropriate styling from their parent context, with increased font-weight for better visibility. The colors adapt to maintain appropriate contrast with the notification background.
 
 <Example code={getData('context-colors').map((contextColor) => `<div class="notification ${contextColor.name}" role="alert">
     A simple ${contextColor.name} notification with <a href="#">an example link</a>. Give it a click if you like.
   </div>`)} />
 
-### Icons
+### Icon integration
 
-Use [flexbox utilities]([[docsref:/utilities/flex]]) and [Chassis - CSS Icons]([[config:icons]]) to create notifications with icons. Depending on your icons and content, you may want to add more utilities or custom styles.
+Combine notifications with Chassis's icon system using the flexbox utilities to create more visually distinctive messages.
 
-<Example code={`<div class="notification success d-flex align-items-center" role="alert">
+<Example code={`<div class="notification success" role="alert">
     <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#info-circle-solid"/></svg>
     <p>An example notification with an icon and <a href="#">a link</a>!</p>
   </div>
+
   <div class="notification success d-flex align-items-center" role="alert">
     <svg class="icon" aria-hidden="true"><use xlink:href="#info-circle-solid"/></svg>
     <div>An example notification with a standard icon and a <a href="#" class="font-normal default-link-main">default link</a>!</div>
   </div>`} />
 
-### Solid Style
+### Rich content
 
-Use the `.solid` class to give notifications some emphassis.
+Notifications support structured content with headings, paragraphs, and more to communicate complex information while maintaining visual hierarchy.
 
-<Example code={getData('context-colors').map((contextColor) => `<div class="notification ${contextColor.name} solid d-flex" role="alert">
-    <svg class="icon notification-icon"><use xlink:href="#info-circle-solid"/></svg>
-    <p>A simple ${contextColor.name} solid notification with icon and <a href="#">link</a>.
-  </div>`)} />
+Use the `.notification-title` class on headings to apply design token-based styling that ensures visual consistency. The notification component also automatically applies `margin-bottom: 0` to the last paragraph element, creating proper spacing without extra effort.
 
-
-### Additional content
-
-Notifications can also contain additional HTML elements like headings, paragraphs and dividers.
-
-<Example code={`<div class="notification success d-flex fade show" role="alert">
+<Example code={`<div class="notification success fade show" role="alert">
     <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
-    <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#check-solid"/></svg>
-    <div>
-      <h4 class="title">A success notification!</h4>
-      <p>This example text is going to run a bit longer so that you can see how spacing within an notification works with this kind of content.</p>
-      <hr>
-      <p>Component <code>p:last-item</code> margins are set to <code>0</code> by default.</p>
-    </div>
-  </div>
-
-  <div class="notification success solid d-flex pe-medium fade show" role="alert">
-    <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
-    <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#check-solid"/></svg>
-    <div>
-      <h4 class="title">A solid success notification!</h4>
-      <p>This example text is going to run a bit longer so that you can see how spacing within an notification works with this kind of content.</p>
-      <hr class="mb-2xsmall">
-      <p>You can use margin utilities to keep things nice and tidy.</p>
-    </div>
+    <h4 class="notification-title">A success notification!</h4>
+    <p>This example text demonstrates how spacing works within structured notification content. The content flows naturally with appropriate spacing.</p>
+    <hr />
+    <p>Notice that this final paragraph has no bottom margin.</p>
   </div>`} />
 
-### Dismissing
+### Spacing controls
 
-Using the notification JavaScript plugin, it’s possible to dismiss any notification inline. Here’s how:
+Dismissible notifications auto-adjust padding for close buttons, while spacing utilities like `pe-medium` let you fine-tune dimensions. For paragraph spacing, apply `.last-mb-0` to containers to remove bottom margin from last paragraph children.
 
-- Be sure you’ve loaded the notification plugin, or the compiled Chassis - CSS JavaScript.
-- Add a [close button]([[docsref:/components/close-button]]) and the `.dismissible` class, which adds extra padding to the right of the notification and positions the close button.
-- On the close button, add the `data-cx-dismiss="notification"` attribute, which triggers the JavaScript functionality. Be sure to use the `<button>` element with it for proper behavior across all devices.
-- To animate notifications when dismissing them, be sure to add the `.fade` and `.show` classes.
-
-You can see this in action with a live demo:
-
-<Example code={`<div class="notification warning dismissible fade show" role="alert">
-    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+<Example code={`<div class="notification pe-medium info fade show" role="alert">
+    <svg class="icon notification-icon" aria-hidden="true"><use xlink:href="#check-solid"/></svg>
+    <div class="last-mb-0">
+      <h4 class="notification-title">Customized Notification Spacing</h4>
+      <p>This notification demonstrates how spacing utilities provide fine-grained control over layout within notifications.</p>
+      <hr class="mb-small me-nmedium">
+      <p>Margin utilities like <code>mb-small</code> and <code>me-nmedium</code> create precision in your component spacing.</p>
+    </div>
     <button type="button" class="close-button" data-cx-dismiss="notification" aria-label="Close"></button>
   </div>`} />
-
-<Callout type="warning">
-When an notification is dismissed, the element is completely removed from the page structure. If a keyboard user dismisses the notification using the close button, their focus will suddenly be lost and, depending on the browser, reset to the start of the page/document. For this reason, we recommend including additional JavaScript that listens for the `closed.cx.notification` event and programmatically sets `focus()` to the most appropriate location in the page. If you’re planning to move focus to a non-interactive element that normally does not receive focus, make sure to add `tabindex="-1"` to the element.
-</Callout>
 
 ## CSS
 
 <DocsCSS />
-
-### Custom properties
-
-<DocsCSSVars />
 
 ### Sass variables
 
@@ -118,13 +125,11 @@ When an notification is dismissed, the element is completely removed from the pa
 
 <ScssDocs name="notification-variables" file="scss/_variables.scss" />
 
-<ScssDocs name="component-placeholder-selector" file="scss/placeholders/_component.scss" removeIndentation={false} />
+## JavaScript
 
-## JavaScript behavior
+### Initialization
 
-### Initialize
-
-Initialize elements as notifications
+Initialize elements as notifications:
 
 ```js
 const notificationList = document.querySelectorAll('.notification')
@@ -132,7 +137,7 @@ const notifications = [...notificationList].map(element => new chassis.Notificat
 ```
 
 <Callout>
-For the sole purpose of dismissing an notification, it isn’t necessary to initialize the component manually via the JS API. By making use of `data-cx-dismiss="notification"`, the component will be initialized automatically and properly dismissed.
+For the sole purpose of dismissing a notification, it isn't necessary to initialize the component manually via the JS API. By making use of `data-cx-dismiss="notification"`, the component will be initialized automatically and properly dismissed.
 
 See the [triggers](#triggers) section for more details.
 </Callout>
@@ -141,25 +146,25 @@ See the [triggers](#triggers) section for more details.
 
 <JsDismiss name="notification" />
 
-**Note that closing an notification will remove it from the DOM.**
+**Note:** Dismissing a notification removes it completely from the DOM.
 
 ### Methods
 
-You can create an notification instance with the notification constructor, for example:
+The Notification component provides a JavaScript API for programmatic control:
 
 ```js
 const cxNotification = new chassis.Notification('#myNotification')
 ```
 
-This makes an notification listen for click events on descendant elements which have the `data-cx-dismiss="notification"` attribute. (Not necessary when using the data-api’s auto-initialization.)
+This makes a notification listen for click events on descendant elements which have the `data-cx-dismiss="notification"` attribute. (Not necessary when using the data-api's auto-initialization.)
 
 <CxTable>
 | Method | Description |
 | --- | --- |
-| `close` | Closes an notification by removing it from the DOM. If the `.fade` and `.show` classes are present on the element, the notification will fade out before it is removed. |
-| `dispose` | Destroys an element’s notification. (Removes stored data on the DOM element) |
+| `close` | Closes a notification by removing it from the DOM. If the `.fade` and `.show` classes are present on the element, the notification will fade out before it is removed. |
+| `dispose` | Destroys an element's notification. (Removes stored data on the DOM element) |
 | `getInstance` | Static method which allows you to get the notification instance associated to a DOM element. For example: `chassis.Notification.getInstance(notification)`. |
-| `getOrCreateInstance` | Static method which returns an notification instance associated to a DOM element or create a new one in case it wasn’t initialized. You can use it like this: `chassis.Notification.getOrCreateInstance(element)`. |
+| `getOrCreateInstance` | Static method which returns a notification instance associated to a DOM element or create a new one in case it wasn't initialized. You can use it like this: `chassis.Notification.getOrCreateInstance(element)`. |
 </CxTable>
 
 Basic usage:
@@ -171,7 +176,7 @@ notification.close()
 
 ### Events
 
-Chassis - CSS’s notification plugin exposes a few events for hooking into notification functionality.
+Chassis CSS's notification component exposes events for integrating with notification functionality:
 
 <CxTable>
 | Event | Description |
@@ -184,7 +189,7 @@ Chassis - CSS’s notification plugin exposes a few events for hooking into noti
 const myNotification = document.getElementById('myNotification')
 myNotification.addEventListener('closed.cx.notification', event => {
   // do something, for instance, explicitly move focus to the most appropriate element,
-  // so it doesn’t get lost/reset to the start of the page
+  // so it doesn't get lost/reset to the start of the page
   // document.getElementById('...').focus()
 })
 ```

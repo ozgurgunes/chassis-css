@@ -188,7 +188,7 @@
     > .accordion-body {
       padding: var(--#{$prefix}body-padding-t) var(--#{$prefix}body-padding-e) var(--#{$prefix}body-padding-b) var(--#{$prefix}body-padding-s);
       @include font(body);
-      @include last-child();
+      @include last-mb-0();
     }
 
   }

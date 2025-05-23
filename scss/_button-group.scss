@@ -69,15 +69,14 @@
     border-left: var(--#{$prefix}border-width) solid var(--#{$prefix}fg-disabled);
   }
 
+  // Sizing
+  //
+  // Remix the default button sizing classes into new ones for easier manipulation.
+
+  &.small > .button { @extend %button-small; }
+  &.large > .button { @extend %button-large; }
+
 }
-
-// Sizing
-//
-// Remix the default button sizing classes into new ones for easier manipulation.
-
-// .button-group-small > .button { @extend .button, .small; }
-// .button-group-large > .button { @extend .button, .large; }
-
 
 //
 // Split button dropdowns

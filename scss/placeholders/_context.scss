@@ -153,7 +153,7 @@
   --#{$prefix}bg-inverse: var(--#{$prefix}context-bg-inverse);
   --#{$prefix}bg-solid: var(--#{$prefix}context-bg-solid);
   --#{$prefix}bg-highlight: var(--#{$prefix}context-bg-inverse);
-  --#{$prefix}border-main: #{$solid-border-color};
+  --#{$prefix}border-main: rgba(#{$solid-border-color-rgb}, var(--#{$prefix}opacity-border-main));
   --#{$prefix}border-subtle: rgba(#{$solid-border-color-rgb}, var(--#{$prefix}opacity-border-subtle));
   --#{$prefix}icon-main: #{$solid-icon-color};
   --#{$prefix}icon-subtle: rgba(#{$solid-icon-color-rgb}, var(--#{$prefix}opacity-icon-subtle));
@@ -212,7 +212,7 @@
   --#{$prefix}bg-inverse: var(--#{$prefix}context-bg-inverse);
   --#{$prefix}bg-solid: var(--#{$prefix}context-bg-solid);
   --#{$prefix}bg-highlight: var(--#{$prefix}context-bg-inverse);
-  --#{$prefix}border-main: #{$smooth-border-color};
+  --#{$prefix}border-main: rgba(#{$smooth-border-color-rgb}, var(--#{$prefix}opacity-border-main));
   --#{$prefix}border-subtle: rgba(#{$smooth-border-color-rgb}, var(--#{$prefix}opacity-border-subtle));
   --#{$prefix}icon-main: #{$smooth-icon-color};
   --#{$prefix}icon-subtle: rgba(#{$smooth-icon-color-rgb}, var(--#{$prefix}opacity-icon-subtle));
