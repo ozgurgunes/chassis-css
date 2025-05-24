@@ -825,16 +825,16 @@ $body-fg-colors:   (
 
 // scss-docs-start context-fg-colors-map
 $context-fg-colors: map-merge-multiple(
-  rename-keys($fg-main-colors, "-fg-main", "end"),
-  rename-keys($fg-subtle-colors, "-fg-subtle", "end"),
-  rename-keys($fg-slight-colors, "-fg-slight", "end"),
-  rename-keys($fg-inverse-colors, "-fg-inverse", "end"),
-  rename-keys($fg-solid-colors, "-fg-solid", "end"),
-  rename-keys($fg-highlight-colors, "-fg-highlight", "end"),
-  rename-keys($fg-button-colors, "-fg-button", "end"),
-  rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
-  rename-keys($fg-hover-colors, "-fg-hover", "end"),
-  rename-keys($fg-press-colors, "-fg-press", "end"),
+  map-rename-keys($fg-main-colors, "-fg-main", "end"),
+  map-rename-keys($fg-subtle-colors, "-fg-subtle", "end"),
+  map-rename-keys($fg-slight-colors, "-fg-slight", "end"),
+  map-rename-keys($fg-inverse-colors, "-fg-inverse", "end"),
+  map-rename-keys($fg-solid-colors, "-fg-solid", "end"),
+  map-rename-keys($fg-highlight-colors, "-fg-highlight", "end"),
+  map-rename-keys($fg-button-colors, "-fg-button", "end"),
+  map-rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
+  map-rename-keys($fg-hover-colors, "-fg-hover", "end"),
+  map-rename-keys($fg-press-colors, "-fg-press", "end"),
 ) !default;
 // scss-docs-end context-fg-colors-map
 
@@ -854,16 +854,16 @@ $body-bg-colors: (
 // scss-docs-end body-bg-colors-map
 // scss-docs-start context-bg-colors-map
 $context-bg-colors: map-merge-multiple(
-  rename-keys($bg-main-colors, "-bg-main", "end"),
-  rename-keys($bg-even-colors, "-bg-even", "end"),
-  rename-keys($bg-evident-colors, "-bg-evident", "end"),
-  rename-keys($bg-inverse-colors, "-bg-inverse", "end"),
-  rename-keys($bg-solid-colors, "-bg-solid", "end"),
-  rename-keys($bg-highlight-colors, "-bg-highlight", "end"),
-  rename-keys($bg-button-colors, "-bg-button", "end"),
-  rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
-  rename-keys($bg-hover-colors, "-bg-hover", "end"),
-  rename-keys($bg-press-colors, "-bg-press", "end"),
+  map-rename-keys($bg-main-colors, "-bg-main", "end"),
+  map-rename-keys($bg-even-colors, "-bg-even", "end"),
+  map-rename-keys($bg-evident-colors, "-bg-evident", "end"),
+  map-rename-keys($bg-inverse-colors, "-bg-inverse", "end"),
+  map-rename-keys($bg-solid-colors, "-bg-solid", "end"),
+  map-rename-keys($bg-highlight-colors, "-bg-highlight", "end"),
+  map-rename-keys($bg-button-colors, "-bg-button", "end"),
+  map-rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
+  map-rename-keys($bg-hover-colors, "-bg-hover", "end"),
+  map-rename-keys($bg-press-colors, "-bg-press", "end"),
 ) !default;
 // scss-docs-end context-bg-colors-map
 
@@ -876,8 +876,8 @@ $body-border-colors: (
 
 // scss-docs-start context-border-colors-map
 $context-border-colors: map-merge-multiple(
-  rename-keys($border-main-colors, "-border-main", "end"),
-  rename-keys($border-subtle-colors, "-border-subtle", "end"),
+  map-rename-keys($border-main-colors, "-border-main", "end"),
+  map-rename-keys($border-subtle-colors, "-border-subtle", "end"),
 ) !default;
 // scss-docs-end context-border-colors-map
 
@@ -890,9 +890,9 @@ $body-icon-colors: (
 // scss-docs-end body-icon-colors-map
 // scss-docs-start context-icon-colors-map
 $context-icon-colors: map-merge-multiple(
-  rename-keys($icon-main-colors, "-icon-main", "end"),
-  rename-keys($icon-subtle-colors, "-icon-subtle", "end"),
-  rename-keys($icon-slight-colors, "-icon-slight", "end"),
+  map-rename-keys($icon-main-colors, "-icon-main", "end"),
+  map-rename-keys($icon-subtle-colors, "-icon-subtle", "end"),
+  map-rename-keys($icon-slight-colors, "-icon-slight", "end"),
 ) !default;
 // scss-docs-end context-icon-colors-map
 
@@ -904,8 +904,8 @@ $body-cue-colors: (
 // scss-docs-end body-cue-colors-map
 // scss-docs-start context-icon-colors-map
 $context-cue-colors: map-merge-multiple(
-  rename-keys($cue-main-colors, "-cue-main", "end"),
-  rename-keys($cue-slight-colors, "-cue-slight", "end"),
+  map-rename-keys($cue-main-colors, "-cue-main", "end"),
+  map-rename-keys($cue-slight-colors, "-cue-slight", "end"),
 ) !default;
 // scss-docs-end context-icon-colors-map
 
@@ -919,10 +919,10 @@ $body-link-colors: (
 // scss-docs-end body-link-colors-map
 // scss-docs-start context-link-colors-map
 $context-link-colors: map-merge-multiple(
-  rename-keys($link-main-colors, "-link-main", "end"),
-  rename-keys($hover-colors, "-link-hover", "end"),
-  rename-keys($active-colors, "-link-active", "end"),
-  rename-keys($visited-colors, "-link-visited", "end"),
+  map-rename-keys($link-main-colors, "-link-main", "end"),
+  map-rename-keys($hover-colors, "-link-hover", "end"),
+  map-rename-keys($active-colors, "-link-active", "end"),
+  map-rename-keys($visited-colors, "-link-visited", "end"),
 ) !default;
 // scss-docs-end context-link-colors-map
 
@@ -935,9 +935,9 @@ $body-dim-colors: (
 // scss-docs-end body-dim-colors-map
 // scss-docs-start context-dim-colors-map
 $context-dim-colors: map-merge-multiple(
-  rename-keys($dim-slight-colors, "-dim-slight", "end"),
-  rename-keys($dim-main-colors, "-dim-main", "end"),
-  rename-keys($dim-subtle-colors, "-dim-subtle", "end"),
+  map-rename-keys($dim-slight-colors, "-dim-slight", "end"),
+  map-rename-keys($dim-main-colors, "-dim-main", "end"),
+  map-rename-keys($dim-subtle-colors, "-dim-subtle", "end"),
 ) !default;
 // scss-docs-end context-dim-colors-map
 
@@ -955,14 +955,14 @@ $body-button-colors: (
 // scss-docs-end body-button-colors-map
 // scss-docs-start context-button-colors-map
 $context-button-colors: map-merge-multiple(
-  rename-keys($fg-button-colors, "-fg-button", "end"),
-  rename-keys($fg-hover-colors, "-fg-hover", "end"),
-  rename-keys($fg-press-colors, "-fg-press", "end"),
-  rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
-  rename-keys($bg-button-colors, "-bg-button", "end"),
-  rename-keys($bg-hover-colors, "-bg-hover", "end"),
-  rename-keys($bg-press-colors, "-bg-press", "end"),
-  rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
+  map-rename-keys($fg-button-colors, "-fg-button", "end"),
+  map-rename-keys($fg-hover-colors, "-fg-hover", "end"),
+  map-rename-keys($fg-press-colors, "-fg-press", "end"),
+  map-rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
+  map-rename-keys($bg-button-colors, "-bg-button", "end"),
+  map-rename-keys($bg-hover-colors, "-bg-hover", "end"),
+  map-rename-keys($bg-press-colors, "-bg-press", "end"),
+  map-rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
 ) !default;
 // scss-docs-end context-button-colors-map
 

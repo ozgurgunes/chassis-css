@@ -104,7 +104,7 @@ $utilities: () !default;
         css-var: true,
         css-variable-name: spinner-size,
         class: null,
-        values: rename-keys($spinner-sizes, "spinner-", "start")
+        values: map-rename-keys($spinner-sizes, "spinner-", "start")
       ),
       // scss-docs-end utils-spinners
     )

@@ -1,69 +1,42 @@
-// scss-docs-start caret-mixins
-@mixin caret-down($width: $caret-width) {
-  border-top: $width solid;
-  border-right: $width solid transparent;
-  border-bottom: 0;
-  border-left: $width solid transparent;
-}
-
-@mixin caret-up($width: $caret-width) {
-  border-top: 0;
-  border-right: $width solid transparent;
-  border-bottom: $width solid;
-  border-left: $width solid transparent;
-}
-
-@mixin caret-end($width: $caret-width) {
-  border-top: $width solid transparent;
-  border-right: 0;
-  border-bottom: $width solid transparent;
-  border-left: $width solid;
-}
-
-@mixin caret-start($width: $caret-width) {
-  border-top: $width solid transparent;
-  border-right: $width solid;
-  border-bottom: $width solid transparent;
-}
-
+// scss-docs-start caret-mixin
 @mixin caret(
   $direction: down,
-  $width: $caret-width,
-  $spacing: $caret-spacing,
-  $vertical-align: $caret-vertical-align
+  $icon: var(--#{$prefix}caret-icon, $caret-icon),
+  $size: var(--#{$prefix}caret-size, $caret-size),
+  $color: var(--#{$prefix}caret-color, $caret-color),
+  $vertical-align: $caret-vertical-align,
 ) {
-  @if $enable-caret {
+  &::after,
+  &::before {
+    display: none;
+    flex-shrink: 0;
+    width: $size;
+    height: $size;
+    vertical-align: $vertical-align;
+    content: "";
+    background-color: $color;
+    mask-image: $icon;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: $size;
+  }
+  @if $direction != start {
     &::after {
       display: inline-block;
-      margin: 0 $spacing;
-      vertical-align: $vertical-align;
-      content: "";
       @if $direction == down {
-        @include caret-down($width);
+        transform: rotate(0deg);
       } @else if $direction == up {
-        @include caret-up($width);
+        transform: rotate(180deg);
       } @else if $direction == end {
-        @include caret-end($width);
+        transform: rotate(-90deg);
       }
     }
-
-    @if $direction == start {
-      &::after {
-        display: none;
-      }
-
-      &::before {
-        display: inline-block;
-        margin-right: $spacing;
-        vertical-align: $vertical-align;
-        content: "";
-        @include caret-start($width);
-      }
-    }
-
-    &:empty::after {
-      margin-left: 0;
+  }
+  @if $direction == start {
+    &::before {
+      display: inline-block;
+      transform: rotate(90deg);
     }
   }
 }
-// scss-docs-end caret-mixins
+// scss-docs-end caret-mixin

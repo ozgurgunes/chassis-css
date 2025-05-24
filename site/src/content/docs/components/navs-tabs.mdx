@@ -83,34 +83,6 @@ Right-aligned with `.justify-content-end`:
     </li>
   </ul>`} />
 
-### Vertical
-
-Stack your navigation by changing the flex item direction with the `.flex-column` utility. Need to stack them on some viewports but not others? Use the responsive versions (e.g., `.flex-small-column`).
-
-<Example code={`<ul class="nav flex-column">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>`} />
-
-As always, vertical navigation is possible without `<ul>`s, too.
-
-<Example code={`<nav class="nav flex-column">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-  </nav>`} />
-
 ### Tabs
 
 Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabbed interface. Use them to create tabbable regions with our [tab JavaScript plugin](#javascript-behavior).
@@ -232,6 +204,97 @@ If you need responsive nav variations, consider using a series of [flexbox utili
     <a class="flex-small-fill text-small-center nav-link" href="#">Link</a>
     <a class="flex-small-fill text-small-center nav-link disabled" aria-disabled="true">Disabled</a>
   </nav>`} />
+
+## Vertical navigation
+
+Stack your navigation by changing the flex item direction with the `.flex-column` utility. Need to stack them on some viewports but not others? Use the responsive versions (e.g., `.flex-small-column`).
+
+<Example code={`<ul class="nav nav-vertical">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>`} />
+
+As always, vertical navigation is possible without `<ul>`s, too.
+
+<Example code={`<nav class="nav nav-vertical">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+  </nav>`} />
+
+### Collapsable navigation
+
+Collapse vertical navs with the [collapse JavaScript plugin]([[docsref:/components/collapse#usage]]).
+
+<Example code={`<ul class="nav nav-vertical">
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse collapsed" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item</a>
+      <div class="collapse" id="navCollapse1">
+        <nav class="nav nav-vertical ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsable Item</a>
+      <div class="collapse show" id="navCollapse2">
+        <nav class="nav nav-vertical ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+  </ul>`} />
+
+Accordions can also be used to create collapsable vertical navs, as shown in the example below.
+
+<Example code={`<ul class="nav nav-vertical" id="navAccordion">
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse" href="#navCollapse3" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse3">Collapsable Item</a>
+      <div class="collapse show" id="navCollapse3" data-cx-parent="#navAccordion">
+        <nav class="nav nav-vertical ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse collapsed" href="#navCollapse4" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse4">Collapsable Item</a>
+      <div class="collapse" id="navCollapse4" data-cx-parent="#navAccordion">
+        <nav class="nav nav-vertical ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse collapsed" href="#navCollapse5" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse5">Collapsable Item</a>
+      <div class="collapse" id="navCollapse5" data-cx-parent="#navAccordion">
+        <nav class="nav nav-vertical ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+  </ul>`} />
+
 
 ## Regarding accessibility
 

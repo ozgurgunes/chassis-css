@@ -9,21 +9,28 @@
 }
 
 .dropdown-toggle {
+  --#{$prefix}caret-icon: var(--#{$prefix}dropdown-caret-icon, #{$button-caret-icon});
+  --#{$prefix}caret-size: var(--#{$prefix}dropdown-caret-size, #{$caret-size});
+  --#{$prefix}caret-spacing: var(--#{$prefix}dropdown-caret-spacing, #{$caret-spacing});
+
   white-space: nowrap;
 
   // Generate the caret automatically
   @include caret();
 
+  &.button {
+    --#{$prefix}caret-spacing: var(--#{$prefix}trim);
+  }
+
   &:not(.dropdown-toggle-split)::after {
-    // margin-right: #{calc(-1 * var(--#{$prefix}trim))};
-    margin-left: var(--#{$prefix}trim);
+    margin-right: #{calc(-1 * var(--#{$prefix}caret-spacing))};
+    margin-left: var(--#{$prefix}caret-spacing);
   }
   .dropstart > &:not(.dropdown-toggle-split)::before {
-    margin-right: var(--#{$prefix}trim);
+    margin-right: var(--#{$prefix}caret-spacing);
+    margin-left: #{calc(-1 * var(--#{$prefix}caret-spacing))};
   }
-  .dropstart > &.dropdown-toggle-split::before {
-    margin: 0 var(--#{$prefix}trim);
-  }
+
 }
 
 // The dropdown menu

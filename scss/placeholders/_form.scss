@@ -149,10 +149,7 @@
 // Sets standard padding, font size, and spacing
 %form-size-medium {
   // scss-docs-start form-input-variables
-  --#{$prefix}font-family: var(--#{$prefix}input-font-family, #{map-get($form-medium-text-font, "font-family")});
-  --#{$prefix}font-size: var(--#{$prefix}input-font-size, #{map-get($form-medium-text-font, "font-size")});
-  --#{$prefix}line-height: var(--#{$prefix}input-line-height, #{map-get($form-medium-text-font, "line-height")});
-  --#{$prefix}font-weight: var(--#{$prefix}input-font-weight, #{map-get($form-medium-text-font, "font-weight")});
+  @include map-font($form-medium-text-font, input);
   --#{$prefix}padding-x: var(--#{$prefix}input-padding-x, #{$form-medium-padding-x});
   --#{$prefix}padding-y: var(--#{$prefix}input-padding-y, #{$form-medium-padding-y});
   --#{$prefix}gap: var(--#{$prefix}input-gap, #{$form-medium-gap});
@@ -167,8 +164,8 @@
 // Small size variant - for compact UIs and dense layouts
 // Reduces all spacing and size properties for a more compact appearance
 %form-size-small {
-  --#{$prefix}input-font-size: #{map-get($form-small-text-font, "font-size")};
-  --#{$prefix}input-line-height: #{map-get($form-small-text-font, "line-height")};
+  @include map-font-size($form-small-text-font, null, input);
+  @include map-line-height($form-small-text-font, null, input);
   --#{$prefix}input-padding-x: #{$form-small-padding-x};
   --#{$prefix}input-padding-y: #{$form-small-padding-y};
   --#{$prefix}input-gap: #{$form-small-gap};
@@ -180,8 +177,8 @@
 // Large size variant - for prominent form controls
 // Increases spacing and font size for greater visibility
 %form-size-large {
-  --#{$prefix}input-font-size: #{map-get($form-large-text-font, "font-size")};
-  --#{$prefix}input-line-height: #{map-get($form-large-text-font, "line-height")};
+  @include map-font-size($form-large-text-font, null, input);
+  @include map-line-height($form-large-text-font, null, input);
   --#{$prefix}input-padding-x: #{$form-large-padding-x};
   --#{$prefix}input-padding-y: #{$form-large-padding-y};
   --#{$prefix}input-gap: #{$form-large-gap};

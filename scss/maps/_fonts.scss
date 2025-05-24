@@ -229,17 +229,17 @@ $context-fonts: (
 // scss-docs-end typography-maps
 
 $typography: map-merge-multiple(
-  rename-keys($text-font-sizes, "font-size-text-", "start"),
-  rename-keys($text-font-weights, "font-weight-text-", "start"),
-  rename-keys($text-line-heights, "line-height-text-", "start"),
-  rename-keys($display-font-sizes, "font-size-display-", "start"),
-  rename-keys($display-font-weights, "font-weight-display-", "start"),
-  rename-keys($display-line-heights, "line-height-display-", "start"),
-  rename-keys($html-font-sizes, "font-size-html-", "start"),
-  rename-keys($html-font-weights, "font-weight-html-", "start"),
-  rename-keys($html-line-heights, "line-height-html-", "start"),
-  rename-keys($code-font-sizes, "font-size-code-", "start"),
-  rename-keys($code-font-weights, "font-weight-code-", "start"),
-  rename-keys($code-line-heights, "line-height-code-", "start"),
+  map-rename-keys($text-font-sizes, "font-size-text-", "start"),
+  map-rename-keys($text-font-weights, "font-weight-text-", "start"),
+  map-rename-keys($text-line-heights, "line-height-text-", "start"),
+  map-rename-keys($display-font-sizes, "font-size-display-", "start"),
+  map-rename-keys($display-font-weights, "font-weight-display-", "start"),
+  map-rename-keys($display-line-heights, "line-height-display-", "start"),
+  map-rename-keys($html-font-sizes, "font-size-html-", "start"),
+  map-rename-keys($html-font-weights, "font-weight-html-", "start"),
+  map-rename-keys($html-line-heights, "line-height-html-", "start"),
+  map-rename-keys($code-font-sizes, "font-size-code-", "start"),
+  map-rename-keys($code-font-weights, "font-weight-code-", "start"),
+  map-rename-keys($code-line-heights, "line-height-code-", "start"),
 ) !default;
 

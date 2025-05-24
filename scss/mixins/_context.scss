@@ -86,10 +86,10 @@
   --#{$prefix}icon-color: var(--#{$prefix}context-icon-main, var(--#{$prefix}icon-main));
   --#{$prefix}bullet-color: var(--#{$prefix}context-icon-subtle, var(--#{$prefix}icon-subtle));
   --#{$prefix}cue-color: var(--#{$prefix}context-cue-main, var(--#{$prefix}cue-main));
-  --#{$prefix}link-color: var(--#{$prefix}context-link-main, var(--#{$prefix}link-main));
-  --#{$prefix}hover-color: var(--#{$prefix}context-link-hover, var(--#{$prefix}link-hover));
-  --#{$prefix}active-color: var(--#{$prefix}context-link-active, var(--#{$prefix}link-active));
-  --#{$prefix}visited-color: var(--#{$prefix}context-link-visited, var(--#{$prefix}link-visited));
+  // --#{$prefix}link-color: var(--#{$prefix}context-link-main, var(--#{$prefix}link-main));
+  // --#{$prefix}hover-color: var(--#{$prefix}context-link-hover, var(--#{$prefix}link-hover));
+  // --#{$prefix}active-color: var(--#{$prefix}context-link-active, var(--#{$prefix}link-active));
+  // --#{$prefix}visited-color: var(--#{$prefix}context-link-visited, var(--#{$prefix}link-visited));
   // RGB variables
   --#{$prefix}fg-color-rgb: var(--#{$prefix}context-fg-main-rgb, var(--#{$prefix}fg-main-rgb));
   --#{$prefix}bg-color-rgb: var(--#{$prefix}context-bg-main-rgb, var(--#{$prefix}bg-main-rgb));

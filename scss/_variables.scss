@@ -393,10 +393,14 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color
 // scss-docs-end focus-ring-variables
 
 // scss-docs-start caret-variables
-$caret-width:                 .45em !default;
-$caret-vertical-align:        $caret-width * .85 !default;
-$caret-spacing:               $caret-width * .25 !default;
+// In case --#{$prefix}caret-* is not set.
+$caret-icon:               svg-icon("<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentcolor' class='icon-caret-down-solid' viewBox='0 0 24 24'><path d='M11.6014 16.6484L6.60141 11.6484C6.24985 11.2969 6.13266 10.75 6.32798 10.2812C6.52329 9.8125 6.99204 9.5 7.49985 9.5H17.4999C18.0077 9.5 18.4374 9.8125 18.6327 10.2812C18.828 10.75 18.7108 11.2969 18.3592 11.6484L13.3592 16.6484C12.8905 17.1562 12.0702 17.1562 11.6014 16.6484Z'/></svg>") !default;
+$caret-size:               1.25em !default;
+$caret-spacing:            var(--#{$prefix}trim, .5em) !default;
+$caret-color:              var(--#{$prefix}fg-color) !default;
+$caret-vertical-align:     -.25em !default;
 // scss-docs-end caret-variables
+
 
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
@@ -722,35 +726,66 @@ $table-cue-context:                 var(--#{$prefix}cue-main) !default;
 // scss-docs-end table-variables
 
 //
+// Accordion
+// See `tokens/_accordion.scss` for more details.
+//
+// scss-docs-start accordion-variables
+//$accordion-border-width:                var(--#{$prefix}border-width-medium) !default;
+//$accordion-border-color:                var(--#{$prefix}border-subtle) !default;
+//$accordion-border-radius:               var(--#{$prefix}border-radius-medium) !default;
+// $accordion-indicator:                   url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
+$accordion-box-radius:                  #{calc($accordion-border-radius - $accordion-border-width)} !default;
+$accordion-transition:                  $transition-collapse !default;
+$accordion-title-transition:            $button-transition, border-radius .15s ease !default;
+$accordion-indicator-transition:        transform .2s ease-in-out !default;
+$accordion-indicator-transform:         rotate(-180deg) !default;
+$accordion-title-focus-box-shadow:      $focus-ring-box-shadow !default; //$button-focus-box-shadow !default;
+// These variables are not exposed as CSS variables.
+$accordion-item-fg-color-context:       var(--#{$prefix}fg-main) !default;
+$accordion-item-bg-color-context:       var(--#{$prefix}bg-main) !default;
+$accordion-title-fg-color-context:      var(--#{$prefix}fg-main) !default;
+$accordion-title-bg-color-context:      var(--#{$prefix}bg-main) !default;
+$accordion-title-fg-active-context:     var(--#{$prefix}fg-main) !default;
+$accordion-title-bg-active-context:     var(--#{$prefix}bg-main) !default;
+$accordion-indicator-idle-context:      var(--#{$prefix}icon-subtle) !default;
+$accordion-indicator-active-context:    var(--#{$prefix}icon-main) !default;
+$accordion-border-color-context:        var(--#{$prefix}border-subtle) !default;
+// scss-docs-end accordion-variables
+
+//
 // Navs
 //
 
 // scss-docs-start nav-variables
 $nav-link-padding-y:                var(--#{$prefix}space-xsmall) !default;
 $nav-link-padding-x:                var(--#{$prefix}space-medium) !default;
-$nav-link-font:                     $cx-font-text-medium-normal !default;
-$nav-link-fg-color:                 var(--#{$prefix}link-main) !default;
-$nav-link-hover-fg-color:           var(--#{$prefix}link-hover) !default;
+$nav-link-font:                     null !default; // $cx-font-text-medium-normal !default;
+$nav-link-color:                    var(--#{$prefix}link-main) !default;
+$nav-link-hover-color:              var(--#{$prefix}link-hover) !default;
+$nav-link-active-color:             var(--#{$prefix}link-visited) !default;
+$nav-link-disabled-color:           var(--#{$prefix}fg-slight) !default;
 $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out !default;
-$nav-link-disabled-fg-color:        var(--#{$prefix}fg-slight) !default;
 $nav-link-focus-box-shadow:         $focus-ring-box-shadow !default;// $focus-ring-box-shadow !default;
 
 $nav-tabs-border-color:             var(--#{$prefix}border-subtle) !default;
 $nav-tabs-border-width:             var(--#{$prefix}border-width-medium) !default;
 $nav-tabs-border-active-width:      var(--#{$prefix}border-width-2xlarge) !default;
 $nav-tabs-border-radius:            var(--#{$prefix}border-radius-medium) !default;
-$nav-tabs-link-hover-border-color:  var(--#{$prefix}dim-slight) var(--#{$prefix}dim-slight) $nav-tabs-border-color !default;
-$nav-tabs-link-active-fg-color:     var(--#{$prefix}fg-main) !default;
-$nav-tabs-link-active-bg-color:     var(--#{$prefix}bg-main) !default;
-$nav-tabs-link-active-border-color: var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-link-active-bg-color !default;
+$nav-tabs-hover-border-color:       transparent !default; //var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-border-color !default;
+$nav-tabs-active-fg-color:          var(--#{$prefix}fg-main) !default;
+$nav-tabs-active-bg-color:          var(--#{$prefix}bg-main) !default;
+$nav-tabs-active-border-color:      var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-active-bg-color !default;
 
 $nav-pills-border-radius:           var(--#{$prefix}border-radius-medium) !default;
-$nav-pills-link-active-fg-color:    $component-active-fg-color !default;
-$nav-pills-link-active-bg-color:    $component-active-bg-color !default;
+$nav-pills-active-fg-color:         $component-active-fg-color !default;
+$nav-pills-active-bg-color:         $component-active-bg-color !default;
 
 $nav-underline-gap:                 1rem !default;
 $nav-underline-border-width:        .125rem !default;
-$nav-underline-link-active-fg-color:   var(--#{$prefix}fg-main) !default;
+$nav-underline-active-fg-color:     var(--#{$prefix}fg-main) !default;
+
+$nav-collapse-indicator-icon:       $accordion-indicator-icon !default;
+$nav-collapse-indicator-transition: $accordion-indicator-transition !default;
 // scss-docs-end nav-variables
 
 
@@ -760,14 +795,24 @@ $nav-underline-link-active-fg-color:   var(--#{$prefix}fg-main) !default;
 $navbar-padding-y:                  $spacer * .5 !default;
 $navbar-padding-x:                  null !default;
 
+$navbar-fg-color:                   rgba(var(--#{$prefix}fg-main-rgb), .65) !default;
+$navbar-link-color:                 $navbar-fg-color !default;
+$navbar-hover-color:                rgba(var(--#{$prefix}fg-main-rgb), .85) !default;
+$navbar-active-color:               rgba(var(--#{$prefix}fg-main-rgb), 1) !default;
+$navbar-disabled-color:             rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-slight)) !default;
+
 $navbar-nav-link-padding-x:         .5rem !default;
+
+$navbar-brand-fg-color:             $navbar-active-color !default;
+$navbar-brand-hover-color:          $navbar-active-color !default;
 
 $navbar-brand-font-size:            $font-size-text-xlarge !default;
 $navbar-brand-line-height:          $line-height-text-xlarge !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
-$nav-link-height:                   null !default; //$font-size-text-medium * $line-height-text-medium + $nav-link-padding-y * 2 !default;
+$navbar-link-height:                null !default; //$font-size-text-medium * $line-height-text-medium + $nav-link-padding-y * 2 !default;
 $navbar-brand-height:               null !default; //$navbar-brand-font-size * $navbar-brand-line-height !default;
-$navbar-brand-padding-y:            null !default; //($nav-link-height - $navbar-brand-height) * .5 !default;
+// $navbar-brand-padding-y:            null !default; //($navbar-link-height - $navbar-brand-height) * .5 !default;
+$navbar-brand-padding-y:            #{calc((($nav-link-padding-y * 2 + var(--#{$prefix}nav-link-line-height, var(--#{$prefix}line-height))) - $navbar-brand-line-height) * .5)} !default; //($navbar-link-height - $navbar-brand-height) * .5 !default;
 $navbar-brand-margin-end:           1rem !default;
 
 $navbar-toggler-padding-y:          .25rem !default;
@@ -776,28 +821,21 @@ $navbar-toggler-font-size:          $font-size-text-large !default;
 $navbar-toggler-border-radius:      $button-medium-border-radius !default;
 $navbar-toggler-focus-width:        $button-focus-width !default;
 $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
-
-$navbar-light-color:                rgba(var(--#{$prefix}fg-main-rgb), .65) !default;
-$navbar-light-hover-color:          rgba(var(--#{$prefix}fg-main-rgb), .8) !default;
-$navbar-light-active-color:         rgba(var(--#{$prefix}fg-main-rgb), 1) !default;
-$navbar-light-disabled-color:       rgba(var(--#{$prefix}fg-main-rgb), .3) !default;
-// $navbar-light-icon-color:           $navbar-light-color !default;
-$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='currentColor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-light-toggler-border-color: rgba(var(--#{$prefix}fg-main-rgb), .15) !default;
-$navbar-light-brand-color:          $navbar-light-active-color !default;
-$navbar-light-brand-hover-color:    $navbar-light-active-color !default;
+$navbar-toggler-icon:               svg-icon("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='currentcolor' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-toggler-icon-color:         $navbar-fg-color !default;
+$navbar-toggler-border-color:       rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-border-subtle)) !default;
 // scss-docs-end navbar-variables
 
 // scss-docs-start navbar-dark-variables
-$navbar-dark-color:                 rgba($white, .55) !default;
-$navbar-dark-hover-color:           rgba($white, .75) !default;
-$navbar-dark-active-color:          $white !default;
-$navbar-dark-disabled-color:        rgba($white, .25) !default;
-$navbar-dark-icon-color:            $navbar-dark-color !default;
-$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
-$navbar-dark-brand-color:           $navbar-dark-active-color !default;
-$navbar-dark-brand-hover-color:     $navbar-dark-active-color !default;
+// $navbar-dark-color:                 rgba($white, .55) !default;
+// $navbar-dark-hover-color:           rgba($white, .75) !default;
+// $navbar-dark-active-color:          $white !default;
+// $navbar-dark-disabled-color:        rgba($white, .25) !default;
+// $navbar-dark-icon-color:            $navbar-dark-color !default;
+// $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+// $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+// $navbar-dark-brand-color:           $navbar-dark-active-color !default;
+// $navbar-dark-brand-hover-color:     $navbar-dark-active-color !default;
 // scss-docs-end navbar-dark-variables
 
 //
@@ -924,33 +962,6 @@ $card-bg-color:                     var(--#{$prefix}bg-main) !default;
 $card-image-overlay-padding:        $spacer !default;
 $card-group-margin:                 $grid-gutter-width * .5 !default;
 // scss-docs-end card-variables
-
-//
-// Accordion
-// See `tokens/_accordion.scss` for more details.
-//
-// scss-docs-start accordion-variables
-//$accordion-border-width:                var(--#{$prefix}border-width-medium) !default;
-//$accordion-border-color:                var(--#{$prefix}border-subtle) !default;
-//$accordion-border-radius:               var(--#{$prefix}border-radius-medium) !default;
-$accordion-indicator:                   url("data:image/svg+xml,#{$accordion-indicator-icon}") !default;
-$accordion-box-radius:                  #{calc($accordion-border-radius - $accordion-border-width)} !default;
-$accordion-transition:                  $transition-collapse !default;
-$accordion-title-transition:            $button-transition, border-radius .15s ease !default;
-$accordion-indicator-transition:        transform .2s ease-in-out !default;
-$accordion-indicator-transform:         rotate(-180deg) !default;
-$accordion-title-focus-box-shadow:      $focus-ring-box-shadow !default; //$button-focus-box-shadow !default;
-// These variables are not exposed as CSS variables.
-$accordion-item-fg-color-context:       var(--#{$prefix}fg-main) !default;
-$accordion-item-bg-color-context:       var(--#{$prefix}bg-main) !default;
-$accordion-title-fg-color-context:      var(--#{$prefix}fg-main) !default;
-$accordion-title-bg-color-context:      var(--#{$prefix}bg-main) !default;
-$accordion-title-fg-active-context:     var(--#{$prefix}fg-main) !default;
-$accordion-title-bg-active-context:     var(--#{$prefix}bg-main) !default;
-$accordion-indicator-idle-context:      var(--#{$prefix}icon-subtle) !default;
-$accordion-indicator-active-context:    var(--#{$prefix}icon-main) !default;
-$accordion-border-color-context:        var(--#{$prefix}border-subtle) !default;
-// scss-docs-end accordion-variables
 
 //
 // Tooltips

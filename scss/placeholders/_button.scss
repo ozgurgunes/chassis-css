@@ -110,10 +110,8 @@
   --#{$prefix}trim: var(--#{$prefix}button-trim, #{$button-medium-trim});
   --#{$prefix}border-radius: var(--#{$prefix}button-border-radius, #{$button-medium-border-radius});
   --#{$prefix}icon-size: var(--#{$prefix}button-icon-size, #{$button-medium-icon-size});
-  --#{$prefix}font-family: var(--#{$prefix}button-font-family, #{map-get($button-medium-font, "font-family")});
-  --#{$prefix}font-size: var(--#{$prefix}button-font-size, #{map-get($button-medium-font, "font-size")});
-  --#{$prefix}font-weight: var(--#{$prefix}button-font-weight, #{map-get($button-medium-font, "font-weight")});
-  --#{$prefix}line-height: var(--#{$prefix}button-line-height, #{map-get($button-medium-font, "line-height")});
+  @include map-font($button-medium-font, button);
+  --#{$prefix}dropdown-caret-size: var(--#{$prefix}button-dropdown-caret-size, #{$button-medium-caret-size});
   // scss-docs-end button-medium-css-vars
 }
 
@@ -124,8 +122,10 @@
   --#{$prefix}button-trim: #{$button-large-trim};
   --#{$prefix}button-border-radius: #{$button-large-border-radius};
   --#{$prefix}button-icon-size: #{$button-large-icon-size};
-  --#{$prefix}button-font-size: #{map-get($button-large-font, "font-size")};
-  --#{$prefix}button-line-height: #{map-get($button-large-font, "line-height")};
+  --#{$prefix}button-dropdown-caret-size: #{$button-large-caret-size};
+  @include map-font-size($button-large-font, null, button);
+  @include map-line-height($button-large-font, null, button);
+
 }
 
 %button-small {
@@ -135,8 +135,9 @@
   --#{$prefix}button-trim: #{$button-small-trim};
   --#{$prefix}button-border-radius: #{$button-small-border-radius};
   --#{$prefix}button-icon-size: #{$button-small-icon-size};
-  --#{$prefix}button-font-size: #{map-get($button-small-font, "font-size")};
-  --#{$prefix}button-line-height: #{map-get($button-small-font, "line-height")};
+  --#{$prefix}button-dropdown-caret-size: #{$button-small-caret-size};
+  @include map-font-size($button-small-font, null, button);
+  @include map-line-height($button-small-font, null, button);
 }
 
 // scss-docs-start button-placeholder-selectors

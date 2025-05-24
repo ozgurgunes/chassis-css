@@ -79,7 +79,7 @@ $utilities: () !default;
         css-var: true,
         css-variable-name: icon-size,
         class: null,
-        values: map-loop(rename-keys($icon-sizes, "icon-", "start"), varify, "$key")
+        values: map-loop(map-rename-keys($icon-sizes, "icon-", "start"), varify, "$key")
       ),
       // scss-docs-end utils-icons
     )
