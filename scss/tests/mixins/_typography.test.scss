@@ -1,11 +1,25 @@
+// Reset rfs settings to default values before importing
+$enable-rfs: true;
+$rfs-base-value: 1.25rem;
+$rfs-unit: rem;
+$rfs-rem-value: 16;
+$rfs-breakpoint: 1200px;
+$rfs-breakpoint-unit: px;
+$rfs-factor: 10;
+$rfs-mode: min-media-query;
+$rfs-two-dimensional: false;
+$rfs-disable-class: false;
+
+// Import necessary files for the tests
 @import "../../settings";
 @import "../../functions";
-//@import "../../../chassis-tokens/dist/tokens/web/chassis_docs_light";
 @import "../../tokens";
 @import "../../variables";
 @import "../../maps";
+@import "../../rfs";
 @import "../../mixins";
 
+// Create a test font map for the mixin tests
 $test-font-map: (
   "font-family": var(--#{$prefix}font-family-test),
   "font-weight": var(--#{$prefix}font-weight-test),
@@ -17,6 +31,8 @@ $test-font-map: (
   "text-transform": none,
   "text-decoration": none
 ) !default;
+
+// stylelint-disable property-disallowed-list
 
 @include describe("map-font mixin") {
   @include it("creates font variables for a compnent") {
@@ -63,7 +79,7 @@ $test-font-map: (
       @include expect() {
         .test-map-font-component-and-element {
           font-family: var(--#{$prefix}component-font-family, var(--#{$prefix}font-family-test));
-          font-size: var(--#{$prefix}component-font-size, var(--#{$prefix}font-size-test)); // stylelint-disable-line property-disallowed-list
+          font-size: var(--#{$prefix}component-font-size, var(--#{$prefix}font-size-test));
           font-weight: var(--#{$prefix}component-font-weight, var(--#{$prefix}font-weight-test));
           line-height: var(--#{$prefix}component-line-height, var(--#{$prefix}line-height-test));
         }
@@ -80,7 +96,7 @@ $test-font-map: (
       @include expect() {
         .test-map-font-component-and-element {
           font-family: var(--#{$prefix}component-element-font-family, var(--#{$prefix}font-family-test));
-          font-size: var(--#{$prefix}component-element-font-size, var(--#{$prefix}font-size-test)); // stylelint-disable-line property-disallowed-list
+          font-size: var(--#{$prefix}component-element-font-size, var(--#{$prefix}font-size-test));
           font-weight: var(--#{$prefix}component-element-font-weight, var(--#{$prefix}font-weight-test));
           line-height: var(--#{$prefix}component-element-line-height, var(--#{$prefix}line-height-test));
         }
@@ -123,13 +139,13 @@ $test-font-map: (
       @include expect() {
         .test-default-font {
           font-family: var(--#{$prefix}font-family);
-          font-size: var(--#{$prefix}font-size); // stylelint-disable-line property-disallowed-list
+          font-size: var(--#{$prefix}font-size);
           font-weight: var(--#{$prefix}font-weight);
           line-height: var(--#{$prefix}line-height);
         }
         .test-component-font {
           font-family: var(--#{$prefix}component-font-family);
-          font-size: var(--#{$prefix}component-font-size); // stylelint-disable-line property-disallowed-list
+          font-size: var(--#{$prefix}component-font-size);
           font-weight: var(--#{$prefix}component-font-weight);
           line-height: var(--#{$prefix}component-line-height);
         }
@@ -137,10 +153,9 @@ $test-font-map: (
     }
   }
 }
-$enable-rfs: true;
-// stylelint-disable property-disallowed-list
+
 @include describe("font-size & line-height mixins") {
-  @include it("creates font-size & line height properti with default variables.") {
+  @include it("create font-size & line height properties with default variables.") {
     @include assert() {
       @include output() {
         .test-default-font-size {
@@ -176,49 +191,44 @@ $enable-rfs: true;
     @include assert() {
       @include output() {
         .test-font-size-px {
-          @include font-size(96px);
-        }
-        .test-line-height-px {
-          @include line-height(96px);
+          @include font-size(64px);
         }
         .test-font-size-rem {
           @include font-size(4rem);
         }
-        .test-line-height-rem {
-          @include line-height(6rem);
+        .test-line-height-px {
+          @include line-height(64px);
         }
+        .test-line-height-rem {
+          @include line-height(4rem);
+        }
+        @include rfs-collected-rules();
       }
       @include expect() {
         .test-font-size-px {
-          font-size: #{calc(1.725rem + 5.7vw)};
+          font-size: #{rfs-fluid-value(64px)};
+        }
+        .test-font-size-rem {
+          font-size: #{rfs-fluid-value(4rem)};
+        }
+        .test-line-height-px {
+          line-height: #{rfs-fluid-value(64px, "line-height")};
+        }
+        .test-line-height-rem {
+          line-height: #{rfs-fluid-value(4rem, "line-height")};
         }
         @media (min-width: 1200px) {
           .test-font-size-px {
-            font-size: 6rem;
+            font-size: #{rfs-value(64px)};
           }
-        }
-        .test-line-height-px {
-          line-height: #{calc(1.725rem + 5.7vw)};
-        }
-        @media (min-width: 1200px) {
-          .test-line-height-px {
-            line-height: 6rem;
-          }
-        }
-        .test-font-size-rem {
-          font-size: #{calc(1.525rem + 3.3vw)};
-        }
-        @media (min-width: 1200px) {
           .test-font-size-rem {
-            font-size: 4rem;
+            font-size: #{rfs-value(4rem)};
           }
-        }
-        .test-line-height-rem {
-          line-height: #{calc(1.725rem + 5.7vw)};
-        }
-        @media (min-width: 1200px) {
+          .test-line-height-px {
+            line-height: #{rfs-value(64px)};
+          }
           .test-line-height-rem {
-            line-height: 6rem;
+            line-height: #{rfs-value(4rem)};
           }
         }
       }

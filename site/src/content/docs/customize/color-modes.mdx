@@ -184,7 +184,7 @@ Here’s a look at the JavaScript that powers it. Feel free to inspect our own d
 
 ## Adding theme colors
 
-Adding a new color in `$context-colors` is not enough for some of our components like [alerts]([[docsref:/components/alerts]]) and [list groups]([[docsref:/components/list-group]]). New colors must also be defined in `$context-colors-text`, `$context-colors-bg-subtle`, and `$context-colors-border-subtle` for light theme; but also in `$context-colors-text-dark`, `$context-colors-bg-subtle-dark`, and `$context-colors-border-subtle-dark` for dark theme.
+Adding a new color in `$context-colors` is not enough for some of our components like [notifications]([[docsref:/components/notifications]]) and [list groups]([[docsref:/components/list-group]]). New colors must also be defined in `$context-colors-text`, `$context-colors-bg-subtle`, and `$context-colors-border-subtle` for light theme; but also in `$context-colors-text-dark`, `$context-colors-bg-subtle-dark`, and `$context-colors-border-subtle-dark` for dark theme.
 
 This is a manual process because Sass cannot generate its own Sass variables from an existing variable or map. In future versions of Chassis, we'll revisit this setup to reduce the duplication.
 

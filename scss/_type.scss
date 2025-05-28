@@ -78,21 +78,15 @@ ol {
 // Type display classes
 @each $name, $value in $context-fonts {
   .font-#{$name} {
-    $font-family: map-get($value, "font-family");
-    $font-size: map-get($value, "font-size");
-    $line-height: map-get($value, "line-height");
-    $font-weight: map-get($value, "font-weight");
-    $font-style: map-get($value, "font-style");
-    $letter-spacing: map-get($value, "letter-spacing");
-    $text-transform: map-get($value, "text-transform");
-    $text-decoration: map-get($value, "text-decoration");
-    $margin-bottom: map-get($value, "margin-bottom");
-    margin-bottom: $margin-bottom;
-    font: $font-style $font-weight #{$font-size} / #{$line-height} $font-family;
-    text-decoration: $text-decoration;
-    text-transform: $text-transform;
-    letter-spacing: $letter-spacing;
-    // @include map-font($context-fonts, $prop: true);
+    margin-bottom: map-get($value, "margin-bottom");
+    font-family: map-get($value, "font-family");
+    font-style: map-get($value, "font-style");
+    @include rfs(map-get($value, "font-size"), font-size);
+    @include rfs(map-get($value, "line-height"), line-height);
+    font-weight: map-get($value, "font-weight");
+    text-decoration: map-get($value, "text-decoration");
+    text-transform: map-get($value, "text-transform");
+    letter-spacing: map-get($value, "letter-spacing");
   }
 }
 

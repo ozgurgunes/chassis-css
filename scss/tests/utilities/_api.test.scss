@@ -1,10 +1,10 @@
 $prefix: cx- !default;
-@import "../../functions";
 @import "../../settings";
-// @import "../../../chassis-tokens/dist/tokens/web/chassis_docs_light";
+@import "../../functions";
 @import "../../tokens";
 @import "../../variables";
 @import "../../maps";
+@import "../../rfs";
 @import "../../mixins";
 
 $utilities: ();

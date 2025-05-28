@@ -36,7 +36,8 @@
     --#{$prefix}line-height-#{$name}: #{$value};
   }
   @each $name, $value in $typography {
-    --#{$prefix}#{$name}: #{$value};
+    @include rfs($value, --#{$prefix}#{$name});
+    // --#{$prefix}#{$name}: #{$value};
   }
   // Generate spacers variables
   @each $name, $value in $spacers {

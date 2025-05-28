@@ -1,5 +1,6 @@
-$prefix: cx- !default;
-
+// Chassis SCSS entry point
+//
+// It imports all necessary components, settings, and utilities to build the framework.
 
 @import "mixins/banner";
 @include cxBanner(null);
@@ -14,8 +15,10 @@ $prefix: cx- !default;
 @import "tokens";
 @import "variables";
 @import "maps";
+@import "rfs";
 @import "mixins";
 @import "utilities";
+
 
 // Layout & components
 @import "root";
@@ -64,3 +67,6 @@ $prefix: cx- !default;
 // Utilities
 @import "utilities-api";
 // scss-docs-end import-stack
+
+// Output all collected RFS rules in a single media query
+@include rfs-collected-rules();

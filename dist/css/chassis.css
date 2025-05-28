@@ -977,10 +977,10 @@
   --cx-line-height-h4: var(--cx-line-height-html-h4);
   --cx-line-height-h5: var(--cx-line-height-html-h5);
   --cx-line-height-h6: var(--cx-line-height-html-h6);
-  --cx-font-size-text-5xlarge: 2.75rem;
-  --cx-font-size-text-4xlarge: 2.5rem;
-  --cx-font-size-text-3xlarge: 2rem;
-  --cx-font-size-text-2xlarge: 1.625rem;
+  --cx-font-size-text-5xlarge: calc(1.4rem + 1.8vw);
+  --cx-font-size-text-4xlarge: calc(1.375rem + 1.5vw);
+  --cx-font-size-text-3xlarge: calc(1.325rem + 0.9vw);
+  --cx-font-size-text-2xlarge: calc(1.2875rem + 0.45vw);
   --cx-font-size-text-xlarge: 1.25rem;
   --cx-font-size-text-large: 1.125rem;
   --cx-font-size-text-medium: 1rem;
@@ -991,20 +991,20 @@
   --cx-font-weight-text-strong: 500;
   --cx-font-weight-text-mass: 600;
   --cx-font-weight-text-elegant: 300;
-  --cx-line-height-text-5xlarge: 4rem;
-  --cx-line-height-text-4xlarge: 3.75rem;
-  --cx-line-height-text-3xlarge: 3rem;
-  --cx-line-height-text-2xlarge: 2.5rem;
-  --cx-line-height-text-xlarge: 2rem;
-  --cx-line-height-text-large: 1.75rem;
-  --cx-line-height-text-medium: 1.5rem;
+  --cx-line-height-text-5xlarge: calc(1.6796875rem + 3.09375vw);
+  --cx-line-height-text-4xlarge: calc(1.6666666667rem + 2.7777777778vw);
+  --cx-line-height-text-3xlarge: calc(1.6145833333rem + 1.8472222222vw);
+  --cx-line-height-text-2xlarge: calc(1.5625rem + 1.25vw);
+  --cx-line-height-text-xlarge: calc(1.484375rem + 0.6875vw);
+  --cx-line-height-text-large: calc(1.4285714286rem + 0.4285714286vw);
+  --cx-line-height-text-medium: calc(1.3541666667rem + 0.1944444444vw);
   --cx-line-height-text-small: 1.25rem;
   --cx-line-height-text-xsmall: 1rem;
   --cx-line-height-text-2xsmall: 0.75rem;
-  --cx-font-size-display-5xlarge: 2.75rem;
-  --cx-font-size-display-4xlarge: 2.5rem;
-  --cx-font-size-display-3xlarge: 2rem;
-  --cx-font-size-display-2xlarge: 1.625rem;
+  --cx-font-size-display-5xlarge: calc(1.4rem + 1.8vw);
+  --cx-font-size-display-4xlarge: calc(1.375rem + 1.5vw);
+  --cx-font-size-display-3xlarge: calc(1.325rem + 0.9vw);
+  --cx-font-size-display-2xlarge: calc(1.2875rem + 0.45vw);
   --cx-font-size-display-xlarge: 1.25rem;
   --cx-font-size-display-large: 1.125rem;
   --cx-font-size-display-medium: 1rem;
@@ -1015,20 +1015,20 @@
   --cx-font-weight-display-strong: 600;
   --cx-font-weight-display-mass: 700;
   --cx-font-weight-display-elegant: 400;
-  --cx-line-height-display-5xlarge: 4rem;
-  --cx-line-height-display-4xlarge: 3.75rem;
-  --cx-line-height-display-3xlarge: 3rem;
-  --cx-line-height-display-2xlarge: 2.5rem;
-  --cx-line-height-display-xlarge: 2rem;
-  --cx-line-height-display-large: 1.75rem;
-  --cx-line-height-display-medium: 1.5rem;
+  --cx-line-height-display-5xlarge: calc(1.6796875rem + 3.09375vw);
+  --cx-line-height-display-4xlarge: calc(1.6666666667rem + 2.7777777778vw);
+  --cx-line-height-display-3xlarge: calc(1.6145833333rem + 1.8472222222vw);
+  --cx-line-height-display-2xlarge: calc(1.5625rem + 1.25vw);
+  --cx-line-height-display-xlarge: calc(1.484375rem + 0.6875vw);
+  --cx-line-height-display-large: calc(1.4285714286rem + 0.4285714286vw);
+  --cx-line-height-display-medium: calc(1.3541666667rem + 0.1944444444vw);
   --cx-line-height-display-small: 1.25rem;
   --cx-line-height-display-xsmall: 1rem;
   --cx-line-height-display-2xsmall: 0.75rem;
   --cx-font-size-html-body: 1rem;
-  --cx-font-size-html-h1: 2.5rem;
-  --cx-font-size-html-h2: 2rem;
-  --cx-font-size-html-h3: 1.5rem;
+  --cx-font-size-html-h1: calc(1.375rem + 1.5vw);
+  --cx-font-size-html-h2: calc(1.325rem + 0.9vw);
+  --cx-font-size-html-h3: calc(1.275rem + 0.3vw);
   --cx-font-size-html-h4: 1.25rem;
   --cx-font-size-html-h5: 1rem;
   --cx-font-size-html-h6: 0.875rem;
@@ -1044,25 +1044,25 @@
   --cx-font-weight-html-cite: 500;
   --cx-font-weight-html-list: 400;
   --cx-font-weight-html-code: 400;
-  --cx-line-height-html-body: 1.5rem;
-  --cx-line-height-html-h1: 3.5rem;
-  --cx-line-height-html-h2: 2.75rem;
-  --cx-line-height-html-h3: 2.25rem;
-  --cx-line-height-html-h4: 1.75rem;
-  --cx-line-height-html-h5: 1.5rem;
+  --cx-line-height-html-body: calc(1.3541666667rem + 0.1944444444vw);
+  --cx-line-height-html-h1: calc(1.6517857143rem + 2.4642857143vw);
+  --cx-line-height-html-h2: calc(1.5909090909rem + 1.5454545455vw);
+  --cx-line-height-html-h3: calc(1.5277777778rem + 0.962962963vw);
+  --cx-line-height-html-h4: calc(1.4285714286rem + 0.4285714286vw);
+  --cx-line-height-html-h5: calc(1.3541666667rem + 0.1944444444vw);
   --cx-line-height-html-h6: 1.25rem;
-  --cx-line-height-html-paragraph: 1.5rem;
-  --cx-line-height-html-blockquote: 1.5rem;
+  --cx-line-height-html-paragraph: calc(1.3541666667rem + 0.1944444444vw);
+  --cx-line-height-html-blockquote: calc(1.3541666667rem + 0.1944444444vw);
   --cx-line-height-html-cite: 1.25rem;
-  --cx-line-height-html-list: 1.5rem;
-  --cx-line-height-html-code: 1.5rem;
+  --cx-line-height-html-list: calc(1.3541666667rem + 0.1944444444vw);
+  --cx-line-height-html-code: calc(1.3541666667rem + 0.1944444444vw);
   --cx-font-size-code-large: 1.125rem;
   --cx-font-size-code-medium: 1rem;
   --cx-font-size-code-small: 0.875rem;
   --cx-font-weight-code-normal: 400;
   --cx-font-weight-code-strong: 700;
-  --cx-line-height-code-large: 1.75rem;
-  --cx-line-height-code-medium: 1.5rem;
+  --cx-line-height-code-large: calc(1.4285714286rem + 0.4285714286vw);
+  --cx-line-height-code-medium: calc(1.3541666667rem + 0.1944444444vw);
   --cx-line-height-code-small: 1.25rem;
   --cx-space-zero: 0rem;
   --cx-space-4xsmall: 0.0625rem;
@@ -2545,9 +2545,9 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  line-height: var(--cx-line-height);
   line-height: inherit;
+  font-size: calc(1.275rem + 0.3vw);
+  line-height: 1.5em;
 }
 legend + * {
   clear: left;
@@ -4395,8 +4395,8 @@ progress {
 .input-group > .button, .form-select, .form-input {
   --cx-font-family: var(--cx-input-font-family, var(--cx-font-family-text));
   --cx-font-size: var(--cx-input-font-size, var(--cx-font-size-medium));
-  --cx-line-height: var(--cx-input-line-height, var(--cx-line-height-medium));
   --cx-font-weight: var(--cx-input-font-weight, var(--cx-font-weight-normal));
+  --cx-line-height: var(--cx-input-line-height, var(--cx-line-height-medium));
   --cx-padding-x: var(--cx-input-padding-x, 0.75rem);
   --cx-padding-y: var(--cx-input-padding-y, 0.5rem);
   --cx-gap: var(--cx-input-gap, 0.75rem);
@@ -4689,7 +4689,11 @@ ol.inline li:not(:last-child) {
 
 .font-jumbo {
   margin-bottom: 0rem;
-  font: normal var(--cx-font-weight-display-mass) 6rem/7.5rem var(--cx-font-family-jumbo);
+  font-family: var(--cx-font-family-jumbo);
+  font-style: normal;
+  font-size: calc(1.725rem + 5.7vw);
+  line-height: calc(1.7708333333rem + 7.6388888889vw);
+  font-weight: var(--cx-font-weight-display-mass);
   text-decoration: none;
   text-transform: none;
   letter-spacing: -0.0625;
@@ -4697,7 +4701,11 @@ ol.inline li:not(:last-child) {
 
 .font-hero {
   margin-bottom: 0rem;
-  font: normal var(--cx-font-weight-display-mass) 4rem/5rem var(--cx-font-family-hero);
+  font-family: var(--cx-font-family-hero);
+  font-style: normal;
+  font-size: calc(1.525rem + 3.3vw);
+  line-height: calc(1.71875rem + 4.375vw);
+  font-weight: var(--cx-font-weight-display-mass);
   text-decoration: none;
   text-transform: none;
   letter-spacing: -0.0625;
@@ -4705,7 +4713,11 @@ ol.inline li:not(:last-child) {
 
 .font-heading {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-display-strong) var(--cx-font-size-display-3xlarge)/var(--cx-line-height-display-3xlarge) var(--cx-font-family-heading);
+  font-family: var(--cx-font-family-heading);
+  font-style: normal;
+  font-size: var(--cx-font-size-display-3xlarge);
+  line-height: var(--cx-line-height-display-3xlarge);
+  font-weight: var(--cx-font-weight-display-strong);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4713,7 +4725,11 @@ ol.inline li:not(:last-child) {
 
 .font-lead {
   margin-bottom: 0rem;
-  font: normal var(--cx-font-weight-text-normal) var(--cx-font-size-text-xlarge)/var(--cx-line-height-text-xlarge) var(--cx-font-family-lead);
+  font-family: var(--cx-font-family-lead);
+  font-style: normal;
+  font-size: var(--cx-font-size-text-xlarge);
+  line-height: var(--cx-line-height-text-xlarge);
+  font-weight: var(--cx-font-weight-text-normal);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4721,7 +4737,11 @@ ol.inline li:not(:last-child) {
 
 .font-title.large {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-display-strong) var(--cx-font-size-display-large)/var(--cx-line-height-display-large) var(--cx-font-family-title);
+  font-family: var(--cx-font-family-title);
+  font-style: normal;
+  font-size: var(--cx-font-size-display-large);
+  line-height: var(--cx-line-height-display-large);
+  font-weight: var(--cx-font-weight-display-strong);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4729,7 +4749,11 @@ ol.inline li:not(:last-child) {
 
 .font-title {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-display-strong) var(--cx-font-size-display-medium)/var(--cx-line-height-display-medium) var(--cx-font-family-title);
+  font-family: var(--cx-font-family-title);
+  font-style: normal;
+  font-size: var(--cx-font-size-display-medium);
+  line-height: var(--cx-line-height-display-medium);
+  font-weight: var(--cx-font-weight-display-strong);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4737,7 +4761,11 @@ ol.inline li:not(:last-child) {
 
 .font-title.small {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-display-strong) var(--cx-font-size-display-small)/var(--cx-line-height-display-small) var(--cx-font-family-title);
+  font-family: var(--cx-font-family-title);
+  font-style: normal;
+  font-size: var(--cx-font-size-display-small);
+  line-height: var(--cx-line-height-display-small);
+  font-weight: var(--cx-font-weight-display-strong);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4745,7 +4773,11 @@ ol.inline li:not(:last-child) {
 
 .font-body.large {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-text-normal) var(--cx-font-size-text-large)/var(--cx-line-height-text-large) var(--cx-font-family-body);
+  font-family: var(--cx-font-family-body);
+  font-style: normal;
+  font-size: var(--cx-font-size-text-large);
+  line-height: var(--cx-line-height-text-large);
+  font-weight: var(--cx-font-weight-text-normal);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4753,7 +4785,11 @@ ol.inline li:not(:last-child) {
 
 .font-body {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-text-normal) var(--cx-font-size-text-medium)/var(--cx-line-height-text-medium) var(--cx-font-family-body);
+  font-family: var(--cx-font-family-body);
+  font-style: normal;
+  font-size: var(--cx-font-size-text-medium);
+  line-height: var(--cx-line-height-text-medium);
+  font-weight: var(--cx-font-weight-text-normal);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -4761,7 +4797,11 @@ ol.inline li:not(:last-child) {
 
 .font-body.small {
   margin-bottom: 1rem;
-  font: normal var(--cx-font-weight-text-normal) var(--cx-font-size-text-small)/var(--cx-line-height-text-small) var(--cx-font-family-body);
+  font-family: var(--cx-font-family-body);
+  font-style: normal;
+  font-size: var(--cx-font-size-text-small);
+  line-height: var(--cx-line-height-text-small);
+  font-weight: var(--cx-font-weight-text-normal);
   text-decoration: none;
   text-transform: none;
   letter-spacing: 0;
@@ -7438,10 +7478,10 @@ ol.inline li:not(:last-child) {
   }
 }
 .form-label {
-  --cx-font-family: var(--cx-component-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-component-font-size, var(--cx-font-size-medium));
-  --cx-font-weight: var(--cx-component-font-weight, var(--cx-font-weight-strong));
-  --cx-line-height: var(--cx-component-line-height, var(--cx-line-height-medium));
+  --cx-font-family: var(--cx-font-family-text);
+  --cx-font-size: var(--cx-font-size-medium);
+  --cx-font-weight: var(--cx-font-weight-strong);
+  --cx-line-height: var(--cx-line-height-medium);
   margin-bottom: 0.5rem;
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
   color: var(--cx-fg-main);
@@ -7449,10 +7489,10 @@ ol.inline li:not(:last-child) {
 
 .col-form-label {
   --cx-fg-color: $form-label-color;
-  --cx-font-family: var(--cx-component-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-component-font-size, var(--cx-font-size-medium));
-  --cx-font-weight: var(--cx-component-font-weight, var(--cx-font-weight-strong));
-  --cx-line-height: var(--cx-component-line-height, var(--cx-line-height-medium));
+  --cx-font-family: var(--cx-font-family-text);
+  --cx-font-size: var(--cx-font-size-medium);
+  --cx-font-weight: var(--cx-font-weight-strong);
+  --cx-line-height: var(--cx-line-height-medium);
   padding-top: calc(0.5rem + var(--cx-border-width-medium));
   padding-bottom: calc(0.5rem + var(--cx-border-width-medium));
   margin-bottom: 0;
@@ -7598,7 +7638,7 @@ textarea.form-input {
 }
 
 .form-select {
-  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2300738f' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
+  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%231c2021' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
   padding-right: calc(var(--cx-padding-x) * 2 + var(--cx-caret-size));
   background-image: var(--cx-caret-icon), var(--cx-feedback-icon, none);
   background-repeat: no-repeat;
@@ -7617,7 +7657,7 @@ textarea.form-input {
   text-shadow: 0 0 0 var(--cx-fg-color);
 }
 [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select), .form-select[data-cx-theme=dark] {
-  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%2340bbd9' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
+  --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23e9eced' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
 }
 [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select)[disabled], [data-cx-theme=dark] .form-select:not(.form-select[data-cx-theme=light], [data-cx-theme=dark] [data-cx-theme=light] .form-select):disabled, .form-select[data-cx-theme=dark][disabled], .form-select[data-cx-theme=dark]:disabled {
   --cx-caret-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='rgba(233, 236, 237, 0.25)' class='icon-chevron-down-solid' viewBox='0 0 24 24'%3e%3cpath d='M11.1016 17.8984L3.60156 10.3984C3.09375 9.92969 3.09375 9.10938 3.60156 8.64062C4.07031 8.13281 4.89062 8.13281 5.35938 8.64062L12 15.2422L18.6016 8.64062C19.0703 8.13281 19.8906 8.13281 20.3594 8.64062C20.8672 9.10938 20.8672 9.92969 20.3594 10.3984L12.8594 17.8984C12.3906 18.4062 11.5703 18.4062 11.1016 17.8984Z'/%3e%3c/svg%3e");
@@ -8751,8 +8791,6 @@ textarea.form-input {
 .dropup-center,
 .dropdown-center {
   position: relative;
-  display: inline-flex;
-  vertical-align: middle;
 }
 
 .dropdown-toggle {
@@ -9106,7 +9144,6 @@ textarea.form-input {
   --cx-fg-color: var(--cx-link-color);
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: var(--cx-padding-y) var(--cx-padding-x);
   font: var(--cx-font-weight) var(--cx-font-size)/var(--cx-line-height) var(--cx-font-family);
   text-decoration: none;
@@ -9173,6 +9210,7 @@ textarea.form-input {
 }
 .nav-pills .nav-link {
   border-radius: var(--cx-border-radius);
+  justify-content: center;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
@@ -9277,6 +9315,10 @@ textarea.form-input {
   text-align: center;
 }
 
+.nav-fill .nav-link,
+.nav-justified .nav-link {
+  justify-content: center;
+}
 .nav-fill .nav-item .nav-link,
 .nav-justified .nav-item .nav-link {
   width: 100%;
@@ -9364,7 +9406,7 @@ textarea.form-input {
   color: var(--cx-navbar-active-color);
 }
 .navbar-nav .nav-link.dropdown-toggle::after {
-  margin-right: calc(-0.5 * var(--cx-caret-spacing));
+  margin-right: 0;
   margin-left: calc(0.5 * var(--cx-caret-spacing));
 }
 .navbar-nav .dropdown-menu {
@@ -9457,6 +9499,10 @@ textarea.form-input {
     padding-right: var(--cx-navbar-nav-link-padding-x);
     padding-left: var(--cx-navbar-nav-link-padding-x);
   }
+  .navbar-expand-small .navbar-nav .nav-link::after {
+    margin-right: calc(-0.5 * var(--cx-caret-spacing));
+    margin-left: calc(0.5 * var(--cx-caret-spacing));
+  }
   .navbar-expand-small .navbar-nav-scroll {
     overflow: visible;
   }
@@ -9504,6 +9550,10 @@ textarea.form-input {
   .navbar-expand-medium .navbar-nav .nav-link {
     padding-right: var(--cx-navbar-nav-link-padding-x);
     padding-left: var(--cx-navbar-nav-link-padding-x);
+  }
+  .navbar-expand-medium .navbar-nav .nav-link::after {
+    margin-right: calc(-0.5 * var(--cx-caret-spacing));
+    margin-left: calc(0.5 * var(--cx-caret-spacing));
   }
   .navbar-expand-medium .navbar-nav-scroll {
     overflow: visible;
@@ -9553,6 +9603,10 @@ textarea.form-input {
     padding-right: var(--cx-navbar-nav-link-padding-x);
     padding-left: var(--cx-navbar-nav-link-padding-x);
   }
+  .navbar-expand-large .navbar-nav .nav-link::after {
+    margin-right: calc(-0.5 * var(--cx-caret-spacing));
+    margin-left: calc(0.5 * var(--cx-caret-spacing));
+  }
   .navbar-expand-large .navbar-nav-scroll {
     overflow: visible;
   }
@@ -9600,6 +9654,10 @@ textarea.form-input {
   .navbar-expand-xlarge .navbar-nav .nav-link {
     padding-right: var(--cx-navbar-nav-link-padding-x);
     padding-left: var(--cx-navbar-nav-link-padding-x);
+  }
+  .navbar-expand-xlarge .navbar-nav .nav-link::after {
+    margin-right: calc(-0.5 * var(--cx-caret-spacing));
+    margin-left: calc(0.5 * var(--cx-caret-spacing));
   }
   .navbar-expand-xlarge .navbar-nav-scroll {
     overflow: visible;
@@ -9649,6 +9707,10 @@ textarea.form-input {
     padding-right: var(--cx-navbar-nav-link-padding-x);
     padding-left: var(--cx-navbar-nav-link-padding-x);
   }
+  .navbar-expand-2xlarge .navbar-nav .nav-link::after {
+    margin-right: calc(-0.5 * var(--cx-caret-spacing));
+    margin-left: calc(0.5 * var(--cx-caret-spacing));
+  }
   .navbar-expand-2xlarge .navbar-nav-scroll {
     overflow: visible;
   }
@@ -9695,6 +9757,10 @@ textarea.form-input {
 .navbar-expand .navbar-nav .nav-link {
   padding-right: var(--cx-navbar-nav-link-padding-x);
   padding-left: var(--cx-navbar-nav-link-padding-x);
+}
+.navbar-expand .navbar-nav .nav-link::after {
+  margin-right: calc(-0.5 * var(--cx-caret-spacing));
+  margin-left: calc(0.5 * var(--cx-caret-spacing));
 }
 .navbar-expand .navbar-nav-scroll {
   overflow: visible;
@@ -10028,6 +10094,7 @@ textarea.form-input {
   flex-shrink: 0;
   width: var(--cx-indicator-size);
   height: var(--cx-indicator-size);
+  margin-top: calc((var(--cx-title-line-height) - var(--cx-indicator-size)) / 2);
   margin-right: var(--cx-title-gap);
   content: "";
   background-color: var(--cx-indicator-idle-color);
@@ -28821,6 +28888,58 @@ textarea.form-input {
   }
   .d-print-none {
     display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  :root, [data-cx-theme=light] {
+    --cx-font-size-text-5xlarge: 2.75rem;
+    --cx-font-size-text-4xlarge: 2.5rem;
+    --cx-font-size-text-3xlarge: 2rem;
+    --cx-font-size-text-2xlarge: 1.625rem;
+    --cx-line-height-text-5xlarge: 4rem;
+    --cx-line-height-text-4xlarge: 3.75rem;
+    --cx-line-height-text-3xlarge: 3rem;
+    --cx-line-height-text-2xlarge: 2.5rem;
+    --cx-line-height-text-xlarge: 2rem;
+    --cx-line-height-text-large: 1.75rem;
+    --cx-line-height-text-medium: 1.5rem;
+    --cx-font-size-display-5xlarge: 2.75rem;
+    --cx-font-size-display-4xlarge: 2.5rem;
+    --cx-font-size-display-3xlarge: 2rem;
+    --cx-font-size-display-2xlarge: 1.625rem;
+    --cx-line-height-display-5xlarge: 4rem;
+    --cx-line-height-display-4xlarge: 3.75rem;
+    --cx-line-height-display-3xlarge: 3rem;
+    --cx-line-height-display-2xlarge: 2.5rem;
+    --cx-line-height-display-xlarge: 2rem;
+    --cx-line-height-display-large: 1.75rem;
+    --cx-line-height-display-medium: 1.5rem;
+    --cx-font-size-html-h1: 2.5rem;
+    --cx-font-size-html-h2: 2rem;
+    --cx-font-size-html-h3: 1.5rem;
+    --cx-line-height-html-body: 1.5rem;
+    --cx-line-height-html-h1: 3.5rem;
+    --cx-line-height-html-h2: 2.75rem;
+    --cx-line-height-html-h3: 2.25rem;
+    --cx-line-height-html-h4: 1.75rem;
+    --cx-line-height-html-h5: 1.5rem;
+    --cx-line-height-html-paragraph: 1.5rem;
+    --cx-line-height-html-blockquote: 1.5rem;
+    --cx-line-height-html-list: 1.5rem;
+    --cx-line-height-html-code: 1.5rem;
+    --cx-line-height-code-large: 1.75rem;
+    --cx-line-height-code-medium: 1.5rem;
+  }
+  legend {
+    font-size: 1.5rem;
+  }
+  .font-jumbo {
+    font-size: 6rem;
+    line-height: 7.5rem;
+  }
+  .font-hero {
+    font-size: 4rem;
+    line-height: 5rem;
   }
 }
 

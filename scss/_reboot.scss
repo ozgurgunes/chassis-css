@@ -534,10 +534,10 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: $legend-margin-bottom;
-  @include font-size($legend-font-size);
-  @include line-height();
   font-weight: $legend-font-weight;
   line-height: inherit;
+  @include font-size($legend-font-size);
+  @include line-height($legend-line-height);
 
   + * {
     clear: left; // 2

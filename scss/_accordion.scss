@@ -150,6 +150,7 @@
         flex-shrink: 0;
         width: var(--#{$prefix}indicator-size);
         height: var(--#{$prefix}indicator-size);
+        margin-top: #{calc((var(--#{$prefix}title-line-height) - var(--#{$prefix}indicator-size)) / 2)};
         margin-right: var(--#{$prefix}title-gap);
         content: "";
         background-color: var(--#{$prefix}indicator-idle-color);
