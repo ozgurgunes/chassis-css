@@ -2,20 +2,20 @@
 @each $color, $value in $context-colors {
   .link-#{$color} {
     @extend %link-color;
-    --#{$prefix}link-color-rgb: var(--#{$prefix}#{$color}-link-main-rgb);
+    --#{$prefix}link-main-color-rgb: var(--#{$prefix}#{$color}-link-main-rgb);
 
     &:hover,
     &:focus {
-      --#{$prefix}link-color-rgb: var(--#{$prefix}#{$color}-link-hover-rgb);
+      --#{$prefix}link-main-color-rgb: var(--#{$prefix}#{$color}-link-hover-rgb);
     }
 
     &:active {
-      --#{$prefix}link-color-rgb: var(--#{$prefix}#{$color}-link-active-rgb);
+      --#{$prefix}link-main-color-rgb: var(--#{$prefix}#{$color}-link-active-rgb);
     }
 
     @if ($enable-visited-links) {
       &:visited {
-        --#{$prefix}link-color-rgb: var(--#{$prefix}#{$color}-link-visited-rgb);
+        --#{$prefix}link-main-color-rgb: var(--#{$prefix}#{$color}-link-visited-rgb);
       }
     }
 
@@ -51,15 +51,15 @@
 // One-off special link helper as a bridge until v6
 .link-body {
   @extend %link-color;
-  --#{$prefix}link-color-rgb: var(--#{$prefix}fg-main-rgb);
+  --#{$prefix}link-main-color-rgb: var(--#{$prefix}fg-main-rgb);
 
   &:hover,
   &:focus {
-    --#{$prefix}link-color-rgb: var(--#{$prefix}fg-main-rgb);
+    --#{$prefix}link-main-color-rgb: var(--#{$prefix}fg-main-rgb);
   }
 
   &:active {
-    --#{$prefix}link-color-rgb: var(--#{$prefix}link-main-rgb);
+    --#{$prefix}link-main-color-rgb: var(--#{$prefix}link-main-rgb);
   }
 
 }
@@ -81,7 +81,7 @@
   display: inline-flex;
   gap: $icon-link-gap;
   align-items: center;
-  text-decoration-color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, .5));
+  text-decoration-color: rgba(var(--#{$prefix}link-main-color-rgb), var(--#{$prefix}link-opacity, .5));
   text-underline-offset: $icon-text-underline-offset;
   backface-visibility: hidden;
 

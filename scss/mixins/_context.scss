@@ -86,10 +86,10 @@
   --#{$prefix}icon-color: var(--#{$prefix}context-icon-main, var(--#{$prefix}icon-main));
   --#{$prefix}bullet-color: var(--#{$prefix}context-icon-subtle, var(--#{$prefix}icon-subtle));
   --#{$prefix}cue-color: var(--#{$prefix}context-cue-main, var(--#{$prefix}cue-main));
-  // --#{$prefix}link-color: var(--#{$prefix}context-link-main, var(--#{$prefix}link-main));
-  // --#{$prefix}hover-color: var(--#{$prefix}context-link-hover, var(--#{$prefix}link-hover));
-  // --#{$prefix}active-color: var(--#{$prefix}context-link-active, var(--#{$prefix}link-active));
-  // --#{$prefix}visited-color: var(--#{$prefix}context-link-visited, var(--#{$prefix}link-visited));
+  // --#{$prefix}link-main-color: var(--#{$prefix}context-link-main, var(--#{$prefix}link-main));
+  // --#{$prefix}link-hover-color: var(--#{$prefix}context-link-hover, var(--#{$prefix}link-hover));
+  // --#{$prefix}link-active-color: var(--#{$prefix}context-link-active, var(--#{$prefix}link-active));
+  // --#{$prefix}link-visited-color: var(--#{$prefix}context-link-visited, var(--#{$prefix}link-visited));
   // RGB variables
   --#{$prefix}fg-color-rgb: var(--#{$prefix}context-fg-main-rgb, var(--#{$prefix}fg-main-rgb));
   --#{$prefix}bg-color-rgb: var(--#{$prefix}context-bg-main-rgb, var(--#{$prefix}bg-main-rgb));
@@ -98,9 +98,9 @@
   --#{$prefix}icon-color-rgb: var(--#{$prefix}context-icon-main-rgb, var(--#{$prefix}icon-main-rgb));
   --#{$prefix}bullet-color-rgb: var(--#{$prefix}context-icon-subtle-rgb, var(--#{$prefix}icon-subtle-rgb));
   --#{$prefix}cue-color-rgb: var(--#{$prefix}context-cue-main-rgb, var(--#{$prefix}cue-main-rgb));
-  --#{$prefix}link-color-rgb: var(--#{$prefix}context-link-main-rgb, var(--#{$prefix}link-main-rgb));
-  --#{$prefix}hover-color-rgb: var(--#{$prefix}context-link-hover-rgb, var(--#{$prefix}link-hover-rgb));
-  --#{$prefix}active-color-rgb: var(--#{$prefix}context-link-active-rgb, var(--#{$prefix}link-active-rgb));
-  --#{$prefix}visited-color-rgb: var(--#{$prefix}context-link-visited-rgb, var(--#{$prefix}link-visited-rgb));
+  --#{$prefix}link-main-color-rgb: var(--#{$prefix}context-link-main-rgb, var(--#{$prefix}link-main-rgb));
+  --#{$prefix}link-hover-color-rgb: var(--#{$prefix}context-link-hover-rgb, var(--#{$prefix}link-hover-rgb));
+  --#{$prefix}link-active-color-rgb: var(--#{$prefix}context-link-active-rgb, var(--#{$prefix}link-active-rgb));
+  --#{$prefix}link-visited-color-rgb: var(--#{$prefix}context-link-visited-rgb, var(--#{$prefix}link-visited-rgb));
 }
 // scss-docs-end context-body-mixin

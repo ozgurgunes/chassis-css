@@ -28,12 +28,12 @@
   // scss-docs-start nav-link-css-vars
   --#{$prefix}padding-y: var(--#{$prefix}nav-link-padding-y, #{$nav-link-padding-y});
   --#{$prefix}padding-x: var(--#{$prefix}nav-link-padding-x, #{$nav-link-padding-x});
-  --#{$prefix}link-color: var(--#{$prefix}nav-link-color, #{$nav-link-color});
-  --#{$prefix}hover-color: var(--#{$prefix}nav-link-hover-color, #{$nav-link-hover-color});
-  --#{$prefix}active-color: var(--#{$prefix}nav-link-active-color, #{$nav-link-active-color});
+  --#{$prefix}link-main-color: var(--#{$prefix}nav-link-color, #{$nav-link-color});
+  --#{$prefix}link-hover-color: var(--#{$prefix}nav-link-hover-color, #{$nav-link-hover-color});
+  --#{$prefix}link-active-color: var(--#{$prefix}nav-link-active-color, #{$nav-link-active-color});
   --#{$prefix}disabled-color: var(--#{$prefix}nav-link-disabled-color, #{$nav-link-disabled-color});
   // scss-docs-end nav-link-css-vars
-  --#{$prefix}fg-color: var(--#{$prefix}link-color);
+  --#{$prefix}fg-color: var(--#{$prefix}link-main-color);
 
   display: block;
   // align-items: center;
@@ -47,7 +47,7 @@
 
   &:hover,
   &:focus {
-    --#{$prefix}fg-color: var(--#{$prefix}hover-color);
+    --#{$prefix}fg-color: var(--#{$prefix}link-hover-color);
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 
@@ -58,13 +58,13 @@
 
   &.active,
   &:active {
-    --#{$prefix}link-color: var(--#{$prefix}active-color);
+    --#{$prefix}link-main-color: var(--#{$prefix}link-active-color);
   }
 
   // Disabled state lightens text
   &.disabled,
   &:disabled {
-    --#{$prefix}link-color: var(--#{$prefix}disabled-color);
+    --#{$prefix}link-main-color: var(--#{$prefix}disabled-color);
     pointer-events: none;
     cursor: default;
   }

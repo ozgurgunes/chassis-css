@@ -78,7 +78,7 @@ $utilities: map-merge(
       values: map-merge(
         map-loop($context-colors, rgba-css-var, "$key", "underline"),
         (
-          null: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}underline-opacity, 1)),
+          null: rgba(var(--#{$prefix}link-main-color-rgb), var(--#{$prefix}underline-opacity, 1)),
         )
       )
     ),

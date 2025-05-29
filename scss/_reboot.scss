@@ -265,21 +265,21 @@ sup { top: -.5em; }
 // Links
 
 a {
-  color: var(--#{$prefix}link-color, rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1)));
+  color: var(--#{$prefix}link-main-color, rgba(var(--#{$prefix}link-main-color-rgb), var(--#{$prefix}link-opacity, 1)));
   text-decoration: $link-decoration;
 
   &:hover {
-    color: var(--#{$prefix}hover-color, rgba(var(--#{$prefix}hover-color-rgb), var(--#{$prefix}link-opacity, 1)));
+    color: var(--#{$prefix}link-hover-color, rgba(var(--#{$prefix}link-hover-color-rgb), var(--#{$prefix}link-opacity, 1)));
     text-decoration: $link-hover-decoration;
   }
 
   &:active {
-    color: var(--#{$prefix}active-color, rgba(var(--#{$prefix}active-color-rgb), var(--#{$prefix}link-opacity, 1)));
+    color: var(--#{$prefix}link-active-color, rgba(var(--#{$prefix}link-active-color-rgb), var(--#{$prefix}link-opacity, 1)));
   }
 
   @if ($enable-visited-links) {
     &:visited {
-      color: var(--#{$prefix}visited-color, rgba(var(--#{$prefix}visited-color-rgb), var(--#{$prefix}link-opacity, 1)));
+      color: var(--#{$prefix}link-visited-color, rgba(var(--#{$prefix}link-visited-color-rgb), var(--#{$prefix}link-opacity, 1)));
     }
   }
 
