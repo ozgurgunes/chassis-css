@@ -770,12 +770,12 @@ $nav-link-focus-box-shadow:         $focus-ring-box-shadow !default;// $focus-ri
 
 $nav-tabs-border-color:             var(--#{$prefix}border-subtle) !default;
 $nav-tabs-border-width:             var(--#{$prefix}border-width-medium) !default;
-$nav-tabs-border-active-width:      var(--#{$prefix}border-width-2xlarge) !default;
 $nav-tabs-border-radius:            var(--#{$prefix}border-radius-medium) !default;
 $nav-tabs-hover-border-color:       transparent !default; //var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-border-color !default;
 $nav-tabs-active-fg-color:          var(--#{$prefix}fg-main) !default;
 $nav-tabs-active-bg-color:          var(--#{$prefix}bg-main) !default;
-$nav-tabs-active-border-color:      var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-active-bg-color !default;
+$nav-tabs-active-ornament-width:    var(--#{$prefix}border-width-2xlarge) !default;
+$nav-tabs-active-ornament-color:    var(--#{$prefix}primary) !default;
 
 $nav-pills-border-radius:           var(--#{$prefix}border-radius-medium) !default;
 $nav-pills-active-fg-color:         $component-active-fg-color !default;
@@ -783,7 +783,7 @@ $nav-pills-active-bg-color:         $component-active-bg-color !default;
 
 $nav-underline-gap:                 1rem !default;
 $nav-underline-border-width:        .125rem !default;
-$nav-underline-active-fg-color:     var(--#{$prefix}fg-main) !default;
+$nav-underline-active-color:        var(--#{$prefix}fg-main) !default;
 
 $nav-collapse-indicator-icon:       $accordion-indicator-icon !default;
 $nav-collapse-indicator-transition: $accordion-indicator-transition !default;

@@ -1,20 +1,27 @@
 ---
 title: Navs and tabs
-description: Documentation and examples for how to use Chassis - CSS’s included navigation components.
+description: Chassis CSS navigation components pair token-driven styling with semantic markup to create accessible, customizable navigation patterns.
 aliases: "/docs/[[config:docs_version]]/components/navs/"
 toc: true
 ---
 
-## Base nav
+## Introduction
 
-Navigation available in Chassis - CSS share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.
+Navigation components in Chassis CSS provide flexible, accessible patterns for creating various types of navigation interfaces. These components offer consistent styling through CSS variables and can be easily customized through the Sass variables. Their semantic structure delivers robust accessibility and flexibility for creating intuitive navigation experiences.
 
-The base `.nav` component is built with flexbox and provide a strong foundation for building all types of navigation components. It includes some style overrides (for working with lists), some link padding for larger hit areas, and basic disabled styling.
+## Base navigation
+
+The `.nav` component forms the foundation of all navigation patterns in Chassis CSS. It establishes:
+
+- Consistent spacing and sizing
+- Semantic HTML structure
+- Interactive state handling
+- Accessibility defaults
+
+The base `.nav` component includes basic styling for structure, interactive states, and accessibility. Modifier classes provide additional styling for specific navigation patterns.
 
 <Callout>
-The base `.nav` component does not include any `.active` state. The following examples include the class, mainly to demonstrate that this particular class does not trigger any special styling.
-
-To convey the active state to assistive technologies, use the `aria-current` attribute — using the `page` value for current page, or `true` for the current item in a set.
+The base `.nav` component includes basic `.active` state styling. For proper accessibility, use `aria-current="page"` for current pages or `aria-current="true"` for current items in addition to the `.active` class.
 </Callout>
 
 <Example code={`<ul class="nav">
@@ -32,7 +39,7 @@ To convey the active state to assistive technologies, use the `aria-current` att
     </li>
   </ul>`} />
 
-Classes are used throughout, so your markup can be super flexible. Use `<ul>`s like above, `<ol>` if the order of your items is important, or roll your own with a `<nav>` element. Because the `.nav` uses `display: flex`, the nav links behave the same as nav items would, but without the extra markup.
+Classes are used throughout, so your markup can be super flexible. Use `<ul>`s like above, or roll your own with a `<nav>` element. Because the `.nav` uses `display: flex`, the nav links behave the same as nav items would, but without the extra markup.
 
 <Example code={`<nav class="nav">
     <a class="nav-link active" aria-current="page" href="#">Active</a>
@@ -41,13 +48,74 @@ Classes are used throughout, so your markup can be super flexible. Use `<ul>`s l
     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
   </nav>`} />
 
-## Available styles
+## Navigation styles
 
-Change the style of `.nav`s component with modifiers and utilities. Mix and match as needed, or build your own.
+Chassis CSS provides purpose-driven navigation variants through modifier classes. Each variant maintains consistent spacing and interaction states while offering distinct visual treatments that can be customized through Sass variables.
+
+### Tab navigation
+
+The `.nav-tabs` class implements a traditional tabbed interface pattern, powered by our token-based border and color system. It's ideal for organizing content and switching between related views.
+
+<Example code={`<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>`} />
+
+### Pill navigation
+
+Use `.nav-pills` to create button-like navigation items, ideal for primary navigation or prominent interface sections. This style works well for action-oriented navigation or filter controls.
+
+<Example code={`<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>`} />
+
+### Underline navigation
+
+The `.nav-underline` variant offers a minimal, line-based active state indicator, perfect for secondary navigation or content filtering.
+
+<Example code={`<ul class="nav nav-underline">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </li>
+  </ul>`} />
+
+## Layout options
+
+Navigation components in Chassis CSS can be customized with various layout options to create different alignment patterns, spacing, and responsive behaviors. These options allow you to adapt navigation layouts to fit different design requirements.
 
 ### Horizontal alignment
 
-Change the horizontal alignment of your nav with [flexbox utilities]([[docsref:/utilities/flex#justify-content]]). By default, navs are left-aligned, but you can easily change them to center or right-aligned.
+Control navigation alignment through Chassis CSS's token-driven utilities:
 
 Centered with `.justify-content-center`:
 
@@ -83,66 +151,11 @@ Right-aligned with `.justify-content-end`:
     </li>
   </ul>`} />
 
-### Tabs
+### Proportional fill
 
-Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabbed interface. Use them to create tabbable regions with our [tab JavaScript plugin](#javascript-behavior).
+Force your `.nav`'s contents to extend the full available width with one of two modifier classes.
 
-<Example code={`<ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>`} />
-
-### Pills
-
-Take that same HTML, but use `.nav-pills` instead:
-
-<Example code={`<ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>`} />
-
-### Underline
-
-Take that same HTML, but use `.nav-underline` instead:
-
-<Example code={`<ul class="nav nav-underline">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-    </li>
-  </ul>`} />
-
-### Fill and justify
-
-Force your `.nav`’s contents to extend the full available width with one of two modifier classes. To proportionately fill all available space with your `.nav-item`s, use `.nav-fill`. Notice that all horizontal space is occupied, but not every nav item has the same width.
+To proportionately fill all available space with your `.nav-item`s, use `.nav-fill`. Notice that all horizontal space is occupied, but not every nav item has the same width.
 
 <Example code={`<ul class="nav nav-pills nav-fill">
     <li class="nav-item">
@@ -167,6 +180,8 @@ When using a `<nav>`-based navigation, you can safely omit `.nav-item` as only `
     <a class="nav-link" href="#">Link</a>
     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
   </nav>`} />
+
+### Equal width
 
 For equal-width elements, use `.nav-justified`. All horizontal space will be occupied by nav links, but unlike the `.nav-fill` above, every nav item will be the same width.
 
@@ -194,22 +209,15 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation.
     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
   </nav>`} />
 
-## Working with flex utilities
+## Advanced features
 
-If you need responsive nav variations, consider using a series of [flexbox utilities]([[docsref:/utilities/flex]]). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.
+Chassis CSS navigation components support several advanced features that enhance functionality and adaptability across different screen sizes and interaction modes.
 
-<Example code={`<nav class="nav nav-pills flex-column flex-small-row">
-    <a class="flex-small-fill text-small-center nav-link active" aria-current="page" href="#">Active</a>
-    <a class="flex-small-fill text-small-center nav-link" href="#">Longer nav link</a>
-    <a class="flex-small-fill text-small-center nav-link" href="#">Link</a>
-    <a class="flex-small-fill text-small-center nav-link disabled" aria-disabled="true">Disabled</a>
-  </nav>`} />
+### Vertical navigation
 
-## Vertical navigation
+Create vertical navigation layouts using `.flex-column` or flexbox utilities.
 
-Stack your navigation by changing the flex item direction with the `.flex-column` utility. Need to stack them on some viewports but not others? Use the responsive versions (e.g., `.flex-small-column`).
-
-<Example code={`<ul class="nav nav-vertical">
+<Example code={`<ul class="nav flex-column">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Active</a>
     </li>
@@ -226,22 +234,37 @@ Stack your navigation by changing the flex item direction with the `.flex-column
 
 As always, vertical navigation is possible without `<ul>`s, too.
 
-<Example code={`<nav class="nav nav-vertical">
+<Example code={`<nav class="nav flex-column">
     <a class="nav-link active" aria-current="page" href="#">Active</a>
     <a class="nav-link" href="#">Link</a>
     <a class="nav-link" href="#">Link</a>
     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
   </nav>`} />
 
-### Collapsable navigation
+### Responsive navigation
 
-Collapse vertical navs with the [collapse JavaScript plugin]([[docsref:/components/collapse#usage]]).
+Chassis CSS provides powerful flexbox utilities that enable responsive navigation patterns. These utilities allow your navigation to adapt to different viewport sizes and device types:
 
-<Example code={`<ul class="nav nav-vertical">
+- Use `flex-column` and `flex-{breakpoint}-row` to create navigation that switches from vertical to horizontal at specific breakpoints
+- Add `flex-{breakpoint}-fill` to distribute items across available width at certain breakpoints
+- Apply `text-{breakpoint}-center` to align text within navigation items
+
+<Example code={`<nav class="nav nav-pills flex-column flex-small-row">
+    <a class="flex-small-fill text-small-center nav-link active" aria-current="page" href="#">Active</a>
+    <a class="flex-small-fill text-small-center nav-link" href="#">Longer nav link</a>
+    <a class="flex-small-fill text-small-center nav-link" href="#">Link</a>
+    <a class="flex-small-fill text-small-center nav-link disabled" aria-disabled="true">Disabled</a>
+  </nav>`} />
+
+### Collapsible navigation
+
+Implement expandable navigation sections using the collapse plugin.
+
+<Example code={`<ul class="nav flex-column">
     <li class="nav-item border-bottom">
       <a class="nav-link nav-collapse collapsed" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item</a>
       <div class="collapse" id="navCollapse1">
-        <nav class="nav nav-vertical ps-medium">
+        <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
           <a class="nav-link" href="#">Child item 2</a>
           <a class="nav-link" href="#">Child item 3</a>
@@ -249,9 +272,9 @@ Collapse vertical navs with the [collapse JavaScript plugin]([[docsref:/componen
       </div>
     </li>
     <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsable Item</a>
+      <a class="nav-link nav-collapse" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsible Item</a>
       <div class="collapse show" id="navCollapse2">
-        <nav class="nav nav-vertical ps-medium">
+        <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
           <a class="nav-link" href="#">Child item 2</a>
           <a class="nav-link" href="#">Child item 3</a>
@@ -260,13 +283,13 @@ Collapse vertical navs with the [collapse JavaScript plugin]([[docsref:/componen
     </li>
   </ul>`} />
 
-Accordions can also be used to create collapsable vertical navs, as shown in the example below.
+Accordions can also be used to create collapsible vertical navs, as shown in the example below.
 
-<Example code={`<ul class="nav nav-vertical" id="navAccordion">
+<Example code={`<ul class="nav flex-column" id="navAccordion">
     <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse" href="#navCollapse3" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse3">Collapsable Item</a>
+      <a class="nav-link nav-collapse" href="#navCollapse3" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse3">Collapsible Item</a>
       <div class="collapse show" id="navCollapse3" data-cx-parent="#navAccordion">
-        <nav class="nav nav-vertical ps-medium">
+        <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
           <a class="nav-link" href="#">Child item 2</a>
           <a class="nav-link" href="#">Child item 3</a>
@@ -274,9 +297,9 @@ Accordions can also be used to create collapsable vertical navs, as shown in the
       </div>
     </li>
     <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse collapsed" href="#navCollapse4" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse4">Collapsable Item</a>
+      <a class="nav-link nav-collapse collapsed" href="#navCollapse4" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse4">Collapsible Item</a>
       <div class="collapse" id="navCollapse4" data-cx-parent="#navAccordion">
-        <nav class="nav nav-vertical ps-medium">
+        <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
           <a class="nav-link" href="#">Child item 2</a>
           <a class="nav-link" href="#">Child item 3</a>
@@ -284,9 +307,9 @@ Accordions can also be used to create collapsable vertical navs, as shown in the
       </div>
     </li>
     <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse collapsed" href="#navCollapse5" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse5">Collapsable Item</a>
+      <a class="nav-link nav-collapse collapsed" href="#navCollapse5" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse5">Collapsible Item</a>
       <div class="collapse" id="navCollapse5" data-cx-parent="#navAccordion">
-        <nav class="nav nav-vertical ps-medium">
+        <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
           <a class="nav-link" href="#">Child item 2</a>
           <a class="nav-link" href="#">Child item 3</a>
@@ -295,16 +318,9 @@ Accordions can also be used to create collapsable vertical navs, as shown in the
     </li>
   </ul>`} />
 
+## Dropdown integration
 
-## Regarding accessibility
-
-If you’re using navs to provide a navigation bar, be sure to add a `role="navigation"` to the most logical parent container of the `<ul>`, or wrap a `<nav>` element around the whole navigation. Do not add the role to the `<ul>` itself, as this would prevent it from being announced as an actual list by assistive technologies.
-
-Note that navigation bars, even if visually styled as tabs with the `.nav-tabs` class, should **not** be given `role="tablist"`, `role="tab"` or `role="tabpanel"` attributes. These are only appropriate for dynamic tabbed interfaces, as described in the [ARIA Authoring Practices Guide tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/). See [JavaScript behavior](#javascript-behavior) for dynamic tabbed interfaces in this section for an example. The `aria-current` attribute is not necessary on dynamic tabbed interfaces since our JavaScript handles the selected state by adding `aria-selected="true"` on the active tab.
-
-## Using dropdowns
-
-Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin]([[docsref:/components/dropdowns#usage]]).
+Navigation components can be combined with dropdown menus to create multi-level navigation structures. Chassis CSS provides seamless integration between navigation components and dropdown functionality for creating complex navigation patterns.
 
 ### Tabs with dropdowns
 
@@ -354,39 +370,61 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
     </li>
   </ul>`} />
 
-## CSS
+## Using badges
 
-### Variables
+Badges enhance navigation components by providing visual indicators for counts, statuses, or notifications. They integrate seamlessly with any navigation pattern in Chassis CSS.
 
-<AddedIn version="5.2.0" />
+### Responsive placement
 
-As part of Chassis - CSS’s evolving CSS variables approach, navs now use local CSS variables on `.nav`, `.nav-tabs`, and `.nav-pills` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+For responsive navigation, use utility classes to control badge positioning across different breakpoints:
 
-On the `.nav` base class:
+- `float-end`: Positions badges at the end (right side) of navigation items
+- `float-{breakpoint}-none`: Removes floating at specific breakpoints
+- `ms-xsmall`: Adds appropriate spacing between badge and text
 
-<ScssDocs name="nav-css-vars" file="scss/_nav.scss" />
+The example below demonstrates responsive badge positioning that adapts to layout changes:
 
-On the `.nav-tabs` modifier class:
+<Example code={`<nav class="nav nav-pills flex-column flex-small-row">
+    <a class="flex-small-fill text-small-center nav-link active" aria-current="page" href="#">Active
+      <span class="badge secondary float-end float-small-none ms-xsmall">2</span></a>
+    <a class="flex-small-fill text-small-center nav-link" href="#">Longer nav link</a>
+    <a class="flex-small-fill text-small-center nav-link" href="#">Link</a>
+    <a class="flex-small-fill text-small-center nav-link disabled" aria-disabled="true">Disabled</a>
+  </nav>`} />
 
-<ScssDocs name="nav-tabs-css-vars" file="scss/_nav.scss" />
+### Collapsible items
 
-On the `.nav-pills` modifier class:
+For collapsible navigation items, use `ms-auto` to automatically align badges to the right edge while maintaining proper spacing:
 
-<ScssDocs name="nav-pills-css-vars" file="scss/_nav.scss" />
+<Example code={`<ul class="nav flex-column">
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse collapsed" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item
+        <span class="badge secondary ms-auto me-xsmall">2</span></a>
+      <div class="collapse" id="navCollapse1">
+        <nav class="nav flex-column ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+    <li class="nav-item border-bottom">
+      <a class="nav-link nav-collapse" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsible Item</a>
+      <div class="collapse show" id="navCollapse2">
+        <nav class="nav flex-column ps-medium">
+          <a class="nav-link" href="#">Child item 1</a>
+          <a class="nav-link" href="#">Child item 2</a>
+          <a class="nav-link" href="#">Child item 3</a>
+        </nav>
+      </div>
+    </li>
+  </ul>`} />
 
-<AddedIn version="5.3.0" />
+## JavaScript API
 
-On the `.nav-underline` modifier class:
+Chassis CSS provides a dedicated tab plugin that transforms standard navigation components into interactive tabbed interfaces. This plugin is designed with accessibility and performance in mind, offering a complete solution for tab management with minimal configuration.
 
-<ScssDocs name="nav-underline-css-vars" file="scss/_nav.scss" />
-
-### Sass variables
-
-<ScssDocs name="nav-variables" file="scss/_variables.scss" />
-
-## JavaScript behavior
-
-Use the tab JavaScript plugin—include it individually or through the compiled `chassis.js` file—to extend our navigational tabs and pills to create tabbable panes of local content.
+The tab plugin is available in the compiled `chassis.js` file or can be imported individually for more optimized builds. It extends navigation components with interactive capabilities while maintaining proper ARIA support and keyboard accessibility.
 
 <div class="cxd-example">
   <ul class="nav nav-tabs mb-medium" id="myTab" role="tablist">
@@ -405,16 +443,16 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Home tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Profile tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Contact tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Disabled tab’s</strong> associated content.</p>
+      <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
     </div>
   </div>
 </div>
@@ -442,7 +480,7 @@ Use the tab JavaScript plugin—include it individually or through the compiled 
 </div>
 ```
 
-To help fit your needs, this works with `<ul>`-based markup, as shown above, or with any arbitrary “roll your own” markup. Note that if you’re using `<nav>`, you shouldn’t add `role="tablist"` directly to it, as this would override the element’s native role as a navigation landmark. Instead, switch to an alternative element (in the example below, a simple `<div>`) and wrap the `<nav>` around it.
+Chassis CSS's tab component is designed for maximum flexibility with your preferred markup patterns. You can use the structured `<ul>`/`<li>` approach shown above, or implement a more streamlined markup structure when appropriate. When working with `<nav>` elements, Chassis preserves semantic accessibility by recommending that you avoid adding `role="tablist"` directly to the `<nav>` element itself. This prevents overriding the element's important native role as a navigation landmark. Instead, as shown in the example below, wrap your tabs in a non-semantic element like `<div>` with the `role="tablist"` to maintain proper accessibility semantics.
 
 <div class="cxd-example">
   <nav>
@@ -455,16 +493,16 @@ To help fit your needs, this works with `<ul>`-based markup, as shown above, or 
   </nav>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Home tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Profile tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Contact tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Disabled tab’s</strong> associated content.</p>
+      <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
     </div>
   </div>
 </div>
@@ -505,16 +543,16 @@ The tabs plugin also works with pills.
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Home tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Profile tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Contact tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+      <p>This is some placeholder content the <strong>Contact tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
     </div>
     <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
-      <p>This is some placeholder content the <strong>Disabled tab’s</strong> associated content.</p>
+      <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
     </div>
   </div>
 </div>
@@ -555,19 +593,19 @@ And with vertical pills. Ideally, for vertical tabs, you should also add `aria-o
     </div>
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-        <p>This is some placeholder content the <strong>Home tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+        <p>This is some placeholder content the <strong>Home tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
       </div>
       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
-        <p>This is some placeholder content the <strong>Profile tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+        <p>This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
       </div>
       <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">
-        <p>This is some placeholder content the <strong>Disabled tab’s</strong> associated content.</p>
+        <p>This is some placeholder content the <strong>Disabled tab's</strong> associated content.</p>
       </div>
       <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
-        <p>This is some placeholder content the <strong>Messages tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+        <p>This is some placeholder content the <strong>Messages tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
       </div>
       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
-        <p>This is some placeholder content the <strong>Settings tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+        <p>This is some placeholder content the <strong>Settings tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
       </div>
     </div>
   </div>
@@ -592,23 +630,15 @@ And with vertical pills. Ideally, for vertical tabs, you should also add `aria-o
 </div>
 ```
 
-### Accessibility
 
-Dynamic tabbed interfaces, as described in the [ARIA Authoring Practices Guide tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/), require `role="tablist"`, `role="tab"`, `role="tabpanel"`, and additional `aria-` attributes in order to convey their structure, functionality, and current state to users of assistive technologies (such as screen readers). As a best practice, we recommend using `<button>` elements for the tabs, as these are controls that trigger a dynamic change, rather than links that navigate to a new page or location.
-
-In line with the ARIA Authoring Practices pattern, only the currently active tab receives keyboard focus. When the JavaScript plugin is initialized, it will set `tabindex="-1"` on all inactive tab controls. Once the currently active tab has focus, the cursor keys activate the previous/next tab. The <kbd>Home</kbd> and <kbd>End</kbd> keys activate the first and last tabs, respectively. The plugin will change the [roving `tabindex`](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) accordingly. However, note that the JavaScript plugin does not distinguish between horizontal and vertical tab lists when it comes to cursor key interactions: regardless of the tab list’s orientation, both the up *and* left cursor go to the previous tab, and down *and* right cursor go to the next tab.
 
 <Callout type="warning">
-In general, to facilitate keyboard navigation, it’s recommended to make the tab panels themselves focusable as well, unless the first element containing meaningful content inside the tab panel is already focusable. The JavaScript plugin does not try to handle this aspect—where appropriate, you’ll need to explicitly make your tab panels focusable by adding `tabindex="0"` in your markup.
+  The tab plugin does not support nested dropdown menus within tabs for usability and accessibility reasons. When a tab inside a dropdown is activated, the dropdown closes, hiding the controlling element and breaking the user's mental model. Additionally, no WAI-ARIA pattern exists for this complex relationship. For hierarchical navigation needs, use alternative patterns instead.
 </Callout>
 
-<Callout type="danger">
-The tab JavaScript plugin **does not** support tabbed interfaces that contain dropdown menus, as these cause both usability and accessibility issues. From a usability perspective, the fact that the currently displayed tab’s trigger element is not immediately visible (as it’s inside the closed dropdown menu) can cause confusion. From an accessibility point of view, there is currently no sensible way to map this sort of construct to a standard WAI ARIA pattern, meaning that it cannot be easily made understandable to users of assistive technologies.
-</Callout>
+### Data attribute
 
-### Using data attributes
-
-You can activate a tab or pill navigation without writing any JavaScript by simply specifying `data-cx-toggle="tab"` or `data-cx-toggle="pill"` on an element. Use these data attributes on `.nav-tabs` or `.nav-pills`.
+Chassis CSS emphasizes a declarative approach to component initialization. You can create fully functional tabbed interfaces without writing custom JavaScript by using the `data-cx-toggle="tab"` or `data-cx-toggle="pill"` attributes on your navigation elements. These attributes automatically connect to Chassis's event handlers when the page loads.
 
 ```html
 <!-- Nav tabs -->
@@ -636,90 +666,215 @@ You can activate a tab or pill navigation without writing any JavaScript by simp
 </div>
 ```
 
-### Via JavaScript
+### Initialization
 
-Enable tabbable tabs via JavaScript (each tab needs to be activated individually):
+For cases where more control is needed, Chassis provides a programmatic API for tab initialization and control. This approach lets you create custom tab behaviors, integrate with other components, or dynamically generate tab content.
 
 ```js
-const triggerTabList = document.querySelectorAll('#myTab button')
-triggerTabList.forEach(triggerEl => {
-  const tabTrigger = new chassis.Tab(triggerEl)
+// Initialize all tabs within a container
+const tabButtons = document.querySelectorAll('#myTab button')
+tabButtons.forEach(buttonElement => {
+  const tabInstance = new chassis.Tab(buttonElement)
 
-  triggerEl.addEventListener('click', event => {
+  // Optional: customize click behavior
+  buttonElement.addEventListener('click', event => {
     event.preventDefault()
-    tabTrigger.show()
+    tabInstance.show()
   })
 })
 ```
 
-You can activate individual tabs in several ways:
+The tab plugin provides several methods for programmatic control:
 
 ```js
-const triggerEl = document.querySelector('#myTab button[data-cx-target="#profile"]')
-chassis.Tab.getInstance(triggerEl).show() // Select tab by name
+// Select a tab by its target selector
+const profileTab = document.querySelector('#myTab button[data-cx-target="#profile"]')
+chassis.Tab.getInstance(profileTab).show()
 
-const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
-chassis.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
+// Select the first tab in a container
+const firstTab = document.querySelector('#myTab li:first-child button')
+chassis.Tab.getInstance(firstTab).show()
+
+// Create and store a reference for later use
+const myTabController = new chassis.Tab('#featuresTab')
 ```
 
-### Fade effect
+### Transitions
 
-To make tabs fade in, add `.fade` to each `.tab-pane`. The first tab pane must also have `.show` to make the initial content visible.
+Chassis CSS includes built-in support for smooth visual transitions between tab states. To enable fade transitions, add the `.fade` class to each `.tab-pane` element. The active tab pane should also have the `.show` class to ensure proper initial visibility.
 
 ```html
 <div class="tab-content">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">...</div>
-  <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">...</div>
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <p>Home tab content</p>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    <p>Profile tab content</p>
+  </div>
+  <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">
+    <p>Messages tab content</p>
+  </div>
+  <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">
+    <p>Settings tab content</p>
+  </div>
 </div>
 ```
 
+The transition timing is controlled through CSS variables, allowing easy customization to match your design system's motion guidelines.
+
 ### Methods
 
-<Callout name="danger-async-methods" type="danger" />
+The tab plugin in Chassis CSS provides a comprehensive API for programmatic control. Instance methods allow you to manipulate tabs after initialization, while static methods help manage tab instances across your application.
 
-Activates your content as a tab element.
+<Callout type="danger">
+When working with Chassis CSS's tab plugin methods, be aware that tab transitions are asynchronous. The `show()` method returns control to your code immediately after starting a tab transition, before the transition completes. If your code depends on the new tab being fully visible, listen for the `shown.cx.tab` event instead of relying on method completion.
+</Callout>
 
-You can create a tab instance with the constructor, for example:
+Create a Tab instance by passing a selector or DOM element to the constructor:
 
 ```js
-const cxTab = new chassis.Tab('#myTab')
+// Create a new tab instance
+const tabController = new chassis.Tab('#myTab')
+
+// Alternatively, target a specific tab element
+const specificTabController = new chassis.Tab(document.querySelector('#features-tab'))
 ```
 
 <CxTable>
 | Method | Description |
 | --- | --- |
-| `dispose` | Destroys an element’s tab. |
-| `getInstance` | Static method which allows you to get the tab instance associated with a DOM element, you can use it like this: `chassis.Tab.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a tab instance associated to a DOM element or create a new one in case it wasn’t initialized. You can use it like this: `chassis.Tab.getOrCreateInstance(element)`. |
-| `show` | Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.cx.tab` event occurs). |
+| `show()` | Activates the tab and displays its associated content pane. Automatically hides previously active tab content. Returns before the transition completes (before the `shown.cx.tab` event fires). |
+| `dispose()` | Removes the tab functionality and cleans up related data and event handlers. Use when dynamically removing tabs from the interface. |
+| `getInstance(element)` | Static method that retrieves an existing Tab instance for a given element. Returns `null` if no instance exists. |
+| `getOrCreateInstance(element)` | Static method that returns an existing Tab instance or creates a new one if none exists. Useful for ensuring a tab is initialized without creating duplicates. |
 </CxTable>
 
 ### Events
 
-When showing a new tab, the events fire in the following order:
+Chassis CSS's tab plugin emits a series of events during tab transitions, enabling integration with other components or custom behaviors. These events follow a consistent pattern that makes it simple to build upon the core functionality.
 
-1. `hide.cx.tab` (on the current active tab)
-2. `show.cx.tab` (on the to-be-shown tab)
-3. `hidden.cx.tab` (on the previous active tab, the same one as for the `hide.cx.tab` event)
-4. `shown.cx.tab` (on the newly-active just-shown tab, the same one as for the `show.cx.tab` event)
+The events fire in a predictable sequence during tab transitions:
 
-If no tab was already active, then the `hide.cx.tab` and `hidden.cx.tab` events will not be fired.
+1. `hide.cx.tab` - Fired on the currently active tab when a transition begins
+2. `show.cx.tab` - Fired on the tab being activated before it becomes visible
+3. `hidden.cx.tab` - Fired on the previously active tab after it's fully hidden
+4. `shown.cx.tab` - Fired on the newly activated tab after it's fully visible
+
+If there was no active tab before activation (such as initial page load), the `hide` and `hidden` events are not triggered.
 
 <CxTable>
-| Event type | Description |
-| --- | --- |
-| `hide.cx.tab` | This event fires when a new tab is to be shown (and thus the previous active tab is to be hidden). Use `event.target` and `event.relatedTarget` to target the current active tab and the new soon-to-be-active tab, respectively. |
-| `hidden.cx.tab` | This event fires after a new tab is shown (and thus the previous active tab is hidden). Use `event.target` and `event.relatedTarget` to target the previous active tab and the new active tab, respectively. |
-| `show.cx.tab` | This event fires on tab show, but before the new tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
-| `shown.cx.tab` | This event fires on tab show after a tab has been shown. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available) respectively. |
+| Event | Timing | Properties |
+| --- | --- | --- |
+| `hide.cx.tab` | Before current tab begins hiding | `event.target`: current active tab, `event.relatedTarget`: tab being activated |
+| `show.cx.tab` | Before new tab begins showing | `event.target`: tab being activated, `event.relatedTarget`: current active tab (if any) |
+| `hidden.cx.tab` | After current tab is fully hidden | `event.target`: previously active tab, `event.relatedTarget`: newly active tab |
+| `shown.cx.tab` | After new tab is fully visible | `event.target`: newly active tab, `event.relatedTarget`: previously active tab (if any) |
 </CxTable>
 
+These events enable powerful interactions, such as content lazy-loading or analytics tracking:
+
 ```js
-const tabEl = document.querySelector('button[data-cx-toggle="tab"]')
-tabEl.addEventListener('shown.cx.tab', event => {
-  event.target // newly activated tab
-  event.relatedTarget // previous active tab
+// Example: Load tab content dynamically when activated
+const tabElement = document.querySelector('#product-specs-tab')
+tabElement.addEventListener('show.cx.tab', event => {
+  // Load content just before tab becomes visible
+  const targetPane = document.querySelector(event.target.dataset.cxTarget)
+  if (!targetPane.dataset.loaded) {
+    fetchTabContent(targetPane)
+    targetPane.dataset.loaded = 'true'
+  }
+})
+
+// Example: Track tab visibility in analytics
+document.querySelector('#features-tab').addEventListener('shown.cx.tab', event => {
+  trackAnalytics('Tab View', {
+    tabName: event.target.textContent.trim()
+  })
 })
 ```
+
+## Accessibility
+
+Creating accessible navigation interfaces is essential for ensuring all users can navigate your website or application effectively. Chassis CSS navigation components are designed with accessibility best practices in mind, but proper implementation is crucial for maximum accessibility.
+
+Chassis CSS supports two distinct navigation patterns, each with different accessibility considerations:
+
+### Static links
+
+For standard navigation menus that link to different pages:
+
+- Wrap navigation in `<nav>` (preferred) or add `role="navigation"` to the container (`.nav`) element.
+- Maintain proper list structure with `<ul>`/`<li>`
+- Use `aria-current="page"` for current pages
+- Add `aria-disabled="true"` to disabled items
+
+```html
+<nav class="nav nav-pills">
+  <a class="nav-link active" aria-current="page" href="#">Home</a>
+  <a class="nav-link" href="#">Profile</a>
+  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+</nav>
+```
+
+<Callout type="warning">
+  Note that navigation components visually styled as tabs with the `.nav-tabs` class, but used for regular navigation, should **not** be given `role="tablist"`, `role="tab"` or `role="tabpanel"` attributes. These ARIA roles are only appropriate for dynamic tabbed interfaces, as described in the [ARIA Authoring Practices Guide tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/).
+</Callout>
+
+### Tab plugin
+
+The tab plugin follows the [ARIA Authoring Practices Guide tabs pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/) to ensure optimal accessibility. The component applies the necessary ARIA roles and attributes automatically when initialized:
+
+- `role="tablist"` on the container element
+- `role="tab"` on each tab control
+- `role="tabpanel"` on each content pane
+- `aria-selected`, `aria-controls`, and `aria-labelledby` attributes to establish proper relationships
+
+For optimal accessibility, Chassis CSS recommends using `<button>` elements for tabs since they represent interactive controls that change content rather than navigate to new locations.
+
+The tab plugin implements keyboard navigation according to ARIA best practices:
+
+- <kbd>→</kbd> or <kbd>↓</kbd> activates the next tab
+- <kbd>←</kbd> or <kbd>↑</kbd> activates the previous tab
+- <kbd>Home</kbd> activates the first tab
+- <kbd>End</kbd> activates the last tab
+
+The tab plugin uses a [roving tabindex pattern](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) for keyboard navigation. When initialized, only the active tab is included in the normal tab sequence (`tabindex="0"`) while all inactive tabs receive `tabindex="-1"` (removing them from the tab sequence). When a user navigates to the active tab and presses arrow keys, focus moves to and activates the previous/next tabs. As focus moves, the plugin automatically updates the tabindex values, ensuring users can navigate the entire tab interface with keyboard alone.
+
+<Callout type="warning">
+When implementing tab panels, consider the focus management needs of your content. If a tab panel contains interactive elements (like links, buttons, or form controls), users can naturally tab to these elements after activating a tab. However, if a panel contains only static content with no focusable elements, consider adding `tabindex="0"` to the tab panel element to ensure keyboard users can navigate to the content. This is especially important when panels contain important information that screen reader users need to access.
+</Callout>
+
+## CSS
+
+<DocsCSS />
+
+### Custom properties
+
+<DocsCSSVars />
+
+Variables for `.nav-link` class.
+
+<ScssDocs name="nav-link-css-vars" file="scss/_nav.scss" />
+
+Variables for `.nav-tabs` class.
+
+<ScssDocs name="nav-tabs-css-vars" file="scss/_nav.scss" />
+
+Variables for `.nav-pills` class.
+
+<ScssDocs name="nav-pills-css-vars" file="scss/_nav.scss" />
+
+Variables for `.nav-underline` class.
+
+<ScssDocs name="nav-underline-css-vars" file="scss/_nav.scss" />
+
+Variables for `.nav-collapse` class.
+
+<ScssDocs name="nav-collapse-css-vars" file="scss/_nav.scss" />
+
+### Sass variables
+
+<DocsSASSVars />
+
+<ScssDocs name="nav-variables" file="scss/_variables.scss" />
+

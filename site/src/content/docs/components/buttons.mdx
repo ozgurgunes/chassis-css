@@ -10,7 +10,7 @@ import { getData } from '@libs/data'
 
 Buttons in Chassis CSS are designed to provide consistent interactive controls across your interface while maintaining pixel-perfect fidelity with your Figma designs. Unlike other frameworks that provide generic button styles, Chassis buttons are built on design tokens that synchronize directly with your Figma components, ensuring design-to-development coherence.
 
-## Foundation Class
+## Foundation class
 
 Chassis CSS provides a foundational `.button` class that establishes the core interactive behavior, layout parameters, and typographic treatment for all button variants. This class serves as the structural backbone upon which all button variants are built.
 
@@ -25,7 +25,7 @@ The `.button` foundation class is designed to be extended with contextual classe
   <strong>Accessibility:</strong> The foundational `.button` class already includes built-in focus styles that ensure proper keyboard navigation and accessibility compliance.
 </Callout>
 
-## Button Variants
+## Button variants
 
 Chassis CSS provides a range of purpose-driven button variants, each mapped to a specific design token context. These variants ensure consistent semantics across your interface.
 
@@ -33,7 +33,7 @@ Chassis CSS provides a range of purpose-driven button variants, each mapped to a
 
 <Callout name="warning-color-assistive-technologies" />
 
-### Outline Variants
+### Outline variants
 
 For interfaces requiring more subtle interaction elements, the `.outline` modifier transforms any button into a borderline-focused variant with a transparent background while retaining its semantic color context.
 
@@ -43,13 +43,13 @@ For interfaces requiring more subtle interaction elements, the `.outline` modifi
   Some button variants use lighter foreground colors and are optimized for dark backgrounds to ensure proper contrast ratios.
 </Callout>
 
-### Smooth Variants
+### Smooth variants
 
 The `.smooth` modifier applies a reduced-opacity background to buttons, creating a more subdued presence in the interface while maintaining their contextual meaning.
 
 <Example class="button-examples" code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name} smooth">${contextColor.title}</button>`)]} />
 
-## Element Compatibility
+## Element compatibility
 
 While the `.button` classes are optimized for the semantic `<button>` element, they work equally well with alternative elements:
 
@@ -61,7 +61,7 @@ While the `.button` classes are optimized for the semantic `<button>` element, t
 
 When using button classes on `<a>` elements for in-page functionality rather than navigation, include `role="button"` to ensure proper semantic meaning for assistive technologies.
 
-## Icon Integration
+## Icon integration
 
 Chassis CSS provides purpose-built classes for icon placement within buttons. Use `.icon-start` or `.icon-end` with the `.icon` class for proper alignment and spacing with both SVG icons and icon fonts.
 
@@ -82,7 +82,7 @@ Chassis CSS provides purpose-built classes for icon placement within buttons. Us
     <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
   </button>`} />
 
-## Size Variants
+## Size variants
 
 Chassis provides three predefined size variants through the `.large` and `.small` modifier classes, with the default size applied when no modifier is present.
 
@@ -116,7 +116,7 @@ Chassis provides three predefined size variants through the `.large` and `.small
     Primary
   </button>`} />
 
-### Custom Sizing
+### Custom sizing
 
 Beyond the predefined sizes, Chassis's token-based architecture enables precise sizing control through CSS variables:
 
@@ -125,7 +125,7 @@ Beyond the predefined sizes, Chassis's token-based architecture enables precise 
     Custom-sized button
   </button>`} />
 
-## Disabled State
+## Disabled state
 
 Chassis CSS handles button disabling in a semantically appropriate way. For native button elements, use the `disabled` attribute:
 
@@ -160,7 +160,7 @@ For link-based buttons using the `<a>` element, Chassis provides a different app
 <a class="button primary disabled" role="button" aria-disabled="true">Primary Link</a>
 <a class="button secondary disabled" role="button" aria-disabled="true">Secondary Link</a>`} />
 
-### Disabled Links
+### Disabled links
 
 When implementing disabled link buttons, follow these guidelines:
 
@@ -176,11 +176,11 @@ For cases where the `href` must be retained:
 
 In these instances, the `.disabled` class applies `pointer-events: none` which disables mouse interaction in modern browsers. However, since keyboard navigation remains possible, add `tabindex="-1"` to prevent keyboard focus and implement JavaScript to fully disable the functionality.
 
-## Layout Patterns
+## Layout patterns
 
 Chassis CSS leverages its utility system for flexible button layouts rather than providing specific button-container classes. This approach provides greater control over spacing, alignment, and responsive behavior.
 
-### Full-Width Buttons
+### Full-width buttons
 
 Create responsive stacks of full-width buttons using Chassis's grid utilities:
 
@@ -189,7 +189,7 @@ Create responsive stacks of full-width buttons using Chassis's grid utilities:
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-### Responsive Buttons
+### Responsive buttons
 
 Transform button layouts at different breakpoints using Chassis's responsive utilities:
 
@@ -198,7 +198,7 @@ Transform button layouts at different breakpoints using Chassis's responsive uti
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-### Width Control
+### Width control
 
 Apply grid column utilities to control button width precisely:
 
@@ -207,7 +207,7 @@ Apply grid column utilities to control button width precisely:
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-### Alignment Control
+### Alignment control
 
 Use flex utilities to control button alignment within groups:
 
@@ -216,7 +216,7 @@ Use flex utilities to control button alignment within groups:
     <button class="button primary" type="button">Primary</button>
   </div>`} />
 
-## Text Handling
+## Text handling
 
 By default, button text will wrap to accommodate its container. To prevent text wrapping, add the `.text-nowrap` utility class. For global control in your Sass build, configure the `$button-white-space: nowrap` variable.
 
@@ -225,11 +225,11 @@ By default, button text will wrap to accommodate its container. To prevent text 
     <p><button type="button" class="button primary text-nowrap">While no-wrap text will extend beyond boundaries</button><p>
   </div>`} />
 
-## Toggle Functionality
+## Toggle functionality
 
 Chassis includes a toggle button plugin for implementing stateful buttons. These differ from checkbox toggles in how they're communicated to assistive technologies (announced as "button"/"button pressed" rather than "checked"/"not checked").
 
-### Toggle States
+### Toggle states
 
 Add `data-cx-toggle="button"` to enable toggle functionality. For pre-toggled buttons, add both the `.active` class and `aria-pressed="true"` attribute:
 
@@ -291,7 +291,7 @@ document.querySelectorAll('.button').forEach(buttonElement => {
 
 <DocsCSS />
 
-### Custom Properties
+### Custom properties
 
 <DocsCSSVars />
 <hr />
@@ -308,17 +308,17 @@ Focus state:
 Common variables:
 <ScssDocs name="button-css-vars" file="scss/_button.scss" />
 
-### Sass Variables
+### Sass variables
 
 <DocsSASSVars notExposed={true} />
 
 <ScssDocs name="button-variables" file="scss/_variables.scss" />
 
-### Sass Mixins
+### Sass mixins
 
 Chassis CSS automatically applies these specialized mixins to each semantic context color to generate the complete suite of button variants while maintaining design token consistency:
 
-#### Solid Button Mixin
+#### Solid mutton mixin
 
 <ScssDocs name="solid-button-mixin" file="scss/mixins/_button.scss" />
 
@@ -326,11 +326,11 @@ Chassis CSS automatically applies these specialized mixins to each semantic cont
 
 <ScssDocs name="outline-button-mixin" file="scss/mixins/_button.scss" />
 
-#### Smooth Button Mixin
+#### Smooth button mixin
 
 <ScssDocs name="smooth-button-mixin" file="scss/mixins/_button.scss" />
 
-### Custom Buttons
+### Custom buttons
 
 The following example demonstrates how the documentation site implements its custom button set:
 
