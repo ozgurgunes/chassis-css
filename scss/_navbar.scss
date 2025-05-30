@@ -1,17 +1,24 @@
-// Navbar
+// Navbar Component Styles
 //
-// Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
+// This file defines styles for responsive navigation bars in the Chassis CSS framework.
+// It includes:
+// - Base navbar (.navbar) - Main container that can be extended for various layouts
+// - Navbar brand (.navbar-brand) - Site/app identity area, typically for logos
+// - Navbar navigation (.navbar-nav) - Container for navigation links
+// - Navbar text (.navbar-text) - For inline text content
+// - Responsive components - For collapsible/expandable behavior across breakpoints
+//
+// The navbar system supports static, fixed, full-width, and container-based layouts.
 
 .navbar {
   // scss-docs-start navbar-css-vars
   --#{$prefix}navbar-padding-x: #{if($navbar-padding-x == null, 0, $navbar-padding-x)};
   --#{$prefix}navbar-padding-y: #{$navbar-padding-y};
   --#{$prefix}navbar-fg-color: #{$navbar-fg-color};
-  --#{$prefix}navbar-link-color: #{$navbar-link-color};
-  --#{$prefix}navbar-hover-color: #{$navbar-hover-color};
-  --#{$prefix}navbar-active-color: #{$navbar-active-color};
-  --#{$prefix}navbar-disabled-color: #{$navbar-disabled-color};
+  --#{$prefix}navbar-link-main-color: #{$navbar-link-main-color};
+  --#{$prefix}navbar-link-hover-color: #{$navbar-link-hover-color};
+  --#{$prefix}navbar-link-active-color: #{$navbar-link-active-color};
+  --#{$prefix}navbar-link-disabled-color: #{$navbar-link-disabled-color};
   --#{$prefix}navbar-brand-padding-y: #{$navbar-brand-padding-y};
   --#{$prefix}navbar-brand-margin-end: #{$navbar-brand-margin-end};
   --#{$prefix}navbar-brand-font-size: #{$navbar-brand-font-size};
@@ -28,6 +35,12 @@
   --#{$prefix}navbar-toggler-border-radius: #{$navbar-toggler-border-radius};
   --#{$prefix}navbar-toggler-focus-width: #{$navbar-toggler-focus-width};
   --#{$prefix}navbar-toggler-transition: #{$navbar-toggler-transition};
+  @if $navbar-link-font {
+    --#{$prefix}navbar-link-font-family: #{map-get($nav-link-font, font-family)};
+    --#{$prefix}navbar-link-font-weight: #{map-get($nav-link-font, font-weight)};
+    @include rfs(map-get($navbar-link-font, font-size), --#{$prefix}navbar-link-font-size);
+    @include rfs(map-get($navbar-link-font, line-height), --#{$prefix}navbar-link-line-height);
+  }
   // scss-docs-end navbar-css-vars
 
   position: relative;
@@ -63,7 +76,9 @@
 
 // Navbar brand
 //
-// Used for brand, project, or site names.
+// The primary identifier for your site or application within the navbar.
+// Used for logos, project names, or site titles with special styling.
+// Maintains proper spacing and sizing for optimal visual hierarchy.
 
 .navbar-brand {
   padding-top: var(--#{$prefix}navbar-brand-padding-y);
@@ -85,21 +100,25 @@
 
 // Navbar nav
 //
-// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+// Navigation component specialized for navbar contexts with vertical layout by default.
+// Doesn't require the base `.nav` class, but leverages `.nav-link` styling.
+// Adapts to horizontal layout when expanded beyond the responsive breakpoint.
 
 .navbar-nav {
   // scss-docs-start navbar-nav-css-vars
-  --#{$prefix}nav-link-padding-x: 0;
-  --#{$prefix}nav-link-padding-y: #{$nav-link-padding-y};
-  --#{$prefix}nav-link-color: var(--#{$prefix}navbar-link-color);
-  --#{$prefix}nav-link-hover-color: var(--#{$prefix}navbar-hover-color);
-  --#{$prefix}nav-link-active-color: var(--#{$prefix}navbar-active-color);
-  --#{$prefix}nav-link-disabled-color: var(--#{$prefix}navbar-disabled-color);
-
-  @if $nav-link-font {
-    @include map-font($nav-link-font, nav-link);
+  --#{$prefix}link-padding-x: 0;
+  --#{$prefix}link-padding-y: #{$nav-link-padding-y};
+  --#{$prefix}link-main-color: var(--#{$prefix}navbar-link-main-color);
+  --#{$prefix}link-hover-color: var(--#{$prefix}navbar-link-hover-color);
+  --#{$prefix}link-active-color: var(--#{$prefix}navbar-link-active-color);
+  --#{$prefix}link-disabled-color: var(--#{$prefix}navbar-link-disabled-color);
+  @if $navbar-link-font {
+    --#{$prefix}link-font-family: var(--#{$prefix}navbar-link-font-family);
+    --#{$prefix}link-font-weight: var(--#{$prefix}navbar-link-font-weight);
+    --#{$prefix}link-font-size: var(--#{$prefix}navbar-link-font-size);
+    --#{$prefix}link-line-height: var(--#{$prefix}navbar-link-line-height);
+    // @include map-font($nav-link-font, nav);
   }
-
   // scss-docs-end navbar-nav-css-vars
 
   display: flex;
@@ -111,7 +130,7 @@
   .nav-link {
     &.active,
     &.show {
-      color: var(--#{$prefix}navbar-active-color);
+      color: var(--#{$prefix}navbar-link-active-color);
     }
 
     &.dropdown-toggle::after {
@@ -128,7 +147,9 @@
 
 // Navbar text
 //
-//
+// Styled text elements that maintain vertical alignment within the navbar.
+// Useful for displaying supplementary information, status messages, or inline content
+// that isn't part of the primary navigation.
 
 .navbar-text {
   padding-top: $nav-link-padding-y;
@@ -138,19 +159,23 @@
   a,
   a:hover,
   a:focus  {
-    color: var(--#{$prefix}navbar-active-color);
+    color: var(--#{$prefix}navbar-link-active-color);
   }
 }
 
 
 // Responsive navbar
 //
-// Custom styles for responsive collapsing and toggling of navbar contents.
-// Powered by the collapse Bootstrap JavaScript plugin.
+// Components for responsive behavior across different screen sizes.
+// Includes collapsible content, toggle buttons, and expansion utilities.
+//
+// These styles handle the transition between mobile (collapsed) and desktop (expanded)
+// layouts, typically powered by JavaScript for interactive toggling.
 
-// When collapsed, prevent the toggleable navbar contents from appearing in
-// the default flexbox row orientation. Requires the use of `flex-wrap: wrap`
-// on the `.navbar` parent.
+// The collapsible container for navbar content that can be shown/hidden
+// When collapsed on smaller screens, this prevents content from appearing in
+// the default flexbox row orientation. Requires `flex-wrap: wrap` on the
+// `.navbar` parent to function correctly in the responsive layout.
 .navbar-collapse {
   flex-grow: 1;
   flex-basis: 100%;
@@ -160,6 +185,9 @@
 }
 
 // Button for toggling the navbar when in its collapsed state
+// Displays a hamburger menu or similar icon that controls the visibility
+// of the collapsible navbar content on smaller screens.
+// Automatically hidden when the navbar is expanded on larger screens.
 .navbar-toggler {
   padding: var(--#{$prefix}navbar-toggler-padding-y) var(--#{$prefix}navbar-toggler-padding-x);
   @include font-size(var(--#{$prefix}navbar-toggler-font-size));
@@ -182,8 +210,10 @@
   }
 }
 
-// Keep as a separate element so folks can easily override it with another icon
-// or image file as needed.
+// Icon element inside the navbar toggler button
+// Implemented as a separate element to allow easy customization.
+// Uses CSS masking to display the icon, which can be customized through
+// CSS variables without needing to modify HTML structure.
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
@@ -208,14 +238,23 @@
   }
 }
 
+// Container with controlled scrolling for navbar navigation
+// Useful for tall navbars with many items that might overflow the viewport.
+// Automatically limits height and enables vertical scrolling when content exceeds the container.
 .navbar-nav-scroll {
   max-height: var(--#{$prefix}scroll-height, 75vh);
   overflow-y: auto;
 }
 
 // scss-docs-start navbar-expand-loop
-// Generate series of `.navbar-expand-*` responsive classes for configuring
-// where your navbar collapses.
+// Responsive expansion system for navbars
+//
+// Generates a series of `.navbar-expand-*` responsive classes that control
+// at which breakpoint the navbar switches between collapsed and expanded states.
+// These classes modify navbar layout, positioning, and visibility of components.
+//
+// Example: .navbar-expand-lg will be collapsed on screens smaller than 'lg'
+// and expanded on 'lg' screens and above.
 .navbar-expand {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);

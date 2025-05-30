@@ -258,11 +258,13 @@ Chassis CSS provides powerful flexbox utilities that enable responsive navigatio
 
 ### Collapsible navigation
 
-Implement expandable navigation sections using the collapse plugin.
+Transform navigation menus into expandable/collapsible sections using the `.collapsible` class on `.nav-item` elements.
+
+Add the `.collapsed` class to initially hide content, and use `data-cx-toggle="collapse"` with the target selector to create the interactive trigger. Proper accessibility is maintained through `aria-expanded` and `aria-controls` attributes.
 
 <Example code={`<ul class="nav flex-column">
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse collapsed" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item</a>
+    <li class="nav-item collapsible collapsed border-bottom">
+      <a class="nav-link" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item</a>
       <div class="collapse" id="navCollapse1">
         <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
@@ -271,8 +273,8 @@ Implement expandable navigation sections using the collapse plugin.
         </nav>
       </div>
     </li>
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsible Item</a>
+    <li class="nav-item collapsible border-bottom">
+      <a class="nav-link" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsible Item</a>
       <div class="collapse show" id="navCollapse2">
         <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
@@ -283,11 +285,11 @@ Implement expandable navigation sections using the collapse plugin.
     </li>
   </ul>`} />
 
-Accordions can also be used to create collapsible vertical navs, as shown in the example below.
+For mutually exclusive expandable sections, implement accordion behavior by adding the same `data-cx-parent` attribute to all `.collapse` elements within a container. This ensures only one navigation section is expanded at a time, creating a more organized interface for complex navigation hierarchies.
 
 <Example code={`<ul class="nav flex-column" id="navAccordion">
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse" href="#navCollapse3" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse3">Collapsible Item</a>
+    <li class="nav-item collapsible border-bottom">
+      <a class="nav-link" href="#navCollapse3" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse3">Collapsible Item</a>
       <div class="collapse show" id="navCollapse3" data-cx-parent="#navAccordion">
         <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
@@ -296,8 +298,8 @@ Accordions can also be used to create collapsible vertical navs, as shown in the
         </nav>
       </div>
     </li>
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse collapsed" href="#navCollapse4" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse4">Collapsible Item</a>
+    <li class="nav-item collapsible collapsed border-bottom">
+      <a class="nav-link" href="#navCollapse4" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse4">Collapsible Item</a>
       <div class="collapse" id="navCollapse4" data-cx-parent="#navAccordion">
         <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
@@ -306,8 +308,8 @@ Accordions can also be used to create collapsible vertical navs, as shown in the
         </nav>
       </div>
     </li>
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse collapsed" href="#navCollapse5" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse5">Collapsible Item</a>
+    <li class="nav-item collapsible collapsed border-bottom">
+      <a class="nav-link nav-collapse" href="#navCollapse5" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse5">Collapsible Item</a>
       <div class="collapse" id="navCollapse5" data-cx-parent="#navAccordion">
         <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
@@ -317,6 +319,8 @@ Accordions can also be used to create collapsible vertical navs, as shown in the
       </div>
     </li>
   </ul>`} />
+
+See the [collapse]([[docsref:components/collapse]]) component page for more details.
 
 ## Dropdown integration
 
@@ -397,8 +401,8 @@ The example below demonstrates responsive badge positioning that adapts to layou
 For collapsible navigation items, use `ms-auto` to automatically align badges to the right edge while maintaining proper spacing:
 
 <Example code={`<ul class="nav flex-column">
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse collapsed" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item
+    <li class="nav-item collapsible collapsed border-bottom">
+      <a class="nav-link" href="#navCollapse1" data-cx-toggle="collapse" aria-expanded="false" aria-controls="navCollapse1">Collapsed Item
         <span class="badge secondary ms-auto me-xsmall">2</span></a>
       <div class="collapse" id="navCollapse1">
         <nav class="nav flex-column ps-medium">
@@ -408,8 +412,8 @@ For collapsible navigation items, use `ms-auto` to automatically align badges to
         </nav>
       </div>
     </li>
-    <li class="nav-item border-bottom">
-      <a class="nav-link nav-collapse" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsible Item</a>
+    <li class="nav-item collapsible border-bottom">
+      <a class="nav-link" href="#navCollapse2" data-cx-toggle="collapse" aria-expanded="true" aria-controls="navCollapse2">Collapsible Item</a>
       <div class="collapse show" id="navCollapse2">
         <nav class="nav flex-column ps-medium">
           <a class="nav-link" href="#">Child item 1</a>
@@ -852,9 +856,9 @@ When implementing tab panels, consider the focus management needs of your conten
 
 <DocsCSSVars />
 
-Variables for `.nav-link` class.
+Variables for `.nav` class.
 
-<ScssDocs name="nav-link-css-vars" file="scss/_nav.scss" />
+<ScssDocs name="nav-css-vars" file="scss/_nav.scss" />
 
 Variables for `.nav-tabs` class.
 
@@ -868,9 +872,9 @@ Variables for `.nav-underline` class.
 
 <ScssDocs name="nav-underline-css-vars" file="scss/_nav.scss" />
 
-Variables for `.nav-collapse` class.
+Variables for `.collapsible` class.
 
-<ScssDocs name="nav-collapse-css-vars" file="scss/_nav.scss" />
+<ScssDocs name="nav-collapsible-css-vars" file="scss/_nav.scss" />
 
 ### Sass variables
 

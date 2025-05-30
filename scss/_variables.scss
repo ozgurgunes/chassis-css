@@ -760,8 +760,8 @@ $accordion-border-color-context:        var(--#{$prefix}border-subtle) !default;
 // scss-docs-start nav-variables
 $nav-link-padding-y:                var(--#{$prefix}space-xsmall) !default;
 $nav-link-padding-x:                var(--#{$prefix}space-medium) !default;
-$nav-link-font:                     null !default; // $cx-font-text-medium-normal !default;
-$nav-link-color:                    var(--#{$prefix}link-main) !default;
+$nav-link-font:                     null !default; //$cx-font-text-medium-normal !default;
+$nav-link-main-color:               var(--#{$prefix}link-main) !default;
 $nav-link-hover-color:              var(--#{$prefix}link-hover) !default;
 $nav-link-active-color:             var(--#{$prefix}link-visited) !default;
 $nav-link-disabled-color:           var(--#{$prefix}fg-slight) !default;
@@ -774,19 +774,23 @@ $nav-tabs-border-radius:            var(--#{$prefix}border-radius-medium) !defau
 $nav-tabs-hover-border-color:       transparent !default; //var(--#{$prefix}border-subtle) var(--#{$prefix}border-subtle) $nav-tabs-border-color !default;
 $nav-tabs-active-fg-color:          var(--#{$prefix}fg-main) !default;
 $nav-tabs-active-bg-color:          var(--#{$prefix}bg-main) !default;
-$nav-tabs-active-ornament-width:    var(--#{$prefix}border-width-2xlarge) !default;
-$nav-tabs-active-ornament-color:    var(--#{$prefix}primary) !default;
+$nav-tabs-active-border-top-width:  var(--#{$prefix}border-width-2xlarge) !default; // or $nav-tabs-border-width
+$nav-tabs-active-border-top-color:  var(--#{$prefix}primary) !default; // or $nav-tabs-border-color
 
 $nav-pills-border-radius:           var(--#{$prefix}border-radius-medium) !default;
 $nav-pills-active-fg-color:         $component-active-fg-color !default;
 $nav-pills-active-bg-color:         $component-active-bg-color !default;
 
-$nav-underline-gap:                 1rem !default;
-$nav-underline-border-width:        .125rem !default;
-$nav-underline-active-color:        var(--#{$prefix}fg-main) !default;
+$nav-underline-gap:                     1rem !default;
+$nav-underline-border-color:            var(--#{$prefix}border-subtle) !default;
+$nav-underline-border-width:            var(--#{$prefix}border-width-medium) !default;
+$nav-underline-active-fg-color:         var(--#{$prefix}fg-main) !default;
+$nav-underline-active-bg-color:         transparent !default;
+$nav-underline-active-border-width:    .25rem !default;
+$nav-underline-active-border-color:    currentcolor !default;
 
-$nav-collapse-indicator-icon:       $accordion-indicator-icon !default;
-$nav-collapse-indicator-transition: $accordion-indicator-transition !default;
+$nav-collapsible-indicator-icon:        $accordion-indicator-icon !default;
+$nav-collapsible-indicator-transition:  $accordion-indicator-transition !default;
 // scss-docs-end nav-variables
 
 
@@ -796,16 +800,17 @@ $nav-collapse-indicator-transition: $accordion-indicator-transition !default;
 $navbar-padding-y:                  $spacer * .5 !default;
 $navbar-padding-x:                  null !default;
 
+$navbar-link-font:                  null !default; //$cx-font-text-medium-normal !default;
 $navbar-fg-color:                   rgba(var(--#{$prefix}fg-main-rgb), .65) !default;
-$navbar-link-color:                 $navbar-fg-color !default;
-$navbar-hover-color:                rgba(var(--#{$prefix}fg-main-rgb), .85) !default;
-$navbar-active-color:               rgba(var(--#{$prefix}fg-main-rgb), 1) !default;
-$navbar-disabled-color:             rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-slight)) !default;
+$navbar-link-main-color:            $navbar-fg-color !default;
+$navbar-link-hover-color:           rgba(var(--#{$prefix}fg-main-rgb), .85) !default;
+$navbar-link-active-color:          rgba(var(--#{$prefix}fg-main-rgb), 1) !default;
+$navbar-link-disabled-color:        rgba(var(--#{$prefix}fg-main-rgb), var(--#{$prefix}opacity-fg-slight)) !default;
 
 $navbar-nav-link-padding-x:         .5rem !default;
 
-$navbar-brand-fg-color:             $navbar-active-color !default;
-$navbar-brand-hover-color:          $navbar-active-color !default;
+$navbar-brand-fg-color:             $navbar-link-active-color !default;
+$navbar-brand-hover-color:          $navbar-link-active-color !default;
 
 $navbar-brand-font-size:            $font-size-text-xlarge !default;
 $navbar-brand-line-height:          $line-height-text-xlarge !default;
