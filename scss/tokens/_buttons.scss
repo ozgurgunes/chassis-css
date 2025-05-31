@@ -31,6 +31,7 @@ $button-border-width:                     $cx-border-width-common-button !defaul
 $button-medium-border-radius:             $cx-border-radius-common-button-medium !default;
 $button-large-border-radius:              $cx-border-radius-common-button-medium !default;
 $button-small-border-radius:              $cx-border-radius-common-button-small !default;
+// scss-docs-end button-tokens
 
 // scss-docs-start button-color-tokens
 $button-default-fg-idle:                  $cx-color-common-button-default-fg-idle !default;
@@ -176,4 +177,3 @@ $button-white-border-hover:               $cx-color-common-button-white-border-h
 $button-white-border-press:               $cx-color-common-button-white-border-press !default;
 $button-white-border-disabled:            $cx-color-common-button-white-border-disabled !default;
 // scss-docs-end button-color-tokens
-// scss-docs-end button-tokens

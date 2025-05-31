@@ -417,8 +417,8 @@ describe('ScrollSpy', () => {
         fixtureEl.innerHTML = [
           '<nav class="navbar">',
           '  <div class="list-group">',
-          '    <a class="list-group-item" id="a-1" href="#div-1">div 1</a>',
-          '    <a class="list-group-item" id="a-2" href="#div-2">div 2</a>',
+          '    <a class="list-item" id="a-1" href="#div-1">div 1</a>',
+          '    <a class="list-item" id="a-2" href="#div-2">div 2</a>',
           '  </div>',
           '</nav>',
           '<div class="content" style="overflow: auto; height: 50px">',

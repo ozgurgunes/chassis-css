@@ -22,7 +22,7 @@
 }
 // scss-docs-end colors-mixin
 
-// scss-docs-start box-padding-mixin
+// scss-docs-start padding-mixin
 // Applies standard padding using CSS custom properties.
 //
 // @param {string} $comp - Optional component namespace for CSS variables.
@@ -33,7 +33,7 @@
 @mixin padding($comp: null) {
   padding: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x);
 }
-// scss-docs-end box-padding-mixin
+// scss-docs-end padding-mixin
 
 // scss-docs-start box-padding-mixin
 // Applies adjusted padding that accounts for border width.
@@ -44,8 +44,15 @@
 // Subtracts border width from padding to achieve the exact visual padding
 // specified in design tools, maintaining the same apparent padding regardless
 // of border width. This ensures the content box precisely matches design specs.
-@mixin box-padding($comp: null) {
-  padding: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) - var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width))} #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x) - var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width))};
+@mixin box-padding($comp: null, $modifier: null) {
+  @if $enable-padding-box {
+    $border-width: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width);
+    $padding-y: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) - #{$border-width})};
+    $padding-x: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x) - #{$border-width})};
+    padding: $padding-y $padding-x;
+  } @else {
+    @include padding($comp);
+  }
 }
 // scss-docs-end box-padding-mixin
 

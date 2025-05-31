@@ -45,7 +45,7 @@ For interfaces requiring more subtle interaction elements, the `.outline` modifi
 
 ### Smooth variants
 
-The `.smooth` modifier applies a reduced-opacity background to buttons, creating a more subdued presence in the interface while maintaining their contextual meaning.
+The `.smooth` modifier applies a subdued background to buttons, creating a softer presence in the interface while maintaining their contextual meaning.
 
 <Example class="button-examples" code={[...getData('context-colors').map((contextColor) => `<button type="button" class="button ${contextColor.name} smooth">${contextColor.title}</button>`)]} />
 
@@ -295,6 +295,8 @@ document.querySelectorAll('.button').forEach(buttonElement => {
 
 <DocsCSSVars />
 <hr />
+Common variables:
+<ScssDocs name="button-css-vars" file="scss/_button.scss" />
 Sizing:
 <ScssDocs name="button-medium-css-vars" file="scss/placeholders/_button.scss" />
 Idle (default) state:
@@ -305,8 +307,6 @@ Press (active) state:
 <ScssDocs name="button-press-css-vars" file="scss/placeholders/_button.scss" />
 Focus state:
 <ScssDocs name="button-disabled-css-vars" file="scss/placeholders/_button.scss" />
-Common variables:
-<ScssDocs name="button-css-vars" file="scss/_button.scss" />
 
 ### Sass variables
 
@@ -318,29 +318,29 @@ Common variables:
 
 Chassis CSS automatically applies these specialized mixins to each semantic context color to generate the complete suite of button variants while maintaining design token consistency:
 
-#### Solid mutton mixin
+<hr />
+
+Solid button mixin:
 
 <ScssDocs name="solid-button-mixin" file="scss/mixins/_button.scss" />
 
-#### Outline Button Mixin
+Outline button mixin;
 
 <ScssDocs name="outline-button-mixin" file="scss/mixins/_button.scss" />
 
-#### Smooth button mixin
+Smooth button mixin:
 
 <ScssDocs name="smooth-button-mixin" file="scss/mixins/_button.scss" />
 
-### Custom buttons
+### Sass maps
 
-The following example demonstrates how the documentation site implements its custom button set:
+Color map that drives the generation of all button variants through button mixins.
 
-<ScssDocs name="cxd-button" file="site/src/scss/_buttons.scss" />
+<ScssDocs name="button-colors-map" file="scss/maps/_buttons.scss" />
 
-This code produces the following button variants:
+### Design tokens
 
-<Example class="button-examples" code={`<button type="button" class="cxd-button">Base</button>
-<button type="button" class="cxd-button default">Default</button>
-<button type="button" class="cxd-button primary">Primary</button>
-<button type="button" class="cxd-button large">Large</button>
-<button type="button" class="cxd-button default large">Default</button>
-<button type="button" class="cxd-button primary large">Primary</button>`} />
+<DocsDesignTokens />
+
+<ScssDocs name="button-tokens" file="scss/tokens/_buttons.scss" />
+<ScssDocs name="button-color-tokens" file="scss/tokens/_buttons.scss" />

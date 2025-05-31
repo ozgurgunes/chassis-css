@@ -4,7 +4,7 @@
 .chip {
 
   @extend %button, %solid-button, %component;
-
+  // scss-docs-start chip-css-vars
   --#{$prefix}border-width: var(--#{$prefix}chip-border-width, #{$chip-border-width});
   --#{$prefix}box-shadow: var(--#{$prefix}chip-box-shadow, #{$button-box-shadow});
   --#{$prefix}focus-box-shadow: var(--#{$prefix}chip-focus-box-shadow, #{$button-focus-box-shadow});
@@ -23,6 +23,7 @@
   --#{$prefix}avatar-size: var(--#{$prefix}chip-avatar-size, #{$chip-medium-avatar-size});
   --#{$prefix}close-button-size: var(--#{$prefix}icon-size);
   @include map-font($chip-medium-font, button);
+  // scss-docs-end chip-css-vars
 
   box-sizing: content-box;
   display: inline-flex;

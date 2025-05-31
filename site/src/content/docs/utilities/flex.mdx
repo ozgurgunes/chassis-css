@@ -248,26 +248,6 @@ Responsive variations also exist for `align-self`.
 })}
 </ul>
 
-## Fill
-
-Use the `.flex-fill` class on a series of sibling elements to force them into widths equal to their content (or equal widths if their content does not surpass their border-boxes) while taking up all available horizontal space.
-
-<Example class="cxd-example-flex" code={`<div class="d-flex">
-    <div class="p-xsmall flex-fill">Flex item with a lot of content</div>
-    <div class="p-xsmall flex-fill">Flex item</div>
-    <div class="p-xsmall flex-fill">Flex item</div>
-  </div>`} />
-
-Responsive variations also exist for `flex-fill`.
-
-<ul>
-{getData('breakpoints').map((breakpoint) => {
-  return (
-    <li><code>.flex{breakpoint.abbr}-fill</code></li>
-  )
-})}
-</ul>
-
 ## Grow and shrink
 
 Use `.flex-grow-*` utilities to toggle a flex item’s ability to grow to fill available space. In the example below, the `.flex-grow-1` elements uses all available space it can, while allowing the remaining two flex items their necessary space.
@@ -275,14 +255,14 @@ Use `.flex-grow-*` utilities to toggle a flex item’s ability to grow to fill a
 <Example class="cxd-example-flex" code={`<div class="d-flex">
     <div class="p-xsmall flex-grow-1">Flex item</div>
     <div class="p-xsmall">Flex item</div>
-    <div class="p-xsmall">Third flex item</div>
+    <div class="p-xsmall">Flex item</div>
   </div>`} />
 
-Use `.flex-shrink-*` utilities to toggle a flex item’s ability to shrink if necessary. In the example below, the second flex item with `.flex-shrink-1` is forced to wrap its contents to a new line, “shrinking” to allow more space for the previous flex item with `.w-100`.
+Use `.flex-shrink-*` utilities to toggle a flex item's ability to shrink if necessary. In the example below, the second flex item with `.flex-shrink-0` cannot be forced to shrink even when space is limited, maintaining its original size even as the previous flex item with `.w-100` tries to take up more space.
 
 <Example class="cxd-example-flex" code={`<div class="d-flex">
     <div class="p-xsmall w-100">Flex item</div>
-    <div class="p-xsmall flex-shrink-1">Flex item</div>
+    <div class="p-xsmall flex-shrink-0">Flex item with a lot of content</div>
   </div>`} />
 
 Responsive variations also exist for `flex-grow` and `flex-shrink`.
@@ -294,6 +274,32 @@ Responsive variations also exist for `flex-grow` and `flex-shrink`.
       <li><code>.flex{breakpoint.abbr}-{'{'}grow|shrink{'}'}-0</code></li>
       <li><code>.flex{breakpoint.abbr}-{'{'}grow|shrink{'}'}-1</code></li>
     </Fragment>
+  )
+})}
+</ul>
+
+## Fill and grow
+
+Use the `.flex-fill` class on a series of sibling elements to force them into equal widths regardless of their content while taking up all available horizontal space.
+
+<Example class="cxd-example-flex" code={`<div class="d-flex mb-medium">
+    <div class="p-xsmall flex-fill">Flex item with a lot of content</div>
+    <div class="p-xsmall flex-fill">Flex item</div>
+    <div class="p-xsmall flex-fill">Flex item</div>
+  </div>
+
+  <div class="d-flex">
+    <div class="p-xsmall flex-grow-1">Flex item with a lot of content</div>
+    <div class="p-xsmall flex-grow-1">Flex item</div>
+    <div class="p-xsmall flex-grow-1">Flex item</div>
+  </div>`} />
+
+Responsive variations also exist for `flex-fill`.
+
+<ul>
+{getData('breakpoints').map((breakpoint) => {
+  return (
+    <li><code>.flex{breakpoint.abbr}-fill</code></li>
   )
 })}
 </ul>

@@ -1,12 +1,16 @@
 ---
 title: Breadcrumb
-description: Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.
+description: Guide users through your site hierarchy with semantically structured breadcrumb navigation that enhances wayfinding and user orientation.
 toc: true
 ---
 
-## Example
+## Introduction
 
-Use an ordered or unordered list with linked list items to create a minimally styled breadcrumb. Use our utilities to add additional styles as desired.
+Breadcrumb navigation in Chassis CSS provides a consistent waypoint system to help users understand their current location within your site's hierarchy. This pattern enhances spatial awareness and offers quick navigation paths to parent pages, improving overall user experience and reducing the likelihood of disorientation.
+
+## Basic implementation
+
+Create breadcrumb navigation using an ordered list with the `.breadcrumb` class, adding `.breadcrumb-page` for each navigation level. The active page should include the `active` class and appropriate ARIA attributes.
 
 <Example code={`<nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -29,9 +33,9 @@ Use an ordered or unordered list with linked list items to create a minimally st
     </ol>
   </nav>`} />
 
-## Dividers
+## Separator customization
 
-Dividers are automatically added in CSS through [`::before`](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) and [`content`](https://developer.mozilla.org/en-US/docs/Web/CSS/content). They can be changed by modifying a local CSS custom property `--cx-breadcrumb-divider`, or through the `$breadcrumb-divider` Sass variable — and `$breadcrumb-divider-flipped` for its RTL counterpart, if needed. We default to our Sass variable, which is set as a fallback to the custom property. This way, you get a global divider that you can override without recompiling CSS at any time.
+Breadcrumb separators in Chassis are implemented through CSS `::before` pseudo-elements and design tokens, maintaining consistency with your design system while allowing for flexible customization. You can change separators without recompiling code by modifying the `--cx-breadcrumb-divider` CSS variable.
 
 <Example code={`<nav style="--cx-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -46,13 +50,15 @@ When modifying via Sass, the [quote](https://sass-lang.com/documentation/modules
 $breadcrumb-divider: quote(">");
 ```
 
-It's also possible to use an **embedded SVG icon**. Apply it via our CSS custom property, or use the Sass variable.
+### SVG icon separators
 
-<Callout>
-**Inlined SVG requires properly escaped characters.** Some reserved characters, such as `<`, `>` and `#`, must be URL-encoded or escaped. We do this with the `$breadcrumb-divider` variable using our [`escape-svg()` Sass function]([[docsref:/customize/sass#escape-svg]]). When customizing the CSS variable, you must handle this yourself. Read [Kevin Weber's explanations on CodePen](https://codepen.io/kevinweber/pen/dXWoRw ) for more info.
+It's also possible to use an **embedded SVG icon**. Apply it via CSS custom property, or use the Sass variable.
+
+<Callout type="info">
+  <strong>SVG integration:</strong> When using SVG icons as separators, special characters such as `<`, `>`, and `#` must be properly URL-encoded. Chassis handles this automatically for Sass variables using our `escape-svg()` function. When setting CSS variables directly in HTML or JavaScript, you'll need to handle URL encoding manually.
 </Callout>
 
-<Example code={`<nav style="--cx-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+<Example code={`<nav style="--cx-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23888888' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-page"><a href="#">Home</a></li>
       <li class="breadcrumb-page active" aria-current="page">Library</li>
@@ -60,10 +66,26 @@ It's also possible to use an **embedded SVG icon**. Apply it via our CSS custom 
   </nav>`} />
 
 ```scss
-$breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>");
+$breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='#{$breadcrumb-divider-color}' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'/></svg>");
 ```
 
-You can also remove the divider setting `--cx-breadcrumb-divider: '';` (empty strings in CSS custom properties counts as a value), or setting the Sass variable to `$breadcrumb-divider: none;`.
+<Callout type="warning">
+  <strong>Color considerations:</strong> When using SVG icons as separators through the `content` property of the `::before` pseudo-element, the color cannot be dynamically changed after rendering. Choose a neutral color value directly within the SVG code to ensure sufficient contrast across both light and dark color modes.
+</Callout>
+
+### Removing separators
+
+For designs that don't require visible separators, you can remove them entirely:
+
+```scss
+// In Sass
+$breadcrumb-divider: none;
+
+// Or with CSS variables
+--cx-breadcrumb-divider: '';
+```
+
+This flexibility allows you to adapt breadcrumb navigation to various design needs while maintaining consistent structure.
 
 <Example code={`<nav style="--cx-breadcrumb-divider: '';" aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -79,9 +101,7 @@ $breadcrumb-divider: none;
 
 ## Accessibility
 
-Since breadcrumbs provide a navigation, it’s a good idea to add a meaningful label such as `aria-label="breadcrumb"` to describe the type of navigation provided in the `<nav>` element, as well as applying an `aria-current="page"` to the last item of the set to indicate that it represents the current page.
-
-For more information, see the [ARIA Authoring Practices Guide breadcrumb pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/).
+For accessible breadcrumbs, use the `<nav>` element with `aria-label="breadcrumb"` and apply `aria-current="page"` to the active item. See the [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/) for details.
 
 ## CSS
 
@@ -90,6 +110,8 @@ For more information, see the [ARIA Authoring Practices Guide breadcrumb pattern
 ### Custom properties
 
 <DocsCSSVars />
+
+<ScssDocs name="breadcrumb-css-vars" file="scss/_breadcrumb.scss" />
 
 ### Sass variables
 

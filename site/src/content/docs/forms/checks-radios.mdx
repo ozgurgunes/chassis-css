@@ -280,35 +280,6 @@ For interface designs that require controls without visible text labels, omit th
     <input class="check-input" type="radio" name="radioNoLabel" id="radioNoLabel2" value="2" aria-label="Select second option">
   </div>`} />
 
-## Input within labels
-
-Chassis CSS fully supports nesting input elements inside label elements as a first-class pattern. This creates an implicit association between the input and its label without requiring `id` and `for` attributes, resulting in cleaner, more concise markup while maintaining full accessibility.
-
-<Example code={`<div>
-    <label class="form-check check-label">
-      <input class="check-input" type="checkbox">
-      Checkbox within label
-    </label>
-  </div>
-  <div>
-    <label class="form-check check-label check-inline">
-      <input class="check-input" type="radio" name="radioLabel">
-      Radio within label
-    </label>
-    <label class="form-check check-label check-inline">
-      <input class="check-input" type="radio" name="radioLabel">
-      Another radio within label
-    </label>
-  </div>
-  <div>
-    <label class="form-check form-switch check-label">
-      <input class="check-input" type="checkbox" role="switch">
-      Switch within label
-    </label>
-  </div>`} />
-
-Both the nested and sibling markup approaches receive identical styling and functionality in Chassis CSS, allowing you to choose the pattern that best suits your project requirements or team preferences.
-
 ## Button-styled toggles
 
 Chassis CSS provides a way to style checkboxes and radio buttons as buttons, combining the semantic meaning of form controls with the visual appearance of buttons. These controls use the `.button-check` class on the input and `.button` styles on the corresponding `<label>` elements.

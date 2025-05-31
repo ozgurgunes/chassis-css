@@ -15,7 +15,7 @@
   outline: 0;
 }
 
-.list-group-checkable .list-item {
+.list-checkable .list-item {
   cursor: pointer;
 }
 .list-item-check {
@@ -37,26 +37,26 @@
   opacity: .5;
 }
 
-.list-group-radio .list-item {
+.list-radio .list-item {
   cursor: pointer;
   border-radius: .5rem;
 }
-.list-group-radio .check-input {
+.list-radio .check-input {
   z-index: 2;
   margin-top: -.5em;
 }
-.list-group-radio .list-item:hover,
-.list-group-radio .list-item:focus {
+.list-radio .list-item:hover,
+.list-radio .list-item:focus {
   background-color: var(--cx-bg-even);
 }
 
-.list-group-radio .check-input:checked + .list-item {
+.list-radio .check-input:checked + .list-item {
   background-color: var(--cx-body);
   border-color: var(--cx-primary);
   box-shadow: 0 0 0 2px var(--cx-primary);
 }
-.list-group-radio .check-input[disabled] + .list-item,
-.list-group-radio .check-input:disabled + .list-item {
+.list-radio .check-input[disabled] + .list-item,
+.list-radio .check-input:disabled + .list-item {
   pointer-events: none;
   filter: none;
   opacity: .5;

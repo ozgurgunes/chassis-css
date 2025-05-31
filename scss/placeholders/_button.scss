@@ -66,6 +66,12 @@
         box-shadow: var(--#{$prefix}focus-box-shadow);
       }
     }
+
+    &:disabled,
+    &.disabled {
+      --#{$prefix}bg-color: var(--#{$prefix}button-press-bg-color, var(--#{$prefix}bg-press));
+      --#{$prefix}border-color: var(--#{$prefix}button-idle-border-color, var(--#{$prefix}border-idle));
+    }
   }
 
   .button-check:checked:focus-visible + & {

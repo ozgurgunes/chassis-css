@@ -799,22 +799,22 @@
    * --------------------------------------------------------------------------
    */
 
-  const NAME$g = 'accordion';
-  const DATA_KEY$b = 'cx.accordion';
-  const EVENT_KEY$c = `.${DATA_KEY$b}`;
-  const DATA_API_KEY$7 = '.data-api';
-  const EVENT_OPEN = `open${EVENT_KEY$c}`;
-  const EVENT_OPENED = `opened${EVENT_KEY$c}`;
-  const EVENT_CLOSE$1 = `close${EVENT_KEY$c}`;
-  const EVENT_CLOSED$1 = `closed${EVENT_KEY$c}`;
+  const NAME$h = 'accordion';
+  const DATA_KEY$c = 'cx.accordion';
+  const EVENT_KEY$d = `.${DATA_KEY$c}`;
+  const DATA_API_KEY$8 = '.data-api';
+  const EVENT_OPEN = `open${EVENT_KEY$d}`;
+  const EVENT_OPENED = `opened${EVENT_KEY$d}`;
+  const EVENT_CLOSE$2 = `close${EVENT_KEY$d}`;
+  const EVENT_CLOSED$2 = `closed${EVENT_KEY$d}`;
   const SELECTOR_DETAILS = '.accordion > details';
   const SELECTOR_SUMMARY = 'summary';
   const SELECTOR_TITLE$1 = '.accordion-title';
   const SELECTOR_CONTENT$1 = '.accordion-body';
-  const EVENT_CLICK_DATA_API$7 = `click${EVENT_KEY$c}${DATA_API_KEY$7}`;
+  const EVENT_CLICK_DATA_API$8 = `click${EVENT_KEY$d}${DATA_API_KEY$8}`;
   class Accordion extends BaseComponent {
     static get NAME() {
-      return NAME$g;
+      return NAME$h;
     }
     constructor(element, config) {
       super(element, config);
@@ -848,7 +848,7 @@
       this._queueCallback(complete, this._element, true);
     }
     close() {
-      const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE$1);
+      const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE$2);
       if (this._isTransitioning || closeEvent.defaultPrevented) {
         return;
       }
@@ -864,7 +864,7 @@
         this._element.style.height = '';
         this._pElement.remove();
         this._isTransitioning = false;
-        EventHandler.trigger(this._element, EVENT_CLOSED$1);
+        EventHandler.trigger(this._element, EVENT_CLOSED$2);
       };
       this._queueCallback(complete, this._element, true);
     }
@@ -898,7 +898,7 @@
       }
     }
   }
-  EventHandler.on(document, EVENT_CLICK_DATA_API$7, SELECTOR_DETAILS, () => {
+  EventHandler.on(document, EVENT_CLICK_DATA_API$8, SELECTOR_DETAILS, () => {
     for (const element of SelectorEngine.find(SELECTOR_DETAILS)) {
       Accordion.getOrCreateInstance(element);
     }
@@ -917,13 +917,13 @@
    * Constants
    */
 
-  const NAME$f = 'button';
-  const DATA_KEY$a = 'cx.button';
-  const EVENT_KEY$b = `.${DATA_KEY$a}`;
-  const DATA_API_KEY$6 = '.data-api';
-  const CLASS_NAME_ACTIVE$3 = 'active';
-  const SELECTOR_DATA_TOGGLE$5 = '[data-cx-toggle="button"]';
-  const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$b}${DATA_API_KEY$6}`;
+  const NAME$g = 'button';
+  const DATA_KEY$b = 'cx.button';
+  const EVENT_KEY$c = `.${DATA_KEY$b}`;
+  const DATA_API_KEY$7 = '.data-api';
+  const CLASS_NAME_ACTIVE$4 = 'active';
+  const SELECTOR_DATA_TOGGLE$6 = '[data-cx-toggle="button"]';
+  const EVENT_CLICK_DATA_API$7 = `click${EVENT_KEY$c}${DATA_API_KEY$7}`;
 
   /**
    * Class definition
@@ -932,13 +932,13 @@
   class Button extends BaseComponent {
     // Getters
     static get NAME() {
-      return NAME$f;
+      return NAME$g;
     }
 
     // Public
     toggle() {
       // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
-      this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
+      this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$4));
     }
 
     // Static
@@ -956,9 +956,9 @@
    * Data API implementation
    */
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, event => {
+  EventHandler.on(document, EVENT_CLICK_DATA_API$7, SELECTOR_DATA_TOGGLE$6, event => {
     event.preventDefault();
-    const button = event.target.closest(SELECTOR_DATA_TOGGLE$5);
+    const button = event.target.closest(SELECTOR_DATA_TOGGLE$6);
     const data = Button.getOrCreateInstance(button);
     data.toggle();
   });
@@ -981,13 +981,13 @@
    * Constants
    */
 
-  const NAME$e = 'swipe';
-  const EVENT_KEY$a = '.cx.swipe';
-  const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$a}`;
-  const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$a}`;
-  const EVENT_TOUCHEND = `touchend${EVENT_KEY$a}`;
-  const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$a}`;
-  const EVENT_POINTERUP = `pointerup${EVENT_KEY$a}`;
+  const NAME$f = 'swipe';
+  const EVENT_KEY$b = '.cx.swipe';
+  const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$b}`;
+  const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$b}`;
+  const EVENT_TOUCHEND = `touchend${EVENT_KEY$b}`;
+  const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$b}`;
+  const EVENT_POINTERUP = `pointerup${EVENT_KEY$b}`;
   const POINTER_TYPE_TOUCH = 'touch';
   const POINTER_TYPE_PEN = 'pen';
   const CLASS_NAME_POINTER_EVENT = 'pointer-event';
@@ -1028,12 +1028,12 @@
       return DefaultType$c;
     }
     static get NAME() {
-      return NAME$e;
+      return NAME$f;
     }
 
     // Public
     dispose() {
-      EventHandler.off(this._element, EVENT_KEY$a);
+      EventHandler.off(this._element, EVENT_KEY$b);
     }
 
     // Private
@@ -1101,10 +1101,10 @@
    * Constants
    */
 
-  const NAME$d = 'carousel';
-  const DATA_KEY$9 = 'cx.carousel';
-  const EVENT_KEY$9 = `.${DATA_KEY$9}`;
-  const DATA_API_KEY$5 = '.data-api';
+  const NAME$e = 'carousel';
+  const DATA_KEY$a = 'cx.carousel';
+  const EVENT_KEY$a = `.${DATA_KEY$a}`;
+  const DATA_API_KEY$6 = '.data-api';
   const ARROW_LEFT_KEY$1 = 'ArrowLeft';
   const ARROW_RIGHT_KEY$1 = 'ArrowRight';
   const TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
@@ -1113,16 +1113,16 @@
   const ORDER_PREV = 'prev';
   const DIRECTION_LEFT = 'left';
   const DIRECTION_RIGHT = 'right';
-  const EVENT_SLIDE = `slide${EVENT_KEY$9}`;
-  const EVENT_SLID = `slid${EVENT_KEY$9}`;
-  const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$9}`;
-  const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$9}`;
-  const EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$9}`;
-  const EVENT_DRAG_START = `dragstart${EVENT_KEY$9}`;
-  const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$9}${DATA_API_KEY$5}`;
-  const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$9}${DATA_API_KEY$5}`;
+  const EVENT_SLIDE = `slide${EVENT_KEY$a}`;
+  const EVENT_SLID = `slid${EVENT_KEY$a}`;
+  const EVENT_KEYDOWN$1 = `keydown${EVENT_KEY$a}`;
+  const EVENT_MOUSEENTER$1 = `mouseenter${EVENT_KEY$a}`;
+  const EVENT_MOUSELEAVE$1 = `mouseleave${EVENT_KEY$a}`;
+  const EVENT_DRAG_START = `dragstart${EVENT_KEY$a}`;
+  const EVENT_LOAD_DATA_API$3 = `load${EVENT_KEY$a}${DATA_API_KEY$6}`;
+  const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
   const CLASS_NAME_CAROUSEL = 'carousel';
-  const CLASS_NAME_ACTIVE$2 = 'active';
+  const CLASS_NAME_ACTIVE$3 = 'active';
   const CLASS_NAME_SLIDE = 'slide';
   const CLASS_NAME_END = 'carousel-item-end';
   const CLASS_NAME_START = 'carousel-item-start';
@@ -1184,7 +1184,7 @@
       return DefaultType$b;
     }
     static get NAME() {
-      return NAME$d;
+      return NAME$e;
     }
 
     // Public
@@ -1311,11 +1311,11 @@
         return;
       }
       const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE, this._indicatorsElement);
-      activeIndicator.classList.remove(CLASS_NAME_ACTIVE$2);
+      activeIndicator.classList.remove(CLASS_NAME_ACTIVE$3);
       activeIndicator.removeAttribute('aria-current');
       const newActiveIndicator = SelectorEngine.findOne(`[data-cx-slide-to="${index}"]`, this._indicatorsElement);
       if (newActiveIndicator) {
-        newActiveIndicator.classList.add(CLASS_NAME_ACTIVE$2);
+        newActiveIndicator.classList.add(CLASS_NAME_ACTIVE$3);
         newActiveIndicator.setAttribute('aria-current', 'true');
       }
     }
@@ -1368,8 +1368,8 @@
       nextElement.classList.add(directionalClassName);
       const completeCallBack = () => {
         nextElement.classList.remove(directionalClassName, orderClassName);
-        nextElement.classList.add(CLASS_NAME_ACTIVE$2);
-        activeElement.classList.remove(CLASS_NAME_ACTIVE$2, orderClassName, directionalClassName);
+        nextElement.classList.add(CLASS_NAME_ACTIVE$3);
+        activeElement.classList.remove(CLASS_NAME_ACTIVE$3, orderClassName, directionalClassName);
         this._isSliding = false;
         triggerEvent(EVENT_SLID);
       };
@@ -1428,7 +1428,7 @@
    * Data API implementation
    */
 
-  EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, function (event) {
+  EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_SLIDE, function (event) {
     const target = SelectorEngine.getElementFromSelector(this);
     if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
       return;
@@ -1461,6 +1461,122 @@
    */
 
   defineJQueryPlugin(Carousel);
+
+  /**
+   * --------------------------------------------------------------------------
+   * Chassis - CSS util/component-functions.js
+   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  const enableDismissTrigger = (component, method = 'hide') => {
+    const clickEvent = `click.dismiss${component.EVENT_KEY}`;
+    const name = component.NAME;
+    EventHandler.on(document, clickEvent, `[data-cx-dismiss="${name}"]`, function (event) {
+      if (['A', 'AREA'].includes(this.tagName)) {
+        event.preventDefault();
+      }
+      if (isDisabled(this)) {
+        return;
+      }
+      const target = SelectorEngine.getElementFromSelector(this) || this.closest(`.${name}`);
+      const instance = component.getOrCreateInstance(target);
+
+      // Method argument is left, for Alert and only, as it doesn't implement the 'hide' method
+      instance[method]();
+    });
+  };
+
+  /**
+   * --------------------------------------------------------------------------
+   * Chassis - CSS Chip.js
+   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+
+  /**
+   * Constants
+   */
+
+  const NAME$d = 'chip';
+  const DATA_KEY$9 = 'cx.chip';
+  const EVENT_KEY$9 = `.${DATA_KEY$9}`;
+  const DATA_API_KEY$5 = '.data-api';
+  const CLASS_NAME_ACTIVE$2 = 'active';
+  const SELECTOR_DATA_TOGGLE$5 = '[data-cx-toggle="chip"]';
+  const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$9}${DATA_API_KEY$5}`;
+  const EVENT_CLOSE$1 = `close${EVENT_KEY$9}`;
+  const EVENT_CLOSED$1 = `closed${EVENT_KEY$9}`;
+  const CLASS_NAME_FADE$6 = 'fade';
+  const CLASS_NAME_SHOW$9 = 'show';
+
+  /**
+   * Class definition
+   */
+
+  class Chip extends BaseComponent {
+    // Getters
+    static get NAME() {
+      return NAME$d;
+    }
+
+    // Public
+    close() {
+      const closeEvent = EventHandler.trigger(this._element, EVENT_CLOSE$1);
+      if (closeEvent.defaultPrevented) {
+        return;
+      }
+      this._element.classList.remove(CLASS_NAME_SHOW$9);
+      const isAnimated = this._element.classList.contains(CLASS_NAME_FADE$6);
+      this._queueCallback(() => this._destroyElement(), this._element, isAnimated);
+    }
+
+    // Private
+    _destroyElement() {
+      this._element.remove();
+      EventHandler.trigger(this._element, EVENT_CLOSED$1);
+      this.dispose();
+    }
+
+    // Public
+    toggle() {
+      // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
+      this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$2));
+    }
+
+    // Static
+    static jQueryInterface(config) {
+      return this.each(function () {
+        const data = Chip.getOrCreateInstance(this);
+        if (typeof config !== 'string') {
+          return;
+        }
+        if (data[config] === undefined || config.startsWith('_') || config === 'constructor') {
+          throw new TypeError(`No method named "${config}"`);
+        }
+        data[config](this);
+      });
+    }
+  }
+
+  /**
+   * Data API implementation
+   */
+
+  EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$5, event => {
+    event.preventDefault();
+    const chip = event.target.closest(SELECTOR_DATA_TOGGLE$5);
+    const data = Chip.getOrCreateInstance(chip);
+    data.toggle();
+  });
+  enableDismissTrigger(Chip, 'close');
+
+  /**
+   * jQuery
+   */
+
+  defineJQueryPlugin(Chip);
 
   /**
    * --------------------------------------------------------------------------
@@ -4024,31 +4140,6 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Chassis - CSS util/component-functions.js
-   * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-
-  const enableDismissTrigger = (component, method = 'hide') => {
-    const clickEvent = `click.dismiss${component.EVENT_KEY}`;
-    const name = component.NAME;
-    EventHandler.on(document, clickEvent, `[data-cx-dismiss="${name}"]`, function (event) {
-      if (['A', 'AREA'].includes(this.tagName)) {
-        event.preventDefault();
-      }
-      if (isDisabled(this)) {
-        return;
-      }
-      const target = SelectorEngine.getElementFromSelector(this) || this.closest(`.${name}`);
-      const instance = component.getOrCreateInstance(target);
-
-      // Method argument is left, for Alert and only, as it doesn't implement the 'hide' method
-      instance[method]();
-    });
-  };
-
-  /**
-   * --------------------------------------------------------------------------
    * Chassis - CSS util/focustrap.js
    * Licensed under MIT (https://github.com/ozgurgunes/chassis-css/blob/main/LICENSE)
    * --------------------------------------------------------------------------
@@ -5705,7 +5796,7 @@
   const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
   const SELECTOR_NAV_LINKS = '.nav-link';
   const SELECTOR_NAV_ITEMS = '.nav-item';
-  const SELECTOR_LIST_ITEMS = '.list-group-item';
+  const SELECTOR_LIST_ITEMS = '.list-item';
   const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_NAV_ITEMS} > ${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`;
   const SELECTOR_DROPDOWN = '.dropdown';
   const SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
@@ -5975,8 +6066,8 @@
   const SELECTOR_DROPDOWN_MENU = '.dropdown-menu';
   const NOT_SELECTOR_DROPDOWN_TOGGLE = `:not(${SELECTOR_DROPDOWN_TOGGLE})`;
   const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]';
-  const SELECTOR_OUTER = '.nav-item, .list-group-item';
-  const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
+  const SELECTOR_OUTER = '.nav-item, .list-item';
+  const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`;
   const SELECTOR_DATA_TOGGLE = '[data-cx-toggle="tab"], [data-cx-toggle="pill"], [data-cx-toggle="list"]'; // TODO: could only be `tab` in v6
   const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
   const SELECTOR_DATA_TOGGLE_ACTIVE = `.${CLASS_NAME_ACTIVE}[data-cx-toggle="tab"], .${CLASS_NAME_ACTIVE}[data-cx-toggle="pill"], .${CLASS_NAME_ACTIVE}[data-cx-toggle="list"]`;
@@ -6404,6 +6495,7 @@
     Accordion,
     Button,
     Carousel,
+    Chip,
     Collapse,
     Dropdown,
     Modal,

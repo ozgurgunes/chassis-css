@@ -1,5 +1,20 @@
 //
-// Table component
+// Table Component
+//
+// This file implements tabular data styling with a comprehensive set of customization options.
+// It provides an opt-in approach where the base class doesn't affect native tables unless applied.
+//
+// Implementation Features:
+// - CSS custom properties for complete theming control of all table elements
+// - Configurable typography token support for header and data cells
+// - Complex selector patterns to prevent style leakage to nested tables
+// - Border radius application with conditional feature flags
+// - Specialized row and column stripe patterns with flexible ordering
+// - Contextual hover and active states with visual indicators
+// - Responsive behavior through breakpoint-specific container classes
+//
+// The implementation aims to balance flexibility with performance through
+// judicious use of selectors and custom properties.
 //
 
 .table {

@@ -85,7 +85,8 @@
     > .button,
     > .button-group,
     > .button-option,
-    > .dropdown {
+    > .dropdown,
+    > .chip {
       margin: .25rem .125rem;
     }
   }
@@ -99,7 +100,7 @@
     max-width: 400px;
   }
 
-  > [class*="list-group-horizontal"] {
+  > [class*="list-horizontal"] {
     max-width: 100%;
   }
 

@@ -10,7 +10,7 @@ import { iconsPages } from '@libs/content'
       <input class="form-input search mb-0" id="search" type="search" placeholder="Start typing to filter..." autocomplete="off" />
     </form>
   </div>
-  <ul id="icons-list" class="row row-cols-3 row-cols-small-4 row-cols-large-6 row-cols-xlarge-8 bulletless list icon-xlarge">
+  <ul id="icons-list" class="row row-cols-3 row-cols-small-4 row-cols-large-6 row-cols-xlarge-8 bulletless icon-list icon-xlarge">
     {iconsPages.map((iconPage) => {
       const filename = iconPage.id.split('/').pop()?.replace('.mdx', '')
       if (!filename) return null

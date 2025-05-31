@@ -533,8 +533,8 @@ $component-active-bg-color:     var(--#{$prefix}primary-bg-solid) !default;
 //
 // Badge
 //
-// scss-docs-start badge-variables
 // See tokens/_badge.scss for more.
+// scss-docs-start badge-variables
 // scss-docs-end badge-variables
 //
 
@@ -1180,13 +1180,13 @@ $progress-bar-transition:           width .6s ease !default;
 //
 
 // scss-docs-start list-variables
-$list-padding-y:              $spacer * .5 !default;
-$list-padding-x:              $spacer !default;
+$list-padding-y:              var(--#{$prefix}space-xsmall) !default;
+$list-padding-x:              var(--#{$prefix}space-medium) !default;
 
 $list-fg-color:               var(--#{$prefix}fg-main) !default;
 $list-bg-color:               var(--#{$prefix}bg-main) !default;
 
-$list-border-color:           var(--#{$prefix}default-border-subtle) !default;
+$list-border-color:           var(--#{$prefix}border-subtle) !default;
 $list-border-width:           var(--#{$prefix}border-width-medium) !default;
 $list-border-radius:          var(--#{$prefix}border-radius-medium) !default;
 
@@ -1196,16 +1196,6 @@ $list-active-border-color:    transparent !default;
 
 $list-disabled-fg-color:      var(--#{$prefix}fg-slight) !default;
 $list-disabled-bg-color:      inherit !default;
-
-// $list-button-fg-color:        var(--#{$prefix}fg-main) !default;
-// $list-button-bg-color:        var(--#{$prefix}bg-main) !default;
-
-// $list-hover-fg-color:         var(--#{$prefix}fg-main) !default;
-// $list-hover-bg-color:         var(--#{$prefix}bg-even) !default;
-
-// $list-press-fg-color:         var(--#{$prefix}fg-main) !default;
-// $list-press-bg-color:         var(--#{$prefix}bg-evident) !default;
-
 // scss-docs-end list-variables
 
 //
@@ -1242,8 +1232,8 @@ $breadcrumb-item-padding-x:     .5rem !default;
 $breadcrumb-margin-bottom:      1rem !default;
 $breadcrumb-fg-color:           var(--#{$prefix}fg-subtle) !default;
 $breadcrumb-bg-color:           null !default;
-$breadcrumb-divider:            quote("/") !default;
 $breadcrumb-divider-color:      var(--#{$prefix}fg-subtle) !default;
+$breadcrumb-divider:            quote("/") !default;
 $breadcrumb-divider-flipped:    $breadcrumb-divider !default;
 $breadcrumb-border-width:       0 !default;
 $breadcrumb-border-color:       transparent !default;
@@ -1321,7 +1311,7 @@ $close-button-fg-color:           var(--#{$prefix}fg-main) !default;
 $close-button-bg-color:           transparent !default;
 $close-button-fg-hover:           var(--#{$prefix}icon-main) !default;
 $close-button-bg-hover:           transparent !default;
-$close-button-svg:                url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'><path d='M19.148 17.56c.422.468.422 1.169 0 1.59-.468.467-1.171.467-1.593 0l-5.532-5.561-5.578 5.56c-.468.468-1.172.468-1.593 0-.47-.42-.47-1.121 0-1.588L10.43 12 4.852 6.44c-.47-.468-.47-1.169 0-1.59a1.03 1.03 0 0 1 1.546 0l5.625 5.608 5.579-5.56a1.03 1.03 0 0 1 1.546 0c.47.42.47 1.12 0 1.588L13.57 12z' /></svg>") !default;
+$close-button-icon:               svg-icon("<svg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 24 24'><path d='M19.148 17.56c.422.468.422 1.169 0 1.59-.468.467-1.171.467-1.593 0l-5.532-5.561-5.578 5.56c-.468.468-1.172.468-1.593 0-.47-.42-.47-1.121 0-1.588L10.43 12 4.852 6.44c-.47-.468-.47-1.169 0-1.59a1.03 1.03 0 0 1 1.546 0l5.625 5.608 5.579-5.56a1.03 1.03 0 0 1 1.546 0c.47.42.47 1.12 0 1.588L13.57 12z' /></svg>") !default;
 $close-button-focus-shadow:       $focus-ring-box-shadow !default;
 $close-button-idle-opacity:       .5 !default;
 $close-button-hover-opacity:      .75 !default;

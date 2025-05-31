@@ -16,26 +16,30 @@
 .form-check {
   @extend %form-colors;
 
-  --#{$prefix}input-size: #{$form-check-medium-size};
+  --#{$prefix}input-width: #{$form-check-medium-size};
+  --#{$prefix}input-height: #{$form-check-medium-size};
   --#{$prefix}gap: #{$form-medium-gap};
   @include map-font-size($form-medium-text-font, form-check);
   @include map-line-height($form-medium-text-font, form-check);
 
   min-height: $form-check-min-height;
+  padding-left: #{calc(var(--#{$prefix}gap) + var(--#{$prefix}input-width))};
   margin: $form-check-margin-y 0;
 
   @include font-size();
   @include line-height();
 
   &.small {
-    --#{$prefix}input-size: #{$form-check-small-size};
+    --#{$prefix}input-width: #{$form-check-small-size};
+    --#{$prefix}input-height: #{$form-check-small-size};
     --#{$prefix}gap: #{$form-small-gap};
     @include map-font-size($form-small-text-font, form-check);
     @include map-line-height($form-small-text-font, form-check);
   }
 
   &.large {
-    --#{$prefix}input-size: #{$form-check-large-size};
+    --#{$prefix}input-width: #{$form-check-large-size};
+    --#{$prefix}input-height: #{$form-check-large-size};
     --#{$prefix}gap: #{$form-large-gap};
     @include map-font-size($form-large-text-font, form-check);
     @include map-line-height($form-large-text-font, form-check);
@@ -43,17 +47,18 @@
 
   .check-input {
     float: left;
-    margin-top: var(--#{$prefix}margin-t);
-    margin-right: var(--#{$prefix}gap);
+    margin-left: #{calc((var(--#{$prefix}gap) + var(--#{$prefix}input-width)) * -1)};
   }
 
   &.reverse {
+    padding-right: #{calc(var(--#{$prefix}gap) + var(--#{$prefix}input-width))};
+    padding-left: 0;
     text-align: right;
 
     .check-input {
       float: right;
-      margin-right: 0;
-      margin-left: var(--#{$prefix}gap);
+      margin-right: #{calc((var(--#{$prefix}gap) + var(--#{$prefix}input-width)) * -1)};
+      margin-left: 0;
     }
   }
 
@@ -81,12 +86,14 @@
   // --#{$prefix}fg-color: var(--#{$prefix}input-fg-color, var(--#{$prefix}form-idle-fg-active));
   --#{$prefix}bg-color: var(--#{$prefix}input-bg-color, var(--#{$prefix}form-idle-bg-regular));
   --#{$prefix}border-color: var(--#{$prefix}input-border-color, var(--#{$prefix}form-idle-border-color));
-  --#{$prefix}size: var(--#{$prefix}check-input-size, #{$form-check-medium-size});
-  --#{$prefix}margin-t: var(--#{$prefix}check-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}size)) * .5)});
+  --#{$prefix}width: var(--#{$prefix}check-input-width, #{$form-check-medium-size});
+  --#{$prefix}height: var(--#{$prefix}check-input-height, #{$form-check-medium-size});
+  --#{$prefix}margin-t: var(--#{$prefix}check-input-margin-t, #{calc((var(--#{$prefix}line-height) - var(--#{$prefix}height)) * .5)});
 
   flex-shrink: 0;
-  width: var(--#{$prefix}size);
-  height: var(--#{$prefix}size);
+  width: var(--#{$prefix}width);
+  height: var(--#{$prefix}height);
+  margin-top: var(--#{$prefix}margin-t);
   vertical-align: top;
   appearance: none;
   background-color: var(--#{$prefix}bg-color);
@@ -185,12 +192,14 @@
 
 .check-input.small,
 .form-check.small .check-input  {
-  --#{$prefix}size: #{$form-check-small-size};
+  --#{$prefix}width: #{$form-check-small-size};
+  --#{$prefix}height: #{$form-check-small-size};
 }
 
 .check-input.large,
 .form-check.large .check-input  {
-  --#{$prefix}size: #{$form-check-large-size};
+  --#{$prefix}width: #{$form-check-large-size};
+  --#{$prefix}height: #{$form-check-large-size};
 }
 
 
@@ -214,9 +223,10 @@
   $form-switch-focus-icon:        svg-color($form-switch-icon, $form-switch-focus-color) !default;
   $form-switch-checked-icon:      svg-color($form-switch-icon, $form-switch-checked-color) !default;
 
-  .check-input {
-    --#{$prefix}form-switch-icon: #{$form-switch-idle-icon};
+  --#{$prefix}form-switch-icon: #{$form-switch-idle-icon};
+  --#{$prefix}input-width: #{$form-switch-width};
 
+  .check-input {
     width: $form-switch-width;
     @if $enable-component-gradients {
       background-image: var(--#{$prefix}form-switch-icon), var(--#{$prefix}bg-gradient);

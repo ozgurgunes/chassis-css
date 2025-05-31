@@ -1,3 +1,22 @@
+//
+// Progress Component
+//
+// This file implements progress indicators with animation support and stacking capabilities.
+// It handles both determinate and indeterminate progress states with customizable styling.
+//
+// Implementation Features:
+// - CSS animations for showing active progress with striped patterns
+// - Flexbox-based layout for precise sizing and alignment
+// - Feature flag control for animation through $enable-transitions
+// - Stacked progress bar support with multiple indicators in a single container
+// - Accessible label implementation with screenreader support
+// - Contextual color support through modifier classes
+// - Size customization through CSS custom properties
+//
+// The implementation prioritizes performance with conditional animation loading
+// and optimized rendering through appropriate CSS properties.
+//
+
 // Disable animation if transitions are disabled
 
 // scss-docs-start progress-keyframes

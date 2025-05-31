@@ -43,8 +43,8 @@ const SELECTOR_DROPDOWN_MENU = '.dropdown-menu'
 const NOT_SELECTOR_DROPDOWN_TOGGLE = `:not(${SELECTOR_DROPDOWN_TOGGLE})`
 
 const SELECTOR_TAB_PANEL = '.list-group, .nav, [role="tablist"]'
-const SELECTOR_OUTER = '.nav-item, .list-group-item'
-const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-group-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`
+const SELECTOR_OUTER = '.nav-item, .list-item'
+const SELECTOR_INNER = `.nav-link${NOT_SELECTOR_DROPDOWN_TOGGLE}, .list-item${NOT_SELECTOR_DROPDOWN_TOGGLE}, [role="tab"]${NOT_SELECTOR_DROPDOWN_TOGGLE}`
 const SELECTOR_DATA_TOGGLE = '[data-cx-toggle="tab"], [data-cx-toggle="pill"], [data-cx-toggle="list"]' // TODO: could only be `tab` in v6
 const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`
 
