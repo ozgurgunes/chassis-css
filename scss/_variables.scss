@@ -946,24 +946,53 @@ $skeleton-opacity-min:           .15 !default;
 //
 
 // scss-docs-start card-variables
-$card-spacer-y:                     $spacer !default;
-$card-spacer-x:                     $spacer !default;
-$card-title-spacer-y:               $spacer * .5 !default;
-$card-title-color:                  $fg-main !default;
-$card-subtitle-color:               $fg-subtle !default;
+$card-padding-y:                    var(--#{$prefix}space-medium) !default;
+$card-padding-x:                    var(--#{$prefix}space-medium) !default;
+$card-header-padding-y:             var(--#{$prefix}space-xsmall) !default;
+$card-header-padding-x:             $card-padding-x !default;
+$card-footer-padding-y:             var(--#{$prefix}space-xsmall) !default;
+$card-footer-padding-x:             $card-padding-x !default;
+$card-gap-y:                        var(--#{$prefix}space-xsmall) !default; // Space between title and body.
+$card-gap-x:                        var(--#{$prefix}space-small) !default; // Space between links & buttons.
+
+$card-large-padding-y:              var(--#{$prefix}space-large) !default;
+$card-large-padding-x:              var(--#{$prefix}space-large) !default;
+$card-large-header-padding-y:       var(--#{$prefix}space-small) !default;
+$card-large-header-padding-x:       $card-large-padding-x !default;
+$card-large-footer-padding-y:       var(--#{$prefix}space-small) !default;
+$card-large-footer-padding-x:       $card-large-padding-x !default;
+$card-large-gap-y:                  var(--#{$prefix}space-small) !default; // Space between title and body.
+$card-large-gap-x:                  var(--#{$prefix}space-medium) !default; // Space between links & buttons.
+
+$card-small-padding-y:              var(--#{$prefix}space-small) !default;
+$card-small-padding-x:              var(--#{$prefix}space-small) !default;
+$card-small-header-padding-y:       var(--#{$prefix}space-2xsmall) !default;
+$card-small-header-padding-x:       $card-small-padding-x !default;
+$card-small-footer-padding-y:       var(--#{$prefix}space-2xsmall) !default;
+$card-small-footer-padding-x:       $card-small-padding-x !default;
+$card-small-gap-y:                  var(--#{$prefix}space-2xsmall) !default; // Space between title and body.
+$card-small-gap-x:                  var(--#{$prefix}space-xsmall) !default; // Space between links & buttons.
+
 $card-border-width:                 var(--#{$prefix}border-width-medium) !default;
 $card-border-color:                 var(--#{$prefix}border-subtle) !default;
 $card-border-radius:                var(--#{$prefix}border-radius-medium) !default;
+$card-inner-border-radius:          #{calc($card-border-radius - $card-border-width)} !default;
 $card-box-shadow:                   null !default;
-$card-box-radius:                   subtract($card-border-radius, $card-border-width) !default;
-$card-header-padding-y:             $card-spacer-y * .5 !default;
-$card-header-padding-x:             $card-spacer-x !default;
+
+// Extend context font classes for consistent card typography.
+// Set to null to use the element's default typography.
+$card-title-font-extend-class:      font-title !default;
+$card-subtitle-font-extend-class:   font-label !default;
+$card-body-font-extend-class:       font-body !default;
+
+$card-title-color:                  var(--#{$prefix}fg-main) !default;
+$card-subtitle-color:               var(--#{$prefix}fg-subtle) !default;
 $card-header-fg-color:              inherit !default;
 $card-header-bg-color:              inherit !default;
-$card-height:                       null !default;
 $card-fg-color:                     var(--#{$prefix}fg-main) !default;
 $card-bg-color:                     var(--#{$prefix}bg-main) !default;
-$card-image-overlay-padding:        $spacer !default;
+
+$card-height:                       null !default;
 $card-group-margin:                 $grid-gutter-width * .5 !default;
 // scss-docs-end card-variables
 

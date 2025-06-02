@@ -78,7 +78,7 @@ ol {
 // Type display classes
 @each $name, $value in $context-fonts {
   .font-#{$name} {
-    margin-bottom: map-get($value, "margin-bottom");
+    // margin-bottom: map-get($value, "margin-bottom");
     font-family: map-get($value, "font-family");
     font-style: map-get($value, "font-style");
     @include rfs(map-get($value, "font-size"), font-size);

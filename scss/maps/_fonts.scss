@@ -202,28 +202,21 @@ $code-line-heights: (
 ) !default;
 // scss-docs-end code-line-heights-map
 
-// scss-docs-start context-font-families-map
-$context-font-families: (
-  "jumbo":          $font-family-jumbo,
-  "hero":           $font-family-hero,
-  "heading":        $font-family-heading,
-  "body":           $font-family-body,
-  "lead":           $font-family-lead,
-  "title":          $font-family-title,
-) !default;
-// scss-docs-end context-font-families-map
 // scss-docs-start context-fonts-map
 $context-fonts: (
   "jumbo":               $font-context-jumbo,
   "hero":                $font-context-hero,
   "heading":             $font-context-heading,
   "lead":                $font-context-lead,
-  "title.large":         $font-context-title-large,
-  "title":        $font-context-title-medium,
-  "title.small":         $font-context-title-small,
-  "body.large":          $font-context-body-large,
-  "body":         $font-context-body-medium,
-  "body.small":          $font-context-body-small,
+  "title-large":         $font-context-title-large,
+  "title":              $font-context-title-medium,
+  "title-small":         $font-context-title-small,
+  "body-large":          $font-context-body-large,
+  "body":               $font-context-body-medium,
+  "body-small":          $font-context-body-small,
+  "label-large":          $font-context-label-large,
+  "label":               $font-context-label-medium,
+  "label-small":          $font-context-label-small,
 ) !default;
 // scss-docs-end context-fonts-map
 // scss-docs-end typography-maps

@@ -23,7 +23,7 @@
   }
 
   // Generate font variables
-  @each $name, $value in map-merge($font-families, $context-font-families ) {
+  @each $name, $value in $font-families {
     --#{$prefix}font-family-#{$name}: #{$value};
   }
   @each $name, $value in $font-sizes {
