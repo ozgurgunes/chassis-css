@@ -29,7 +29,7 @@
   // Border and shape properties
   --#{$prefix}border-width: var(--#{$prefix}alert-border-width, #{$alert-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}alert-border-radius, #{$alert-border-radius});
-  --#{$prefix}box-radius: var(--#{$prefix}alert-box-radius, #{$alert-box-radius});
+  --#{$prefix}inner-border-radius: var(--#{$prefix}alert-inner-border-radius, #{$alert-inner-border-radius});
 
   // Icon and typography settings
   --#{$prefix}icon-size: var(--#{$prefix}alert-icon-size, #{$alert-icon-size});
@@ -85,7 +85,7 @@
   gap: var(--#{$prefix}footer-gap);
   align-items: center; // vertically center
   justify-content: flex-end; // Right align buttons with flex property because text-align doesn't work on flex items
-  @include border-bottom-radius(var(--#{$prefix}box-radius));
+  @include border-bottom-radius(var(--#{$prefix}inner-border-radius));
 }
 
 // Alert animation handling

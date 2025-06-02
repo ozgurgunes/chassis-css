@@ -25,7 +25,6 @@
   @include map-font($chip-medium-font, button);
   // scss-docs-end chip-css-vars
 
-  box-sizing: content-box;
   display: inline-flex;
   gap: var(--#{$prefix}gap);
   align-items: center;
@@ -72,11 +71,12 @@
     @include map-font($chip-small-font, button);
   }
 
-  > .icon-start {
+  > .icon:first-child {
     //margin-right: var(--#{$prefix}trim);
     margin-left: #{calc(-1 * var(--#{$prefix}trim))};
   }
-  > .icon-end {
+  > .icon:last-child,
+  > .close-button {
     margin-right: #{calc(-1 * var(--#{$prefix}trim))};
     // margin-left: var(--#{$prefix}trim);
   }

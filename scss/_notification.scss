@@ -13,7 +13,6 @@
   // scss-docs-end notification-css-vars
 
   position: relative;
-  box-sizing: content-box;
   gap: var(--#{$prefix}gap);
   margin-bottom: var(--#{$prefix}notification-margin-b, #{$notification-margin-b});
   @include box-padding();

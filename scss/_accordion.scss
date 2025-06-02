@@ -34,7 +34,7 @@
   --#{$prefix}indicator-size: var(--#{$prefix}accordion-indicator-size, #{$accordion-indicator-size});
   --#{$prefix}border-width: var(--#{$prefix}accordion-border-width, #{$accordion-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}accordion-border-radius, #{$accordion-border-radius});
-  --#{$prefix}box-radius: var(--#{$prefix}accordion-box-radius, #{$accordion-box-radius});
+  --#{$prefix}inner-border-radius: var(--#{$prefix}accordion-inner-border-radius, #{$accordion-inner-border-radius});
   --#{$prefix}title-focus-box-shadow: var(--#{$prefix}accordion-title-focus-box-shadow, #{$accordion-title-focus-box-shadow});
   --#{$prefix}transition: var(--#{$prefix}accordion-transition, #{$accordion-transition});
   --#{$prefix}title-transition: var(--#{$prefix}accordion-title-transition, #{$accordion-title-transition});
@@ -108,7 +108,7 @@
 
     &:first-of-type,
     &:first-of-type > summary {
-      @include border-top-radius(var(--#{$prefix}box-radius));
+      @include border-top-radius(var(--#{$prefix}inner-border-radius));
 
     }
 
@@ -119,7 +119,7 @@
     // Only set a border-radius on the last item if the accordion is collapsed
     &:last-of-type,
     &:last-of-type:not([open]) > summary {
-      @include border-bottom-radius(var(--#{$prefix}box-radius));
+      @include border-bottom-radius(var(--#{$prefix}inner-border-radius));
 
     }
 

@@ -40,7 +40,6 @@ $avatar-group-overlap: -.25 !default;
   @extend %context;
 
   position: relative;
-  box-sizing: content-box;
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;

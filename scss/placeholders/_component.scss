@@ -76,7 +76,6 @@
 // Use this placeholder when you need precise control over
 // interior spacing that compensates for border thickness.
 %box-padding {
-  box-sizing: var(--#{$prefix}box-sizing, content-box);
   @include box-padding();
 }
 // scss-docs-end box-padding-placeholder-selector

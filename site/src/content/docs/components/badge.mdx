@@ -74,37 +74,37 @@ Chassis provides three badge sizes to accommodate different design needs. Use th
 
 ## Icons
 
-Enhance badges with icons to provide additional visual meaning. Icons help communicate purpose at a glance.
-
-### Icon placement
-
-Use helper classes for optimal icon placement and spacing. The `.icon-start` class positions the icon before text, while the `.icon-end` class positions the icon after text. Both SVG icons and icon fonts are supported:
+Enhance badges with icons to provide additional visual meaning. Both SVG icons and icon fonts can be used within badges.
 
 <Example code={`<span class="badge default small">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Small
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Small</span>
   </span>
   <span class="badge default">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Medium
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Medium</span>
   </span>
   <span class="badge default large">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Large
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Large</span>
   </span>
 
   <span class="badge primary small">
-    Small
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Small</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </span>
   <span class="badge primary">
-    Medium
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Medium</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </span>
   <span class="badge primary large">
-    Large
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Large</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </span>`} />
+
+<Callout type="warning">
+  Icon spacing is automatically applied using `:first-child` and `:last-child` pseudo selectors. To ensure proper spacing, wrap the badge text in a `<span>` element.
+</Callout>
 
 ## Use cases
 

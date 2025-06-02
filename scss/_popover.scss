@@ -11,7 +11,7 @@
   --#{$prefix}border-width: var(--#{$prefix}popover-border-width, #{$popover-border-width});
   --#{$prefix}border-color: var(--#{$prefix}popover-border-color, #{$popover-border-color});
   --#{$prefix}border-radius: var(--#{$prefix}popover-border-raiud, #{$popover-border-radius});
-  --#{$prefix}box-radius: var(--#{$prefix}popover-box-radius, #{$popover-box-radius});
+  --#{$prefix}inner-border-radius: var(--#{$prefix}popover-inner-border-radius, #{$popover-inner-border-radius});
   --#{$prefix}box-shadow: var(--#{$prefix}popover-box-shadow, #{$popover-box-shadow});
   --#{$prefix}header-padding-x: var(--#{$prefix}popover-padding-x, #{$popover-header-padding-x});
   --#{$prefix}header-padding-y: var(--#{$prefix}popover-padding-y, #{$popover-header-padding-y});
@@ -184,7 +184,7 @@
   color: var(--#{$prefix}header-fg-color);
   background-color: var(--#{$prefix}header-bg-color);
   border-bottom: var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
-  @include border-top-radius(var(--#{$prefix}box-radius));
+  @include border-top-radius(var(--#{$prefix}inner-border-radius));
 
   &:empty {
     display: none;

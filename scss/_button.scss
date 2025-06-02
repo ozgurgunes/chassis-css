@@ -29,7 +29,6 @@
   --#{$prefix}transition: var(--#{$prefix}button-transition, $button-transition);
   // scss-docs-end button-css-vars
 
-  box-sizing: content-box;
   display: inline-flex;
   gap: var(--#{$prefix}gap);
   align-items: center;
@@ -62,11 +61,11 @@
     @extend %button-small;
   }
 
-  > .icon-start {
+  > .icon:first-child {
     margin-right: var(--#{$prefix}trim);
     margin-left: #{calc(-1 * var(--#{$prefix}trim))};
   }
-  > .icon-end {
+  > .icon:last-child {
     margin-right: #{calc(-1 * var(--#{$prefix}trim))};
     margin-left: var(--#{$prefix}trim);
   }

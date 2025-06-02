@@ -63,24 +63,28 @@ When using button classes on `<a>` elements for in-page functionality rather tha
 
 ## Icon integration
 
-Chassis CSS provides purpose-built classes for icon placement within buttons. Use `.icon-start` or `.icon-end` with the `.icon` class for proper alignment and spacing with both SVG icons and icon fonts.
+Chassis CSS provides purpose-built classes for icon placement within buttons. Both SVG icons and icon fonts can be used within buttons.
 
 <Example class="button-examples" code={`<button type="button" class="button default">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default</span>
   </button>
   <button type="button" class="button primary">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary</span>
   </button>
   <button type="button" class="button default">
-    Default
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </button>
   <button type="button" class="button primary">
-    Primary
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </button>`} />
+
+<Callout type="warning">
+  Icon spacing is automatically applied using `:first-child` and `:last-child` pseudo selectors. To ensure proper spacing, wrap the chip text in a `<span>` element.
+</Callout>
 
 ## Size variants
 
@@ -90,30 +94,30 @@ Chassis provides three predefined size variants through the `.large` and `.small
     Default
   </button>
   <button type="button" class="button default large">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default</span>
   </button>
   <button type="button" class="button primary large">
     Primary
   </button>
   <button type="button" class="button primary large">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary</span>
   </button>`} />
 
 <Example class="button-examples" code={`<button type="button" class="button default small">
     Default
   </button>
   <button type="button" class="button default small">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default</span>
   </button>
   <button type="button" class="button primary small">
     Primary
   </button>
   <button type="button" class="button primary small">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary</span>
   </button>`} />
 
 ### Custom sizing
@@ -130,28 +134,28 @@ Beyond the predefined sizes, Chassis's token-based architecture enables precise 
 Chassis CSS handles button disabling in a semantically appropriate way. For native button elements, use the `disabled` attribute:
 
 <Example class="button-examples" code={`<button type="button" class="button default" disabled>
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default Button
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default Button</span>
   </button>
   <button type="button" class="button default outline" disabled>
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default button
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default button</span>
   </button>
   <button type="button" class="button default smooth" disabled>
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default button
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default button</span>
   </button>
   <button type="button" class="button primary" disabled>
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary Button
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary Button</span>
   </button>
   <button type="button" class="button primary outline" disabled>
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary Button
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary Button</span>
   </button>
   <button type="button" class="button primary smooth" disabled>
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary Button
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary Button</span>
   </button>`} />
 
 For link-based buttons using the `<a>` element, Chassis provides a different approach:

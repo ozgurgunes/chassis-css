@@ -40,6 +40,8 @@
 //
 // @param {string} $comp - Optional component namespace for CSS variables.
 //                         When provided, variables will be prefixed with "$comp-".
+// @param {number} $modifier - Optional multiplier for border width adjustment.
+//                            When provided, border width will be multiplied by this value.
 //
 // Subtracts border width from padding to achieve the exact visual padding
 // specified in design tools, maintaining the same apparent padding regardless
@@ -47,8 +49,9 @@
 @mixin box-padding($comp: null, $modifier: null) {
   @if $enable-padding-box {
     $border-width: var(--#{$prefix}#{if($comp, "#{$comp}-", "")}border-width);
-    $padding-y: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) - #{$border-width})};
-    $padding-x: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x) - #{$border-width})};
+    $border-modifier: #{if($modifier, "#{$border-width} * #{$modifier}", #{$border-width})};
+    $padding-y: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-y) - #{$border-modifier})};
+    $padding-x: #{calc(var(--#{$prefix}#{if($comp, "#{$comp}-", "")}padding-x) - #{$border-modifier})};
     padding: $padding-y $padding-x;
   } @else {
     @include padding($comp);

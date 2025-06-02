@@ -92,12 +92,12 @@
   // by adjusting margins to ensure proper visual alignment
 
   // Left-aligned icon (before text)
-  > .icon-start {
+  > .icon:first-child {
     margin-left: #{calc(-1 * var(--#{$prefix}gap))};
   }
 
   // Right-aligned icon (after text)
-  > .icon-end {
+  > .icon:last-child {
     margin-right: #{calc(-1 * var(--#{$prefix}gap))};
   }
 

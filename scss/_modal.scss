@@ -24,7 +24,7 @@
   // Border and shape properties
   --#{$prefix}border-width: var(--#{$prefix}modal-border-width, #{$modal-window-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}modal-border-radius, #{$modal-window-border-radius});
-  --#{$prefix}box-radius: var(--#{$prefix}modal-box-radius, #{$modal-window-box-radius});
+  --#{$prefix}inner-border-radius: var(--#{$prefix}modal-inner-border-radius, #{$modal-window-inner-border-radius});
   // Header section variables
   --#{$prefix}header-padding-y: var(--#{$prefix}modal-header-padding-y, #{$modal-header-padding-y});
   --#{$prefix}header-padding-x: var(--#{$prefix}modal-header-padding-x, #{$modal-header-padding-x});
@@ -82,7 +82,7 @@
   color: #{$modal-header-fg-color};
   background-color: #{$modal-header-bg-color};
   border-bottom: var(--#{$prefix}header-border-width) solid var(--#{$prefix}header-border-color);
-  @include border-top-radius(var(--#{$prefix}box-radius));
+  @include border-top-radius(var(--#{$prefix}inner-border-radius));
 }
 
 // Modal title element
@@ -113,7 +113,7 @@
   padding: var(--#{$prefix}footer-padding-y) var(--#{$prefix}footer-padding-x);
   background-color: var(--#{$prefix}footer-bg);
   border-top: var(--#{$prefix}footer-border-width) solid var(--#{$prefix}footer-border-color);
-  @include border-bottom-radius(var(--#{$prefix}box-radius));
+  @include border-bottom-radius(var(--#{$prefix}inner-border-radius));
 }
 
 
@@ -152,7 +152,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    @include border-radius(var(--#{$prefix}box-radius));
+    @include border-radius(var(--#{$prefix}inner-border-radius));
     content: "";
     background-color: var(--#{$prefix}dim-main);
     opacity: 1;

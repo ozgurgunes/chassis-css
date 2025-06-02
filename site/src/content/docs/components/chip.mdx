@@ -1,6 +1,6 @@
 ---
 title: Chips
-description: Interactive, compact components for tags, filters, and selections with support for avatars, icons, and removal actions.
+description: Interactive, compact components for tags, filters and selections with support for avatars, icons, and removal actions.
 toc: true
 ---
 
@@ -59,26 +59,28 @@ The `.smooth` modifier applies a subdued background to chips, creating a softer 
 
 ## Icon integration
 
-Enhance chips with icons to provide additional visual meaning or action affordances. Chassis provides dedicated helper classes to ensure proper icon alignment and spacing.
-
-The `.icon-start` and `.icon-end` classes provide proper alignment and spacing for icons, supporting both SVG icons and icon fonts:
+Enhance chips with icons to provide additional visual meaning or action affordances. Both SVG icons and icon fonts can be used within chips.
 
 <Example class="button-examples" code={`<span class="chip default">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Default
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default</span>
   </span>
   <span class="chip primary">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Primary
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary</span>
   </span>
   <span class="chip default">
-    Default
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Default</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </span>
   <span class="chip primary">
-    Primary
-    <svg class="icon icon-end"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Primary</span>
+    <span class="icon icon-info-circle-solid" aria-hidden="true"></span>
   </span>`} />
+
+<Callout type="warning">
+  Icon spacing is automatically applied using `:first-child` and `:last-child` pseudo selectors. To ensure proper spacing, wrap the chip text in a `<span>` element.
+</Callout>
 
 ## Dismissible chips
 
@@ -86,11 +88,11 @@ Add a removal action to chips with the `.close-button` component, which automati
 
 <Example class="button-examples" code={`<span class="chip default">
     Default
-    <button type="button" class="close-button icon-end" data-cx-dismiss="chip" aria-label="Remove"></button>
+    <button type="button" class="close-button" data-cx-dismiss="chip" aria-label="Remove"></button>
   </span>
   <span class="chip primary">
     Primary
-    <button type="button" class="close-button icon-end" data-cx-dismiss="chip" aria-label="Remove"></button>
+    <button type="button" class="close-button" data-cx-dismiss="chip" aria-label="Remove"></button>
   </span>
 `} />
 
@@ -102,22 +104,22 @@ Chassis provides three size variants for chips: default (medium), large, and sma
     Medium
   </span>
   <span class="chip default">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Medium
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Medium</span>
   </span>
   <span class="chip default large">
     Large
   </span>
   <span class="chip default large">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Large
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Large</span>
   </span>
   <span class="chip default small">
     Small
   </span>
   <span class="chip default small">
-    <svg class="icon icon-start"><use xlink:href="#info-circle-solid"/></svg>
-    Small
+    <svg class="icon" aria-hidden="true" role="img"><use xlink:href="#info-circle-solid"/></svg>
+    <span>Small</span>
   </span>`} />
 
 ## Avatar integration
@@ -129,21 +131,21 @@ Enhance chips with user avatars by incorporating the `.avatar` component. The av
       <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
     </span>
     Medium
-    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+    <button type="button" class="close-button" aria-label="Remove"></button>
   </span>
   <span class="chip large default">
     <span class="avatar">
       <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
     </span>
     Large
-    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+    <button type="button" class="close-button" aria-label="Remove"></button>
   </span>
   <span class="chip small default">
     <span class="avatar">
       <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
     </span>
     Small
-    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+    <button type="button" class="close-button" aria-label="Remove"></button>
   </span>`} />
 
 ## Disabled chips
@@ -155,21 +157,21 @@ Make chips appear inactive by adding the `disabled` attribute to `<button>` elem
       <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
     </span>
     Medium
-    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+    <button type="button" class="close-button" aria-label="Remove"></button>
   </span>
   <span class="chip large default disabled">
     <span class="avatar">
       <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
     </span>
     Large
-    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+    <button type="button" class="close-button" aria-label="Remove"></button>
   </span>
   <span class="chip small default disabled">
     <span class="avatar">
       <span class="avatar-image"><img src="https://i.pravatar.cc/256" alt="Profile picture" /></span>
     </span>
     Small
-    <button type="button" class="close-button icon-end" aria-label="Remove"></button>
+    <button type="button" class="close-button" aria-label="Remove"></button>
   </span>`} />
 
 ## Toggle functionality

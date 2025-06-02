@@ -16,7 +16,6 @@
   --#{$prefix}focus-opacity: var(--#{$prefix}close-button-focus-opacity, #{$close-button-focus-opacity});
   // scss-docs-end close-button-css-vars
 
-  box-sizing: content-box;
   width: var(--#{$prefix}size);
   height: var(--#{$prefix}size);
   padding: $close-button-padding-y $close-button-padding-x;
