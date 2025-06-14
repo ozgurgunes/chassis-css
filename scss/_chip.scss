@@ -9,10 +9,11 @@
   --#{$prefix}box-shadow: var(--#{$prefix}chip-box-shadow, #{$button-box-shadow});
   --#{$prefix}focus-box-shadow: var(--#{$prefix}chip-focus-box-shadow, #{$button-focus-box-shadow});
   // Sizing
-  --#{$prefix}padding-y: var(--#{$prefix}chip-padding-y, #{$chip-medium-padding-y + $chip-medium-trim});
+  --#{$prefix}padding-y: var(--#{$prefix}chip-padding-y, #{$chip-medium-padding-y + $chip-medium-nudge-y});
   --#{$prefix}padding-x: var(--#{$prefix}chip-padding-x, #{$chip-medium-padding-x + $chip-medium-gap});
   --#{$prefix}gap: var(--#{$prefix}chip-gap, #{$chip-medium-gap});
-  --#{$prefix}trim: var(--#{$prefix}chip-trim, #{$chip-medium-trim});
+  --#{$prefix}nudge-y: var(--#{$prefix}chip-nudge-y, #{$chip-medium-nudge-y});
+  --#{$prefix}nudge-x: var(--#{$prefix}chip-nudge-x, #{$chip-medium-nudge-x});
   --#{$prefix}border-radius: var(--#{$prefix}chip-border-radius, #{$chip-medium-border-radius});
   --#{$prefix}close-button-icon: var(--#{$prefix}chip-remove-icon, #{$chip-remove-icon});
   --#{$prefix}close-button-fg-color: var(--#{$prefix}chip-remove-color, var(--#{$prefix}fg-color));
@@ -50,10 +51,11 @@
   }
 
   &.large {
-    --#{$prefix}padding-y: var(--#{$prefix}chip-large-padding-y, #{$chip-large-padding-y + $chip-large-trim});
+    --#{$prefix}padding-y: var(--#{$prefix}chip-large-padding-y, #{$chip-large-padding-y + $chip-large-nudge-y});
     --#{$prefix}padding-x: var(--#{$prefix}chip-large-padding-x, #{$chip-large-padding-x + $chip-large-gap});
     --#{$prefix}gap: var(--#{$prefix}chip-large-gap, #{$chip-large-gap});
-    --#{$prefix}trim: var(--#{$prefix}chip-large-gap, #{$chip-large-trim});
+    --#{$prefix}nudge-y: var(--#{$prefix}chip-large-nudge-y, #{$chip-large-nudge-y});
+    --#{$prefix}nudge-x: var(--#{$prefix}chip-large-nudge-x, #{$chip-large-nudge-x});
     --#{$prefix}border-radius: var(--#{$prefix}chip-large-border-radius, #{$chip-large-border-radius});
     --#{$prefix}icon-size: #{$chip-large-icon-size};
     --#{$prefix}avatar-size: #{$chip-large-avatar-size};
@@ -61,10 +63,11 @@
   }
 
   &.small {
-    --#{$prefix}padding-y: var(--#{$prefix}chip-small-padding-y, #{$chip-small-padding-y + $chip-small-trim});
+    --#{$prefix}padding-y: var(--#{$prefix}chip-small-padding-y, #{$chip-small-padding-y + $chip-small-nudge-y});
     --#{$prefix}padding-x: var(--#{$prefix}chip-small-padding-x, #{$chip-small-padding-x + $chip-small-gap});
     --#{$prefix}gap: var(--#{$prefix}chip-small-gap, #{$chip-small-gap});
-    --#{$prefix}trim: var(--#{$prefix}chip-small-gap, #{$chip-small-trim});
+    --#{$prefix}nudge-y: var(--#{$prefix}chip-small-nudge-y, #{$chip-small-nudge-y});
+    --#{$prefix}nudge-x: var(--#{$prefix}chip-small-nudge-x, #{$chip-small-nudge-x});
     --#{$prefix}border-radius: var(--#{$prefix}chip-small-border-radius, #{$chip-small-border-radius});
     --#{$prefix}icon-size: #{$chip-small-icon-size};
     --#{$prefix}avatar-size: #{$chip-small-avatar-size};
@@ -72,19 +75,16 @@
   }
 
   > .icon:first-child {
-    //margin-right: var(--#{$prefix}trim);
-    margin-left: #{calc(-1 * var(--#{$prefix}trim))};
+    //margin-right: var(--#{$prefix}nudge);
+    margin: #{calc(-1 * var(--#{$prefix}nudge-y))} 0 #{calc(-1 * var(--#{$prefix}nudge-y))} #{calc(-1 * var(--#{$prefix}nudge-x))};
   }
   > .icon:last-child,
   > .close-button {
-    margin-right: #{calc(-1 * var(--#{$prefix}trim))};
-    // margin-left: var(--#{$prefix}trim);
+    margin: #{calc(-1 * var(--#{$prefix}nudge-y))} #{calc(-1 * var(--#{$prefix}nudge-x))} #{calc(-1 * var(--#{$prefix}nudge-y))} 0;
   }
 
   > .avatar {
-    margin-top: #{calc(-1 * var(--#{$prefix}trim))};
-    margin-bottom: #{calc(-1 * var(--#{$prefix}trim))};
-    margin-left: #{calc(-1 * var(--#{$prefix}gap))};
+    margin: #{calc(-1 * var(--#{$prefix}nudge-y))} 0 #{calc(-1 * var(--#{$prefix}nudge-y))} #{calc(-1 * var(--#{$prefix}gap))};
   }
 
   &.disabled > .avatar {

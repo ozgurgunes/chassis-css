@@ -21,8 +21,6 @@ $spacers: (
   4xlarge:        $space-4xlarge,
   5xlarge:        $space-5xlarge,
   6xlarge:        $space-6xlarge,
-  rare:           $space-rare,
-  xrare:          $space-xrare,
   // Chassis Spacers
   // TODO: Should be removed later
   0:              0,
@@ -59,7 +57,6 @@ $border-radiuses: (
   xlarge:             $border-radius-xlarge,
   2xlarge:            $border-radius-2xlarge,
   3xlarge:            $border-radius-3xlarge,
-  rare:               $border-radius-rare,
   circle:             $border-radius-circle,
 ) !default;
 // scss-docs-end border-radiuses-map

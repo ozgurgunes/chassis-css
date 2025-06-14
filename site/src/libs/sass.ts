@@ -20,8 +20,6 @@ const {
   space4xlarge,
   space5xlarge,
   space6xlarge,
-  spaceRare,
-  spaceXrare,
   breakpoint2xlarge,
   breakpointXlarge,
   breakpointLarge,
@@ -57,9 +55,7 @@ export function sassVars(str: string): Record<string, string | undefined> {
         '3xlarge': space3xlarge,
         '4xlarge': space4xlarge,
         '5xlarge': space5xlarge,
-        '6xlarge': space6xlarge,
-        rare: spaceRare,
-        xrare: spaceXrare
+        '6xlarge': space6xlarge
       }
     case 'breakpoint':
       return {

@@ -19,7 +19,7 @@
   @include caret();
 
   &.button {
-    --#{$prefix}caret-spacing: var(--#{$prefix}trim);
+    --#{$prefix}caret-spacing: var(--#{$prefix}nudge);
   }
 
   &:not(.dropdown-toggle-split)::after {

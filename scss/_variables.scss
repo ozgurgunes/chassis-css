@@ -145,8 +145,6 @@ $space-3xlarge:       $cx-space-context-3xlarge !default;
 $space-4xlarge:       $cx-space-context-4xlarge !default;
 $space-5xlarge:       $cx-space-context-5xlarge !default;
 $space-6xlarge:       $cx-space-context-6xlarge !default;
-$space-rare:          $cx-space-context-rare !default;
-$space-xrare:         $cx-space-context-xrare !default;
 
 $spacer:              $space-medium !default;
 // scss-docs-end spacing-variables
@@ -397,7 +395,7 @@ $focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color
 // In case --#{$prefix}caret-* is not set.
 $caret-icon:               svg-icon("<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentcolor' class='icon-caret-down-solid' viewBox='0 0 24 24'><path d='M11.6014 16.6484L6.60141 11.6484C6.24985 11.2969 6.13266 10.75 6.32798 10.2812C6.52329 9.8125 6.99204 9.5 7.49985 9.5H17.4999C18.0077 9.5 18.4374 9.8125 18.6327 10.2812C18.828 10.75 18.7108 11.2969 18.3592 11.6484L13.3592 16.6484C12.8905 17.1562 12.0702 17.1562 11.6014 16.6484Z'/></svg>") !default;
 $caret-size:               1.25em !default;
-$caret-spacing:            var(--#{$prefix}trim, .5em) !default;
+$caret-spacing:            var(--#{$prefix}nudge, .5em) !default;
 $caret-color:              var(--#{$prefix}fg-color) !default;
 $caret-vertical-align:     -.25em !default;
 // scss-docs-end caret-variables
@@ -410,14 +408,16 @@ $transition-collapse:         height .35s ease !default;
 $transition-collapse-width:   width .35s ease !default;
 // scss-docs-end collapse-transition
 
+// stylelint-disable function-disallowed-list
 // scss-docs-start aspect-ratios
 $aspect-ratios: (
   "1x1": 100%,
-  "4x3": #{calc(3 / 4 * 100%)},
-  "16x9": #{calc(9 / 16 * 100%)},
-  "21x9": #{calc(9 / 21 * 100%)}
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%)
 ) !default;
 // scss-docs-end aspect-ratios
+// stylelint-enable function-disallowed-list
 
 // Z-index master list
 //
@@ -891,23 +891,23 @@ $dropdown-header-padding-y:             $dropdown-padding-y !default;
 //
 
 // scss-docs-start pagination-variables
-$pagination-padding-y:                  $space-xsmall !default;
-$pagination-padding-x:                  $space-small !default;
+$pagination-padding-y:                  $button-medium-padding-y !default;
+$pagination-padding-x:                  $button-medium-padding-x !default;
 $pagination-border-radius:              $button-medium-border-radius !default;
 $pagination-font:                       $cx-font-text-medium-normal !default;
 
-$pagination-large-padding-y:            $space-rare !default;
-$pagination-large-padding-x:            $space-medium !default;
+$pagination-large-padding-y:            $button-large-padding-y !default;
+$pagination-large-padding-x:            $button-large-padding-x !default;
 $pagination-large-border-radius:        $button-large-border-radius !default;
 $pagination-large-font:                 $cx-font-text-large-normal !default;
 
-$pagination-small-padding-y:            $space-xrare !default;
-$pagination-small-padding-x:            $space-small !default;
+$pagination-small-padding-y:            $button-small-padding-y !default;
+$pagination-small-padding-x:            $button-small-padding-x !default;
 $pagination-small-border-radius:        $button-small-border-radius !default;
 $pagination-small-font:                 $cx-font-text-small-normal !default;
 
-$pagination-border-width:               var(--#{$prefix}border-width-medium) !default;
-$pagination-margin-start:               #{calc($pagination-border-width * -1)} !default;
+$pagination-border-width:               $border-width-medium !default;
+$pagination-margin-start:               calc(#{$pagination-border-width} * -1) !default; // stylelint-disable-line function-disallowed-list
 $pagination-border-color:               var(--#{$prefix}border-main) !default;
 
 $pagination-fg-color:                   var(--#{$prefix}fg-main) !default;

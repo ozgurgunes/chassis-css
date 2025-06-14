@@ -62,12 +62,10 @@
   }
 
   > .icon:first-child {
-    margin-right: var(--#{$prefix}trim);
-    margin-left: #{calc(-1 * var(--#{$prefix}trim))};
+    margin: #{calc(-1 * var(--#{$prefix}nudge-y))} var(--#{$prefix}nudge-x) #{calc(-1 * var(--#{$prefix}nudge-y))} #{calc(-1 * var(--#{$prefix}nudge-x))};
   }
   > .icon:last-child {
-    margin-right: #{calc(-1 * var(--#{$prefix}trim))};
-    margin-left: var(--#{$prefix}trim);
+    margin: #{calc(-1 * var(--#{$prefix}nudge-y))}  #{calc(-1 * var(--#{$prefix}nudge-x))} #{calc(-1 * var(--#{$prefix}nudge-y))} var(--#{$prefix}nudge-x);
   }
 
   //
