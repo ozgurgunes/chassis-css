@@ -380,32 +380,32 @@
   --cx-black-fg-highlight-rgb: 0, 0, 0;
   --cx-white-fg-highlight: #ffffff;
   --cx-white-fg-highlight-rgb: 255, 255, 255;
-  --cx-default-fg-button: #000000;
-  --cx-default-fg-button-rgb: 0, 0, 0;
-  --cx-alternate-fg-button: #ffffff;
-  --cx-alternate-fg-button-rgb: 255, 255, 255;
-  --cx-primary-fg-button: #ffffff;
-  --cx-primary-fg-button-rgb: 255, 255, 255;
-  --cx-secondary-fg-button: #ffffff;
-  --cx-secondary-fg-button-rgb: 255, 255, 255;
-  --cx-neutral-fg-button: #ffffff;
-  --cx-neutral-fg-button-rgb: 255, 255, 255;
-  --cx-danger-fg-button: #ffffff;
-  --cx-danger-fg-button-rgb: 255, 255, 255;
-  --cx-success-fg-button: #ffffff;
-  --cx-success-fg-button-rgb: 255, 255, 255;
-  --cx-warning-fg-button: #000000;
-  --cx-warning-fg-button-rgb: 0, 0, 0;
-  --cx-info-fg-button: #ffffff;
-  --cx-info-fg-button-rgb: 255, 255, 255;
-  --cx-black-fg-button: #ffffff;
-  --cx-black-fg-button-rgb: 255, 255, 255;
-  --cx-white-fg-button: #000000;
-  --cx-white-fg-button-rgb: 0, 0, 0;
-  --cx-default-fg-disabled: rgba(0, 0, 0, 0.25);
-  --cx-default-fg-disabled-rgb: 0, 0, 0;
-  --cx-alternate-fg-disabled: rgba(255, 255, 255, 0.25);
-  --cx-alternate-fg-disabled-rgb: 255, 255, 255;
+  --cx-default-fg-idle: #1c2021;
+  --cx-default-fg-idle-rgb: 28, 32, 33;
+  --cx-alternate-fg-idle: #e9eced;
+  --cx-alternate-fg-idle-rgb: 233, 236, 237;
+  --cx-primary-fg-idle: #ffffff;
+  --cx-primary-fg-idle-rgb: 255, 255, 255;
+  --cx-secondary-fg-idle: #ffffff;
+  --cx-secondary-fg-idle-rgb: 255, 255, 255;
+  --cx-neutral-fg-idle: #ffffff;
+  --cx-neutral-fg-idle-rgb: 255, 255, 255;
+  --cx-danger-fg-idle: #ffffff;
+  --cx-danger-fg-idle-rgb: 255, 255, 255;
+  --cx-success-fg-idle: #ffffff;
+  --cx-success-fg-idle-rgb: 255, 255, 255;
+  --cx-warning-fg-idle: #000000;
+  --cx-warning-fg-idle-rgb: 0, 0, 0;
+  --cx-info-fg-idle: #ffffff;
+  --cx-info-fg-idle-rgb: 255, 255, 255;
+  --cx-black-fg-idle: #ffffff;
+  --cx-black-fg-idle-rgb: 255, 255, 255;
+  --cx-white-fg-idle: #000000;
+  --cx-white-fg-idle-rgb: 0, 0, 0;
+  --cx-default-fg-disabled: rgba(28, 32, 33, 0.25);
+  --cx-default-fg-disabled-rgb: 28, 32, 33;
+  --cx-alternate-fg-disabled: rgba(233, 236, 237, 0.25);
+  --cx-alternate-fg-disabled-rgb: 233, 236, 237;
   --cx-primary-fg-disabled: rgba(255, 255, 255, 0.25);
   --cx-primary-fg-disabled-rgb: 255, 255, 255;
   --cx-secondary-fg-disabled: rgba(255, 255, 255, 0.25);
@@ -424,10 +424,10 @@
   --cx-black-fg-disabled-rgb: 255, 255, 255;
   --cx-white-fg-disabled: rgba(0, 0, 0, 0.25);
   --cx-white-fg-disabled-rgb: 0, 0, 0;
-  --cx-default-fg-hover: rgba(0, 0, 0, 0.9);
-  --cx-default-fg-hover-rgb: 0, 0, 0;
-  --cx-alternate-fg-hover: rgba(255, 255, 255, 0.9);
-  --cx-alternate-fg-hover-rgb: 255, 255, 255;
+  --cx-default-fg-hover: rgba(28, 32, 33, 0.9);
+  --cx-default-fg-hover-rgb: 28, 32, 33;
+  --cx-alternate-fg-hover: rgba(233, 236, 237, 0.9);
+  --cx-alternate-fg-hover-rgb: 233, 236, 237;
   --cx-primary-fg-hover: rgba(255, 255, 255, 0.9);
   --cx-primary-fg-hover-rgb: 255, 255, 255;
   --cx-secondary-fg-hover: rgba(255, 255, 255, 0.9);
@@ -446,10 +446,10 @@
   --cx-black-fg-hover-rgb: 255, 255, 255;
   --cx-white-fg-hover: rgba(0, 0, 0, 0.9);
   --cx-white-fg-hover-rgb: 0, 0, 0;
-  --cx-default-fg-press: rgba(0, 0, 0, 0.9);
-  --cx-default-fg-press-rgb: 0, 0, 0;
-  --cx-alternate-fg-press: rgba(255, 255, 255, 0.9);
-  --cx-alternate-fg-press-rgb: 255, 255, 255;
+  --cx-default-fg-press: rgba(28, 32, 33, 0.9);
+  --cx-default-fg-press-rgb: 28, 32, 33;
+  --cx-alternate-fg-press: rgba(233, 236, 237, 0.9);
+  --cx-alternate-fg-press-rgb: 233, 236, 237;
   --cx-primary-fg-press: rgba(255, 255, 255, 0.9);
   --cx-primary-fg-press-rgb: 255, 255, 255;
   --cx-secondary-fg-press: rgba(255, 255, 255, 0.9);
@@ -600,28 +600,28 @@
   --cx-black-bg-highlight-rgb: 0, 0, 0;
   --cx-white-bg-highlight: rgba(255, 255, 255, 0.2);
   --cx-white-bg-highlight-rgb: 255, 255, 255;
-  --cx-default-bg-button: #ffffff;
-  --cx-default-bg-button-rgb: 255, 255, 255;
-  --cx-alternate-bg-button: #272d2f;
-  --cx-alternate-bg-button-rgb: 39, 45, 47;
-  --cx-primary-bg-button: #00A4CC;
-  --cx-primary-bg-button-rgb: 0, 164, 204;
-  --cx-secondary-bg-button: #F55200;
-  --cx-secondary-bg-button-rgb: 245, 82, 0;
-  --cx-neutral-bg-button: #6F8085;
-  --cx-neutral-bg-button-rgb: 111, 128, 133;
-  --cx-danger-bg-button: #F52314;
-  --cx-danger-bg-button-rgb: 245, 35, 20;
-  --cx-success-bg-button: #10C263;
-  --cx-success-bg-button-rgb: 16, 194, 99;
-  --cx-warning-bg-button: #F5A300;
-  --cx-warning-bg-button-rgb: 245, 163, 0;
-  --cx-info-bg-button: #1414F5;
-  --cx-info-bg-button-rgb: 20, 20, 245;
-  --cx-black-bg-button: #000000;
-  --cx-black-bg-button-rgb: 0, 0, 0;
-  --cx-white-bg-button: #ffffff;
-  --cx-white-bg-button-rgb: 255, 255, 255;
+  --cx-default-bg-idle: #ffffff;
+  --cx-default-bg-idle-rgb: 255, 255, 255;
+  --cx-alternate-bg-idle: #272d2f;
+  --cx-alternate-bg-idle-rgb: 39, 45, 47;
+  --cx-primary-bg-idle: #00A4CC;
+  --cx-primary-bg-idle-rgb: 0, 164, 204;
+  --cx-secondary-bg-idle: #F55200;
+  --cx-secondary-bg-idle-rgb: 245, 82, 0;
+  --cx-neutral-bg-idle: #6F8085;
+  --cx-neutral-bg-idle-rgb: 111, 128, 133;
+  --cx-danger-bg-idle: #F52314;
+  --cx-danger-bg-idle-rgb: 245, 35, 20;
+  --cx-success-bg-idle: #10C263;
+  --cx-success-bg-idle-rgb: 16, 194, 99;
+  --cx-warning-bg-idle: #F5A300;
+  --cx-warning-bg-idle-rgb: 245, 163, 0;
+  --cx-info-bg-idle: #1414F5;
+  --cx-info-bg-idle-rgb: 20, 20, 245;
+  --cx-black-bg-idle: #000000;
+  --cx-black-bg-idle-rgb: 0, 0, 0;
+  --cx-white-bg-idle: #ffffff;
+  --cx-white-bg-idle-rgb: 255, 255, 255;
   --cx-default-bg-disabled: #d4d9da;
   --cx-default-bg-disabled-rgb: 212, 217, 218;
   --cx-alternate-bg-disabled: #272d2f;
@@ -1141,7 +1141,7 @@
   --cx-fg-inverse: var(--cx-default-fg-inverse);
   --cx-fg-solid: var(--cx-default-fg-solid);
   --cx-fg-highlight: var(--cx-default-fg-highlight);
-  --cx-fg-button: var(--cx-default-fg-button);
+  --cx-fg-idle: var(--cx-default-fg-idle);
   --cx-fg-disabled: var(--cx-default-fg-disabled);
   --cx-fg-hover: var(--cx-default-fg-hover);
   --cx-fg-press: var(--cx-default-fg-press);
@@ -1151,7 +1151,7 @@
   --cx-bg-inverse: var(--cx-default-bg-inverse);
   --cx-bg-solid: var(--cx-default-bg-solid);
   --cx-bg-highlight: var(--cx-default-bg-highlight);
-  --cx-bg-button: var(--cx-default-bg-button);
+  --cx-bg-idle: var(--cx-default-bg-idle);
   --cx-bg-disabled: var(--cx-default-bg-disabled);
   --cx-bg-hover: var(--cx-default-bg-hover);
   --cx-bg-press: var(--cx-default-bg-press);
@@ -1198,11 +1198,11 @@
   --cx-link-hover-rgb: var(--cx-default-link-hover-rgb);
   --cx-link-active-rgb: var(--cx-default-link-active-rgb);
   --cx-link-visited-rgb: var(--cx-default-link-visited-rgb);
-  --cx-fg-button-rgb: var(--cx-default-fg-button-rgb);
+  --cx-fg-idle-rgb: var(--cx-default-fg-idle-rgb);
   --cx-fg-hover-rgb: var(--cx-default-fg-hover-rgb);
   --cx-fg-press-rgb: var(--cx-default-fg-press-rgb);
   --cx-fg-disabled-rgb: var(--cx-default-fg-disabled-rgb);
-  --cx-bg-button-rgb: var(--cx-default-bg-button-rgb);
+  --cx-bg-idle-rgb: var(--cx-default-bg-idle-rgb);
   --cx-bg-hover-rgb: var(--cx-default-bg-hover-rgb);
   --cx-bg-press-rgb: var(--cx-default-bg-press-rgb);
   --cx-bg-disabled-rgb: var(--cx-default-bg-disabled-rgb);
@@ -1928,32 +1928,32 @@
   --cx-black-dim-subtle-rgb: 0, 0, 0;
   --cx-white-dim-subtle: rgba(255, 255, 255, 0.3);
   --cx-white-dim-subtle-rgb: 255, 255, 255;
-  --cx-default-fg-button: #ffffff;
-  --cx-default-fg-button-rgb: 255, 255, 255;
-  --cx-alternate-fg-button: #000000;
-  --cx-alternate-fg-button-rgb: 0, 0, 0;
-  --cx-primary-fg-button: #ffffff;
-  --cx-primary-fg-button-rgb: 255, 255, 255;
-  --cx-secondary-fg-button: #ffffff;
-  --cx-secondary-fg-button-rgb: 255, 255, 255;
-  --cx-neutral-fg-button: #ffffff;
-  --cx-neutral-fg-button-rgb: 255, 255, 255;
-  --cx-danger-fg-button: #ffffff;
-  --cx-danger-fg-button-rgb: 255, 255, 255;
-  --cx-success-fg-button: #ffffff;
-  --cx-success-fg-button-rgb: 255, 255, 255;
-  --cx-warning-fg-button: #000000;
-  --cx-warning-fg-button-rgb: 0, 0, 0;
-  --cx-info-fg-button: #ffffff;
-  --cx-info-fg-button-rgb: 255, 255, 255;
-  --cx-black-fg-button: #ffffff;
-  --cx-black-fg-button-rgb: 255, 255, 255;
-  --cx-white-fg-button: #000000;
-  --cx-white-fg-button-rgb: 0, 0, 0;
-  --cx-default-fg-disabled: rgba(255, 255, 255, 0.25);
-  --cx-default-fg-disabled-rgb: 255, 255, 255;
-  --cx-alternate-fg-disabled: rgba(0, 0, 0, 0.25);
-  --cx-alternate-fg-disabled-rgb: 0, 0, 0;
+  --cx-default-fg-idle: #e9eced;
+  --cx-default-fg-idle-rgb: 233, 236, 237;
+  --cx-alternate-fg-idle: #ffffff;
+  --cx-alternate-fg-idle-rgb: 255, 255, 255;
+  --cx-primary-fg-idle: #ffffff;
+  --cx-primary-fg-idle-rgb: 255, 255, 255;
+  --cx-secondary-fg-idle: #ffffff;
+  --cx-secondary-fg-idle-rgb: 255, 255, 255;
+  --cx-neutral-fg-idle: #ffffff;
+  --cx-neutral-fg-idle-rgb: 255, 255, 255;
+  --cx-danger-fg-idle: #ffffff;
+  --cx-danger-fg-idle-rgb: 255, 255, 255;
+  --cx-success-fg-idle: #ffffff;
+  --cx-success-fg-idle-rgb: 255, 255, 255;
+  --cx-warning-fg-idle: #000000;
+  --cx-warning-fg-idle-rgb: 0, 0, 0;
+  --cx-info-fg-idle: #ffffff;
+  --cx-info-fg-idle-rgb: 255, 255, 255;
+  --cx-black-fg-idle: #ffffff;
+  --cx-black-fg-idle-rgb: 255, 255, 255;
+  --cx-white-fg-idle: #000000;
+  --cx-white-fg-idle-rgb: 0, 0, 0;
+  --cx-default-fg-disabled: rgba(233, 236, 237, 0.25);
+  --cx-default-fg-disabled-rgb: 233, 236, 237;
+  --cx-alternate-fg-disabled: rgba(255, 255, 255, 0.25);
+  --cx-alternate-fg-disabled-rgb: 255, 255, 255;
   --cx-primary-fg-disabled: rgba(255, 255, 255, 0.25);
   --cx-primary-fg-disabled-rgb: 255, 255, 255;
   --cx-secondary-fg-disabled: rgba(255, 255, 255, 0.25);
@@ -1972,10 +1972,10 @@
   --cx-black-fg-disabled-rgb: 255, 255, 255;
   --cx-white-fg-disabled: rgba(0, 0, 0, 0.25);
   --cx-white-fg-disabled-rgb: 0, 0, 0;
-  --cx-default-fg-hover: rgba(255, 255, 255, 0.9);
-  --cx-default-fg-hover-rgb: 255, 255, 255;
-  --cx-alternate-fg-hover: rgba(0, 0, 0, 0.9);
-  --cx-alternate-fg-hover-rgb: 0, 0, 0;
+  --cx-default-fg-hover: rgba(233, 236, 237, 0.9);
+  --cx-default-fg-hover-rgb: 233, 236, 237;
+  --cx-alternate-fg-hover: rgba(255, 255, 255, 0.9);
+  --cx-alternate-fg-hover-rgb: 255, 255, 255;
   --cx-primary-fg-hover: rgba(255, 255, 255, 0.9);
   --cx-primary-fg-hover-rgb: 255, 255, 255;
   --cx-secondary-fg-hover: rgba(255, 255, 255, 0.9);
@@ -1994,10 +1994,10 @@
   --cx-black-fg-hover-rgb: 255, 255, 255;
   --cx-white-fg-hover: rgba(0, 0, 0, 0.9);
   --cx-white-fg-hover-rgb: 0, 0, 0;
-  --cx-default-fg-press: rgba(255, 255, 255, 0.9);
-  --cx-default-fg-press-rgb: 255, 255, 255;
-  --cx-alternate-fg-press: rgba(0, 0, 0, 0.9);
-  --cx-alternate-fg-press-rgb: 0, 0, 0;
+  --cx-default-fg-press: rgba(233, 236, 237, 0.9);
+  --cx-default-fg-press-rgb: 233, 236, 237;
+  --cx-alternate-fg-press: rgba(255, 255, 255, 0.9);
+  --cx-alternate-fg-press-rgb: 255, 255, 255;
   --cx-primary-fg-press: rgba(255, 255, 255, 0.9);
   --cx-primary-fg-press-rgb: 255, 255, 255;
   --cx-secondary-fg-press: rgba(255, 255, 255, 0.9);
@@ -2016,32 +2016,32 @@
   --cx-black-fg-press-rgb: 255, 255, 255;
   --cx-white-fg-press: rgba(0, 0, 0, 0.9);
   --cx-white-fg-press-rgb: 0, 0, 0;
-  --cx-default-bg-button: #1c2021;
-  --cx-default-bg-button-rgb: 28, 32, 33;
-  --cx-alternate-bg-button: #000000;
-  --cx-alternate-bg-button-rgb: 0, 0, 0;
-  --cx-primary-bg-button: #00A4CC;
-  --cx-primary-bg-button-rgb: 0, 164, 204;
-  --cx-secondary-bg-button: #F55200;
-  --cx-secondary-bg-button-rgb: 245, 82, 0;
-  --cx-neutral-bg-button: #6F8085;
-  --cx-neutral-bg-button-rgb: 111, 128, 133;
-  --cx-danger-bg-button: #F52314;
-  --cx-danger-bg-button-rgb: 245, 35, 20;
-  --cx-success-bg-button: #10C263;
-  --cx-success-bg-button-rgb: 16, 194, 99;
-  --cx-warning-bg-button: #F5A300;
-  --cx-warning-bg-button-rgb: 245, 163, 0;
-  --cx-info-bg-button: #1414F5;
-  --cx-info-bg-button-rgb: 20, 20, 245;
-  --cx-black-bg-button: #000000;
-  --cx-black-bg-button-rgb: 0, 0, 0;
-  --cx-white-bg-button: #ffffff;
-  --cx-white-bg-button-rgb: 255, 255, 255;
+  --cx-default-bg-idle: #1c2021;
+  --cx-default-bg-idle-rgb: 28, 32, 33;
+  --cx-alternate-bg-idle: #000000;
+  --cx-alternate-bg-idle-rgb: 0, 0, 0;
+  --cx-primary-bg-idle: #00A4CC;
+  --cx-primary-bg-idle-rgb: 0, 164, 204;
+  --cx-secondary-bg-idle: #F55200;
+  --cx-secondary-bg-idle-rgb: 245, 82, 0;
+  --cx-neutral-bg-idle: #6F8085;
+  --cx-neutral-bg-idle-rgb: 111, 128, 133;
+  --cx-danger-bg-idle: #F52314;
+  --cx-danger-bg-idle-rgb: 245, 35, 20;
+  --cx-success-bg-idle: #10C263;
+  --cx-success-bg-idle-rgb: 16, 194, 99;
+  --cx-warning-bg-idle: #F5A300;
+  --cx-warning-bg-idle-rgb: 245, 163, 0;
+  --cx-info-bg-idle: #1414F5;
+  --cx-info-bg-idle-rgb: 20, 20, 245;
+  --cx-black-bg-idle: #000000;
+  --cx-black-bg-idle-rgb: 0, 0, 0;
+  --cx-white-bg-idle: #ffffff;
+  --cx-white-bg-idle-rgb: 255, 255, 255;
   --cx-default-bg-disabled: #272d2f;
   --cx-default-bg-disabled-rgb: 39, 45, 47;
-  --cx-alternate-bg-disabled: #d4d9da;
-  --cx-alternate-bg-disabled-rgb: 212, 217, 218;
+  --cx-alternate-bg-disabled: #272d2f;
+  --cx-alternate-bg-disabled-rgb: 39, 45, 47;
   --cx-primary-bg-disabled: #003947;
   --cx-primary-bg-disabled-rgb: 0, 57, 71;
   --cx-secondary-bg-disabled: #561d00;
@@ -2162,16 +2162,16 @@
   --cx-dim-subtle-rgb: 255, 255, 255;
   --cx-dim-slight: rgba(255, 255, 255, 0.05);
   --cx-dim-slight-rgb: 255, 255, 255;
-  --cx-fg-button: #ffffff;
-  --cx-fg-button-rgb: 255, 255, 255;
-  --cx-fg-disabled: rgba(255, 255, 255, 0.25);
-  --cx-fg-disabled-rgb: 255, 255, 255;
-  --cx-fg-hover: rgba(255, 255, 255, 0.9);
-  --cx-fg-hover-rgb: 255, 255, 255;
-  --cx-fg-press: rgba(255, 255, 255, 0.9);
-  --cx-fg-press-rgb: 255, 255, 255;
-  --cx-bg-button: #1c2021;
-  --cx-bg-button-rgb: 28, 32, 33;
+  --cx-fg-idle: #e9eced;
+  --cx-fg-idle-rgb: 233, 236, 237;
+  --cx-fg-disabled: rgba(233, 236, 237, 0.25);
+  --cx-fg-disabled-rgb: 233, 236, 237;
+  --cx-fg-hover: rgba(233, 236, 237, 0.9);
+  --cx-fg-hover-rgb: 233, 236, 237;
+  --cx-fg-press: rgba(233, 236, 237, 0.9);
+  --cx-fg-press-rgb: 233, 236, 237;
+  --cx-bg-idle: #1c2021;
+  --cx-bg-idle-rgb: 28, 32, 33;
   --cx-bg-disabled: #272d2f;
   --cx-bg-disabled-rgb: 39, 45, 47;
   --cx-bg-hover: #111314;
@@ -2640,11 +2640,11 @@ progress {
   --cx-dim-main: var(--cx-context-dim-main, var(--cx-default-dim-main));
   --cx-dim-subtle: var(--cx-context-dim-subtle, var(--cx-default-dim-subtle));
   --cx-dim-slight: var(--cx-context-dim-slight, var(--cx-default-dim-slight));
-  --cx-fg-button: var(--cx-context-fg-button, var(--cx-default-fg-button));
+  --cx-fg-idle: var(--cx-context-fg-idle, var(--cx-default-fg-idle));
   --cx-fg-hover: var(--cx-context-fg-hover, var(--cx-default-fg-hover));
   --cx-fg-press: var(--cx-context-fg-press, var(--cx-default-fg-press));
   --cx-fg-disabled: var(--cx-context-fg-disabled, var(--cx-default-fg-disabled));
-  --cx-bg-button: var(--cx-context-bg-button, var(--cx-default-bg-button));
+  --cx-bg-idle: var(--cx-context-bg-idle, var(--cx-default-bg-idle));
   --cx-bg-hover: var(--cx-context-bg-hover, var(--cx-default-bg-hover));
   --cx-bg-press: var(--cx-context-bg-press, var(--cx-default-bg-press));
   --cx-bg-disabled: var(--cx-context-bg-disabled, var(--cx-default-bg-disabled));
@@ -2677,11 +2677,11 @@ progress {
   --cx-dim-main-rgb: var(--cx-context-dim-main-rgb, var(--cx-default-dim-main-rgb));
   --cx-dim-subtle-rgb: var(--cx-context-dim-subtle-rgb, var(--cx-default-dim-subtle-rgb));
   --cx-dim-slight-rgb: var(--cx-context-dim-slight-rgb, var(--cx-default-dim-slight-rgb));
-  --cx-fg-button-rgb: var(--cx-context-fg-button-rgb, var(--cx-default-fg-button-rgb));
+  --cx-fg-idle-rgb: var(--cx-context-fg-idle-rgb, var(--cx-default-fg-idle-rgb));
   --cx-fg-hover-rgb: var(--cx-context-fg-hover-rgb, var(--cx-default-fg-hover-rgb));
   --cx-fg-press-rgb: var(--cx-context-fg-press-rgb, var(--cx-default-fg-press-rgb));
   --cx-fg-disabled-rgb: var(--cx-context-fg-disabled-rgb, var(--cx-default-fg-disabled-rgb));
-  --cx-bg-button-rgb: var(--cx-context-bg-button-rgb, var(--cx-default-bg-button-rgb));
+  --cx-bg-idle-rgb: var(--cx-context-bg-idle-rgb, var(--cx-default-bg-idle-rgb));
   --cx-bg-hover-rgb: var(--cx-context-bg-hover-rgb, var(--cx-default-bg-hover-rgb));
   --cx-bg-press-rgb: var(--cx-context-bg-press-rgb, var(--cx-default-bg-press-rgb));
   --cx-bg-disabled-rgb: var(--cx-context-bg-disabled-rgb, var(--cx-default-bg-disabled-rgb));
@@ -2717,11 +2717,11 @@ progress {
   --cx-context-dim-main: var(--cx-default-dim-main);
   --cx-context-dim-subtle: var(--cx-default-dim-subtle);
   --cx-context-dim-slight: var(--cx-default-dim-slight);
-  --cx-context-fg-button: var(--cx-default-fg-button);
+  --cx-context-fg-idle: var(--cx-default-fg-idle);
   --cx-context-fg-hover: var(--cx-default-fg-hover);
   --cx-context-fg-press: var(--cx-default-fg-press);
   --cx-context-fg-disabled: var(--cx-default-fg-disabled);
-  --cx-context-bg-button: var(--cx-default-bg-button);
+  --cx-context-bg-idle: var(--cx-default-bg-idle);
   --cx-context-bg-hover: var(--cx-default-bg-hover);
   --cx-context-bg-press: var(--cx-default-bg-press);
   --cx-context-bg-disabled: var(--cx-default-bg-disabled);
@@ -2754,11 +2754,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-default-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-default-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-default-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-default-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-default-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-default-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-default-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-default-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-default-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-default-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-default-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-default-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-default-bg-disabled-rgb);
@@ -2794,11 +2794,11 @@ progress {
   --cx-context-dim-main: var(--cx-alternate-dim-main);
   --cx-context-dim-subtle: var(--cx-alternate-dim-subtle);
   --cx-context-dim-slight: var(--cx-alternate-dim-slight);
-  --cx-context-fg-button: var(--cx-alternate-fg-button);
+  --cx-context-fg-idle: var(--cx-alternate-fg-idle);
   --cx-context-fg-hover: var(--cx-alternate-fg-hover);
   --cx-context-fg-press: var(--cx-alternate-fg-press);
   --cx-context-fg-disabled: var(--cx-alternate-fg-disabled);
-  --cx-context-bg-button: var(--cx-alternate-bg-button);
+  --cx-context-bg-idle: var(--cx-alternate-bg-idle);
   --cx-context-bg-hover: var(--cx-alternate-bg-hover);
   --cx-context-bg-press: var(--cx-alternate-bg-press);
   --cx-context-bg-disabled: var(--cx-alternate-bg-disabled);
@@ -2831,11 +2831,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-alternate-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-alternate-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-alternate-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-alternate-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-alternate-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-alternate-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-alternate-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-alternate-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-alternate-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-alternate-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-alternate-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-alternate-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-alternate-bg-disabled-rgb);
@@ -2871,11 +2871,11 @@ progress {
   --cx-context-dim-main: var(--cx-primary-dim-main);
   --cx-context-dim-subtle: var(--cx-primary-dim-subtle);
   --cx-context-dim-slight: var(--cx-primary-dim-slight);
-  --cx-context-fg-button: var(--cx-primary-fg-button);
+  --cx-context-fg-idle: var(--cx-primary-fg-idle);
   --cx-context-fg-hover: var(--cx-primary-fg-hover);
   --cx-context-fg-press: var(--cx-primary-fg-press);
   --cx-context-fg-disabled: var(--cx-primary-fg-disabled);
-  --cx-context-bg-button: var(--cx-primary-bg-button);
+  --cx-context-bg-idle: var(--cx-primary-bg-idle);
   --cx-context-bg-hover: var(--cx-primary-bg-hover);
   --cx-context-bg-press: var(--cx-primary-bg-press);
   --cx-context-bg-disabled: var(--cx-primary-bg-disabled);
@@ -2908,11 +2908,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-primary-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-primary-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-primary-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-primary-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-primary-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-primary-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-primary-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-primary-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-primary-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-primary-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-primary-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-primary-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-primary-bg-disabled-rgb);
@@ -2948,11 +2948,11 @@ progress {
   --cx-context-dim-main: var(--cx-secondary-dim-main);
   --cx-context-dim-subtle: var(--cx-secondary-dim-subtle);
   --cx-context-dim-slight: var(--cx-secondary-dim-slight);
-  --cx-context-fg-button: var(--cx-secondary-fg-button);
+  --cx-context-fg-idle: var(--cx-secondary-fg-idle);
   --cx-context-fg-hover: var(--cx-secondary-fg-hover);
   --cx-context-fg-press: var(--cx-secondary-fg-press);
   --cx-context-fg-disabled: var(--cx-secondary-fg-disabled);
-  --cx-context-bg-button: var(--cx-secondary-bg-button);
+  --cx-context-bg-idle: var(--cx-secondary-bg-idle);
   --cx-context-bg-hover: var(--cx-secondary-bg-hover);
   --cx-context-bg-press: var(--cx-secondary-bg-press);
   --cx-context-bg-disabled: var(--cx-secondary-bg-disabled);
@@ -2985,11 +2985,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-secondary-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-secondary-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-secondary-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-secondary-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-secondary-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-secondary-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-secondary-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-secondary-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-secondary-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-secondary-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-secondary-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-secondary-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-secondary-bg-disabled-rgb);
@@ -3025,11 +3025,11 @@ progress {
   --cx-context-dim-main: var(--cx-neutral-dim-main);
   --cx-context-dim-subtle: var(--cx-neutral-dim-subtle);
   --cx-context-dim-slight: var(--cx-neutral-dim-slight);
-  --cx-context-fg-button: var(--cx-neutral-fg-button);
+  --cx-context-fg-idle: var(--cx-neutral-fg-idle);
   --cx-context-fg-hover: var(--cx-neutral-fg-hover);
   --cx-context-fg-press: var(--cx-neutral-fg-press);
   --cx-context-fg-disabled: var(--cx-neutral-fg-disabled);
-  --cx-context-bg-button: var(--cx-neutral-bg-button);
+  --cx-context-bg-idle: var(--cx-neutral-bg-idle);
   --cx-context-bg-hover: var(--cx-neutral-bg-hover);
   --cx-context-bg-press: var(--cx-neutral-bg-press);
   --cx-context-bg-disabled: var(--cx-neutral-bg-disabled);
@@ -3062,11 +3062,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-neutral-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-neutral-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-neutral-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-neutral-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-neutral-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-neutral-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-neutral-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-neutral-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-neutral-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-neutral-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-neutral-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-neutral-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-neutral-bg-disabled-rgb);
@@ -3102,11 +3102,11 @@ progress {
   --cx-context-dim-main: var(--cx-warning-dim-main);
   --cx-context-dim-subtle: var(--cx-warning-dim-subtle);
   --cx-context-dim-slight: var(--cx-warning-dim-slight);
-  --cx-context-fg-button: var(--cx-warning-fg-button);
+  --cx-context-fg-idle: var(--cx-warning-fg-idle);
   --cx-context-fg-hover: var(--cx-warning-fg-hover);
   --cx-context-fg-press: var(--cx-warning-fg-press);
   --cx-context-fg-disabled: var(--cx-warning-fg-disabled);
-  --cx-context-bg-button: var(--cx-warning-bg-button);
+  --cx-context-bg-idle: var(--cx-warning-bg-idle);
   --cx-context-bg-hover: var(--cx-warning-bg-hover);
   --cx-context-bg-press: var(--cx-warning-bg-press);
   --cx-context-bg-disabled: var(--cx-warning-bg-disabled);
@@ -3139,11 +3139,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-warning-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-warning-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-warning-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-warning-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-warning-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-warning-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-warning-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-warning-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-warning-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-warning-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-warning-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-warning-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-warning-bg-disabled-rgb);
@@ -3179,11 +3179,11 @@ progress {
   --cx-context-dim-main: var(--cx-success-dim-main);
   --cx-context-dim-subtle: var(--cx-success-dim-subtle);
   --cx-context-dim-slight: var(--cx-success-dim-slight);
-  --cx-context-fg-button: var(--cx-success-fg-button);
+  --cx-context-fg-idle: var(--cx-success-fg-idle);
   --cx-context-fg-hover: var(--cx-success-fg-hover);
   --cx-context-fg-press: var(--cx-success-fg-press);
   --cx-context-fg-disabled: var(--cx-success-fg-disabled);
-  --cx-context-bg-button: var(--cx-success-bg-button);
+  --cx-context-bg-idle: var(--cx-success-bg-idle);
   --cx-context-bg-hover: var(--cx-success-bg-hover);
   --cx-context-bg-press: var(--cx-success-bg-press);
   --cx-context-bg-disabled: var(--cx-success-bg-disabled);
@@ -3216,11 +3216,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-success-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-success-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-success-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-success-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-success-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-success-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-success-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-success-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-success-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-success-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-success-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-success-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-success-bg-disabled-rgb);
@@ -3256,11 +3256,11 @@ progress {
   --cx-context-dim-main: var(--cx-danger-dim-main);
   --cx-context-dim-subtle: var(--cx-danger-dim-subtle);
   --cx-context-dim-slight: var(--cx-danger-dim-slight);
-  --cx-context-fg-button: var(--cx-danger-fg-button);
+  --cx-context-fg-idle: var(--cx-danger-fg-idle);
   --cx-context-fg-hover: var(--cx-danger-fg-hover);
   --cx-context-fg-press: var(--cx-danger-fg-press);
   --cx-context-fg-disabled: var(--cx-danger-fg-disabled);
-  --cx-context-bg-button: var(--cx-danger-bg-button);
+  --cx-context-bg-idle: var(--cx-danger-bg-idle);
   --cx-context-bg-hover: var(--cx-danger-bg-hover);
   --cx-context-bg-press: var(--cx-danger-bg-press);
   --cx-context-bg-disabled: var(--cx-danger-bg-disabled);
@@ -3293,11 +3293,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-danger-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-danger-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-danger-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-danger-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-danger-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-danger-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-danger-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-danger-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-danger-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-danger-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-danger-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-danger-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-danger-bg-disabled-rgb);
@@ -3333,11 +3333,11 @@ progress {
   --cx-context-dim-main: var(--cx-info-dim-main);
   --cx-context-dim-subtle: var(--cx-info-dim-subtle);
   --cx-context-dim-slight: var(--cx-info-dim-slight);
-  --cx-context-fg-button: var(--cx-info-fg-button);
+  --cx-context-fg-idle: var(--cx-info-fg-idle);
   --cx-context-fg-hover: var(--cx-info-fg-hover);
   --cx-context-fg-press: var(--cx-info-fg-press);
   --cx-context-fg-disabled: var(--cx-info-fg-disabled);
-  --cx-context-bg-button: var(--cx-info-bg-button);
+  --cx-context-bg-idle: var(--cx-info-bg-idle);
   --cx-context-bg-hover: var(--cx-info-bg-hover);
   --cx-context-bg-press: var(--cx-info-bg-press);
   --cx-context-bg-disabled: var(--cx-info-bg-disabled);
@@ -3370,11 +3370,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-info-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-info-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-info-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-info-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-info-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-info-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-info-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-info-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-info-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-info-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-info-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-info-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-info-bg-disabled-rgb);
@@ -3410,11 +3410,11 @@ progress {
   --cx-context-dim-main: var(--cx-black-dim-main);
   --cx-context-dim-subtle: var(--cx-black-dim-subtle);
   --cx-context-dim-slight: var(--cx-black-dim-slight);
-  --cx-context-fg-button: var(--cx-black-fg-button);
+  --cx-context-fg-idle: var(--cx-black-fg-idle);
   --cx-context-fg-hover: var(--cx-black-fg-hover);
   --cx-context-fg-press: var(--cx-black-fg-press);
   --cx-context-fg-disabled: var(--cx-black-fg-disabled);
-  --cx-context-bg-button: var(--cx-black-bg-button);
+  --cx-context-bg-idle: var(--cx-black-bg-idle);
   --cx-context-bg-hover: var(--cx-black-bg-hover);
   --cx-context-bg-press: var(--cx-black-bg-press);
   --cx-context-bg-disabled: var(--cx-black-bg-disabled);
@@ -3447,11 +3447,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-black-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-black-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-black-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-black-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-black-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-black-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-black-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-black-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-black-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-black-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-black-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-black-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-black-bg-disabled-rgb);
@@ -3487,11 +3487,11 @@ progress {
   --cx-context-dim-main: var(--cx-white-dim-main);
   --cx-context-dim-subtle: var(--cx-white-dim-subtle);
   --cx-context-dim-slight: var(--cx-white-dim-slight);
-  --cx-context-fg-button: var(--cx-white-fg-button);
+  --cx-context-fg-idle: var(--cx-white-fg-idle);
   --cx-context-fg-hover: var(--cx-white-fg-hover);
   --cx-context-fg-press: var(--cx-white-fg-press);
   --cx-context-fg-disabled: var(--cx-white-fg-disabled);
-  --cx-context-bg-button: var(--cx-white-bg-button);
+  --cx-context-bg-idle: var(--cx-white-bg-idle);
   --cx-context-bg-hover: var(--cx-white-bg-hover);
   --cx-context-bg-press: var(--cx-white-bg-press);
   --cx-context-bg-disabled: var(--cx-white-bg-disabled);
@@ -3524,11 +3524,11 @@ progress {
   --cx-context-dim-main-rgb: var(--cx-white-dim-main-rgb);
   --cx-context-dim-subtle-rgb: var(--cx-white-dim-subtle-rgb);
   --cx-context-dim-slight-rgb: var(--cx-white-dim-slight-rgb);
-  --cx-context-fg-button-rgb: var(--cx-white-fg-button-rgb);
+  --cx-context-fg-idle-rgb: var(--cx-white-fg-idle-rgb);
   --cx-context-fg-hover-rgb: var(--cx-white-fg-hover-rgb);
   --cx-context-fg-press-rgb: var(--cx-white-fg-press-rgb);
   --cx-context-fg-disabled-rgb: var(--cx-white-fg-disabled-rgb);
-  --cx-context-bg-button-rgb: var(--cx-white-bg-button-rgb);
+  --cx-context-bg-idle-rgb: var(--cx-white-bg-idle-rgb);
   --cx-context-bg-hover-rgb: var(--cx-white-bg-hover-rgb);
   --cx-context-bg-press-rgb: var(--cx-white-bg-press-rgb);
   --cx-context-bg-disabled-rgb: var(--cx-white-bg-disabled-rgb);
@@ -3851,36 +3851,36 @@ progress {
 }
 
 .default.chip, .default.button {
-  --cx-fg-idle: var(--cx-button-default-fg-idle, var(--cx-default-fg-button));
-  --cx-bg-idle: var(--cx-button-default-bg-idle, var(--cx-default-bg-button));
+  --cx-fg-idle: var(--cx-button-default-fg-idle, var(--cx-default-fg-idle));
+  --cx-bg-idle: var(--cx-button-default-bg-idle, var(--cx-default-bg-idle));
   --cx-border-idle: var(--cx-button-default-border-idle, var(--cx-default-border-main));
   --cx-fg-hover: var(--cx-button-default-fg-hover, var(--cx-default-fg-hover));
   --cx-bg-hover: var(--cx-button-default-bg-hover, var(--cx-default-bg-hover));
   --cx-border-hover: var(--cx-button-default-border-hover, var(--cx-default-border-main));
   --cx-fg-press: var(--cx-button-default-fg-press, var(--cx-default-fg-press));
   --cx-bg-press: var(--cx-button-default-bg-press, var(--cx-default-bg-press));
-  --cx-border-press: var(--cx-button-default-border-press, var(--cx-default-fg-button));
+  --cx-border-press: var(--cx-button-default-border-press, var(--cx-default-fg-idle));
   --cx-fg-disabled: var(--cx-button-default-fg-disabled, var(--cx-default-fg-disabled));
   --cx-bg-disabled: var(--cx-button-default-bg-disabled, var(--cx-default-bg-disabled));
   --cx-border-disabled: var(--cx-button-default-border-disabled, var(--cx-default-transparent-color));
 }
 .alternate.chip, .alternate.button {
-  --cx-fg-idle: var(--cx-button-alternate-fg-idle, var(--cx-alternate-fg-button));
-  --cx-bg-idle: var(--cx-button-alternate-bg-idle, var(--cx-alternate-bg-button));
+  --cx-fg-idle: var(--cx-button-alternate-fg-idle, var(--cx-alternate-fg-idle));
+  --cx-bg-idle: var(--cx-button-alternate-bg-idle, var(--cx-alternate-bg-idle));
   --cx-border-idle: var(--cx-button-alternate-border-idle, var(--cx-alternate-border-main));
   --cx-fg-hover: var(--cx-button-alternate-fg-hover, var(--cx-alternate-fg-hover));
   --cx-bg-hover: var(--cx-button-alternate-bg-hover, var(--cx-alternate-bg-hover));
   --cx-border-hover: var(--cx-button-alternate-border-hover, var(--cx-alternate-border-main));
   --cx-fg-press: var(--cx-button-alternate-fg-press, var(--cx-alternate-fg-press));
   --cx-bg-press: var(--cx-button-alternate-bg-press, var(--cx-alternate-bg-press));
-  --cx-border-press: var(--cx-button-alternate-border-press, var(--cx-alternate-fg-button));
+  --cx-border-press: var(--cx-button-alternate-border-press, var(--cx-alternate-fg-idle));
   --cx-fg-disabled: var(--cx-button-alternate-fg-disabled, var(--cx-alternate-fg-disabled));
   --cx-bg-disabled: var(--cx-button-alternate-bg-disabled, var(--cx-alternate-bg-disabled));
   --cx-border-disabled: var(--cx-button-alternate-border-disabled, var(--cx-alternate-transparent-color));
 }
 .primary.chip, .primary.button {
-  --cx-fg-idle: var(--cx-button-primary-fg-idle, var(--cx-primary-fg-button));
-  --cx-bg-idle: var(--cx-button-primary-bg-idle, var(--cx-primary-bg-button));
+  --cx-fg-idle: var(--cx-button-primary-fg-idle, var(--cx-primary-fg-idle));
+  --cx-bg-idle: var(--cx-button-primary-bg-idle, var(--cx-primary-bg-idle));
   --cx-border-idle: var(--cx-button-primary-border-idle, var(--cx-primary-transparent-color));
   --cx-fg-hover: var(--cx-button-primary-fg-hover, var(--cx-primary-fg-hover));
   --cx-bg-hover: var(--cx-button-primary-bg-hover, var(--cx-primary-bg-hover));
@@ -3893,8 +3893,8 @@ progress {
   --cx-border-disabled: var(--cx-button-primary-border-disabled, var(--cx-primary-transparent-color));
 }
 .secondary.chip, .secondary.button {
-  --cx-fg-idle: var(--cx-button-secondary-fg-idle, var(--cx-secondary-fg-button));
-  --cx-bg-idle: var(--cx-button-secondary-bg-idle, var(--cx-secondary-bg-button));
+  --cx-fg-idle: var(--cx-button-secondary-fg-idle, var(--cx-secondary-fg-idle));
+  --cx-bg-idle: var(--cx-button-secondary-bg-idle, var(--cx-secondary-bg-idle));
   --cx-border-idle: var(--cx-button-secondary-border-idle, var(--cx-secondary-transparent-color));
   --cx-fg-hover: var(--cx-button-secondary-fg-hover, var(--cx-secondary-fg-hover));
   --cx-bg-hover: var(--cx-button-secondary-bg-hover, var(--cx-secondary-bg-hover));
@@ -3907,8 +3907,8 @@ progress {
   --cx-border-disabled: var(--cx-button-secondary-border-disabled, var(--cx-secondary-transparent-color));
 }
 .neutral.chip, .neutral.button {
-  --cx-fg-idle: var(--cx-button-neutral-fg-idle, var(--cx-neutral-fg-button));
-  --cx-bg-idle: var(--cx-button-neutral-bg-idle, var(--cx-neutral-bg-button));
+  --cx-fg-idle: var(--cx-button-neutral-fg-idle, var(--cx-neutral-fg-idle));
+  --cx-bg-idle: var(--cx-button-neutral-bg-idle, var(--cx-neutral-bg-idle));
   --cx-border-idle: var(--cx-button-neutral-border-idle, var(--cx-neutral-transparent-color));
   --cx-fg-hover: var(--cx-button-neutral-fg-hover, var(--cx-neutral-fg-hover));
   --cx-bg-hover: var(--cx-button-neutral-bg-hover, var(--cx-neutral-bg-hover));
@@ -3921,8 +3921,8 @@ progress {
   --cx-border-disabled: var(--cx-button-neutral-border-disabled, var(--cx-neutral-transparent-color));
 }
 .warning.chip, .warning.button {
-  --cx-fg-idle: var(--cx-button-warning-fg-idle, var(--cx-warning-fg-button));
-  --cx-bg-idle: var(--cx-button-warning-bg-idle, var(--cx-warning-bg-button));
+  --cx-fg-idle: var(--cx-button-warning-fg-idle, var(--cx-warning-fg-idle));
+  --cx-bg-idle: var(--cx-button-warning-bg-idle, var(--cx-warning-bg-idle));
   --cx-border-idle: var(--cx-button-warning-border-idle, var(--cx-warning-transparent-color));
   --cx-fg-hover: var(--cx-button-warning-fg-hover, var(--cx-warning-fg-hover));
   --cx-bg-hover: var(--cx-button-warning-bg-hover, var(--cx-warning-bg-hover));
@@ -3935,8 +3935,8 @@ progress {
   --cx-border-disabled: var(--cx-button-warning-border-disabled, var(--cx-warning-transparent-color));
 }
 .success.chip, .success.button {
-  --cx-fg-idle: var(--cx-button-success-fg-idle, var(--cx-success-fg-button));
-  --cx-bg-idle: var(--cx-button-success-bg-idle, var(--cx-success-bg-button));
+  --cx-fg-idle: var(--cx-button-success-fg-idle, var(--cx-success-fg-idle));
+  --cx-bg-idle: var(--cx-button-success-bg-idle, var(--cx-success-bg-idle));
   --cx-border-idle: var(--cx-button-success-border-idle, var(--cx-success-transparent-color));
   --cx-fg-hover: var(--cx-button-success-fg-hover, var(--cx-success-fg-hover));
   --cx-bg-hover: var(--cx-button-success-bg-hover, var(--cx-success-bg-hover));
@@ -3949,8 +3949,8 @@ progress {
   --cx-border-disabled: var(--cx-button-success-border-disabled, var(--cx-success-transparent-color));
 }
 .danger.chip, .danger.button {
-  --cx-fg-idle: var(--cx-button-danger-fg-idle, var(--cx-danger-fg-button));
-  --cx-bg-idle: var(--cx-button-danger-bg-idle, var(--cx-danger-bg-button));
+  --cx-fg-idle: var(--cx-button-danger-fg-idle, var(--cx-danger-fg-idle));
+  --cx-bg-idle: var(--cx-button-danger-bg-idle, var(--cx-danger-bg-idle));
   --cx-border-idle: var(--cx-button-danger-border-idle, var(--cx-danger-transparent-color));
   --cx-fg-hover: var(--cx-button-danger-fg-hover, var(--cx-danger-fg-hover));
   --cx-bg-hover: var(--cx-button-danger-bg-hover, var(--cx-danger-bg-hover));
@@ -3963,8 +3963,8 @@ progress {
   --cx-border-disabled: var(--cx-button-danger-border-disabled, var(--cx-danger-transparent-color));
 }
 .info.chip, .info.button {
-  --cx-fg-idle: var(--cx-button-info-fg-idle, var(--cx-info-fg-button));
-  --cx-bg-idle: var(--cx-button-info-bg-idle, var(--cx-info-bg-button));
+  --cx-fg-idle: var(--cx-button-info-fg-idle, var(--cx-info-fg-idle));
+  --cx-bg-idle: var(--cx-button-info-bg-idle, var(--cx-info-bg-idle));
   --cx-border-idle: var(--cx-button-info-border-idle, var(--cx-info-transparent-color));
   --cx-fg-hover: var(--cx-button-info-fg-hover, var(--cx-info-fg-hover));
   --cx-bg-hover: var(--cx-button-info-bg-hover, var(--cx-info-bg-hover));
@@ -3977,8 +3977,8 @@ progress {
   --cx-border-disabled: var(--cx-button-info-border-disabled, var(--cx-info-transparent-color));
 }
 .black.chip, .black.button {
-  --cx-fg-idle: var(--cx-button-black-fg-idle, var(--cx-black-fg-button));
-  --cx-bg-idle: var(--cx-button-black-bg-idle, var(--cx-black-bg-button));
+  --cx-fg-idle: var(--cx-button-black-fg-idle, var(--cx-black-fg-idle));
+  --cx-bg-idle: var(--cx-button-black-bg-idle, var(--cx-black-bg-idle));
   --cx-border-idle: var(--cx-button-black-border-idle, var(--cx-black-transparent-color));
   --cx-fg-hover: var(--cx-button-black-fg-hover, var(--cx-black-fg-hover));
   --cx-bg-hover: var(--cx-button-black-bg-hover, var(--cx-black-bg-hover));
@@ -3991,8 +3991,8 @@ progress {
   --cx-border-disabled: var(--cx-button-black-border-disabled, var(--cx-black-transparent-color));
 }
 .white.chip, .white.button {
-  --cx-fg-idle: var(--cx-button-white-fg-idle, var(--cx-white-fg-button));
-  --cx-bg-idle: var(--cx-button-white-bg-idle, var(--cx-white-bg-button));
+  --cx-fg-idle: var(--cx-button-white-fg-idle, var(--cx-white-fg-idle));
+  --cx-bg-idle: var(--cx-button-white-bg-idle, var(--cx-white-bg-idle));
   --cx-border-idle: var(--cx-button-white-border-idle, var(--cx-white-transparent-color));
   --cx-fg-hover: var(--cx-button-white-fg-hover, var(--cx-white-fg-hover));
   --cx-bg-hover: var(--cx-button-white-bg-hover, var(--cx-white-bg-hover));
@@ -4371,7 +4371,7 @@ progress {
   --cx-input-addon-bg-color: var(--cx-default-bg-main);
   --cx-input-addon-border-color: var(--cx-default-border-main);
   --cx-form-range-track-color: var(--cx-default-bg-evident);
-  --cx-form-range-thumb-color: var(--cx-primary-bg-button);
+  --cx-form-range-thumb-color: var(--cx-primary-bg-idle);
   --cx-form-range-thumb-disabled: var(--cx-default-bg-disabled);
   --cx-form-range-thumb-active: var(--cx-primary-bg-press);
   --cx-form-focus-box-shadow: 0 0 0 0.25rem rgba(var(--cx-default-cue-main-rgb), 0.25);
@@ -4489,11 +4489,11 @@ progress {
   color: var(--cx-fg-color);
 }
 
-.fg-reset, .fg-press, .fg-hover, .fg-disabled, .fg-button, .fg-highlight, .fg-solid, .fg-inverse, .fg-slight, .fg-subtle, .fg-main, .white-fg-press, .black-fg-press, .info-fg-press, .warning-fg-press, .success-fg-press, .danger-fg-press, .neutral-fg-press, .secondary-fg-press, .primary-fg-press, .alternate-fg-press, .default-fg-press, .white-fg-hover, .black-fg-hover, .info-fg-hover, .warning-fg-hover, .success-fg-hover, .danger-fg-hover, .neutral-fg-hover, .secondary-fg-hover, .primary-fg-hover, .alternate-fg-hover, .default-fg-hover, .white-fg-disabled, .black-fg-disabled, .info-fg-disabled, .warning-fg-disabled, .success-fg-disabled, .danger-fg-disabled, .neutral-fg-disabled, .secondary-fg-disabled, .primary-fg-disabled, .alternate-fg-disabled, .default-fg-disabled, .white-fg-button, .black-fg-button, .info-fg-button, .warning-fg-button, .success-fg-button, .danger-fg-button, .neutral-fg-button, .secondary-fg-button, .primary-fg-button, .alternate-fg-button, .default-fg-button, .white-fg-highlight, .black-fg-highlight, .info-fg-highlight, .warning-fg-highlight, .success-fg-highlight, .danger-fg-highlight, .neutral-fg-highlight, .secondary-fg-highlight, .primary-fg-highlight, .alternate-fg-highlight, .default-fg-highlight, .white-fg-solid, .black-fg-solid, .info-fg-solid, .warning-fg-solid, .success-fg-solid, .danger-fg-solid, .neutral-fg-solid, .secondary-fg-solid, .primary-fg-solid, .alternate-fg-solid, .default-fg-solid, .white-fg-inverse, .black-fg-inverse, .info-fg-inverse, .warning-fg-inverse, .success-fg-inverse, .danger-fg-inverse, .neutral-fg-inverse, .secondary-fg-inverse, .primary-fg-inverse, .alternate-fg-inverse, .default-fg-inverse, .white-fg-slight, .black-fg-slight, .info-fg-slight, .warning-fg-slight, .success-fg-slight, .danger-fg-slight, .neutral-fg-slight, .secondary-fg-slight, .primary-fg-slight, .alternate-fg-slight, .default-fg-slight, .white-fg-subtle, .black-fg-subtle, .info-fg-subtle, .warning-fg-subtle, .success-fg-subtle, .danger-fg-subtle, .neutral-fg-subtle, .secondary-fg-subtle, .primary-fg-subtle, .alternate-fg-subtle, .default-fg-subtle, .white-fg-main, .black-fg-main, .info-fg-main, .warning-fg-main, .success-fg-main, .danger-fg-main, .neutral-fg-main, .secondary-fg-main, .primary-fg-main, .alternate-fg-main, .default-fg-main, .fg-white, .fg-black, .fg-info, .fg-danger, .fg-success, .fg-warning, .fg-neutral, .fg-secondary, .fg-primary, .fg-alternate, .fg-default {
+.fg-reset, .fg-press, .fg-hover, .fg-disabled, .fg-idle, .fg-highlight, .fg-solid, .fg-inverse, .fg-slight, .fg-subtle, .fg-main, .white-fg-press, .black-fg-press, .info-fg-press, .warning-fg-press, .success-fg-press, .danger-fg-press, .neutral-fg-press, .secondary-fg-press, .primary-fg-press, .alternate-fg-press, .default-fg-press, .white-fg-hover, .black-fg-hover, .info-fg-hover, .warning-fg-hover, .success-fg-hover, .danger-fg-hover, .neutral-fg-hover, .secondary-fg-hover, .primary-fg-hover, .alternate-fg-hover, .default-fg-hover, .white-fg-disabled, .black-fg-disabled, .info-fg-disabled, .warning-fg-disabled, .success-fg-disabled, .danger-fg-disabled, .neutral-fg-disabled, .secondary-fg-disabled, .primary-fg-disabled, .alternate-fg-disabled, .default-fg-disabled, .white-fg-idle, .black-fg-idle, .info-fg-idle, .warning-fg-idle, .success-fg-idle, .danger-fg-idle, .neutral-fg-idle, .secondary-fg-idle, .primary-fg-idle, .alternate-fg-idle, .default-fg-idle, .white-fg-highlight, .black-fg-highlight, .info-fg-highlight, .warning-fg-highlight, .success-fg-highlight, .danger-fg-highlight, .neutral-fg-highlight, .secondary-fg-highlight, .primary-fg-highlight, .alternate-fg-highlight, .default-fg-highlight, .white-fg-solid, .black-fg-solid, .info-fg-solid, .warning-fg-solid, .success-fg-solid, .danger-fg-solid, .neutral-fg-solid, .secondary-fg-solid, .primary-fg-solid, .alternate-fg-solid, .default-fg-solid, .white-fg-inverse, .black-fg-inverse, .info-fg-inverse, .warning-fg-inverse, .success-fg-inverse, .danger-fg-inverse, .neutral-fg-inverse, .secondary-fg-inverse, .primary-fg-inverse, .alternate-fg-inverse, .default-fg-inverse, .white-fg-slight, .black-fg-slight, .info-fg-slight, .warning-fg-slight, .success-fg-slight, .danger-fg-slight, .neutral-fg-slight, .secondary-fg-slight, .primary-fg-slight, .alternate-fg-slight, .default-fg-slight, .white-fg-subtle, .black-fg-subtle, .info-fg-subtle, .warning-fg-subtle, .success-fg-subtle, .danger-fg-subtle, .neutral-fg-subtle, .secondary-fg-subtle, .primary-fg-subtle, .alternate-fg-subtle, .default-fg-subtle, .white-fg-main, .black-fg-main, .info-fg-main, .warning-fg-main, .success-fg-main, .danger-fg-main, .neutral-fg-main, .secondary-fg-main, .primary-fg-main, .alternate-fg-main, .default-fg-main, .fg-white, .fg-black, .fg-info, .fg-danger, .fg-success, .fg-warning, .fg-neutral, .fg-secondary, .fg-primary, .fg-alternate, .fg-default {
   color: var(--cx-fg-color) !important;
 }
 
-.bg-transparent, .bg-press, .bg-hover, .bg-disabled, .bg-button, .bg-highlight, .bg-solid, .bg-inverse, .bg-evident, .bg-even, .bg-main, .white-bg-press, .black-bg-press, .info-bg-press, .warning-bg-press, .success-bg-press, .danger-bg-press, .neutral-bg-press, .secondary-bg-press, .primary-bg-press, .alternate-bg-press, .default-bg-press, .white-bg-hover, .black-bg-hover, .info-bg-hover, .warning-bg-hover, .success-bg-hover, .danger-bg-hover, .neutral-bg-hover, .secondary-bg-hover, .primary-bg-hover, .alternate-bg-hover, .default-bg-hover, .white-bg-disabled, .black-bg-disabled, .info-bg-disabled, .warning-bg-disabled, .success-bg-disabled, .danger-bg-disabled, .neutral-bg-disabled, .secondary-bg-disabled, .primary-bg-disabled, .alternate-bg-disabled, .default-bg-disabled, .white-bg-button, .black-bg-button, .info-bg-button, .warning-bg-button, .success-bg-button, .danger-bg-button, .neutral-bg-button, .secondary-bg-button, .primary-bg-button, .alternate-bg-button, .default-bg-button, .white-bg-highlight, .black-bg-highlight, .info-bg-highlight, .warning-bg-highlight, .success-bg-highlight, .danger-bg-highlight, .neutral-bg-highlight, .secondary-bg-highlight, .primary-bg-highlight, .alternate-bg-highlight, .default-bg-highlight, .white-bg-solid, .black-bg-solid, .info-bg-solid, .warning-bg-solid, .success-bg-solid, .danger-bg-solid, .neutral-bg-solid, .secondary-bg-solid, .primary-bg-solid, .alternate-bg-solid, .default-bg-solid, .white-bg-inverse, .black-bg-inverse, .info-bg-inverse, .warning-bg-inverse, .success-bg-inverse, .danger-bg-inverse, .neutral-bg-inverse, .secondary-bg-inverse, .primary-bg-inverse, .alternate-bg-inverse, .default-bg-inverse, .white-bg-evident, .black-bg-evident, .info-bg-evident, .warning-bg-evident, .success-bg-evident, .danger-bg-evident, .neutral-bg-evident, .secondary-bg-evident, .primary-bg-evident, .alternate-bg-evident, .default-bg-evident, .white-bg-even, .black-bg-even, .info-bg-even, .warning-bg-even, .success-bg-even, .danger-bg-even, .neutral-bg-even, .secondary-bg-even, .primary-bg-even, .alternate-bg-even, .default-bg-even, .white-bg-main, .black-bg-main, .info-bg-main, .warning-bg-main, .success-bg-main, .danger-bg-main, .neutral-bg-main, .secondary-bg-main, .primary-bg-main, .alternate-bg-main, .default-bg-main, .bg-white, .bg-black, .bg-info, .bg-danger, .bg-success, .bg-warning, .bg-neutral, .bg-secondary, .bg-primary, .bg-alternate, .bg-default {
+.bg-transparent, .bg-press, .bg-hover, .bg-disabled, .bg-idle, .bg-highlight, .bg-solid, .bg-inverse, .bg-evident, .bg-even, .bg-main, .white-bg-press, .black-bg-press, .info-bg-press, .warning-bg-press, .success-bg-press, .danger-bg-press, .neutral-bg-press, .secondary-bg-press, .primary-bg-press, .alternate-bg-press, .default-bg-press, .white-bg-hover, .black-bg-hover, .info-bg-hover, .warning-bg-hover, .success-bg-hover, .danger-bg-hover, .neutral-bg-hover, .secondary-bg-hover, .primary-bg-hover, .alternate-bg-hover, .default-bg-hover, .white-bg-disabled, .black-bg-disabled, .info-bg-disabled, .warning-bg-disabled, .success-bg-disabled, .danger-bg-disabled, .neutral-bg-disabled, .secondary-bg-disabled, .primary-bg-disabled, .alternate-bg-disabled, .default-bg-disabled, .white-bg-idle, .black-bg-idle, .info-bg-idle, .warning-bg-idle, .success-bg-idle, .danger-bg-idle, .neutral-bg-idle, .secondary-bg-idle, .primary-bg-idle, .alternate-bg-idle, .default-bg-idle, .white-bg-highlight, .black-bg-highlight, .info-bg-highlight, .warning-bg-highlight, .success-bg-highlight, .danger-bg-highlight, .neutral-bg-highlight, .secondary-bg-highlight, .primary-bg-highlight, .alternate-bg-highlight, .default-bg-highlight, .white-bg-solid, .black-bg-solid, .info-bg-solid, .warning-bg-solid, .success-bg-solid, .danger-bg-solid, .neutral-bg-solid, .secondary-bg-solid, .primary-bg-solid, .alternate-bg-solid, .default-bg-solid, .white-bg-inverse, .black-bg-inverse, .info-bg-inverse, .warning-bg-inverse, .success-bg-inverse, .danger-bg-inverse, .neutral-bg-inverse, .secondary-bg-inverse, .primary-bg-inverse, .alternate-bg-inverse, .default-bg-inverse, .white-bg-evident, .black-bg-evident, .info-bg-evident, .warning-bg-evident, .success-bg-evident, .danger-bg-evident, .neutral-bg-evident, .secondary-bg-evident, .primary-bg-evident, .alternate-bg-evident, .default-bg-evident, .white-bg-even, .black-bg-even, .info-bg-even, .warning-bg-even, .success-bg-even, .danger-bg-even, .neutral-bg-even, .secondary-bg-even, .primary-bg-even, .alternate-bg-even, .default-bg-even, .white-bg-main, .black-bg-main, .info-bg-main, .warning-bg-main, .success-bg-main, .danger-bg-main, .neutral-bg-main, .secondary-bg-main, .primary-bg-main, .alternate-bg-main, .default-bg-main, .bg-white, .bg-black, .bg-info, .bg-danger, .bg-success, .bg-warning, .bg-neutral, .bg-secondary, .bg-primary, .bg-alternate, .bg-default {
   background-color: var(--cx-bg-color) !important;
 }
 
@@ -13016,48 +13016,48 @@ textarea.form-input {
   --cx-fg-color: var(--cx-white-fg-highlight);
 }
 
-.default-fg-button {
-  --cx-fg-color: var(--cx-default-fg-button);
+.default-fg-idle {
+  --cx-fg-color: var(--cx-default-fg-idle);
 }
 
-.alternate-fg-button {
-  --cx-fg-color: var(--cx-alternate-fg-button);
+.alternate-fg-idle {
+  --cx-fg-color: var(--cx-alternate-fg-idle);
 }
 
-.primary-fg-button {
-  --cx-fg-color: var(--cx-primary-fg-button);
+.primary-fg-idle {
+  --cx-fg-color: var(--cx-primary-fg-idle);
 }
 
-.secondary-fg-button {
-  --cx-fg-color: var(--cx-secondary-fg-button);
+.secondary-fg-idle {
+  --cx-fg-color: var(--cx-secondary-fg-idle);
 }
 
-.neutral-fg-button {
-  --cx-fg-color: var(--cx-neutral-fg-button);
+.neutral-fg-idle {
+  --cx-fg-color: var(--cx-neutral-fg-idle);
 }
 
-.danger-fg-button {
-  --cx-fg-color: var(--cx-danger-fg-button);
+.danger-fg-idle {
+  --cx-fg-color: var(--cx-danger-fg-idle);
 }
 
-.success-fg-button {
-  --cx-fg-color: var(--cx-success-fg-button);
+.success-fg-idle {
+  --cx-fg-color: var(--cx-success-fg-idle);
 }
 
-.warning-fg-button {
-  --cx-fg-color: var(--cx-warning-fg-button);
+.warning-fg-idle {
+  --cx-fg-color: var(--cx-warning-fg-idle);
 }
 
-.info-fg-button {
-  --cx-fg-color: var(--cx-info-fg-button);
+.info-fg-idle {
+  --cx-fg-color: var(--cx-info-fg-idle);
 }
 
-.black-fg-button {
-  --cx-fg-color: var(--cx-black-fg-button);
+.black-fg-idle {
+  --cx-fg-color: var(--cx-black-fg-idle);
 }
 
-.white-fg-button {
-  --cx-fg-color: var(--cx-white-fg-button);
+.white-fg-idle {
+  --cx-fg-color: var(--cx-white-fg-idle);
 }
 
 .default-fg-disabled {
@@ -13216,8 +13216,8 @@ textarea.form-input {
   --cx-fg-color: var(--cx-fg-highlight);
 }
 
-.fg-button {
-  --cx-fg-color: var(--cx-fg-button);
+.fg-idle {
+  --cx-fg-color: var(--cx-fg-idle);
 }
 
 .fg-disabled {
@@ -13500,48 +13500,48 @@ textarea.form-input {
   --cx-bg-color: var(--cx-white-bg-highlight);
 }
 
-.default-bg-button {
-  --cx-bg-color: var(--cx-default-bg-button);
+.default-bg-idle {
+  --cx-bg-color: var(--cx-default-bg-idle);
 }
 
-.alternate-bg-button {
-  --cx-bg-color: var(--cx-alternate-bg-button);
+.alternate-bg-idle {
+  --cx-bg-color: var(--cx-alternate-bg-idle);
 }
 
-.primary-bg-button {
-  --cx-bg-color: var(--cx-primary-bg-button);
+.primary-bg-idle {
+  --cx-bg-color: var(--cx-primary-bg-idle);
 }
 
-.secondary-bg-button {
-  --cx-bg-color: var(--cx-secondary-bg-button);
+.secondary-bg-idle {
+  --cx-bg-color: var(--cx-secondary-bg-idle);
 }
 
-.neutral-bg-button {
-  --cx-bg-color: var(--cx-neutral-bg-button);
+.neutral-bg-idle {
+  --cx-bg-color: var(--cx-neutral-bg-idle);
 }
 
-.danger-bg-button {
-  --cx-bg-color: var(--cx-danger-bg-button);
+.danger-bg-idle {
+  --cx-bg-color: var(--cx-danger-bg-idle);
 }
 
-.success-bg-button {
-  --cx-bg-color: var(--cx-success-bg-button);
+.success-bg-idle {
+  --cx-bg-color: var(--cx-success-bg-idle);
 }
 
-.warning-bg-button {
-  --cx-bg-color: var(--cx-warning-bg-button);
+.warning-bg-idle {
+  --cx-bg-color: var(--cx-warning-bg-idle);
 }
 
-.info-bg-button {
-  --cx-bg-color: var(--cx-info-bg-button);
+.info-bg-idle {
+  --cx-bg-color: var(--cx-info-bg-idle);
 }
 
-.black-bg-button {
-  --cx-bg-color: var(--cx-black-bg-button);
+.black-bg-idle {
+  --cx-bg-color: var(--cx-black-bg-idle);
 }
 
-.white-bg-button {
-  --cx-bg-color: var(--cx-white-bg-button);
+.white-bg-idle {
+  --cx-bg-color: var(--cx-white-bg-idle);
 }
 
 .default-bg-disabled {
@@ -13700,8 +13700,8 @@ textarea.form-input {
   --cx-bg-color: var(--cx-bg-highlight);
 }
 
-.bg-button {
-  --cx-bg-color: var(--cx-bg-button);
+.bg-idle {
+  --cx-bg-color: var(--cx-bg-idle);
 }
 
 .bg-disabled {

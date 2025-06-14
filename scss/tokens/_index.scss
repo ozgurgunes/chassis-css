@@ -30,18 +30,18 @@ $opacity-solid:        $cx-opacity-base-solid !default;
 // scss-docs-end base-opacity-tokens
 
 // scss-docs-start grid-tokens
-$breakpoint-2xlarge:     $cx-grid-common-breakpoint-2xlarge !default;
-$breakpoint-xlarge:      $cx-grid-common-breakpoint-xlarge !default;
-$breakpoint-large:       $cx-grid-common-breakpoint-large !default;
-$breakpoint-medium:      $cx-grid-common-breakpoint-medium !default;
-$breakpoint-small:       $cx-grid-common-breakpoint-small !default;
-// $breakpoint-xsmall:      $cx-grid-common-breakpoint-xsmall !default;
-// $gutter-2xlarge:         $cx-grid-common-gutter-2xlarge !default;
-// $gutter-xlarge:          $cx-grid-common-gutter-xlarge !default;
-// $gutter-large:           $cx-grid-common-gutter-large !default;
-$gutter-medium:          $cx-grid-common-gutter-medium !default;
-// $gutter-small:           $cx-grid-common-gutter-small !default;
-// $gutter-xsmall:          $cx-grid-common-gutter-xsmall !default;
+$breakpoint-2xlarge:     $cx-grid-breakpoint-2xlarge !default;
+$breakpoint-xlarge:      $cx-grid-breakpoint-xlarge !default;
+$breakpoint-large:       $cx-grid-breakpoint-large !default;
+$breakpoint-medium:      $cx-grid-breakpoint-medium !default;
+$breakpoint-small:       $cx-grid-breakpoint-small !default;
+// $breakpoint-xsmall:      $cx-grid-breakpoint-xsmall !default;
+// $gutter-2xlarge:         $cx-grid-gutter-2xlarge !default;
+// $gutter-xlarge:          $cx-grid-gutter-xlarge !default;
+// $gutter-large:           $cx-grid-gutter-large !default;
+$gutter-medium:          $cx-grid-gutter-medium !default;
+// $gutter-small:           $cx-grid-gutter-small !default;
+// $gutter-xsmall:          $cx-grid-gutter-xsmall !default;
 // scss-docs-end grid-tokens
 
 // scss-docs-start context-opacity-tokens

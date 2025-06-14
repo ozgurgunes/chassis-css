@@ -131,10 +131,10 @@
 
 // stylelint-disable-next-line no-duplicate-selectors
 .input-group {
-  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating):not(:has(~ .icon)),
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating):not(:has(~ .icon-addon)),
   > .dropdown-toggle:nth-last-child(n + 3),
-  > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-input,
-  > .form-floating:not(:last-child):not(:has(~ .icon)) > .form-select {
+  > .form-floating:not(:last-child):not(:has(~ .icon-addon)) > .form-input,
+  > .form-floating:not(:last-child):not(:has(~ .icon-addon)) > .form-select {
     @include border-end-radius(0);
   }
 
@@ -146,13 +146,13 @@
   // > :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
   > :not(:first-child):not(.dropdown-menu) {
     margin-left: calc(#{$form-regular-border-width} * -1); // stylelint-disable-line function-disallowed-list
-    &:not(.icon ~ .form-input) {
+    &:not(.icon-addon ~ .form-input) {
       @include border-start-radius(0);
     }
   }
 
-  > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-input,
-  > .form-floating:not(:first-child):not(:has(~ .icon)):not(.icon + .form-floating) > .form-select {
+  > .form-floating:not(:first-child):not(:has(~ .icon-addon)):not(.icon-addon + .form-floating) > .form-input,
+  > .form-floating:not(:first-child):not(:has(~ .icon-addon)):not(.icon-addon + .form-floating) > .form-select {
     @include border-start-radius(0);
   }
 }
@@ -166,9 +166,10 @@
 // form input state (enabled/disabled).
 //
 
-.input-addon.icon {
+.icon-addon {
   position: absolute;
   z-index: 10;
+  min-width: var(--#{$prefix}min-height);
   min-height: var(--#{$prefix}min-height);
   padding: 0 var(--#{$prefix}padding-x);
   background: none;

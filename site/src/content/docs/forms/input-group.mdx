@@ -63,18 +63,18 @@ Text addons automatically share borders with adjacent form controls to create a 
 
 ### Icon addons
 
-Combine the `.icon` and `.input-addon` classes together to create borderless icon elements that appear to be integrated directly into the input field. Chassis CSS handles positioning and spacing automatically.
+Combine the `.icon-addon` and `.input-addon` classes together to create borderless icon elements that appear to be integrated directly into the input field. Chassis CSS handles positioning and spacing automatically.
 
 <Example code={`<div class="input-group mb-medium">
-    <svg class="icon input-addon"><use xlink:href="#lock-solid"/></svg>
+    <span class="input-addon icon-addon"><svg class="icon"><use xlink:href="#lock-solid"/></svg></span>
     <input type="password" class="form-input" placeholder="Password" aria-label="Password">
-    <button class="icon input-addon" type="button" aria-label="Show password">
+    <button class="icon-addon input-addon" type="button" aria-label="Show password">
       <svg class="icon"><use xlink:href="#eye-solid"/></svg>
     </button>
   </div>
 
   <div class="input-group">
-    <svg class="icon input-addon"><use xlink:href="#search-solid"/></svg>
+    <span class="input-addon icon-addon"><svg class="icon"><use xlink:href="#search-solid"/></svg></span>
     <input type="search" class="form-input" placeholder="Search" aria-label="Search" disabled>
   </div>`} />
 

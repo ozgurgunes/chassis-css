@@ -512,21 +512,21 @@ $dim-subtle-colors-dark: (
 ) !default;
 // scss-docs-end dim-subtle-colors-dark-map
 
-// scss-docs-start fg-button-colors-dark-map
-$fg-button-colors-dark: (
-  "default":                $default-fg-button-dark,
-  "alternate":              $alternate-fg-button-dark,
-  "primary":                $primary-fg-button-dark,
-  "secondary":              $secondary-fg-button-dark,
-  "neutral":                $neutral-fg-button-dark,
-  "danger":                 $danger-fg-button-dark,
-  "success":                $success-fg-button-dark,
-  "warning":                $warning-fg-button-dark,
-  "info":                   $info-fg-button-dark,
-  "black":                  $black-fg-button-dark,
-  "white":                  $white-fg-button-dark,
+// scss-docs-start fg-idle-colors-dark-map
+$fg-idle-colors-dark: (
+  "default":                $default-fg-idle-dark,
+  "alternate":              $alternate-fg-idle-dark,
+  "primary":                $primary-fg-idle-dark,
+  "secondary":              $secondary-fg-idle-dark,
+  "neutral":                $neutral-fg-idle-dark,
+  "danger":                 $danger-fg-idle-dark,
+  "success":                $success-fg-idle-dark,
+  "warning":                $warning-fg-idle-dark,
+  "info":                   $info-fg-idle-dark,
+  "black":                  $black-fg-idle-dark,
+  "white":                  $white-fg-idle-dark,
 ) !default;
-// scss-docs-end fg-button-colors-dark-map
+// scss-docs-end fg-idle-colors-dark-map
 
 // scss-docs-start fg-hover-colors-dark-map
 $fg-hover-colors-dark: (
@@ -576,21 +576,21 @@ $fg-press-colors-dark: (
 ) !default;
 // scss-docs-end fg-press-colors-dark-map
 
-// scss-docs-start bg-button-colors-dark-map
-$bg-button-colors-dark: (
-  "default":                $default-bg-button-dark,
-  "alternate":              $alternate-bg-button-dark,
-  "primary":                $primary-bg-button-dark,
-  "secondary":              $secondary-bg-button-dark,
-  "neutral":                $neutral-bg-button-dark,
-  "danger":                 $danger-bg-button-dark,
-  "success":                $success-bg-button-dark,
-  "warning":                $warning-bg-button-dark,
-  "info":                   $info-bg-button-dark,
-  "black":                  $black-bg-button-dark,
-  "white":                  $white-bg-button-dark,
+// scss-docs-start bg-idle-colors-dark-map
+$bg-idle-colors-dark: (
+  "default":                $default-bg-idle-dark,
+  "alternate":              $alternate-bg-idle-dark,
+  "primary":                $primary-bg-idle-dark,
+  "secondary":              $secondary-bg-idle-dark,
+  "neutral":                $neutral-bg-idle-dark,
+  "danger":                 $danger-bg-idle-dark,
+  "success":                $success-bg-idle-dark,
+  "warning":                $warning-bg-idle-dark,
+  "info":                   $info-bg-idle-dark,
+  "black":                  $black-bg-idle-dark,
+  "white":                  $white-bg-idle-dark,
 ) !default;
-// scss-docs-end bg-button-colors-dark-map
+// scss-docs-end bg-idle-colors-dark-map
 
 // scss-docs-start bg-hover-colors-dark-map
 $bg-hover-colors-dark: (
@@ -674,11 +674,11 @@ $context-palette-dark: map-merge-multiple(
   map-rename-keys($dim-slight-colors-dark, "-dim-slight", "end"),
   map-rename-keys($dim-main-colors-dark, "-dim-main", "end"),
   map-rename-keys($dim-subtle-colors-dark, "-dim-subtle", "end"),
-  map-rename-keys($fg-button-colors-dark, "-fg-button", "end"),
+  map-rename-keys($fg-idle-colors-dark, "-fg-idle", "end"),
   map-rename-keys($fg-disabled-colors-dark, "-fg-disabled", "end"),
   map-rename-keys($fg-hover-colors-dark, "-fg-hover", "end"),
   map-rename-keys($fg-press-colors-dark, "-fg-press", "end"),
-  map-rename-keys($bg-button-colors-dark, "-bg-button", "end"),
+  map-rename-keys($bg-idle-colors-dark, "-bg-idle", "end"),
   map-rename-keys($bg-disabled-colors-dark, "-bg-disabled", "end"),
   map-rename-keys($bg-hover-colors-dark, "-bg-hover", "end"),
   map-rename-keys($bg-press-colors-dark, "-bg-press", "end"),
@@ -715,11 +715,11 @@ $body-colors-dark: (
   "dim-main":               $dim-main-dark,
   "dim-subtle":             $dim-subtle-dark,
   "dim-slight":             $dim-slight-dark,
-  "fg-button":              $fg-button-dark,
+  "fg-idle":              $fg-idle-dark,
   "fg-disabled":            $fg-disabled-dark,
   "fg-hover":               $fg-hover-dark,
   "fg-press":               $fg-press-dark,
-  "bg-button":              $bg-button-dark,
+  "bg-idle":              $bg-idle-dark,
   "bg-disabled":            $bg-disabled-dark,
   "bg-hover":               $bg-hover-dark,
   "bg-press":               $bg-press-dark,

@@ -46,7 +46,7 @@
   val: 'test'
 - name: transparent-color
   val: 'test'
-- name: fg-button
+- name: fg-idle
   val: 'test'
 - name: fg-disabled
   val: 'test'
@@ -54,7 +54,7 @@
   val: 'test'
 - name: fg-press
   val: 'test'
-- name: bg-button
+- name: bg-idle
   val: 'test'
 - name: bg-disabled
   val: 'test'

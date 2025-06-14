@@ -631,21 +631,21 @@ $dim-slight-colors: (
 ) !default;
 // scss-docs-end dim-slight-colors-map
 
-// scss-docs-start fg-button-colors-map
-$fg-button-colors: (
-  "default":                $default-fg-button,
-  "alternate":              $alternate-fg-button,
-  "primary":                $primary-fg-button,
-  "secondary":              $secondary-fg-button,
-  "neutral":                $neutral-fg-button,
-  "danger":                 $danger-fg-button,
-  "success":                $success-fg-button,
-  "warning":                $warning-fg-button,
-  "info":                   $info-fg-button,
-  "black":                  $black-fg-button,
-  "white":                  $white-fg-button,
+// scss-docs-start fg-idle-colors-map
+$fg-idle-colors: (
+  "default":                $default-fg-idle,
+  "alternate":              $alternate-fg-idle,
+  "primary":                $primary-fg-idle,
+  "secondary":              $secondary-fg-idle,
+  "neutral":                $neutral-fg-idle,
+  "danger":                 $danger-fg-idle,
+  "success":                $success-fg-idle,
+  "warning":                $warning-fg-idle,
+  "info":                   $info-fg-idle,
+  "black":                  $black-fg-idle,
+  "white":                  $white-fg-idle,
 ) !default;
-// scss-docs-end fg-button-colors-map
+// scss-docs-end fg-idle-colors-map
 
 // scss-docs-start fg-hover-colors-map
 $fg-hover-colors: (
@@ -695,21 +695,21 @@ $fg-press-colors: (
 ) !default;
 // scss-docs-end fg-press-colors-map
 
-// scss-docs-start bg-button-colors-map
-$bg-button-colors: (
-  "default":                $default-bg-button,
-  "alternate":              $alternate-bg-button,
-  "primary":                $primary-bg-button,
-  "secondary":              $secondary-bg-button,
-  "neutral":                $neutral-bg-button,
-  "danger":                 $danger-bg-button,
-  "success":                $success-bg-button,
-  "warning":                $warning-bg-button,
-  "info":                   $info-bg-button,
-  "black":                  $black-bg-button,
-  "white":                  $white-bg-button,
+// scss-docs-start bg-idle-colors-map
+$bg-idle-colors: (
+  "default":                $default-bg-idle,
+  "alternate":              $alternate-bg-idle,
+  "primary":                $primary-bg-idle,
+  "secondary":              $secondary-bg-idle,
+  "neutral":                $neutral-bg-idle,
+  "danger":                 $danger-bg-idle,
+  "success":                $success-bg-idle,
+  "warning":                $warning-bg-idle,
+  "info":                   $info-bg-idle,
+  "black":                  $black-bg-idle,
+  "white":                  $white-bg-idle,
 ) !default;
-// scss-docs-end bg-button-colors-map
+// scss-docs-end bg-idle-colors-map
 
 // scss-docs-start bg-hover-colors-map
 $bg-hover-colors: (
@@ -816,7 +816,7 @@ $body-fg-colors:   (
   "fg-inverse":         $fg-inverse,
   "fg-solid":           $fg-solid,
   "fg-highlight":       $fg-highlight,
-  "fg-button":          $fg-button,
+  "fg-idle":          $fg-idle,
   "fg-disabled":        $fg-disabled,
   "fg-hover":           $fg-hover,
   "fg-press":           $fg-press,
@@ -831,7 +831,7 @@ $context-fg-colors: map-merge-multiple(
   map-rename-keys($fg-inverse-colors, "-fg-inverse", "end"),
   map-rename-keys($fg-solid-colors, "-fg-solid", "end"),
   map-rename-keys($fg-highlight-colors, "-fg-highlight", "end"),
-  map-rename-keys($fg-button-colors, "-fg-button", "end"),
+  map-rename-keys($fg-idle-colors, "-fg-idle", "end"),
   map-rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
   map-rename-keys($fg-hover-colors, "-fg-hover", "end"),
   map-rename-keys($fg-press-colors, "-fg-press", "end"),
@@ -846,7 +846,7 @@ $body-bg-colors: (
   "bg-inverse":         $bg-inverse,
   "bg-solid":           $bg-solid,
   "bg-highlight":       $bg-highlight,
-  "bg-button":          $bg-button,
+  "bg-idle":          $bg-idle,
   "bg-disabled":        $bg-disabled,
   "bg-hover":           $bg-hover,
   "bg-press":           $bg-press,
@@ -860,7 +860,7 @@ $context-bg-colors: map-merge-multiple(
   map-rename-keys($bg-inverse-colors, "-bg-inverse", "end"),
   map-rename-keys($bg-solid-colors, "-bg-solid", "end"),
   map-rename-keys($bg-highlight-colors, "-bg-highlight", "end"),
-  map-rename-keys($bg-button-colors, "-bg-button", "end"),
+  map-rename-keys($bg-idle-colors, "-bg-idle", "end"),
   map-rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
   map-rename-keys($bg-hover-colors, "-bg-hover", "end"),
   map-rename-keys($bg-press-colors, "-bg-press", "end"),
@@ -943,11 +943,11 @@ $context-dim-colors: map-merge-multiple(
 
 // scss-docs-start body-button-colors-map
 $body-button-colors: (
-  "fg-button":         $fg-button,
+  "fg-idle":         $fg-idle,
   "fg-hover":          $fg-hover,
   "fg-press":          $fg-press,
   "fg-disabled":       $fg-disabled,
-  "bg-button":         $bg-button,
+  "bg-idle":         $bg-idle,
   "bg-hover":          $bg-hover,
   "bg-press":          $bg-press,
   "bg-disabled":       $bg-disabled,
@@ -955,11 +955,11 @@ $body-button-colors: (
 // scss-docs-end body-button-colors-map
 // scss-docs-start context-button-colors-map
 $context-button-colors: map-merge-multiple(
-  map-rename-keys($fg-button-colors, "-fg-button", "end"),
+  map-rename-keys($fg-idle-colors, "-fg-idle", "end"),
   map-rename-keys($fg-hover-colors, "-fg-hover", "end"),
   map-rename-keys($fg-press-colors, "-fg-press", "end"),
   map-rename-keys($fg-disabled-colors, "-fg-disabled", "end"),
-  map-rename-keys($bg-button-colors, "-bg-button", "end"),
+  map-rename-keys($bg-idle-colors, "-bg-idle", "end"),
   map-rename-keys($bg-hover-colors, "-bg-hover", "end"),
   map-rename-keys($bg-press-colors, "-bg-press", "end"),
   map-rename-keys($bg-disabled-colors, "-bg-disabled", "end"),
@@ -1011,11 +1011,11 @@ $body-colors: map-merge-multiple(
     "link-hover-rgb":         $link-hover-rgb,
     "link-active-rgb":        $link-active-rgb,
     "link-visited-rgb":       $link-visited-rgb,
-    "fg-button-rgb":          $fg-button-rgb,
+    "fg-idle-rgb":          $fg-idle-rgb,
     "fg-hover-rgb":           $fg-hover-rgb,
     "fg-press-rgb":           $fg-press-rgb,
     "fg-disabled-rgb":        $fg-disabled-rgb,
-    "bg-button-rgb":          $bg-button-rgb,
+    "bg-idle-rgb":          $bg-idle-rgb,
     "bg-hover-rgb":           $bg-hover-rgb,
     "bg-press-rgb":           $bg-press-rgb,
     "bg-disabled-rgb":        $bg-disabled-rgb,

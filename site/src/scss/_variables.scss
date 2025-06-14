@@ -205,7 +205,7 @@ $cxd-callout-variants: info, warning, danger, default !default;
 // stylelint-disable
 // $prefix: cx;
 :export {
-  colorDefaul: $cx-color-base-light-default-base-color;
-  colorPrimary: $cx-color-base-light-primary-base-color;
+  colorDefaul: $cx-color-base-context-light-default-base-color;
+  colorPrimary: $cx-color-base-context-light-primary-base-color;
 }
 // stylelint-enable

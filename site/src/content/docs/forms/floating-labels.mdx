@@ -168,15 +168,15 @@ Floating labels work with input groups for more complex form layouts.
 
 ## Icon integration
 
-Enhance your form inputs with icons using the `.icon` class in combination with `.input-addon` class for proper positioning.
+Enhance your form inputs with icons using the `.icon-addon` class in combination with `.input-addon` class for proper positioning.
 
 <Example code={`<div class="input-group mb-medium">
-    <svg class="icon input-addon"><use xlink:href="#lock-solid"></use></svg>
+    <span class="input-addon icon-addon"><svg class="icon"><use xlink:href="#lock-solid"></use></svg></span>
     <div class="form-floating">
       <input type="password" class="form-input" id="floatingInputGroup3" placeholder="Password">
       <label for="floatingInputGroup3">Password</label>
     </div>
-    <button type="button" class="icon input-addon" aria-label="Show password">
+    <button type="button" class="input-addon icon-addon" aria-label="Show password">
       <svg class="icon"><use xlink:href="#eye-solid"></use></svg>
     </button>
   </div>`} />

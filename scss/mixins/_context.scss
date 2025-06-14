@@ -29,11 +29,11 @@
   --#{$prefix}context-dim-main: var(--#{$prefix}#{$context}-dim-main);
   --#{$prefix}context-dim-subtle: var(--#{$prefix}#{$context}-dim-subtle);
   --#{$prefix}context-dim-slight: var(--#{$prefix}#{$context}-dim-slight);
-  --#{$prefix}context-fg-button: var(--#{$prefix}#{$context}-fg-button);
+  --#{$prefix}context-fg-idle: var(--#{$prefix}#{$context}-fg-idle);
   --#{$prefix}context-fg-hover: var(--#{$prefix}#{$context}-fg-hover);
   --#{$prefix}context-fg-press: var(--#{$prefix}#{$context}-fg-press);
   --#{$prefix}context-fg-disabled: var(--#{$prefix}#{$context}-fg-disabled);
-  --#{$prefix}context-bg-button: var(--#{$prefix}#{$context}-bg-button);
+  --#{$prefix}context-bg-idle: var(--#{$prefix}#{$context}-bg-idle);
   --#{$prefix}context-bg-hover: var(--#{$prefix}#{$context}-bg-hover);
   --#{$prefix}context-bg-press: var(--#{$prefix}#{$context}-bg-press);
   --#{$prefix}context-bg-disabled: var(--#{$prefix}#{$context}-bg-disabled);
@@ -67,11 +67,11 @@
   --#{$prefix}context-dim-main-rgb: var(--#{$prefix}#{$context}-dim-main-rgb);
   --#{$prefix}context-dim-subtle-rgb: var(--#{$prefix}#{$context}-dim-subtle-rgb);
   --#{$prefix}context-dim-slight-rgb: var(--#{$prefix}#{$context}-dim-slight-rgb);
-  --#{$prefix}context-fg-button-rgb: var(--#{$prefix}#{$context}-fg-button-rgb);
+  --#{$prefix}context-fg-idle-rgb: var(--#{$prefix}#{$context}-fg-idle-rgb);
   --#{$prefix}context-fg-hover-rgb: var(--#{$prefix}#{$context}-fg-hover-rgb);
   --#{$prefix}context-fg-press-rgb: var(--#{$prefix}#{$context}-fg-press-rgb);
   --#{$prefix}context-fg-disabled-rgb: var(--#{$prefix}#{$context}-fg-disabled-rgb);
-  --#{$prefix}context-bg-button-rgb: var(--#{$prefix}#{$context}-bg-button-rgb);
+  --#{$prefix}context-bg-idle-rgb: var(--#{$prefix}#{$context}-bg-idle-rgb);
   --#{$prefix}context-bg-hover-rgb: var(--#{$prefix}#{$context}-bg-hover-rgb);
   --#{$prefix}context-bg-press-rgb: var(--#{$prefix}#{$context}-bg-press-rgb);
   --#{$prefix}context-bg-disabled-rgb: var(--#{$prefix}#{$context}-bg-disabled-rgb);

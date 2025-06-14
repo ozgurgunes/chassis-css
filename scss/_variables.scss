@@ -66,11 +66,11 @@ $link-main:             var(--#{$prefix}#{$body-context}-link-main) !default;
 $link-hover:            var(--#{$prefix}#{$body-context}-link-hover) !default;
 $link-active:           var(--#{$prefix}#{$body-context}-link-active) !default;
 $link-visited:          var(--#{$prefix}#{$body-context}-link-visited) !default;
-$fg-button:             var(--#{$prefix}#{$body-context}-fg-button) !default;
+$fg-idle:             var(--#{$prefix}#{$body-context}-fg-idle) !default;
 $fg-hover:              var(--#{$prefix}#{$body-context}-fg-hover) !default;
 $fg-press:              var(--#{$prefix}#{$body-context}-fg-press) !default;
 $fg-disabled:           var(--#{$prefix}#{$body-context}-fg-disabled) !default;
-$bg-button:             var(--#{$prefix}#{$body-context}-bg-button) !default;
+$bg-idle:             var(--#{$prefix}#{$body-context}-bg-idle) !default;
 $bg-hover:              var(--#{$prefix}#{$body-context}-bg-hover) !default;
 $bg-press:              var(--#{$prefix}#{$body-context}-bg-press) !default;
 $bg-disabled:           var(--#{$prefix}#{$body-context}-bg-disabled) !default;
@@ -104,11 +104,11 @@ $link-main-rgb:         var(--#{$prefix}#{$body-context}-link-main-rgb) !default
 $link-hover-rgb:        var(--#{$prefix}#{$body-context}-link-hover-rgb) !default;
 $link-active-rgb:       var(--#{$prefix}#{$body-context}-link-active-rgb) !default;
 $link-visited-rgb:      var(--#{$prefix}#{$body-context}-link-visited-rgb) !default;
-$fg-button-rgb:         var(--#{$prefix}#{$body-context}-fg-button-rgb) !default;
+$fg-idle-rgb:         var(--#{$prefix}#{$body-context}-fg-idle-rgb) !default;
 $fg-hover-rgb:          var(--#{$prefix}#{$body-context}-fg-hover-rgb) !default;
 $fg-press-rgb:          var(--#{$prefix}#{$body-context}-fg-press-rgb) !default;
 $fg-disabled-rgb:       var(--#{$prefix}#{$body-context}-fg-disabled-rgb) !default;
-$bg-button-rgb:         var(--#{$prefix}#{$body-context}-bg-button-rgb) !default;
+$bg-idle-rgb:         var(--#{$prefix}#{$body-context}-bg-idle-rgb) !default;
 $bg-hover-rgb:          var(--#{$prefix}#{$body-context}-bg-hover-rgb) !default;
 $bg-press-rgb:          var(--#{$prefix}#{$body-context}-bg-press-rgb) !default;
 $bg-disabled-rgb:       var(--#{$prefix}#{$body-context}-bg-disabled-rgb) !default;
@@ -637,7 +637,7 @@ $form-switch-transition:                background-position .15s ease-in-out !de
 
 // scss-docs-start form-range-variables
 $form-range-track-color:                    var(--#{$prefix}default-bg-evident) !default;
-$form-range-thumb-color:                    var(--#{$prefix}primary-bg-button) !default;
+$form-range-thumb-color:                    var(--#{$prefix}primary-bg-idle) !default;
 $form-range-thumb-disabled:                 var(--#{$prefix}default-bg-disabled) !default;
 $form-range-thumb-active:                   var(--#{$prefix}primary-bg-press) !default;
 
@@ -854,8 +854,8 @@ $dropdown-padding-x:                    $space-2xsmall !default;
 $dropdown-padding-y:                    $space-2xsmall !default;
 $dropdown-spacer:                       .125rem !default;
 
-$dropdown-font-size:                    map-get($cx-font-common-dropdown-menu-item, "font-size") !default;
-$dropdown-line-height:                  map-get($cx-font-common-dropdown-menu-item, "line-height") !default;
+$dropdown-font-size:                    map-get($cx-font-dropdown-menu-item, "font-size") !default;
+$dropdown-line-height:                  map-get($cx-font-dropdown-menu-item, "line-height") !default;
 
 $dropdown-fg-color:                     var(--#{$prefix}fg-main) !default;
 $dropdown-bg-color:                     var(--#{$prefix}bg-main) !default;
@@ -1169,18 +1169,18 @@ $alert-transition:              transform .3s ease-out !default;
 // scss-docs-start notification-variables
 $notification-bg-color:           var(--#{$prefix}bg-main) !default;
 
-$notification-padding-y:          $cx-space-common-notification-padding-y !default;
-$notification-padding-x:          $cx-space-common-notification-padding-x !default;
-$notification-gap:                $cx-space-common-notification-gap !default;
+$notification-padding-y:          $cx-space-notification-padding-y !default;
+$notification-padding-x:          $cx-space-notification-padding-x !default;
+$notification-gap:                $cx-space-notification-gap !default;
 
-$notification-border-width:       $cx-border-width-common-notification !default;
-$notification-border-radius:      $cx-border-radius-common-notification !default;
+$notification-border-width:       $cx-border-width-notification !default;
+$notification-border-radius:      $cx-border-radius-notification !default;
 
 $notification-icon-size:          $cx-size-icon-glyph-large !default;
 $notification-icon-color:         var(--#{$prefix}fg-main) !default;
 
-$notification-title-font:         $cx-font-common-notification-title !default;
-$notification-message-font:       $cx-font-common-notification-message !default;
+$notification-title-font:         $cx-font-notification-title !default;
+$notification-message-font:       $cx-font-notification-message !default;
 
 $notification-margin-b:           $space-medium !default;
 $notification-title-margin-b:     $space-xsmall !default;

@@ -29,11 +29,11 @@
   --#{$prefix}dim-main: var(--#{$prefix}context-dim-main, var(--#{$prefix}#{$body-context}-dim-main));
   --#{$prefix}dim-subtle: var(--#{$prefix}context-dim-subtle, var(--#{$prefix}#{$body-context}-dim-subtle));
   --#{$prefix}dim-slight: var(--#{$prefix}context-dim-slight, var(--#{$prefix}#{$body-context}-dim-slight));
-  --#{$prefix}fg-button: var(--#{$prefix}context-fg-button, var(--#{$prefix}#{$body-context}-fg-button));
+  --#{$prefix}fg-idle: var(--#{$prefix}context-fg-idle, var(--#{$prefix}#{$body-context}-fg-idle));
   --#{$prefix}fg-hover: var(--#{$prefix}context-fg-hover, var(--#{$prefix}#{$body-context}-fg-hover));
   --#{$prefix}fg-press: var(--#{$prefix}context-fg-press, var(--#{$prefix}#{$body-context}-fg-press));
   --#{$prefix}fg-disabled: var(--#{$prefix}context-fg-disabled, var(--#{$prefix}#{$body-context}-fg-disabled));
-  --#{$prefix}bg-button: var(--#{$prefix}context-bg-button, var(--#{$prefix}#{$body-context}-bg-button));
+  --#{$prefix}bg-idle: var(--#{$prefix}context-bg-idle, var(--#{$prefix}#{$body-context}-bg-idle));
   --#{$prefix}bg-hover: var(--#{$prefix}context-bg-hover, var(--#{$prefix}#{$body-context}-bg-hover));
   --#{$prefix}bg-press: var(--#{$prefix}context-bg-press, var(--#{$prefix}#{$body-context}-bg-press));
   --#{$prefix}bg-disabled: var(--#{$prefix}context-bg-disabled, var(--#{$prefix}#{$body-context}-bg-disabled));
@@ -67,11 +67,11 @@
   --#{$prefix}dim-main-rgb: var(--#{$prefix}context-dim-main-rgb, var(--#{$prefix}#{$body-context}-dim-main-rgb));
   --#{$prefix}dim-subtle-rgb: var(--#{$prefix}context-dim-subtle-rgb, var(--#{$prefix}#{$body-context}-dim-subtle-rgb));
   --#{$prefix}dim-slight-rgb: var(--#{$prefix}context-dim-slight-rgb, var(--#{$prefix}#{$body-context}-dim-slight-rgb));
-  --#{$prefix}fg-button-rgb: var(--#{$prefix}context-fg-button-rgb, var(--#{$prefix}#{$body-context}-fg-button-rgb));
+  --#{$prefix}fg-idle-rgb: var(--#{$prefix}context-fg-idle-rgb, var(--#{$prefix}#{$body-context}-fg-idle-rgb));
   --#{$prefix}fg-hover-rgb: var(--#{$prefix}context-fg-hover-rgb, var(--#{$prefix}#{$body-context}-fg-hover-rgb));
   --#{$prefix}fg-press-rgb: var(--#{$prefix}context-fg-press-rgb, var(--#{$prefix}#{$body-context}-fg-press-rgb));
   --#{$prefix}fg-disabled-rgb: var(--#{$prefix}context-fg-disabled-rgb, var(--#{$prefix}#{$body-context}-fg-disabled-rgb));
-  --#{$prefix}bg-button-rgb: var(--#{$prefix}context-bg-button-rgb, var(--#{$prefix}#{$body-context}-bg-button-rgb));
+  --#{$prefix}bg-idle-rgb: var(--#{$prefix}context-bg-idle-rgb, var(--#{$prefix}#{$body-context}-bg-idle-rgb));
   --#{$prefix}bg-hover-rgb: var(--#{$prefix}context-bg-hover-rgb, var(--#{$prefix}#{$body-context}-bg-hover-rgb));
   --#{$prefix}bg-press-rgb: var(--#{$prefix}context-bg-press-rgb, var(--#{$prefix}#{$body-context}-bg-press-rgb));
   --#{$prefix}bg-disabled-rgb: var(--#{$prefix}context-bg-disabled-rgb, var(--#{$prefix}#{$body-context}-bg-disabled-rgb));
