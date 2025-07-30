@@ -110,11 +110,11 @@
 
 %button-medium {
   // scss-docs-start button-medium-css-vars
-  --#{$prefix}padding-y: var(--#{$prefix}button-padding-y, #{$button-medium-padding-y + $button-medium-nudge-y});
-  --#{$prefix}padding-x: var(--#{$prefix}button-padding-x, #{$button-medium-padding-x + $button-medium-nudge-x});
+  --#{$prefix}min-size: var(--#{$prefix}button-min-size, #{$button-medium-min-size});
+  --#{$prefix}padding-y: var(--#{$prefix}button-padding-y, #{$button-medium-padding-y});
+  --#{$prefix}padding-x: var(--#{$prefix}button-padding-x, #{$button-medium-padding-x + $button-medium-nudge});
   --#{$prefix}gap: var(--#{$prefix}button-gap, #{$button-medium-gap});
-  --#{$prefix}nudge-y: var(--#{$prefix}button-nudge-y, #{$button-medium-nudge-y});
-  --#{$prefix}nudge-x: var(--#{$prefix}button-nudge-x, #{$button-medium-nudge-x});
+  --#{$prefix}nudge: var(--#{$prefix}button-nudge, #{$button-medium-nudge});
   --#{$prefix}border-radius: var(--#{$prefix}button-border-radius, #{$button-medium-border-radius});
   --#{$prefix}icon-size: var(--#{$prefix}button-icon-size, #{$button-medium-icon-size});
   @include map-font($button-medium-font, button);
@@ -123,11 +123,11 @@
 }
 
 %button-large {
-  --#{$prefix}button-padding-y: #{$button-large-padding-y + $button-large-nudge-y};
-  --#{$prefix}button-padding-x: #{$button-large-padding-x + $button-large-nudge-x};
+  --#{$prefix}button-min-size: #{$button-large-min-size};
+  --#{$prefix}button-padding-y: #{$button-large-padding-y};
+  --#{$prefix}button-padding-x: #{$button-large-padding-x + $button-large-nudge};
   --#{$prefix}button-gap: #{$button-large-gap};
-  --#{$prefix}button-nudge-y: #{$button-large-nudge-y};
-  --#{$prefix}button-nudge-x: #{$button-large-nudge-x};
+  --#{$prefix}button-nudge: #{$button-large-nudge};
   --#{$prefix}button-border-radius: #{$button-large-border-radius};
   --#{$prefix}button-icon-size: #{$button-large-icon-size};
   --#{$prefix}button-dropdown-caret-size: #{$button-large-caret-size};
@@ -137,11 +137,11 @@
 }
 
 %button-small {
-  --#{$prefix}button-padding-y: #{$button-small-padding-y + $button-small-nudge-y};
-  --#{$prefix}button-padding-x: #{$button-small-padding-x + $button-small-nudge-x};
+  --#{$prefix}button-min-size: #{$button-small-min-size};
+  --#{$prefix}button-padding-y: #{$button-small-padding-y};
+  --#{$prefix}button-padding-x: #{$button-small-padding-x + $button-small-nudge};
   --#{$prefix}button-gap: #{$button-small-gap};
-  --#{$prefix}button-nudge-y: #{$button-small-nudge-y};
-  --#{$prefix}button-nudge-x: #{$button-small-nudge-x};
+  --#{$prefix}button-nudge: #{$button-small-nudge};
   --#{$prefix}button-border-radius: #{$button-small-border-radius};
   --#{$prefix}button-icon-size: #{$button-small-icon-size};
   --#{$prefix}button-dropdown-caret-size: #{$button-small-caret-size};

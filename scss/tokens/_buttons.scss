@@ -3,23 +3,23 @@ $button-medium-font:                      $cx-font-button-medium !default;
 $button-large-font:                       $cx-font-button-large !default;
 $button-small-font:                       $cx-font-button-small !default;
 
+$button-medium-min-size:                 $cx-size-button-medium-main !default;
 $button-medium-padding-y:                 $cx-space-button-medium-padding-y !default;
 $button-medium-padding-x:                 $cx-space-button-medium-padding-x !default;
 $button-medium-gap:                       $cx-space-button-medium-gap !default;
-$button-medium-nudge-y:                      $cx-space-button-medium-nudge-y !default;
-$button-medium-nudge-x:                      $cx-space-button-medium-nudge-x !default;
+$button-medium-nudge:                      $cx-space-button-medium-nudge !default;
 
+$button-large-min-size:                  $cx-size-button-large-main !default;
 $button-large-padding-y:                  $cx-space-button-large-padding-y !default;
 $button-large-padding-x:                  $cx-space-button-large-padding-x !default;
 $button-large-gap:                        $cx-space-button-large-gap !default;
-$button-large-nudge-y:                       $cx-space-button-large-nudge-y !default;
-$button-large-nudge-x:                       $cx-space-button-large-nudge-x !default;
+$button-large-nudge:                       $cx-space-button-large-nudge !default;
 
+$button-small-min-size:                  $cx-size-button-small-main !default;
 $button-small-padding-y:                  $cx-space-button-small-padding-y !default;
 $button-small-padding-x:                  $cx-space-button-small-padding-x !default;
 $button-small-gap:                        $cx-space-button-small-gap !default;
-$button-small-nudge-y:                       $cx-space-button-small-nudge-y !default;
-$button-small-nudge-x:                       $cx-space-button-small-nudge-x !default;
+$button-small-nudge:                       $cx-space-button-small-nudge !default;
 
 $button-medium-icon-size:                 $cx-size-button-medium-icon !default;
 $button-large-icon-size:                  $cx-size-button-large-icon !default;
@@ -30,7 +30,7 @@ $button-medium-caret-size:                $cx-size-button-medium-caret !default;
 $button-large-caret-size:                 $cx-size-button-large-caret !default;
 $button-small-caret-size:                 $cx-size-button-small-caret !default;
 
-$button-border-width:                     $cx-border-width-button !default;
+$button-border-width:                     $cx-border-width-button-main !default;
 $button-medium-border-radius:             $cx-border-radius-button-medium !default;
 $button-large-border-radius:              $cx-border-radius-button-medium !default;
 $button-small-border-radius:              $cx-border-radius-button-small !default;

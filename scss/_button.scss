@@ -33,6 +33,8 @@
   gap: var(--#{$prefix}gap);
   align-items: center;
   justify-content: center;
+  min-width: var(--#{$prefix}min-size);
+  min-height: var(--#{$prefix}min-size);
   @include box-padding();
   text-align: center;
   text-decoration: if($link-decoration == none, null, none);
@@ -62,10 +64,12 @@
   }
 
   > .icon:first-child {
-    margin: #{calc(-1 * var(--#{$prefix}nudge-y))} var(--#{$prefix}nudge-x) #{calc(-1 * var(--#{$prefix}nudge-y))} #{calc(-1 * var(--#{$prefix}nudge-x))};
+    margin-right: var(--#{$prefix}nudge);
+    margin-left: #{calc(-1 * var(--#{$prefix}nudge))};
   }
   > .icon:last-child {
-    margin: #{calc(-1 * var(--#{$prefix}nudge-y))}  #{calc(-1 * var(--#{$prefix}nudge-x))} #{calc(-1 * var(--#{$prefix}nudge-y))} var(--#{$prefix}nudge-x);
+    margin-right: #{calc(-1 * var(--#{$prefix}nudge))};
+    margin-left: var(--#{$prefix}nudge);
   }
 
   //

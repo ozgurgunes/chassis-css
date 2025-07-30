@@ -854,8 +854,8 @@ $dropdown-padding-x:                    $space-2xsmall !default;
 $dropdown-padding-y:                    $space-2xsmall !default;
 $dropdown-spacer:                       .125rem !default;
 
-$dropdown-font-size:                    map-get($cx-font-dropdown-menu-item, "font-size") !default;
-$dropdown-line-height:                  map-get($cx-font-dropdown-menu-item, "line-height") !default;
+$dropdown-font-size:                    map-get($cx-font-dropdown-item, "font-size") !default;
+$dropdown-line-height:                  map-get($cx-font-dropdown-item, "line-height") !default;
 
 $dropdown-fg-color:                     var(--#{$prefix}fg-main) !default;
 $dropdown-bg-color:                     var(--#{$prefix}bg-main) !default;
@@ -1063,16 +1063,16 @@ $toast-max-width:                   22.5rem !default; //360px !default;
 $toast-padding-x:                   .75rem !default;
 $toast-padding-y:                   .5rem !default;
 $toast-font-size:                   .875rem !default;
-$toast-fg-color:                    var(--#{$prefix}white-fg-main) !default;
-$toast-bg-color:                    var(--#{$prefix}black-dim-main) !default;
+$toast-fg-color:                    var(--#{$prefix}fg-main) !default;
+$toast-bg-color:                    rgba(var(--#{$prefix}bg-main-rgb), var(--#{$prefix}opacity-dim-main)) !default;
 $toast-border-width:                var(--#{$prefix}border-width-medium) !default;
-$toast-border-color:                var(--#{$prefix}white-border-subtle) !default;
+$toast-border-color:                var(--#{$prefix}border-subtle) !default;
 $toast-border-radius:               var(--#{$prefix}border-radius-medium) !default;
 $toast-box-shadow:                  $shadow-default-40 !default;
 $toast-spacing:                     $container-padding-x !default;
 
-$toast-header-fg-color:             var(--#{$prefix}white-fg-subtle) !default;
-$toast-header-bg-color:             var(--#{$prefix}black-bg-main) !default;
+$toast-header-fg-color:             var(--#{$prefix}fg-subtle) !default;
+$toast-header-bg-color:             rgba(var(--#{$prefix}bg-main-rgb), var(--#{$prefix}opacity-dim-main)) !default;
 $toast-header-border-color:         $toast-border-color !default;
 // scss-docs-end toast-variables
 
@@ -1109,8 +1109,8 @@ $modal-window-border-color:           var(--#{$prefix}border-subtle) !default;
 $modal-window-border-width:           var(--#{$prefix}border-width-medium) !default;
 $modal-window-border-radius:          var(--#{$prefix}border-radius-xlarge) !default;
 $modal-window-inner-border-radius:    #{calc($modal-window-border-radius - $modal-window-border-width)} !default;
-$modal-window-shadow-xsmall:          $cx-shadow-common-modal !default;
-$modal-window-shadow-small-up:        $cx-shadow-common-modal !default;
+$modal-window-shadow-xsmall:          $cx-shadow-modal-main !default;
+$modal-window-shadow-small-up:        $cx-shadow-modal-main !default;
 
 $modal-header-padding-y:              $space-small !default;
 $modal-header-padding-x:              $space-medium !default;
@@ -1173,8 +1173,8 @@ $notification-padding-y:          $cx-space-notification-padding-y !default;
 $notification-padding-x:          $cx-space-notification-padding-x !default;
 $notification-gap:                $cx-space-notification-gap !default;
 
-$notification-border-width:       $cx-border-width-notification !default;
-$notification-border-radius:      $cx-border-radius-notification !default;
+$notification-border-width:       $cx-border-width-notification-main !default;
+$notification-border-radius:      $cx-border-radius-notification-main !default;
 
 $notification-icon-size:          $cx-size-icon-glyph-large !default;
 $notification-icon-color:         var(--#{$prefix}fg-main) !default;

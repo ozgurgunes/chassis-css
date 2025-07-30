@@ -23,7 +23,7 @@
 
   .close-button {
     position: absolute;
-    top: #{calc($notification-padding-y * .5 + $notification-border-width)};
+    top: $notification-padding-y;
     right: #{calc($notification-padding-x * .5)};
   }
 

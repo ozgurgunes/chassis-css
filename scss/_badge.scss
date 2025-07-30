@@ -19,9 +19,10 @@
   @extend %context, %solid-context, %component, %box-padding;
   // scss-docs-start badge-css-vars
   --#{$prefix}size: var(--#{$prefix}badge-size, #{$badge-medium-size});
-  --#{$prefix}gap: var(--#{$prefix}badge-gap, #{$badge-medium-gap});
   --#{$prefix}padding-y: var(--#{$prefix}badge-padding-y, #{$badge-medium-padding-y});
-  --#{$prefix}padding-x: var(--#{$prefix}badge-padding-x, #{$badge-medium-padding-x + $badge-medium-gap});
+  --#{$prefix}padding-x: var(--#{$prefix}badge-padding-x, #{$badge-medium-padding-x + $badge-medium-nudge});
+  --#{$prefix}gap: var(--#{$prefix}badge-gap, #{$badge-medium-gap});
+  --#{$prefix}nudge: var(--#{$prefix}badge-nudge, #{$badge-medium-nudge});
   --#{$prefix}border-width: var(--#{$prefix}badge-border-width, #{$badge-border-width});
   --#{$prefix}border-radius: var(--#{$prefix}badge-border-radius, #{$badge-medium-border-radius});
   --#{$prefix}icon-size: var(--#{$prefix}badge-icon-size, #{$badge-medium-icon-size});
@@ -29,7 +30,7 @@
   // scss-docs-end badge-css-vars
 
   display: inline-flex;
-  gap: var(--#{$prefix}gap);
+  gap: var(--#{$prefix}nudge);
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -66,9 +67,10 @@
   // Used for greater emphasis or when badges need to stand out more
   &.large {
     --#{$prefix}size: #{$badge-large-size};
-    --#{$prefix}gap: #{$badge-large-gap};
     --#{$prefix}padding-y: #{$badge-large-padding-y};
-    --#{$prefix}padding-x: #{$badge-large-padding-x + $badge-large-gap};
+    --#{$prefix}padding-x: #{$badge-large-padding-x + $badge-large-nudge};
+    --#{$prefix}gap: #{$badge-large-gap};
+    --#{$prefix}nudge: #{$badge-large-nudge};
     @include map-font($badge-large-font, badge);
     --#{$prefix}border-radius: #{$badge-large-border-radius};
     --#{$prefix}icon-size: #{$badge-large-icon-size};
@@ -79,9 +81,10 @@
   // Ideal for compact layouts or when badges should be subtle
   &.small {
     --#{$prefix}size: #{$badge-small-size};
-    --#{$prefix}gap: #{$badge-small-gap};
     --#{$prefix}padding-y: #{$badge-small-padding-y};
-    --#{$prefix}padding-x: #{$badge-small-padding-x + $badge-small-gap};
+    --#{$prefix}padding-x: #{$badge-small-padding-x + $badge-small-nudge};
+    --#{$prefix}gap: #{$badge-small-gap};
+    --#{$prefix}nudge: #{$badge-small-nudge};
     @include map-font($badge-small-font, badge);
     --#{$prefix}border-radius: #{$badge-small-border-radius};
     --#{$prefix}icon-size: #{$badge-small-icon-size};
@@ -93,12 +96,12 @@
 
   // Left-aligned icon (before text)
   > .icon:first-child {
-    margin-left: #{calc(-1 * var(--#{$prefix}gap))};
+    margin-left: #{calc(-1 * var(--#{$prefix}nudge))};
   }
 
   // Right-aligned icon (after text)
   > .icon:last-child {
-    margin-right: #{calc(-1 * var(--#{$prefix}gap))};
+    margin-right: #{calc(-1 * var(--#{$prefix}nudge))};
   }
 
   // Empty badge handling
