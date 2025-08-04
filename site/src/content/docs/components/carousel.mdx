@@ -1,24 +1,30 @@
 ---
 title: Carousel
-description: A slideshow component for cycling through elements—images or slides of text—like a carousel.
+description: Create fluid, touch-enabled content sliders with Chassis CSS's carousel component, featuring smooth transitions and comprehensive accessibility support.
 toc: true
 ---
 
-## How it works
+## Introduction
 
-- The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms and a bit of JavaScript. It works with a series of images, text, or custom markup. It also includes support for previous/next controls and indicators.
+Carousels in Chassis CSS deliver smooth, touch-enabled content sliders designed for modern web experiences. Built with CSS 3D transforms and intelligent JavaScript controls, carousels seamlessly integrate with your design system while maintaining optimal performance and accessibility standards.
 
-- For performance reasons, **carousels must be manually initialized** using the [carousel constructor method](#methods). Without initialization, some of the event listeners (specifically, the events needed touch/swipe support) will not be registered until a user has explicitly activated a control or indicator.
+Chassis CSS carousels operate on a performance-first architecture, using explicit JavaScript initialization to prevent unnecessary overhead while ensuring optimal loading performance. The positioning system leverages CSS 3D transforms to deliver hardware-accelerated transitions with smooth visual effects across all supported browsers.
 
-  The only exception are [autoplaying carousels](#autoplaying-carousels) with the `data-cx-ride="carousel"` attribute as these are initialized automatically on page load. If you’re using autoplaying carousels with the data attribute, **don’t explicitly initialize the same carousels with the constructor method.**
+Touch support is built into the core experience, providing native swipe gestures alongside keyboard navigation and traditional mouse controls. The autoplay system intelligently manages pause and resume behavior based on user interaction and page visibility, while comprehensive ARIA support ensures compatibility with screen readers and assistive technologies.
 
-- Nested carousels are not supported. You should also be aware that carousels in general can often cause usability and accessibility challenges.
+Chassis CSS carousels use explicit initialization to prevent performance overhead on unused components. Initialize carousels using the [constructor method](#api-methods) before user interaction. Carousels with `data-cx-ride="carousel"` initialize automatically on page load, so avoid duplicate initialization when using this attribute.
+
+Note that nested carousels are not supported—consider accessibility implications and provide alternative navigation methods for complex content.
 
 <Callout name="info-prefersreducedmotion" />
 
-## Basic examples
+## Examples
 
-Here is a basic example of a carousel with three slides. Note the previous/next controls. We recommend using `<button>` elements, but you can also use `<a>` elements with `role="button"`.
+Explore practical carousel implementations showcasing Chassis CSS's flexible architecture and comprehensive feature set. These examples demonstrate real-world usage patterns from basic content sliders to advanced interactive experiences.
+
+### Basic structure
+
+This foundational example demonstrates the essential carousel structure with navigation controls. Chassis CSS recommends semantic `<button>` elements for optimal accessibility, though `<a>` elements with `role="button"` are supported for specific design requirements.
 
 <Example code={`<div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
@@ -42,13 +48,9 @@ Here is a basic example of a carousel with three slides. Note the previous/next 
     </button>
   </div>`} />
 
-Carousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles to appropriately size content. While carousels support previous/next controls and indicators, they’re not explicitly required. Add and customize as you see fit.
+### Navigation indicators
 
-**You must add the `.active` class to one of the slides**, otherwise the carousel will not be visible. Also be sure to set a unique `id` on the `.carousel` for optional controls, especially if you’re using multiple carousels on a single page. Control and indicator elements must have a `data-cx-target` attribute (or `href` for links) that matches the `id` of the `.carousel` element.
-
-### Indicators
-
-You can add indicators to the carousel, alongside the previous/next controls. The indicators let users jump directly to a particular slide.
+Enhance user experience with direct slide navigation through indicator controls. Indicators provide immediate access to specific slides and visual feedback about current position within the content sequence.
 
 <Example code={`<div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
@@ -77,9 +79,9 @@ You can add indicators to the carousel, alongside the previous/next controls. Th
     </button>
   </div>`} />
 
-### Captions
+### Content captions
 
-You can add captions to your slides with the `.carousel-caption` element within any `.carousel-item`. They can be easily hidden on smaller viewports, as shown below, with optional [display utilities]([[docsref:/utilities/display]]). We hide them initially with `.d-none` and bring them back on medium-sized devices with `.d-medium-block`.
+Add contextual information to slides with the `.carousel-caption` element. Chassis CSS captions integrate seamlessly with the utility system for responsive behavior. Use [display utilities]([[docsref:/utilities/display]]) to control caption visibility across viewport sizes—this example uses `.d-none` for mobile and `.d-medium-block` for larger screens.
 
 <Example code={`<div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
@@ -120,9 +122,9 @@ You can add captions to your slides with the `.carousel-caption` element within 
     </button>
   </div>`} />
 
-### Crossfade
+### Fade transitions
 
-Add `.carousel-fade` to your carousel to animate slides with a fade transition instead of a slide. Depending on your carousel content (e.g., text only slides), you may want to add `.bg-main` or some custom CSS to the `.carousel-item`s for proper crossfading.
+Transform slide behavior with elegant fade transitions using `.carousel-fade`. This alternative animation style works particularly well with text-heavy content or when seeking subtle visual transitions. For optimal crossfading with certain content types, consider adding `.bg-main` or custom backgrounds to `.carousel-item` elements.
 
 <Example code={`<div id="carouselExampleFade" class="carousel slide carousel-fade">
     <div class="carousel-inner">
@@ -146,14 +148,12 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
     </button>
   </div>`} />
 
-## Autoplaying carousels
+## Autoplay behavior
 
-You can make your carousels autoplay on page load by setting the `ride` option to `carousel`. Autoplaying carousels automatically pause while hovered with the mouse. This behavior can be controlled with the `pause` option. In browsers that support the [Page Visibility API](https://www.w3.org/TR/page-visibility/), the carousel will stop cycling when the webpage is not visible to the user (such as when the browser tab is inactive, or when the browser window is minimized).
+Chassis CSS carousels support intelligent autoplay functionality with comprehensive user interaction controls. Set the `ride` option to `carousel` for immediate autoplay on page load. The system automatically pauses on mouse hover and respects the [Page Visibility API](https://www.w3.org/TR/page-visibility/) to stop cycling when pages aren't visible.
 
 <Callout>
-For accessibility reasons, we recommend avoiding the use of autoplaying carousels. If your page does include an autoplaying carousel, we recommend providing an additional button or control to explicitly pause/stop the carousel.
-
-See [WCAG 2.2 Success Criterion 2.2.2 Pause, Stop, Hide](https://www.w3.org/TR/WCAG/#pause-stop-hide).
+Chassis CSS recommends providing explicit pause/stop controls for autoplaying carousels to ensure compliance with [WCAG 2.2 Success Criterion 2.2.2 Pause, Stop, Hide](https://www.w3.org/TR/WCAG/#pause-stop-hide) and improve user experience for all users.
 </Callout>
 
 <Example code={`<div id="carouselExampleAutoplaying" class="carousel slide" data-cx-ride="carousel">
@@ -178,7 +178,7 @@ See [WCAG 2.2 Success Criterion 2.2.2 Pause, Stop, Hide](https://www.w3.org/TR/W
     </button>
   </div>`} />
 
-When the `ride` option is set to `true`, rather than `carousel`, the carousel won’t automatically start to cycle on page load. Instead, it will only start after the first user interaction.
+Setting `ride` to `true` (rather than `carousel`) enables user-triggered autoplay—the carousel begins cycling only after the first user interaction, providing a balance between automation and user control.
 
 <Example code={`<div id="carouselExampleRide" class="carousel slide" data-cx-ride="true">
     <div class="carousel-inner">
@@ -202,9 +202,9 @@ When the `ride` option is set to `true`, rather than `carousel`, the carousel wo
     </button>
   </div>`} />
 
-### Individual `.carousel-item` interval
+### Timing control
 
-Add `data-cx-interval=""` to a `.carousel-item` to change the amount of time to delay between automatically cycling to the next item.
+Fine-tune autoplay timing with `data-cx-interval` attributes on individual `.carousel-item` elements. This feature enables dynamic pacing—for example, allowing more time for text-heavy slides while maintaining quicker transitions for simple images.
 
 <Example code={`<div id="carouselExampleInterval" class="carousel slide" data-cx-ride="carousel">
     <div class="carousel-inner">
@@ -228,9 +228,9 @@ Add `data-cx-interval=""` to a `.carousel-item` to change the amount of time to 
     </button>
   </div>`} />
 
-### Autoplaying carousels without controls
+### Minimal implementation
 
-Here’s a carousel with slides only. Note the presence of the `.d-block` and `.w-100` on carousel images to prevent browser default image alignment.
+Create distraction-free content displays with slides-only carousels. This pattern works particularly well for hero sections, testimonials, or background imagery where controls might interfere with the design aesthetic. Remember to include `.d-block` and `.w-100` classes for optimal image presentation.
 
 <Example code={`<div id="carouselExampleSlidesOnly" class="carousel slide" data-cx-ride="carousel">
     <div class="carousel-inner">
@@ -246,9 +246,9 @@ Here’s a carousel with slides only. Note the presence of the `.d-block` and `.
     </div>
   </div>`} />
 
-## Disable touch swiping
+## Touch interaction control
 
-Carousels support swiping left/right on touchscreen devices to move between slides. This can be disabled by setting the `touch` option to `false`.
+Chassis CSS carousels include native touch/swipe support for mobile and tablet experiences. When touch interactions conflict with your interface design or content requirements, disable swiping by setting the `touch` option to `false` while maintaining traditional control functionality.
 
 <Example code={`<div id="carouselExampleControlsNoTouching" class="carousel slide" data-cx-touch="false">
     <div class="carousel-inner">
@@ -272,27 +272,29 @@ Carousels support swiping left/right on touchscreen devices to move between slid
     </button>
   </div>`} />
 
-## Custom transition
-
-The transition duration of `.carousel-item` can be changed with the `$carousel-transition-duration` Sass variable before compiling or custom styles if you’re using the compiled CSS. If multiple transitions are applied, make sure the transform transition is defined first (e.g. `transition: transform 2s ease, opacity .5s ease-out`).
-
 ## CSS
+
+<DocsCSS sassOnly={true} />
 
 ### Sass variables
 
-Variables for all carousels:
+<DocsSASSVars notExposed={true} />
 
 <ScssDocs name="carousel-variables" file="scss/_variables.scss" />
 
-## Usage
+## JavaScript API
 
-### Via data attributes
+Control carousel behavior programmatically with Chassis CSS's comprehensive JavaScript interface, featuring smooth transitions, autoplay management, and accessibility controls.
 
-Use data attributes to easily control the position of the carousel. `data-cx-slide` accepts the keywords `prev` or `next`, which alters the slide position relative to its current position. Alternatively, use `data-cx-slide-to` to pass a raw slide index to the carousel `data-cx-slide-to="2"`, which shifts the slide position to a particular index beginning with `0`.
+### Data attributes
 
-### Via JavaScript
+Configure carousel behavior declaratively through data attributes for simple implementation without JavaScript initialization.
 
-Call carousel manually with:
+Use `data-cx-slide` with `prev` or `next` keywords for relative navigation, or `data-cx-slide-to` with numeric values for direct slide access (zero-indexed, like arrays).
+
+### Initialization
+
+Initialize carousels programmatically for advanced control and configuration:
 
 ```js
 const carousel = new chassis.Carousel('#myCarousel')
@@ -305,19 +307,19 @@ const carousel = new chassis.Carousel('#myCarousel')
 <CxTable>
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `interval` | number | `5000` | The amount of time to delay between automatically cycling an item. |
-| `keyboard` | boolean | `true` | Whether the carousel should react to keyboard events. |
-| `pause` | string, boolean | `"hover"` | If set to `"hover"`, pauses the cycling of the carousel on `mouseenter` and resumes the cycling of the carousel on `mouseleave`. If set to `false`, hovering over the carousel won’t pause it. On touch-enabled devices, when set to `"hover"`, cycling will pause on `touchend` (once the user finished interacting with the carousel) for two intervals, before automatically resuming. This is in addition to the mouse behavior. |
-| `ride` | string, boolean | `false` | If set to `true`, autoplays the carousel after the user manually cycles the first item. If set to `"carousel"`, autoplays the carousel on load. |
-| `touch` | boolean | `true` | Whether the carousel should support left/right swipe interactions on touchscreen devices. |
-| `wrap` | boolean | `true` | Whether the carousel should cycle continuously or have hard stops. |
+| `interval` | number | `5000` | Autoplay timing in milliseconds between slide transitions. |
+| `keyboard` | boolean | `true` | Enable keyboard navigation (arrow keys) for carousel control. |
+| `pause` | string, boolean | `"hover"` | Pause behavior: `"hover"` pauses on mouse interaction, `false` disables pausing. Touch devices pause on `touchend` for two intervals after user interaction. |
+| `ride` | string, boolean | `false` | Autoplay mode: `true` starts after first interaction, `"carousel"` starts immediately on load. |
+| `touch` | boolean | `true` | Enable touch/swipe gestures for slide navigation on mobile devices. |
+| `wrap` | boolean | `true` | Continuous cycling (`true`) or hard stops at first/last slides (`false`). |
 </CxTable>
 
 ### Methods
 
 <Callout name="danger-async-methods" type="danger" />
 
-You can create a carousel instance with the carousel constructor, and pass on any additional options. For example, to manually initialize an autoplaying carousel (assuming you’re not using the `data-cx-ride="carousel"` attribute in the markup itself) with a specific interval and with touch support disabled, you can use:
+Create carousel instances with comprehensive configuration options. For example, to initialize an autoplay carousel with custom timing and disabled touch support:
 
 ```js
 const myCarouselElement = document.querySelector('#myCarousel')
@@ -331,39 +333,40 @@ const carousel = new chassis.Carousel(myCarouselElement, {
 <CxTable>
 | Method | Description |
 | --- | --- |
-| `cycle` | Starts cycling through the carousel items from left to right. |
-| `dispose` | Destroys an element’s carousel. (Removes stored data on the DOM element) |
-| `getInstance` | Static method which allows you to get the carousel instance associated to a DOM element. You can use it like this: `chassis.Carousel.getInstance(element)`. |
-| `getOrCreateInstance` | Static method which returns a carousel instance associated to a DOM element, or creates a new one in case it wasn’t initialized. You can use it like this: `chassis.Carousel.getOrCreateInstance(element)`. |
-| `next` | Cycles to the next item. **Returns to the caller before the next item has been shown** (e.g., before the `slid.cx.carousel` event occurs). |
-| `nextWhenVisible` | Don’t cycle carousel to next when the page, the carousel, or the carousel’s parent aren’t visible. **Returns to the caller before the target item has been shown**. |
-| `pause` | Stops the carousel from cycling through items. |
-| `prev` | Cycles to the previous item. **Returns to the caller before the previous item has been shown** (e.g., before the `slid.cx.carousel` event occurs). |
-| `to` | Cycles the carousel to a particular frame (0 based, similar to an array). **Returns to the caller before the target item has been shown** (e.g., before the `slid.cx.carousel` event occurs). |
+| `cycle` | Initiates automatic cycling through carousel items from left to right. |
+| `dispose` | Completely destroys the carousel instance and removes all stored DOM data. |
+| `getInstance` | Static method returning the carousel instance associated with a DOM element: `chassis.Carousel.getInstance(element)`. |
+| `getOrCreateInstance` | Static method that returns existing carousel instance or creates new one if uninitialized: `chassis.Carousel.getOrCreateInstance(element)`. |
+| `next` | Advances to next slide. **Returns immediately before transition completes** (before `slid.cx.carousel` event). |
+| `nextWhenVisible` | Smart next navigation that respects page/element visibility. **Returns before target slide is shown**. |
+| `pause` | Halts automatic cycling while preserving current state. |
+| `prev` | Moves to previous slide. **Returns immediately before transition completes** (before `slid.cx.carousel` event). |
+| `to` | Direct navigation to specific slide by index (zero-based). **Returns before target slide is shown**. |
 </CxTable>
 
 ### Events
 
-Chassis - CSS’s carousel class exposes two events for hooking into carousel functionality. Both events have the following additional properties:
+Chassis CSS carousels provide comprehensive event hooks for application integration and analytics.
 
-- `direction`: The direction in which the carousel is sliding (either `"left"` or `"right"`).
-- `relatedTarget`: The DOM element that is being slid into place as the active item.
-- `from`: The index of the current item
-- `to`: The index of the next item
+- `direction`: Transition direction (`"left"` or `"right"`)
+- `relatedTarget`: DOM element becoming the active slide
+- `from`: Current slide index
+- `to`: Target slide index
 
-All carousel events are fired at the carousel itself (i.e. at the `<div class="carousel">`).
+All events fire at the carousel element (`<div class="carousel">`) and include detailed transition information:
 
 <CxTable>
 | Event type | Description |
 | --- | --- |
-| `slid.cx.carousel` | Fired when the carousel has completed its slide transition. |
-| `slide.cx.carousel` | Fires immediately when the `slide` instance method is invoked. |
+| `slid.cx.carousel` | Fired when slide transition animation completes. |
+| `slide.cx.carousel` | Fired immediately when slide transition begins. |
 </CxTable>
 
 ```js
 const myCarousel = document.getElementById('myCarousel')
 
 myCarousel.addEventListener('slide.cx.carousel', event => {
-  // do something...
+  // Access event properties for analytics or custom logic
+  console.log(`Sliding from ${event.from} to ${event.to}`)
 })
 ```

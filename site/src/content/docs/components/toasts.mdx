@@ -1,47 +1,31 @@
 ---
 title: Toasts
-description: Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.
+description: Display temporary, non-intrusive notifications with Chassis CSS's toast system, designed for seamless integration with your design language and user workflows.
 toc: true
 ---
 
-Toasts are lightweight notifications designed to mimic the push notifications that have been popularized by mobile and desktop operating systems. They’re built with flexbox, so they’re easy to align and position.
+## Introduction
 
-## Overview
+Toasts in Chassis CSS provide lightweight, temporary notifications that appear briefly to inform users without interrupting their workflow. Unlike notification components that persist until dismissed, toasts are designed for transient messaging that communicates status updates, confirmations, or non-critical information.
 
-Things to know when using the toast plugin:
+### How they work
 
-- Toasts are opt-in for performance reasons, so **you must initialize them yourself**.
-- Toasts will automatically hide if you do not specify `autohide: false`.
+The Toast component in Chassis CSS operates on an opt-in initialization model for optimal performance, featuring flexible positioning and accessible design:
+
+- Toasts appear over content without disrupting user interaction
+- Toasts require JavaScript initialization for functionality
+- Built-in timing controls for self-hiding behavior with configurable timing
+- Full lifecycle events for integration with application logic
+- Stack and position anywhere using Chassis's utility system
+- ARIA attributes and screen reader support built-in
+- Consistent with your design system and Figma components
+- Multiple toasts naturally stack when using container elements
 
 <Callout name="info-prefersreducedmotion" />
 
-## Examples
+### Interactive example
 
-### Basic
-
-To encourage extensible and predictable toasts, we recommend a header and body. Toast headers use `display: flex`, allowing easy alignment of content thanks to our margin and flexbox utilities.
-
-Toasts are as flexible as you need and have very little required markup. At a minimum, we require a single element to contain your “toasted” content and strongly encourage a dismiss button.
-
-<Example code={`<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <Placeholder width="20" height="20" background="#007aff" class="rounded me-xsmall" text={false} title={false} />
-      <strong class="me-auto">Chassis</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="close-button" data-cx-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>`} />
-
-<Callout type="warning">
-Previously, our scripts dynamically added the `.hide` class to completely hide a toast (with `display:none`, rather than just with `opacity:0`). This is now not necessary anymore. However, for backwards compatibility, our script will continue to toggle the class (even though there is no practical need for it) until the next major version.
-</Callout>
-
-### Live example
-
-Click the button below to show a toast (positioned with our utilities in the lower right corner) that has been hidden by default.
+The following example demonstrates a toast that appears in response to user interaction, featuring automatic dismissal and the standard header-body structure.
 
 <div class="toast-container position-fixed bottom-0 end-0 p-medium">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -61,13 +45,21 @@ Click the button below to show a toast (positioned with our utilities in the low
   <button type="button" class="button primary" id="liveToastButton">Show live toast</button>
 </div>
 
-```html
-<button type="button" class="button primary" id="liveToastButton">Show live toast</button>
+The JavaScript that powers this interactive example:
 
-<div class="toast-container position-fixed bottom-0 end-0 p-medium">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+<JsDocs name="live-toast" file="site/src/assets/partials/snippets.js" />
+
+## Examples
+
+Explore practical toast implementations covering structure variations, positioning strategies, and customization approaches. These examples demonstrate Chassis CSS's flexible toast system in real-world scenarios.
+
+### Standard structure
+
+Chassis CSS toasts follow a predictable structure optimized for accessibility and visual consistency. The recommended pattern includes a header section with metadata and actions, plus a body section for the primary message content.
+
+<Example code={`<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      <img src="..." class="rounded me-xsmall" alt="...">
+      <Placeholder width="20" height="20" background="#007aff" class="rounded me-xsmall" text={false} title={false} />
       <strong class="me-auto">Chassis</strong>
       <small>11 mins ago</small>
       <button type="button" class="close-button" data-cx-dismiss="toast" aria-label="Close"></button>
@@ -75,17 +67,15 @@ Click the button below to show a toast (positioned with our utilities in the low
     <div class="toast-body">
       Hello, world! This is a toast message.
     </div>
-  </div>
-</div>
-```
+  </div>`} />
 
-We use the following JavaScript to trigger our live toast demo:
+<Callout type="info">
+The header section uses flexbox layout (`display: flex`) which works seamlessly with Chassis's margin and flexbox utilities for precise content alignment and spacing control.
+</Callout>
 
-<JsDocs name="live-toast" file="site/src/assets/partials/snippets.js" />
+### Visual transparency
 
-### Translucent
-
-Toasts are slightly translucent to blend in with what’s below them.
+Toasts use semi-transparent backgrounds to blend naturally with underlying content, creating subtle visual layering that doesn't compete with your interface design.
 
 <Example class="bg-inverse" code={`<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
@@ -99,9 +89,9 @@ Toasts are slightly translucent to blend in with what’s below them.
     </div>
   </div>`} />
 
-### Stacking
+### Stacking behavior
 
-You can stack toasts by wrapping them in a toast container, which will vertically add some spacing.
+Toast containers automatically handle vertical stacking with appropriate spacing. Multiple toasts within a container will stack naturally with consistent spacing between items.
 
 <Example code={`<div class="toast-container position-static">
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -129,9 +119,9 @@ You can stack toasts by wrapping them in a toast container, which will verticall
     </div>
   </div>`} />
 
-### Custom content
+### Simplified layouts
 
-Customize your toasts by removing sub-components, tweaking them with [utilities]([[docsref:/utilities/api]]), or by adding your own markup. Here we’ve created a simpler toast by removing the default `.toast-header`, adding a custom hide icon from [Chassis - CSS Icons]([[config:icons]]), and using some [flexbox utilities]([[docsref:/utilities/flex]]) to adjust the layout.
+Create streamlined toasts by customizing the structure with Chassis's utility classes. This example removes the header component and uses flexbox utilities for a minimalist approach.
 
 <Example code={`<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
@@ -142,7 +132,9 @@ Customize your toasts by removing sub-components, tweaking them with [utilities]
     </div>
   </div>`} />
 
-Alternatively, you can also add additional controls and components to toasts.
+### Action integration
+
+Toasts can include interactive elements like buttons for user actions. Consider accessibility implications when adding controls to auto-hiding toasts.
 
 <Example code={`<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
@@ -154,9 +146,9 @@ Alternatively, you can also add additional controls and components to toasts.
     </div>
   </div>`} />
 
-### Color schemes
+### Color customization
 
-Building on the above example, you can create different toast color schemes with our [color]([[docsref:/utilities/colors]]) and [background]([[docsref:/utilities/background]]) utilities. Here we’ve added `.bg-primary` to the `.toast`. For a crisp edge, we remove the default border with `.border-0`.
+Apply Chassis's color and background utilities to create themed toast variants. Combine with appropriate close button variants for optimal contrast.
 
 <Example code={`<div class="toast align-items-center bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
@@ -167,9 +159,13 @@ Building on the above example, you can create different toast color schemes with
     </div>
   </div>`} />
 
-## Placement
+## Positioning system
 
-Place toasts with custom CSS as you need them. The top right is often used for notifications, as is the top middle. If you’re only ever going to show one toast at a time, put the positioning styles right on the `.toast`.
+Toast positioning leverages Chassis's utility classes for flexible placement anywhere in your interface. Common patterns include corner positioning and centered layouts.
+
+### Dynamic positioning
+
+This interactive example demonstrates various positioning options using utility classes.
 
 <Example addStackblitzJs code={`<form>
     <div class="mb-medium">
@@ -203,7 +199,9 @@ Place toasts with custom CSS as you need them. The top right is often used for n
     </div>
   </div>`} />
 
-For systems that generate more notifications, consider using a wrapping element so they can easily stack.
+### Notification areas
+
+For applications that generate multiple notifications, establish dedicated notification areas using positioned containers.
 
 <Example class="cxd-example-toasts p-0" code={`<div aria-live="polite" aria-atomic="true" class="position-relative">
     <!-- Position it: -->
@@ -239,7 +237,9 @@ For systems that generate more notifications, consider using a wrapping element 
     </div>
   </div>`} />
 
-You can also get fancy with flexbox utilities to align toasts horizontally and/or vertically.
+### Centered alignment
+
+Use flexbox utilities for center-aligned toasts within their container.
 
 <Example class="cxd-example-toasts d-flex" code={`<!-- Flexbox container for aligning the toasts -->
   <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
@@ -260,21 +260,37 @@ You can also get fancy with flexbox utilities to align toasts horizontally and/o
 
 ## Accessibility
 
-Toasts are intended to be small interruptions to your visitors or users, so to help those with screen readers and similar assistive technologies, you should wrap your toasts in an [`aria-live` region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions). Changes to live regions (such as injecting/updating a toast component) are automatically announced by screen readers without needing to move the user’s focus or otherwise interrupt the user. Additionally, include `aria-atomic="true"` to ensure that the entire toast is always announced as a single (atomic) unit, rather than just announcing what was changed (which could lead to problems if you only update part of the toast’s content, or if displaying the same toast content at a later point in time). If the information needed is important for the process, e.g. for a list of errors in a form, then use the [notification component]([[docsref:/components/notifications]]) instead of toast.
+Toast accessibility in Chassis CSS follows WCAG guidelines and best practices for temporary notifications. Proper implementation ensures screen reader compatibility and keyboard accessibility.
 
-Note that the live region needs to be present in the markup *before* the toast is generated or updated. If you dynamically generate both at the same time and inject them into the page, they will generally not be announced by assistive technologies.
+### ARIA attributes and live regions
 
-You also need to adapt the `role` and `aria-live` level depending on the content. If it’s an important message like an error, use `role="alert" aria-live="assertive"`, otherwise use `role="status" aria-live="polite"` attributes.
+Toasts require specific ARIA attributes to work effectively with assistive technologies:
 
-As the content you’re displaying changes, be sure to update the [`delay` timeout](#options) so that users have enough time to read the toast.
+- Use `aria-live` to announce content changes to screen readers, setting it to `"assertive"` for critical messages like errors and urgent notifications, or `"polite"` for informational messages such as confirmations and updates
+- Set `aria-atomic="true"` to ensure the entire toast is announced as a complete unit rather than just the changed portions, preventing fragmented announcements
+- Apply the appropriate `role` attribute using `"alert"` for critical messages or `"status"` for informational updates to provide semantic context
+
+The live region must exist in the DOM before the toast is generated or updated to ensure proper announcement by assistive technologies.
 
 ```html
-<div class="toast" role="alert" aria-live="polite" aria-atomic="true" data-cx-delay="10000">
-  <div role="alert" aria-live="assertive" aria-atomic="true">...</div>
+<!-- Critical message -->
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <!-- Toast content -->
+</div>
+
+<!-- Informational message -->
+<div class="toast" role="status" aria-live="polite" aria-atomic="true">
+  <!-- Toast content -->
 </div>
 ```
 
-When using `autohide: false`, you must add a close button to allow users to dismiss the toast.
+### Timing and interaction guidelines
+
+Consider these accessibility requirements when implementing toast timing and interactive features:
+
+- Ensure users have adequate time to read content before dismissal. Adjust the `delay` option for longer messages or complex content
+- When using `autohide: false`, always include a close button to maintain user control and keyboard accessibility
+- Avoid adding focusable elements (buttons, links) to auto-hiding toasts, as users may not have sufficient time to interact with them
 
 <Example code={`<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-cx-autohide="false">
     <div class="toast-header">
@@ -288,7 +304,13 @@ When using `autohide: false`, you must add a close button to allow users to dism
     </div>
   </div>`} />
 
-While technically it’s possible to add focusable/actionable controls (such as additional buttons or links) in your toast, you should avoid doing this for autohiding toasts. Even if you give the toast a long [`delay` timeout](#options), keyboard and assistive technology users may find it difficult to reach the toast in time to take action (since toasts don’t receive focus when they are displayed). If you absolutely must have further controls, we recommend using a toast with `autohide: false`.
+<Callout type="warning">
+Avoid adding interactive controls to auto-hiding toasts. Keyboard and assistive technology users may not have sufficient time to interact with controls before the toast disappears. For toasts requiring user interaction, set `autohide: false`.
+</Callout>
+
+### When to use alternatives
+
+For form errors or process-critical information, consider using the [notification component]([[docsref:/components/notifications]]) instead of toasts. Notifications provide persistent messaging better suited for important information that requires user attention.
 
 ## CSS
 
@@ -298,66 +320,110 @@ While technically it’s possible to add focusable/actionable controls (such as 
 
 <DocsCSSVars />
 
+<ScssDocs name="toast-css-vars" file="scss/_toast.scss" />
+
 ### Sass variables
 
 <DocsSASSVars />
 
 <ScssDocs name="toast-variables" file="scss/_variables.scss" />
 
-## Usage
+## JavaScript API
 
-Initialize toasts via JavaScript:
+Control toast behavior programmatically with Chassis CSS's comprehensive JavaScript interface, featuring initialization, configuration, and lifecycle management.
+
+### Initialization
+
+Initialize toast components via JavaScript:
 
 ```js
-const toastElList = document.querySelectorAll('.toast')
-const toastList = [...toastElList].map(toastEl => new chassis.Toast(toastEl, option))
+const toastElements = document.querySelectorAll('.toast')
+const toasts = [...toastElements].map(element => new chassis.Toast(element, options))
 ```
+
+<Callout>
+For dismissal functionality only, manual initialization isn't required. Using `data-cx-dismiss="toast"` automatically initializes the component when needed.
+
+See the [triggers](#triggers) section for more details.
+</Callout>
 
 ### Triggers
 
+Automatic toast dismissal can be triggered through data attributes without requiring manual JavaScript initialization.
+
 <JsDismiss name="toast" />
 
-### Options
+### Configuration options
+
+Customize toast behavior through JavaScript options or HTML data attributes for flexible integration with your application logic.
 
 <JsDataAttributes />
 
 <CxTable>
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `animation` | boolean | `true` | Apply a CSS fade transition to the toast. |
-| `autohide` | boolean | `true` | Automatically hide the toast after the delay. |
+| `animation` | boolean | `true` | Apply CSS fade transition to the toast. |
+| `autohide` | boolean | `true` | Automatically hide the toast after the delay period. |
 | `delay` | number | `5000` | Delay in milliseconds before hiding the toast. |
 </CxTable>
 
 ### Methods
+
+Programmatically control toast instances with these JavaScript methods for showing, hiding, and managing toast lifecycle.
 
 <Callout name="danger-async-methods" type="danger" />
 
 <CxTable>
 | Method | Description |
 | --- | --- |
-| `dispose` | Hides an element’s toast. Your toast will remain on the DOM but won’t show anymore. |
-| `getInstance` | *Static* method which allows you to get the toast instance associated with a DOM element. <br/> For example: `const myToastEl = document.getElementById('myToastEl')` `const myToast = chassis.Toast.getInstance(myToastEl)` Returns a Chassis - CSS toast instance. |
-| `getOrCreateInstance` | *Static* method which allows you to get the toast instance associated with a DOM element, or create a new one, in case it wasn’t initialized. <br/>`const myToastEl = document.getElementById('myToastEl')` `const myToast = chassis.Toast.getOrCreateInstance(myToastEl)` Returns a Chassis - CSS toast instance. |
-| `hide` | Hides an element’s toast. **Returns to the caller before the toast has actually been hidden** (i.e. before the `hidden.cx.toast` event occurs). You have to manually call this method if you made `autohide` to `false`. |
-| `isShown` | Returns a boolean according to toast’s visibility state. |
-| `show` | Reveals an element’s toast. **Returns to the caller before the toast has actually been shown** (i.e. before the `shown.cx.toast` event occurs). You have to manually call this method, instead your toast won’t show. |
+| `dispose` | Destroys an element's toast and removes stored data. |
+| `getInstance` | *Static* method to get the toast instance associated with a DOM element. <br/> Example: `chassis.Toast.getInstance(element)` |
+| `getOrCreateInstance` | *Static* method to get an existing toast instance or create a new one. <br/> Example: `chassis.Toast.getOrCreateInstance(element)` |
+| `hide` | Hides the toast. Returns immediately; listen for `hidden.cx.toast` event for completion. Manual call required when `autohide: false`. |
+| `isShown` | Returns boolean indicating toast visibility state. |
+| `show` | Shows the toast. Returns immediately; listen for `shown.cx.toast` event for completion. Manual call required for toast display. |
 </CxTable>
 
+Basic usage examples:
+
+```js
+const toast = chassis.Toast.getOrCreateInstance('#myToast')
+toast.show()
+
+// Hide a toast manually
+toast.hide()
+
+// Check visibility
+if (toast.isShown()) {
+  console.log('Toast is currently visible')
+}
+```
+
 ### Events
+
+The Toast component provides lifecycle events for integration with application logic:
 
 <CxTable>
 | Event | Description |
 | --- | --- |
-| `hide.cx.toast` | This event is fired immediately when the `hide` instance method has been called. |
-| `hidden.cx.toast` | This event is fired when the toast has finished being hidden from the user. |
-| `show.cx.toast` | This event fires immediately when the `show` instance method is called. |
-| `shown.cx.toast` | This event is fired when the toast has been made visible to the user. |
+| `hide.cx.toast` | Fired immediately when the `hide` method is called. |
+| `hidden.cx.toast` | Fired when the toast has finished being hidden from the user. |
+| `show.cx.toast` | Fired immediately when the `show` method is called. |
+| `shown.cx.toast` | Fired when the toast has been made visible to the user. |
 </CxTable>
 
+Event handling example:
+
 ```js
-const myToastEl = document.getElementById('myToast')
-myToastEl.addEventListener('hidden.cx.toast', () => {
-  // do something...
+const toastElement = document.getElementById('myToast')
+
+toastElement.addEventListener('hidden.cx.toast', event => {
+  // Toast has been hidden - clean up or trigger next action
+  console.log('Toast was dismissed')
+})
+
+toastElement.addEventListener('shown.cx.toast', event => {
+  // Toast is now visible - start any timers or tracking
+  console.log('Toast is now visible')
 })
 ```

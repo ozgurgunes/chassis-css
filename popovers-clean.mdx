@@ -86,7 +86,7 @@ For popovers within [modal dialogs]([[docsref:/components/modal]]), set the cont
 
 ```js
 const popover = new chassis.Popover('.example-popover', {
-  container: '.modal-content'
+  container: '.modal-body'
 })
 ```
 
@@ -158,8 +158,6 @@ Design system integration through Sass variables provides comprehensive popover 
 
 Control popover behavior programmatically with Chassis CSS's comprehensive JavaScript interface, featuring dynamic content generation, intelligent positioning, and accessibility features.
 
-### Initialization
-
 The popover plugin generates content and markup on demand, placing popovers relative to their trigger elements for optimal performance and accessibility. Initialize popovers via JavaScript:
 
 ```js
@@ -177,21 +175,9 @@ Popovers don't manage keyboard focus order automatically. Their DOM placement ca
 
 ### Data attributes
 
-Individual popover options can be specified through data attributes for declarative configuration without JavaScript initialization.
+Configure popover behavior using data attributes on trigger elements:
 
-Popovers require minimal markup while generating semantic HTML with proper ARIA attributes for optimal accessibility and screen reader support. The required markup for a popover is only a `data` attribute and content attributes on the HTML element:
-
-```html
-<!-- HTML to write -->
-<button type="button" data-cx-toggle="popover" data-cx-title="Popover title" data-cx-content="Amazing content here">Click me</button>
-
-<!-- Generated markup by the plugin -->
-<div class="popover cx-popover-auto" role="tooltip">
-  <div class="popover-arrow"></div>
-  <h3 class="popover-header">Popover title</h3>
-  <div class="popover-body">Amazing content here</div>
-</div>
-```
+<JsDataAttributes />
 
 <Callout type="warning">
 For security reasons, the `sanitize`, `sanitizeFn`, and `allowList` options cannot be supplied using data attributes.
@@ -199,12 +185,8 @@ For security reasons, the `sanitize`, `sanitizeFn`, and `allowList` options cann
 
 ### Configuration options
 
-Customize popover behavior through JavaScript options or HTML data attributes for flexible integration with your application logic.
-
-<JsDataAttributes />
-
 <CxTable>
-| Name | Type | Default | Description |
+| Option | Type | Default | Description |
 | --- | --- | --- | --- |
 | `allowList` | object | [Default value]([[docsref:/getting-started/javascript#sanitizer]]) | Object containing allowed attributes and tags for HTML sanitization. |
 | `animation` | boolean | `true` | Apply CSS fade transition to the popover. |
@@ -226,9 +208,11 @@ Customize popover behavior through JavaScript options or HTML data attributes fo
 | `trigger` | string | `'click'` | How popover is triggered: click, hover, focus, manual. You may pass multiple triggers; separate them with a space. `'manual'` indicates that the popover will be triggered programmatically via the `.popover('show')`, `.popover('hide')` and `.popover('toggle')` methods; this value cannot be combined with any other trigger. `'hover'` on its own will result in popovers that cannot be triggered via the keyboard, and should only be used if alternative methods for conveying the same information for keyboard users is present. |
 </CxTable>
 
-#### Popper configuration
+#### Data attributes for individual popovers
 
-Advanced Popper.js configuration can be customized through a function that receives the default Chassis CSS configuration and returns a modified configuration object.
+Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.
+
+#### Using function with `popperConfig`
 
 ```js
 const popover = new chassis.Popover(element, {
@@ -263,7 +247,8 @@ Chassis CSS provides a comprehensive set of methods for programmatic popover con
 </CxTable>
 
 ```js
-const popover = chassis.Popover.getInstance('#example') // Returns a Chassis CSS popover instance
+// getOrCreateInstance example
+const popover = chassis.Popover.getOrCreateInstance('#example') // Returns a Chassis CSS popover instance
 
 // setContent example
 popover.setContent({
@@ -278,8 +263,6 @@ The `setContent` method accepts an `object` argument, where each property-key is
 
 ### Events
 
-Listen to popover lifecycle events to integrate with your application logic and create responsive user interactions.
-
 <CxTable>
 | Event | Description |
 | --- | --- |
@@ -292,11 +275,7 @@ Listen to popover lifecycle events to integrate with your application logic and 
 
 ```js
 const myPopoverTrigger = document.getElementById('myPopover')
-const popover = chassis.Popover.getOrCreateInstance(myPopoverTrigger)
-
 myPopoverTrigger.addEventListener('hidden.cx.popover', () => {
   // do something...
 })
-
-popover.hide()
 ```

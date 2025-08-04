@@ -1,4 +1,5 @@
 .pagination {
+  // scss-docs-start pagination-css-vars
   --#{$prefix}padding-y: var(--#{$prefix}pagination-padding-y, #{$pagination-padding-y});
   --#{$prefix}padding-x: var(--#{$prefix}pagination-padding-x, #{$pagination-padding-x});
   --#{$prefix}fg-color: var(--#{$prefix}pagination-fg-color, #{$pagination-fg-color});
@@ -9,22 +10,23 @@
   --#{$prefix}icon-color: var(--#{$prefix}pagination-icon-color, var(--#{$prefix}fg-color));
   --#{$prefix}icon-size: var(--#{$prefix}pagination-icon-size, var(--#{$prefix}icon-small));
   @include map-font($pagination-font, pagination);
+  // scss-docs-end pagination-css-vars
 
   display: flex;
   @include bulletless();
 
   &.large {
-    --#{$prefix}padding-y: var(--#{$prefix}pagination-large-padding-y, #{$pagination-large-padding-y});
-    --#{$prefix}padding-x: var(--#{$prefix}pagination-large-padding-x, #{$pagination-large-padding-x});
-    --#{$prefix}border-radius: var(--#{$prefix}pagination-large-border-radius, #{$pagination-large-border-radius});
-    @include map-font($pagination-large-font, pagination-large);
+    --#{$prefix}pagination-padding-y: #{$pagination-large-padding-y};
+    --#{$prefix}pagination-padding-x: #{$pagination-large-padding-x};
+    --#{$prefix}pagination-border-radius: #{$pagination-large-border-radius};
+    @include map-font($pagination-large-font, pagination);
   }
 
   &.small {
-    --#{$prefix}padding-y: var(--#{$prefix}pagination-small-padding-y, #{$pagination-small-padding-y});
-    --#{$prefix}padding-x: var(--#{$prefix}pagination-small-padding-x, #{$pagination-small-padding-x});
-    --#{$prefix}border-radius: var(--#{$prefix}pagination-small-border-radius-small, #{$pagination-small-border-radius});
-    @include map-font($pagination-small-font, pagination-small);
+    --#{$prefix}pagination-padding-y: #{$pagination-small-padding-y};
+    --#{$prefix}pagination-padding-x: #{$pagination-small-padding-x};
+    --#{$prefix}pagination-border-radius: #{$pagination-small-border-radius};
+    @include map-font($pagination-small-font, pagination);
   }
 }
 

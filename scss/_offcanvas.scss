@@ -7,8 +7,8 @@
   --#{$prefix}offcanvas-height: #{$offcanvas-vertical-height};
   --#{$prefix}offcanvas-padding-x: #{$offcanvas-padding-x};
   --#{$prefix}offcanvas-padding-y: #{$offcanvas-padding-y};
-  --#{$prefix}offcanvas-color: #{$offcanvas-color};
-  --#{$prefix}offcanvas-bg: #{$offcanvas-bg-color};
+  --#{$prefix}offcanvas-fg-color: #{$offcanvas-fg-color};
+  --#{$prefix}offcanvas-bg-color: #{$offcanvas-bg-color};
   --#{$prefix}offcanvas-border-width: #{$offcanvas-border-width};
   --#{$prefix}offcanvas-border-color: #{$offcanvas-border-color};
   --#{$prefix}offcanvas-box-shadow: #{$offcanvas-box-shadow};
@@ -38,9 +38,9 @@
       display: flex;
       flex-direction: column;
       max-width: 100%;
-      color: var(--#{$prefix}offcanvas-color);
+      color: var(--#{$prefix}offcanvas-fg-color);
       visibility: hidden;
-      background-color: var(--#{$prefix}offcanvas-bg);
+      background-color: var(--#{$prefix}offcanvas-bg-color);
       background-clip: padding-box;
       outline: 0;
       @include box-shadow(var(--#{$prefix}offcanvas-box-shadow));

@@ -6,28 +6,17 @@ toc: true
 
 import { sassBreakpointValue } from '@libs/sass'
 
-<Callout name="info-prefersreducedmotion" />
-
 ## Overview
 
 Modals create a focused overlay on your interface for important content that requires user attention. They're ideal for confirmations, forms, notifications, and any content that needs to temporarily take precedence over the main interface.
 
-### Key features
+Built with accessible design principles including proper ARIA attributes and keyboard navigation, modals offer flexible sizing from small to full-screen, customizable positioning options, and support for interactive components like forms and grids. Each modal consists of:
 
-- **Accessible design**: Built with proper ARIA attributes and keyboard navigation
-- **Flexible sizing**: Multiple size options from small to full-screen
-- **Customizable positioning**: Center, scroll, or static placement options
-- **Interactive components**: Support for forms, grids, and nested interactive elements
-
-### Basic structure
-
-A modal has these key parts:
-
-- **Modal Container**: The outer wrapper that controls size and position
-- **Modal Window**: The visible modal box with styling and shadow effects
-- **Modal Header**: Section for title and close button
-- **Modal Content**: Main area for your modal's content
-- **Modal Footer**: Optional area typically used for action buttons
+- Modal Container controls size and position
+- Modal Window provides styling and shadow effects
+- Modal Header contains title and close button
+- Modal Content is the main area for your content
+- Modal Footer is optional area for action buttons
 
 <Example class="bg-evident" showMarkup={false} code={`<div class="modal position-static d-block" tabindex="-1">
     <div class="modal-container">
@@ -88,6 +77,8 @@ myModal.addEventListener('shown.cx.modal', () => {
   myInput.focus()
 })
 ```
+
+<Callout name="info-prefersreducedmotion" />
 
 ## Examples
 
@@ -178,6 +169,8 @@ When you need to ensure users interact with your modal before dismissing it, use
 ```
 
 ### Scrolling modals
+
+Modals can scroll independently from the main page content, which is useful for displaying long forms or information without losing context.
 
 #### Window scrolling
 

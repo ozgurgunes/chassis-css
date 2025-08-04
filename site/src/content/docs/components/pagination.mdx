@@ -1,14 +1,16 @@
 ---
 title: Pagination
-description: Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.
+description: Create accessible navigation controls for multi-page content with Chassis CSS's semantic pagination components.
 toc: true
 ---
 
 ## Overview
 
-We use a large block of connected links for our pagination, making links hard to miss and easily scalable—all while providing large hit areas. Pagination is built with list HTML elements so screen readers can announce the number of available links. Use a wrapping `<nav>` element to identify it as a navigation section to screen readers and other assistive technologies.
+Chassis CSS pagination provides intuitive navigation controls for multi-page content using semantic HTML structures and accessible design patterns. Built with list elements and proper ARIA attributes, pagination components ensure screen readers can effectively communicate navigation options while maintaining excellent keyboard accessibility.
 
-In addition, as pages likely have more than one such navigation section, it’s advisable to provide a descriptive `aria-label` for the `<nav>` to reflect its purpose. For example, if the pagination component is used to navigate between a set of search results, an appropriate label could be `aria-label="Search results pages"`.
+Each pagination component uses connected page links with generous touch targets, making navigation reliable across all devices. The semantic `<nav>` wrapper identifies the component as a navigation section for assistive technologies, while descriptive labeling helps distinguish between multiple pagination contexts on the same page.
+
+When implementing multiple pagination sections, provide descriptive `aria-label` attributes to clarify their purpose, such as `aria-label="Search results pages"` or `aria-label="Blog post navigation"`.
 
 <Example code={`<nav aria-label="Page navigation example">
     <ul class="pagination">
@@ -22,7 +24,7 @@ In addition, as pages likely have more than one such navigation section, it’s 
 
 ## Working with icons
 
-Looking to use an icon or symbol in place of text for some pagination links? Be sure to provide proper screen reader support with `aria` attributes.
+Transform pagination controls by replacing text with icons while maintaining comprehensive screen reader support through proper ARIA attributes and semantic markup.
 
 <Example code={`<nav aria-label="Page navigation example">
     <ul class="pagination">
@@ -42,16 +44,16 @@ Looking to use an icon or symbol in place of text for some pagination links? Be 
     </ul>
   </nav>`} />
 
-## Disabled and active states
+## Active & disabled states
 
-Pagination links are customizable for different circumstances. Use `.disabled` for links that appear un-clickable and `.active` to indicate the current page.
+Clearly communicate current page position and unavailable navigation options using state classes and semantic attributes. Apply `.disabled` for non-interactive links and `.active` to highlight the current page.
 
-While the `.disabled` class uses `pointer-events: none` to _try_ to disable the link functionality of `<a>`s, that CSS property is not yet standardized and doesn’t account for keyboard navigation. As such, you should always add `tabindex="-1"` on disabled links and use custom JavaScript to fully disable their functionality.
+In Chassis CSS, state classes can be applied to either the `.page-item` parent or directly to the `.page-link` element. While `.disabled` uses `pointer-events: none` to prevent mouse interaction, always include `tabindex="-1"` and `aria-disabled="true"` on disabled links to ensure complete keyboard accessibility.
 
 <Example code={`<nav aria-label="...">
     <ul class="pagination">
       <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+        <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
       </li>
       <li class="page-item"><a class="page-link" href="#">1</a></li>
       <li class="page-item active" aria-current="page">
@@ -64,30 +66,18 @@ While the `.disabled` class uses `pointer-events: none` to _try_ to disable the 
     </ul>
   </nav>`} />
 
-You can optionally swap out active or disabled anchors for `<span>`, or omit the anchor in the case of the prev/next arrows, to remove click functionality and prevent keyboard focus while retaining intended styles.
+For enhanced accessibility and to completely remove click functionality, replace anchor elements with `<span>` for disabled and active states:
 
-<Example code={`<nav aria-label="...">
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <span class="page-link">Previous</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active" aria-current="page">
-        <span class="page-link">2</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav>`} />
+<Code lang='html' code={`<li class="page-item disabled">
+    <span class="page-link">Previous</span>
+  </li>`} />
 
 ## Sizing
 
-Fancy larger or smaller pagination? Add `.pagination-large` or `.pagination-small` for additional sizes.
+Chassis provides three size variants to match your interface requirements. Add `.large` or `.small` modifiers to the base `.pagination` class for alternative sizing options.
 
 <Example code={`<nav aria-label="...">
-    <ul class="pagination pagination-large">
+    <ul class="pagination large">
       <li class="page-item active" aria-current="page">
         <span class="page-link">1</span>
       </li>
@@ -97,7 +87,7 @@ Fancy larger or smaller pagination? Add `.pagination-large` or `.pagination-smal
   </nav>`} />
 
 <Example code={`<nav aria-label="...">
-    <ul class="pagination pagination-small">
+    <ul class="pagination small">
       <li class="page-item active" aria-current="page">
         <span class="page-link">1</span>
       </li>
@@ -108,12 +98,14 @@ Fancy larger or smaller pagination? Add `.pagination-large` or `.pagination-smal
 
 ## Alignment
 
-Change the alignment of pagination components with [flexbox utilities]([[docsref:/utilities/flex]]). For example, with `.justify-content-center`:
+Control pagination positioning using Chassis's flexbox utilities. The pagination component uses flexbox by default, making it compatible with justify-content utilities for flexible alignment options.
 
-<Example code={`<nav aria-label="Page navigation example">
+With `.justify-content-center`:
+
+<Example code={`<nav aria-label="Centered pagination">
     <ul class="pagination justify-content-center">
       <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+        <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
       </li>
       <li class="page-item"><a class="page-link" href="#">1</a></li>
       <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -126,10 +118,10 @@ Change the alignment of pagination components with [flexbox utilities]([[docsref
 
 Or with `.justify-content-end`:
 
-<Example code={`<nav aria-label="Page navigation example">
+<Example code={`<nav aria-label="Right-aligned pagination">
     <ul class="pagination justify-content-end">
       <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+        <a class="page-link" tabindex="-1" aria-disabled="true">Previous</a>
       </li>
       <li class="page-item"><a class="page-link" href="#">1</a></li>
       <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -147,6 +139,8 @@ Or with `.justify-content-end`:
 ### Custom properties
 
 <DocsCSSVars />
+
+<ScssDocs name="pagination-css-vars" file="scss/_pagination.scss" />
 
 ### Sass variables
 

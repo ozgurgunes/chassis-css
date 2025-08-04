@@ -2,25 +2,16 @@
   display: inline-block;
   min-height: 1em;
   vertical-align: middle;
-  cursor: wait;
+  cursor: wait !important; // stylelint-disable-line
   opacity: var(--#{$prefix}skeleton-opacity-max, #{$skeleton-opacity-max});
 
   &:not(.button) {
     background-color: var(--#{$prefix}skeleton-color, currentcolor);
   }
 
-  &.smaller {
-    min-height: .8em;
-  }
-
-  &.larger {
-    min-height: 1.2em;
-  }
-
   &.button::before {
     display: inline-block;
     content: "";
-    //background-color: inherit;
   }
 }
 

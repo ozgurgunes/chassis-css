@@ -12,11 +12,13 @@ Navbars are versatile navigation components that serve as the primary navigation
 
 ### Key features
 
-- **Responsive behavior** - Automatically collapses into a mobile-friendly menu at your chosen breakpoint
-- **Flexible layout options** - Supports branding, navigation links, forms, and more
-- **Accessibility built-in** - Proper ARIA attributes and keyboard navigation support
-- **Theming support** - Easily customize with Chassis CSS's theming system using `data-cx-theme`
-- **Component integration** - Works seamlessly with dropdowns, offcanvas, and other Chassis components
+Chassis CSS navbars offer a range of features to enhance your navigation experience:
+
+- Automatically collapses into a mobile-friendly menu at your chosen breakpoint
+- Supports branding, navigation links, forms, and more
+- Proper ARIA attributes and keyboard navigation support
+- Easily customize with Chassis CSS's theming system using `data-cx-theme`
+- Works seamlessly with dropdowns, offcanvas, and other Chassis components
 
 ## Basic structure
 
@@ -90,6 +92,8 @@ The `.navbar-brand` class creates a visually distinct area for your logo or prod
 
 #### Text branding
 
+Use `.navbar-brand` to create a text-based brand identifier:
+
 <Example code={`<!-- As a link -->
   <nav class="navbar bg-evident">
     <div class="container-fluid">
@@ -106,6 +110,8 @@ The `.navbar-brand` class creates a visually distinct area for your logo or prod
 
 #### Logo image
 
+Use an image within `.navbar-brand` for a logo.
+
 <Example code={`<nav class="navbar bg-evident">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -115,6 +121,8 @@ The `.navbar-brand` class creates a visually distinct area for your logo or prod
   </nav>`} />
 
 #### Combined image and text
+
+Use both an image and text for a more complete branding element. Use the `d-inline-block` and `align-text-top` classes to align the image with the text.
 
 <Example code={`<nav class="navbar bg-evident">
     <div class="container-fluid">
@@ -615,13 +623,13 @@ Transform your navbar into an offcanvas drawer for a modern interface pattern:
     </div>
   </nav>`} />
 
-## Technical reference
+## CSS
 
-Access the underlying CSS variables, Sass variables, and responsive class generation details for complete control over navbar styling.
+<DocsCSS />
 
-### CSS variables
+### Custom properties
 
-Navbars use local CSS variables for easy customization:
+<DocsCSSVars />
 
 <ScssDocs name="navbar-css-vars" file="scss/_navbar.scss" />
 
@@ -631,7 +639,7 @@ Additional CSS variables for `.navbar-nav`:
 
 ### Sass variables
 
-Base variables for navbar styling:
+<DocsSASSVars />
 
 <ScssDocs name="navbar-variables" file="scss/_variables.scss" />
 

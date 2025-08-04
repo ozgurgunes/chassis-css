@@ -10242,22 +10242,22 @@ textarea.form-input {
   list-style: none;
 }
 .pagination.large {
-  --cx-padding-y: var(--cx-pagination-large-padding-y, 0.625rem);
-  --cx-padding-x: var(--cx-pagination-large-padding-x, 1rem);
-  --cx-border-radius: var(--cx-pagination-large-border-radius, var(--cx-border-radius-medium));
-  --cx-font-family: var(--cx-pagination-large-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-pagination-large-font-size, var(--cx-font-size-text-large));
-  --cx-font-weight: var(--cx-pagination-large-font-weight, var(--cx-font-weight-text-normal));
-  --cx-line-height: var(--cx-pagination-large-line-height, var(--cx-line-height-text-large));
+  --cx-pagination-padding-y: 0.625rem;
+  --cx-pagination-padding-x: 1rem;
+  --cx-pagination-border-radius: var(--cx-border-radius-medium);
+  --cx-font-family: var(--cx-pagination-font-family, var(--cx-font-family-text));
+  --cx-font-size: var(--cx-pagination-font-size, var(--cx-font-size-text-large));
+  --cx-font-weight: var(--cx-pagination-font-weight, var(--cx-font-weight-text-normal));
+  --cx-line-height: var(--cx-pagination-line-height, var(--cx-line-height-text-large));
 }
 .pagination.small {
-  --cx-padding-y: var(--cx-pagination-small-padding-y, 0.375rem);
-  --cx-padding-x: var(--cx-pagination-small-padding-x, 0.5rem);
-  --cx-border-radius: var(--cx-pagination-small-border-radius-small, var(--cx-border-radius-medium));
-  --cx-font-family: var(--cx-pagination-small-font-family, var(--cx-font-family-text));
-  --cx-font-size: var(--cx-pagination-small-font-size, var(--cx-font-size-text-small));
-  --cx-font-weight: var(--cx-pagination-small-font-weight, var(--cx-font-weight-text-normal));
-  --cx-line-height: var(--cx-pagination-small-line-height, var(--cx-line-height-text-small));
+  --cx-pagination-padding-y: 0.375rem;
+  --cx-pagination-padding-x: 0.5rem;
+  --cx-pagination-border-radius: var(--cx-border-radius-medium);
+  --cx-font-family: var(--cx-pagination-font-family, var(--cx-font-family-text));
+  --cx-font-size: var(--cx-pagination-font-size, var(--cx-font-size-text-small));
+  --cx-font-weight: var(--cx-pagination-font-weight, var(--cx-font-weight-text-normal));
+  --cx-line-height: var(--cx-pagination-line-height, var(--cx-line-height-text-small));
 }
 
 .page-link {
@@ -10444,14 +10444,22 @@ textarea.form-input {
 .progress-stacked {
   --cx-height: var(--cx-progress-height, 1rem);
   --cx-font-size: calc(var(--cx-font-size-medium) * 0.75);
+  --cx-line-height: calc(var(--cx-line-height-medium) * 0.75);
+  --cx-bg-color: var(--cx-progress-bg-color, var(--cx-bg-even));
+  --cx-border-radius: var(--cx-progress-border-radius, var(--cx-border-radius-medium));
+  --cx-box-shadow: var(--cx-progress-box-shadow, var(--cx-box-shadow-inset));
+  --cx-bar-fg-color: var(--cx-progress-bar-fg-color, #fff);
+  --cx-bar-bg-color: var(--cx-progress-bar-bg-color, #00A4CC);
+  --cx-bar-transition: var(--cx-progress-bar-transition, width 0.6s ease);
+  --cx-bar-animation-timing: var(--cx-progress-bar-animation-timing, 1s linear infinite);
   display: flex;
   height: var(--cx-height);
   overflow: hidden;
   font-size: var(--cx-font-size);
   line-height: var(--cx-line-height);
-  background-color: var(--cx-progress-bg-color, var(--cx-bg-even));
-  border-radius: var(--cx-progress-border-radius, var(--cx-border-radius));
-  box-shadow: var(--cx-progress-box-shadow, var(--cx-box-shadow-inset));
+  background-color: var(--cx-bg-color);
+  border-radius: var(--cx-border-radius);
+  box-shadow: var(--cx-box-shadow);
 }
 
 .progress-bar {
@@ -10459,21 +10467,28 @@ textarea.form-input {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  color: var(--cx-progress-bar-fg-color, #fff);
+  color: var(--cx-bar-fg-color);
   text-align: center;
   white-space: nowrap;
-  background-color: var(--cx-progress-bar-bg-color, #00A4CC);
-  transition: var(--cx-progress-bar-transition, width 0.6s ease);
+  background-color: var(--cx-bar-bg-color);
+  transition: var(--cx-bar-transition);
 }
 @media (prefers-reduced-motion: reduce) {
   .progress-bar {
     transition: none;
   }
 }
-
-.progress-bar-striped {
+.progress-bar.striped {
   background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: var(--cx-height) var(--cx-height);
+}
+.progress-bar.animated {
+  animation: var(--cx-bar-animation-timing) progress-bar-stripes;
+}
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar.animated {
+    animation: none;
+  }
 }
 
 .progress-stacked > .progress {
@@ -10482,15 +10497,6 @@ textarea.form-input {
 
 .progress-stacked > .progress > .progress-bar {
   width: 100%;
-}
-
-.progress-bar-animated {
-  animation: var(--cx-progress-bar-animation-timing, 1s linear infinite) progress-bar-stripes;
-}
-@media (prefers-reduced-motion: reduce) {
-  .progress-bar-animated {
-    animation: none;
-  }
 }
 
 .list-group {
@@ -11742,8 +11748,8 @@ textarea.form-input {
   --cx-offcanvas-height: 30vh;
   --cx-offcanvas-padding-x: 1rem;
   --cx-offcanvas-padding-y: 1rem;
-  --cx-offcanvas-color: var(--cx-fg-color);
-  --cx-offcanvas-bg: var(--cx-bg-color);
+  --cx-offcanvas-fg-color: var(--cx-fg-main);
+  --cx-offcanvas-bg-color: var(--cx-bg-main);
   --cx-offcanvas-border-width: var(--cx-border-width-medium);
   --cx-offcanvas-border-color: var(--cx-border-subtle);
   --cx-offcanvas-box-shadow: 0rem 0.375rem 1.5rem -0.375rem rgba(0, 0, 0, 0.2), 0rem 0.1875rem 0.75rem -0.1875rem rgba(0, 0, 0, 0.1);
@@ -11759,9 +11765,9 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    color: var(--cx-offcanvas-color);
+    color: var(--cx-offcanvas-fg-color);
     visibility: hidden;
-    background-color: var(--cx-offcanvas-bg);
+    background-color: var(--cx-offcanvas-bg-color);
     background-clip: padding-box;
     outline: 0;
     box-shadow: var(--cx-offcanvas-box-shadow);
@@ -11838,9 +11844,9 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    color: var(--cx-offcanvas-color);
+    color: var(--cx-offcanvas-fg-color);
     visibility: hidden;
-    background-color: var(--cx-offcanvas-bg);
+    background-color: var(--cx-offcanvas-bg-color);
     background-clip: padding-box;
     outline: 0;
     box-shadow: var(--cx-offcanvas-box-shadow);
@@ -11917,9 +11923,9 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    color: var(--cx-offcanvas-color);
+    color: var(--cx-offcanvas-fg-color);
     visibility: hidden;
-    background-color: var(--cx-offcanvas-bg);
+    background-color: var(--cx-offcanvas-bg-color);
     background-clip: padding-box;
     outline: 0;
     box-shadow: var(--cx-offcanvas-box-shadow);
@@ -11996,9 +12002,9 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    color: var(--cx-offcanvas-color);
+    color: var(--cx-offcanvas-fg-color);
     visibility: hidden;
-    background-color: var(--cx-offcanvas-bg);
+    background-color: var(--cx-offcanvas-bg-color);
     background-clip: padding-box;
     outline: 0;
     box-shadow: var(--cx-offcanvas-box-shadow);
@@ -12075,9 +12081,9 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    color: var(--cx-offcanvas-color);
+    color: var(--cx-offcanvas-fg-color);
     visibility: hidden;
-    background-color: var(--cx-offcanvas-bg);
+    background-color: var(--cx-offcanvas-bg-color);
     background-clip: padding-box;
     outline: 0;
     box-shadow: var(--cx-offcanvas-box-shadow);
@@ -12153,9 +12159,9 @@ textarea.form-input {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  color: var(--cx-offcanvas-color);
+  color: var(--cx-offcanvas-fg-color);
   visibility: hidden;
-  background-color: var(--cx-offcanvas-bg);
+  background-color: var(--cx-offcanvas-bg-color);
   background-clip: padding-box;
   outline: 0;
   box-shadow: var(--cx-offcanvas-box-shadow);
@@ -12245,17 +12251,11 @@ textarea.form-input {
   display: inline-block;
   min-height: 1em;
   vertical-align: middle;
-  cursor: wait;
+  cursor: wait !important;
   opacity: var(--cx-skeleton-opacity-max, 0.3);
 }
 .skeleton:not(.button) {
   background-color: var(--cx-skeleton-color, currentcolor);
-}
-.skeleton.smaller {
-  min-height: 0.8em;
-}
-.skeleton.larger {
-  min-height: 1.2em;
 }
 .skeleton.button::before {
   display: inline-block;

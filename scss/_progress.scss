@@ -29,17 +29,27 @@
 
 .progress,
 .progress-stacked {
+  // scss-docs-start progress-css-vars
   --#{$prefix}height: var(--#{$prefix}progress-height, #{$progress-height});
   @include rfs($progress-font-size, --#{$prefix}font-size);
+  @include rfs($progress-line-height, --#{$prefix}line-height);
+  --#{$prefix}bg-color: var(--#{$prefix}progress-bg-color, #{$progress-bg-color});
+  --#{$prefix}border-radius: var(--#{$prefix}progress-border-radius, #{$progress-border-radius});
+  --#{$prefix}box-shadow: var(--#{$prefix}progress-box-shadow, #{$progress-box-shadow});
+  --#{$prefix}bar-fg-color: var(--#{$prefix}progress-bar-fg-color, #{$progress-bar-fg-color});
+  --#{$prefix}bar-bg-color: var(--#{$prefix}progress-bar-bg-color, #{$progress-bar-bg-color});
+  --#{$prefix}bar-transition: var(--#{$prefix}progress-bar-transition, #{$progress-bar-transition});
+  --#{$prefix}bar-animation-timing: var(--#{$prefix}progress-bar-animation-timing, #{$progress-bar-animation-timing});
+  // scss-docs-end progress-css-vars
 
   display: flex;
   height: var(--#{$prefix}height);
   overflow: hidden; // force rounded corners by cropping it
   @include font-size(var(--#{$prefix}font-size));
-  @include line-height();
-  background-color: var(--#{$prefix}progress-bg-color, #{$progress-bg-color});
-  @include border-radius(var(--#{$prefix}progress-border-radius, #{$progress-border-radius}));
-  @include box-shadow(var(--#{$prefix}progress-box-shadow, #{$progress-box-shadow}));
+  @include line-height(var(--#{$prefix}line-height));
+  background-color: var(--#{$prefix}bg-color);
+  @include border-radius(var(--#{$prefix}border-radius));
+  @include box-shadow(var(--#{$prefix}box-shadow));
 }
 
 .progress-bar {
@@ -47,17 +57,30 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  color: var(--#{$prefix}progress-bar-fg-color, #{$progress-bar-fg-color});
+  color: var(--#{$prefix}bar-fg-color);
   text-align: center;
   white-space: nowrap;
-  background-color: var(--#{$prefix}progress-bar-bg-color, #{$progress-bar-bg-color});
-  @include transition(var(--#{$prefix}progress-bar-transition, #{$progress-bar-transition}));
+  background-color: var(--#{$prefix}bar-bg-color);
+  @include transition(var(--#{$prefix}bar-transition));
+
+  &.striped {
+    @include gradient-striped();
+    background-size: var(--#{$prefix}height) var(--#{$prefix}height);
+  }
+
+  @if $enable-transitions {
+    &.animated {
+      animation: var(--#{$prefix}bar-animation-timing) progress-bar-stripes;
+
+      @if $enable-reduced-motion {
+        @media (prefers-reduced-motion: reduce) {
+          animation: none;
+        }
+      }
+    }
+  }
 }
 
-.progress-bar-striped {
-  @include gradient-striped();
-  background-size: var(--#{$prefix}height) var(--#{$prefix}height);
-}
 
 .progress-stacked > .progress {
   overflow: visible;
@@ -65,16 +88,4 @@
 
 .progress-stacked > .progress > .progress-bar {
   width: 100%;
-}
-
-@if $enable-transitions {
-  .progress-bar-animated {
-    animation: var(--#{$prefix}progress-bar-animation-timing, $progress-bar-animation-timing) progress-bar-stripes;
-
-    @if $enable-reduced-motion {
-      @media (prefers-reduced-motion: reduce) {
-        animation: none;
-      }
-    }
-  }
 }
