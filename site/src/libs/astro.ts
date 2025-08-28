@@ -162,7 +162,7 @@ function copyChassis() {
 
 // Copy the `icons` folder from the chassis-tokens repo to make it available from the `/icons` URL.
 function copyIcons() {
-  const source = path.join(process.cwd(), 'vendor/tokens/dist/icons')
+  const source = path.join(process.cwd(), 'node_modules/@ozgurgunes/chassis-icons/dist')
   const destination = path.join(getDocsPublicFsPath(), 'docs', getConfig().docs_version, 'assets', 'icons')
 
   fs.mkdirSync(destination, { recursive: true })

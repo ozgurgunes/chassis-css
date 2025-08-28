@@ -35,12 +35,6 @@ importers:
       '@docsearch/js':
         specifier: ^3.9.0
         version: 3.9.0(@algolia/client-search@5.36.0)(search-insights@2.17.3)
-      '@ozgurgunes/chassis-icons':
-        specifier: github:ozgurgunes/chassis-icons#app/docs
-        version: https://codeload.github.com/ozgurgunes/chassis-icons/tar.gz/abe885d86cc1f6296e5217632fd5ed8985e5cd9f
-      '@ozgurgunes/chassis-tokens':
-        specifier: github:ozgurgunes/chassis-tokens#app/docs
-        version: https://codeload.github.com/ozgurgunes/chassis-tokens/tar.gz/66c56b02347b367d142ed5a4cb7837bcaf6a4483
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
@@ -173,12 +167,6 @@ importers:
       lockfile-lint:
         specifier: ^4.14.1
         version: 4.14.1(typescript@5.9.2)
-      mdast-util-from-markdown:
-        specifier: ^2.0.2
-        version: 2.0.2
-      mdast-util-to-string:
-        specifier: ^4.0.0
-        version: 4.0.0
       mime:
         specifier: ^4.0.7
         version: 4.0.7
@@ -203,9 +191,6 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
-      prismjs:
-        specifier: ^1.30.0
-        version: 1.30.0
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
@@ -1312,14 +1297,6 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
-
-  '@ozgurgunes/chassis-icons@https://codeload.github.com/ozgurgunes/chassis-icons/tar.gz/abe885d86cc1f6296e5217632fd5ed8985e5cd9f':
-    resolution: {tarball: https://codeload.github.com/ozgurgunes/chassis-icons/tar.gz/abe885d86cc1f6296e5217632fd5ed8985e5cd9f}
-    version: 0.1.0
-
-  '@ozgurgunes/chassis-tokens@https://codeload.github.com/ozgurgunes/chassis-tokens/tar.gz/66c56b02347b367d142ed5a4cb7837bcaf6a4483':
-    resolution: {tarball: https://codeload.github.com/ozgurgunes/chassis-tokens/tar.gz/66c56b02347b367d142ed5a4cb7837bcaf6a4483}
-    version: 0.1.0
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -6608,10 +6585,6 @@ snapshots:
       fastq: 1.19.1
 
   '@oslojs/encoding@1.1.0': {}
-
-  '@ozgurgunes/chassis-icons@https://codeload.github.com/ozgurgunes/chassis-icons/tar.gz/abe885d86cc1f6296e5217632fd5ed8985e5cd9f': {}
-
-  '@ozgurgunes/chassis-tokens@https://codeload.github.com/ozgurgunes/chassis-tokens/tar.gz/66c56b02347b367d142ed5a4cb7837bcaf6a4483': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
